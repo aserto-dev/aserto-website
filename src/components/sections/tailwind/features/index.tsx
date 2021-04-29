@@ -1,7 +1,5 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
 import Feature from './feature'
-import IntegrationsAnim from './integrations'
-import VisibilityAnim from './visibility'
 
 const features: React.ComponentPropsWithoutRef<typeof Feature>[] = [
   {

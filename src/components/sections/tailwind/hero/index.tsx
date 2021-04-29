@@ -1,6 +1,4 @@
-// import { Transition } from '@headlessui/react'
 import { useFadeInBottom } from 'hooks/use-gsap'
-import Logo from 'components/primitives/logo'
 import { useCallback, useEffect, useState } from 'react'
 import Comparison from '../../comparison'
 import Button from 'components/primitives/button'
