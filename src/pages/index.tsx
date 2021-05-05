@@ -14,11 +14,6 @@ import Hero from 'components/sections/homepage/hero'
 import { DURATION } from 'lib/gsap'
 
 // Dynamic Imports
-const TestimonialsSection = dynamic(
-  () => import('../components/sections/tailwind/testimonials'),
-  { ssr: false }
-)
-
 const NewsletterSection = dynamic(
   () => import('../components/sections/tailwind/newsletter'),
   { ssr: false }
