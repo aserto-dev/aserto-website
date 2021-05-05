@@ -1,0 +1,94 @@
+import { useState } from 'react'
+// import Image from 'next/image'
+import clsx from 'clsx'
+// import gsap from 'gsap'
+
+// import { DURATION } from 'lib/gsap'
+
+const Comparison = () => {
+  const [isToggled, setIsToggled] = useState('real-time')
+  // const timelineRef = useRef<TimelineMax>()
+
+  // useEffect(() => {
+  //   const image1 = document.querySelectorAll('.image-1')
+  //   const image2 = document.querySelectorAll('.image-2')
+
+  //   timelineRef.current = gsap.timeline({
+  //     smoothChildTiming: true,
+  //     paused: true,
+  //     defaults: {
+  //       overwrite: true
+  //     }
+  //   })
+
+  //   timelineRef.current.fromTo(
+  //     image2,
+  //     {
+  //       autoAlpha: 1
+  //     },
+  //     { ease: 'power1.inOut', duration: DURATION, autoAlpha: 0 }
+  //   )
+  //   timelineRef.current.fromTo(
+  //     image1,
+  //     {
+  //       autoAlpha: 0
+  //     },
+  //     { ease: 'power1.inOut', duration: DURATION, autoAlpha: 1 }
+  //   ),
+  //     '>-.25'
+  // }, [])
+
+  // useEffect(() => {
+  //   if (!timelineRef.current) return
+  //   if (isToggled) {
+  //     timelineRef.current.timeScale(2.23).play()
+  //   } else {
+  //     timelineRef.current.timeScale(2.23).reverse()
+  //   }
+  // }, [isToggled])
+
+  return (
+    <div>
+      <div className="flex justify-center mx-auto space-x-10 border-b border-white border-opacity-10 max-w-container">
+        <button
+          className={clsx(
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            {
+              'text-white border-white': isToggled === 'real-time',
+              'text-ds-gray-6 border-transparent': isToggled !== 'real-time'
+            }
+          )}
+          onClick={() => setIsToggled('real-time')}
+        >
+          Real Time
+        </button>
+        <button
+          className={clsx(
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            {
+              'text-white border-white': isToggled === 'fine-grained',
+              'text-ds-gray-6 border-transparent': isToggled !== 'fine-grained'
+            }
+          )}
+          onClick={() => setIsToggled('fine-grained')}
+        >
+          Fine Grained
+        </button>
+        <button
+          className={clsx(
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            {
+              'text-white border-white': isToggled === 'cloud-native',
+              'text-ds-gray-6 border-transparent': isToggled !== 'cloud-native'
+            }
+          )}
+          onClick={() => setIsToggled('cloud-native')}
+        >
+          Cloud Native
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default Comparison
