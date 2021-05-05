@@ -1,9 +1,9 @@
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import clsx from 'clsx'
 import gsap from 'gsap'
+
 import { DURATION } from 'lib/gsap'
-import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import WithEndgame from './with-endgame'
 
 const Comparison = () => {
   const [isToggled, setIsToggled] = useState(false)
@@ -47,57 +47,15 @@ const Comparison = () => {
     }
   }, [isToggled])
 
-  useEffect(() => {
-    const tl = gsap.timeline({
-      smoothChildTiming: true,
-      paused: true
-    })
-
-    tl.to('.svg-arrow', {
-      ease: 'sine.inOut',
-      overwrite: true,
-      duration: DURATION * 2,
-      repeat: -1,
-      y: 5,
-      yoyo: true,
-      stagger: {
-        each: 0.3,
-        from: 'random'
-      }
-    })
-    tl.fromTo(
-      '.svg-dot',
-      {
-        y: 55,
-        autoAlpha: 1
-      },
-      {
-        y: -40,
-        duration: DURATION * 2,
-        autoAlpha: 0,
-        ease: 'sine.inOut',
-        repeat: -1,
-        overwrite: true,
-        stagger: {
-          each: 0.3,
-          from: 'random'
-        }
-      },
-      '<'
-    )
-
-    tl.timeScale(1.5).play()
-  })
-
   return (
     <div>
       <div className="flex justify-center mx-auto space-x-10 border-b border-white border-opacity-10 max-w-container">
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-black uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest',
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
             {
               'text-white border-white': !isToggled,
-              'text-ds-pewter-text border-transparent': isToggled
+              'text-ds-gray-6 border-transparent': isToggled
             }
           )}
           onClick={() => setIsToggled(false)}
@@ -106,10 +64,10 @@ const Comparison = () => {
         </button>
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-black uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest',
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
             {
               'text-ds-carnation border-ds-carnation': isToggled,
-              'text-ds-pewter-text border-transparent': !isToggled
+              'text-ds-gray-6 border-transparent': !isToggled
             }
           )}
           onClick={() => setIsToggled(true)}
@@ -117,24 +75,24 @@ const Comparison = () => {
           Without Aserto
         </button>
       </div>
-      <div className="relative w-full max-w-4xl pt-6 mx-auto">
+      <div className="relative w-full pt-16 mx-auto max-w-container">
         <div className="image-1">
           <Image
             src="/images/without-endgame.svg"
-            width={1000}
-            height={486}
+            width={1216}
+            height={720}
             loading="eager"
             alt="Without endgame"
           />
-          <p className="max-w-2xl mx-auto mt-8 text-base text-center sm:text-lg md:text-xl sm:mt-12 text-ds-pewter font-book">
-            DIY data tools are a nightmare to build and maintain.
-          </p>
         </div>
-        <div className="absolute bottom-0 w-full image-2">
-          <WithEndgame />
-          <p className="max-w-2xl mx-auto mt-8 text-base text-center sm:text-lg md:text-xl sm:mt-12 text-ds-pewter font-book">
-            The world's first customer observability platform.
-          </p>
+        <div className="absolute w-full top-16 image-2">
+          <Image
+            src="/images/with-endgame.svg"
+            width={1216}
+            height={720}
+            loading="eager"
+            alt="With endgame"
+          />
         </div>
       </div>
     </div>

@@ -5,12 +5,15 @@ module.exports = {
     extend: {
       colors: {
         ds: {
+          accent: '#277F82',
           background: '#141414',
           blog: '#0A0A0C',
           carnation: '#FD555D',
           charcoal: '#050520',
-          endgame: '#277F82',
           fog: '#C5C6D4',
+          gray: '#999999',
+          'gray-3': '#333333',
+          'gray-6': '#666666',
           indigo: '#585be0',
           pewter: '#81839F',
           'pewter-text': '#6f708a',
@@ -20,7 +23,7 @@ module.exports = {
         }
       },
       maxWidth: {
-        container: '70rem'
+        container: '76rem'
       },
       height: {
         graph: '486px'
@@ -42,6 +45,7 @@ module.exports = {
         book: 'var(--font-book)'
       },
       fontSize: {
+        '1.5xl': '1.375rem',
         '2.5xl': '1.75rem',
         '4.5xl': '2.5rem',
         '7.5xl': '5rem'

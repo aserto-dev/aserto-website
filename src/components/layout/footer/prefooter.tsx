@@ -4,7 +4,7 @@ import Container from '../container'
 const Prefooter = () => {
   return (
     <Container>
-      <div className="grid items-center grid-cols-2 gap-8 p-16 rounded-lg bg-gradient-to-br from-ds-seaform to-ds-endgame">
+      <div className="grid items-center grid-cols-2 gap-8 p-16 rounded-lg bg-gradient-to-br from-ds-seaform to-ds-accent">
         <div className="space-y-2">
           <h2 className="text-4xl font-bold text-white">
             Try Endgame for free!

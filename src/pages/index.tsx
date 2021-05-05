@@ -1,13 +1,19 @@
 import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import gsap from 'gsap'
+
+// Primitives
+import CustomHead from 'components/primitives/custom-head'
+
+// Sections
+import TheSolution from 'components/sections/homepage/the-solution'
+import TheProblem from 'components/sections/homepage/the-problem'
+import Hero from 'components/sections/homepage/hero'
+
+// Constants
 import { DURATION } from 'lib/gsap'
 
-import CustomHead from 'components/primitives/custom-head'
-import FeaturesSection from 'components/sections/tailwind/features'
-import FromTheBlog from 'components/sections/tailwind/from-the-blog'
-import TailwindHero from 'components/sections/tailwind/hero'
-
+// Dynamic Imports
 const TestimonialsSection = dynamic(
   () => import('../components/sections/tailwind/testimonials'),
   { ssr: false }
@@ -37,10 +43,9 @@ const HomePage = () => {
   return (
     <main ref={main} style={{ opacity: 0 }}>
       <CustomHead />
-      <TailwindHero />
-      <FromTheBlog />
-      <FeaturesSection />
-      <TestimonialsSection />
+      <Hero />
+      <TheProblem />
+      <TheSolution />
       <NewsletterSection />
       <FooterSection />
     </main>

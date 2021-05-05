@@ -17,7 +17,7 @@ const SectionLayout = ({ header, children, muted }: Props) => {
       <Container className="py-24 space-y-16">
         {header && (
           <div className="text-center">
-            <p className="mb-2 text-xl tracking-widest uppercase text-ds-endgame">
+            <p className="mb-2 text-xl tracking-widest uppercase text-ds-accent">
               {header.tag}
             </p>
             <h2 className="mb-8 text-5xl">{header.title}</h2>

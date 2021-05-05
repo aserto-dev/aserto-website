@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
                     Kyle Parrish
                   </div>
                   <svg
-                    className="hidden w-5 h-5 mx-1 text-ds-endgame md:block"
+                    className="hidden w-5 h-5 mx-1 text-ds-accent md:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

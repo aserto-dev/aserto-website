@@ -42,7 +42,7 @@ const NewsletterSection = () => {
         ref={section}
         className="px-4 mx-auto sm:py-8 max-w-container sm:px-6 lg:pt-8 lg:pb-2 lg:px-8"
       >
-        <div className="px-6 py-6 overflow-hidden rounded-lg bg-gradient-to-r from-ds-endgame to-ds-saphire md:py-12 md:px-10 lg:flex lg:items-center lg:justify-between">
+        <div className="px-6 py-6 overflow-hidden rounded-lg bg-gradient-to-r from-ds-accent to-ds-saphire md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between">
           <h2
             style={{
               visibility: 'hidden',
@@ -55,11 +55,11 @@ const NewsletterSection = () => {
             Thanks for signing up! Expect to hear from us soon.
           </h2>
           <div className="w-full lg:w-0 lg:flex-1" ref={contentRef}>
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-normal text-white sm:text-2.5xl font-book">
-              Join the Endgame beta!
+            <h2 className="text-xl tracking-normal text-white sm:text-4.5xl">
+              Sign up for early access
             </h2>
-            <p className="max-w-3xl mt-1 text-lg text-white sm:text-2xl font-book opacity-80">
-              Sign up now to get ahead of the line.
+            <p className="max-w-3xl mt-4 text-lg text-ds-gray font-book">
+              Subheading (TBD)
             </p>
           </div>
           <div ref={formRef} className="mt-8 sm:w-full lg:max-w-md lg:mt-0">
