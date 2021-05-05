@@ -23,10 +23,7 @@ module.exports = {
         }
       },
       maxWidth: {
-        container: '76rem'
-      },
-      height: {
-        graph: '486px'
+        container: '78rem'
       },
       spacing: {
         14.5: '3.75rem',

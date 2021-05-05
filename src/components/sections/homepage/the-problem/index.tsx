@@ -28,8 +28,8 @@ const problems: React.ComponentPropsWithoutRef<typeof ProblemItem>[] = [
 const TheProblem = () => {
   const [section] = useFadeInBottom()
   return (
-    <div className="relative px-4 pt-16 pb-20 sm:px-6 lg:py-32 lg:px-8 bg-ds-background">
-      <div className="relative mx-auto max-w-container" ref={section}>
+    <section className="pt-16 pb-20 lg:py-32">
+      <div className="mx-auto" ref={section}>
         <div className="text-center">
           <p className="mb-2 font-bold leading-tight uppercase text-ds-carnation sm:mb-4 sm:text-base tracking-h4">
             The Problem
@@ -43,13 +43,13 @@ const TheProblem = () => {
             end-user value.
           </p>
         </div>
-        <div className="grid max-w-md gap-8 mx-auto mt-20 lg:grid-cols-3 lg:max-w-none">
+        <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
           {problems.map((post) => (
             <ProblemItem {...post} key={post.title} />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

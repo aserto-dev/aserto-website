@@ -31,10 +31,7 @@ const solutions: React.ComponentPropsWithoutRef<typeof SolutionItem>[] = [
 const TheSolution = () => {
   const [section] = useFadeInBottom()
   return (
-    <div
-      className="relative py-32 overflow-hidden sm:space-y-0 bg-ds-background"
-      ref={section}
-    >
+    <section className="py-32" ref={section}>
       <div className="px-4 mb-24 text-center sm:px-0">
         <p className="mb-2 font-bold leading-tight uppercase text-ds-accent sm:mb-4 sm:text-base tracking-h4">
           THE SOLUTION
@@ -54,7 +51,7 @@ const TheSolution = () => {
           key={feature.title}
         />
       ))}
-    </div>
+    </section>
   )
 }
 

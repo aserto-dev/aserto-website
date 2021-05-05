@@ -1,49 +1,37 @@
-import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
-import gsap from 'gsap'
 
 // Primitives
 import CustomHead from 'components/primitives/custom-head'
 
 // Sections
-import TheSolution from 'components/sections/homepage/the-solution'
-import TheProblem from 'components/sections/homepage/the-problem'
 import Hero from 'components/sections/homepage/hero'
+import TheProblem from 'components/sections/homepage/the-problem'
+import TheSolution from 'components/sections/homepage/the-solution'
 
-// Constants
-import { DURATION } from 'lib/gsap'
+import PageLayout from 'components/layout/page'
 
 // Dynamic Imports
-const NewsletterSection = dynamic(
-  () => import('../components/sections/tailwind/newsletter'),
-  { ssr: false }
-)
-
-const FooterSection = dynamic(
-  () => import('../components/sections/tailwind/footer'),
+const Newsletter = dynamic(
+  () => import('../components/sections/homepage/newsletter'),
   { ssr: false }
 )
 
 const HomePage = () => {
-  const main = useRef(null)
-
-  useEffect(() => {
-    if (!main.current) return
-    gsap.to(main.current, {
-      delay: DURATION / 3,
-      autoAlpha: 1
-    })
-  }, [main])
-
   return (
-    <main ref={main} style={{ opacity: 0 }}>
+    <PageLayout
+      contain
+      headProps={{
+        title: 'Aserto',
+        description: 'Description',
+        image: 'images/og.png'
+      }}
+    >
       <CustomHead />
       <Hero />
       <TheProblem />
       <TheSolution />
-      <NewsletterSection />
-      <FooterSection />
-    </main>
+      <Newsletter />
+    </PageLayout>
   )
 }
 

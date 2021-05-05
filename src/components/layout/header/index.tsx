@@ -1,7 +1,7 @@
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
 import Logo from 'components/primitives/logo'
-import Container from './container'
+import Container from '../container'
 
 const Header = () => {
   return (
