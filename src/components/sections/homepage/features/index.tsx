@@ -113,8 +113,8 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
 const Features = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="py-32">
-      <div className="px-4 mb-24 text-center sm:px-0" ref={section}>
+    <section className="py-32" ref={section}>
+      <div className="px-4 mb-24 text-center sm:px-0">
         <p className="mb-2 font-bold leading-tight uppercase text-ds-accent sm:mb-4 sm:text-base tracking-h4">
           SUBTITLE GOES HERE
         </p>
@@ -124,10 +124,10 @@ const Features = () => {
       </div>
       <Comparison />
       <div className="relative grid gap-8 mx-auto mt-20 lg:grid-cols-3">
-        {features.map((feature) => (
+        {features.map((feature, i) => (
           <FeatureItem
             {...feature}
-            key={feature.category}
+            key={`${feature.category}-${i}`}
             display={feature.category !== 'realTime' ? false : true}
           />
         ))}

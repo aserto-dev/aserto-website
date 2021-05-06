@@ -10,6 +10,7 @@ import TheSolution from 'components/sections/homepage/the-solution'
 
 import PageLayout from 'components/layout/page'
 import Features from 'components/sections/homepage/features'
+import Testimonials from 'components/sections/homepage/testimonials'
 
 // Dynamic Imports
 const Newsletter = dynamic(
@@ -32,6 +33,7 @@ const HomePage = () => {
       <TheProblem />
       <TheSolution />
       <Features />
+      <Testimonials />
       <Newsletter />
     </PageLayout>
   )
