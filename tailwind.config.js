@@ -7,6 +7,8 @@ module.exports = {
         ds: {
           accent: '#277F82',
           background: '#141414',
+          black: '#1E1E1E',
+          'black-light': '#2A2A2A',
           blog: '#0A0A0C',
           carnation: '#FD555D',
           charcoal: '#050520',

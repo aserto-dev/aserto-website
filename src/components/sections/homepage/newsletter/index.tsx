@@ -1,9 +1,18 @@
 import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+
+// Hooks
 import useSubscribe from 'hooks/use-subscribe'
-import gsap from 'gsap/all'
 import { useFadeInBottom } from 'hooks/use-gsap'
+
+// Primitives
 import Button from 'components/primitives/button'
+
+// Constants
 import { DURATION } from 'lib/gsap'
+
+import s from './newsletter.module.css'
+import clsx from 'clsx'
 
 const NewsletterSection = () => {
   const thanksRef = useRef<HTMLHeadingElement>(null)
@@ -38,7 +47,12 @@ const NewsletterSection = () => {
 
   return (
     <section className="bg-ds-background" id="newsletter" ref={section}>
-      <div className="px-6 py-6 overflow-hidden rounded-lg bg-gradient-to-r from-ds-accent to-ds-saphire md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between">
+      <div
+        className={clsx(
+          'px-6 py-6 overflow-hidden rounded-lg md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between',
+          s.background
+        )}
+      >
         <h2
           style={{
             visibility: 'hidden',
@@ -50,7 +64,7 @@ const NewsletterSection = () => {
         >
           Thanks for signing up! Expect to hear from us soon.
         </h2>
-        <div className="w-full lg:w-0 lg:flex-1" ref={contentRef}>
+        <div className="w-6/12" ref={contentRef}>
           <h2 className="text-xl tracking-normal text-white sm:text-4.5xl">
             Sign up for early access
           </h2>
@@ -58,19 +72,19 @@ const NewsletterSection = () => {
             Subheading (TBD)
           </p>
         </div>
-        <div ref={formRef} className="mt-8 sm:w-full lg:max-w-md lg:mt-0">
-          <form className="relative pb-12 sm:pb-6 sm:flex" onSubmit={onSubmit}>
+        <div ref={formRef} className="flex justify-end w-6/12 mt-8 lg:mt-0">
+          <form className="relative w-full sm:flex" onSubmit={onSubmit}>
             <label htmlFor={inputProps.id} className="sr-only">
               Email
             </label>
             <input
               {...inputProps}
-              className="w-full px-5 py-2 placeholder-gray-400 transition-shadow border-white rounded-md sm:py-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-indigo-700 focus:ring-white"
+              className="w-6/12 px-5 py-2 placeholder-gray-400 transition-shadow rounded-md border-ds-black-light bg-ds-black sm:py-0 focus:outline-none focus:border-ds-gray-3"
             />
             <Button
               size="md"
               type="submit"
-              className="w-full mt-4 ml-0 sm:w-2/4 sm:ml-4 sm:mt-0"
+              className="mt-4 ml-0 sm:ml-4 sm:mt-0"
             >
               {status ? (
                 status === 'loading' ? (
@@ -126,7 +140,7 @@ const NewsletterSection = () => {
                   </svg>
                 )
               ) : (
-                'Let’s go'
+                'Request early access'
               )}
             </Button>
           </form>
