@@ -4,106 +4,106 @@ import FeatureItem from './feature-item'
 
 const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description:
       'Works with (and normalizes attributes from) any identity provider.'
   },
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description: 'Applies zero-trust security principles, secure by default.'
   },
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description:
       'Opinionated authorization framework that covers 80% of what you need, out of the box.'
   },
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description:
       'Enterprise admins can customize to their needs without involving your dev team.'
   },
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description:
       'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
   },
   {
-    category: 'real-time',
+    category: 'realTime',
     icon: '/images/features/001.svg',
     description:
       'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
       'Works with (and normalizes attributes from) any identity provider.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description: 'Applies zero-trust security principles, secure by default.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
       'Opinionated authorization framework that covers 80% of what you need, out of the box.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
       'Enterprise admins can customize to their needs without involving your dev team.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
       'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
   },
   {
-    category: 'fine-grained',
+    category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
       'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
       'Works with (and normalizes attributes from) any identity provider.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description: 'Applies zero-trust security principles, secure by default.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
       'Opinionated authorization framework that covers 80% of what you need, out of the box.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
       'Enterprise admins can customize to their needs without involving your dev team.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
       'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
   },
   {
-    category: 'cloud-native',
+    category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
       'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
@@ -113,8 +113,8 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
 const Features = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="py-32" ref={section}>
-      <div className="px-4 mb-24 text-center sm:px-0">
+    <section className="py-32">
+      <div className="px-4 mb-24 text-center sm:px-0" ref={section}>
         <p className="mb-2 font-bold leading-tight uppercase text-ds-accent sm:mb-4 sm:text-base tracking-h4">
           SUBTITLE GOES HERE
         </p>
@@ -123,9 +123,13 @@ const Features = () => {
         </h2>
       </div>
       <Comparison />
-      <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
+      <div className="relative grid gap-8 mx-auto mt-20 lg:grid-cols-3">
         {features.map((feature) => (
-          <FeatureItem {...feature} key={feature.category} />
+          <FeatureItem
+            {...feature}
+            key={feature.category}
+            display={feature.category !== 'realTime' ? false : true}
+          />
         ))}
       </div>
     </section>

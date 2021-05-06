@@ -1,58 +1,68 @@
-import { useState } from 'react'
-// import Image from 'next/image'
+import { useCallback, useEffect, useState } from 'react'
 import clsx from 'clsx'
-// import gsap from 'gsap'
-
-// import { DURATION } from 'lib/gsap'
+import gsap from 'gsap'
+import { Flip } from 'gsap/dist/Flip'
+import { DURATION } from 'lib/gsap'
 
 const Comparison = () => {
   const [isToggled, setIsToggled] = useState('real-time')
-  // const timelineRef = useRef<TimelineMax>()
+  const [filters, setFilters] = useState([])
+  const [items, setItems] = useState([])
 
-  // useEffect(() => {
-  //   const image1 = document.querySelectorAll('.image-1')
-  //   const image2 = document.querySelectorAll('.image-2')
+  useEffect(() => {
+    gsap.registerPlugin(Flip)
+    setFilters(gsap.utils.toArray('.filter'))
+    setItems(gsap.utils.toArray('.item'))
+  }, [])
 
-  //   timelineRef.current = gsap.timeline({
-  //     smoothChildTiming: true,
-  //     paused: true,
-  //     defaults: {
-  //       overwrite: true
-  //     }
-  //   })
+  useEffect(() => {
+    if (!filters.length || !items.length) return
+    //@ts-ignore
+    filters.forEach((btn) => btn.addEventListener('click', updateFilters))
+  }, [filters])
 
-  //   timelineRef.current.fromTo(
-  //     image2,
-  //     {
-  //       autoAlpha: 1
-  //     },
-  //     { ease: 'power1.inOut', duration: DURATION, autoAlpha: 0 }
-  //   )
-  //   timelineRef.current.fromTo(
-  //     image1,
-  //     {
-  //       autoAlpha: 0
-  //     },
-  //     { ease: 'power1.inOut', duration: DURATION, autoAlpha: 1 }
-  //   ),
-  //     '>-.25'
-  // }, [])
+  const updateFilters = useCallback(() => {
+    if (!items.length) return
+    const state = Flip.getState(items),
+      classes = filters
+        //@ts-ignore
+        .filter((checkbox) => checkbox.checked)
+        //@ts-ignore
+        .map((checkbox) => '.' + checkbox.id),
+      matches = classes.length ? gsap.utils.toArray(classes.join(',')) : classes
 
-  // useEffect(() => {
-  //   if (!timelineRef.current) return
-  //   if (isToggled) {
-  //     timelineRef.current.timeScale(2.23).play()
-  //   } else {
-  //     timelineRef.current.timeScale(2.23).reverse()
-  //   }
-  // }, [isToggled])
+    items.forEach(
+      (item) =>
+        //@ts-ignore
+        (item.style.display = matches.indexOf(item) === -1 ? 'none' : 'initial')
+    )
+
+    Flip.from(state, {
+      simple: true,
+      fade: true,
+      nested: true,
+      ease: 'power3.inOut',
+      onEnter: (elements) =>
+        gsap.fromTo(
+          elements,
+          { autoAlpha: 0, y: 30 },
+          { autoAlpha: 1, y: 0, duration: DURATION, stagger: 0.1 }
+        ),
+      onLeave: (elements) =>
+        gsap.to(elements, {
+          autoAlpha: 0,
+          duration: DURATION,
+          stagger: 0.2
+        })
+    })
+  }, [items])
 
   return (
     <div>
       <div className="flex justify-center mx-auto space-x-10 border-b border-white border-opacity-10 max-w-container">
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book cursor-pointer',
             {
               'text-white border-white': isToggled === 'real-time',
               'text-ds-gray-6 border-transparent': isToggled !== 'real-time'
@@ -60,11 +70,23 @@ const Comparison = () => {
           )}
           onClick={() => setIsToggled('real-time')}
         >
-          Real Time
+          <label
+            htmlFor="realTime"
+            className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+          >
+            <input
+              className="sr-only filter"
+              id="realTime"
+              name="features"
+              type="radio"
+            />{' '}
+            Real Time
+          </label>
         </button>
+
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
             {
               'text-white border-white': isToggled === 'fine-grained',
               'text-ds-gray-6 border-transparent': isToggled !== 'fine-grained'
@@ -72,11 +94,22 @@ const Comparison = () => {
           )}
           onClick={() => setIsToggled('fine-grained')}
         >
-          Fine Grained
+          <label
+            htmlFor="fineGrained"
+            className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+          >
+            <input
+              className="sr-only filter"
+              id="fineGrained"
+              name="features"
+              type="radio"
+            />{' '}
+            Fine Grained
+          </label>
         </button>
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
             {
               'text-white border-white': isToggled === 'cloud-native',
               'text-ds-gray-6 border-transparent': isToggled !== 'cloud-native'
@@ -84,7 +117,18 @@ const Comparison = () => {
           )}
           onClick={() => setIsToggled('cloud-native')}
         >
-          Cloud Native
+          <label
+            htmlFor="cloudNative"
+            className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+          >
+            <input
+              type="radio"
+              id="cloudNative"
+              className="sr-only filter"
+              name="features"
+            />{' '}
+            Cloud Native
+          </label>
         </button>
       </div>
     </div>
