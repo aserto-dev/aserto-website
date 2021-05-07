@@ -72,7 +72,7 @@ const SolutionItem = ({
                 x: moveX,
                 y: moveY
               }}
-              className="overflow-hidden rounded-xl"
+              className="overflow-hidden rounded"
             >
               {imageSrc && (
                 <Image src={imageSrc} alt={imageAlt} width={488} height={511} />

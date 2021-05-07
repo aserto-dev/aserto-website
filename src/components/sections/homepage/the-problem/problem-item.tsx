@@ -7,7 +7,7 @@ type Props = {
 }
 
 const BlogPost = ({ image, title, description }: Props) => (
-  <div className="flex flex-col overflow-hidden border rounded-2xl border-aserto-grey-10">
+  <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">
     <Image
       src={image}
       alt="Blog post cover"

@@ -5,6 +5,7 @@ import CustomHead from 'components/primitives/custom-head'
 import PageLayout from 'components/layout/page'
 import Hero from 'components/sections/blog/hero'
 import MainPost from 'components/sections/blog/main-post'
+import Posts from 'components/sections/blog/posts'
 
 // Sections
 
@@ -21,6 +22,7 @@ const Blog = () => {
       <CustomHead />
       <Hero />
       <MainPost />
+      <Posts />
     </PageLayout>
   )
 }

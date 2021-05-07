@@ -15,12 +15,13 @@ const MainPost = () => {
       className={clsx('relative mx-auto mb-32 text-white', s.background)}
       ref={ref}
     >
-      <div className="relative z-10 border bg-aserto-black rounded-2xl border-aserto-grey-10">
+      <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
         <div>
           <Image
             src="/images/blog/main-blog.png"
             width="1216"
             height="381"
+            objectFit="cover"
             layout="responsive"
           />
         </div>
