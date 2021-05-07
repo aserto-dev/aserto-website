@@ -1,16 +1,30 @@
-import Link from 'components/primitives/link'
 import { useMemo } from 'react'
+
+// Hooks
+import { useFadeInBottom } from 'hooks/use-gsap'
+
+// Primitives
+import Link from 'components/primitives/link'
+
+// Layout
 import Container from '../container'
 
-const FooterSection = () => {
+// Icons
+import IconLinkedin from 'icons/linkedin.svg'
+import IconMedium from 'icons/medium.svg'
+import IconTwitter from 'icons/twitter.svg'
+import Logo from 'icons/logo-footer.svg'
+
+const Footer = () => {
+  const [ref] = useFadeInBottom()
   const year = useMemo(() => {
     return new Date().getUTCFullYear()
   }, [])
 
   return (
     <footer className="bg-ds-background">
-      <Container className="pt-14">
-        <div className="grid gap-8 mx-auto lg:grid-cols-5">
+      <Container className="pb-10 pt-14">
+        <div className="grid gap-8 pb-20 mx-auto lg:grid-cols-5" ref={ref}>
           <div>
             <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
               Product
@@ -167,20 +181,35 @@ const FooterSection = () => {
               </li>
             </ul>
           </div>
-          <ul>
-            <li>
-              <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
-                Social
-              </p>
-            </li>
-          </ul>
+          <div>
+            <ul className="flex items-center space-x-6">
+              <li>
+                <Link href="/">
+                  <IconTwitter />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <IconMedium />
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <IconLinkedin />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p className="text-base text-center sm:mt-8 text-ds-gray font-book">
-          &copy; {year} Aserto, Inc. All rights reserved.
-        </p>
+        <div>
+          <Logo />
+          <p className="mt-6 text-base text-white font-book">
+            &copy; {year} Aserto, Inc. All rights reserved.
+          </p>
+        </div>
       </Container>
     </footer>
   )
 }
 
-export default FooterSection
+export default Footer
