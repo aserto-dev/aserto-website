@@ -1,27 +1,27 @@
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
-import Container from '../container'
 
-import Logo from 'icons/logo-footer.svg'
+import Logo from 'icons/logo-header.svg'
 
 const Header = () => {
   return (
-    <header>
-      <Container>
-        <div className="flex items-center justify-between py-14">
+    <header className="sticky px-6 py-3 bg-ds-black shadow-header">
+      <div className="flex items-center justify-between">
+        <nav className="flex items-center space-x-11">
           <Link href="/">
             <Logo />
           </Link>
-          <nav className="space-x-11">
-            <Link variant="nav" href="/blog">
-              Blog
-            </Link>
-            <Button as={Link} href="#" variant="primary">
-              Get early access
-            </Button>
-          </nav>
-        </div>
-      </Container>
+          <Link
+            className="text-base font-medium font-book text-ds-gray-7"
+            href="/blog"
+          >
+            Blog
+          </Link>
+        </nav>
+        <Button as={Link} href="#" variant="primary" size="sm">
+          Get early access
+        </Button>
+      </div>
     </header>
   )
 }

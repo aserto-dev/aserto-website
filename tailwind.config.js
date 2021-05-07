@@ -16,6 +16,7 @@ module.exports = {
           gray: '#999999',
           'gray-3': '#333333',
           'gray-6': '#666666',
+          'gray-7': '#A0A0A0',
           indigo: '#585be0',
           pewter: '#81839F',
           'pewter-text': '#6f708a',
@@ -33,6 +34,7 @@ module.exports = {
       },
       boxShadow: {
         input: '0px 0px 0px 9px rgba(129, 131, 159, 0.1)',
+        header: '0px 1px 0px rgba(65, 65, 65, 1)',
         card:
           '0px 10px 10px rgba(74,74,139,0.04), 0px 20px 25px rgba(74,74,139,0.1)',
         author: '0px 0px 0px 8px rgba(129, 131, 159, 0.08)'
