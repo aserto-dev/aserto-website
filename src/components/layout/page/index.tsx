@@ -1,12 +1,11 @@
-import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
-import gsap from 'gsap'
+import { motion } from 'framer-motion'
 
 // Primitives
 import CustomHead from 'components/primitives/custom-head'
 
 // Layout
-// import Header from '../header'
+import Header from '../header'
 import Container from '../container'
 
 // Constants
@@ -28,24 +27,39 @@ interface Props {
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
 }
 
+const easing = [0.175, 0.85, 0.42, 0.96]
+
+const transitionVariants = {
+  initial: { y: 30, opacity: 0 },
+  enter: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: DURATION, ease: easing, staggerChildren: 0.15 }
+  },
+  exit: {
+    y: 30,
+    opacity: 0,
+    transition: {
+      duration: DURATION * 0.8,
+      ease: easing
+    }
+  }
+}
+
 const PageLayout = ({ children, contain, headProps }: Props) => {
-  const mainRef = useRef(null)
-
-  useEffect(() => {
-    if (!mainRef.current) return
-    gsap.to(mainRef.current, {
-      delay: DURATION / 3,
-      autoAlpha: 1
-    })
-  }, [])
-
   return (
     <>
       <CustomHead {...headProps} />
-      {/* <Header /> */}
-      <main ref={mainRef} className="opacity-0 bg-ds-background">
+      <Header />
+      <motion.main
+        className="opacity-0 bg-ds-background"
+        animate="enter"
+        exit="exit"
+        initial="initial"
+        variants={transitionVariants}
+      >
         {contain ? <Container>{children}</Container> : children}
-      </main>
+      </motion.main>
       <Newsletter />
       <Footer />
     </>
