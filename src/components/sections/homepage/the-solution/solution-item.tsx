@@ -1,6 +1,8 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { useCallback } from 'react'
 
 type Props = {
   tag: string
@@ -20,6 +22,21 @@ const SolutionItem = ({
   title
 }: Props) => {
   const [section] = useFadeInBottom()
+  const x = useMotionValue(400)
+  const y = useMotionValue(400)
+
+  const rotateX = useTransform(y, [0, 400], [3, -3])
+  const rotateY = useTransform(x, [0, 400], [-3, 3])
+
+  const moveX = useTransform(x, [-800, 800], [8, -8])
+  const moveY = useTransform(y, [-800, 800], [8, -8])
+
+  const handleMouse = useCallback((event) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+
+    x.set(event.clientX - rect.left)
+    y.set(event.clientY - rect.top)
+  }, [])
   return (
     <div className="relative">
       <div
@@ -43,13 +60,25 @@ const SolutionItem = ({
             'col-start-1': isInverted
           })}
         >
-          <div className="relative w-full">
-            <div className="overflow-hidden rounded-xl">
+          <motion.div
+            style={{ perspective: 2000 }}
+            onMouseMove={handleMouse}
+            className="relative w-full"
+          >
+            <motion.div
+              style={{
+                rotateX: rotateX,
+                rotateY: rotateY,
+                x: moveX,
+                y: moveY
+              }}
+              className="overflow-hidden rounded-xl"
+            >
               {imageSrc && (
                 <Image src={imageSrc} alt={imageAlt} width={488} height={511} />
               )}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
