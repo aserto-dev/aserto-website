@@ -59,13 +59,13 @@ const Comparison = () => {
 
   return (
     <div>
-      <div className="flex justify-center mx-auto space-x-10 border-b border-white border-opacity-10 max-w-container">
+      <div className="flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
         <button
           className={clsx(
-            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book cursor-pointer',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
             {
-              'text-white border-white': isToggled === 'real-time',
-              'text-ds-gray-6 border-transparent': isToggled !== 'real-time'
+              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'real-time',
+              'text-aserto-grey-60 border-transparent': isToggled !== 'real-time'
             }
           )}
           onClick={() => setIsToggled('real-time')}
@@ -86,10 +86,10 @@ const Comparison = () => {
 
         <button
           className={clsx(
-            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-white border-white': isToggled === 'fine-grained',
-              'text-ds-gray-6 border-transparent': isToggled !== 'fine-grained'
+              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'fine-grained',
+              'text-aserto-grey-60 border-transparent': isToggled !== 'fine-grained'
             }
           )}
           onClick={() => setIsToggled('fine-grained')}
@@ -109,10 +109,10 @@ const Comparison = () => {
         </button>
         <button
           className={clsx(
-            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-white border-white': isToggled === 'cloud-native',
-              'text-ds-gray-6 border-transparent': isToggled !== 'cloud-native'
+              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'cloud-native',
+              'text-aserto-grey-60 border-transparent': isToggled !== 'cloud-native'
             }
           )}
           onClick={() => setIsToggled('cloud-native')}

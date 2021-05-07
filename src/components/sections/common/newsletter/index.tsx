@@ -48,7 +48,7 @@ const NewsletterSection = () => {
   }, [status])
 
   return (
-    <section className="mb-32 bg-ds-background" id="newsletter" ref={section}>
+    <section className="mb-32 bg-aserto-black" id="newsletter" ref={section}>
       <Container>
         <div
           className={clsx(
@@ -62,16 +62,16 @@ const NewsletterSection = () => {
               opacity: 0,
               position: 'absolute'
             }}
-            className="text-xl sm:text-2xl font-extrabold tracking-normal text-white sm:text-2.5xl font-book text-center w-full"
+            className="text-xl sm:text-2xl font-extrabold tracking-normal text-white sm:text-2.5xl font-roboto text-center w-full"
             ref={thanksRef}
           >
             Thanks for signing up! Expect to hear from us soon.
           </h2>
           <div className="w-6/12" ref={contentRef}>
-            <h2 className="text-xl tracking-normal text-white sm:text-4.5xl">
+            <h2 className="text-xl tracking-normal text-aserto-grey-90 sm:text-4.5xl">
               Sign up for early access
             </h2>
-            <p className="max-w-3xl mt-4 text-lg text-ds-gray font-book">
+            <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
               Subheading (TBD)
             </p>
           </div>
@@ -84,8 +84,9 @@ const NewsletterSection = () => {
                 Email
               </label>
               <input
+                placeholder="Enter your email..."
                 id="email"
-                className="w-6/12 px-5 py-2 placeholder-gray-400 transition-shadow rounded-md border-ds-black-light bg-ds-black sm:py-0 focus:outline-none focus:border-ds-gray-3"
+                className="w-6/12 px-5 py-2 transition-shadow rounded-sm placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black sm:py-0 focus:outline-none focus:border-aserto-grey-20"
               />
               <Button
                 size="md"

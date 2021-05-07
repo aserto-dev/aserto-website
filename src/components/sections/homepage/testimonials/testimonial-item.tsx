@@ -19,10 +19,10 @@ const TestimonialItem = ({
   const [section] = useFadeInBottom()
   return (
     <div
-      className="relative w-4/12 p-10 mx-auto overflow-hidden border border-ds-gray-3 rounded-2xl"
+      className="relative w-4/12 p-10 mx-auto overflow-hidden border border-aserto-grey-10 rounded-2xl"
       ref={section}
     >
-      <p className="mb-12 text-2xl leading-relaxed text-white font-book">
+      <p className="mb-12 text-2xl leading-relaxed text-white font-roboto">
         {quote}
       </p>
       <div className="flex items-center justify-between w-full">

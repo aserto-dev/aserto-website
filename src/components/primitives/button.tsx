@@ -47,7 +47,7 @@ const Button: PolymorphicForwardRefExoticComponent<
             ? className
             : clsx(
                 className,
-                'relative group bg-ds-accent transition-colors border-2 duration-150 rounded-lg text-white inline-flex items-center justify-center overflow-hidden',
+                'relative group bg-aserto-lochivar-100 transition-colors border-2 duration-150 rounded-lg text-white inline-flex items-center justify-center overflow-hidden font-roboto font-medium',
                 'hover:bg-white',
                 swx(size, {
                   md: 'h-11 sm:h-12 px-8 text-lg',
@@ -55,7 +55,8 @@ const Button: PolymorphicForwardRefExoticComponent<
                   sm: 'h-10 px-5 text-sm'
                 }),
                 swx(variant, {
-                  primary: 'hover:text-ds-accent border-ds-accent'
+                  primary:
+                    'hover:text-aserto-lochivar-100 border-aserto-lochivar-100'
                 })
               )
         }

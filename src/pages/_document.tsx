@@ -42,11 +42,11 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="style"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
           />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             media="print"
             //@ts-ignore
             onLoad="this.media='all'"
@@ -54,11 +54,11 @@ class MyDocument extends Document {
           <noscript>
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             />
           </noscript>
         </Head>
-        <body className="bg-ds-background">
+        <body className="bg-aserto-black">
           <Main />
           <NextScript />
         </body>

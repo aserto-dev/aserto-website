@@ -15,7 +15,7 @@ const MainPost = () => {
       className={clsx('relative mx-auto mb-32 text-white', s.background)}
       ref={ref}
     >
-      <div className="relative z-10 border bg-ds-blog rounded-2xl border-ds-gray-3">
+      <div className="relative z-10 border bg-aserto-black rounded-2xl border-aserto-grey-10">
         <div>
           <Image
             src="/images/blog/main-blog.png"
@@ -25,10 +25,10 @@ const MainPost = () => {
           />
         </div>
         <div className="p-9">
-          <h3 className="text-2xl leading-none font-book mb-7">
+          <h3 className="text-2xl leading-none font-roboto mb-7">
             OAuth2 Scopes are NOT Permissions
           </h3>
-          <p className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-ds-gray">
+          <p className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-60">
             OAuth2 scopes were never intended to be an authorization mechanism,
             and indeed are a really bad idea when used as a substitute for a
             real authorization architecture.

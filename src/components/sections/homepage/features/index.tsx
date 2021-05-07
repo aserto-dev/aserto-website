@@ -115,10 +115,10 @@ const Features = () => {
   return (
     <section className="py-32" ref={section}>
       <div className="px-4 mb-24 text-center sm:px-0">
-        <p className="mb-2 font-bold leading-tight uppercase text-ds-accent sm:mb-4 sm:text-base tracking-h4">
+        <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
           SUBTITLE GOES HERE
         </p>
-        <h2 className="mb-2 text-3xl tracking-tight text-white sm:mb-10 sm:text-5xl">
+        <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
           Features
         </h2>
       </div>

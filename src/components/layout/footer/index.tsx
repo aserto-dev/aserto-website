@@ -22,17 +22,17 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="bg-ds-background">
+    <footer className="bg-aserto-black">
       <Container className="pb-10 pt-14">
         <div className="grid gap-8 pb-20 mx-auto lg:grid-cols-5" ref={ref}>
           <div>
-            <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
+            <p className="font-bold leading-normal tracking-wide text-white uppercase font-roboto">
               Product
             </p>
             <ul className="mt-8 space-y-6">
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Benefits
@@ -40,7 +40,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Features
@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   FAQ
@@ -56,7 +56,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Docs
@@ -64,7 +64,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Support
@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Status
@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Aserto OneBox
@@ -89,13 +89,13 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
+            <p className="font-bold leading-normal tracking-wide text-white uppercase font-roboto">
               Community
             </p>
             <ul className="mt-8 space-y-6">
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   GitHub
@@ -103,7 +103,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Slack
@@ -112,13 +112,13 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
+            <p className="font-bold leading-normal tracking-wide text-white uppercase font-roboto">
               Company
             </p>
             <ul className="mt-8 space-y-6">
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/blog"
                 >
                   Blog
@@ -126,7 +126,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   About us
@@ -134,7 +134,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Careers
@@ -142,7 +142,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Press
@@ -150,7 +150,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Contact us
@@ -159,13 +159,13 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className="font-bold leading-normal tracking-wide text-white uppercase font-book">
+            <p className="font-bold leading-normal tracking-wide text-white uppercase font-roboto">
               Legal
             </p>
             <ul className="mt-8 space-y-6">
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Terms of Service
@@ -173,7 +173,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-white font-book"
+                  className="text-sm leading-normal text-white font-roboto"
                   href="/"
                 >
                   Privacy Policy
@@ -209,7 +209,7 @@ const Footer = () => {
             <span className="sr-only">Aserto</span>
             <Logo />
           </Link>
-          <p className="mt-6 text-base text-white font-book">
+          <p className="mt-6 text-base text-white font-roboto">
             &copy; {year} Aserto, Inc. All rights reserved.
           </p>
         </div>

@@ -49,13 +49,13 @@ const Comparison = () => {
 
   return (
     <div>
-      <div className="flex justify-center mx-auto space-x-10 border-b border-white border-opacity-10 max-w-container">
+      <div className="flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-white border-white': !isToggled,
-              'text-ds-gray-6 border-transparent': isToggled
+              'text-aserto-grey-90 border-aserto-grey-90': !isToggled,
+              'text-aserto-grey-30 border-transparent': isToggled
             }
           )}
           onClick={() => setIsToggled(false)}
@@ -64,10 +64,10 @@ const Comparison = () => {
         </button>
         <button
           className={clsx(
-            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-book',
+            'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-ds-carnation border-ds-carnation': isToggled,
-              'text-ds-gray-6 border-transparent': !isToggled
+              'text-aserto-grey-90 border-aserto-grey-90': isToggled,
+              'text-aserto-grey-60 border-transparent': !isToggled
             }
           )}
           onClick={() => setIsToggled(true)}

@@ -17,10 +17,10 @@ const Testimonials = () => {
   return (
     <section className="py-32 pb-44" ref={section}>
       <div className="px-4 text-center mb-28 sm:px-0">
-        <p className="mb-2 font-bold leading-tight uppercase text-ds-accent sm:mb-4 sm:text-base tracking-h4">
+        <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
           section label (tbd)
         </p>
-        <h2 className="mb-2 text-3xl tracking-tight text-white sm:mb-10 sm:text-5xl">
+        <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
           SECTION TITLE (TBD)
         </h2>
       </div>

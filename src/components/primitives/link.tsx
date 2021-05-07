@@ -41,7 +41,7 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
             variant === 'unstyled'
               ? className
               : clsx(className, 'whitespace-nowrap text-primary', {
-                  'text-xl text-ds-pewter font-bold': variant === 'nav'
+                  'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
                 })
           }
         >

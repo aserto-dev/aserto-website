@@ -12,10 +12,10 @@ const Hero = () => {
   return (
     <section className="relative mx-auto pt-28">
       <div className="text-center" ref={ref}>
-        <h1 className="text-5xl leading-none tracking-tight text-white md:text-6xl xl:text-7.5xl">
+        <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           Welcome to modern <br className="hidden sm:inline" /> authorization.
         </h1>
-        <p className="mx-auto mt-5 text-base md:leading-tight text-ds-gray sm:text-lg md:mt-10 md:text-2xl md:max-w-2xl font-book">
+        <p className="mx-auto mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl md:max-w-2xl font-roboto">
           Aserto is a cloud-native authorization service that provides
           fine-grained, real-time access control for your SaaS application.
         </p>
