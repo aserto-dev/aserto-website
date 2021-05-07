@@ -12,6 +12,12 @@ import Container from '../container'
 // Constants
 import { DURATION } from 'lib/gsap'
 
+// Dynamic Imports
+const Newsletter = dynamic(
+  () => import('components/sections/homepage/newsletter'),
+  { ssr: false }
+)
+
 const Footer = dynamic(() => import('../footer'), {
   ssr: false
 })
@@ -31,15 +37,16 @@ const PageLayout = ({ children, contain, headProps }: Props) => {
       delay: DURATION / 3,
       autoAlpha: 1
     })
-  }, [mainRef])
-  
+  }, [])
+
   return (
     <>
       <CustomHead {...headProps} />
       {/* <Header /> */}
-      <main ref={mainRef} className="bg-ds-background">
+      <main ref={mainRef} className="opacity-0 bg-ds-background">
         {contain ? <Container>{children}</Container> : children}
       </main>
+      <Newsletter />
       <Footer />
     </>
   )

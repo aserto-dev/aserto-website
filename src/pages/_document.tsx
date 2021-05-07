@@ -58,7 +58,7 @@ class MyDocument extends Document {
             />
           </noscript>
         </Head>
-        <body>
+        <body className="bg-ds-background">
           <Main />
           <NextScript />
         </body>

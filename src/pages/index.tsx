@@ -1,22 +1,15 @@
-import dynamic from 'next/dynamic'
-
 // Primitives
 import CustomHead from 'components/primitives/custom-head'
 
+// Layout
+import PageLayout from 'components/layout/page'
+
 // Sections
+import Features from 'components/sections/homepage/features'
 import Hero from 'components/sections/homepage/hero'
+import Testimonials from 'components/sections/homepage/testimonials'
 import TheProblem from 'components/sections/homepage/the-problem'
 import TheSolution from 'components/sections/homepage/the-solution'
-
-import PageLayout from 'components/layout/page'
-import Features from 'components/sections/homepage/features'
-import Testimonials from 'components/sections/homepage/testimonials'
-
-// Dynamic Imports
-const Newsletter = dynamic(
-  () => import('../components/sections/homepage/newsletter'),
-  { ssr: false }
-)
 
 const HomePage = () => {
   return (
@@ -34,7 +27,6 @@ const HomePage = () => {
       <TheSolution />
       <Features />
       <Testimonials />
-      <Newsletter />
     </PageLayout>
   )
 }
