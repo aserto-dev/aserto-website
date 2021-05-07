@@ -17,3 +17,8 @@ body {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}

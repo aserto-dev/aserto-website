@@ -119,7 +119,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-white font-book"
-                  href="/"
+                  href="/blog"
                 >
                   Blog
                 </Link>
@@ -185,16 +185,19 @@ const Footer = () => {
             <ul className="flex items-center space-x-6">
               <li>
                 <Link href="/">
+                  <span className="sr-only">Twitter</span>
                   <IconTwitter />
                 </Link>
               </li>
               <li>
                 <Link href="/">
+                  <span className="sr-only">Medium</span>
                   <IconMedium />
                 </Link>
               </li>
               <li>
                 <Link href="/">
+                  <span className="sr-only">Linkedin</span>
                   <IconLinkedin />
                 </Link>
               </li>
@@ -202,7 +205,10 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <Logo />
+          <Link href="/">
+            <span className="sr-only">Aserto</span>
+            <Logo />
+          </Link>
           <p className="mt-6 text-base text-white font-book">
             &copy; {year} Aserto, Inc. All rights reserved.
           </p>

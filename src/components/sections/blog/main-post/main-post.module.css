@@ -1,0 +1,16 @@
+.background:after {
+  position: absolute;
+  top: -40%;
+  left: -20%;
+
+  z-index: 5;
+
+  background-image: url('/images/blog/bg-gradient.png');
+  background-repeat: no-repeat;
+
+  width: 140%;
+
+  height: 190%;
+
+  content: '';
+}

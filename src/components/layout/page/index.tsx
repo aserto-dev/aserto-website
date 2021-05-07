@@ -14,7 +14,7 @@ import { DURATION } from 'lib/gsap'
 
 // Dynamic Imports
 const Newsletter = dynamic(
-  () => import('components/sections/homepage/newsletter'),
+  () => import('components/sections/common/newsletter'),
   { ssr: false }
 )
 
