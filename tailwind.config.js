@@ -120,6 +120,7 @@ module.exports = {
         container: '78rem'
       },
       spacing: {
+        14.25: '3.625rem',
         14.5: '3.75rem',
         16.5: '4.5rem'
       },

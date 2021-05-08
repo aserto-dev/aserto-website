@@ -19,7 +19,7 @@ const Header = () => {
           </Link>
         </nav>
         <Button as={Link} href="#" variant="primary" size="sm">
-          Get early access
+          Request Early Access
         </Button>
       </div>
     </header>

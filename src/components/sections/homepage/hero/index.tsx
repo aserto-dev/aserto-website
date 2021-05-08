@@ -10,8 +10,8 @@ const Hero = () => {
   const [ref] = useFadeInBottom()
 
   return (
-    <section className="relative mx-auto pt-28">
-      <div className="text-center" ref={ref}>
+    <section className="relative pt-24 mx-auto">
+      <div className="pt-3 text-center" ref={ref}>
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           Welcome to modern <br className="hidden sm:inline" /> authorization.
         </h1>
@@ -19,7 +19,7 @@ const Hero = () => {
           Aserto is a cloud-native authorization service that provides
           fine-grained, real-time access control for your SaaS application.
         </p>
-        <div className="mx-auto mt-4 mb-10 sm:mt-16 sm:mb-20">
+        <div className="mx-auto mt-4 mb-10 sm:mt-16 sm:mb-16">
           <Button>Request early access</Button>
         </div>
         <Comparison />

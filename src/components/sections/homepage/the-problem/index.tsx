@@ -28,7 +28,7 @@ const problems: React.ComponentPropsWithoutRef<typeof ProblemItem>[] = [
 const TheProblem = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-16 pb-20 lg:py-32">
+    <section className="pt-8 lg:py-12">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <p className="mb-2 font-bold leading-tight uppercase text-aserto-mojo-accent-20 sm:mb-4 sm:text-base tracking-h4">

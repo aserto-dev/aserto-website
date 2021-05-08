@@ -49,7 +49,7 @@ const Comparison = () => {
 
   return (
     <div>
-      <div className="flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
+      <div className="flex justify-center mx-auto mt-1 space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
         <button
           className={clsx(
             'text-sm sm:text-sm px-4 sm:px-8 font-bold uppercase py-2 sm:py-4 border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
