@@ -15,7 +15,7 @@ const testimonials: React.ComponentPropsWithoutRef<typeof TestimonialItem>[] = [
 const Testimonials = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="py-48 pb-44" ref={section}>
+    <section className="py-48 pb-80" ref={section}>
       <div className="px-4 text-center mb-28 sm:px-0">
         <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
           Feedback

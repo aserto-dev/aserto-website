@@ -40,9 +40,14 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
           className={
             variant === 'unstyled'
               ? className
-              : clsx(className, 'whitespace-nowrap text-primary', {
-                  'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
-                })
+              : clsx(
+                  className,
+                  'whitespace-nowrap text-primary transition-colors duration-150',
+                  'hover:text-aserto-grey-90',
+                  {
+                    'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
+                  }
+                )
           }
         >
           {children}
