@@ -5,11 +5,12 @@ import CustomHead from 'components/primitives/custom-head'
 import PageLayout from 'components/layout/page'
 
 // Sections
-import Hero from 'components/sections/about/hero'
-import Founders from 'components/sections/about/founders'
-import Team from 'components/sections/about/team'
-import Investors from 'components/sections/about/investors'
 import Advisors from 'components/sections/about/advisors'
+import Founders from 'components/sections/about/founders'
+import Hero from 'components/sections/about/hero'
+import Investors from 'components/sections/about/investors'
+import Team from 'components/sections/about/team'
+import Hiring from 'components/sections/about/hiring'
 
 const About = () => {
   return (
@@ -27,6 +28,7 @@ const About = () => {
       <Team />
       <Investors />
       <Advisors />
+      <Hiring />
     </PageLayout>
   )
 }

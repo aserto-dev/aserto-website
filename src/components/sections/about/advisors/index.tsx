@@ -82,7 +82,7 @@ const advisors: React.ComponentPropsWithoutRef<typeof AdvisorItem>[] = [
 const Advisors = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-0 pb-52">
+    <section className="p-0">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">

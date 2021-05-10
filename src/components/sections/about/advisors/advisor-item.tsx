@@ -5,10 +5,10 @@ import Link from 'components/primitives/link'
 import LinkedinIcon from 'icons/linkedin-bio.svg'
 
 type Props = {
+  company: string
   linkedin: string
   name: string
   position: string
-  company: string
 }
 
 const ProfileItem = ({ company, linkedin, name, position }: Props) => (
