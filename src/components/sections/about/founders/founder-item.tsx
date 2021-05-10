@@ -1,6 +1,8 @@
 import clsx from 'clsx'
-import Link from 'components/primitives/link'
 import Image from 'next/image'
+
+// Primitives
+import Link from 'components/primitives/link'
 
 // Icons
 import LinkedinIcon from 'icons/linkedin-bio.svg'

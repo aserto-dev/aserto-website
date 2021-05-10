@@ -7,7 +7,6 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 import IconQuote from 'icons/quote.svg'
 
 type Props = {
-  companyImageSrc: string
   companyName: string
   profileimageSrc: string
   profileName: string
@@ -15,7 +14,6 @@ type Props = {
 }
 
 const TestimonialItem = ({
-  companyImageSrc,
   companyName,
   profileimageSrc,
   profileName,

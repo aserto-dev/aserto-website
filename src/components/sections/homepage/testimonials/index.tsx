@@ -7,8 +7,7 @@ const testimonials: React.ComponentPropsWithoutRef<typeof TestimonialItem>[] = [
       '“A perfect opportunity for Packet. When we have spare capacity, we can sell it through Akash’s blockchain marketplace, ensuring complete utilization of our cloud servers.”',
     profileName: 'Jacob Smith',
     companyName: 'Company Name',
-    profileimageSrc: '/images/testimonials/testimonial-profile.png',
-    companyImageSrc: '/images/testimonials/company.svg'
+    profileimageSrc: '/images/testimonials/testimonial-profile.png'
   }
 ]
 
