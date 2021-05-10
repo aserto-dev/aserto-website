@@ -8,6 +8,7 @@ import PageLayout from 'components/layout/page'
 import Hero from 'components/sections/about/hero'
 import Founders from 'components/sections/about/founders'
 import Team from 'components/sections/about/team'
+import Investors from 'components/sections/about/investors'
 
 const About = () => {
   return (
@@ -23,6 +24,7 @@ const About = () => {
       <Hero />
       <Founders />
       <Team />
+      <Investors />
     </PageLayout>
   )
 }
