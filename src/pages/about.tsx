@@ -9,6 +9,7 @@ import Hero from 'components/sections/about/hero'
 import Founders from 'components/sections/about/founders'
 import Team from 'components/sections/about/team'
 import Investors from 'components/sections/about/investors'
+import Advisors from 'components/sections/about/advisors'
 
 const About = () => {
   return (
@@ -25,6 +26,7 @@ const About = () => {
       <Founders />
       <Team />
       <Investors />
+      <Advisors />
     </PageLayout>
   )
 }
