@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Link from 'components/primitives/link'
 import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Styles
@@ -10,24 +11,45 @@ const Hero = () => {
   return (
     <section className={clsx('relative pt-80 mx-auto pb-44', s.background)}>
       <div className="relative z-10 pt-3 text-center" ref={ref}>
-        <p className="mb-2 font-bold leading-tight uppercase text-aserto-plum-100 sm:mb-4 sm:text-base tracking-h4">
-          About Us
-        </p>
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           Authorization is broken
         </h1>
         <p className="w-full mx-auto mt-5 text-base text-left md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl sm:w-10/12 font-roboto">
-          At Aserto, we want modern SaaS applications to be as enjoyable for IT
-          to operate as they are for their core users to use. Today, the IT
-          experience for SaaS applications is a dog’s breakfast - each
-          application has to reinvent permissions, roles, authorization, and
-          audit trails - critical features, but ones that don’t differentiate
-          the application and are therefore often neglected, and incur a high
-          opportunity cost for developers. Worse, this wheel-reinvention creates
-          a fractured and frustrating experience for the IT staff that operate
-          these applications with inconsistent and incomplete controls and
-          permissions, resulting in misconfigurations, data leaks, and manual,
-          soul-crushing compliance audits.
+          At Aserto, we want to help every SaaS application become a great
+          enterprise application. Meeting the enterprise bar requires
+          fine-grained permissions, role- and attribute-based access control,
+          flexible and custom roles, integration with numerous enterprise
+          identity providers and directories, and complete authorization logs to
+          meet a growing list of data and privacy compliance standards.
+          <br />
+          <br />
+          Today, engineering teams have to invest considerable effort in
+          building, maintaining, and evolving a “table stakes” set of
+          capabilities that are tricky to get right, yet aren’t visible to the
+          end-user and don’t offer meaningful differentiation.
+          <br />
+          <br />
+          From the enterprise customer’s perspective, the IT teams that operate
+          these SaaS applications have to live in dozens (or hundreds) of
+          different permissions consoles - a fractured, error-prone, frustrating
+          experience resulting in misconfigurations, data leaks, and manual,
+          soul-crushing compliance audits. No wonder everyone we talk to feels
+          like <Link href="/">authorization is broken!</Link>
+          <br />
+          <br />
+          At Aserto, we want to address these pain points at the source: by
+          creating a simple, opinionated framework that engineers can use to
+          easily incorporate authorization into their applications.
+          <br />
+          <br />
+          Engineers win by integrating a modern, cloud-native service instead of
+          having to reinvent the wheel. SaaS vendors win by shortening sales
+          cycles with an enterprise-ready set of authorization capabilities,
+          satisfying the infamous “enterprise requirements spreadsheet”. IT
+          teams win by leveraging consistent, reusable authorization policies
+          across their applications. Compliance teams win by having
+          comprehensive authorization logs that help them easily meet audit
+          requirements.
         </p>
       </div>
     </section>

@@ -23,7 +23,7 @@ const FeatureItem = ({
       style={{ display: `${!display && 'none'}` }}
     >
       <Image src={icon} alt="feature" width={48} height={48} />
-      <p className="mt-3 text-lg leading-relaxed text-white sm:mt-6 font-roboto">
+      <p className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">
         {description}
       </p>
       <small className="sr-only">{category}</small>

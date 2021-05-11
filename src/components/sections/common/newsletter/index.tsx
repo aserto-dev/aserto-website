@@ -77,7 +77,7 @@ const NewsletterSection = () => {
           </div>
           <div ref={formRef} className="flex justify-end w-6/12 mt-8 lg:mt-0">
             <form
-              className="relative w-full sm:flex"
+              className="relative justify-end w-full sm:flex"
               onSubmit={() => alert('WIP FORM')}
             >
               <label htmlFor="email" className="sr-only">
@@ -147,7 +147,7 @@ const NewsletterSection = () => {
                     </svg>
                   )
                 ) : (
-                  'Request early access'
+                  'Let’s go!'
                 )}
               </Button>
             </form>

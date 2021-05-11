@@ -40,9 +40,11 @@ const TestimonialItem = ({
               width={80}
               height={80}
             />
-            <p className="ml-4 text-aserto-grey-60">
+            <p className="ml-4 font-bold text-aserto-grey-90">
               {profileName} <br />{' '}
-              <span className="text-aserto-lochivar-100">{companyName}</span>{' '}
+              <span className="font-normal text-aserto-grey-60">
+                {companyName}
+              </span>{' '}
             </p>
           </div>
         </div>

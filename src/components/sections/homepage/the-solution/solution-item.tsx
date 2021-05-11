@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { useCallback } from 'react'
 
 type Props = {
-  tag: string
   title: string
   description: string
   imageSrc?: string
@@ -18,7 +17,6 @@ const SolutionItem = ({
   imageAlt,
   imageSrc,
   isInverted,
-  tag,
   title
 }: Props) => {
   const [section] = useFadeInBottom()
@@ -47,9 +45,6 @@ const SolutionItem = ({
           <h2 className="mb-2 text-3xl text-aserto-grey-90 sm:text-4.5xl sm:mb-3 leading-none">
             {title}
           </h2>
-          <p className="text-sm leading-none text-aserto-grey-60 font-roboto sm:text-1.5xl">
-            {tag}
-          </p>
           <p className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">
             {description}
           </p>

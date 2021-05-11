@@ -8,9 +8,8 @@ import PageLayout from 'components/layout/page'
 import Advisors from 'components/sections/about/advisors'
 import Founders from 'components/sections/about/founders'
 import Hero from 'components/sections/about/hero'
-import Investors from 'components/sections/about/investors'
-import Team from 'components/sections/about/team'
 import Hiring from 'components/sections/about/hiring'
+import Investors from 'components/sections/about/investors'
 
 const About = () => {
   return (
@@ -25,7 +24,6 @@ const About = () => {
       <CustomHead />
       <Hero />
       <Founders />
-      <Team />
       <Investors />
       <Advisors />
       <Hiring />

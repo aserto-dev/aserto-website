@@ -10,77 +10,71 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
     category: 'realTime',
     icon: '/images/features/001.svg',
     description:
-      'Works with (and normalizes attributes from) any identity provider.'
-  },
-  {
-    category: 'realTime',
-    icon: '/images/features/001.svg',
-    description: 'Applies zero-trust security principles, secure by default.'
+      'Opinionated authorization framework that covers 80% of what it takes to build RBAC.'
   },
   {
     category: 'realTime',
     icon: '/images/features/001.svg',
     description:
-      'Opinionated authorization framework that covers 80% of what you need, out of the box.'
+      'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js'
   },
   {
     category: 'realTime',
     icon: '/images/features/001.svg',
     description:
-      'Enterprise admins can customize to their needs without involving your dev team.'
+      'Flexible deployment model - a hosted service, a local service, or a sidecar.'
+  },
+  {
+    category: 'realTime',
+    icon: '/images/features/001.svg',
+    description: 'Open source authorizer based on CNCF OPA project.'
   },
   {
     category: 'realTime',
     icon: '/images/features/001.svg',
     description:
-      'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
+      'Hosted solution offers rate-limited free tier for small scale apps, transparent pricing that grows along with your business.'
   },
   {
     category: 'realTime',
     icon: '/images/features/001.svg',
-    description:
-      'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
+    description: '-'
   },
   {
     category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
-      'Works with (and normalizes attributes from) any identity provider.'
-  },
-  {
-    category: 'fineGrained',
-    icon: '/images/features/002.svg',
-    description: 'Applies zero-trust security principles, secure by default.'
+      'Policy is stored and versioned in a repository, just like application and infrastructure code.'
   },
   {
     category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
-      'Opinionated authorization framework that covers 80% of what you need, out of the box.'
+      'Policy is built into a versioned image, just like a container.'
   },
   {
     category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
-      'Enterprise admins can customize to their needs without involving your dev team.'
+      'Policy changes are built, tested, and deployed in an automated GitOps workflow, and don’t require redeploying the app.'
   },
   {
     category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
-      'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
+      'Customers can adapt roles and permissions to their needs in a self-service manner.'
   },
   {
     category: 'fineGrained',
     icon: '/images/features/002.svg',
     description:
-      'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
+      'Policy changes can be traced back to a git commit, meeting auditing requirements out of the box.'
   },
   {
     category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
-      'Works with (and normalizes attributes from) any identity provider.'
+      'Supports fine-grained role- and attribute-based access control.'
   },
   {
     category: 'cloudNative',
@@ -91,25 +85,25 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
     category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
-      'Opinionated authorization framework that covers 80% of what you need, out of the box.'
+      'Eliminates the risk of stale permissions in auth tokens resulting in unauthorized access to protected resources.'
   },
   {
     category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
-      'Enterprise admins can customize to their needs without involving your dev team.'
+      'Centralized management of decision logs, audit trails, alerting.'
   },
   {
     category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
-      'Eliminates the risk of unauthorized access to protected resources due to stale permissions encoded in auth tokens.'
+      'Works with (and normalizes attributes from) any identity provider.'
   },
   {
     category: 'cloudNative',
     icon: '/images/features/003.svg',
     description:
-      'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js.'
+      'Simplifies SOC 2 and ISO 27001 certifications through comprehensive authorization logs.'
   }
 ]
 
@@ -118,9 +112,6 @@ const Features = () => {
   return (
     <section className={clsx('py-32 relative', s.background)} ref={section}>
       <div className="relative z-10 px-4 text-center sm:px-0">
-        <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
-          Details
-        </p>
         <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
           Features
         </h2>

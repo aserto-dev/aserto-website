@@ -9,7 +9,7 @@ const problems: React.ComponentPropsWithoutRef<typeof ProblemItem>[] = [
     image: '/images/problem.svg',
     title: 'Authorization is hard',
     description:
-      'Evaluating policy against user attributes in real-time is a distributed systems problem. Most engineering teams tale shortcuts.'
+      'Evaluating policy against user attributes in real-time is a distributed systems problem. Most engineering teams can’t justify taking the time to fully solve it.'
   },
   {
     image: '/images/problem.svg',

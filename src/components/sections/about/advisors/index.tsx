@@ -13,8 +13,8 @@ const advisors: React.ComponentPropsWithoutRef<typeof AdvisorItem>[] = [
   },
   {
     name: 'Ameet Patel',
-    company: '-',
-    position: 'Investor/Whisperer',
+    company: 'Whisperer',
+    position: 'Investor',
     linkedin: 'https://linkedin.com'
   },
   {
@@ -67,7 +67,7 @@ const advisors: React.ComponentPropsWithoutRef<typeof AdvisorItem>[] = [
   },
   {
     name: 'Tom McInerney',
-    company: '-',
+    company: 'X',
     position: 'Angel investor',
     linkedin: 'https://linkedin.com'
   },
@@ -92,7 +92,7 @@ const Advisors = () => {
             Amazing support network
           </p>
         </div>
-        <div className="grid w-full gap-12 mx-auto mt-20 gap-y-16 lg:grid-cols-4">
+        <div className="grid w-full gap-12 mx-auto mt-20 gap-y-20 lg:grid-cols-4">
           {advisors.map((advisor) => (
             <AdvisorItem {...advisor} key={advisor.name} />
           ))}

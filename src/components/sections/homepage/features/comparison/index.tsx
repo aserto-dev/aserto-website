@@ -64,8 +64,10 @@ const Comparison = () => {
           className={clsx(
             'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
             {
-              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'real-time',
-              'text-aserto-grey-60 border-transparent': isToggled !== 'real-time'
+              'text-aserto-grey-90 border-aserto-grey-90':
+                isToggled === 'real-time',
+              'text-aserto-grey-60 border-transparent':
+                isToggled !== 'real-time'
             }
           )}
           onClick={() => setIsToggled('real-time')}
@@ -80,7 +82,7 @@ const Comparison = () => {
               name="features"
               type="radio"
             />{' '}
-            Real Time
+            Built for developers
           </label>
         </button>
 
@@ -88,8 +90,10 @@ const Comparison = () => {
           className={clsx(
             'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'fine-grained',
-              'text-aserto-grey-60 border-transparent': isToggled !== 'fine-grained'
+              'text-aserto-grey-90 border-aserto-grey-90':
+                isToggled === 'fine-grained',
+              'text-aserto-grey-60 border-transparent':
+                isToggled !== 'fine-grained'
             }
           )}
           onClick={() => setIsToggled('fine-grained')}
@@ -104,15 +108,17 @@ const Comparison = () => {
               name="features"
               type="radio"
             />{' '}
-            Fine Grained
+            Enterprise ready
           </label>
         </button>
         <button
           className={clsx(
             'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
             {
-              'text-aserto-grey-90 border-aserto-grey-90': isToggled === 'cloud-native',
-              'text-aserto-grey-60 border-transparent': isToggled !== 'cloud-native'
+              'text-aserto-grey-90 border-aserto-grey-90':
+                isToggled === 'cloud-native',
+              'text-aserto-grey-60 border-transparent':
+                isToggled !== 'cloud-native'
             }
           )}
           onClick={() => setIsToggled('cloud-native')}
@@ -127,7 +133,7 @@ const Comparison = () => {
               className="sr-only filter"
               name="features"
             />{' '}
-            Cloud Native
+            Policy centric
           </label>
         </button>
       </div>

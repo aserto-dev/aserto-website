@@ -20,8 +20,9 @@ const ProfileItem = ({ company, linkedin, name, position }: Props) => (
       {name}
       <LinkedinIcon className="ml-2" />
     </Link>
-    <p className="text-aserto-grey-60">{position}</p>
-    <p className="text-aserto-lochivar-90 font-roboto">{company}</p>
+    <p className="mt-6 text-aserto-grey-60 font-roboto">
+      {position}, <span className="inline-block"> {company}</span>
+    </p>
   </div>
 )
 
