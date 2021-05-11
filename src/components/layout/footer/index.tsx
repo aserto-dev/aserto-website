@@ -24,7 +24,10 @@ const Footer = () => {
   return (
     <footer className="bg-aserto-black">
       <Container className="pb-10 pt-14">
-        <div className="grid gap-8 pb-12 mx-auto lg:grid-cols-5" ref={ref}>
+        <div
+          className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-5"
+          ref={ref}
+        >
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Product

@@ -17,7 +17,7 @@ const FeatureItem = ({
   return (
     <div
       className={clsx(
-        'relative p-6 overflow-hidden bg-aserto-black border border-aserto-grey-10 rounded-2xl item text-left',
+        'h-72 relative p-6 overflow-hidden bg-aserto-black border border-aserto-grey-10 rounded-2xl item text-left sm:h-auto',
         category
       )}
       style={{ display: `${!display && 'none'}` }}

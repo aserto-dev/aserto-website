@@ -8,36 +8,36 @@ import s from './features.module.css'
 const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/key.svg',
     description:
       'Opinionated authorization framework that covers 80% of what it takes to build RBAC.'
   },
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/shield.svg',
     description:
       'REST/gRPC API’s with native support for popular languages and frameworks - e.g. React, node.js'
   },
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/maximize.svg',
     description:
       'Flexible deployment model - a hosted service, a local service, or a sidecar.'
   },
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/layers.svg',
     description: 'Open source authorizer based on CNCF OPA project.'
   },
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/check-circle.svg',
     description:
       'Hosted solution offers rate-limited free tier for small scale apps, transparent pricing that grows along with your business.'
   },
   {
     category: 'realTime',
-    icon: '/images/features/001.svg',
+    icon: '/images/features/star.svg',
     description: '-'
   },
   {
@@ -111,12 +111,12 @@ const Features = () => {
   const [section] = useFadeInBottom()
   return (
     <section className={clsx('py-32 relative', s.background)} ref={section}>
-      <div className="relative z-10 px-4 text-center sm:px-0">
-        <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
+      <div className="relative z-10 px-0 text-center">
+        <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
           Features
         </h2>
         <Comparison />
-        <div className="relative grid gap-8 mx-auto mt-20 lg:grid-cols-3">
+        <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
           {features.map((feature, i) => (
             <FeatureItem
               {...feature}
