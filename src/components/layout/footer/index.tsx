@@ -11,7 +11,7 @@ import Container from '../container'
 
 // Icons
 import IconLinkedin from 'icons/linkedin.svg'
-import IconMedium from 'icons/medium.svg'
+import IconCommunity from 'icons/community.svg'
 import IconTwitter from 'icons/twitter.svg'
 import Logo from 'icons/logo-footer.svg'
 
@@ -24,12 +24,12 @@ const Footer = () => {
   return (
     <footer className="bg-aserto-black">
       <Container className="pb-10 pt-14">
-        <div className="grid gap-8 pb-20 mx-auto lg:grid-cols-5" ref={ref}>
+        <div className="grid gap-8 pb-12 mx-auto lg:grid-cols-5" ref={ref}>
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Product
             </p>
-            <ul className="mt-8 space-y-6">
+            <ul className="mt-4 space-y-4">
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
@@ -54,12 +54,35 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Developers
+            </p>
+            <ul className="mt-4 space-y-4">
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="/"
                 >
                   Docs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/"
+                >
+                  GitHub
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/"
+                >
+                  Slack
                 </Link>
               </li>
               <li>
@@ -78,44 +101,13 @@ const Footer = () => {
                   Status
                 </Link>
               </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
-                >
-                  Aserto OneBox
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
-              Community
-            </p>
-            <ul className="mt-8 space-y-6">
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
-                >
-                  GitHub
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
-                >
-                  Slack
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Company
             </p>
-            <ul className="mt-8 space-y-6">
+            <ul className="mt-4 space-y-4">
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
@@ -127,15 +119,15 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/about"
                 >
-                  About us
+                  About
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/careers"
                 >
                   Careers
                 </Link>
@@ -154,6 +146,26 @@ const Footer = () => {
                   href="/"
                 >
                   Contact us
+                  <svg
+                    className="inline-block ml-2"
+                    width="16"
+                    height="17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.666 3.167h10.667c.733 0 1.333.6 1.333 1.333v8c0 .734-.6 1.334-1.333 1.334H2.666c-.733 0-1.333-.6-1.333-1.334v-8c0-.733.6-1.333 1.333-1.333z"
+                      stroke="#A0A0A0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.666 4.5L8 9.167 1.333 4.5"
+                      stroke="#A0A0A0"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </Link>
               </li>
             </ul>
@@ -162,7 +174,7 @@ const Footer = () => {
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Legal
             </p>
-            <ul className="mt-8 space-y-6">
+            <ul className="mt-4 space-y-4">
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
@@ -192,7 +204,7 @@ const Footer = () => {
               <li>
                 <Link href="/">
                   <span className="sr-only">Medium</span>
-                  <IconMedium />
+                  <IconCommunity />
                 </Link>
               </li>
               <li>
