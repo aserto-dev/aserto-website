@@ -62,7 +62,9 @@ const Posts = () => {
         ))}
       </div>
       <div className="mt-24 text-center">
-        <Button>More</Button>
+        <Button variant="secondary" size="md">
+          More
+        </Button>
       </div>
     </section>
   )

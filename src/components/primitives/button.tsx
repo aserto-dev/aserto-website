@@ -10,7 +10,7 @@ import type {
 const ButtonDefaultElement = 'button'
 
 type ButtonOwnProps = {
-  variant?: 'unstyled' | 'primary'
+  variant?: 'unstyled' | 'primary' | 'secondary'
   size?: 'md' | 'lg' | 'sm'
 }
 
@@ -47,15 +47,21 @@ const Button: PolymorphicForwardRefExoticComponent<
             ? className
             : clsx(
                 className,
-                'relative group bg-aserto-lochivar-100 transition-colors duration-150 rounded text-white inline-flex items-center justify-center overflow-hidden font-roboto font-medium outline-none',
+                'transition-colors duration-200 rounded inline-block overflow-hidden font-roboto font-medium outline-none',
                 'focus:outline-none',
+                { 'pointer-events-none select-none': disabled },
                 swx(size, {
+                  sm: 'h-10 px-5 text-sm',
                   md: 'h-11 sm:h-9 px-8 text-sm',
-                  lg: 'h-12 sm:h-14.25 px-10 text-lg sm:text-lg',
-                  sm: 'h-10 px-5 text-sm'
+                  lg: 'h-12 sm:h-14.25 px-10 text-lg sm:text-lg'
                 }),
                 swx(variant, {
-                  primary: 'hover:bg-aserto-lochivar-80'
+                  primary: !disabled
+                    ? 'bg-aserto-lochivar-100 text-white hover:bg-aserto-lochivar-80 focus:bg-aserto-lochivar-60'
+                    : 'bg-aserto-lochivar-30 text-aserto-grey-40',
+                  secondary: !disabled
+                    ? 'bg-aserto-grey-10 text-white border border-aserto-grey-20 hover:bg-aserto-grey-20 hover:border-aserto-grey-30 focus:bg-aserto-grey-30 focus:border-aserto-grey-30'
+                    : 'bg-aserto-grey-5 text-aserto-grey-30'
                 })
               )
         }
