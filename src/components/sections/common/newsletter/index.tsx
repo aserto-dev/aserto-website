@@ -73,15 +73,15 @@ const NewsletterSection = () => {
           </h2>
           <div className="w-6/12" ref={contentRef}>
             <h2 className="text-xl tracking-normal text-aserto-grey-90 sm:text-4.5xl">
-              Sign up for early access
+              Request early access
             </h2>
             <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
-              Subheading (TBD)
+              Sign up now to get ahead of the line.
             </p>
           </div>
           <div ref={formRef} className="flex justify-end w-6/12 mt-8 lg:mt-0">
             <form
-              className="relative justify-end w-full sm:flex"
+              className="relative items-center justify-end w-full sm:flex"
               onSubmit={() => alert('WIP FORM')}
             >
               <label htmlFor="email" className="sr-only">
@@ -90,13 +90,9 @@ const NewsletterSection = () => {
               <input
                 placeholder="Enter your email..."
                 id="email"
-                className="w-6/12 px-5 py-2 transition-shadow rounded-sm placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black sm:py-0 focus:outline-none focus:border-aserto-grey-20"
+                className="w-6/12 px-5 transition-shadow border rounded h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
               />
-              <Button
-                size="md"
-                type="submit"
-                className="mt-4 ml-0 sm:ml-4 sm:mt-0"
-              >
+              <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0">
                 {status ? (
                   status === 'loading' ? (
                     <svg

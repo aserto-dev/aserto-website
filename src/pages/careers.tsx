@@ -8,6 +8,7 @@ import PageLayout from 'components/layout/page'
 import Hero from 'components/sections/careers/hero'
 import OurValues from 'components/sections/careers/our-values'
 import Benefits from 'components/sections/careers/benefits'
+import OpenPositions from 'components/sections/careers/open-positions'
 
 const Careers = () => {
   return (
@@ -23,6 +24,7 @@ const Careers = () => {
       <Hero />
       <OurValues />
       <Benefits />
+      <OpenPositions />
     </PageLayout>
   )
 }
