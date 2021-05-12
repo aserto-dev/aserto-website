@@ -52,7 +52,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/faq"
                 >
                   FAQ
                 </Link>
@@ -181,7 +181,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/terms-of-service"
                 >
                   Terms of Service
                 </Link>
@@ -189,7 +189,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/privacy-policy"
                 >
                   Privacy Policy
                 </Link>
