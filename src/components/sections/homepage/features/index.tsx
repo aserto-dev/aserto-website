@@ -42,66 +42,66 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
   },
   {
     category: 'cloudNative',
-    icon: '/images/features/002.svg',
+    icon: '/images/features/refresh-cw.svg',
     description:
       'Policy is stored and versioned in a repository, just like application and infrastructure code.'
   },
   {
     category: 'cloudNative',
-    icon: '/images/features/002.svg',
+    icon: '/images/features/layout.svg',
     description:
       'Policy is built into a versioned image, just like a container.'
   },
   {
     category: 'cloudNative',
-    icon: '/images/features/002.svg',
+    icon: '/images/features/grid.svg',
     description:
       'Policy changes are built, tested, and deployed in an automated GitOps workflow, and don’t require redeploying the app.'
   },
   {
     category: 'cloudNative',
-    icon: '/images/features/002.svg',
+    icon: '/images/features/user-plus.svg',
     description:
       'Customers can adapt roles and permissions to their needs in a self-service manner.'
   },
   {
     category: 'cloudNative',
-    icon: '/images/features/002.svg',
+    icon: '/images/features/git-commit.svg',
     description:
       'Policy changes can be traced back to a git commit, meeting auditing requirements out of the box.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/unlock.svg',
     description:
       'Supports fine-grained role- and attribute-based access control.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/check-circle-blue.svg',
     description: 'Applies zero-trust security principles, secure by default.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/shield-blue.svg',
     description:
       'Eliminates the risk of stale permissions in auth tokens resulting in unauthorized access to protected resources.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/maximize-blue.svg',
     description:
       'Centralized management of decision logs, audit trails, alerting.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/user-check.svg',
     description:
       'Works with (and normalizes attributes from) any identity provider.'
   },
   {
     category: 'fineGrained',
-    icon: '/images/features/003.svg',
+    icon: '/images/features/loader.svg',
     description:
       'Simplifies SOC 2 and ISO 27001 certifications through comprehensive authorization logs.'
   }
