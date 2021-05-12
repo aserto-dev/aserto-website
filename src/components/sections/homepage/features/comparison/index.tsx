@@ -82,7 +82,7 @@ const Comparison = () => {
               name="features"
               type="radio"
             />{' '}
-            Authorization as easy
+            Authorization as easy <br /> as an API call
           </label>
         </button>
 
@@ -108,7 +108,7 @@ const Comparison = () => {
               name="features"
               type="radio"
             />{' '}
-            Enterprise ready
+            Enterprise ready <br /> permissions and RBAC
           </label>
         </button>
         <button
@@ -133,7 +133,7 @@ const Comparison = () => {
               className="sr-only filter"
               name="features"
             />{' '}
-            Policy centric
+            Modern GitOps workflow <br /> for policy-as-code
           </label>
         </button>
       </div>
