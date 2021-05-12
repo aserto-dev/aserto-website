@@ -1,16 +1,14 @@
 import clsx from 'clsx'
 import Link from 'components/primitives/link'
-import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Styles
 import s from './hero.module.css'
 
 const Hero = () => {
-  const [ref] = useFadeInBottom()
 
   return (
     <section className={clsx('pt-80 mx-auto pb-44', s.background)}>
-      <div className="relative z-10 pt-3 text-center" ref={ref}>
+      <div className="relative z-10 pt-3 text-center">
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           Authorization is broken
         </h1>
