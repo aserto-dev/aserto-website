@@ -50,24 +50,24 @@ const advisors: React.ComponentPropsWithoutRef<typeof AdvisorItem>[] = [
   {
     name: 'Mathias Biilmann',
     company: 'Netlify',
-    position: 'Co-founder/CTO',
+    position: 'Co-founder/CEO',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Sri Pangulur',
-    company: 'Trace Data',
-    position: 'Head of Business',
+    company: 'Tribe Capital',
+    position: 'Partner',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Tim Chen',
-    company: 'Essence Vc',
-    position: 'Head of Business',
+    company: 'Essence VC',
+    position: 'Managing Partner',
     linkedin: 'https://linkedin.com'
   },
   {
     name: 'Tom McInerney',
-    company: 'X',
+    company: '',
     position: 'Angel investor',
     linkedin: 'https://linkedin.com'
   },

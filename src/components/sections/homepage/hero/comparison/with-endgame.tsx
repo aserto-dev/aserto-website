@@ -254,8 +254,8 @@ const WithEndgame = () => {
         d="M528 381v-2a3.995 3.995 0 00-1.172-2.828A3.995 3.995 0 00524 375h-8a3.995 3.995 0 00-2.828 1.172A3.995 3.995 0 00512 379v2M520 371a4 4 0 100-8 4 4 0 000 8z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="499.5"
@@ -277,8 +277,8 @@ const WithEndgame = () => {
         d="M265 94v-2a3.997 3.997 0 00-4-4h-8a3.998 3.998 0 00-4 4v2M257 84a4 4 0 100-8 4 4 0 000 8z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect x="236.5" y="64.5" width="41" height="41" rx="20.5" stroke="#333" />
       <rect
@@ -293,8 +293,8 @@ const WithEndgame = () => {
         d="M1065 94v-2a3.999 3.999 0 00-4-4h-8a3.999 3.999 0 00-4 4v2M1057 84a4 4 0 10.001-7.999A4 4 0 001057 84z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="1036.5"
@@ -316,8 +316,8 @@ const WithEndgame = () => {
         d="M830 381v-2a3.995 3.995 0 00-1.172-2.828A3.995 3.995 0 00826 375h-8a3.995 3.995 0 00-2.828 1.172A3.995 3.995 0 00814 379v2M822 371a4 4 0 100-8 4 4 0 000 8z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="801.5"
@@ -339,8 +339,8 @@ const WithEndgame = () => {
         d="M1133 381v-2a3.998 3.998 0 00-4-4h-8a4.002 4.002 0 00-4 4v2M1125 371a4 4 0 100-8 4 4 0 000 8z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="1104.5"
@@ -362,15 +362,15 @@ const WithEndgame = () => {
         d="M220 362h-8a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2v-12l-6-6zM222 377h-8M222 373h-8M216 369h-2"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M220 362v6h6"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="197.5"
@@ -385,15 +385,15 @@ const WithEndgame = () => {
         d="M91 75h-8a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V81l-6-6zM93 90h-8M93 86h-8M87 82h-2"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M91 75v6h6"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect x="68.5" y="64.5" width="41" height="41" rx="20.5" stroke="#333" />
       <rect
@@ -408,15 +408,15 @@ const WithEndgame = () => {
         d="M1162 75h-8c-.53 0-1.04.21-1.41.586-.38.375-.59.884-.59 1.414v16c0 .53.21 1.04.59 1.414.37.375.88.586 1.41.586h12c.53 0 1.04-.21 1.41-.586.38-.375.59-.884.59-1.414V81l-6-6zM1164 90h-8M1164 86h-8M1158 82h-2"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1162 75v6h6"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect
         x="1139.5"
@@ -463,8 +463,8 @@ const WithEndgame = () => {
         d="M665 94v-2a4 4 0 00-4-4h-8a4 4 0 00-4 4v2M657 84a4 4 0 100-8 4 4 0 000 8z"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect x="636.5" y="64.5" width="41" height="41" rx="20.5" stroke="#333" />
       <rect
@@ -479,15 +479,15 @@ const WithEndgame = () => {
         d="M762 75h-8a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V81l-6-6zM764 90h-8M764 86h-8M758 82h-2"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M762 75v6h6"
         stroke="#fff"
         stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <rect x="739.5" y="64.5" width="41" height="41" rx="20.5" stroke="#333" />
       <path
@@ -772,7 +772,7 @@ const WithEndgame = () => {
           <feGaussianBlur stdDeviation="8" />
           <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
           <feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.3 0" />
-          <feBlend mode="soft-light" in2="shape" result="effect2_innerShadow" />
+          <feBlend mode="softLight" in2="shape" result="effect2_innerShadow" />
           <feColorMatrix
             in="SourceAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"

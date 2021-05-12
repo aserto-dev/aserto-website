@@ -21,7 +21,8 @@ const ProfileItem = ({ company, linkedin, name, position }: Props) => (
       <LinkedinIcon className="ml-2" />
     </Link>
     <p className="mt-6 text-aserto-grey-60 font-roboto">
-      {position}, <span className="inline-block"> {company}</span>
+      {position}
+      {company && <span className="inline-block">, {company}</span>}
     </p>
   </div>
 )
