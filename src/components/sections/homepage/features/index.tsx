@@ -110,7 +110,11 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
 const Features = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className={clsx('py-32 relative', s.background)} ref={section}>
+    <section
+      className={clsx('py-32 relative', s.background)}
+      ref={section}
+      id="features"
+    >
       <div className="relative z-10 px-0 text-center">
         <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
           Features

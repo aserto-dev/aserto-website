@@ -23,7 +23,7 @@ const Hiring = () => {
           We’re Hiring!
         </h2>
         <Link
-          href="/"
+          href="/careers#open-positions"
           className="flex items-center justify-center w-full mx-auto mt-6 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto"
         >
           Check out our open positions.

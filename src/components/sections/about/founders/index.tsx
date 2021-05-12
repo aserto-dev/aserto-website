@@ -9,13 +9,13 @@ const problems: React.ComponentPropsWithoutRef<typeof FounderItem>[] = [
     image: '/images/about/profile001.png',
     name: 'Gert Drapers',
     position: 'CTO',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/gertd/'
   },
   {
     image: '/images/about/profile002.png',
     name: 'Omri Gazitt',
     position: 'CEO',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/ogazitt/'
   }
 ]
 

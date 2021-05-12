@@ -9,73 +9,74 @@ const advisors: React.ComponentPropsWithoutRef<typeof AdvisorItem>[] = [
     name: 'Alex Bilmes',
     company: 'Stealth',
     position: 'Founder',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/bilmes/'
   },
   {
     name: 'Ameet Patel',
     company: 'Whisperer',
     position: 'Investor',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/ampatel/'
   },
   {
     name: 'Bob Muglia',
     company: 'Snowflake',
     position: 'Investor / Former CEO',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/bob-muglia-714ba592/'
   },
   {
     name: 'Christian Bach',
     company: 'Netlify',
     position: 'Co-founder/President',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/christianbachdk/'
   },
   {
     name: 'Jeff Fagnan',
     company: 'Accomplice',
     position: 'Founding Partner',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/jeff-fagnan-7b018/'
   },
   {
     name: 'Grant Miller',
     company: 'Replicated',
     position: 'Co-founder/CEO',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/grantlmiller/'
   },
   {
     name: 'Marc Campbell',
     company: 'Replicated',
     position: 'Co-founder/CTO',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/campbe79/'
   },
   {
     name: 'Mathias Biilmann',
     company: 'Netlify',
     position: 'Co-founder/CEO',
-    linkedin: 'https://linkedin.com'
+    linkedin:
+      'https://www.linkedin.com/in/mathias-biilmann-christensen-a5a3805/'
   },
   {
     name: 'Sri Pangulur',
     company: 'Tribe Capital',
     position: 'Partner',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/sripangulur/'
   },
   {
     name: 'Tim Chen',
     company: 'Essence VC',
     position: 'Managing Partner',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/timchen/'
   },
   {
     name: 'Tom McInerney',
     company: '',
     position: 'Angel investor',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/tommcinerney/'
   },
   {
     name: 'Tom Preston-Werner',
     company: 'Github',
     position: 'Co-founder',
-    linkedin: 'https://linkedin.com'
+    linkedin: 'https://www.linkedin.com/in/mojombo/'
   }
 ]
 

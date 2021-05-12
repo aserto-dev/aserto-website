@@ -14,8 +14,20 @@ const Investors = () => {
           Supported by the best seed investors in the industry.
         </p>
         <div className="flex items-center justify-between mt-16">
-          <Image src="/images/about/costanoa.svg" width="509" height="49" />
-          <Image src="/images/about/heavy.svg" width="291" height="48" />
+          <a
+            href="https://www.costanoavc.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src="/images/about/costanoa.svg" width="509" height="49" />
+          </a>
+          <a
+            href="https://www.heavybit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image src="/images/about/heavy.svg" width="291" height="48" />
+          </a>
         </div>
       </div>
     </section>

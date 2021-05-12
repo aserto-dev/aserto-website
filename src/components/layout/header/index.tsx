@@ -1,9 +1,21 @@
+import { useCallback } from 'react'
+
+// Primitives
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
 
+// SVGs
 import Logo from 'icons/logo-header.svg'
 
 const Header = () => {
+  const handleClick = useCallback(() => {
+    const elem = document.querySelector('#newsletter')
+    window.scrollTo({
+      //@ts-ignore
+      top: elem?.getBoundingClientRect().top * 0.98,
+      behavior: 'smooth'
+    })
+  }, [])
   return (
     <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
@@ -31,7 +43,7 @@ const Header = () => {
           </Link>
         </nav>
         <div>
-          <Button as={Link} href="#" variant="primary" size="sm">
+          <Button variant="primary" size="sm" onClick={handleClick}>
             Request Early Access
           </Button>
           <Link

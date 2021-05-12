@@ -36,7 +36,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/#the-solution"
                 >
                   Benefits
                 </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/#features"
                 >
                   Features
                 </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="https://asertocommunity.slack.com/join/shared_invite/zt-p06gin84-xNswWpTGyPDPxCz0LMux3g#/shared-invite/email"
                 >
                   Slack
                 </Link>
@@ -146,7 +146,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="mailto:info@aserto.com"
                 >
                   Contact us
                   <svg
@@ -199,19 +199,19 @@ const Footer = () => {
           <div>
             <ul className="flex items-center space-x-6">
               <li>
-                <Link href="/">
+                <Link href="https://twitter.com/aserto_com">
                   <span className="sr-only">Twitter</span>
                   <IconTwitter />
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="https://aserto.medium.com/">
                   <span className="sr-only">Medium</span>
                   <IconCommunity />
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="https://www.linkedin.com/company/aserto-com">
                   <span className="sr-only">Linkedin</span>
                   <IconLinkedin />
                 </Link>
