@@ -37,7 +37,7 @@ const TheProblem = () => {
           <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
             Every app reinvents the wheel
           </h2>
-          <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">
+          <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12 tracking-tight">
             Engineering teams have to keep building (and rebuilding) features
             that are critical to customers, but offer no differentiation or
             end-user value.

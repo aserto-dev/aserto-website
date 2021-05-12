@@ -6,6 +6,8 @@ import PageLayout from 'components/layout/page'
 
 // Sections
 import Hero from 'components/sections/careers/hero'
+import OurValues from 'components/sections/careers/our-values'
+import Benefits from 'components/sections/careers/benefits'
 
 const Careers = () => {
   return (
@@ -17,8 +19,10 @@ const Careers = () => {
         image: 'images/og.png'
       }}
     >
-      <Hero />
       <CustomHead />
+      <Hero />
+      <OurValues />
+      <Benefits />
     </PageLayout>
   )
 }
