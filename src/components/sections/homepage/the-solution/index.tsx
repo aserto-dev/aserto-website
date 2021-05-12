@@ -10,7 +10,7 @@ const solutions: React.ComponentPropsWithoutRef<typeof SolutionItem>[] = [
     imageAlt: 'Real Time Illustration'
   },
   {
-    title: 'Fine Grained',
+    title: 'Enterprise ready',
     description:
       'Sell with confidence into enterprise accounts, knowing their requirements are built into your authorization system.',
     imageSrc: '/images/scoring.svg',

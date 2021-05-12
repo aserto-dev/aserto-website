@@ -41,66 +41,66 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
     description: '-'
   },
   {
-    category: 'fineGrained',
+    category: 'cloudNative',
     icon: '/images/features/002.svg',
     description:
       'Policy is stored and versioned in a repository, just like application and infrastructure code.'
   },
   {
-    category: 'fineGrained',
+    category: 'cloudNative',
     icon: '/images/features/002.svg',
     description:
       'Policy is built into a versioned image, just like a container.'
   },
   {
-    category: 'fineGrained',
+    category: 'cloudNative',
     icon: '/images/features/002.svg',
     description:
       'Policy changes are built, tested, and deployed in an automated GitOps workflow, and don’t require redeploying the app.'
   },
   {
-    category: 'fineGrained',
+    category: 'cloudNative',
     icon: '/images/features/002.svg',
     description:
       'Customers can adapt roles and permissions to their needs in a self-service manner.'
   },
   {
-    category: 'fineGrained',
+    category: 'cloudNative',
     icon: '/images/features/002.svg',
     description:
       'Policy changes can be traced back to a git commit, meeting auditing requirements out of the box.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description:
       'Supports fine-grained role- and attribute-based access control.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description: 'Applies zero-trust security principles, secure by default.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description:
       'Eliminates the risk of stale permissions in auth tokens resulting in unauthorized access to protected resources.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description:
       'Centralized management of decision logs, audit trails, alerting.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description:
       'Works with (and normalizes attributes from) any identity provider.'
   },
   {
-    category: 'cloudNative',
+    category: 'fineGrained',
     icon: '/images/features/003.svg',
     description:
       'Simplifies SOC 2 and ISO 27001 certifications through comprehensive authorization logs.'
