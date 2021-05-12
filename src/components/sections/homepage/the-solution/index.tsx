@@ -36,10 +36,6 @@ const TheSolution = () => {
         <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
           Introducing: Modern authorization
         </h2>
-        <p className="max-w-3xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">
-          Take advantage of the most real-time, fine-grained, cloud native
-          authorization solution built for developers.
-        </p>
       </div>
       {solutions.map((feature, i) => (
         <SolutionItem
