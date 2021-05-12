@@ -5,6 +5,7 @@ import CustomHead from 'components/primitives/custom-head'
 import PageLayout from 'components/layout/page'
 
 // Sections
+import Hero from 'components/sections/careers/hero'
 
 const Careers = () => {
   return (
@@ -16,6 +17,7 @@ const Careers = () => {
         image: 'images/og.png'
       }}
     >
+      <Hero />
       <CustomHead />
     </PageLayout>
   )

@@ -48,7 +48,11 @@ const NewsletterSection = () => {
   }, [status])
 
   return (
-    <section className="mb-32 bg-aserto-black" id="newsletter" ref={section}>
+    <section
+      className="relative z-10 mb-32 bg-aserto-black"
+      id="newsletter"
+      ref={section}
+    >
       <Container>
         <div
           className={clsx(

@@ -6,19 +6,19 @@ import ProblemItem from './problem-item'
 
 const problems: React.ComponentPropsWithoutRef<typeof ProblemItem>[] = [
   {
-    image: '/images/problem.svg',
+    image: '/images/homepage/problem/001.svg',
     title: 'Authorization is hard',
     description:
       'Evaluating policy against user attributes in real-time is a distributed systems problem. Most engineering teams can’t justify taking the time to fully solve it.'
   },
   {
-    image: '/images/problem.svg',
+    image: '/images/homepage/problem/002.svg',
     title: 'Requirements ramp',
     description:
       "Custom roles. Custom attributes. Decision logs. ISO 27001. As products move up-market, teams that build them can't keep up."
   },
   {
-    image: '/images/problem.svg',
+    image: '/images/homepage/problem/003.svg',
     title: 'Opportunity cost',
     description:
       '"I want to rewrite RBAC!" said no engineer, ever. Your team could be working on end-user features instead of undifferentiated heavy lifting.'

@@ -1,0 +1,72 @@
+<svg width="384" height="298" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 4a4 4 0 014-4h376a4 4 0 014 4v294H0V4z" fill="#E84343" />
+    <path fill="url(#001-paint0_linear)" d="M0 0h384v298H0z" />
+    <path d="M0 12h287c19.882 0 36 16.118 36 36v250H0V12z" fill="url(#001-paint1_linear)" />
+    <path fill="url(#001-paint2_linear)" d="M0 148h353v2H0z" />
+    <path fill="url(#001-paint3_linear)" d="M0 162h353v2H0z" />
+    <path fill="url(#001-paint4_linear)" d="M0 176h353v2H0z" />
+    <path fill="url(#001-paint5_linear)" d="M0 190h353v2H0z" />
+    <path fill="url(#001-paint6_linear)" d="M0 204h353v2H0z" />
+    <g opacity=".4" filter="url(#filter0_f)">
+        <path fill="#BF7837" d="M107 38h133.993v187.011H107z" />
+    </g>
+    <g opacity=".6" filter="url(#filter1_f)">
+        <path fill="#000" d="M119 58h133.993v187.011H119z" />
+    </g>
+    <path fill="#181818" stroke="#BF3737" stroke-width="2" d="M123 55.899h133.993V242.91H123z" />
+    <path fill="#181818" stroke="#BF3737" stroke-width="2" d="M113.003 45.899h133.993V232.91H113.003z" />
+    <path fill="#913232" d="M131 62h48v7h-48z" />
+    <path fill="#632D2D" d="M131 220h20v2h-20zM131 212h48v2h-48zM131 86h74v2h-74zM131 94h69v2h-69zM131 102h40v2h-40zM131 127h74v2h-74zM131 135h69v2h-69zM131 143h40v2h-40zM131 168h74v2h-74zM131 176h69v2h-69zM131 184h40v2h-40z" />
+    <circle cx="113" cy="96" r="9" fill="#181818" stroke="#A13434" stroke-width="2" stroke-linejoin="round" />
+    <circle cx="113" cy="178" r="9" fill="#181818" stroke="#A13434" stroke-width="2" stroke-linejoin="round" />
+    <path d="M109 94.74l3.235 5.26L119 89M109 176.739l3.235 5.261L119 171" stroke="#A13434" stroke-width="2" stroke-linejoin="round" />
+    <path d="M225.535 58.337L216 63.345V40h20v23.345l-9.535-5.008-.465-.244-.465.244z" fill="#181818" stroke="#BF3737" stroke-width="2" />
+    <circle cx="113" cy="137" r="9" fill="#181818" stroke="#FF4A4A" stroke-width="2" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M114 136.732a2 2 0 10-2 0V142h2v-5.268z" fill="#E84343" />
+    <circle cx="43" cy="48" r="9" fill="#181818" stroke="#525252" stroke-width="2" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M44 47.732A2 2 0 0043 44a2 2 0 00-1 3.732V53h2v-5.268z" fill="#525252" />
+    <circle cx="301" cy="277" r="9" fill="#181818" stroke="#2A2A2A" stroke-width="2" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M302 276.732a2 2 0 10-2 0V282h2v-5.268z" fill="#2A2A2A" />
+    <circle cx="294" cy="42" r="15" fill="#181818" stroke="#3E3E3E" stroke-width="2" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M295.6 41.572a3.2 3.2 0 10-3.2 0V50h3.2v-8.428z" fill="#3E3E3E" />
+    <defs>
+        <linearGradient id="001-paint0_linear" x1="192" y1="0" x2="192" y2="298" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#121212" />
+            <stop offset="1" stop-color="#3C3C3C" />
+        </linearGradient>
+        <linearGradient id="001-paint1_linear" x1="161.5" y1="12" x2="161.5" y2="298" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#333" />
+            <stop offset="1" stop-color="#060606" />
+        </linearGradient>
+        <linearGradient id="001-paint2_linear" x1="353" y1="148" x2="0" y2="148" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1D1D1D" />
+            <stop offset="1" stop-color="#696969" />
+        </linearGradient>
+        <linearGradient id="001-paint3_linear" x1="353" y1="162" x2="0" y2="162" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1D1D1D" />
+            <stop offset="1" stop-color="#696969" />
+        </linearGradient>
+        <linearGradient id="001-paint4_linear" x1="353" y1="176" x2="0" y2="176" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1D1D1D" />
+            <stop offset="1" stop-color="#696969" />
+        </linearGradient>
+        <linearGradient id="001-paint5_linear" x1="353" y1="190" x2="0" y2="190" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1D1D1D" />
+            <stop offset="1" stop-color="#696969" />
+        </linearGradient>
+        <linearGradient id="001-paint6_linear" x1="353" y1="204" x2="0" y2="204" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1D1D1D" />
+            <stop offset="1" stop-color="#696969" />
+        </linearGradient>
+        <filter id="filter0_f" x="81" y="12" width="185.993" height="239.011" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="13" result="effect1_foregroundBlur" />
+        </filter>
+        <filter id="filter1_f" x="107" y="46" width="157.993" height="211.011" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur" />
+        </filter>
+    </defs>
+</svg>
