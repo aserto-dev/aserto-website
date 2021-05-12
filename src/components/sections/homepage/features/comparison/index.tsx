@@ -82,7 +82,7 @@ const Comparison = () => {
               name="features"
               type="radio"
             />{' '}
-            Built for developers
+            Authorization as easy
           </label>
         </button>
 

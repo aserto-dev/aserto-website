@@ -42,7 +42,7 @@ const SolutionItem = ({
         className="flex flex-col-reverse items-center lg:mx-auto lg:max-w-container lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-8"
       >
         <div className="max-w-xl px-4 pb-0 mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:pr-10 sm:pb-12">
-          <h2 className="mb-2 text-3xl text-aserto-grey-90 sm:text-4.5xl sm:mb-3 leading-none">
+          <h2 className="mb-2 text-3xl text-aserto-grey-90 sm:text-4.5xl sm:mb-3 leading-tight">
             {title}
           </h2>
           <p className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">

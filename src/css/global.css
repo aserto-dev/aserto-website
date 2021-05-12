@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-system: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --font-body: 'Open Sans', var(--font-system), sans-serif;
-  --font-roboto: 'Roboto', var(--font-system), sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 body {

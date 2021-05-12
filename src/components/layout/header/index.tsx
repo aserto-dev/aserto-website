@@ -24,7 +24,7 @@ const Header = () => {
             <Logo />
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60"
+            className="pl-8 text-base font-medium border-l border-aserto-grey-20 font-roboto text-aserto-grey-60"
             href="/"
           >
             Product
@@ -59,7 +59,7 @@ const Header = () => {
             Request Early Access
           </Button>
           <Link
-            className="ml-8 text-base font-medium font-roboto text-aserto-grey-60"
+            className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
             href="/careers"
           >
             Sign In

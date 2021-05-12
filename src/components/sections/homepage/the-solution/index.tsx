@@ -3,14 +3,14 @@ import SolutionItem from './solution-item'
 
 const solutions: React.ComponentPropsWithoutRef<typeof SolutionItem>[] = [
   {
-    title: 'Built for developers',
+    title: 'Authorization as easy as an API call',
     description:
       'Add powerful authorization capabilities that scale up with your application in a fraction of the time it would take to build it by hand.',
     imageSrc: '/images/scoring.svg',
     imageAlt: 'Real Time Illustration'
   },
   {
-    title: 'Enterprise ready',
+    title: 'Enterprise ready permissions and RBAC',
     description:
       'Sell with confidence into enterprise accounts, knowing their requirements are built into your authorization system.',
     imageSrc: '/images/scoring.svg',
@@ -18,7 +18,7 @@ const solutions: React.ComponentPropsWithoutRef<typeof SolutionItem>[] = [
   },
   {
     imageSrc: '/images/scoring.svg',
-    title: 'Policy centric',
+    title: 'Modern GitOps workflow for policy-as-code',
     description:
       'Express authorization policy in one place, and evolve it through a modern GitOps workflow.',
     imageAlt: 'Cloud Native Illustration'
