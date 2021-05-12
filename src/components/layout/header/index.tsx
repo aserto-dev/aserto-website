@@ -19,9 +19,21 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
-        <nav className="flex items-center space-x-11">
+        <nav className="flex items-center space-x-12">
           <Link href="/">
             <Logo />
+          </Link>
+          <Link
+            className="text-base font-medium font-roboto text-aserto-grey-60"
+            href="/"
+          >
+            Product
+          </Link>
+          <Link
+            className="text-base font-medium font-roboto text-aserto-grey-60"
+            href="/"
+          >
+            Developers
           </Link>
           <Link
             className="text-base font-medium font-roboto text-aserto-grey-60"
