@@ -9,5 +9,9 @@ const withTM = require('next-transpile-modules')([
 module.exports = withPlugins([withTM, withSvgr], {
   images: {
     domains: ['images.unsplash.com']
+  },
+  reactStrictMode: true,
+  future: {
+    webpack5: true
   }
 })
