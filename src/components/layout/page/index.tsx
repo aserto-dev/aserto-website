@@ -52,7 +52,7 @@ const PageLayout = ({ children, contain, headProps }: Props) => {
       <CustomHead {...headProps} />
       <Header />
       <motion.main
-        className="opacity-0 bg-aserto-black"
+        className="mt-16 opacity-0 bg-aserto-black"
         animate="enter"
         exit="exit"
         initial="initial"

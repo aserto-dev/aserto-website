@@ -5,7 +5,7 @@ import Logo from 'icons/logo-header.svg'
 
 const Header = () => {
   return (
-    <header className="sticky z-20 px-6 py-3 bg-aserto-grey-5 shadow-header">
+    <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
         <nav className="flex items-center space-x-11">
           <Link href="/">

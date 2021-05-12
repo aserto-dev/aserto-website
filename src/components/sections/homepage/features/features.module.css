@@ -29,3 +29,15 @@
     left: -30%;
   }
 }
+
+@media screen and (min-width: 1921px) {
+  .background:after {
+    left: -55%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .background:after {
+    left: -65%;
+  }
+}
