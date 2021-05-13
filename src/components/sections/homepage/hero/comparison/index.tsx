@@ -78,20 +78,20 @@ const Comparison = () => {
       <div className="relative w-full pt-16 mx-auto max-w-container">
         <div className="image-1">
           <Image
-            src="/images/without-endgame.svg"
+            src="/images/without-aserto.svg"
             width={1216}
             height={720}
             loading="eager"
-            alt="Without endgame"
+            alt="Without aserto"
           />
         </div>
         <div className="absolute w-full top-16 image-2">
           <Image
-            src="/images/with-endgame.svg"
+            src="/images/with-aserto.svg"
             width={1216}
             height={720}
             loading="eager"
-            alt="With endgame"
+            alt="With aserto"
           />
         </div>
       </div>

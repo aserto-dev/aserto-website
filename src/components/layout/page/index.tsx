@@ -48,11 +48,11 @@ const transitionVariants = {
 
 const PageLayout = ({ children, contain, headProps }: Props) => {
   return (
-    <>
+    <div className="overflow-hidden">
       <CustomHead {...headProps} />
       <Header />
       <motion.main
-        className="mt-16 opacity-0 bg-aserto-black"
+        className="relative mt-16 bg-aserto-black"
         animate="enter"
         exit="exit"
         initial="initial"
@@ -62,7 +62,7 @@ const PageLayout = ({ children, contain, headProps }: Props) => {
       </motion.main>
       <Newsletter />
       <Footer />
-    </>
+    </div>
   )
 }
 

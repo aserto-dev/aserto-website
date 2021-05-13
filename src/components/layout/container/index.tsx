@@ -6,12 +6,7 @@ interface Props {
 }
 
 const Container = ({ children, className }: Props) => (
-  <div
-    className={clsx(
-      'max-w-container mx-auto px-4 relative',
-      className
-    )}
-  >
+  <div className={clsx('max-w-container mx-auto px-4 relative', className)}>
     {children}
   </div>
 )
