@@ -25,3 +25,12 @@
     left: -7.969vw;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .background:after {
+    top: 0;
+    left: -2.969vw;
+
+    background-size: contain;
+  }
+}
