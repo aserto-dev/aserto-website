@@ -8,7 +8,7 @@ type Props = {
 
 const FeatureItem = ({ description, icon, title }: Props) => {
   return (
-    <div className="relative text-left h-72 sm:h-auto">
+    <div className="relative h-64 text-center sm:text-left sm:h-auto">
       <Image src={icon} alt="value" width={48} height={48} />
       <h5 className="mt-8 mb-5 text-1.5xl tracking-tight text-aserto-grey-90">
         {title}

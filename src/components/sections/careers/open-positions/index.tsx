@@ -73,7 +73,9 @@ const OpenPositions = () => {
           <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">
             We’re always looking for talented people to join the team. View open
             positions below or if you don’t see something, drop us a line at{' '}
-            <Link href="mailto:careers@aserto.com">careers@aserto.com</Link>
+            <Link variant="color" href="mailto:careers@aserto.com">
+              careers@aserto.com
+            </Link>
           </p>
         </div>
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">

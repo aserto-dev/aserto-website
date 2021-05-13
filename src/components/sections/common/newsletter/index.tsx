@@ -90,7 +90,7 @@ const NewsletterSection = () => {
               <input
                 placeholder="Enter your email..."
                 id="email"
-                className="w-6/12 px-5 transition-shadow border rounded h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
+                className="w-6/12 px-5 transition-colors border rounded h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
               />
               <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0">
                 {status ? (
