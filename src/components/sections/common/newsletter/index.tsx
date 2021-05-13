@@ -56,7 +56,7 @@ const NewsletterSection = () => {
       <Container>
         <div
           className={clsx(
-            'px-6 py-6 overflow-hidden rounded-lg md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between',
+            'px-6 py-6 overflow-hidden rounded-lg md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between text-center sm:text-left',
             s.background
           )}
         >
@@ -71,15 +71,18 @@ const NewsletterSection = () => {
           >
             Thanks for signing up! Expect to hear from us soon.
           </h2>
-          <div className="w-6/12" ref={contentRef}>
-            <h2 className="text-xl tracking-normal text-aserto-grey-90 sm:text-4.5xl">
+          <div className="w-full sm:w-6/12" ref={contentRef}>
+            <h2 className="tracking-normal text-aserto-grey-90 text-4.5xl">
               Request early access
             </h2>
             <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
               Sign up now to get ahead of the line.
             </p>
           </div>
-          <div ref={formRef} className="flex justify-end w-6/12 mt-8 lg:mt-0">
+          <div
+            ref={formRef}
+            className="flex justify-end w-full mt-8 sm:w-6/12 lg:mt-0"
+          >
             <form
               className="relative items-center justify-end w-full sm:flex"
               onSubmit={() => alert('WIP FORM')}
@@ -90,7 +93,7 @@ const NewsletterSection = () => {
               <input
                 placeholder="Enter your email..."
                 id="email"
-                className="w-6/12 px-5 transition-colors border rounded h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
+                className="w-full px-5 transition-colors border rounded sm:w-6/12 h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
               />
               <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0">
                 {status ? (

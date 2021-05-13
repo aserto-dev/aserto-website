@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
-        <nav className="flex items-center space-x-12">
+        <nav className="items-center hidden space-x-12 md:flex">
           <Link href="/">
             <Logo />
           </Link>
@@ -54,7 +54,7 @@ const Header = () => {
             Careers
           </Link>
         </nav>
-        <div>
+        <div className="hidden md:block">
           <Button variant="primary" size="sm" onClick={handleClick}>
             Request Early Access
           </Button>

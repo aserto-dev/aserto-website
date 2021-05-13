@@ -22,7 +22,7 @@ const Footer = () => {
   }, [])
 
   return (
-    <footer className="bg-aserto-black">
+    <footer className="bg-aserto-grey-5">
       <Container className="pb-10 pt-14">
         <div
           className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-5"
