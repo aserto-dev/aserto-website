@@ -22,11 +22,11 @@ const TestimonialItem = ({
   const [section] = useFadeInBottom()
   return (
     <div className="relative">
-      <div className="absolute z-0 -top-20 left-32">
+      <div className="absolute z-0 -left-2 -top-20 sm:left-32">
         <IconQuote />
       </div>
       <div
-        className="relative z-10 w-8/12 p-10 mx-auto border bg-aserto-black border-aserto-grey-10 rounded-2xl"
+        className="relative z-10 w-full p-10 mx-auto border sm:w-8/12 bg-aserto-black border-aserto-grey-10 rounded-2xl"
         ref={section}
       >
         <p className="mb-12 text-2xl leading-relaxed text-white font-roboto">

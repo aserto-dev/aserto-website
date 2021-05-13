@@ -111,7 +111,7 @@ const Features = () => {
   const [section] = useFadeInBottom()
   return (
     <section
-      className={clsx('py-32 relative', s.background)}
+      className={clsx('pt-0 sm:py-32 relative', s.background)}
       ref={section}
       id="features"
     >
