@@ -39,8 +39,8 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
       'https://jobs.lever.co/aserto/cdcfd3f2-ca34-4280-b69d-71ef90f0c400'
   },
   {
-    name: 'Senior recruiter',
-    description: 'Help grow our team, in Seattle and around the world!',
+    name: 'Senior content engineer',
+    description: 'Define and tell the story around how authorization should be built in modern applications.',
     position: 'DEVELOPMENT',
     linkedin:
       'https://jobs.lever.co/aserto/080c280a-8b6f-4d3d-a886-5a8f277032b9'

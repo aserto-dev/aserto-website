@@ -1,9 +1,6 @@
 // Primitives
 import Link from 'components/primitives/link'
 
-// Icons
-import LinkedinIcon from 'icons/linkedin-bio.svg'
-
 type Props = {
   description: string
   linkedin: string
@@ -28,7 +25,6 @@ const PositionItem = ({ description, linkedin, name, position }: Props) => (
           href={linkedin}
           className="flex items-center pt-6 font-medium uppercase font-roboto text-aserto-lochivar-accent-40"
         >
-          <LinkedinIcon className="mr-4 text-aserto-lochivar-accent-40" />
           VIEW POSITION
         </Link>
       </div>
