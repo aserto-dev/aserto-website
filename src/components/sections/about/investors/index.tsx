@@ -1,5 +1,7 @@
-import { useFadeInBottom } from 'hooks/use-gsap'
 import Image from 'next/image'
+
+// Hooks
+import { useFadeInBottom } from 'hooks/use-gsap'
 
 const Investors = () => {
   const [ref] = useFadeInBottom()
@@ -15,16 +17,18 @@ const Investors = () => {
         </p>
         <div className="flex items-center justify-between mt-16">
           <a
+            className="transition-opacity duration-200 hover:opacity-60"
             href="https://www.costanoavc.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Image src="/images/about/costanoa.svg" width="509" height="49" />
           </a>
           <a
+            className="transition-opacity duration-200 hover:opacity-60"
             href="https://www.heavybit.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Image src="/images/about/heavy.svg" width="291" height="48" />
           </a>

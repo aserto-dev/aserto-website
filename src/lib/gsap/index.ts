@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2
 const RECIPROCAL_GR = 1 / GOLDEN_RATIO
-const DURATION = RECIPROCAL_GR * 1.3
+const DURATION = RECIPROCAL_GR
 
 export type RegisteredEffects = 'fadeIn' | 'fadeInBottom'
 

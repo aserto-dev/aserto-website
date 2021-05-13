@@ -4,7 +4,7 @@ import { checkIfExternal } from 'lib/router'
 import clsx from 'clsx'
 
 type Props = {
-  variant?: 'unstyled' | 'nav'
+  variant?: 'unstyled' | 'nav' | 'color'
 } & JSX.IntrinsicElements['a'] &
   Omit<NextLinkProps, 'as' | 'passHref'>
 
@@ -46,6 +46,10 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
                   'hover:text-aserto-grey-90',
                   {
                     'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
+                  },
+                  {
+                    'text-xl text-aserto-lochivar-accent-40 underline':
+                      variant === 'color'
                   }
                 )
           }

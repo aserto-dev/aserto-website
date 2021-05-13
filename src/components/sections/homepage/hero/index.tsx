@@ -1,3 +1,6 @@
+// Hooks
+import { useFadeInBottom } from 'hooks/use-gsap'
+
 // Primitives
 import Button from 'components/primitives/button'
 
@@ -5,9 +8,11 @@ import Button from 'components/primitives/button'
 import Comparison from './comparison'
 
 const Hero = () => {
+  const [ref] = useFadeInBottom()
+
   return (
     <section className="relative pt-24 mx-auto">
-      <div className="pt-3 text-center">
+      <div className="pt-3 text-center" ref={ref}>
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           Welcome to modern <br className="hidden sm:inline" /> authorization.
         </h1>
