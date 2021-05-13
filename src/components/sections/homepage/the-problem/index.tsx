@@ -34,7 +34,7 @@ const TheProblem = () => {
           <p className="mb-2 font-bold leading-tight uppercase text-aserto-mojo-accent-20 sm:mb-4 sm:text-base tracking-h4">
             The Problem
           </p>
-          <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
+          <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
             Every app reinvents the wheel
           </h2>
           <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12 tracking-tight">

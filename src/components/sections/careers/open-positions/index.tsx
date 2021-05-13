@@ -53,7 +53,7 @@ const OpenPositions = () => {
     <section className="pt-0 pb-52" id="open-positions">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
-          <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
+          <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
             Open Positions
           </h2>
           <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">

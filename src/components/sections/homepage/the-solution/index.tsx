@@ -33,7 +33,7 @@ const TheSolution = () => {
         <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
           THE SOLUTION
         </p>
-        <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90 sm:mb-10 sm:text-5xl">
+        <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
           Introducing: Modern authorization
         </h2>
       </div>
