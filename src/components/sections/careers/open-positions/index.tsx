@@ -8,6 +8,7 @@ import PostionItem from './position-item'
 const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   {
     name: 'Head of Dev Relations',
+    icon: '/images/careers/positions/001.svg',
     description:
       'Create a world-class developer community and partner with existing ecosystems.',
     position: 'DEVELOPMENT',
@@ -16,6 +17,7 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   },
   {
     name: 'Principal backend engineer',
+    icon: '/images/careers/positions/002.svg',
     description:
       'Build out our policy engine, language, API, SDK, language bindings.',
     position: 'DEVELOPMENT',
@@ -24,6 +26,7 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   },
   {
     name: 'Senior frontend engineer',
+    icon: '/images/careers/positions/003.svg',
     description:
       'Design and build our single-page app and management experience.',
     position: 'DEVELOPMENT',
@@ -32,6 +35,7 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   },
   {
     name: 'Senior SRE',
+    icon: '/images/careers/positions/004.svg',
     description:
       'Own our deployment pipeline, and operate planet-scale services.',
     position: 'DEVELOPMENT',
@@ -40,8 +44,18 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   },
   {
     name: 'Senior content engineer',
-    description: 'Define and tell the story around how authorization should be built in modern applications.',
+    icon: '/images/careers/positions/005.svg',
+    description:
+      'Define and tell the story around how authorization should be built in modern applications.',
     position: 'DEVELOPMENT',
+    linkedin:
+      'https://jobs.lever.co/aserto/080c280a-8b6f-4d3d-a886-5a8f277032b9'
+  },
+  {
+    name: 'Senior recruiter',
+    icon: '/images/careers/positions/006.svg',
+    description: 'Help grow our team, in Seattle and around the world!',
+    position: 'HUMAN RESOURCES',
     linkedin:
       'https://jobs.lever.co/aserto/080c280a-8b6f-4d3d-a886-5a8f277032b9'
   }
