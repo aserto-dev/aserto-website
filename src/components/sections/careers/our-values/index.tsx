@@ -26,8 +26,8 @@ const values: React.ComponentPropsWithoutRef<typeof ValueItem>[] = [
 const OurValues = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 pb-0 mx-auto sm:py-20" ref={section}>
-      <div className="relative z-10 px-0 text-center">
+    <section className="relative w-10/12 pb-0 mx-auto sm:py-20">
+      <div className="relative z-10 px-0 text-center" ref={section}>
         <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
           Our Values
         </h2>

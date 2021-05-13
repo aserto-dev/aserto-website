@@ -24,8 +24,8 @@ const benefits: React.ComponentPropsWithoutRef<typeof BenefitItem>[] = [
 const Benefits = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 mx-auto pb-36 sm:pb-96 py-36" ref={section}>
-      <div className="relative z-10 px-0 text-center">
+    <section className="relative w-10/12 mx-auto pb-36 sm:pb-96 py-36">
+      <div className="relative z-10 px-0 text-center" ref={section}>
         <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
           Perks and Benefits
         </h2>
