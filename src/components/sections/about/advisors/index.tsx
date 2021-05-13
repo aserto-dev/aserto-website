@@ -93,7 +93,7 @@ const Advisors = () => {
             Amazing support network
           </p>
         </div>
-        <div className="grid w-full gap-12 mx-auto mt-20 gap-y-20 lg:grid-cols-4">
+        <div className="grid w-full grid-cols-2 gap-4 mx-auto mt-20 gap-y-12 sm:gap-12 sm:gap-y-20 lg:grid-cols-4">
           {advisors.map((advisor) => (
             <AdvisorItem {...advisor} key={advisor.name} />
           ))}

@@ -47,12 +47,12 @@ const FounderItem = ({ image, linkedin, name, position }: Props) => {
             y: moveY
           }}
           className={clsx(
-            'overflow-hidden border rounded border-aserto-grey-10 bg-aserto-black pt-24 pb-20',
+            'overflow-hidden border rounded border-aserto-grey-10 bg-aserto-black py-8 sm:pt-24 sm:pb-20',
             s.background
           )}
         >
-          <motion.div className="relative z-10 flex flex-col justify-between flex-1 my-2 px-28">
-            <div className="w-32 h-32 mb-10">
+          <motion.div className="relative z-10 flex flex-col justify-between flex-1 px-8 my-2 sm:px-28">
+            <div className="w-16 h-16 mb-10 sm:w-32 sm:h-32">
               <Image
                 alt={name}
                 height={128}
@@ -62,7 +62,7 @@ const FounderItem = ({ image, linkedin, name, position }: Props) => {
                 width={128}
               />
             </div>
-            <h3 className="mb-4 text-xl tracking-tight text-aserto-grey-90 sm:text-6xl">
+            <h3 className="mb-4 text-5xl tracking-tight text-aserto-grey-90 sm:text-6xl">
               {name}
             </h3>
             <p className="text-xl text-aserto-grey-90 sm:text-1.5xl">

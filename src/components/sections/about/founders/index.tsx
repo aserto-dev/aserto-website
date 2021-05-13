@@ -22,7 +22,7 @@ const problems: React.ComponentPropsWithoutRef<typeof FounderItem>[] = [
 const Founders = () => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-8 mb-56 lg:py-12">
+    <section className="pt-8 mb-36 sm:mb-56 lg:py-12">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
