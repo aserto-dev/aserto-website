@@ -41,7 +41,6 @@ const Comparison = () => {
       simple: true,
       fade: true,
       nested: true,
-      ease: 'power3.inOut',
       onEnter: (elements) =>
         gsap.fromTo(
           elements,
