@@ -1,14 +1,21 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 // Primitives
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
 
 // SVGs
+import MenuIcon from 'icons/menu.svg'
+import CloseIcon from 'icons/menu-close.svg'
 import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
 
+import Menu from './menu'
+import clsx from 'clsx'
+
 const Header = () => {
+  const [open, setOpen] = useState(false)
+
   const handleClick = useCallback(() => {
     const elem = document.querySelector('#newsletter')
     window.scrollTo({
@@ -17,13 +24,36 @@ const Header = () => {
       behavior: 'smooth'
     })
   }, [])
+
+  useEffect(() => {
+    if (open) {
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.documentElement.style.overflow = 'auto'
+    }
+  }, [open])
+
   return (
-    <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
+    <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
-        <nav className="block sm:hidden">
+        <nav className="flex items-center justify-between w-full sm:hidden">
           <Link href="/">
             <LogoMobile />
           </Link>
+          <div className="relative w-6 h-6">
+            <MenuIcon
+              className={clsx('absolute transition-opacity duration-300', {
+                'opacity-0 invisible': open
+              })}
+              onClick={() => setOpen(!open)}
+            />
+            <CloseIcon
+              className={clsx('absolute transition-opacity duration-300', {
+                'opacity-0 invisible': !open
+              })}
+              onClick={() => setOpen(!open)}
+            />
+          </div>
         </nav>
         <nav className="items-center hidden space-x-12 sm:flex">
           <Link href="/">
@@ -72,6 +102,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
+      <Menu show={open} />
     </header>
   )
 }
