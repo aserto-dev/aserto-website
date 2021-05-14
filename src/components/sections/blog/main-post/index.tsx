@@ -1,3 +1,4 @@
+import { isMobileOnly } from 'react-device-detect'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -7,9 +8,15 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 // Styles
 import s from './main-post.module.css'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const MainPost = () => {
   const [ref] = useFadeInBottom()
+  const [mobile, setMobile] = useState<boolean>()
+
+  useEffect(() => {
+    setMobile(isMobileOnly)
+  }, [setMobile])
 
   return (
     <section
@@ -22,8 +29,8 @@ const MainPost = () => {
             <div>
               <Image
                 src="/images/blog/main-blog.png"
-                width="1216"
-                height="381"
+                width={mobile ? '375' : '1216'}
+                height={mobile ? '265' : '381'}
                 objectFit="cover"
                 layout="responsive"
               />

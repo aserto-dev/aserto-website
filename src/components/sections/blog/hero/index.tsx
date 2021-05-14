@@ -4,7 +4,10 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 const Hero = () => {
   const [ref] = useFadeInBottom()
   return (
-    <section className="relative mx-auto pt-28 mb-52" ref={ref}>
+    <section
+      className="relative pt-16 mx-auto mb-20 text-center sm:pt-28 sm:mb-52 sm:text-left"
+      ref={ref}
+    >
       <h1 className="text-5xl leading-none tracking-tight text-white md:text-6xl xl:text-7.5xl">
         Blog
       </h1>
