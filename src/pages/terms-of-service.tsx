@@ -11,7 +11,9 @@ const TermsOfService = () => {
     ;(function (d, s, id) {
       var js,
         tjs = d.getElementsByTagName(s)[0]
-      if (d.getElementById(id)) return
+      // react vdom will overwrite - so need to recreate
+      // this upon page entry
+      //if (d.getElementById(id)) return
       js = d.createElement(s)
       js.id = id
       //@ts-ignore
@@ -38,7 +40,7 @@ const TermsOfService = () => {
           name="termly-embed"
           data-id="e47eb710-2081-416f-bc68-d2a10759a1c0"
           data-type="iframe"
-        ></div>
+        />
       </section>
     </PageLayout>
   )

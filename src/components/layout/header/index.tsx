@@ -6,6 +6,7 @@ import Link from 'components/primitives/link'
 
 // SVGs
 import Logo from 'icons/logo-header.svg'
+import LogoMobile from 'icons/logo-header-mobile.svg'
 
 const Header = () => {
   const handleClick = useCallback(() => {
@@ -19,6 +20,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-20 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
+        <nav className="block sm:hidden">
+          <Link href="/">
+            <LogoMobile />
+          </Link>
+        </nav>
         <nav className="items-center hidden space-x-12 sm:flex">
           <Link href="/">
             <Logo />
