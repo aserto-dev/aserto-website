@@ -1,4 +1,5 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { HomePageFragment } from 'lib/sanity/generated'
 import TestimonialItem from './testimonial-item'
 
 const testimonials: React.ComponentPropsWithoutRef<typeof TestimonialItem>[] = [
@@ -11,13 +12,13 @@ const testimonials: React.ComponentPropsWithoutRef<typeof TestimonialItem>[] = [
   }
 ]
 
-const Testimonials = () => {
+const Testimonials = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
   return (
     <section className="py-48 pb-32 sm:pb-80" ref={section}>
       <div className="px-4 text-center mb-28 sm:px-0">
         <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
-          What others say
+          {page.testimonialsSectionTitle}
         </h2>
       </div>
       {testimonials.map((testimonial, _i) => (

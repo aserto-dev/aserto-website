@@ -1,0 +1,19 @@
+fragment HomePage on Home {
+  title
+  subtitle
+  slogan
+  ctaLabel
+  theProblemSectionLabel
+  theProblemSectionTitle
+  theProblemSectionSubtitle
+  theSolutionSectionLabel
+  theSolutionSectionTitle
+  featuresSectionTitle
+  testimonialsSectionTitle
+}
+
+query HomePage {
+  allHome(sort: { _createdAt: DESC }, limit: 1) {
+    ...HomePage
+  }
+}

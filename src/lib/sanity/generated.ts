@@ -271,6 +271,74 @@ export type GeopointSorting = {
   alt?: Maybe<SortOrder>
 }
 
+export type Home = Document & {
+  __typename?: 'Home'
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>
+  /** Document type */
+  _type?: Maybe<Scalars['String']>
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>
+  _key?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  subtitle?: Maybe<Scalars['String']>
+  slogan?: Maybe<Scalars['String']>
+  ctaLabel?: Maybe<Scalars['String']>
+  theProblemSectionLabel?: Maybe<Scalars['String']>
+  theProblemSectionTitle?: Maybe<Scalars['String']>
+  theProblemSectionSubtitle?: Maybe<Scalars['String']>
+  theSolutionSectionLabel?: Maybe<Scalars['String']>
+  theSolutionSectionTitle?: Maybe<Scalars['String']>
+  featuresSectionTitle?: Maybe<Scalars['String']>
+  testimonialsSectionTitle?: Maybe<Scalars['String']>
+}
+
+export type HomeFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>
+  _id?: Maybe<IdFilter>
+  _type?: Maybe<StringFilter>
+  _createdAt?: Maybe<DatetimeFilter>
+  _updatedAt?: Maybe<DatetimeFilter>
+  _rev?: Maybe<StringFilter>
+  _key?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  subtitle?: Maybe<StringFilter>
+  slogan?: Maybe<StringFilter>
+  ctaLabel?: Maybe<StringFilter>
+  theProblemSectionLabel?: Maybe<StringFilter>
+  theProblemSectionTitle?: Maybe<StringFilter>
+  theProblemSectionSubtitle?: Maybe<StringFilter>
+  theSolutionSectionLabel?: Maybe<StringFilter>
+  theSolutionSectionTitle?: Maybe<StringFilter>
+  featuresSectionTitle?: Maybe<StringFilter>
+  testimonialsSectionTitle?: Maybe<StringFilter>
+}
+
+export type HomeSorting = {
+  _id?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  _createdAt?: Maybe<SortOrder>
+  _updatedAt?: Maybe<SortOrder>
+  _rev?: Maybe<SortOrder>
+  _key?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  subtitle?: Maybe<SortOrder>
+  slogan?: Maybe<SortOrder>
+  ctaLabel?: Maybe<SortOrder>
+  theProblemSectionLabel?: Maybe<SortOrder>
+  theProblemSectionTitle?: Maybe<SortOrder>
+  theProblemSectionSubtitle?: Maybe<SortOrder>
+  theSolutionSectionLabel?: Maybe<SortOrder>
+  theSolutionSectionTitle?: Maybe<SortOrder>
+  featuresSectionTitle?: Maybe<SortOrder>
+  testimonialsSectionTitle?: Maybe<SortOrder>
+}
+
 export type IdFilter = {
   /** Checks if the value is equal to the given input. */
   eq?: Maybe<Scalars['ID']>
@@ -411,6 +479,7 @@ export type RootQuery = {
   Post?: Maybe<Post>
   Category?: Maybe<Category>
   Author?: Maybe<Author>
+  Home?: Maybe<Home>
   SanityImageAsset?: Maybe<SanityImageAsset>
   SanityFileAsset?: Maybe<SanityFileAsset>
   Document?: Maybe<Document>
@@ -418,6 +487,7 @@ export type RootQuery = {
   allPost: Array<Post>
   allCategory: Array<Category>
   allAuthor: Array<Author>
+  allHome: Array<Home>
   allSanityImageAsset: Array<SanityImageAsset>
   allSanityFileAsset: Array<SanityFileAsset>
   allDocument: Array<Document>
@@ -436,6 +506,10 @@ export type RootQueryCategoryArgs = {
 }
 
 export type RootQueryAuthorArgs = {
+  id: Scalars['ID']
+}
+
+export type RootQueryHomeArgs = {
   id: Scalars['ID']
 }
 
@@ -475,6 +549,13 @@ export type RootQueryAllCategoryArgs = {
 export type RootQueryAllAuthorArgs = {
   where?: Maybe<AuthorFilter>
   sort?: Maybe<Array<AuthorSorting>>
+  limit?: Maybe<Scalars['Int']>
+  offset?: Maybe<Scalars['Int']>
+}
+
+export type RootQueryAllHomeArgs = {
+  where?: Maybe<HomeFilter>
+  sort?: Maybe<Array<HomeSorting>>
   limit?: Maybe<Scalars['Int']>
   offset?: Maybe<Scalars['Int']>
 }
@@ -1034,6 +1115,27 @@ export type BlogPostQuery = { __typename?: 'RootQuery' } & {
   allPost: Array<{ __typename?: 'Post' } & PostFragment>
 }
 
+export type HomePageFragment = { __typename?: 'Home' } & Pick<
+  Home,
+  | 'title'
+  | 'subtitle'
+  | 'slogan'
+  | 'ctaLabel'
+  | 'theProblemSectionLabel'
+  | 'theProblemSectionTitle'
+  | 'theProblemSectionSubtitle'
+  | 'theSolutionSectionLabel'
+  | 'theSolutionSectionTitle'
+  | 'featuresSectionTitle'
+  | 'testimonialsSectionTitle'
+>
+
+export type HomePageQueryVariables = Exact<{ [key: string]: never }>
+
+export type HomePageQuery = { __typename?: 'RootQuery' } & {
+  allHome: Array<{ __typename?: 'Home' } & HomePageFragment>
+}
+
 export const ImageFragmentDoc = gql`
   fragment Image on MainImage {
     crop {
@@ -1101,6 +1203,21 @@ export const PostFragmentDoc = gql`
   }
   ${PostMetaFragmentDoc}
 `
+export const HomePageFragmentDoc = gql`
+  fragment HomePage on Home {
+    title
+    subtitle
+    slogan
+    ctaLabel
+    theProblemSectionLabel
+    theProblemSectionTitle
+    theProblemSectionSubtitle
+    theSolutionSectionLabel
+    theSolutionSectionTitle
+    featuresSectionTitle
+    testimonialsSectionTitle
+  }
+`
 export const BlogIndexDocument = gql`
   query BlogIndex {
     allPost {
@@ -1125,6 +1242,14 @@ export const BlogPostDocument = gql`
     }
   }
   ${PostFragmentDoc}
+`
+export const HomePageDocument = gql`
+  query HomePage {
+    allHome(sort: { _createdAt: DESC }, limit: 1) {
+      ...HomePage
+    }
+  }
+  ${HomePageFragmentDoc}
 `
 
 export type SdkFunctionWrapper = <T>(
@@ -1176,6 +1301,19 @@ export function getSdk(
             ...wrappedRequestHeaders
           }),
         'BlogPost'
+      )
+    },
+    HomePage(
+      variables?: HomePageQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<HomePageQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<HomePageQuery>(HomePageDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'HomePage'
       )
     }
   }

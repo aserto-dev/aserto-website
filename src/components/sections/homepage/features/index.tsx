@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { HomePageFragment } from 'lib/sanity/generated'
 import Comparison from './comparison'
 import FeatureItem from './feature-item'
 
@@ -107,7 +108,7 @@ const features: React.ComponentPropsWithoutRef<typeof FeatureItem>[] = [
   }
 ]
 
-const Features = () => {
+const Features = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
   return (
     <section
@@ -117,7 +118,7 @@ const Features = () => {
     >
       <div className="relative z-10 px-0 text-center">
         <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
-          Features
+          {page.featuresSectionTitle}
         </h2>
         <Comparison />
         <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
