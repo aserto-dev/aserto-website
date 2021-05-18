@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
       <div className="flex items-center justify-between">
-        <nav className="flex items-center justify-between w-full sm:hidden">
+        <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
             <LogoMobile />
           </Link>
@@ -55,7 +55,7 @@ const Header = () => {
             />
           </div>
         </nav>
-        <nav className="items-center hidden space-x-12 sm:flex">
+        <nav className="items-center hidden space-x-12 lg:flex">
           <Link href="/">
             <Logo />
           </Link>
@@ -90,13 +90,13 @@ const Header = () => {
             Careers
           </Link>
         </nav>
-        <div className="hidden sm:block">
+        <div className="hidden lg:block">
           <Button variant="primary" size="sm" onClick={handleClick}>
             Request Early Access
           </Button>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
-            href="/careers"
+            href="https://console.aserto.com/"
           >
             Sign In
           </Link>

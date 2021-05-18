@@ -3,6 +3,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Primitives
 import Link from 'components/primitives/link'
+import Image from 'next/image'
 
 // Styles
 import s from './hero.module.css'
@@ -12,7 +13,15 @@ const Hero = () => {
 
   return (
     <section className={`mx-auto pt-44 sm:pt-80 pb-44 ${s.background}`}>
-      <div className="relative z-10 pt-3 text-center" ref={ref}>
+      <div className={s.background}>
+        <Image
+          src="/images/about/background2.png"
+          width={1440}
+          height={1068}
+          objectFit="cover"
+        />
+      </div>
+      <div className={`relative z-10 pt-3 text-center ${s.content}`} ref={ref}>
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl mb-14 sm:mb-0">
           Authorization is broken
         </h1>
@@ -37,7 +46,7 @@ const Hero = () => {
           experience resulting in misconfigurations, data leaks, and manual,
           soul-crushing compliance audits. No wonder everyone we talk to feels
           like{' '}
-          <Link href="/" variant="color" className="text-2xl">
+          <Link href="/" variant="color" className={s.link}>
             authorization is broken!
           </Link>
           <br />

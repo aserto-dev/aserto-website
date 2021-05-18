@@ -25,6 +25,7 @@ interface Props {
   children?: React.ReactNode
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
+  withoutNewsletter?: boolean
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -46,7 +47,12 @@ const transitionVariants = {
   }
 }
 
-const PageLayout = ({ children, contain, headProps }: Props) => {
+const PageLayout = ({
+  children,
+  contain,
+  headProps,
+  withoutNewsletter
+}: Props) => {
   return (
     <div className="overflow-hidden">
       <CustomHead {...headProps} />
@@ -60,7 +66,7 @@ const PageLayout = ({ children, contain, headProps }: Props) => {
       >
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
-      <Newsletter />
+      {!withoutNewsletter && <Newsletter />}
       <Footer />
     </div>
   )

@@ -1,36 +1,23 @@
 .background {
-  position: relative;
-
-  color: inherit;
+  margin-top: -16vw;
 }
 
-.background:after {
-  position: absolute;
-  z-index: 5;
-  top: -20vw;
-  left: -17.969vw;
-
-  width: 100vw;
-  height: 130.085vh;
-
-  content: '';
-
-  background-image: url('/images/about/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+.content {
+  margin-top: -25vw;
 }
 
-@media screen and (max-width: 1441px) {
-  .background:after {
-    left: -7.969vw;
+.link {
+  font-size: inherit !important;
+}
+
+@media screen and (max-width: 1280px) {
+  .background {
+    margin-top: -20vw;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .background:after {
-    top: 0;
-    left: -2.969vw;
-
-    background-size: contain;
+  .content {
+    margin-top: -25vw;
   }
 }

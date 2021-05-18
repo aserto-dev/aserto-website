@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useMemo } from 'react'
 
 const defaultMeta = {
-  title: 'Aserto - Authorization for All',
+  title: 'Aserto - Welcome to modern authorization.',
   description: `Authorization for All`,
   image: 'https://aserto.basement.studio/images/OG.png',
   twitterTag: 'aserto_com'
