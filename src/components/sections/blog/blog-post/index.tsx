@@ -37,8 +37,7 @@ const Post = ({ post }: Props) => {
             <div className="ml-6">
               <p className="text-aserto-grey-60 font-roboto">{author?.name}</p>
               <p className="uppercase text-aserto-lochivar-100 font-roboto">
-                {/* {author?.position}, {author.company} */}
-                Position + Company todo
+                {author?.position}
               </p>
             </div>
             <div className="absolute left-0 flex w-full uppercase -bottom-14 text-aserto-grey-60 font-roboto">

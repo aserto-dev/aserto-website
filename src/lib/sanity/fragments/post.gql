@@ -16,6 +16,7 @@ fragment PostMeta on Post {
         current
       }
       bioRaw
+      position
       image {
         ...Image
       }

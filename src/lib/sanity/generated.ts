@@ -38,6 +38,7 @@ export type Author = Document & {
   _rev?: Maybe<Scalars['String']>
   _key?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
+  position?: Maybe<Scalars['String']>
   slug?: Maybe<Slug>
   image?: Maybe<MainImage>
   bioRaw?: Maybe<Scalars['JSON']>
@@ -53,6 +54,7 @@ export type AuthorFilter = {
   _rev?: Maybe<StringFilter>
   _key?: Maybe<StringFilter>
   name?: Maybe<StringFilter>
+  position?: Maybe<StringFilter>
   slug?: Maybe<SlugFilter>
   image?: Maybe<MainImageFilter>
 }
@@ -85,6 +87,7 @@ export type AuthorSorting = {
   _rev?: Maybe<SortOrder>
   _key?: Maybe<SortOrder>
   name?: Maybe<SortOrder>
+  position?: Maybe<SortOrder>
   slug?: Maybe<SlugSorting>
   image?: Maybe<MainImageSorting>
 }
@@ -983,7 +986,10 @@ export type PostMetaFragment = { __typename?: 'Post' } & Pick<
         Maybe<
           { __typename?: 'AuthorReference' } & {
             author?: Maybe<
-              { __typename?: 'Author' } & Pick<Author, 'name' | 'bioRaw'> & {
+              { __typename?: 'Author' } & Pick<
+                Author,
+                'name' | 'bioRaw' | 'position'
+              > & {
                   slug?: Maybe<{ __typename?: 'Slug' } & Pick<Slug, 'current'>>
                   image?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
                 }
@@ -1075,6 +1081,7 @@ export const PostMetaFragmentDoc = gql`
           current
         }
         bioRaw
+        position
         image {
           ...Image
         }
