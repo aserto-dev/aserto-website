@@ -10,5 +10,8 @@ const withTM = require('next-transpile-modules')([
 module.exports = withPlugins([withTM, withSvgr], {
   future: {
     webpack5: true
+  },
+  images: {
+    domains: ['cdn.sanity.io']
   }
 })

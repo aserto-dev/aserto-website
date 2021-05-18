@@ -1,0 +1,18 @@
+overwrite: true
+schema:
+  - ${SANITY_GRAPHQL_ENDPOINT}:
+      headers:
+        Authorization: Bearer ${SANITY_READ_TOKEN}
+documents: './src/**/*.{gql,graphql}'
+generates:
+  ./src/lib/sanity/generated.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-graphql-request'
+  ./src/lib/sanity/graphql.schema.json:
+    plugins:
+      - 'introspection'
+hooks:
+  afterOneFileWrite:
+    - yarn lint --fix

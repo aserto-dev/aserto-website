@@ -31,4 +31,10 @@ const HomePage = () => {
   )
 }
 
+export const getStaticProps = () => {
+  return {
+    props: {}
+  }
+}
+
 export default HomePage

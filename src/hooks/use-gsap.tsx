@@ -26,10 +26,8 @@ export const useFadeIn = <El extends Element = HTMLDivElement>(
   callback?: () => void
 ): [RefObject<El>, gsap.plugins.ScrollTriggerInstance | undefined] => {
   const targetRef = useRef<El>(null)
-  const [
-    scrollTriggerInstance,
-    setScrollTriggerInstance
-  ] = useState<gsap.plugins.ScrollTriggerInstance>()
+  const [scrollTriggerInstance, setScrollTriggerInstance] =
+    useState<gsap.plugins.ScrollTriggerInstance>()
 
   useEffect(() => {
     if (!targetRef.current) return
@@ -60,10 +58,8 @@ export const useFadeInBottom = <El extends Element = HTMLDivElement>(): [
   gsap.plugins.ScrollTriggerInstance | undefined
 ] => {
   const targetRef = useRef<El>(null)
-  const [
-    scrollTriggerInstance,
-    setScrollTriggerInstance
-  ] = useState<gsap.plugins.ScrollTriggerInstance>()
+  const [scrollTriggerInstance, setScrollTriggerInstance] =
+    useState<gsap.plugins.ScrollTriggerInstance>()
 
   useEffect(() => {
     if (!targetRef.current) return

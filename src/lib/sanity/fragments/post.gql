@@ -1,0 +1,33 @@
+fragment PostMeta on Post {
+  _id
+  publishedAt
+  mainImage {
+    ...Image
+  }
+  title
+  excerptRaw
+  slug {
+    current
+  }
+  authors {
+    author {
+      name
+      slug {
+        current
+      }
+      bioRaw
+      image {
+        ...Image
+      }
+    }
+  }
+  categories {
+    title
+    description
+  }
+}
+
+fragment Post on Post {
+  ...PostMeta
+  bodyRaw
+}

@@ -1,0 +1,19 @@
+query BlogIndex {
+  allPost {
+    ...PostMeta
+  }
+}
+
+query BlogPostPaths {
+  allPost {
+    slug {
+      current
+    }
+  }
+}
+
+query BlogPost($slug: String!) {
+  allPost(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...Post
+  }
+}
