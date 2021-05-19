@@ -57,6 +57,14 @@ const Footer = () => {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="https://console.aserto.com/"
+                >
+                  Sign In
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
