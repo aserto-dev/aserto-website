@@ -1,10 +1,11 @@
+import { isMobile } from 'react-device-detect'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useCallback } from 'react'
 import { SectionBlockFragment } from 'lib/sanity/generated'
 import { BlockContent } from 'lib/sanity'
+import { useCallback, useEffect, useState } from 'react'
 
 type Props = {
   data: SectionBlockFragment
@@ -12,6 +13,7 @@ type Props = {
 }
 
 const SolutionItem = ({ isInverted, data }: Props) => {
+  const [mobile, setMobile] = useState<boolean>()
   const [section] = useFadeInBottom()
   const x = useMotionValue(400)
   const y = useMotionValue(400)
@@ -31,6 +33,10 @@ const SolutionItem = ({ isInverted, data }: Props) => {
     },
     [x, y]
   )
+
+  useEffect(() => {
+    setMobile(isMobile)
+  }, [setMobile])
 
   return (
     <div className="relative mb-20 sm:mb-0">
@@ -71,6 +77,7 @@ const SolutionItem = ({ isInverted, data }: Props) => {
                 alt={data.image?.alt ?? ''}
                 width={488}
                 height={511}
+                layout={mobile ? 'intrinsic' : 'responsive'}
               />
             </motion.div>
           </motion.div>
