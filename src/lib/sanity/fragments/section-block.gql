@@ -1,0 +1,7 @@
+fragment SectionBlock on SectionBlock {
+  image {
+    ...Image
+  }
+  title
+  subtitleRaw
+}

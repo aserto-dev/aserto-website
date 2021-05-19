@@ -10,7 +10,7 @@ type Props = {
   companyName: string
   profileimageSrc: string
   profileName: string
-  quote: string
+  quote: React.ReactNode
 }
 
 const TestimonialItem = ({
@@ -29,9 +29,9 @@ const TestimonialItem = ({
         className="relative z-10 w-full p-10 mx-auto border sm:w-8/12 bg-aserto-black border-aserto-grey-10 rounded-2xl"
         ref={section}
       >
-        <p className="mb-12 text-2xl leading-relaxed text-white font-roboto">
+        <div className="mb-12 text-2xl leading-relaxed text-white font-roboto">
           {quote}
-        </p>
+        </div>
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
             <Image

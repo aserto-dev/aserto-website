@@ -5,27 +5,6 @@ import { HomePageFragment } from 'lib/sanity/generated'
 // Components
 import ProblemItem from './problem-item'
 
-const problems: React.ComponentPropsWithoutRef<typeof ProblemItem>[] = [
-  {
-    image: '/images/homepage/problem/001.svg',
-    title: 'Authorization is hard',
-    description:
-      'Evaluating policy against user attributes in real-time is a distributed systems problem. Most engineering teams can’t justify taking the time to fully solve it.'
-  },
-  {
-    image: '/images/homepage/problem/002.svg',
-    title: 'Requirements ramp',
-    description:
-      "Custom roles. Custom attributes. Decision logs. ISO 27001. As products move up-market, teams that build them can't keep up."
-  },
-  {
-    image: '/images/homepage/problem/003.svg',
-    title: 'Opportunity cost',
-    description:
-      '"I want to rewrite RBAC!" said no engineer, ever. Your team could be working on end-user features instead of undifferentiated heavy lifting.'
-  }
-]
-
 const TheProblem = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
 
@@ -44,9 +23,10 @@ const TheProblem = ({ page }: { page: HomePageFragment }) => {
           </p>
         </div>
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
-          {problems.map((post) => (
-            <ProblemItem {...post} key={post.title} />
-          ))}
+          {page.theProblemSectionCards?.map((card, i) => {
+            if (!card) return null
+            return <ProblemItem data={card} key={i} />
+          })}
         </div>
       </div>
     </section>

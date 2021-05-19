@@ -2,30 +2,6 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 import { HomePageFragment } from 'lib/sanity/generated'
 import SolutionItem from './solution-item'
 
-const solutions: React.ComponentPropsWithoutRef<typeof SolutionItem>[] = [
-  {
-    title: 'Authorization as easy as an API call',
-    description:
-      'Add powerful authorization capabilities that scale up with your application in a fraction of the time it would take to build it by hand.',
-    imageSrc: '/images/homepage/solution/001.svg',
-    imageAlt: 'Real Time Illustration'
-  },
-  {
-    title: 'Enterprise ready permissions and RBAC',
-    description:
-      'Sell with confidence into enterprise accounts, knowing their requirements are built into your authorization system.',
-    imageSrc: '/images/homepage/solution/002.svg',
-    imageAlt: 'Fine Grained Illustration'
-  },
-  {
-    imageSrc: '/images/homepage/solution/003.svg',
-    title: 'Modern GitOps workflow for policy-as-code',
-    description:
-      'Express authorization policy in one place, and evolve it through a modern GitOps workflow.',
-    imageAlt: 'Cloud Native Illustration'
-  }
-]
-
 const TheSolution = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
 
@@ -39,13 +15,10 @@ const TheSolution = ({ page }: { page: HomePageFragment }) => {
           {page.theSolutionSectionTitle}
         </h2>
       </div>
-      {solutions.map((feature, i) => (
-        <SolutionItem
-          {...feature}
-          isInverted={i % 2 !== 0}
-          key={feature.title}
-        />
-      ))}
+      {page.theSolutionSectionCards?.map((card, i) => {
+        if (!card) return null
+        return <SolutionItem data={card} isInverted={i % 2 !== 0} key={i} />
+      })}
     </section>
   )
 }

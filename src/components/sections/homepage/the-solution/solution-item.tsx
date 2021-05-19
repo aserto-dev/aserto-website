@@ -3,22 +3,15 @@ import { motion, useMotionValue, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useCallback } from 'react'
+import { SectionBlockFragment } from 'lib/sanity/generated'
+import { BlockContent } from 'lib/sanity'
 
 type Props = {
-  title: string
-  description: string
-  imageSrc?: string
-  imageAlt?: string
+  data: SectionBlockFragment
   isInverted?: boolean
 }
 
-const SolutionItem = ({
-  description,
-  imageAlt,
-  imageSrc,
-  isInverted,
-  title
-}: Props) => {
+const SolutionItem = ({ isInverted, data }: Props) => {
   const [section] = useFadeInBottom()
   const x = useMotionValue(400)
   const y = useMotionValue(400)
@@ -29,12 +22,16 @@ const SolutionItem = ({
   const moveX = useTransform(x, [-800, 800], [8, -8])
   const moveY = useTransform(y, [-800, 800], [8, -8])
 
-  const handleMouse = useCallback((event) => {
-    const rect = event.currentTarget.getBoundingClientRect()
+  const handleMouse = useCallback(
+    (event) => {
+      const rect = event.currentTarget.getBoundingClientRect()
 
-    x.set(event.clientX - rect.left)
-    y.set(event.clientY - rect.top)
-  }, [])
+      x.set(event.clientX - rect.left)
+      y.set(event.clientY - rect.top)
+    },
+    [x, y]
+  )
+
   return (
     <div className="relative mb-20 sm:mb-0">
       <div
@@ -43,11 +40,11 @@ const SolutionItem = ({
       >
         <div className="max-w-xl px-4 pb-0 mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:pr-10 sm:pb-12">
           <h2 className="mb-2 text-aserto-grey-90 text-4.5xl sm:mb-3 leading-tight">
-            {title}
+            {data.title}
           </h2>
-          <p className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">
-            {description}
-          </p>
+          <div className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">
+            <BlockContent blocks={data.subtitleRaw} />
+          </div>
         </div>
 
         <div
@@ -69,9 +66,12 @@ const SolutionItem = ({
               }}
               className="overflow-hidden rounded"
             >
-              {imageSrc && (
-                <Image src={imageSrc} alt={imageAlt} width={488} height={511} />
-              )}
+              <Image
+                src={data.image?.asset?.url ?? '/404'}
+                alt={data.image?.alt ?? ''}
+                width={488}
+                height={511}
+              />
             </motion.div>
           </motion.div>
         </div>

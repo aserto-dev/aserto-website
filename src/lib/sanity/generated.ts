@@ -213,6 +213,48 @@ export type DocumentSorting = {
   _rev?: Maybe<SortOrder>
 }
 
+export type FeatureBlock = {
+  __typename?: 'FeatureBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  blocks?: Maybe<Array<Maybe<FeatureItem>>>
+}
+
+export type FeatureBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+}
+
+export type FeatureBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+}
+
+export type FeatureItem = {
+  __typename?: 'FeatureItem'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  icon?: Maybe<MainImage>
+  title?: Maybe<Scalars['String']>
+}
+
+export type FeatureItemFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  icon?: Maybe<MainImageFilter>
+  title?: Maybe<StringFilter>
+}
+
+export type FeatureItemSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  icon?: Maybe<MainImageSorting>
+  title?: Maybe<SortOrder>
+}
+
 export type File = {
   __typename?: 'File'
   _key?: Maybe<Scalars['String']>
@@ -291,10 +333,14 @@ export type Home = Document & {
   theProblemSectionLabel?: Maybe<Scalars['String']>
   theProblemSectionTitle?: Maybe<Scalars['String']>
   theProblemSectionSubtitle?: Maybe<Scalars['String']>
+  theProblemSectionCards?: Maybe<Array<Maybe<SectionBlock>>>
   theSolutionSectionLabel?: Maybe<Scalars['String']>
   theSolutionSectionTitle?: Maybe<Scalars['String']>
+  theSolutionSectionCards?: Maybe<Array<Maybe<SectionBlock>>>
   featuresSectionTitle?: Maybe<Scalars['String']>
+  features?: Maybe<Array<Maybe<FeatureBlock>>>
   testimonialsSectionTitle?: Maybe<Scalars['String']>
+  testimonial?: Maybe<TestimonialBlock>
 }
 
 export type HomeFilter = {
@@ -317,6 +363,7 @@ export type HomeFilter = {
   theSolutionSectionTitle?: Maybe<StringFilter>
   featuresSectionTitle?: Maybe<StringFilter>
   testimonialsSectionTitle?: Maybe<StringFilter>
+  testimonial?: Maybe<TestimonialBlockFilter>
 }
 
 export type HomeSorting = {
@@ -337,6 +384,7 @@ export type HomeSorting = {
   theSolutionSectionTitle?: Maybe<SortOrder>
   featuresSectionTitle?: Maybe<SortOrder>
   testimonialsSectionTitle?: Maybe<SortOrder>
+  testimonial?: Maybe<TestimonialBlockSorting>
 }
 
 export type IdFilter = {
@@ -941,6 +989,29 @@ export type Sanity_DocumentFilter = {
   is_draft?: Maybe<Scalars['Boolean']>
 }
 
+export type SectionBlock = {
+  __typename?: 'SectionBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  image?: Maybe<MainImage>
+  title?: Maybe<Scalars['String']>
+  subtitleRaw?: Maybe<Scalars['JSON']>
+}
+
+export type SectionBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  image?: Maybe<MainImageFilter>
+  title?: Maybe<StringFilter>
+}
+
+export type SectionBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  image?: Maybe<MainImageSorting>
+  title?: Maybe<SortOrder>
+}
+
 export type SiteSettings = Document & {
   __typename?: 'SiteSettings'
   /** Document ID */
@@ -1032,6 +1103,32 @@ export type StringFilter = {
   nin?: Maybe<Array<Scalars['String']>>
 }
 
+export type TestimonialBlock = {
+  __typename?: 'TestimonialBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  authorAvatar?: Maybe<MainImage>
+  authorName?: Maybe<Scalars['String']>
+  authorPosition?: Maybe<Scalars['String']>
+  quoteRaw?: Maybe<Scalars['JSON']>
+}
+
+export type TestimonialBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  authorAvatar?: Maybe<MainImageFilter>
+  authorName?: Maybe<StringFilter>
+  authorPosition?: Maybe<StringFilter>
+}
+
+export type TestimonialBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  authorAvatar?: Maybe<MainImageSorting>
+  authorName?: Maybe<SortOrder>
+  authorPosition?: Maybe<SortOrder>
+}
+
 export type ImageFragment = { __typename?: 'MainImage' } & Pick<
   MainImage,
   'alt'
@@ -1091,6 +1188,11 @@ export type PostMetaFragment = { __typename?: 'Post' } & Pick<
 export type PostFragment = { __typename?: 'Post' } & Pick<Post, 'bodyRaw'> &
   PostMetaFragment
 
+export type SectionBlockFragment = { __typename?: 'SectionBlock' } & Pick<
+  SectionBlock,
+  'title' | 'subtitleRaw'
+> & { image?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+
 export type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
 
 export type BlogIndexQuery = { __typename?: 'RootQuery' } & {
@@ -1128,7 +1230,42 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
   | 'theSolutionSectionTitle'
   | 'featuresSectionTitle'
   | 'testimonialsSectionTitle'
->
+> & {
+    theProblemSectionCards?: Maybe<
+      Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
+    >
+    theSolutionSectionCards?: Maybe<
+      Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
+    >
+    features?: Maybe<
+      Array<
+        Maybe<
+          { __typename?: 'FeatureBlock' } & Pick<FeatureBlock, 'title'> & {
+              blocks?: Maybe<
+                Array<
+                  Maybe<
+                    { __typename?: 'FeatureItem' } & Pick<
+                      FeatureItem,
+                      'title'
+                    > & {
+                        icon?: Maybe<
+                          { __typename?: 'MainImage' } & ImageFragment
+                        >
+                      }
+                  >
+                >
+              >
+            }
+        >
+      >
+    >
+    testimonial?: Maybe<
+      { __typename?: 'TestimonialBlock' } & Pick<
+        TestimonialBlock,
+        'authorName' | 'authorPosition' | 'quoteRaw'
+      > & { authorAvatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+    >
+  }
 
 export type HomePageQueryVariables = Exact<{ [key: string]: never }>
 
@@ -1203,6 +1340,16 @@ export const PostFragmentDoc = gql`
   }
   ${PostMetaFragmentDoc}
 `
+export const SectionBlockFragmentDoc = gql`
+  fragment SectionBlock on SectionBlock {
+    image {
+      ...Image
+    }
+    title
+    subtitleRaw
+  }
+  ${ImageFragmentDoc}
+`
 export const HomePageFragmentDoc = gql`
   fragment HomePage on Home {
     title
@@ -1212,11 +1359,36 @@ export const HomePageFragmentDoc = gql`
     theProblemSectionLabel
     theProblemSectionTitle
     theProblemSectionSubtitle
+    theProblemSectionCards {
+      ...SectionBlock
+    }
     theSolutionSectionLabel
     theSolutionSectionTitle
+    theSolutionSectionCards {
+      ...SectionBlock
+    }
     featuresSectionTitle
+    features {
+      title
+      blocks {
+        icon {
+          ...Image
+        }
+        title
+      }
+    }
     testimonialsSectionTitle
+    testimonial {
+      authorAvatar {
+        ...Image
+      }
+      authorName
+      authorPosition
+      quoteRaw
+    }
   }
+  ${SectionBlockFragmentDoc}
+  ${ImageFragmentDoc}
 `
 export const BlogIndexDocument = gql`
   query BlogIndex {
