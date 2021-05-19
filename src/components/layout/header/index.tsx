@@ -13,7 +13,11 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import Menu from './menu'
 import clsx from 'clsx'
 
-const Header = () => {
+type Props = {
+  selected?: 'product' | 'developers' | 'blog' | 'about' | 'careers'
+}
+
+const Header = ({ selected }: Props) => {
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => {
@@ -59,33 +63,63 @@ const Header = () => {
           <Link href="/">
             <Logo />
           </Link>
-          <div className='bg-aserto-grey-20 w-[1px] h-9 mx-5' />
+          <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
           <Link
-            className="text-base font-roboto text-aserto-grey-60 py-7"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'product',
+                'border-transparent': selected !== 'product'
+              }
+            )}
             href="/"
           >
             Product
           </Link>
           <Link
-            className="text-base font-roboto text-aserto-grey-60 py-7"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'developers',
+                'border-transparent': selected !== 'developers'
+              }
+            )}
             href="/"
           >
             Developers
           </Link>
           <Link
-            className="text-base font-roboto text-aserto-grey-60 py-7"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'blog',
+                'border-transparent': selected !== 'blog'
+              }
+            )}
             href="/blog"
           >
             Blog
           </Link>
           <Link
-            className="text-base font-roboto text-aserto-grey-60 py-7"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'about',
+                'border-transparent': selected !== 'about'
+              }
+            )}
             href="/about"
           >
             About
           </Link>
           <Link
-            className="text-base font-roboto text-aserto-grey-60 py-7"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'careers',
+                'border-transparent': selected !== 'careers'
+              }
+            )}
             href="/careers"
           >
             Careers
