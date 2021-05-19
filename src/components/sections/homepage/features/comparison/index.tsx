@@ -14,9 +14,20 @@ const Comparison = () => {
 
   const [sliderRef, ] = useKeenSlider<HTMLDivElement>({
     initial: 0,
-    slidesPerView: 1.3,
+    slidesPerView: 2,
     loop: false,
-    centered: true
+    centered: true,
+    breakpoints: {
+      '(max-width: 800px)': {
+        slidesPerView: 1.8,
+      },
+      '(max-width: 520px)': {
+        slidesPerView: 1.6,
+      },
+      '(max-width: 410px)': {
+        slidesPerView: 1.5,
+      },
+    },
   })
 
   useEffect(() => {
@@ -68,7 +79,7 @@ const Comparison = () => {
 
   return (
     <div>
-      <div className="hidden md:flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
+      <div className="hidden lg:flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
         <button
           className={clsx(
             'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
@@ -146,8 +157,8 @@ const Comparison = () => {
           </label>
         </button>
       </div>
-      <div className="flex md:hidden">
-        <div ref={sliderRef} className="keen-slider">
+      <div className="flex lg:hidden">
+        <div ref={sliderRef} className="keen-slider w-full">
           <button
             className={clsx(
               'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
