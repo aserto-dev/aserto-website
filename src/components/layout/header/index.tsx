@@ -34,8 +34,8 @@ const Header = () => {
   }, [open])
 
   return (
-    <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header">
-      <div className="flex items-center justify-between">
+    <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header py-5">
+      <div className="flex items-center justify-between w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
             <LogoMobile />
