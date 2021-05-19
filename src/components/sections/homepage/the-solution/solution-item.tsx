@@ -1,8 +1,9 @@
+import { isMobile } from 'react-device-detect'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 type Props = {
   title: string
@@ -19,6 +20,8 @@ const SolutionItem = ({
   isInverted,
   title
 }: Props) => {
+  const [mobile, setMobile] = useState<boolean>()
+
   const [section] = useFadeInBottom()
   const x = useMotionValue(400)
   const y = useMotionValue(400)
@@ -35,6 +38,11 @@ const SolutionItem = ({
     x.set(event.clientX - rect.left)
     y.set(event.clientY - rect.top)
   }, [])
+
+  useEffect(() => {
+    setMobile(isMobile)
+  }, [setMobile])
+
   return (
     <div className="relative mb-20 sm:mb-0">
       <div
@@ -70,7 +78,13 @@ const SolutionItem = ({
               className="overflow-hidden rounded"
             >
               {imageSrc && (
-                <Image src={imageSrc} alt={imageAlt} width={488} height={511} />
+                <Image
+                  src={imageSrc}
+                  alt={imageAlt}
+                  width={488}
+                  height={511}
+                  layout={mobile ? 'intrinsic' : 'responsive'}
+                />
               )}
             </motion.div>
           </motion.div>
