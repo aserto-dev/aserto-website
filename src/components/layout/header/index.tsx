@@ -61,31 +61,31 @@ const Header = () => {
           </Link>
           <div className='bg-aserto-grey-20 w-[1px] h-9 mx-5' />
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
+            className="text-base font-roboto text-aserto-grey-60 py-7"
             href="/"
           >
             Product
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
+            className="text-base font-roboto text-aserto-grey-60 py-7"
             href="/"
           >
             Developers
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
+            className="text-base font-roboto text-aserto-grey-60 py-7"
             href="/blog"
           >
             Blog
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
+            className="text-base font-roboto text-aserto-grey-60 py-7"
             href="/about"
           >
             About
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
+            className="text-base font-roboto text-aserto-grey-60 py-7"
             href="/careers"
           >
             Careers
