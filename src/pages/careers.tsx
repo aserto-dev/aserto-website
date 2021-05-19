@@ -25,8 +25,8 @@ const Careers = () => {
         <div className="absolute top-0 left-0">
           <Image
             src="/images/careers/background2.png"
-            width={1600}
-            height={1200}
+            width={5000}
+            height={3750}
           />
         </div>
         <CustomHead />
