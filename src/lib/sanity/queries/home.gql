@@ -1,0 +1,44 @@
+fragment HomePage on Home {
+  title
+  subtitle
+  slogan {
+    text
+  }
+  ctaLabel
+  theProblemSectionLabel
+  theProblemSectionTitle
+  theProblemSectionSubtitle
+  theProblemSectionCards {
+    ...SectionBlock
+  }
+  theSolutionSectionLabel
+  theSolutionSectionTitle
+  theSolutionSectionCards {
+    ...SectionBlock
+  }
+  featuresSectionTitle
+  features {
+    title
+    blocks {
+      icon {
+        ...Image
+      }
+      title
+    }
+  }
+  testimonialsSectionTitle
+  testimonial {
+    authorAvatar {
+      ...Image
+    }
+    authorName
+    authorPosition
+    quoteRaw
+  }
+}
+
+query HomePage {
+  allHome(sort: { _createdAt: DESC }, limit: 1) {
+    ...HomePage
+  }
+}

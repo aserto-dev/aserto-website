@@ -10,8 +10,10 @@ import Hero from 'components/sections/homepage/hero'
 import Testimonials from 'components/sections/homepage/testimonials'
 import TheProblem from 'components/sections/homepage/the-problem'
 import TheSolution from 'components/sections/homepage/the-solution'
+import { InferGetStaticPropsType } from 'next'
+import cms from 'lib/sanity'
 
-const HomePage = () => {
+const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
@@ -22,18 +24,21 @@ const HomePage = () => {
       }}
     >
       <CustomHead />
-      <Hero />
-      <TheProblem />
-      <TheSolution />
-      <Features />
-      <Testimonials />
+      <Hero page={page} />
+      <TheProblem page={page} />
+      <TheSolution page={page} />
+      <Features page={page} />
+      <Testimonials page={page} />
     </PageLayout>
   )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
+  const { allHome } = await cms().HomePage()
+  const page = allHome[0]
   return {
-    props: {}
+    props: { page },
+    revalidate: 1
   }
 }
 
