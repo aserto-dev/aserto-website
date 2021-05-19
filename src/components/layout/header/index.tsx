@@ -59,7 +59,7 @@ const Header = () => {
           <Link href="/">
             <Logo />
           </Link>
-          <div className='bg-aserto-grey-60 w-0.5 h-10 mx-6' />
+          <div className='bg-aserto-grey-60 w-[1px] h-10 mx-6' />
           <Link
             className="text-base font-medium font-roboto text-aserto-grey-60 py-8"
             href="/"
