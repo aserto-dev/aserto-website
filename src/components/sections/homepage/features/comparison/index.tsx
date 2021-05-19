@@ -4,10 +4,23 @@ import gsap from 'gsap'
 import { Flip } from 'gsap/dist/Flip'
 import { DURATION } from 'lib/gsap'
 
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
+
 const Comparison = () => {
   const [isToggled, setIsToggled] = useState('real-time')
   const [filters, setFilters] = useState([])
   const [items, setItems] = useState([])
+
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slidesPerView: 1.3,
+    loop: false,
+    centered: true
+    // slideChanged(s) {
+    //   setCurrentSlide(s.details().relativeSlide)
+    // }
+  })
 
   useEffect(() => {
     gsap.registerPlugin(Flip)
@@ -58,7 +71,7 @@ const Comparison = () => {
 
   return (
     <div>
-      <div className="flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
+      <div className="hidden md:flex justify-center mx-auto space-x-10 border-b border-aserto-grey-90 border-opacity-10 max-w-container">
         <button
           className={clsx(
             'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
@@ -135,6 +148,89 @@ const Comparison = () => {
             Modern GitOps workflow <br /> for policy-as-code
           </label>
         </button>
+      </div>
+      <div className="flex md:hidden">
+        <div ref={sliderRef} className="keen-slider">
+          <button
+            className={clsx(
+              'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto cursor-pointer',
+              'keen-slider__slide',
+              {
+                'text-aserto-grey-90 border-aserto-grey-90':
+                  isToggled === 'real-time',
+                'text-aserto-grey-60 border-transparent':
+                  isToggled !== 'real-time'
+              }
+            )}
+            onClick={() => setIsToggled('real-time')}
+          >
+            <label
+              htmlFor="realTime"
+              className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+            >
+              <input
+                className="sr-only filter"
+                id="realTime"
+                name="features"
+                type="radio"
+              />{' '}
+              Authorization as easy <br /> as an API call
+            </label>
+          </button>
+
+          <button
+            className={clsx(
+              'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
+              'keen-slider__slide',
+              {
+                'text-aserto-grey-90 border-aserto-grey-90':
+                  isToggled === 'fine-grained',
+                'text-aserto-grey-60 border-transparent':
+                  isToggled !== 'fine-grained'
+              }
+            )}
+            onClick={() => setIsToggled('fine-grained')}
+          >
+            <label
+              htmlFor="fineGrained"
+              className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+            >
+              <input
+                className="sr-only filter"
+                id="fineGrained"
+                name="features"
+                type="radio"
+              />{' '}
+              Enterprise ready <br /> permissions and RBAC
+            </label>
+          </button>
+          <button
+            className={clsx(
+              'text-sm sm:text-sm font-bold uppercase border-b-2 sm:border-b-4 focus:outline-none transition-colors tracking-wide sm:tracking-widest font-roboto',
+              'keen-slider__slide',
+              {
+                'text-aserto-grey-90 border-aserto-grey-90':
+                  isToggled === 'cloud-native',
+                'text-aserto-grey-60 border-transparent':
+                  isToggled !== 'cloud-native'
+              }
+            )}
+            onClick={() => setIsToggled('cloud-native')}
+          >
+            <label
+              htmlFor="cloudNative"
+              className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+            >
+              <input
+                type="radio"
+                id="cloudNative"
+                className="sr-only filter"
+                name="features"
+              />{' '}
+              Modern GitOps workflow <br /> for policy-as-code
+            </label>
+          </button>
+        </div>
       </div>
     </div>
   )

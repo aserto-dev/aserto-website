@@ -120,7 +120,7 @@ const Features = () => {
           Features
         </h2>
         <Comparison />
-        <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
+        <div className="grid relative gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
           {features.map((feature, i) => (
             <FeatureItem
               {...feature}

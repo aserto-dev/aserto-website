@@ -28,7 +28,7 @@ const Footer = () => {
           className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-5"
           ref={ref}
         >
-          <div>
+          <div className="row-start-2 lg:row-auto">
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Product
             </p>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="https://docs.aserto.com/"
                 >
                   Docs
                 </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="https://github.com/aserto-dev"
                 >
                   GitHub
                 </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="https://asertocommunity.slack.com/"
                 >
                   Support
                 </Link>
@@ -99,14 +99,14 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="https://aserto.statuspage.io/"
                 >
                   Status
                 </Link>
               </li>
             </ul>
           </div>
-          <div>
+          <div className='row-start-1 lg:row-start-auto'>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Company
             </p>
@@ -135,14 +135,14 @@ const Footer = () => {
                   Careers
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="/"
                 >
                   Press
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
@@ -197,7 +197,10 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <ul className="flex items-center space-x-6">
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Social
+            </p>
+            <ul className="mt-4 flex items-center space-x-6">
               <li>
                 <Link href="https://twitter.com/aserto_com">
                   <span className="sr-only">Twitter</span>
