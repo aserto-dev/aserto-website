@@ -1,0 +1,17 @@
+fragment FaqItem on FaqBlock {
+  title
+  questions {
+    question
+    answerRaw
+  }
+}
+
+query FaqPage {
+  allFaq(sort: { _createdAt: DESC }, limit: 1) {
+    title
+    subtitle
+    faqs {
+      ...FaqItem
+    }
+  }
+}

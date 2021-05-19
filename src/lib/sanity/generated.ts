@@ -24,6 +24,72 @@ export type Scalars = {
   JSON: any
 }
 
+export type About = Document & {
+  __typename?: 'About'
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>
+  /** Document type */
+  _type?: Maybe<Scalars['String']>
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>
+  _key?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  subtitleRaw?: Maybe<Scalars['JSON']>
+  foundersSectionTitle?: Maybe<Scalars['String']>
+  foundersSectionSubtitle?: Maybe<Scalars['String']>
+  founders?: Maybe<Array<Maybe<FounderBlock>>>
+  investorsSectionTitle?: Maybe<Scalars['String']>
+  investors?: Maybe<Array<Maybe<InvestorBlock>>>
+  angelsSectionTitle?: Maybe<Scalars['String']>
+  angelsSectionSubtitle?: Maybe<Scalars['String']>
+  angels?: Maybe<Array<Maybe<FounderBlock>>>
+  hiringSectionTitle?: Maybe<Scalars['String']>
+  hiringSectionLinkLabel?: Maybe<Scalars['String']>
+  hiringSectionLinkHref?: Maybe<Scalars['String']>
+}
+
+export type AboutFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>
+  _id?: Maybe<IdFilter>
+  _type?: Maybe<StringFilter>
+  _createdAt?: Maybe<DatetimeFilter>
+  _updatedAt?: Maybe<DatetimeFilter>
+  _rev?: Maybe<StringFilter>
+  _key?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  foundersSectionTitle?: Maybe<StringFilter>
+  foundersSectionSubtitle?: Maybe<StringFilter>
+  investorsSectionTitle?: Maybe<StringFilter>
+  angelsSectionTitle?: Maybe<StringFilter>
+  angelsSectionSubtitle?: Maybe<StringFilter>
+  hiringSectionTitle?: Maybe<StringFilter>
+  hiringSectionLinkLabel?: Maybe<StringFilter>
+  hiringSectionLinkHref?: Maybe<StringFilter>
+}
+
+export type AboutSorting = {
+  _id?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  _createdAt?: Maybe<SortOrder>
+  _updatedAt?: Maybe<SortOrder>
+  _rev?: Maybe<SortOrder>
+  _key?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  foundersSectionTitle?: Maybe<SortOrder>
+  foundersSectionSubtitle?: Maybe<SortOrder>
+  investorsSectionTitle?: Maybe<SortOrder>
+  angelsSectionTitle?: Maybe<SortOrder>
+  angelsSectionSubtitle?: Maybe<SortOrder>
+  hiringSectionTitle?: Maybe<SortOrder>
+  hiringSectionLinkLabel?: Maybe<SortOrder>
+  hiringSectionLinkHref?: Maybe<SortOrder>
+}
+
 export type Author = Document & {
   __typename?: 'Author'
   /** Document ID */
@@ -108,6 +174,66 @@ export type BooleanFilter = {
   eq?: Maybe<Scalars['Boolean']>
   /** Checks if the value is not equal to the given input. */
   neq?: Maybe<Scalars['Boolean']>
+}
+
+export type Careers = Document & {
+  __typename?: 'Careers'
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>
+  /** Document type */
+  _type?: Maybe<Scalars['String']>
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>
+  _key?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  facts?: Maybe<Array<Maybe<FeatureItem>>>
+  subtitleRaw?: Maybe<Scalars['JSON']>
+  cultureSectionTitle?: Maybe<Scalars['String']>
+  cultureSectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  culture?: Maybe<Array<Maybe<SectionBlock>>>
+  cultureSectionTaglineRaw?: Maybe<Scalars['JSON']>
+  diversitySectionTitle?: Maybe<Scalars['String']>
+  diversitySectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  perksSectionTitle?: Maybe<Scalars['String']>
+  perksSectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  perks?: Maybe<Array<Maybe<FeatureItem>>>
+  openPositionsSectionTitle?: Maybe<Scalars['String']>
+  openPositionsSectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  openPositions?: Maybe<Array<Maybe<JobPosting>>>
+}
+
+export type CareersFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>
+  _id?: Maybe<IdFilter>
+  _type?: Maybe<StringFilter>
+  _createdAt?: Maybe<DatetimeFilter>
+  _updatedAt?: Maybe<DatetimeFilter>
+  _rev?: Maybe<StringFilter>
+  _key?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  cultureSectionTitle?: Maybe<StringFilter>
+  diversitySectionTitle?: Maybe<StringFilter>
+  perksSectionTitle?: Maybe<StringFilter>
+  openPositionsSectionTitle?: Maybe<StringFilter>
+}
+
+export type CareersSorting = {
+  _id?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  _createdAt?: Maybe<SortOrder>
+  _updatedAt?: Maybe<SortOrder>
+  _rev?: Maybe<SortOrder>
+  _key?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  cultureSectionTitle?: Maybe<SortOrder>
+  diversitySectionTitle?: Maybe<SortOrder>
+  perksSectionTitle?: Maybe<SortOrder>
+  openPositionsSectionTitle?: Maybe<SortOrder>
 }
 
 export type Category = Document & {
@@ -213,6 +339,68 @@ export type DocumentSorting = {
   _rev?: Maybe<SortOrder>
 }
 
+export type Faq = Document & {
+  __typename?: 'Faq'
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>
+  /** Document type */
+  _type?: Maybe<Scalars['String']>
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>
+  _key?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  subtitle?: Maybe<Scalars['String']>
+  faqs?: Maybe<Array<Maybe<FaqBlock>>>
+}
+
+export type FaqBlock = {
+  __typename?: 'FaqBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  questions?: Maybe<Array<Maybe<QuestionBlock>>>
+}
+
+export type FaqBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+}
+
+export type FaqBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+}
+
+export type FaqFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>
+  _id?: Maybe<IdFilter>
+  _type?: Maybe<StringFilter>
+  _createdAt?: Maybe<DatetimeFilter>
+  _updatedAt?: Maybe<DatetimeFilter>
+  _rev?: Maybe<StringFilter>
+  _key?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  subtitle?: Maybe<StringFilter>
+}
+
+export type FaqSorting = {
+  _id?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  _createdAt?: Maybe<SortOrder>
+  _updatedAt?: Maybe<SortOrder>
+  _rev?: Maybe<SortOrder>
+  _key?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  subtitle?: Maybe<SortOrder>
+}
+
 export type FeatureBlock = {
   __typename?: 'FeatureBlock'
   _key?: Maybe<Scalars['String']>
@@ -286,6 +474,34 @@ export type FloatFilter = {
   lt?: Maybe<Scalars['Float']>
   /** Checks if the value is lesser than or equal to the given input. */
   lte?: Maybe<Scalars['Float']>
+}
+
+export type FounderBlock = {
+  __typename?: 'FounderBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  avatar?: Maybe<MainImage>
+  name?: Maybe<Scalars['String']>
+  position?: Maybe<Scalars['String']>
+  linkedIn?: Maybe<Scalars['String']>
+}
+
+export type FounderBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  avatar?: Maybe<MainImageFilter>
+  name?: Maybe<StringFilter>
+  position?: Maybe<StringFilter>
+  linkedIn?: Maybe<StringFilter>
+}
+
+export type FounderBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  avatar?: Maybe<MainImageSorting>
+  name?: Maybe<SortOrder>
+  position?: Maybe<SortOrder>
+  linkedIn?: Maybe<SortOrder>
 }
 
 export type Geopoint = {
@@ -435,6 +651,88 @@ export type IntFilter = {
   lte?: Maybe<Scalars['Int']>
 }
 
+export type InvestorBlock = {
+  __typename?: 'InvestorBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  image?: Maybe<MainImage>
+  name?: Maybe<Scalars['String']>
+  href?: Maybe<Scalars['String']>
+}
+
+export type InvestorBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  image?: Maybe<MainImageFilter>
+  name?: Maybe<StringFilter>
+  href?: Maybe<StringFilter>
+}
+
+export type InvestorBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  image?: Maybe<MainImageSorting>
+  name?: Maybe<SortOrder>
+  href?: Maybe<SortOrder>
+}
+
+export type JobPosting = Document & {
+  __typename?: 'JobPosting'
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>
+  /** Document type */
+  _type?: Maybe<Scalars['String']>
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>
+  _key?: Maybe<Scalars['String']>
+  /** Titles should be catchy, descriptive, and not too long */
+  title?: Maybe<Scalars['String']>
+  team?: Maybe<Scalars['String']>
+  leverHref?: Maybe<Scalars['String']>
+  slug?: Maybe<Slug>
+  /** This can be used to schedule post for publishing */
+  publishedAt?: Maybe<Scalars['DateTime']>
+  icon?: Maybe<MainImage>
+  descriptionRaw?: Maybe<Scalars['JSON']>
+  bodyRaw?: Maybe<Scalars['JSON']>
+}
+
+export type JobPostingFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>
+  _id?: Maybe<IdFilter>
+  _type?: Maybe<StringFilter>
+  _createdAt?: Maybe<DatetimeFilter>
+  _updatedAt?: Maybe<DatetimeFilter>
+  _rev?: Maybe<StringFilter>
+  _key?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  team?: Maybe<StringFilter>
+  leverHref?: Maybe<StringFilter>
+  slug?: Maybe<SlugFilter>
+  publishedAt?: Maybe<DatetimeFilter>
+  icon?: Maybe<MainImageFilter>
+}
+
+export type JobPostingSorting = {
+  _id?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  _createdAt?: Maybe<SortOrder>
+  _updatedAt?: Maybe<SortOrder>
+  _rev?: Maybe<SortOrder>
+  _key?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  team?: Maybe<SortOrder>
+  leverHref?: Maybe<SortOrder>
+  slug?: Maybe<SlugSorting>
+  publishedAt?: Maybe<SortOrder>
+  icon?: Maybe<MainImageSorting>
+}
+
 export type MainImage = {
   __typename?: 'MainImage'
   _key?: Maybe<Scalars['String']>
@@ -519,6 +817,26 @@ export type PostSorting = {
   mainImage?: Maybe<MainImageSorting>
 }
 
+export type QuestionBlock = {
+  __typename?: 'QuestionBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  question?: Maybe<Scalars['String']>
+  answerRaw?: Maybe<Scalars['JSON']>
+}
+
+export type QuestionBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  question?: Maybe<StringFilter>
+}
+
+export type QuestionBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  question?: Maybe<SortOrder>
+}
+
 export type RootQuery = {
   __typename?: 'RootQuery'
   SiteSettings?: Maybe<SiteSettings>
@@ -526,6 +844,10 @@ export type RootQuery = {
   Category?: Maybe<Category>
   Author?: Maybe<Author>
   Home?: Maybe<Home>
+  Faq?: Maybe<Faq>
+  About?: Maybe<About>
+  Careers?: Maybe<Careers>
+  JobPosting?: Maybe<JobPosting>
   SanityImageAsset?: Maybe<SanityImageAsset>
   SanityFileAsset?: Maybe<SanityFileAsset>
   Document?: Maybe<Document>
@@ -534,6 +856,10 @@ export type RootQuery = {
   allCategory: Array<Category>
   allAuthor: Array<Author>
   allHome: Array<Home>
+  allFaq: Array<Faq>
+  allAbout: Array<About>
+  allCareers: Array<Careers>
+  allJobPosting: Array<JobPosting>
   allSanityImageAsset: Array<SanityImageAsset>
   allSanityFileAsset: Array<SanityFileAsset>
   allDocument: Array<Document>
@@ -556,6 +882,22 @@ export type RootQueryAuthorArgs = {
 }
 
 export type RootQueryHomeArgs = {
+  id: Scalars['ID']
+}
+
+export type RootQueryFaqArgs = {
+  id: Scalars['ID']
+}
+
+export type RootQueryAboutArgs = {
+  id: Scalars['ID']
+}
+
+export type RootQueryCareersArgs = {
+  id: Scalars['ID']
+}
+
+export type RootQueryJobPostingArgs = {
   id: Scalars['ID']
 }
 
@@ -602,6 +944,34 @@ export type RootQueryAllAuthorArgs = {
 export type RootQueryAllHomeArgs = {
   where?: Maybe<HomeFilter>
   sort?: Maybe<Array<HomeSorting>>
+  limit?: Maybe<Scalars['Int']>
+  offset?: Maybe<Scalars['Int']>
+}
+
+export type RootQueryAllFaqArgs = {
+  where?: Maybe<FaqFilter>
+  sort?: Maybe<Array<FaqSorting>>
+  limit?: Maybe<Scalars['Int']>
+  offset?: Maybe<Scalars['Int']>
+}
+
+export type RootQueryAllAboutArgs = {
+  where?: Maybe<AboutFilter>
+  sort?: Maybe<Array<AboutSorting>>
+  limit?: Maybe<Scalars['Int']>
+  offset?: Maybe<Scalars['Int']>
+}
+
+export type RootQueryAllCareersArgs = {
+  where?: Maybe<CareersFilter>
+  sort?: Maybe<Array<CareersSorting>>
+  limit?: Maybe<Scalars['Int']>
+  offset?: Maybe<Scalars['Int']>
+}
+
+export type RootQueryAllJobPostingArgs = {
+  where?: Maybe<JobPostingFilter>
+  sort?: Maybe<Array<JobPostingSorting>>
   limit?: Maybe<Scalars['Int']>
   offset?: Maybe<Scalars['Int']>
 }
@@ -1146,6 +1516,11 @@ export type TextBlockSorting = {
   text?: Maybe<SortOrder>
 }
 
+export type FeatureItemFragment = { __typename?: 'FeatureItem' } & Pick<
+  FeatureItem,
+  'title'
+> & { icon?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+
 export type ImageFragment = { __typename?: 'MainImage' } & Pick<
   MainImage,
   'alt'
@@ -1210,6 +1585,46 @@ export type SectionBlockFragment = { __typename?: 'SectionBlock' } & Pick<
   'title' | 'subtitleRaw'
 > & { image?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
 
+export type FounderFragment = { __typename?: 'FounderBlock' } & Pick<
+  FounderBlock,
+  'name' | 'position' | 'linkedIn'
+> & { avatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+
+export type InvestorFragment = { __typename?: 'InvestorBlock' } & Pick<
+  InvestorBlock,
+  'name' | 'href'
+> & { image?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+
+export type AboutPageQueryVariables = Exact<{ [key: string]: never }>
+
+export type AboutPageQuery = { __typename?: 'RootQuery' } & {
+  allAbout: Array<
+    { __typename?: 'About' } & Pick<
+      About,
+      | 'title'
+      | 'subtitleRaw'
+      | 'foundersSectionTitle'
+      | 'foundersSectionSubtitle'
+      | 'investorsSectionTitle'
+      | 'angelsSectionTitle'
+      | 'angelsSectionSubtitle'
+      | 'hiringSectionTitle'
+      | 'hiringSectionLinkLabel'
+      | 'hiringSectionLinkHref'
+    > & {
+        founders?: Maybe<
+          Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
+        >
+        investors?: Maybe<
+          Array<Maybe<{ __typename?: 'InvestorBlock' } & InvestorFragment>>
+        >
+        angels?: Maybe<
+          Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
+        >
+      }
+  >
+}
+
 export type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
 
 export type BlogIndexQuery = { __typename?: 'RootQuery' } & {
@@ -1232,6 +1647,94 @@ export type BlogPostQueryVariables = Exact<{
 
 export type BlogPostQuery = { __typename?: 'RootQuery' } & {
   allPost: Array<{ __typename?: 'Post' } & PostFragment>
+}
+
+export type JobPostingMetaFragment = { __typename?: 'JobPosting' } & Pick<
+  JobPosting,
+  'title' | 'team' | 'leverHref' | 'publishedAt' | 'descriptionRaw'
+> & {
+    slug?: Maybe<{ __typename?: 'Slug' } & Pick<Slug, 'current'>>
+    icon?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
+  }
+
+export type JobPostingFragment = { __typename?: 'JobPosting' } & Pick<
+  JobPosting,
+  'bodyRaw'
+> &
+  JobPostingMetaFragment
+
+export type CareersPageQueryVariables = Exact<{ [key: string]: never }>
+
+export type CareersPageQuery = { __typename?: 'RootQuery' } & {
+  allCareers: Array<
+    { __typename?: 'Careers' } & Pick<
+      Careers,
+      | 'title'
+      | 'subtitleRaw'
+      | 'cultureSectionTitle'
+      | 'cultureSectionSubtitleRaw'
+      | 'cultureSectionTaglineRaw'
+      | 'diversitySectionTitle'
+      | 'diversitySectionSubtitleRaw'
+      | 'perksSectionTitle'
+      | 'perksSectionSubtitleRaw'
+      | 'openPositionsSectionTitle'
+      | 'openPositionsSectionSubtitleRaw'
+    > & {
+        facts?: Maybe<
+          Array<
+            Maybe<
+              { __typename?: 'FeatureItem' } & Pick<FeatureItem, 'title'> & {
+                  icon?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
+                }
+            >
+          >
+        >
+        culture?: Maybe<
+          Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
+        >
+        perks?: Maybe<
+          Array<Maybe<{ __typename?: 'FeatureItem' } & FeatureItemFragment>>
+        >
+      }
+  >
+  allJobPosting: Array<{ __typename?: 'JobPosting' } & JobPostingMetaFragment>
+}
+
+export type JobPostingQueryVariables = Exact<{
+  slug: Scalars['String']
+}>
+
+export type JobPostingQuery = { __typename?: 'RootQuery' } & {
+  allJobPosting: Array<{ __typename?: 'JobPosting' } & JobPostingFragment>
+}
+
+export type FaqItemFragment = { __typename?: 'FaqBlock' } & Pick<
+  FaqBlock,
+  'title'
+> & {
+    questions?: Maybe<
+      Array<
+        Maybe<
+          { __typename?: 'QuestionBlock' } & Pick<
+            QuestionBlock,
+            'question' | 'answerRaw'
+          >
+        >
+      >
+    >
+  }
+
+export type FaqPageQueryVariables = Exact<{ [key: string]: never }>
+
+export type FaqPageQuery = { __typename?: 'RootQuery' } & {
+  allFaq: Array<
+    { __typename?: 'Faq' } & Pick<Faq, 'title' | 'subtitle'> & {
+        faqs?: Maybe<
+          Array<Maybe<{ __typename?: 'FaqBlock' } & FaqItemFragment>>
+        >
+      }
+  >
 }
 
 export type HomePageFragment = { __typename?: 'Home' } & Pick<
@@ -1262,16 +1765,7 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
           { __typename?: 'FeatureBlock' } & Pick<FeatureBlock, 'title'> & {
               blocks?: Maybe<
                 Array<
-                  Maybe<
-                    { __typename?: 'FeatureItem' } & Pick<
-                      FeatureItem,
-                      'title'
-                    > & {
-                        icon?: Maybe<
-                          { __typename?: 'MainImage' } & ImageFragment
-                        >
-                      }
-                  >
+                  Maybe<{ __typename?: 'FeatureItem' } & FeatureItemFragment>
                 >
               >
             }
@@ -1359,6 +1853,59 @@ export const PostFragmentDoc = gql`
   }
   ${PostMetaFragmentDoc}
 `
+export const FounderFragmentDoc = gql`
+  fragment Founder on FounderBlock {
+    avatar {
+      ...Image
+    }
+    name
+    position
+    linkedIn
+  }
+  ${ImageFragmentDoc}
+`
+export const InvestorFragmentDoc = gql`
+  fragment Investor on InvestorBlock {
+    name
+    href
+    image {
+      ...Image
+    }
+  }
+  ${ImageFragmentDoc}
+`
+export const JobPostingMetaFragmentDoc = gql`
+  fragment JobPostingMeta on JobPosting {
+    title
+    team
+    leverHref
+    slug {
+      current
+    }
+    publishedAt
+    icon {
+      ...Image
+    }
+    descriptionRaw
+  }
+  ${ImageFragmentDoc}
+`
+export const JobPostingFragmentDoc = gql`
+  fragment JobPosting on JobPosting {
+    ...JobPostingMeta
+    bodyRaw
+  }
+  ${JobPostingMetaFragmentDoc}
+`
+export const FaqItemFragmentDoc = gql`
+  fragment FaqItem on FaqBlock {
+    title
+    questions {
+      question
+      answerRaw
+    }
+  }
+`
 export const SectionBlockFragmentDoc = gql`
   fragment SectionBlock on SectionBlock {
     image {
@@ -1366,6 +1913,15 @@ export const SectionBlockFragmentDoc = gql`
     }
     title
     subtitleRaw
+  }
+  ${ImageFragmentDoc}
+`
+export const FeatureItemFragmentDoc = gql`
+  fragment FeatureItem on FeatureItem {
+    icon {
+      ...Image
+    }
+    title
   }
   ${ImageFragmentDoc}
 `
@@ -1392,10 +1948,7 @@ export const HomePageFragmentDoc = gql`
     features {
       title
       blocks {
-        icon {
-          ...Image
-        }
-        title
+        ...FeatureItem
       }
     }
     testimonialsSectionTitle
@@ -1409,7 +1962,35 @@ export const HomePageFragmentDoc = gql`
     }
   }
   ${SectionBlockFragmentDoc}
+  ${FeatureItemFragmentDoc}
   ${ImageFragmentDoc}
+`
+export const AboutPageDocument = gql`
+  query AboutPage {
+    allAbout(sort: { _createdAt: DESC }, limit: 1) {
+      title
+      subtitleRaw
+      foundersSectionTitle
+      foundersSectionSubtitle
+      founders {
+        ...Founder
+      }
+      investorsSectionTitle
+      investors {
+        ...Investor
+      }
+      angelsSectionTitle
+      angelsSectionSubtitle
+      angels {
+        ...Founder
+      }
+      hiringSectionTitle
+      hiringSectionLinkLabel
+      hiringSectionLinkHref
+    }
+  }
+  ${FounderFragmentDoc}
+  ${InvestorFragmentDoc}
 `
 export const BlogIndexDocument = gql`
   query BlogIndex {
@@ -1436,6 +2017,62 @@ export const BlogPostDocument = gql`
   }
   ${PostFragmentDoc}
 `
+export const CareersPageDocument = gql`
+  query CareersPage {
+    allCareers(sort: { _createdAt: DESC }, limit: 1) {
+      title
+      facts {
+        icon {
+          ...Image
+        }
+        title
+      }
+      subtitleRaw
+      cultureSectionTitle
+      cultureSectionSubtitleRaw
+      culture {
+        ...SectionBlock
+      }
+      cultureSectionTaglineRaw
+      diversitySectionTitle
+      diversitySectionSubtitleRaw
+      perksSectionTitle
+      perksSectionSubtitleRaw
+      perks {
+        ...FeatureItem
+      }
+      openPositionsSectionTitle
+      openPositionsSectionSubtitleRaw
+    }
+    allJobPosting {
+      ...JobPostingMeta
+    }
+  }
+  ${ImageFragmentDoc}
+  ${SectionBlockFragmentDoc}
+  ${FeatureItemFragmentDoc}
+  ${JobPostingMetaFragmentDoc}
+`
+export const JobPostingDocument = gql`
+  query JobPosting($slug: String!) {
+    allJobPosting(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+      ...JobPosting
+    }
+  }
+  ${JobPostingFragmentDoc}
+`
+export const FaqPageDocument = gql`
+  query FaqPage {
+    allFaq(sort: { _createdAt: DESC }, limit: 1) {
+      title
+      subtitle
+      faqs {
+        ...FaqItem
+      }
+    }
+  }
+  ${FaqItemFragmentDoc}
+`
 export const HomePageDocument = gql`
   query HomePage {
     allHome(sort: { _createdAt: DESC }, limit: 1) {
@@ -1457,6 +2094,19 @@ export function getSdk(
   withWrapper: SdkFunctionWrapper = defaultWrapper
 ) {
   return {
+    AboutPage(
+      variables?: AboutPageQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<AboutPageQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<AboutPageQuery>(AboutPageDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'AboutPage'
+      )
+    },
     BlogIndex(
       variables?: BlogIndexQueryVariables,
       requestHeaders?: Dom.RequestInit['headers']
@@ -1494,6 +2144,45 @@ export function getSdk(
             ...wrappedRequestHeaders
           }),
         'BlogPost'
+      )
+    },
+    CareersPage(
+      variables?: CareersPageQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<CareersPageQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<CareersPageQuery>(CareersPageDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'CareersPage'
+      )
+    },
+    JobPosting(
+      variables: JobPostingQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<JobPostingQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<JobPostingQuery>(JobPostingDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'JobPosting'
+      )
+    },
+    FaqPage(
+      variables?: FaqPageQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<FaqPageQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<FaqPageQuery>(FaqPageDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'FaqPage'
       )
     },
     HomePage(

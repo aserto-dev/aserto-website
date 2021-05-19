@@ -1,0 +1,6 @@
+fragment FeatureItem on FeatureItem {
+  icon {
+    ...Image
+  }
+  title
+}

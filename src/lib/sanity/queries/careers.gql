@@ -1,0 +1,55 @@
+fragment JobPostingMeta on JobPosting {
+  title
+  team
+  leverHref
+  slug {
+    current
+  }
+  publishedAt
+  icon {
+    ...Image
+  }
+  descriptionRaw
+}
+
+fragment JobPosting on JobPosting {
+  ...JobPostingMeta
+  bodyRaw
+}
+
+query CareersPage {
+  allCareers(sort: { _createdAt: DESC }, limit: 1) {
+    title
+    facts {
+      icon {
+        ...Image
+      }
+      title
+    }
+    subtitleRaw
+    cultureSectionTitle
+    cultureSectionSubtitleRaw
+    culture {
+      ...SectionBlock
+    }
+    cultureSectionTaglineRaw
+    diversitySectionTitle
+    diversitySectionSubtitleRaw
+    perksSectionTitle
+    perksSectionSubtitleRaw
+    perks {
+      ...FeatureItem
+    }
+    openPositionsSectionTitle
+    openPositionsSectionSubtitleRaw
+  }
+  allJobPosting {
+    ...JobPostingMeta
+  }
+}
+
+query JobPosting($slug: String!) {
+  allJobPosting(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...JobPosting
+  }
+}

@@ -1,0 +1,40 @@
+fragment Founder on FounderBlock {
+  avatar {
+    ...Image
+  }
+  name
+  position
+  linkedIn
+}
+
+fragment Investor on InvestorBlock {
+  name
+  href
+  image {
+    ...Image
+  }
+}
+
+query AboutPage {
+  allAbout(sort: { _createdAt: DESC }, limit: 1) {
+    title
+    subtitleRaw
+    foundersSectionTitle
+    foundersSectionSubtitle
+    founders {
+      ...Founder
+    }
+    investorsSectionTitle
+    investors {
+      ...Investor
+    }
+    angelsSectionTitle
+    angelsSectionSubtitle
+    angels {
+      ...Founder
+    }
+    hiringSectionTitle
+    hiringSectionLinkLabel
+    hiringSectionLinkHref
+  }
+}
