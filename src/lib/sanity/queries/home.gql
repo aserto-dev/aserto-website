@@ -1,7 +1,9 @@
 fragment HomePage on Home {
   title
   subtitle
-  slogan
+  slogan {
+    text
+  }
   ctaLabel
   theProblemSectionLabel
   theProblemSectionTitle

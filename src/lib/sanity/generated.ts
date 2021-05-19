@@ -328,7 +328,7 @@ export type Home = Document & {
   _key?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   subtitle?: Maybe<Scalars['String']>
-  slogan?: Maybe<Scalars['String']>
+  slogan?: Maybe<Array<Maybe<TextBlock>>>
   ctaLabel?: Maybe<Scalars['String']>
   theProblemSectionLabel?: Maybe<Scalars['String']>
   theProblemSectionTitle?: Maybe<Scalars['String']>
@@ -354,7 +354,6 @@ export type HomeFilter = {
   _key?: Maybe<StringFilter>
   title?: Maybe<StringFilter>
   subtitle?: Maybe<StringFilter>
-  slogan?: Maybe<StringFilter>
   ctaLabel?: Maybe<StringFilter>
   theProblemSectionLabel?: Maybe<StringFilter>
   theProblemSectionTitle?: Maybe<StringFilter>
@@ -375,7 +374,6 @@ export type HomeSorting = {
   _key?: Maybe<SortOrder>
   title?: Maybe<SortOrder>
   subtitle?: Maybe<SortOrder>
-  slogan?: Maybe<SortOrder>
   ctaLabel?: Maybe<SortOrder>
   theProblemSectionLabel?: Maybe<SortOrder>
   theProblemSectionTitle?: Maybe<SortOrder>
@@ -1129,6 +1127,25 @@ export type TestimonialBlockSorting = {
   authorPosition?: Maybe<SortOrder>
 }
 
+export type TextBlock = {
+  __typename?: 'TextBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+}
+
+export type TextBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  text?: Maybe<StringFilter>
+}
+
+export type TextBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  text?: Maybe<SortOrder>
+}
+
 export type ImageFragment = { __typename?: 'MainImage' } & Pick<
   MainImage,
   'alt'
@@ -1221,7 +1238,6 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
   Home,
   | 'title'
   | 'subtitle'
-  | 'slogan'
   | 'ctaLabel'
   | 'theProblemSectionLabel'
   | 'theProblemSectionTitle'
@@ -1231,6 +1247,9 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
   | 'featuresSectionTitle'
   | 'testimonialsSectionTitle'
 > & {
+    slogan?: Maybe<
+      Array<Maybe<{ __typename?: 'TextBlock' } & Pick<TextBlock, 'text'>>>
+    >
     theProblemSectionCards?: Maybe<
       Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
     >
@@ -1354,7 +1373,9 @@ export const HomePageFragmentDoc = gql`
   fragment HomePage on Home {
     title
     subtitle
-    slogan
+    slogan {
+      text
+    }
     ctaLabel
     theProblemSectionLabel
     theProblemSectionTitle

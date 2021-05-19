@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className='row-start-1 lg:row-start-auto'>
+          <div className="row-start-1 lg:row-start-auto">
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Company
             </p>
