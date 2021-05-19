@@ -12,14 +12,11 @@ const Comparison = () => {
   const [filters, setFilters] = useState([])
   const [items, setItems] = useState([])
 
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, ] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slidesPerView: 1.3,
     loop: false,
     centered: true
-    // slideChanged(s) {
-    //   setCurrentSlide(s.details().relativeSlide)
-    // }
   })
 
   useEffect(() => {
