@@ -3,6 +3,96 @@ import CustomHead from 'components/primitives/custom-head'
 
 // Layout
 import PageLayout from 'components/layout/page'
+import Link from 'components/primitives/link'
+
+const questionsAuthentication = [
+  {
+    question: 'What is authorization?',
+    answer:
+      'Authorization is the process of determining whether a user is allowed to perform an operation on a resource. Every application that has more than one user needs authorization. Which basically means - every application :)'
+  },
+  {
+    question: 'If I already do authentication, why do I need authorization?',
+    answer: (
+      <>
+        Authentication is the process of having a user prove their identity to
+        an application or system using a password, a magic link, a code received
+        over SMS, etc. Once a user has authenticated, the application needs to
+        determine what they are allowed to do. Unless every user has identical
+        permissions to every other user in your application, you need an
+        authorization system. We dive into the difference in{' '}
+        <a href="/">Authentication != Authorization.</a>
+      </>
+    )
+  },
+  {
+    question:
+      'But OAuth2-based authentication already has scopes. Why shouldn’t I use scopes embedded in my JSON Web Token (JWT) for authorization?',
+    answer: (
+      <>
+        While this approach is easy to get started with, there are a few reasons
+        why this is considered a security anti-pattern. For more details, read{' '}
+        <a href="/">OAuth2 Scopes are NOT Permissions.</a>
+      </>
+    )
+  },
+  {
+    question: 'How does Aserto relate to Auth0?',
+    answer:
+      'Auth0 provides authentication as a service. Aserto starts where Auth0 leaves off - once a user is authenticated with Auth0, you can use Aserto to determine what the user is authorized to do. Aserto treats Auth0 as an identity provider, and works extremely well with Auth0. If you already use Auth0 for authentication, you’ll find that Aserto’s SDK’s (React, node.js, etc) look really familiar.'
+  },
+  {
+    question: 'Does Aserto work with other identity providers besides Auth0?',
+    answer: 'Absolutely. Let us know what identity provider(s) you’re using!'
+  }
+]
+
+const questionsStyles = [
+  {
+    question: 'What is RBAC?',
+    answer:
+      'RBAC stands for role-based access control, and is a common style of authorization. With RBAC, users are mapped to roles (such as “viewer”, “owner”, and “admin”), and roles are assigned permissions (for example, a viewer can “read a document” but not “create a document”). For many applications, this style of authorization is sufficient. Aserto makes it easy to build RBAC systems and evolve them as necessary.'
+  },
+  {
+    question: 'What is ABAC?',
+    answer:
+      'ABAC stands for attribute-based access control, and provides more flexibility over the mapping between users and permissions. ABAC rules are typically written over a set of generic attributes that are typically sourced from one or more systems - identity providers, directories, or even HR systems. As applications move up-market and sell into enterprises, the requirements around this kind of mapping become more sophisticated, and often cross over into ABAC. Aserto makes it easy to evolve RBAC systems into ABAC.'
+  }
+]
+
+const questionsPolicy = [
+  {
+    question: 'What is policy-as-code?',
+    answer: (
+      <>
+        Policy-as-code is the practice of treating your authorization policy as
+        a first-class citizen: lifting it out of the application and into a
+        domain-specific language (in our case, Rego), and storing and versioning
+        it using the same tools as you use for your application code. We
+        describe why this is a valuable practice in{' '}
+        <Link href="/">Why separate policy from your code?</Link>
+      </>
+    )
+  },
+  {
+    question: 'What is the Open Policy Agent or OPA?',
+    answer:
+      'OPA is an open source policy engine hosted by the Cloud-Native Computing Foundation (CNCF). OPA is considered a stable project, having graduated from the CNCF in February 2021. OPA is quickly growing as a multi-vendor open source ecosystem, and is widely used for managing policy to infrastructure (kubernetes), data, and application authorization.'
+  },
+  {
+    question: 'What is Rego?',
+    answer:
+      'Rego is the policy language for the OPA policy engine. Rego is a declarative language and allows the author to express a set of rules. The OPA engine can be used to evaluate these rules in the context of input data (for example, user attributes and resource data) to make authorization decisions.'
+  }
+]
+
+const questionsAserto = [
+  {
+    question: 'What does Aserto mean?',
+    answer:
+      'Aserto means “assertion” or “claim” in Esperanto. Aserto wants to create a universal language and system for expressing assertions and evaluating them for the purpose of authorizing access to applications and systems.'
+  }
+]
 
 const Faq = () => {
   return (
@@ -19,56 +109,74 @@ const Faq = () => {
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           FAQ
         </h1>
-        <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut
-          est eu odio rutrum condimentum. Duis pulvinar diam nibh, quis aliquet
-          nisl rhoncus ut. Donec justo orci, tempor non dui eget, ullamcorper
-          rhoncus quam. Cras lobortis sagittis mi a rhoncus. In ac rhoncus
-          nulla. Sed porttitor varius neque et sodales. Duis sem lorem,
-          consequat quis mattis eu, mollis sit amet tortor. Aliquam neque dui,
-          rhoncus eget elit ut, luctus luctus nibh. Proin egestas viverra
-          lobortis. Duis at sem commodo, vestibulum ipsum et, mollis mauris.
-          Mauris ultrices venenatis dui at ultricies. Quisque consectetur sed
-          elit et condimentum. Cras finibus molestie elit in consectetur.
-          Curabitur imperdiet ullamcorper arcu, eget ultricies dui dictum id.
-        </p>
-        <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto">
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas. Sed aliquet erat id ante vestibulum
-          ultricies. Morbi luctus, velit nec vehicula posuere, nisl tortor
-          finibus ligula, nec faucibus risus tellus ac velit. Vestibulum commodo
-          dolor velit, a consequat nisi efficitur ut. Aliquam sed mi aliquet,
-          pharetra orci a, tempor nibh. Fusce ipsum magna, condimentum vitae
-          enim et, laoreet faucibus eros. Sed in felis nec nibh malesuada semper
-          et a dui. Nulla rutrum nisl nec justo luctus, quis sagittis diam
-          posuere.
-        </p>
-        <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto">
-          Vivamus sed pretium ligula. Aenean vitae sapien at tortor accumsan
-          blandit et sed massa. Suspendisse potenti. Fusce in urna nisl. Nunc
-          pretium elit ipsum, vel consectetur metus tempus id. Cras lorem erat,
-          fermentum vitae rhoncus ut, tincidunt non quam. Curabitur ac ultricies
-          massa, vel ultricies tortor. Donec scelerisque nunc diam, ut pharetra
-          est sagittis vel. Suspendisse posuere mattis tortor, in viverra ipsum
-          accumsan dignissim. Cras vel neque volutpat ex ultrices commodo in et
-          ipsum.
-        </p>
-        <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto">
-          Etiam dui risus, cursus id finibus vel, volutpat sed lectus. Vivamus
-          vestibulum nisi vitae facilisis faucibus. Morbi imperdiet elit ut ante
-          fermentum tristique. Orci varius natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Etiam accumsan lacus quis
-          consectetur interdum. Pellentesque iaculis ullamcorper ultrices.
-          Maecenas vehicula porttitor pellentesque. Donec consectetur
-          condimentum neque, sit amet viverra neque sagittis sit amet. Sed
-          sollicitudin ultricies auctor. Interdum et malesuada fames ac ante
-          ipsum primis in faucibus. Proin lacus elit, elementum vel venenatis
-          tincidunt, elementum vitae metus. Phasellus vel eros et risus
-          scelerisque vulputate. Nunc volutpat et metus nec feugiat. Fusce eu
-          enim pharetra, tincidunt neque ut, pretium mauris. Aliquam tempus
-          purus nibh, non porta ligula vestibulum non. Nulla sed tempor eros, a
-          tincidunt est.
-        </p>
+        <h2 className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-16 md:text-4.5xl font-roboto">
+          Authentication and Authorization
+        </h2>
+        <ul>
+          {questionsAuthentication.map((question, i) => {
+            return (
+              <li key={`question-${i}-${question.question}`}>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-10 md:text-2xl font-roboto">
+                  {question.question}
+                </p>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto">
+                  {question.answer}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+        <h2 className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-20 md:text-4.5xl font-roboto">
+          Styles of Authorization
+        </h2>
+        <ul>
+          {questionsStyles.map((question, i) => {
+            return (
+              <li key={`question-${i}-${question.question}`}>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-10 md:text-2xl font-roboto">
+                  {question.question}
+                </p>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto">
+                  {question.answer}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+        <h2 className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-20 md:text-4.5xl font-roboto">
+          Authorization Policy
+        </h2>
+        <ul>
+          {questionsPolicy.map((question, i) => {
+            return (
+              <li key={`question-${i}-${question.question}`}>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-10 md:text-2xl font-roboto">
+                  {question.question}
+                </p>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto">
+                  {question.answer}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+        <h2 className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-20 md:text-4.5xl font-roboto">
+          Aserto
+        </h2>
+        <ul>
+          {questionsAserto.map((question, i) => {
+            return (
+              <li key={`question-${i}-${question.question}`}>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-10 md:text-2xl font-roboto">
+                  {question.question}
+                </p>
+                <p className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto">
+                  {question.answer}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
       </section>
     </PageLayout>
   )
