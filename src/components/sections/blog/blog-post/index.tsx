@@ -74,7 +74,7 @@ const Post = ({ post }: Props) => {
       </div>
       <BlockContent
         blocks={post.bodyRaw}
-        className={clsx('w-8/12 mx-auto mt-20', s.body)}
+        className={clsx('w-full sm:w-8/12 mx-auto mt-20', s.body)}
       />
     </section>
   )

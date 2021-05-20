@@ -1,5 +1,5 @@
 .body {
-  line-height: theme('lineHeight.loose');
+  line-height: theme('lineHeight.relaxed');
   color: theme('colors.aserto.grey.60');
 
   font-family: theme('fontFamily.roboto');
@@ -44,5 +44,11 @@
 
   em {
     @apply text-aserto-grey-90;
+  }
+}
+
+@screen sm {
+  .body {
+    line-height: theme('lineHeight.loose');
   }
 }
