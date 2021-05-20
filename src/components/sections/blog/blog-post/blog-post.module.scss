@@ -1,6 +1,7 @@
 .body {
-  color: theme('colors.aserto.grey.60');
   line-height: theme('lineHeight.loose');
+  color: theme('colors.aserto.grey.60');
+
   font-family: theme('fontFamily.roboto');
 
   p {
@@ -27,8 +28,9 @@
 
   ul,
   ol {
-    list-style: initial;
     padding-left: 24px;
+
+    list-style: initial;
     @apply space-y-2;
   }
 
@@ -37,7 +39,10 @@
   }
 
   a {
-    color: theme('colors.aserto.grey.90');
-    text-decoration: underline;
+    @apply whitespace-nowrap text-aserto-lochivar-accent-40 hover:underline;
+  }
+
+  em {
+    @apply text-aserto-grey-90;
   }
 }
