@@ -57,10 +57,10 @@ const Button: PolymorphicForwardRefExoticComponent<
                 }),
                 swx(variant, {
                   primary: !disabled
-                    ? 'bg-aserto-lochivar-100 text-white hover:bg-aserto-lochivar-80 focus:bg-aserto-lochivar-60'
+                    ? 'bg-aserto-lochivar-60 text-white hover:bg-aserto-lochivar-90 focus:bg-aserto-lochivar-100'
                     : 'bg-aserto-lochivar-30 text-aserto-grey-40',
                   secondary: !disabled
-                    ? 'bg-aserto-grey-10 text-white border border-aserto-grey-20 hover:bg-aserto-grey-20 hover:border-aserto-grey-30 focus:bg-aserto-grey-30 focus:border-aserto-grey-30'
+                    ? 'bg-aserto-grey-10 text-aserto-grey-90 border border-aserto-grey-20 hover:bg-aserto-grey-30 hover:border-aserto-grey-30 focus:bg-aserto-grey-30 focus:border-aserto-grey-30'
                     : 'bg-aserto-grey-5 text-aserto-grey-30'
                 })
               )
