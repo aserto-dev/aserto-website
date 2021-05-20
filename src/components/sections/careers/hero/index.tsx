@@ -12,6 +12,9 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           {page.title}
         </h1>
+        <p className="mt-8 mb-12 text-aserto-grey-60 text-[22px]">
+          {page.firstSubtitle}
+        </p>
         <div className="relative grid items-center gap-4 mx-auto mt-24 lg:gap-8 lg:grid-cols-2">
           {page.facts?.map((fact, i) => {
             return (
@@ -21,7 +24,7 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
                   width={fact?.icon?.asset?.metadata?.dimensions?.width ?? 0}
                   height={fact?.icon?.asset?.metadata?.dimensions?.height ?? 0}
                 />
-                <p className="mt-2 text-aserto-grey-90 text-[22px]">
+                <p className="mt-2 font-semibold text-aserto-grey-90 text-[22px]">
                   {fact?.title}
                 </p>
               </div>

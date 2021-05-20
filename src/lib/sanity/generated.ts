@@ -190,6 +190,7 @@ export type Careers = Document & {
   _rev?: Maybe<Scalars['String']>
   _key?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
+  firstSubtitle?: Maybe<Scalars['String']>
   facts?: Maybe<Array<Maybe<FeatureItem>>>
   subtitleRaw?: Maybe<Scalars['JSON']>
   cultureSectionTitle?: Maybe<Scalars['String']>
@@ -218,6 +219,7 @@ export type CareersFilter = {
   _rev?: Maybe<StringFilter>
   _key?: Maybe<StringFilter>
   title?: Maybe<StringFilter>
+  firstSubtitle?: Maybe<StringFilter>
   cultureSectionTitle?: Maybe<StringFilter>
   diversitySectionTitle?: Maybe<StringFilter>
   valuesSectionTitle?: Maybe<StringFilter>
@@ -233,6 +235,7 @@ export type CareersSorting = {
   _rev?: Maybe<SortOrder>
   _key?: Maybe<SortOrder>
   title?: Maybe<SortOrder>
+  firstSubtitle?: Maybe<SortOrder>
   cultureSectionTitle?: Maybe<SortOrder>
   diversitySectionTitle?: Maybe<SortOrder>
   valuesSectionTitle?: Maybe<SortOrder>
@@ -1681,6 +1684,7 @@ export type JobPostingFragment = { __typename?: 'JobPosting' } & Pick<
 export type CareersPageFragment = { __typename?: 'Careers' } & Pick<
   Careers,
   | 'title'
+  | 'firstSubtitle'
   | 'subtitleRaw'
   | 'cultureSectionTitle'
   | 'cultureSectionSubtitleRaw'
@@ -1980,6 +1984,7 @@ export const FeatureItemFragmentDoc = gql`
 export const CareersPageFragmentDoc = gql`
   fragment CareersPage on Careers {
     title
+    firstSubtitle
     facts {
       icon {
         ...Image

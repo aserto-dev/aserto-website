@@ -19,6 +19,7 @@ fragment JobPosting on JobPosting {
 
 fragment CareersPage on Careers {
   title
+  firstSubtitle
   facts {
     icon {
       ...Image
