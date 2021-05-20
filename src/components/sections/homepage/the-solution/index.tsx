@@ -6,7 +6,7 @@ const TheSolution = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
 
   return (
-    <section className="py-32 mt-32" ref={section} id="the-solution">
+    <section className="py-32 mt-8" ref={section} id="the-solution">
       <div className="px-4 mb-24 text-center sm:px-0">
         <p className="mb-2 font-bold leading-tight uppercase text-aserto-lochivar-100 sm:mb-4 sm:text-base tracking-h4">
           {page.theSolutionSectionLabel}
