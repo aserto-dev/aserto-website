@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Container from 'components/layout/container'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { HomePageFragment } from 'lib/sanity/generated'
 import { useMemo, useState } from 'react'
@@ -21,27 +22,29 @@ const Features = ({ page }: { page: HomePageFragment }) => {
       ref={section}
       id="features"
     >
-      <div className="relative z-10 px-0 text-center">
-        <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
-          {page.featuresSectionTitle}
-        </h2>
-        <Comparison
-          page={page}
-          activeFeatureIndex={activeFeatureIndex}
-          setActiveFeatureIndex={setActiveFeatureIndex}
-        />
-        <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
-          {activeCategory?.blocks?.map((feature) => {
-            return (
-              <FeatureItem
-                icon={feature?.icon?.asset?.url ?? ''}
-                description={feature?.title}
-                key={feature?.title}
-              />
-            )
-          })}
+      <Container>
+        <div className="relative z-10 px-0 text-center">
+          <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
+            {page.featuresSectionTitle}
+          </h2>
+          <Comparison
+            page={page}
+            activeFeatureIndex={activeFeatureIndex}
+            setActiveFeatureIndex={setActiveFeatureIndex}
+          />
+          <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-3">
+            {activeCategory?.blocks?.map((feature) => {
+              return (
+                <FeatureItem
+                  icon={feature?.icon?.asset?.url ?? ''}
+                  description={feature?.title}
+                  key={feature?.title}
+                />
+              )
+            })}
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
