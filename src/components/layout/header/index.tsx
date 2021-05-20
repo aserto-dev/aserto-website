@@ -66,10 +66,10 @@ const Header = ({ selected }: Props) => {
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
           <Link
             className={clsx(
-              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30': selected === 'product',
-                'border-transparent': selected !== 'product'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'product',
+                'border-transparent text-aserto-grey-60 ': selected !== 'product'
               }
             )}
             href="/"
@@ -78,10 +78,10 @@ const Header = ({ selected }: Props) => {
           </Link>
           <Link
             className={clsx(
-              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30': selected === 'developers',
-                'border-transparent': selected !== 'developers'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'developers',
+                'border-transparent text-aserto-grey-60': selected !== 'developers'
               }
             )}
             href="/"
@@ -90,10 +90,10 @@ const Header = ({ selected }: Props) => {
           </Link>
           <Link
             className={clsx(
-              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30': selected === 'blog',
-                'border-transparent': selected !== 'blog'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'blog',
+                'border-transparent text-aserto-grey-60': selected !== 'blog'
               }
             )}
             href="/blog"
@@ -102,10 +102,10 @@ const Header = ({ selected }: Props) => {
           </Link>
           <Link
             className={clsx(
-              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30': selected === 'about',
-                'border-transparent': selected !== 'about'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'about',
+                'border-transparent text-aserto-grey-60': selected !== 'about'
               }
             )}
             href="/about"
@@ -114,10 +114,10 @@ const Header = ({ selected }: Props) => {
           </Link>
           <Link
             className={clsx(
-              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30': selected === 'careers',
-                'border-transparent': selected !== 'careers'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'careers',
+                'border-transparent text-aserto-grey-60': selected !== 'careers'
               }
             )}
             href="/careers"
