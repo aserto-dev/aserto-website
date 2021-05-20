@@ -11,8 +11,10 @@ import Benefits from 'components/sections/careers/benefits'
 import OpenPositions from 'components/sections/careers/open-positions'
 import Container from 'components/layout/container'
 import Image from 'next/image'
+import cms from 'lib/sanity'
+import { InferGetStaticPropsType } from 'next'
 
-const Careers = () => {
+const Careers = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       headProps={{
@@ -31,14 +33,23 @@ const Careers = () => {
         </div>
         <CustomHead />
         <Container>
-          <Hero />
-          <OurValues />
-          <Benefits />
-          <OpenPositions />
+          <Hero page={page} />
+          <OurValues page={page} />
+          <Benefits page={page} />
+          <OpenPositions page={page} />
         </Container>
       </div>
     </PageLayout>
   )
+}
+
+export const getStaticProps = async () => {
+  const { allCareers, allJobPosting } = await cms().CareersPage()
+  const page = allCareers[0]
+  return {
+    props: { page, jobPostings: allJobPosting },
+    revalidate: 1
+  }
 }
 
 export default Careers

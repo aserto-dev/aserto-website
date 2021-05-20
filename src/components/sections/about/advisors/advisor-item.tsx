@@ -5,13 +5,12 @@ import Link from 'components/primitives/link'
 import LinkedinIcon from 'icons/linkedin-bio.svg'
 
 type Props = {
-  company: string
   linkedin: string
   name: string
   position: string
 }
 
-const ProfileItem = ({ company, linkedin, name, position }: Props) => (
+const ProfileItem = ({ linkedin, name, position }: Props) => (
   <div className="text-center">
     <Link
       href={linkedin}
@@ -20,10 +19,7 @@ const ProfileItem = ({ company, linkedin, name, position }: Props) => (
       {name}
       <LinkedinIcon className="ml-1 sm:ml-2" />
     </Link>
-    <p className="mt-6 text-aserto-grey-60 font-roboto">
-      {position}
-      {company && <span className="inline-block">, {company}</span>}
-    </p>
+    <p className="mt-6 text-aserto-grey-60 font-roboto">{position}</p>
   </div>
 )
 

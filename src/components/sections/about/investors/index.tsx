@@ -2,8 +2,9 @@ import Image from 'next/image'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { AboutPageFragment } from 'lib/sanity/generated'
 
-const Investors = () => {
+const Investors = ({ page }: { page: AboutPageFragment }) => {
   const [ref] = useFadeInBottom()
 
   return (
@@ -13,25 +14,32 @@ const Investors = () => {
         ref={ref}
       >
         <p className="mb-2 text-base font-bold leading-loose tracking-widest uppercase sm:leading-none text-aserto-grey-60 sm:mb-4">
-          Supported by the best seed investors in the industry.
+          {page.investorsSectionTitle}
         </p>
         <div className="flex flex-wrap items-center justify-center mt-16 space-y-8 sm:space-y-0 sm:justify-between sm:flex-nowrap">
-          <a
-            className="transition-opacity duration-200 hover:opacity-60"
-            href="https://www.costanoavc.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Image src="/images/about/costanoa.svg" width="509" height="49" />
-          </a>
-          <a
-            className="transition-opacity duration-200 hover:opacity-60"
-            href="https://www.heavybit.com/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Image src="/images/about/heavy.svg" width="291" height="48" />
-          </a>
+          {page.investors?.map((investor, i) => {
+            return (
+              <a
+                className="transition-opacity duration-200 hover:opacity-60"
+                href={investor?.href ?? ''}
+                rel="noopener noreferrer"
+                target="_blank"
+                key={i}
+                title={investor?.name ?? ''}
+              >
+                <Image
+                  src={investor?.image?.asset?.url ?? ''}
+                  width={
+                    investor?.image?.asset?.metadata?.dimensions?.width ?? 0
+                  }
+                  height={
+                    investor?.image?.asset?.metadata?.dimensions?.height ?? 0
+                  }
+                  alt={investor?.image?.alt ?? ''}
+                />
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>

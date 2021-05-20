@@ -2,7 +2,7 @@ import { PostMetaFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 
 type Props = {
   data: PostMetaFragment
@@ -30,9 +30,10 @@ const BlogPost = ({ data }: Props) => {
               <p className="text-xl text-aserto-grey-90 sm:text-1.5xl">
                 {data.title}
               </p>
-              <div className="pb-4 mt-3 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto">
-                <BlockContent blocks={data.excerptRaw} />
-              </div>
+              <BlockContent
+                className="pb-4 mt-3 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto"
+                blocks={data.excerptRaw}
+              />
               <p className="absolute left-10 bottom-8 text-aserto-grey-90">
                 {formatPostDate(data.publishedAt)}
               </p>

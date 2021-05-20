@@ -1,9 +1,10 @@
 import Link from 'components/primitives/link'
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 import { PostFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
 import Image from 'next/image'
 import s from './blog-post.module.scss'
+import clsx from 'clsx'
 
 type Props = {
   post: PostFragment
@@ -71,9 +72,10 @@ const Post = ({ post }: Props) => {
           alt={post.mainImage?.alt ?? 'Post cover'}
         />
       </div>
-      <div className="w-8/12 mx-auto mt-20">
-        <BlockContent blocks={post.bodyRaw} className={s.body} />
-      </div>
+      <BlockContent
+        blocks={post.bodyRaw}
+        className={clsx('w-8/12 mx-auto mt-20', s.body)}
+      />
     </section>
   )
 }

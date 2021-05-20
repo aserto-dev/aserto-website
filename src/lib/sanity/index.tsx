@@ -1,11 +1,6 @@
 import { createImageUrlBuilder } from 'next-sanity'
 import { GraphQLClient } from 'graphql-request'
 import { getSdk } from './generated'
-// @ts-ignore
-const BlockContent = require('@sanity/block-content-to-react') as (props: {
-  blocks: any
-  className?: string
-}) => any
 
 const config = {
   projectId: process.env.SANITY_PROJECT_ID as string,
@@ -30,5 +25,4 @@ const cms = () => {
   )
 }
 
-export { BlockContent }
 export default cms

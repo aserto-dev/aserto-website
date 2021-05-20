@@ -15,26 +15,30 @@ fragment Investor on InvestorBlock {
   }
 }
 
+fragment AboutPage on About {
+  title
+  subtitleRaw
+  foundersSectionTitle
+  foundersSectionSubtitle
+  founders {
+    ...Founder
+  }
+  investorsSectionTitle
+  investors {
+    ...Investor
+  }
+  angelsSectionTitle
+  angelsSectionSubtitle
+  angels {
+    ...Founder
+  }
+  hiringSectionTitle
+  hiringSectionLinkLabel
+  hiringSectionLinkHref
+}
+
 query AboutPage {
   allAbout(sort: { _createdAt: DESC }, limit: 1) {
-    title
-    subtitleRaw
-    foundersSectionTitle
-    foundersSectionSubtitle
-    founders {
-      ...Founder
-    }
-    investorsSectionTitle
-    investors {
-      ...Investor
-    }
-    angelsSectionTitle
-    angelsSectionSubtitle
-    angels {
-      ...Founder
-    }
-    hiringSectionTitle
-    hiringSectionLinkLabel
-    hiringSectionLinkHref
+    ...AboutPage
   }
 }

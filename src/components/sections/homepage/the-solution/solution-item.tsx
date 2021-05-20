@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { SectionBlockFragment } from 'lib/sanity/generated'
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 import { useCallback, useEffect, useState } from 'react'
 
 type Props = {
@@ -48,9 +48,10 @@ const SolutionItem = ({ isInverted, data }: Props) => {
           <h2 className="mb-2 text-aserto-grey-90 text-4.5xl sm:mb-3 leading-tight">
             {data.title}
           </h2>
-          <div className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto">
-            <BlockContent blocks={data.subtitleRaw} />
-          </div>
+          <BlockContent
+            className="mt-3 text-lg leading-relaxed text-aserto-grey-60 sm:mt-6 font-roboto"
+            blocks={data.subtitleRaw}
+          />
         </div>
 
         <div

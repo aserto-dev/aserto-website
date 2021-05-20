@@ -1,6 +1,7 @@
 // Hooks
 import Link from 'components/primitives/link'
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { CareersPageFragment } from 'lib/sanity/generated'
 
 // Components
 import PostionItem from './position-item'
@@ -61,7 +62,7 @@ const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
   }
 ]
 
-const OpenPositions = () => {
+const OpenPositions = ({ page }: { page: CareersPageFragment }) => {
   const [section] = useFadeInBottom()
   return (
     <section className="pt-0 pb-52" id="open-positions">

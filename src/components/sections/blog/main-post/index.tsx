@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { PostMetaFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -42,9 +42,10 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
               <h3 className="text-2xl leading-none font-roboto mb-7">
                 {post.title}
               </h3>
-              <div className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-60">
-                <BlockContent blocks={post.excerptRaw} />
-              </div>
+              <BlockContent
+                className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-60"
+                blocks={post.excerptRaw}
+              />
               <time className="text-base tracking-wide">
                 {formatPostDate(post.publishedAt)}
               </time>

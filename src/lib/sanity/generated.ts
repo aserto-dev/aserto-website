@@ -1541,7 +1541,18 @@ export type ImageFragment = { __typename?: 'MainImage' } & Pick<
       { __typename?: 'SanityImageAsset' } & Pick<
         SanityImageAsset,
         '_id' | 'url' | 'title' | 'assetId' | 'path'
-      >
+      > & {
+          metadata?: Maybe<
+            { __typename?: 'SanityImageMetadata' } & {
+              dimensions?: Maybe<
+                { __typename?: 'SanityImageDimensions' } & Pick<
+                  SanityImageDimensions,
+                  'width' | 'height'
+                >
+              >
+            }
+          >
+        }
     >
   }
 
@@ -1595,34 +1606,34 @@ export type InvestorFragment = { __typename?: 'InvestorBlock' } & Pick<
   'name' | 'href'
 > & { image?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
 
+export type AboutPageFragment = { __typename?: 'About' } & Pick<
+  About,
+  | 'title'
+  | 'subtitleRaw'
+  | 'foundersSectionTitle'
+  | 'foundersSectionSubtitle'
+  | 'investorsSectionTitle'
+  | 'angelsSectionTitle'
+  | 'angelsSectionSubtitle'
+  | 'hiringSectionTitle'
+  | 'hiringSectionLinkLabel'
+  | 'hiringSectionLinkHref'
+> & {
+    founders?: Maybe<
+      Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
+    >
+    investors?: Maybe<
+      Array<Maybe<{ __typename?: 'InvestorBlock' } & InvestorFragment>>
+    >
+    angels?: Maybe<
+      Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
+    >
+  }
+
 export type AboutPageQueryVariables = Exact<{ [key: string]: never }>
 
 export type AboutPageQuery = { __typename?: 'RootQuery' } & {
-  allAbout: Array<
-    { __typename?: 'About' } & Pick<
-      About,
-      | 'title'
-      | 'subtitleRaw'
-      | 'foundersSectionTitle'
-      | 'foundersSectionSubtitle'
-      | 'investorsSectionTitle'
-      | 'angelsSectionTitle'
-      | 'angelsSectionSubtitle'
-      | 'hiringSectionTitle'
-      | 'hiringSectionLinkLabel'
-      | 'hiringSectionLinkHref'
-    > & {
-        founders?: Maybe<
-          Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
-        >
-        investors?: Maybe<
-          Array<Maybe<{ __typename?: 'InvestorBlock' } & InvestorFragment>>
-        >
-        angels?: Maybe<
-          Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
-        >
-      }
-  >
+  allAbout: Array<{ __typename?: 'About' } & AboutPageFragment>
 }
 
 export type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
@@ -1663,41 +1674,41 @@ export type JobPostingFragment = { __typename?: 'JobPosting' } & Pick<
 > &
   JobPostingMetaFragment
 
+export type CareersPageFragment = { __typename?: 'Careers' } & Pick<
+  Careers,
+  | 'title'
+  | 'subtitleRaw'
+  | 'cultureSectionTitle'
+  | 'cultureSectionSubtitleRaw'
+  | 'cultureSectionTaglineRaw'
+  | 'diversitySectionTitle'
+  | 'diversitySectionSubtitleRaw'
+  | 'perksSectionTitle'
+  | 'perksSectionSubtitleRaw'
+  | 'openPositionsSectionTitle'
+  | 'openPositionsSectionSubtitleRaw'
+> & {
+    facts?: Maybe<
+      Array<
+        Maybe<
+          { __typename?: 'FeatureItem' } & Pick<FeatureItem, 'title'> & {
+              icon?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
+            }
+        >
+      >
+    >
+    culture?: Maybe<
+      Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
+    >
+    perks?: Maybe<
+      Array<Maybe<{ __typename?: 'FeatureItem' } & FeatureItemFragment>>
+    >
+  }
+
 export type CareersPageQueryVariables = Exact<{ [key: string]: never }>
 
 export type CareersPageQuery = { __typename?: 'RootQuery' } & {
-  allCareers: Array<
-    { __typename?: 'Careers' } & Pick<
-      Careers,
-      | 'title'
-      | 'subtitleRaw'
-      | 'cultureSectionTitle'
-      | 'cultureSectionSubtitleRaw'
-      | 'cultureSectionTaglineRaw'
-      | 'diversitySectionTitle'
-      | 'diversitySectionSubtitleRaw'
-      | 'perksSectionTitle'
-      | 'perksSectionSubtitleRaw'
-      | 'openPositionsSectionTitle'
-      | 'openPositionsSectionSubtitleRaw'
-    > & {
-        facts?: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'FeatureItem' } & Pick<FeatureItem, 'title'> & {
-                  icon?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
-                }
-            >
-          >
-        >
-        culture?: Maybe<
-          Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
-        >
-        perks?: Maybe<
-          Array<Maybe<{ __typename?: 'FeatureItem' } & FeatureItemFragment>>
-        >
-      }
-  >
+  allCareers: Array<{ __typename?: 'Careers' } & CareersPageFragment>
   allJobPosting: Array<{ __typename?: 'JobPosting' } & JobPostingMetaFragment>
 }
 
@@ -1810,6 +1821,12 @@ export const ImageFragmentDoc = gql`
       title
       assetId
       path
+      metadata {
+        dimensions {
+          width
+          height
+        }
+      }
     }
     alt
   }
@@ -1874,6 +1891,31 @@ export const InvestorFragmentDoc = gql`
   }
   ${ImageFragmentDoc}
 `
+export const AboutPageFragmentDoc = gql`
+  fragment AboutPage on About {
+    title
+    subtitleRaw
+    foundersSectionTitle
+    foundersSectionSubtitle
+    founders {
+      ...Founder
+    }
+    investorsSectionTitle
+    investors {
+      ...Investor
+    }
+    angelsSectionTitle
+    angelsSectionSubtitle
+    angels {
+      ...Founder
+    }
+    hiringSectionTitle
+    hiringSectionLinkLabel
+    hiringSectionLinkHref
+  }
+  ${FounderFragmentDoc}
+  ${InvestorFragmentDoc}
+`
 export const JobPostingMetaFragmentDoc = gql`
   fragment JobPostingMeta on JobPosting {
     title
@@ -1897,15 +1939,6 @@ export const JobPostingFragmentDoc = gql`
   }
   ${JobPostingMetaFragmentDoc}
 `
-export const FaqItemFragmentDoc = gql`
-  fragment FaqItem on FaqBlock {
-    title
-    questions {
-      question
-      answerRaw
-    }
-  }
-`
 export const SectionBlockFragmentDoc = gql`
   fragment SectionBlock on SectionBlock {
     image {
@@ -1924,6 +1957,45 @@ export const FeatureItemFragmentDoc = gql`
     title
   }
   ${ImageFragmentDoc}
+`
+export const CareersPageFragmentDoc = gql`
+  fragment CareersPage on Careers {
+    title
+    facts {
+      icon {
+        ...Image
+      }
+      title
+    }
+    subtitleRaw
+    cultureSectionTitle
+    cultureSectionSubtitleRaw
+    culture {
+      ...SectionBlock
+    }
+    cultureSectionTaglineRaw
+    diversitySectionTitle
+    diversitySectionSubtitleRaw
+    perksSectionTitle
+    perksSectionSubtitleRaw
+    perks {
+      ...FeatureItem
+    }
+    openPositionsSectionTitle
+    openPositionsSectionSubtitleRaw
+  }
+  ${ImageFragmentDoc}
+  ${SectionBlockFragmentDoc}
+  ${FeatureItemFragmentDoc}
+`
+export const FaqItemFragmentDoc = gql`
+  fragment FaqItem on FaqBlock {
+    title
+    questions {
+      question
+      answerRaw
+    }
+  }
 `
 export const HomePageFragmentDoc = gql`
   fragment HomePage on Home {
@@ -1968,29 +2040,10 @@ export const HomePageFragmentDoc = gql`
 export const AboutPageDocument = gql`
   query AboutPage {
     allAbout(sort: { _createdAt: DESC }, limit: 1) {
-      title
-      subtitleRaw
-      foundersSectionTitle
-      foundersSectionSubtitle
-      founders {
-        ...Founder
-      }
-      investorsSectionTitle
-      investors {
-        ...Investor
-      }
-      angelsSectionTitle
-      angelsSectionSubtitle
-      angels {
-        ...Founder
-      }
-      hiringSectionTitle
-      hiringSectionLinkLabel
-      hiringSectionLinkHref
+      ...AboutPage
     }
   }
-  ${FounderFragmentDoc}
-  ${InvestorFragmentDoc}
+  ${AboutPageFragmentDoc}
 `
 export const BlogIndexDocument = gql`
   query BlogIndex {
@@ -2020,37 +2073,13 @@ export const BlogPostDocument = gql`
 export const CareersPageDocument = gql`
   query CareersPage {
     allCareers(sort: { _createdAt: DESC }, limit: 1) {
-      title
-      facts {
-        icon {
-          ...Image
-        }
-        title
-      }
-      subtitleRaw
-      cultureSectionTitle
-      cultureSectionSubtitleRaw
-      culture {
-        ...SectionBlock
-      }
-      cultureSectionTaglineRaw
-      diversitySectionTitle
-      diversitySectionSubtitleRaw
-      perksSectionTitle
-      perksSectionSubtitleRaw
-      perks {
-        ...FeatureItem
-      }
-      openPositionsSectionTitle
-      openPositionsSectionSubtitleRaw
+      ...CareersPage
     }
     allJobPosting {
       ...JobPostingMeta
     }
   }
-  ${ImageFragmentDoc}
-  ${SectionBlockFragmentDoc}
-  ${FeatureItemFragmentDoc}
+  ${CareersPageFragmentDoc}
   ${JobPostingMetaFragmentDoc}
 `
 export const JobPostingDocument = gql`

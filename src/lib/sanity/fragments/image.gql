@@ -21,6 +21,12 @@ fragment Image on MainImage {
     title
     assetId
     path
+    metadata {
+      dimensions {
+        width
+        height
+      }
+    }
   }
   alt
 }

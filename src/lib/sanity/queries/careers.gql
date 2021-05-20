@@ -17,31 +17,35 @@ fragment JobPosting on JobPosting {
   bodyRaw
 }
 
+fragment CareersPage on Careers {
+  title
+  facts {
+    icon {
+      ...Image
+    }
+    title
+  }
+  subtitleRaw
+  cultureSectionTitle
+  cultureSectionSubtitleRaw
+  culture {
+    ...SectionBlock
+  }
+  cultureSectionTaglineRaw
+  diversitySectionTitle
+  diversitySectionSubtitleRaw
+  perksSectionTitle
+  perksSectionSubtitleRaw
+  perks {
+    ...FeatureItem
+  }
+  openPositionsSectionTitle
+  openPositionsSectionSubtitleRaw
+}
+
 query CareersPage {
   allCareers(sort: { _createdAt: DESC }, limit: 1) {
-    title
-    facts {
-      icon {
-        ...Image
-      }
-      title
-    }
-    subtitleRaw
-    cultureSectionTitle
-    cultureSectionSubtitleRaw
-    culture {
-      ...SectionBlock
-    }
-    cultureSectionTaglineRaw
-    diversitySectionTitle
-    diversitySectionSubtitleRaw
-    perksSectionTitle
-    perksSectionSubtitleRaw
-    perks {
-      ...FeatureItem
-    }
-    openPositionsSectionTitle
-    openPositionsSectionSubtitleRaw
+    ...CareersPage
   }
   allJobPosting {
     ...JobPostingMeta

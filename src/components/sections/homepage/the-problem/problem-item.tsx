@@ -1,4 +1,4 @@
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 import { SectionBlockFragment } from 'lib/sanity/generated'
 import Image from 'next/image'
 
@@ -21,9 +21,10 @@ const BlogPost = ({ data }: Props) => (
         <p className="text-xl text-aserto-grey-90 sm:text-1.5xl">
           {data.title}
         </p>
-        <div className="mt-3 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto">
-          <BlockContent blocks={data.subtitleRaw} />
-        </div>
+        <BlockContent
+          className="mt-3 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto"
+          blocks={data.subtitleRaw}
+        />
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
-import { BlockContent } from 'lib/sanity'
+import { BlockContent } from 'components/primitives/block-content'
 import { HomePageFragment } from 'lib/sanity/generated'
 import TestimonialItem from './testimonial-item'
 
