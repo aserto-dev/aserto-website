@@ -13,7 +13,11 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import Menu from './menu'
 import clsx from 'clsx'
 
-const Header = () => {
+type Props = {
+  selected?: 'product' | 'developers' | 'blog' | 'about' | 'careers'
+}
+
+const Header = ({ selected }: Props) => {
   const [open, setOpen] = useState(false)
 
   const handleClick = useCallback(() => {
@@ -34,7 +38,7 @@ const Header = () => {
   }, [open])
 
   return (
-    <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header py-5">
+    <header className="fixed top-0 z-40 w-full px-6 bg-aserto-grey-5 shadow-header py-3 lg:py-0">
       <div className="flex items-center justify-between w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
@@ -55,36 +59,67 @@ const Header = () => {
             />
           </div>
         </nav>
-        <nav className="items-center hidden space-x-12 lg:flex">
+        <nav className="items-center hidden space-x-10 lg:flex">
           <Link href="/">
             <Logo />
           </Link>
+          <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
           <Link
-            className="pl-8 text-base font-medium border-l border-aserto-grey-20 font-roboto text-aserto-grey-60"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'product',
+                'border-transparent': selected !== 'product'
+              }
+            )}
             href="/"
           >
             Product
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'developers',
+                'border-transparent': selected !== 'developers'
+              }
+            )}
             href="/"
           >
             Developers
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'blog',
+                'border-transparent': selected !== 'blog'
+              }
+            )}
             href="/blog"
           >
             Blog
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'about',
+                'border-transparent': selected !== 'about'
+              }
+            )}
             href="/about"
           >
             About
           </Link>
           <Link
-            className="text-base font-medium font-roboto text-aserto-grey-60"
+            className={clsx(
+              'text-base font-roboto text-aserto-grey-60 pb-6 pt-8 border-b border-solid transition-all duration-150',
+              {
+                'border-aserto-lochivar-accent-30': selected === 'careers',
+                'border-transparent': selected !== 'careers'
+              }
+            )}
             href="/careers"
           >
             Careers

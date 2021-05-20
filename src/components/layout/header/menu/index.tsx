@@ -35,7 +35,15 @@ const Menu = ({ show = false }: Menu) => {
               className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
               href="/"
             >
-              Home
+              Product
+            </Link>
+          </li>
+          <li className="text-center">
+            <Link
+              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
+              href="/"
+            >
+              Developers
             </Link>
           </li>
           <li className="text-center">

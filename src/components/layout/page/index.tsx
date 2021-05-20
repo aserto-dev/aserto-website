@@ -26,6 +26,7 @@ interface Props {
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   withoutNewsletter?: boolean
+  currentPage?: 'product' | 'developers' | 'blog' | 'about' | 'careers'
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -51,12 +52,13 @@ const PageLayout = ({
   children,
   contain,
   headProps,
-  withoutNewsletter
+  withoutNewsletter,
+  currentPage
 }: Props) => {
   return (
     <div className="overflow-hidden">
       <CustomHead {...headProps} />
-      <Header />
+      <Header selected={currentPage} />
       <motion.main
         className="relative mt-16 bg-aserto-black"
         animate="enter"
