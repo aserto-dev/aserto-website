@@ -14,7 +14,10 @@ import Image from 'next/image'
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
 
-const Careers = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Careers = ({
+  page,
+  jobPostings
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       headProps={{
@@ -53,7 +56,7 @@ const Careers = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
             features={page.values ?? []}
           />
           <Benefits page={page} />
-          <OpenPositions page={page} />
+          <OpenPositions page={page} positions={jobPostings} />
         </Container>
       </div>
     </PageLayout>

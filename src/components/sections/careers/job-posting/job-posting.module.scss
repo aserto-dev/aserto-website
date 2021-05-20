@@ -1,0 +1,43 @@
+.body {
+  color: theme('colors.aserto.grey.60');
+  line-height: theme('lineHeight.loose');
+  font-family: theme('fontFamily.roboto');
+
+  p {
+    @apply my-8;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-aserto-grey-90 mt-12 mb-8 tracking-tighter;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-lg tracking-normal;
+  }
+
+  ul,
+  ol {
+    list-style: initial;
+    padding-left: 24px;
+    @apply space-y-2;
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  a {
+    color: theme('colors.aserto.grey.90');
+    text-decoration: underline;
+  }
+}

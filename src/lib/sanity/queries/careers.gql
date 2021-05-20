@@ -57,6 +57,14 @@ query CareersPage {
   }
 }
 
+query JobPostingPaths {
+  allJobPosting {
+    slug {
+      current
+    }
+  }
+}
+
 query JobPosting($slug: String!) {
   allJobPosting(where: { slug: { current: { eq: $slug } } }, limit: 1) {
     ...JobPosting

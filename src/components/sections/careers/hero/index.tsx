@@ -21,12 +21,15 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
                   width={fact?.icon?.asset?.metadata?.dimensions?.width ?? 0}
                   height={fact?.icon?.asset?.metadata?.dimensions?.height ?? 0}
                 />
+                <p className="mt-2 text-aserto-grey-90 text-[22px]">
+                  {fact?.title}
+                </p>
               </div>
             )
           })}
         </div>
         <BlockContent
-          className="w-full mx-auto text-1.5xl text-left mt-10 md:leading-tight text-aserto-grey-60 sm: md:mt-10 sm:text-2xl font-roboto"
+          className="w-full mx-auto text-1.5xl text-left mt-16 md:leading-tight text-aserto-grey-60 sm: md:mt-10 sm:text-2xl font-roboto"
           blocks={page.subtitleRaw}
         />
       </div>

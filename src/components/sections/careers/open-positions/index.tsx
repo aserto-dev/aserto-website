@@ -1,68 +1,21 @@
 // Hooks
 import { BlockContent } from 'components/primitives/block-content'
 import { useFadeInBottom } from 'hooks/use-gsap'
-import { CareersPageFragment } from 'lib/sanity/generated'
+import {
+  CareersPageFragment,
+  JobPostingMetaFragment
+} from 'lib/sanity/generated'
 
 // Components
 import PostionItem from './position-item'
 
-const problems: React.ComponentPropsWithoutRef<typeof PostionItem>[] = [
-  {
-    name: 'Head of Dev Relations',
-    icon: '/images/careers/positions/001.svg',
-    description:
-      'Create a world-class developer community and partner with existing ecosystems.',
-    position: 'DEVELOPMENT',
-    linkedin:
-      'https://jobs.lever.co/aserto/d9634514-1691-4e06-914b-1f866852abbc'
-  },
-  {
-    name: 'Principal backend engineer',
-    icon: '/images/careers/positions/002.svg',
-    description:
-      'Build out our policy engine, language, API, SDK, language bindings.',
-    position: 'DEVELOPMENT',
-    linkedin:
-      'https://jobs.lever.co/aserto/c6c0215a-59d6-4b7c-b894-f0450740962a'
-  },
-  {
-    name: 'Senior frontend engineer',
-    icon: '/images/careers/positions/003.svg',
-    description:
-      'Design and build our single-page app and management experience.',
-    position: 'DEVELOPMENT',
-    linkedin:
-      'https://jobs.lever.co/aserto/c92c6644-c7dd-44a1-8eec-83b4c7b5ebe3'
-  },
-  {
-    name: 'Senior SRE',
-    icon: '/images/careers/positions/004.svg',
-    description:
-      'Own our deployment pipeline, and operate planet-scale services.',
-    position: 'DEVELOPMENT',
-    linkedin:
-      'https://jobs.lever.co/aserto/cdcfd3f2-ca34-4280-b69d-71ef90f0c400'
-  },
-  {
-    name: 'Senior content engineer',
-    icon: '/images/careers/positions/005.svg',
-    description:
-      'Define and tell the story around how authorization should be built in modern applications.',
-    position: 'DEVELOPMENT',
-    linkedin:
-      'https://jobs.lever.co/aserto/080c280a-8b6f-4d3d-a886-5a8f277032b9'
-  },
-  {
-    name: 'Senior recruiter',
-    icon: '/images/careers/positions/006.svg',
-    description: 'Help grow our team, in Seattle and around the world!',
-    position: 'HUMAN RESOURCES',
-    linkedin:
-      'https://jobs.lever.co/aserto/080c280a-8b6f-4d3d-a886-5a8f277032b9'
-  }
-]
-
-const OpenPositions = ({ page }: { page: CareersPageFragment }) => {
+const OpenPositions = ({
+  page,
+  positions
+}: {
+  page: CareersPageFragment
+  positions: JobPostingMetaFragment[]
+}) => {
   const [section] = useFadeInBottom()
   return (
     <section className="pt-0 pb-52" id="open-positions">
@@ -77,8 +30,8 @@ const OpenPositions = ({ page }: { page: CareersPageFragment }) => {
           />
         </div>
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
-          {problems.map((profile) => (
-            <PostionItem {...profile} key={profile.name} />
+          {positions.map((position, i) => (
+            <PostionItem data={position} key={i} />
           ))}
         </div>
       </div>

@@ -206,7 +206,6 @@ export type Careers = Document & {
   perks?: Maybe<Array<Maybe<FeatureItem>>>
   openPositionsSectionTitle?: Maybe<Scalars['String']>
   openPositionsSectionSubtitleRaw?: Maybe<Scalars['JSON']>
-  openPositions?: Maybe<Array<Maybe<JobPosting>>>
 }
 
 export type CareersFilter = {
@@ -1722,6 +1721,16 @@ export type CareersPageQuery = { __typename?: 'RootQuery' } & {
   allJobPosting: Array<{ __typename?: 'JobPosting' } & JobPostingMetaFragment>
 }
 
+export type JobPostingPathsQueryVariables = Exact<{ [key: string]: never }>
+
+export type JobPostingPathsQuery = { __typename?: 'RootQuery' } & {
+  allJobPosting: Array<
+    { __typename?: 'JobPosting' } & {
+      slug?: Maybe<{ __typename?: 'Slug' } & Pick<Slug, 'current'>>
+    }
+  >
+}
+
 export type JobPostingQueryVariables = Exact<{
   slug: Scalars['String']
 }>
@@ -2097,6 +2106,15 @@ export const CareersPageDocument = gql`
   ${CareersPageFragmentDoc}
   ${JobPostingMetaFragmentDoc}
 `
+export const JobPostingPathsDocument = gql`
+  query JobPostingPaths {
+    allJobPosting {
+      slug {
+        current
+      }
+    }
+  }
+`
 export const JobPostingDocument = gql`
   query JobPosting($slug: String!) {
     allJobPosting(where: { slug: { current: { eq: $slug } } }, limit: 1) {
@@ -2201,6 +2219,20 @@ export function getSdk(
             ...wrappedRequestHeaders
           }),
         'CareersPage'
+      )
+    },
+    JobPostingPaths(
+      variables?: JobPostingPathsQueryVariables,
+      requestHeaders?: Dom.RequestInit['headers']
+    ): Promise<JobPostingPathsQuery> {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request<JobPostingPathsQuery>(
+            JobPostingPathsDocument,
+            variables,
+            { ...requestHeaders, ...wrappedRequestHeaders }
+          ),
+        'JobPostingPaths'
       )
     },
     JobPosting(
