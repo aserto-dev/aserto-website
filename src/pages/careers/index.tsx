@@ -30,9 +30,11 @@ const Careers = ({
       <div className="relative">
         <div className="absolute top-0 left-0">
           <Image
-            src="/images/careers/background2.png"
-            width={5000}
-            height={3750}
+            src="/images/careers/background.png"
+            width={3840}
+            height={1920}
+            priority
+            loading="eager"
           />
         </div>
         <CustomHead />
