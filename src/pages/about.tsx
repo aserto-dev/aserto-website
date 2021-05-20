@@ -20,6 +20,7 @@ const About = () => {
         description: 'Description',
         image: 'images/og.png'
       }}
+      currentPage='about'
     >
       <CustomHead />
       <Hero />
