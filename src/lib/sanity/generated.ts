@@ -2071,7 +2071,7 @@ export const AboutPageDocument = gql`
 `
 export const BlogIndexDocument = gql`
   query BlogIndex {
-    allPost {
+    allPost(sort: { publishedAt: DESC }) {
       ...PostMeta
     }
   }
@@ -2099,7 +2099,7 @@ export const CareersPageDocument = gql`
     allCareers(sort: { _createdAt: DESC }, limit: 1) {
       ...CareersPage
     }
-    allJobPosting {
+    allJobPosting(sort: { publishedAt: DESC }) {
       ...JobPostingMeta
     }
   }

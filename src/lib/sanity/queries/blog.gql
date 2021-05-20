@@ -1,5 +1,5 @@
 query BlogIndex {
-  allPost {
+  allPost(sort: { publishedAt: DESC }) {
     ...PostMeta
   }
 }

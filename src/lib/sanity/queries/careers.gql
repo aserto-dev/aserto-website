@@ -52,7 +52,7 @@ query CareersPage {
   allCareers(sort: { _createdAt: DESC }, limit: 1) {
     ...CareersPage
   }
-  allJobPosting {
+  allJobPosting(sort: { publishedAt: DESC }) {
     ...JobPostingMeta
   }
 }
