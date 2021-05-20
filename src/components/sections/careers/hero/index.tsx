@@ -17,7 +17,7 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
             return (
               <div key={i}>
                 <Image
-                  src={fact?.icon?.asset?.url ?? ''}
+                  src={fact?.icon?.asset?.url ?? '/404'}
                   width={fact?.icon?.asset?.metadata?.dimensions?.width ?? 0}
                   height={fact?.icon?.asset?.metadata?.dimensions?.height ?? 0}
                 />

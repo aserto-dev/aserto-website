@@ -198,6 +198,9 @@ export type Careers = Document & {
   cultureSectionTaglineRaw?: Maybe<Scalars['JSON']>
   diversitySectionTitle?: Maybe<Scalars['String']>
   diversitySectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  valuesSectionTitle?: Maybe<Scalars['String']>
+  valuesSectionSubtitleRaw?: Maybe<Scalars['JSON']>
+  values?: Maybe<Array<Maybe<SectionBlock>>>
   perksSectionTitle?: Maybe<Scalars['String']>
   perksSectionSubtitleRaw?: Maybe<Scalars['JSON']>
   perks?: Maybe<Array<Maybe<FeatureItem>>>
@@ -218,6 +221,7 @@ export type CareersFilter = {
   title?: Maybe<StringFilter>
   cultureSectionTitle?: Maybe<StringFilter>
   diversitySectionTitle?: Maybe<StringFilter>
+  valuesSectionTitle?: Maybe<StringFilter>
   perksSectionTitle?: Maybe<StringFilter>
   openPositionsSectionTitle?: Maybe<StringFilter>
 }
@@ -232,6 +236,7 @@ export type CareersSorting = {
   title?: Maybe<SortOrder>
   cultureSectionTitle?: Maybe<SortOrder>
   diversitySectionTitle?: Maybe<SortOrder>
+  valuesSectionTitle?: Maybe<SortOrder>
   perksSectionTitle?: Maybe<SortOrder>
   openPositionsSectionTitle?: Maybe<SortOrder>
 }
@@ -1683,6 +1688,8 @@ export type CareersPageFragment = { __typename?: 'Careers' } & Pick<
   | 'cultureSectionTaglineRaw'
   | 'diversitySectionTitle'
   | 'diversitySectionSubtitleRaw'
+  | 'valuesSectionTitle'
+  | 'valuesSectionSubtitleRaw'
   | 'perksSectionTitle'
   | 'perksSectionSubtitleRaw'
   | 'openPositionsSectionTitle'
@@ -1698,6 +1705,9 @@ export type CareersPageFragment = { __typename?: 'Careers' } & Pick<
       >
     >
     culture?: Maybe<
+      Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
+    >
+    values?: Maybe<
       Array<Maybe<{ __typename?: 'SectionBlock' } & SectionBlockFragment>>
     >
     perks?: Maybe<
@@ -1976,6 +1986,11 @@ export const CareersPageFragmentDoc = gql`
     cultureSectionTaglineRaw
     diversitySectionTitle
     diversitySectionSubtitleRaw
+    valuesSectionTitle
+    valuesSectionSubtitleRaw
+    values {
+      ...SectionBlock
+    }
     perksSectionTitle
     perksSectionSubtitleRaw
     perks {

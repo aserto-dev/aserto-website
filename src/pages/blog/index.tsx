@@ -26,7 +26,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      currentPage='blog'
+      currentPage="blog"
     >
       <CustomHead />
       <Hero />

@@ -1,5 +1,5 @@
 // Hooks
-import Link from 'components/primitives/link'
+import { BlockContent } from 'components/primitives/block-content'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { CareersPageFragment } from 'lib/sanity/generated'
 
@@ -69,15 +69,12 @@ const OpenPositions = ({ page }: { page: CareersPageFragment }) => {
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
-            Open Positions
+            {page.openPositionsSectionTitle}
           </h2>
-          <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">
-            We’re always looking for talented people to join the team. View open
-            positions below or if you don’t see something, drop us a line at{' '}
-            <Link variant="color" href="mailto:careers@aserto.com">
-              careers@aserto.com
-            </Link>
-          </p>
+          <BlockContent
+            className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12"
+            blocks={page.openPositionsSectionSubtitleRaw}
+          />
         </div>
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
           {problems.map((profile) => (

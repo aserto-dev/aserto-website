@@ -22,7 +22,7 @@ const Careers = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      currentPage='careers'
+      currentPage="careers"
     >
       <div className="relative">
         <div className="absolute top-0 left-0">
@@ -35,7 +35,23 @@ const Careers = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <CustomHead />
         <Container>
           <Hero page={page} />
-          <OurValues page={page} />
+          <OurValues
+            title={page.cultureSectionTitle ?? ''}
+            subtitleRaw={page.cultureSectionSubtitleRaw}
+            cols={4}
+            features={page.culture ?? []}
+            taglineRaw={page.cultureSectionTaglineRaw}
+          />
+          <OurValues
+            title={page.diversitySectionTitle ?? ''}
+            subtitleRaw={page.diversitySectionSubtitleRaw}
+          />
+          <OurValues
+            title={page.valuesSectionTitle ?? ''}
+            subtitleRaw={page.valuesSectionSubtitleRaw}
+            cols={3}
+            features={page.values ?? []}
+          />
           <Benefits page={page} />
           <OpenPositions page={page} />
         </Container>
