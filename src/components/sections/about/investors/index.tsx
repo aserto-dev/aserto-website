@@ -20,7 +20,6 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
           {page.investors?.map((investor, i) => {
             return (
               <a
-                className="transition-opacity duration-200 hover:opacity-60"
                 href={investor?.href ?? ''}
                 rel="noopener noreferrer"
                 target="_blank"
