@@ -38,7 +38,7 @@ const Header = ({ selected }: Props) => {
   }, [open])
 
   return (
-    <header className="fixed top-0 z-40 w-full px-6 bg-aserto-grey-5 shadow-header">
+    <header className="fixed top-0 z-40 w-full px-6 bg-aserto-grey-5 shadow-header py-3 lg:py-0">
       <div className="flex items-center justify-between w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
@@ -59,7 +59,7 @@ const Header = ({ selected }: Props) => {
             />
           </div>
         </nav>
-        <nav className="items-center hidden space-x-10 lg:flex py-3 lg:py-0">
+        <nav className="items-center hidden space-x-10 lg:flex">
           <Link href="/">
             <Logo />
           </Link>
