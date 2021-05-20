@@ -59,7 +59,7 @@ const Header = ({ selected }: Props) => {
             />
           </div>
         </nav>
-        <nav className="items-center hidden space-x-10 lg:flex">
+        <nav className="items-center hidden space-x-10 lg:flex py-3 lg:py-0">
           <Link href="/">
             <Logo />
           </Link>
