@@ -16,7 +16,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   const textRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    const delay = 2
+    const delay = 3
     const timelines: TimelineMax[] = []
     document
       .querySelectorAll('[data-slogan-item]')
