@@ -9,7 +9,7 @@ const TheProblem = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
 
   return (
-    <section className="pt-8 mt-36 lg:py-12 sm:mt-32">
+    <section className="pt-8 lg:py-12">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <p className="mb-2 font-bold leading-tight uppercase text-aserto-mojo-accent-20 sm:mb-4 sm:text-base tracking-h4">
