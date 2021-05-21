@@ -49,9 +49,7 @@ const NewsletterSection = () => {
               Sign up now to get ahead of the line.
             </p>
           </div>
-          <div
-            className="flex flex-col justify-center items-center mt-8 lg:mt-0"
-          >
+          <div className="flex flex-col justify-center items-center mt-8 lg:mt-0">
             <MailchimpSubscribe
               url="https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1"
               render={({ subscribe, status, message }) => (
@@ -79,7 +77,10 @@ const NewsletterSection = () => {
                       })}
                       className="w-full min-w-[250px] px-5 transition-colors border rounded sm:w-6/12 h-14 placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-lochivar-accent-20 focus:shadow-input"
                     />
-                    <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0 min-w-[137px] whitespace-nowrap flex items-center justify-center">
+                    <Button
+                      type="submit"
+                      className="mt-4 ml-0 sm:ml-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center"
+                    >
                       {status ? (
                         status === 'sending' ? (
                           <svg
@@ -139,10 +140,13 @@ const NewsletterSection = () => {
                     </Button>
                   </div>
                   <p
-                    className={clsx('max-w-3xl mt-4 text-lg font-roboto', {
-                      'text-aserto-grey-60': status === 'success',
-                      'text-[#c87676]': status === 'error'
-                    })}
+                    className={clsx(
+                      'mt-4 text-lg font-roboto absolute top-[100px] sm:top-[50px] left-[-40px] md:left-0 min-w-[320px] md:max-w-[400px] break-all',
+                      {
+                        'text-aserto-grey-60': status === 'success',
+                        'text-[#c87676]': status === 'error'
+                      }
+                    )}
                   >
                     {status === 'success'
                       ? 'Thanks for signing up! Info coming soon.'
