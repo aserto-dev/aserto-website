@@ -126,7 +126,8 @@ module.exports = {
         16.5: '4.5rem'
       },
       boxShadow: {
-        header: '0px 1px 0px rgba(65, 65, 65, 1)'
+        header: '0px 1px 0px rgba(65, 65, 65, 1)',
+        dropdown: '0px 1px 0px #414141'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'
