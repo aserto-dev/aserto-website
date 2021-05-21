@@ -24,7 +24,6 @@ const BlogPost = ({ post }: Props) => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      currentPage="blog"
     >
       <CustomHead />
       <Post post={post} />

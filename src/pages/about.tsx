@@ -22,7 +22,6 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      currentPage="about"
     >
       <CustomHead />
       <Hero page={page} />

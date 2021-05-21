@@ -12,13 +12,12 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 
 import Menu from './menu'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
 
-type Props = {
-  selected?: 'product' | 'developers' | 'blog' | 'about' | 'careers'
-}
-
-const Header = ({ selected }: Props) => {
+const Header = () => {
   const [open, setOpen] = useState(false)
+
+  const { pathname } = useRouter()
 
   const handleClick = useCallback(() => {
     const elem = document.querySelector('#newsletter')
@@ -38,7 +37,7 @@ const Header = ({ selected }: Props) => {
   }, [open])
 
   return (
-    <header className="fixed top-0 z-40 w-full px-6 bg-aserto-grey-5 shadow-header py-3 lg:py-0">
+    <header className="fixed top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
       <div className="flex items-center justify-between w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
@@ -68,8 +67,10 @@ const Header = ({ selected }: Props) => {
             className={clsx(
               'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'product',
-                'border-transparent text-aserto-grey-60 ': selected !== 'product'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
+                  pathname.includes('/product'),
+                'border-transparent text-aserto-grey-60 ':
+                  !pathname.includes('/product')
               }
             )}
             href="/"
@@ -80,8 +81,10 @@ const Header = ({ selected }: Props) => {
             className={clsx(
               'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'developers',
-                'border-transparent text-aserto-grey-60': selected !== 'developers'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
+                  pathname.includes('/developers'),
+                'border-transparent text-aserto-grey-60':
+                  !pathname.includes('/developers')
               }
             )}
             href="/"
@@ -92,8 +95,10 @@ const Header = ({ selected }: Props) => {
             className={clsx(
               'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'blog',
-                'border-transparent text-aserto-grey-60': selected !== 'blog'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
+                  pathname.includes('/blog'),
+                'border-transparent text-aserto-grey-60':
+                  !pathname.includes('/blog')
               }
             )}
             href="/blog"
@@ -104,8 +109,10 @@ const Header = ({ selected }: Props) => {
             className={clsx(
               'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'about',
-                'border-transparent text-aserto-grey-60': selected !== 'about'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
+                  pathname.includes('/about'),
+                'border-transparent text-aserto-grey-60':
+                  !pathname.includes('/about')
               }
             )}
             href="/about"
@@ -116,8 +123,10 @@ const Header = ({ selected }: Props) => {
             className={clsx(
               'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
               {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90': selected === 'careers',
-                'border-transparent text-aserto-grey-60': selected !== 'careers'
+                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
+                  pathname.includes('/careers'),
+                'border-transparent text-aserto-grey-60':
+                  !pathname.includes('/careers')
               }
             )}
             href="/careers"

@@ -24,7 +24,6 @@ const JobPostingPage = ({ posting }: Props) => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      currentPage="careers"
     >
       <CustomHead />
       <JobPosting posting={posting} />
