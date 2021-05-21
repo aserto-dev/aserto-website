@@ -27,7 +27,7 @@ const useDropdown = () => {
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-  const { isOpen, triggerOpen, triggerClose, toggle } = useDropdown()
+  const { triggerOpen } = useDropdown()
 
   const { pathname } = useRouter()
 
