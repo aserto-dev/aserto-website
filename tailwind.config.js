@@ -33,7 +33,8 @@ module.exports = {
             'accent-10': '#2F989C',
             'accent-20': '#36B1B5',
             'accent-30': '#3ECACF',
-            'accent-40': '#67CBCF'
+            'accent-40': '#67CBCF',
+            'accent-50': '#79eef2;'
           },
           indigo: {
             10: '#161B23',
@@ -49,7 +50,7 @@ module.exports = {
             'accent-10': '#3D79D4',
             'accent-20': '#4385E8',
             'accent-30': '#4A92FF',
-            'accent-40': '#7DB1FF'
+            'accent-40': '#7DB1FF',
           },
           apple: {
             10: '#162316',
@@ -126,7 +127,8 @@ module.exports = {
         16.5: '4.5rem'
       },
       boxShadow: {
-        header: '0px 1px 0px rgba(65, 65, 65, 1)'
+        header: '0px 1px 0px rgba(65, 65, 65, 1)',
+        input: '0px 0px 0px 2px rgba(39,127,130,0.6);'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'

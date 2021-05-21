@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
 import clsx from 'clsx'
-import gsap from 'gsap'
+import { useForm } from 'react-hook-form'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 // Layout
 import Container from 'components/layout/container'
@@ -11,41 +11,12 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 // Primitives
 import Button from 'components/primitives/button'
 
-// Constants
-import { DURATION } from 'lib/gsap'
-
 // Styles
 import s from './newsletter.module.css'
 
 const NewsletterSection = () => {
-  const thanksRef = useRef<HTMLHeadingElement>(null)
-  const formRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
-
-  useEffect(() => {
-    if (!status || status !== 'success') return
-    const timeline = gsap.timeline({
-      paused: true,
-      smoothChildTiming: true
-    })
-
-    timeline.to([formRef.current, contentRef.current], {
-      delay: DURATION / 2,
-      autoAlpha: 0,
-      stagger: 0.2
-    })
-    timeline.set([formRef.current, contentRef.current], {
-      position: 'absolute'
-    })
-    timeline.set(thanksRef.current, { position: 'relative', y: 30 })
-    timeline.to(thanksRef.current, {
-      y: 0,
-      autoAlpha: 1
-    })
-
-    timeline.play()
-  }, [status])
 
   return (
     <section
@@ -56,7 +27,7 @@ const NewsletterSection = () => {
       <Container>
         <div
           className={clsx(
-            'px-6 py-6 overflow-hidden rounded-lg md:py-16 md:px-16 lg:flex lg:items-center lg:justify-between text-center sm:text-left',
+            'px-6 py-6 rounded-lg md:py-16 md:px-16 flex flex-col md:flex-row lg:items-center lg:justify-between text-center md:text-left',
             s.background
           )}
         >
@@ -67,11 +38,10 @@ const NewsletterSection = () => {
               position: 'absolute'
             }}
             className="text-xl sm:text-2xl font-extrabold tracking-normal text-white sm:text-2.5xl font-roboto text-center w-full"
-            ref={thanksRef}
           >
             Thanks for signing up! Expect to hear from us soon.
           </h2>
-          <div className="w-full sm:w-6/12" ref={contentRef}>
+          <div className="w-full md:w-6/12">
             <h2 className="tracking-normal text-aserto-grey-90 text-4.5xl">
               Request early access
             </h2>
@@ -80,80 +50,109 @@ const NewsletterSection = () => {
             </p>
           </div>
           <div
-            ref={formRef}
-            className="flex justify-end w-full mt-8 sm:w-6/12 lg:mt-0"
+            className="flex flex-col justify-center items-center mt-8 lg:mt-0"
           >
-            <form
-              className="relative items-center justify-end w-full sm:flex"
-              onSubmit={() => alert('WIP FORM')}
-            >
-              <label htmlFor="email" className="sr-only">
-                Email
-              </label>
-              <input
-                placeholder="Enter your email..."
-                id="email"
-                className="w-full px-5 transition-colors border rounded sm:w-6/12 h-14 placeholder-aserto-grey-30 border-aserto-grey-10 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-grey-20"
-              />
-              <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0">
-                {status ? (
-                  status === 'loading' ? (
-                    <svg
-                      className="w-5 h-5 animate-spin"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      />
-                    </svg>
-                  ) : status === 'failure' ? (
-                    <svg
-                      className="w-5 h-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      className="w-5 h-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  )
-                ) : (
-                  'Let’s go!'
-                )}
-              </Button>
-            </form>
+            <MailchimpSubscribe
+              url="https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1"
+              render={({ subscribe, status, message }) => (
+                <form
+                  className="relative self-center flex flex-col"
+                  onSubmit={handleSubmit((data) => {
+                    subscribe({ EMAIL: data.email })
+                  })}
+                >
+                  <div className="flex flex-col items-center self-center sm:items-start sm:flex-row">
+                    <label htmlFor="email" className="sr-only">
+                      Email
+                    </label>
+                    <input
+                      placeholder="Enter your email..."
+                      id="email"
+                      type="email"
+                      {...register('email', {
+                        required: 'Email is required',
+                        maxLength: 50,
+                        pattern: {
+                          value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,6}$/,
+                          message: 'Email must be valid'
+                        }
+                      })}
+                      className="w-full min-w-[250px] px-5 transition-colors border rounded sm:w-6/12 h-14 placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 focus:outline-none focus:border-aserto-lochivar-accent-20 focus:shadow-input"
+                    />
+                    <Button type="submit" className="mt-4 ml-0 sm:ml-4 sm:mt-0 min-w-[137px] whitespace-nowrap flex items-center justify-center">
+                      {status ? (
+                        status === 'sending' ? (
+                          <svg
+                            className="w-5 h-5 animate-spin"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            />
+                          </svg>
+                        ) : status === 'error' ? (
+                          <svg
+                            className="w-5 h-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        ) : (
+                          <svg
+                            className="w-5 h-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        )
+                      ) : (
+                        'Let’s go!'
+                      )}
+                    </Button>
+                  </div>
+                  <p
+                    className={clsx('max-w-3xl mt-4 text-lg font-roboto', {
+                      'text-aserto-grey-60': status === 'success',
+                      'text-[#c87676]': status === 'error'
+                    })}
+                  >
+                    {status === 'success'
+                      ? 'Thanks for signing up! Info coming soon.'
+                      : status === 'error'
+                      ? message
+                      : ''}
+                  </p>
+                </form>
+              )}
+            />
           </div>
         </div>
       </Container>

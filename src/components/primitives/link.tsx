@@ -43,12 +43,11 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
               : clsx(
                   className,
                   'whitespace-nowrap text-primary transition-colors duration-150',
-                  'hover:text-aserto-grey-90',
                   {
                     'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
                   },
                   {
-                    'text-xl text-aserto-lochivar-accent-40 underline':
+                    'text-xl text-aserto-lochivar-accent-40 hover:underline focus:text-aserto-lochivar-accent-50':
                       variant === 'color'
                   }
                 )
