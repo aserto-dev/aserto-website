@@ -6,6 +6,7 @@ import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
 import { BlockContent } from 'components/primitives/block-content'
 import { InferGetStaticPropsType } from 'next'
+import Accordion from '../components/primitives/accordion'
 
 const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -25,16 +26,14 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         {page.faqs?.map((faq, i) => {
           return (
             <div key={i}>
-              <h2 className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-16 md:text-4.5xl font-roboto">
+              <h2 className="mt-5 mb-16 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-16 md:text-4.5xl font-roboto">
                 {faq?.title}
               </h2>
-              <ul>
+              <Accordion>
                 {faq?.questions?.map((question, i) => {
                   return (
-                    <li key={i}>
-                      <p className="mt-5 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-10 md:text-2xl font-roboto">
-                        {question?.question}
-                      </p>
+                    // @ts-ignore
+                    <li key={i} label={question?.question}>
                       <BlockContent
                         className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto"
                         blocks={question?.answerRaw}
@@ -42,7 +41,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </li>
                   )
                 })}
-              </ul>
+              </Accordion>
             </div>
           )
         })}
