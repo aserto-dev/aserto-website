@@ -76,7 +76,7 @@ const Header = () => {
           </Link>
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
           <DropdownMenu.Root>
-            <DropdownMenu.Trigger onMouseEnter={triggerOpen}>
+            <DropdownMenu.Trigger onMouseEnter={triggerOpen} className='mt-[5.4px]'>
               <Link
                 className={clsx(
                   'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
@@ -93,10 +93,10 @@ const Header = () => {
               </Link>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] shadow-dropdown py-5 px-6 mt-3">
-              <DropdownMenu.Item>
+              <DropdownMenu.Item className='mb-6'>
                 <Link
                   href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60 mb-6"
+                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
                 >
                   Benefits
                 </Link>
@@ -112,7 +112,7 @@ const Header = () => {
             </DropdownMenu.Content>
           </DropdownMenu.Root>
           <DropdownMenu.Root>
-            <DropdownMenu.Trigger onMouseEnter={triggerOpen}>
+            <DropdownMenu.Trigger onMouseEnter={triggerOpen} className='mt-[5.4px]'>
               <Link
                 className={clsx(
                   'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
@@ -129,15 +129,15 @@ const Header = () => {
               </Link>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] shadow-dropdown py-5 px-6 mt-3">
-              <DropdownMenu.Item>
+              <DropdownMenu.Item className='mb-6'>
                 <Link
                   href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60 mb-6"
+                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
                 >
                   Docs
                 </Link>
               </DropdownMenu.Item>
-              <DropdownMenu.Item>
+              <DropdownMenu.Item className='mb-6'>
                 <Link
                   href="/"
                   className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
