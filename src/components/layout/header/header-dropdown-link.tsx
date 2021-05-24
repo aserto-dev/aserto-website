@@ -32,27 +32,16 @@ const CustomLink = forwardRef<
   HTMLAnchorElement,
   {
     children: React.ReactNode
-    href: string
-    isExternal?: boolean
   }
->(({ children, href, isExternal, ...rest }, ref) => {
-  const { pathname } = useRouter()
+>(({ children, ...rest }, ref) => {
   return (
-    <Link href={href}>
-      <a
-        className={clsx(
-          'text-base font-roboto transition-all duration-150 hover:text-aserto-grey-90',
-          {
-            'text-aserto-grey-90': pathname.includes('/product'),
-            'text-aserto-grey-60': !pathname.includes('/product')
-          }
-        )}
-        {...rest}
-        ref={ref}
-      >
-        {children}
-      </a>
-    </Link>
+    <a
+      className="text-aserto-grey-60 text-base font-roboto transition-all duration-150 hover:text-aserto-grey-90"
+      {...rest}
+      ref={ref}
+    >
+      {children}
+    </a>
   )
 })
 
@@ -75,9 +64,10 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                pathname.includes('/product'),
-              'border-transparent text-aserto-grey-60':
-                !pathname.includes('/product')
+                pathname.includes(`${link.href}`),
+              'border-transparent text-aserto-grey-60': !pathname.includes(
+                `${link.href}`
+              )
             }
           )}
           as={link.href ? 'a' : 'span'}
@@ -92,9 +82,10 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                pathname.includes('/product'),
-              'border-transparent text-aserto-grey-60':
-                !pathname.includes('/product')
+                pathname.includes(`${link.href}`),
+              'border-transparent text-aserto-grey-60': !pathname.includes(
+                `${link.href}`
+              )
             }
           )}
         >
@@ -108,9 +99,10 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                pathname.includes('/product'),
-              'border-transparent text-aserto-grey-60':
-                !pathname.includes('/product')
+                pathname.includes(`${link.href}`),
+              'border-transparent text-aserto-grey-60': !pathname.includes(
+                `${link.href}`
+              )
             }
           )}
         >
@@ -176,11 +168,10 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         as="ul"
       >
         {link?.items?.map((l, i) => (
-          <li key={i} className='mb-6'>
+          <li key={i} className="mb-6">
             <DropdownMenu.Item
               as={CustomLink}
               onSelect={() => router.push(l.href)}
-              href={l.href}
             >
               {l.label}
             </DropdownMenu.Item>

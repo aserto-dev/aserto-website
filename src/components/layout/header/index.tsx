@@ -21,11 +21,11 @@ const links = [
     items: [
       {
         label: 'Benefits',
-        href: ''
+        href: '/'
       },
       {
         label: 'Features',
-        href: ''
+        href: '/'
       }
     ]
   },
@@ -35,15 +35,15 @@ const links = [
     items: [
       {
         label: 'Docs',
-        href: ''
+        href: '/'
       },
       {
         label: 'GitHub',
-        href: ''
+        href: '/'
       },
       {
         label: 'Slack community',
-        href: ''
+        href: '/'
       }
     ]
   },
@@ -125,128 +125,6 @@ const Header = () => {
               }}
             />
           ))}
-          {/* <DropdownMenu.Root>
-            <DropdownMenu.Trigger onMouseEnter={triggerOpen} className='mt-[5.4px]'>
-              <Link
-                className={clsx(
-                  'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-                  {
-                    'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                      pathname.includes('/product'),
-                    'border-transparent text-aserto-grey-60':
-                      !pathname.includes('/product')
-                  }
-                )}
-                href="/"
-              >
-                Product
-              </Link>
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] shadow-dropdown py-5 px-6 mt-3">
-              <DropdownMenu.Item className='mb-6'>
-                <Link
-                  href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
-                >
-                  Benefits
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item>
-                <Link
-                  href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
-                >
-                  Features
-                </Link>
-              </DropdownMenu.Item>
-            </DropdownMenu.Content>
-          </DropdownMenu.Root>
-          <DropdownMenu.Root>
-            <DropdownMenu.Trigger onMouseEnter={triggerOpen} className='mt-[5.4px]'>
-              <Link
-                className={clsx(
-                  'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-                  {
-                    'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                      pathname.includes('/developers'),
-                    'border-transparent text-aserto-grey-60':
-                      !pathname.includes('/developers')
-                  }
-                )}
-                href="/"
-              >
-                Developers
-              </Link>
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] shadow-dropdown py-5 px-6 mt-3">
-              <DropdownMenu.Item className='mb-6'>
-                <Link
-                  href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
-                >
-                  Docs
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item className='mb-6'>
-                <Link
-                  href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
-                >
-                  GitHub
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item>
-                <Link
-                  href="/"
-                  className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 border-transparent text-aserto-grey-60"
-                >
-                  Slack community
-                </Link>
-              </DropdownMenu.Item>
-            </DropdownMenu.Content>
-          </DropdownMenu.Root>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/blog'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/blog')
-              }
-            )}
-            href="/blog"
-          >
-            Blog
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/about'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/about')
-              }
-            )}
-            href="/about"
-          >
-            About
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/careers'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/careers')
-              }
-            )}
-            href="/careers"
-          >
-            Careers
-          </Link> */}
         </nav>
         <div className="hidden lg:block">
           <Button variant="primary" size="sm" onClick={handleClick}>
