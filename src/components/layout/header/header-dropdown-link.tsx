@@ -36,7 +36,7 @@ const CustomLink = forwardRef<
 >(({ children, ...rest }, ref) => {
   return (
     <a
-      className="text-aserto-grey-60 text-base font-roboto transition-all duration-150 hover:text-aserto-grey-90"
+      className="text-aserto-grey-60 text-base font-roboto transition-all duration-150 hover:text-aserto-grey-90 cursor-pointer"
       {...rest}
       ref={ref}
     >
@@ -60,7 +60,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           ref={triggerRef}
           data-id={id}
           tabIndex={0}
-          className="text-base font-roboto pb-6 pt-8 border-b border-solid border-transparent transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90"
+          className="text-base font-roboto pb-6 pt-8 border-b border-solid border-transparent transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
           as={link.href ? 'a' : 'span'}
         >
           {link.label}
