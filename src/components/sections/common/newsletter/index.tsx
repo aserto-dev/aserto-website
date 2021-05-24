@@ -141,7 +141,7 @@ const NewsletterSection = () => {
                   </div>
                   <p
                     className={clsx(
-                      'mt-10 text-lg font-roboto absolute top-[100px] sm:top-[50px] left-[-30px] md:left-0 max-w-[310px] md:max-w-[400px] truncate',
+                      'mt-0 transform -translate-x-1/2 left-[50%] md:-translate-x-0 sm:mt-4 text-lg font-roboto absolute -bottom-16 md:-bottom-8 md:left-0 max-w-[310px] md:max-w-[400px] truncate',
                       {
                         'text-aserto-grey-60': status === 'success',
                         'text-[#c87676]': status === 'error'
