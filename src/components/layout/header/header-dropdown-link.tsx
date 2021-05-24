@@ -110,7 +110,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         </span>
       )
     }
-  }, [link, open, id])
+  }, [link.items?.length, link.href, link.label, open, id, pathname])
 
   useEffect(() => {
     function handleMouseMove(e: MouseEvent) {

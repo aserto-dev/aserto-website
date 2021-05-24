@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import clsx from 'clsx'
 
 // Primitives
 import Button from 'components/primitives/button'
@@ -9,10 +10,9 @@ import MenuIcon from 'icons/menu.svg'
 import CloseIcon from 'icons/menu-close.svg'
 import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
+import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
-import clsx from 'clsx'
-import { HeaderDropdownLink } from './header-dropdown-link'
 
 export const headerLinks = [
   {
@@ -72,15 +72,6 @@ export const headerLinks = [
 const Header = () => {
   const [open, setOpen] = useState(false)
 
-  const handleClick = useCallback(() => {
-    const elem = document.querySelector('#newsletter')
-    window.scrollTo({
-      //@ts-ignore
-      top: elem?.getBoundingClientRect().top * 0.98,
-      behavior: 'smooth'
-    })
-  }, [])
-
   useEffect(() => {
     if (open) {
       document.documentElement.style.overflow = 'hidden'
@@ -133,7 +124,13 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button variant="primary" size="sm" onClick={handleClick}>
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
+            href="#newsletter"
+            className="inline-flex items-center"
+          >
             Request Early Access
           </Button>
           <Link
