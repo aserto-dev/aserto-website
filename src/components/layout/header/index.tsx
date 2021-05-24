@@ -47,7 +47,7 @@ const links = [
       },
       {
         label: 'Slack community',
-        href: 'asertocommunity.slack.com',
+        href: 'https://asertocommunity.slack.com',
         isExternal: true
       }
     ]
