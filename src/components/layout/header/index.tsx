@@ -128,7 +128,7 @@ const Header = () => {
             variant="primary"
             size="sm"
             as="a"
-            href="#newsletter"
+            href="#sign-up"
             className="inline-flex items-center"
           >
             Request Early Access

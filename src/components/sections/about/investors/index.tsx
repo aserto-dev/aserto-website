@@ -9,6 +9,7 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
 
   return (
     <section className="relative mx-auto mb-36 sm:mb-56">
+      <span id="investors" className="absolute -top-16" />
       <div
         className="relative z-10 w-10/12 py-16 mx-auto text-center border-t border-b border-aserto-grey-20"
         ref={ref}
