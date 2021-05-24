@@ -36,7 +36,7 @@ const CustomLink = forwardRef<
 >(({ children, ...rest }, ref) => {
   return (
     <a
-      className="text-aserto-grey-60 text-base font-roboto transition-all duration-150 hover:text-aserto-grey-90 cursor-pointer"
+      className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
       {...rest}
       ref={ref}
     >

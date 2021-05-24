@@ -21,11 +21,11 @@ const links = [
     items: [
       {
         label: 'Benefits',
-        href: '/'
+        href: '/#the-solution'
       },
       {
         label: 'Features',
-        href: '/'
+        href: '/#features'
       }
     ]
   },
@@ -35,15 +35,15 @@ const links = [
     items: [
       {
         label: 'Docs',
-        href: '/'
+        href: 'https://docs.aserto.com/'
       },
       {
         label: 'GitHub',
-        href: '/'
+        href: 'https://github.com/aserto-dev'
       },
       {
         label: 'Slack community',
-        href: '/'
+        href: 'asertocommunity.slack.com'
       }
     ]
   },
