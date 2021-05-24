@@ -77,8 +77,14 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             )
           })}
         </div>
-        <div className="mx-auto mt-4 mb-16 sm:mt-16 sm:mb-20">
-          <Button>{page.ctaLabel}</Button>
+        <div className="relative z-10 mx-auto mt-4 mb-16 sm:mt-16 sm:mb-20">
+          <Button
+            as="a"
+            href="/#newsletter"
+            className="inline-flex items-center"
+          >
+            {page.ctaLabel}
+          </Button>
         </div>
         <div>
           <svg

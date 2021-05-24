@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
 // Primitives
 import Button from 'components/primitives/button'
@@ -11,22 +13,11 @@ import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
 
 import Menu from './menu'
-import clsx from 'clsx'
-import { useRouter } from 'next/router'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
 
   const { pathname } = useRouter()
-
-  const handleClick = useCallback(() => {
-    const elem = document.querySelector('#newsletter')
-    window.scrollTo({
-      //@ts-ignore
-      top: elem?.getBoundingClientRect().top * 0.98,
-      behavior: 'smooth'
-    })
-  }, [])
 
   useEffect(() => {
     if (open) {
@@ -135,7 +126,13 @@ const Header = () => {
           </Link>
         </nav>
         <div className="hidden lg:block">
-          <Button variant="primary" size="sm" onClick={handleClick}>
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
+            href="#newsletter"
+            className="inline-flex items-center"
+          >
             Request Early Access
           </Button>
           <Link
