@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useRef } from 'react'
+import { forwardRef, useEffect, useMemo, useState, useRef } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -29,34 +29,33 @@ const useDropdown = () => {
   return { isOpen, open, close, toggle }
 }
 
-// const CustomLink = forwardRef<
-//   HTMLAnchorElement,
-//   {
-//     children: React.ReactNode
-//     href: string
-//     isExternal: boolean
-//   }
-// >(({ children, href, isExternal, ...rest }, ref) => {
-//   return (
-//     <Link href={href}>
-//       <a
-//         className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 px-6 inline-flex w-full justify-center text-center  hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
-//         {...rest}
-//         ref={ref}
-//         {...(isExternal
-//           ? { rel: 'noopener noreferrer', target: '_blank' }
-//           : undefined)}
-//       >
-//         {children}
-//       </a>
-//     </Link>
-//   )
-// })
+const CustomLink = forwardRef<
+  HTMLAnchorElement,
+  {
+    children: React.ReactNode
+    href: string
+    isExternal: boolean
+  }
+>(({ children, href, isExternal, ...rest }, ref) => {
+  return (
+    <Link href={href}>
+      <a
+        className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 px-6 inline-flex w-full justify-center text-center  hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
+        {...rest}
+        ref={ref}
+        {...(isExternal ? { rel: 'noopener noreferrer', target: '_blank' } : undefined)}
+      >
+        {children}
+      </a>
+    </Link>
+  )
+})
 
 export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
   const { isOpen, open, close, toggle } = useDropdown()
   const [focusOnClose, setFocusOnClose] = useState(true)
   const triggerRef = useRef(null)
+  const router = useRouter()
   const { pathname } = useRouter()
 
   const trigger = useMemo(() => {
@@ -168,21 +167,18 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         {link?.items?.map((l, i) => (
           <li key={i} className="mb-6 text-center flex justify-center">
             <DropdownMenu.Item
-            // href={l.href}
-            // isExternal={l.isExternal}
-            // as={CustomLink}
+              href={l.href}
+              isExternal={l.isExternal}
+              as={CustomLink}
+              onSelect={() => {
+                if (l.isExternal) {
+                  window.open(l.href, '_blank')
+                } else {
+                  router.push(l.href, l.href)
+                }
+              }}
             >
-              {/* {l.label} */}
-              <Link href={l.href}>
-                <a
-                  className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 px-6 inline-flex w-full justify-center text-center  hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
-                  {...(l.isExternal
-                    ? { rel: 'noopener noreferrer', target: '_blank' }
-                    : undefined)}
-                >
-                  {l.label}
-                </a>
-              </Link>
+              {l.label}
             </DropdownMenu.Item>
           </li>
         ))}
