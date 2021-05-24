@@ -14,6 +14,57 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import Menu from './menu'
 import clsx from 'clsx'
 import { useRouter } from 'next/router'
+import { HeaderDropdownLink } from './header-dropdown-link'
+
+const links = [
+  {
+    label: 'Product',
+    href: '',
+    items: [
+      {
+        label: 'Benefits',
+        href: ''
+      },
+      {
+        label: 'Features',
+        href: ''
+      }
+    ]
+  },
+  {
+    label: 'Developers',
+    href: '',
+    items: [
+      {
+        label: 'Docs',
+        href: ''
+      },
+      {
+        label: 'GitHub',
+        href: ''
+      },
+      {
+        label: 'Slack community',
+        href: ''
+      }
+    ]
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
+    items: []
+  },
+  {
+    label: 'About',
+    href: '/about',
+    items: []
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    items: []
+  }
+]
 
 const useDropdown = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -75,7 +126,21 @@ const Header = () => {
             <Logo />
           </Link>
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
-          <DropdownMenu.Root>
+          {links.map((each, idx) => (
+            <HeaderDropdownLink
+              key={idx}
+              id={idx}
+              link={{
+                label: each.label,
+                href: each.href ?? '',
+                items: each.items.map((item) => ({
+                  href: item.href ?? '',
+                  label: item.label
+                }))
+              }}
+            />
+          ))}
+          {/* <DropdownMenu.Root>
             <DropdownMenu.Trigger onMouseEnter={triggerOpen} className='mt-[5.4px]'>
               <Link
                 className={clsx(
@@ -196,7 +261,7 @@ const Header = () => {
             href="/careers"
           >
             Careers
-          </Link>
+          </Link> */}
         </nav>
         <div className="hidden lg:block">
           <Button variant="primary" size="sm" onClick={handleClick}>
