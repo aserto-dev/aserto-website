@@ -161,7 +161,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         }}
         sideOffset={-8}
         disableOutsidePointerEvents={false}
-        className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] shadow-dropdown pt-5 pb-[-4px] mt-3"
+        className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] pt-5 pb-[-4px] mt-3"
         as="ul"
       >
         {link?.items?.map((l, i) => (
