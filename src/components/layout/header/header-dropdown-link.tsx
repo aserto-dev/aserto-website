@@ -55,7 +55,6 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
   const { isOpen, open, close, toggle } = useDropdown()
   const [focusOnClose, setFocusOnClose] = useState(true)
   const triggerRef = useRef(null)
-  const router = useRouter()
   const { pathname } = useRouter()
 
   const trigger = useMemo(() => {
