@@ -60,16 +60,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           ref={triggerRef}
           data-id={id}
           tabIndex={0}
-          className={clsx(
-            'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
-            {
-              'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                pathname.includes(`${link.href}`),
-              'border-transparent text-aserto-grey-60': !pathname.includes(
-                `${link.href}`
-              )
-            }
-          )}
+          className="text-base font-roboto pb-6 pt-8 border-b border-solid border-transparent transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90"
           as={link.href ? 'a' : 'span'}
         >
           {link.label}
