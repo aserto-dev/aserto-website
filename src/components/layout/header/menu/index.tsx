@@ -9,6 +9,8 @@ import Logo from 'icons/logo-footer.svg'
 
 // Styles
 import s from './menu.module.css'
+import { headerLinks } from '..'
+import { HeaderDropdownLinkMobile } from '../header-dropdown-link'
 
 type Menu = {
   show: boolean
@@ -29,47 +31,14 @@ const Menu = ({ show = false }: Menu) => {
       )}
     >
       <nav className="w-full mt-6">
-        <ul className="w-full space-y-7">
-          <li className="text-center">
-            <Link
-              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
-              href="/"
-            >
-              Product
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
-              href="/"
-            >
-              Developers
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
-              href="/blog"
-            >
-              Blog
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
-              href="/about"
-            >
-              About
-            </Link>
-          </li>
-          <li className="text-center">
-            <Link
-              className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 pb-7 block"
-              href="/careers"
-            >
-              Careers
-            </Link>
-          </li>
+        <ul className="w-full text-center space-y-7">
+          {headerLinks.map((l, i) => {
+            return (
+              <li key={i} className="pb-7">
+                <HeaderDropdownLinkMobile link={l} id={`mobile-${i}`} />
+              </li>
+            )
+          })}
         </ul>
         <div className="mt-12 text-center">
           <Link href="/" className="inline-block mx-auto">

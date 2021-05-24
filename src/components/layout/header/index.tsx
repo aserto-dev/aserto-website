@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
 // Primitives
@@ -11,13 +10,67 @@ import MenuIcon from 'icons/menu.svg'
 import CloseIcon from 'icons/menu-close.svg'
 import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
+import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
 
+export const headerLinks = [
+  {
+    label: 'Product',
+    href: '',
+    items: [
+      {
+        label: 'Benefits',
+        href: '/#the-solution',
+        isExternal: false
+      },
+      {
+        label: 'Features',
+        href: '/#features',
+        isExternal: false
+      }
+    ]
+  },
+  {
+    label: 'Developers',
+    href: '',
+    items: [
+      {
+        label: 'Docs',
+        href: 'https://docs.aserto.com/',
+        isExternal: true
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/aserto-dev',
+        isExternal: true
+      },
+      {
+        label: 'Slack community',
+        href: 'https://asertocommunity.slack.com',
+        isExternal: true
+      }
+    ]
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
+    items: []
+  },
+  {
+    label: 'About',
+    href: '/about',
+    items: []
+  },
+  {
+    label: 'Careers',
+    href: '/careers',
+    items: []
+  }
+]
+
 const Header = () => {
   const [open, setOpen] = useState(false)
-
-  const { pathname } = useRouter()
 
   useEffect(() => {
     if (open) {
@@ -54,76 +107,21 @@ const Header = () => {
             <Logo />
           </Link>
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/product'),
-                'border-transparent text-aserto-grey-60 ':
-                  !pathname.includes('/product')
-              }
-            )}
-            href="/"
-          >
-            Product
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/developers'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/developers')
-              }
-            )}
-            href="/"
-          >
-            Developers
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/blog'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/blog')
-              }
-            )}
-            href="/blog"
-          >
-            Blog
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/about'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/about')
-              }
-            )}
-            href="/about"
-          >
-            About
-          </Link>
-          <Link
-            className={clsx(
-              'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150',
-              {
-                'border-aserto-lochivar-accent-30 text-aserto-grey-90':
-                  pathname.includes('/careers'),
-                'border-transparent text-aserto-grey-60':
-                  !pathname.includes('/careers')
-              }
-            )}
-            href="/careers"
-          >
-            Careers
-          </Link>
+          {headerLinks.map((each, idx) => (
+            <HeaderDropdownLink
+              key={idx}
+              id={idx}
+              link={{
+                label: each.label,
+                href: each.href ?? '',
+                items: each.items.map((item) => ({
+                  href: item.href ?? '',
+                  label: item.label,
+                  isExternal: item.isExternal
+                }))
+              }}
+            />
+          ))}
         </nav>
         <div className="hidden lg:block">
           <Button

@@ -128,6 +128,7 @@ module.exports = {
       },
       boxShadow: {
         header: '0px 1px 0px rgba(65, 65, 65, 1)',
+        dropdown: '0px 1px 0px #414141',
         input: '0px 0px 0px 2px rgba(39, 127, 130, 0.6)'
       },
       fontFamily: {
