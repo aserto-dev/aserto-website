@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react'
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
 // Primitives
 import Button from 'components/primitives/button'
@@ -13,7 +12,6 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 
 import Menu from './menu'
 import clsx from 'clsx'
-import { useRouter } from 'next/router'
 import { HeaderDropdownLink } from './header-dropdown-link'
 
 const links = [
@@ -66,21 +64,8 @@ const links = [
   }
 ]
 
-const useDropdown = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-
-  const triggerOpen = () => setIsOpen(true)
-  const triggerClose = () => setIsOpen(false)
-  const toggle = () => setIsOpen((state) => !state)
-
-  return { isOpen, triggerOpen, triggerClose, toggle }
-}
-
 const Header = () => {
   const [open, setOpen] = useState(false)
-  const { triggerOpen } = useDropdown()
-
-  const { pathname } = useRouter()
 
   const handleClick = useCallback(() => {
     const elem = document.querySelector('#newsletter')
