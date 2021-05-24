@@ -14,7 +14,7 @@ import Menu from './menu'
 import clsx from 'clsx'
 import { HeaderDropdownLink } from './header-dropdown-link'
 
-const links = [
+export const headerLinks = [
   {
     label: 'Product',
     href: '',
@@ -116,7 +116,7 @@ const Header = () => {
             <Logo />
           </Link>
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
-          {links.map((each, idx) => (
+          {headerLinks.map((each, idx) => (
             <HeaderDropdownLink
               key={idx}
               id={idx}
