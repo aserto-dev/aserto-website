@@ -43,7 +43,9 @@ const CustomLink = forwardRef<
         className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 px-6 inline-flex w-full justify-center text-center  hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
         {...rest}
         ref={ref}
-        {...(isExternal ? { rel: 'noopener noreferrer', target: '_blank' } : undefined)}
+        {...(isExternal
+          ? { rel: 'noopener noreferrer', target: '_blank' }
+          : undefined)}
       >
         {children}
       </a>
@@ -166,11 +168,21 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         {link?.items?.map((l, i) => (
           <li key={i} className="mb-6 text-center flex justify-center">
             <DropdownMenu.Item
-              href={l.href}
-              isExternal={l.isExternal}
-              as={CustomLink}
+            // href={l.href}
+            // isExternal={l.isExternal}
+            // as={CustomLink}
             >
-              {l.label}
+              {/* {l.label} */}
+              <Link href={l.href}>
+                <a
+                  className="text-aserto-grey-60 text-base font-roboto transition-colors duration-150 px-6 inline-flex w-full justify-center text-center  hover:text-aserto-grey-90 hover:outline-none cursor-pointer"
+                  {...(l.isExternal
+                    ? { rel: 'noopener noreferrer', target: '_blank' }
+                    : undefined)}
+                >
+                  {l.label}
+                </a>
+              </Link>
             </DropdownMenu.Item>
           </li>
         ))}
