@@ -170,7 +170,6 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
               href={l.href}
               isExternal={l.isExternal}
               as={CustomLink}
-              onSelect={() => router.push(l.href)}
             >
               {l.label}
             </DropdownMenu.Item>
