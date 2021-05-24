@@ -76,9 +76,10 @@ const SolutionItem = ({ isInverted, data }: Props) => {
               <Image
                 src={data.image?.asset?.url ?? '/404'}
                 alt={data.image?.alt ?? ''}
-                width={488}
-                height={511}
+                width={data.image?.asset?.metadata?.dimensions?.width ?? 488}
+                height={data.image?.asset?.metadata?.dimensions?.height ?? 400}
                 layout={mobile ? 'intrinsic' : 'responsive'}
+                objectFit="cover"
               />
             </motion.div>
           </motion.div>
