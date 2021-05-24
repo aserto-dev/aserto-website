@@ -21,11 +21,13 @@ const links = [
     items: [
       {
         label: 'Benefits',
-        href: '/#the-solution'
+        href: '/#the-solution',
+        isExternal: false
       },
       {
         label: 'Features',
-        href: '/#features'
+        href: '/#features',
+        isExternal: false
       }
     ]
   },
@@ -35,15 +37,18 @@ const links = [
     items: [
       {
         label: 'Docs',
-        href: 'https://docs.aserto.com/'
+        href: 'https://docs.aserto.com/',
+        isExternal: true
       },
       {
         label: 'GitHub',
-        href: 'https://github.com/aserto-dev'
+        href: 'https://github.com/aserto-dev',
+        isExternal: true
       },
       {
         label: 'Slack community',
-        href: 'asertocommunity.slack.com'
+        href: 'asertocommunity.slack.com',
+        isExternal: true
       }
     ]
   },
@@ -120,7 +125,8 @@ const Header = () => {
                 href: each.href ?? '',
                 items: each.items.map((item) => ({
                   href: item.href ?? '',
-                  label: item.label
+                  label: item.label,
+                  isExternal: item.isExternal
                 }))
               }}
             />
