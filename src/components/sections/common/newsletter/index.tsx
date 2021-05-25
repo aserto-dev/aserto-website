@@ -13,6 +13,7 @@ import Button from 'components/primitives/button'
 
 // Styles
 import s from './newsletter.module.css'
+import { useState } from 'react'
 
 const NewsletterSection = () => {
   const { register, handleSubmit } = useForm<{ email: string }>()
@@ -75,7 +76,7 @@ const NewsletterSection = () => {
                           message: 'Email must be valid'
                         }
                       })}
-                      className="w-full min-w-[250px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
+                      className="w-full min-w-[290px] mr-0 md:mr-5 sm:min-w-[300px] lg:min-w-[354px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
                     />
                     <Button
                       type="submit"
