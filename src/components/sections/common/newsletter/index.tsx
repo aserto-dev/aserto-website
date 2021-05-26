@@ -87,8 +87,10 @@ const NewsletterSection = () => {
                       type="submit"
                       className="mt-4 ml-0 sm:ml-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
                     >
-                      {clearErr ? (
-                        clearErr === 'sending' ? (
+                      {clearErr === '' ? (
+                        'Let’s go!'
+                      ) : status ? (
+                        status === 'sending' ? (
                           <svg
                             className="w-5 h-5 animate-spin"
                             xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +111,7 @@ const NewsletterSection = () => {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             />
                           </svg>
-                        ) : clearErr === 'error' ? (
+                        ) : status === 'error' ? (
                           <svg
                             className="w-5 h-5"
                             xmlns="http://www.w3.org/2000/svg"
@@ -149,14 +151,16 @@ const NewsletterSection = () => {
                     className={clsx(
                       'mt-0 transform -translate-x-1/2 left-[50%] md:-translate-x-0 sm:mt-4 text-lg font-roboto absolute -bottom-16 md:-bottom-8 md:left-0 max-w-[310px] md:max-w-[400px] truncate',
                       {
-                        'text-aserto-grey-60': clearErr === 'success',
-                        'text-[#c87676]': clearErr === 'error'
+                        'text-aserto-grey-60': status === 'success',
+                        'text-[#c87676]': status === 'error'
                       }
                     )}
                   >
-                    {clearErr === 'success'
+                    {clearErr === ''
+                      ? ''
+                      : status === 'success'
                       ? 'Thanks for signing up! Info coming soon.'
-                      : clearErr === 'error'
+                      : status === 'error'
                       ? message
                       : ''}
                   </p>
