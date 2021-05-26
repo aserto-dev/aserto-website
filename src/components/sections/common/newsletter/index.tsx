@@ -62,7 +62,7 @@ const NewsletterSection = () => {
                     setClearErr(`${status}`)
                     setTimeout(() => {
                       setClearErr('')
-                    }, 3000)
+                    }, 5000)
                   })}
                 >
                   <div className="flex flex-col items-center self-center sm:items-start sm:flex-row">
