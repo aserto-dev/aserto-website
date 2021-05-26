@@ -59,7 +59,7 @@ const Post = ({ post }: Props) => {
               })}
             </div>
           </div>
-          <p className="text-aserto-lochivar-100 font-roboto">
+          <p className="text-aserto-grey-90 font-roboto">
             {formatPostDate(post.publishedAt)}
           </p>
         </div>
