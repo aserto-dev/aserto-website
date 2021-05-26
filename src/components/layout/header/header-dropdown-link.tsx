@@ -69,10 +69,12 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           ref={triggerRef}
           data-id={id}
           tabIndex={0}
-          className="pt-8 pb-6 text-base transition-colors duration-150 border-b border-transparent border-solid cursor-pointer font-roboto text-aserto-grey-60 hover:text-aserto-grey-90 focus:outline-none focus:border-transparent focus:shadow-none"
+          className="focus:outline-none focus:border-transparent focus:shadow-none"
           as={link.href ? 'a' : 'span'}
         >
-          {link.label}
+          <p className="pt-8 pb-6 bg-aserto-grey-5 text-base transition-colors duration-150 border-b border-transparent border-solid cursor-pointer font-roboto text-aserto-grey-60 hover:text-aserto-grey-90 focus:outline-none focus:border-transparent focus:shadow-none">
+            {link.label}
+          </p>
         </DropdownMenu.Trigger>
       )
     } else if (link.href) {
