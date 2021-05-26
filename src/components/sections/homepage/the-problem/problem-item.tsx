@@ -11,10 +11,9 @@ const BlogPost = ({ data }: Props) => (
     <Image
       src={data.image?.asset?.url ?? '/404'}
       alt="Blog post cover"
-      width={384}
-      height={298}
+      width={data.image?.asset?.metadata?.dimensions?.width ?? 384}
+      height={data.image?.asset?.metadata?.dimensions?.height ?? 298}
       objectFit="cover"
-      layout="responsive"
     />
     <div className="flex flex-col justify-between flex-1 px-10 py-8 bg-aserto-black">
       <div className="flex-1">
