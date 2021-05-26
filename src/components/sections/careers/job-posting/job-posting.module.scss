@@ -37,7 +37,6 @@
   }
 
   a {
-    color: theme('colors.aserto.grey.90');
-    text-decoration: underline;
+    @apply whitespace-nowrap text-aserto-lochivar-accent-40 hover:underline active:text-aserto-lochivar-accent-50;
   }
 }
