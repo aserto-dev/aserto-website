@@ -10,6 +10,15 @@
   font-family: 'Ubuntu Mono', monospace;
 }
 
+.background form input:-webkit-autofill,
+.background form input:-webkit-autofill:hover, 
+.background form input:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px #121212 inset !important;
+  color: #E7E7E7 !important;
+  -webkit-text-fill-color: #E7E7E7 !important;
+}
+
+
 @media screen and (max-width: 800px) {
   .background {
     background-position: top center;

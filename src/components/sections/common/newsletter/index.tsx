@@ -13,10 +13,12 @@ import Button from 'components/primitives/button'
 
 // Styles
 import s from './newsletter.module.css'
+import { useState } from 'react'
 
 const NewsletterSection = () => {
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
+  const [clearErr, setClearErr] = useState('')
 
   return (
     <section
@@ -57,6 +59,10 @@ const NewsletterSection = () => {
                   className="relative flex flex-col self-center"
                   onSubmit={handleSubmit((data) => {
                     subscribe({ EMAIL: data.email })
+                    setClearErr(`${status}`)
+                    setTimeout(() => {
+                      setClearErr('')
+                    }, 5000)
                   })}
                 >
                   <div className="flex flex-col items-center self-center sm:items-start sm:flex-row">
@@ -75,13 +81,15 @@ const NewsletterSection = () => {
                           message: 'Email must be valid'
                         }
                       })}
-                      className="w-full min-w-[250px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
+                      className="w-full min-w-[290px] mr-0 md:mr-5 sm:min-w-[300px] lg:min-w-[354px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
                     />
                     <Button
                       type="submit"
                       className="mt-4 ml-0 sm:ml-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
                     >
-                      {status ? (
+                      {clearErr === '' ? (
+                        'Let’s go!'
+                      ) : status ? (
                         status === 'sending' ? (
                           <svg
                             className="w-5 h-5 animate-spin"
@@ -148,7 +156,9 @@ const NewsletterSection = () => {
                       }
                     )}
                   >
-                    {status === 'success'
+                    {clearErr === ''
+                      ? ''
+                      : status === 'success'
                       ? 'Thanks for signing up! Info coming soon.'
                       : status === 'error'
                       ? message

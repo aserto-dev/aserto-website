@@ -37,7 +37,7 @@ const Post = ({ post }: Props) => {
             </div>
             <div className="ml-6">
               <p className="text-aserto-grey-60 font-roboto">{author?.name}</p>
-              <p className="uppercase text-aserto-lochivar-100 font-roboto">
+              <p className="text-aserto-grey-90 font-roboto">
                 {author?.position}
               </p>
             </div>
@@ -59,7 +59,7 @@ const Post = ({ post }: Props) => {
               })}
             </div>
           </div>
-          <p className="uppercase text-aserto-lochivar-100 font-roboto">
+          <p className="text-aserto-grey-90 font-roboto">
             {formatPostDate(post.publishedAt)}
           </p>
         </div>
