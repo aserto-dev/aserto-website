@@ -14,7 +14,7 @@ const Post = ({ post }: Props) => {
   const author = post.authors?.[0]?.author
   return (
     <section className="relative mx-auto pt-28 mb-52">
-      <div className="w-10/12 mx-auto">
+      <div className="w-full mx-auto sm:w-10/12">
         <Link
           href="/blog"
           className="inline-block mb-12 text-aserto-grey-60 font-roboto"
@@ -24,7 +24,7 @@ const Post = ({ post }: Props) => {
         <h1 className="text-5xl leading-none tracking-tighter text-white xl:text-6.5xl">
           {post.title}
         </h1>
-        <div className="flex items-start justify-between mt-32 mb-16 pb-14">
+        <div className="flex items-start justify-between mt-24 mb-16 sm:mt-32 pb-14">
           <div className="relative flex items-center flex-grow w-4/12">
             <div className="flex overflow-hidden rounded-full">
               <Image
@@ -64,7 +64,7 @@ const Post = ({ post }: Props) => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="w-full mx-auto sm:w-10/12">
         <Image
           width="1216"
           height="600"
