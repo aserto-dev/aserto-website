@@ -6,6 +6,9 @@
 
   p {
     @apply my-8;
+    strong {
+      @apply text-aserto-grey-90;
+    }
   }
 
   h1,
