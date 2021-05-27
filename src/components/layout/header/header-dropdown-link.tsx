@@ -72,7 +72,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           className="focus:outline-none focus:border-transparent focus:shadow-none"
           as={link.href ? 'a' : 'span'}
         >
-          <p className="pt-8 pb-6 bg-aserto-grey-5 text-base transition-colors duration-150 border-b border-transparent border-solid cursor-pointer font-roboto text-aserto-grey-60 hover:text-aserto-grey-90 focus:outline-none focus:border-transparent focus:shadow-none">
+          <p className="pt-8 pb-6 text-base transition-colors duration-150 border-b border-transparent border-solid cursor-pointer bg-aserto-grey-5 font-roboto text-aserto-grey-60 hover:text-aserto-grey-90 focus:outline-none focus:border-transparent focus:shadow-none">
             {link.label}
           </p>
         </DropdownMenu.Trigger>
@@ -221,7 +221,7 @@ const MobileTrigger = forwardRef<
   const TriggerComponent = href ? 'a' : 'span'
   return (
     <TriggerComponent
-      className="text-4.5xl leading-none tracking-tighter text-aserto-grey-90 px-2 block"
+      className="block px-2 text-3xl leading-none tracking-tight text-aserto-grey-90"
       onClick={onClick}
       href={href}
       ref={ref}
