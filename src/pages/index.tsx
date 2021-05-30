@@ -10,6 +10,7 @@ import Hero from 'components/sections/homepage/hero'
 import Testimonials from 'components/sections/homepage/testimonials'
 import TheProblem from 'components/sections/homepage/the-problem'
 import TheSolution from 'components/sections/homepage/the-solution'
+import Intro from 'components/sections/homepage/intro'
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 import Container from 'components/layout/container'
@@ -39,6 +40,7 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <CustomHead />
       <Container>
         <Hero page={page} />
+        <Intro page={page} />
         <TheProblem page={page} />
         <TheSolution page={page} />
       </Container>

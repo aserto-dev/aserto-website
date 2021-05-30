@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-Reduces-stale-permissions">
+      <rect width="48" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="Reduces-stale-permissions" clip-path="url(#clip-Reduces-stale-permissions)">
+    <g id="Frame_7770_2_1_" data-name="Frame 7770 (2) (1)" transform="translate(8 5)">
+      <g id="Group_1" data-name="Group 1" transform="translate(-8 -4)">
+        <path id="Path_12" data-name="Path 12" d="M24,44s16-8,16-20V10L24,4,8,10V24C8,36,24,44,24,44Z" fill="none" stroke="#376ebf" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
