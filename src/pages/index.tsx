@@ -5,16 +5,14 @@ import CustomHead from 'components/primitives/custom-head'
 import PageLayout from 'components/layout/page'
 
 // Sections
-import Features from 'components/sections/homepage/features'
 import Hero from 'components/sections/homepage/hero'
 import Testimonials from 'components/sections/homepage/testimonials'
-import TheProblem from 'components/sections/homepage/the-problem'
-import TheSolution from 'components/sections/homepage/the-solution'
 import Intro from 'components/sections/homepage/intro'
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 import Container from 'components/layout/container'
 import { useEffect } from 'react'
+import TheProblem from '../components/sections/homepage/the-problem'
 
 const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
@@ -42,9 +40,7 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Hero page={page} />
         <Intro page={page} />
         <TheProblem page={page} />
-        <TheSolution page={page} />
       </Container>
-      <Features page={page} />
       <Testimonials page={page} />
     </PageLayout>
   )

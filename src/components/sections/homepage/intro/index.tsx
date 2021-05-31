@@ -16,7 +16,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
             {page.theProblemSectionTitle}
           </h2>
         </div>
-        <div className="flex mt-32">
+        <div className="flex mt-32" id="intro-1">
           <svg
             width="324"
             height="324"
@@ -155,21 +155,21 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
               />
               <IntroItem
                 image="/images/homepage/intro/shield.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                text="REST/gRPC API’s with native support for popular languages and frameworks"
               />
               <IntroItem
-                image="/images/homepage/intro/deployment-arrow.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/deployment-arrows.svg"
+                text="Flexible deployment model - a hosted service, a local service, or a sidecar."
               />
               <IntroItem
                 image="/images/homepage/intro/open-source.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                text="Open source authorizer based on CNCF OPA project."
               />
             </div>
           </div>
         </div>
 
-        <div className="flex mt-32">
+        <div className="flex mt-32" id="intro-2">
           <div className="flex-1 mr-20">
             <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
               Authorization as easy as an API call
@@ -181,20 +181,24 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
             </h4>
             <div className="mt-4">
               <IntroItem
-                image="/images/homepage/intro/key.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/padlock.svg"
+                text="Supports fine-grained role- and attribute-based access control."
               />
               <IntroItem
-                image="/images/homepage/intro/shield.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/zero-trust.svg"
+                text="Applies zero-trust security principles, secure by default."
               />
               <IntroItem
-                image="/images/homepage/intro/deployment-arrow.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/reduces-stale-permissions.svg"
+                text="Eliminates the risk of stale permissions resulting in unauthorized access."
               />
               <IntroItem
-                image="/images/homepage/intro/open-source.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/centralized-management.svg"
+                text="Centralized management of decision logs, audit trails, alerting."
+              />
+              <IntroItem
+                image="/images/homepage/intro/simplifies-compliance.svg"
+                text="Simplifies compliance through comprehensive authorization logs."
               />
             </div>
           </div>
@@ -348,7 +352,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
           </svg>
         </div>
 
-        <div className="flex mt-32">
+        <div className="flex mt-32" id="intro-3">
           <svg
             width="324"
             height="324"
@@ -439,20 +443,24 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
             </h4>
             <div className="mt-4" id="2">
               <IntroItem
-                image="/images/homepage/intro/fi_key.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/versioned.svg"
+                text="Policy is stored and versioned in a repository, just like application and infrastructure code."
               />
               <IntroItem
-                image="/images/homepage/intro/fi_key.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/policy-is-built.svg"
+                text="Policy is built into a versioned image, just like a container."
               />
               <IntroItem
-                image="/images/homepage/intro/fi_key.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/policy-changes.svg"
+                text="Policy changes are built, tested, and deployed in an automated GitOps workflow, and don’t require redeploying the app."
               />
               <IntroItem
-                image="/images/homepage/intro/fi_key.svg"
-                text="Opinionated framework that covers most of what it takes to build RBAC."
+                image="/images/homepage/intro/customers-adapt-roles.svg"
+                text="Customers can adapt roles and permissions to their needs in a self-service manner."
+              />
+              <IntroItem
+                image="/images/homepage/intro/policy-changes-traced-back.svg"
+                text="Policy changes can be traced back to a git commit, meeting auditing requirements out of the box."
               />
             </div>
           </div>

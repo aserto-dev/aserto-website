@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-Versioned">
+      <rect width="48" height="48"/>
+    </clipPath>
+  </defs>
+  <g id="Versioned" clip-path="url(#clip-Versioned)">
+    <g id="noun_versions_2426104_1_" data-name="noun_versions_2426104 (1)" transform="translate(-38.018 -38.67)">
+      <path id="Path_36" data-name="Path 36" d="M76.175,83.861v16.731H47.861V83.861H76.175M77.462,80H46.574A2.582,2.582,0,0,0,44,82.574v19.3a2.582,2.582,0,0,0,2.574,2.574H77.462a2.582,2.582,0,0,0,2.574-2.574v-19.3A2.582,2.582,0,0,0,77.462,80Z" transform="translate(0 -24.417)" fill="#693bcc"/>
+      <path id="Path_37" data-name="Path 37" d="M53.287,68H81.6a1.291,1.291,0,0,1,1.287,1.287h0A1.291,1.291,0,0,1,81.6,70.574H53.287A1.291,1.291,0,0,1,52,69.287h0A1.291,1.291,0,0,1,53.287,68Z" transform="translate(-5.426 -16.278)" fill="#693bcc"/>
+      <path id="Path_38" data-name="Path 38" d="M65.287,56H85.879a1.291,1.291,0,0,1,1.287,1.287h0a1.291,1.291,0,0,1-1.287,1.287H65.287A1.291,1.291,0,0,1,64,57.287h0A1.291,1.291,0,0,1,65.287,56Z" transform="translate(-13.565 -8.139)" fill="#693bcc"/>
+      <path id="Path_39" data-name="Path 39" d="M77.287,44h12.87a1.291,1.291,0,0,1,1.287,1.287h0a1.291,1.291,0,0,1-1.287,1.287H77.287A1.291,1.291,0,0,1,76,45.287h0A1.291,1.291,0,0,1,77.287,44Z" transform="translate(-21.704)" fill="#693bcc"/>
+    </g>
+  </g>
+</svg>
