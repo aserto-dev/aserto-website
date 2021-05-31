@@ -19,7 +19,7 @@ const JobPosting = ({ posting }: Props) => {
         >
           Back to listing
         </Link>
-        <h1 className="text-5xl leading-none tracking-tighter text-white xl:text-6.5xl">
+        <h1 className="text-5xl leading-none tracking-tighter text-white">
           {posting.title}
         </h1>
       </div>

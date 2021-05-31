@@ -48,7 +48,7 @@ const OurValues = ({
         )}
         {taglineRaw && (
           <BlockContent
-            className="mx-auto max-w-[800px] mt-16 text-aserto-grey-60 font-roboto"
+            className="mx-auto max-w-[800px] text-1.5xl mt-16 text-aserto-grey-60 font-roboto"
             blocks={taglineRaw}
           />
         )}
