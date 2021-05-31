@@ -10,8 +10,6 @@ import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
 import { useMemo } from 'react'
 
-// Sections
-
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { mainPost, restPosts } = useMemo(() => {
     const [mainPost, ...restPosts] = posts
