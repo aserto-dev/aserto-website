@@ -412,20 +412,18 @@ export type FeatureBlock = {
   __typename?: 'FeatureBlock'
   _key?: Maybe<Scalars['String']>
   _type?: Maybe<Scalars['String']>
-  title?: Maybe<Scalars['String']>
+  titleRaw?: Maybe<Scalars['JSON']>
   blocks?: Maybe<Array<Maybe<FeatureItem>>>
 }
 
 export type FeatureBlockFilter = {
   _key?: Maybe<StringFilter>
   _type?: Maybe<StringFilter>
-  title?: Maybe<StringFilter>
 }
 
 export type FeatureBlockSorting = {
   _key?: Maybe<SortOrder>
   _type?: Maybe<SortOrder>
-  title?: Maybe<SortOrder>
 }
 
 export type FeatureItem = {
@@ -563,7 +561,7 @@ export type Home = Document & {
   featuresSectionTitle?: Maybe<Scalars['String']>
   features?: Maybe<Array<Maybe<FeatureBlock>>>
   testimonialsSectionTitle?: Maybe<Scalars['String']>
-  testimonial?: Maybe<TestimonialBlock>
+  testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>
 }
 
 export type HomeFilter = {
@@ -585,7 +583,6 @@ export type HomeFilter = {
   theSolutionSectionTitle?: Maybe<StringFilter>
   featuresSectionTitle?: Maybe<StringFilter>
   testimonialsSectionTitle?: Maybe<StringFilter>
-  testimonial?: Maybe<TestimonialBlockFilter>
 }
 
 export type HomeSorting = {
@@ -605,7 +602,6 @@ export type HomeSorting = {
   theSolutionSectionTitle?: Maybe<SortOrder>
   featuresSectionTitle?: Maybe<SortOrder>
   testimonialsSectionTitle?: Maybe<SortOrder>
-  testimonial?: Maybe<TestimonialBlockSorting>
 }
 
 export type IdFilter = {
@@ -1796,7 +1792,7 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
     features?: Maybe<
       Array<
         Maybe<
-          { __typename?: 'FeatureBlock' } & Pick<FeatureBlock, 'title'> & {
+          { __typename?: 'FeatureBlock' } & Pick<FeatureBlock, 'titleRaw'> & {
               blocks?: Maybe<
                 Array<
                   Maybe<{ __typename?: 'FeatureItem' } & FeatureItemFragment>
@@ -1806,11 +1802,17 @@ export type HomePageFragment = { __typename?: 'Home' } & Pick<
         >
       >
     >
-    testimonial?: Maybe<
-      { __typename?: 'TestimonialBlock' } & Pick<
-        TestimonialBlock,
-        'authorName' | 'authorPosition' | 'quoteRaw'
-      > & { authorAvatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+    testimonials?: Maybe<
+      Array<
+        Maybe<
+          { __typename?: 'TestimonialBlock' } & Pick<
+            TestimonialBlock,
+            'authorName' | 'authorPosition' | 'quoteRaw'
+          > & {
+              authorAvatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment>
+            }
+        >
+      >
     >
   }
 
@@ -2047,13 +2049,13 @@ export const HomePageFragmentDoc = gql`
     }
     featuresSectionTitle
     features {
-      title
+      titleRaw
       blocks {
         ...FeatureItem
       }
     }
     testimonialsSectionTitle
-    testimonial {
+    testimonials {
       authorAvatar {
         ...Image
       }

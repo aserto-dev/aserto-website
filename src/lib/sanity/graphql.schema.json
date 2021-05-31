@@ -3406,12 +3406,12 @@
             "deprecationReason": null
           },
           {
-            "name": "title",
+            "name": "titleRaw",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
-              "name": "String",
+              "name": "JSON",
               "ofType": null
             },
             "isDeprecated": false,
@@ -3468,18 +3468,6 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "title",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "interfaces": null,
@@ -3506,18 +3494,6 @@
           },
           {
             "name": "_type",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "title",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -4656,13 +4632,17 @@
             "deprecationReason": null
           },
           {
-            "name": "testimonial",
+            "name": "testimonials",
             "description": null,
             "args": [],
             "type": {
-              "kind": "OBJECT",
-              "name": "TestimonialBlock",
-              "ofType": null
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "TestimonialBlock",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -4888,18 +4868,6 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "testimonial",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "TestimonialBlockFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "interfaces": null,
@@ -5098,18 +5066,6 @@
             "type": {
               "kind": "ENUM",
               "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "testimonial",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "TestimonialBlockSorting",
               "ofType": null
             },
             "defaultValue": null,

@@ -13,4 +13,5 @@
   height: 190%;
 
   content: '';
+  pointer-events: none;
 }

@@ -25,8 +25,9 @@
   content: '';
 
   will-change: transform;
+  transform: scale(2.5) rotateX(15deg);
 }
 
 .background:hover:after {
-  transform: scale(2.5) rotateX(15deg);
+  transform: scale(3) rotateX(15deg);
 }

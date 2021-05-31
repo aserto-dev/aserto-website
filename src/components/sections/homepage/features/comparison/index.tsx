@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { BlockContent } from 'components/primitives/block-content'
 
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
@@ -54,9 +55,10 @@ const Comparison = ({
               onClick={() => setActiveFeatureIndex(i)}
               key={i}
             >
-              <span className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4">
-                {feature?.title}
-              </span>
+              <BlockContent
+                blocks={feature?.titleRaw}
+                className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+              />
             </button>
           )
         })}
@@ -78,9 +80,10 @@ const Comparison = ({
                 onClick={() => setActiveFeatureIndex(i)}
                 key={i}
               >
-                <span className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4">
-                  {feature?.title}
-                </span>
+                <BlockContent
+                  blocks={feature?.titleRaw}
+                  className="inline-block w-full px-4 py-2 cursor-pointer sm:px-8 sm:py-4"
+                />
               </button>
             )
           })}

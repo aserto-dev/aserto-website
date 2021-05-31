@@ -50,7 +50,7 @@ module.exports = {
             'accent-10': '#3D79D4',
             'accent-20': '#4385E8',
             'accent-30': '#4A92FF',
-            'accent-40': '#7DB1FF',
+            'accent-40': '#7DB1FF'
           },
           apple: {
             10: '#162316',

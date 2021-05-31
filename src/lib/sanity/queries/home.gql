@@ -18,13 +18,13 @@ fragment HomePage on Home {
   }
   featuresSectionTitle
   features {
-    title
+    titleRaw
     blocks {
       ...FeatureItem
     }
   }
   testimonialsSectionTitle
-  testimonial {
+  testimonials {
     authorAvatar {
       ...Image
     }
