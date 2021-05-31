@@ -3,9 +3,6 @@ import Image from 'next/image'
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
 
-// Icons
-import IconQuote from 'icons/quote.svg'
-
 type Props = {
   companyName: string
   profileimageSrc: string
@@ -22,9 +19,6 @@ const TestimonialItem = ({
   const [section] = useFadeInBottom()
   return (
     <div className="relative">
-      <div className="absolute z-0 -left-2 -top-20 sm:left-32">
-        <IconQuote />
-      </div>
       <div
         className="relative z-10 w-full p-10 mx-auto border sm:w-8/12 bg-aserto-black border-aserto-grey-10 rounded-2xl"
         ref={section}
