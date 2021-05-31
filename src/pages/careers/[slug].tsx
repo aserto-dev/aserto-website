@@ -24,6 +24,7 @@ const JobPostingPage = ({ posting }: Props) => {
         description: 'Description',
         image: 'images/og.png'
       }}
+      withoutNewsletter
     >
       <CustomHead />
       <JobPosting posting={posting} />

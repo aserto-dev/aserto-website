@@ -26,6 +26,9 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
         description: 'Description',
         image: 'images/og.png'
       }}
+      newsletter={{
+        copy: 'Sign up for our newsletter'
+      }}
     >
       <CustomHead />
       <Hero />

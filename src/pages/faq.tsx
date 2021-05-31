@@ -17,6 +17,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         description: 'Description',
         image: 'images/og.png'
       }}
+      withoutNewsletter
     >
       <CustomHead />
       <section className="py-20">

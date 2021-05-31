@@ -24,6 +24,9 @@ const BlogPost = ({ post }: Props) => {
         description: 'Description',
         image: 'images/og.png'
       }}
+      newsletter={{
+        copy: 'Sign up for our newsletter'
+      }}
     >
       <CustomHead />
       <Post post={post} />

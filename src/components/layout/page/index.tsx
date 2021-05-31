@@ -26,6 +26,10 @@ interface Props {
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   withoutNewsletter?: boolean
+  newsletter?: {
+    copy?: string
+    mailchimp?: string
+  }
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -51,7 +55,8 @@ const PageLayout = ({
   children,
   contain,
   headProps,
-  withoutNewsletter
+  withoutNewsletter,
+  newsletter
 }: Props) => {
   return (
     <div className="overflow-hidden">
@@ -66,7 +71,9 @@ const PageLayout = ({
       >
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
-      {!withoutNewsletter && <Newsletter />}
+      {!withoutNewsletter && (
+        <Newsletter copy={newsletter?.copy} mailchimp={newsletter?.mailchimp} />
+      )}
       <Footer />
     </div>
   )
