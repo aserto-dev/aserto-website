@@ -13,8 +13,15 @@ import TheSolution from 'components/sections/homepage/the-solution'
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 import Container from 'components/layout/container'
+import { useEffect } from 'react'
 
 const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    if (window.location.hash === '#sign-up') {
+      document.querySelector('#sign-up')?.scrollIntoView()
+    }
+  }, [])
+
   return (
     <PageLayout
       headProps={{
