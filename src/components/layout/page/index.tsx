@@ -10,6 +10,7 @@ import Container from '../container'
 
 // Constants
 import { DURATION } from 'lib/gsap'
+import { NewsletterProps } from 'components/sections/common/newsletter'
 
 // Dynamic Imports
 const Newsletter = dynamic(
@@ -25,12 +26,7 @@ interface Props {
   children?: React.ReactNode
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
-  withoutNewsletter?: boolean
-  newsletter?: {
-    copy?: string
-    mailchimp?: string
-    description?: string
-  }
+  newsletter?: NewsletterProps
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -52,13 +48,7 @@ const transitionVariants = {
   }
 }
 
-const PageLayout = ({
-  children,
-  contain,
-  headProps,
-  withoutNewsletter,
-  newsletter
-}: Props) => {
+const PageLayout = ({ children, contain, headProps, newsletter }: Props) => {
   return (
     <div className="overflow-hidden">
       <CustomHead {...headProps} />
@@ -72,13 +62,7 @@ const PageLayout = ({
       >
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
-      {!withoutNewsletter && (
-        <Newsletter
-          copy={newsletter?.copy}
-          mailchimp={newsletter?.mailchimp}
-          description={newsletter?.description}
-        />
-      )}
+      {newsletter && <Newsletter {...newsletter} />}
       <Footer />
     </div>
   )
