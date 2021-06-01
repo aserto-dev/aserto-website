@@ -797,6 +797,9 @@ const Animation = () => {
       },
       '<'
     )
+    timeline.to('#authorization', {
+      autoAlpha: 1
+    }, '<')
     timeline.addLabel('end-sequence-15')
     timeline.addLabel('start-sequence-16')
     timeline.to('#arrow1', {
@@ -1037,6 +1040,9 @@ const Animation = () => {
       autoAlpha: 1,
       duration: DURATION * 2
     })
+    timeline.to('#authorization', {
+      autoAlpha: 0
+    }, '<')
     timeline.to(
       '#reactBg',
       {
@@ -1241,7 +1247,7 @@ const Animation = () => {
     })
     timeline.addLabel('end-sequence-20')
 
-    timeline.timeScale(0.8).play()
+    timeline.timeScale(0.9).play()
 
     // GSDevTools.create({ animation: timeline, timeScale: 0.8 })
   }, [])
