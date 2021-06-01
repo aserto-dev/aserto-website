@@ -2,6 +2,10 @@ import { useEffect } from 'react'
 import gsap from 'gsap'
 import { DURATION } from 'lib/gsap'
 
+// import { GSDevTools } from 'gsap/GSDevTools'
+
+// gsap.registerPlugin(GSDevTools)
+
 const Animation = () => {
   useEffect(() => {
     const timeline = gsap.timeline({
@@ -96,7 +100,8 @@ const Animation = () => {
     timeline.to(
       '#bubble3',
       {
-        yPercent: -380
+        yPercent: -380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -158,11 +163,7 @@ const Animation = () => {
     timeline.addLabel('end-sequence-3')
     timeline.addLabel('start-sequence-4')
     timeline.to('#policy', {
-      startAt: {
-        yPercent: 20
-      },
       ease: 'back.out(1)',
-      yPercent: 0,
       autoAlpha: 1
     })
     timeline.to(
@@ -213,6 +214,7 @@ const Animation = () => {
     timeline.to(
       ['#bubble1', '#bubble2'],
       {
+        duration: DURATION * 2,
         yPercent: -380
       },
       '<'
@@ -223,7 +225,7 @@ const Animation = () => {
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
       {
         attr: {
-          stdDeviation: 5
+          stdDeviation: 4
         }
       },
       '<'
@@ -240,14 +242,9 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#policy',
-      {
-        yPercent: 20,
-        autoAlpha: 0
-      },
-      '<'
-    )
+    timeline.to('#policy', {
+      autoAlpha: 0
+    })
     timeline.to(
       ['#sidecar1 .bg', '#sidecar2 .bg'],
       {
@@ -304,6 +301,7 @@ const Animation = () => {
     timeline.to(
       '#providerBg',
       {
+        delay: 2,
         fill: '#0E1F38'
       },
       '<'
@@ -369,7 +367,8 @@ const Animation = () => {
     timeline.to(
       '#bubble4',
       {
-        yPercent: -380
+        yPercent: -380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -494,7 +493,8 @@ const Animation = () => {
     timeline.to(
       '#bubble5',
       {
-        yPercent: -380
+        yPercent: -380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -607,7 +607,8 @@ const Animation = () => {
     timeline.to(
       '#bubble6',
       {
-        yPercent: -380
+        yPercent: -380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -649,11 +650,7 @@ const Animation = () => {
     timeline.addLabel('end-sequence-11')
     timeline.addLabel('start-sequence-12')
     timeline.to('#user', {
-      startAt: {
-        yPercent: 20
-      },
       ease: 'back.out(1)',
-      yPercent: 0,
       autoAlpha: 1
     })
     timeline.to(
@@ -704,7 +701,8 @@ const Animation = () => {
     timeline.to(
       ['#bubble1', '#bubble2'],
       {
-        yPercent: -380
+        yPercent: -380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -714,7 +712,7 @@ const Animation = () => {
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
       {
         attr: {
-          stdDeviation: 5
+          stdDeviation: 4
         }
       },
       '<'
@@ -731,14 +729,9 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#user',
-      {
-        yPercent: 20,
-        autoAlpha: 0
-      },
-      '<'
-    )
+    timeline.to('#user', {
+      autoAlpha: 0
+    })
     timeline.to(
       ['#sidecar1 .bg', '#sidecar2 .bg'],
       {
@@ -766,6 +759,7 @@ const Animation = () => {
     timeline.addLabel('end-sequence-14')
     timeline.addLabel('start-sequence-15')
     timeline.to('#reactBg', {
+      delay: 2,
       fill: '#1B283D'
     })
     timeline.to(
@@ -786,7 +780,7 @@ const Animation = () => {
       '#filter8_d feGaussianBlur',
       {
         attr: {
-          stdDeviation: 13
+          stdDeviation: 5
         }
       },
       '<'
@@ -802,18 +796,15 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-15')
     timeline.addLabel('start-sequence-16')
-    timeline.to(
-      '#arrow1',
-      {
-        startAt: {
-          xPercent: -20
-        },
-        ease: 'back.out(1)',
-        xPercent: 0,
-        autoAlpha: 1
+    timeline.to('#arrow1', {
+      startAt: {
+        xPercent: -20
       },
-      '<'
-    )
+      ease: 'back.out(1)',
+      xPercent: 0,
+      autoAlpha: 1,
+      duration: DURATION * 2
+    })
     timeline.to(
       '#apiBG',
       {
@@ -833,7 +824,7 @@ const Animation = () => {
       '#filter9_d feGaussianBlur',
       {
         attr: {
-          stdDeviation: 13
+          stdDeviation: 5
         }
       },
       '<'
@@ -847,14 +838,10 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#reactBg',
-      {
-        delay: DURATION,
-        fill: '#121212'
-      },
-      '<'
-    )
+    timeline.to('#reactBg', {
+      delay: DURATION,
+      fill: '#121212'
+    })
     timeline.to(
       '#react .text',
       {
@@ -903,7 +890,8 @@ const Animation = () => {
         },
         ease: 'back.out(1)',
         xPercent: 0,
-        autoAlpha: 1
+        autoAlpha: 1,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -967,7 +955,7 @@ const Animation = () => {
       '#filter10_d feGaussianBlur',
       {
         attr: {
-          stdDeviation: 13
+          stdDeviation: 5
         }
       },
       '<'
@@ -1034,7 +1022,8 @@ const Animation = () => {
       },
       ease: 'back.out(1)',
       xPercent: 0,
-      autoAlpha: 1
+      autoAlpha: 1,
+      duration: DURATION * 2
     })
     timeline.to('#arrow2', {
       startAt: {
@@ -1042,7 +1031,8 @@ const Animation = () => {
       },
       ease: 'back.out(1)',
       xPercent: 0,
-      autoAlpha: 1
+      autoAlpha: 1,
+      duration: DURATION * 2
     })
     timeline.to(
       '#reactBg',
@@ -1069,7 +1059,7 @@ const Animation = () => {
       '#filter8_d feGaussianBlur',
       {
         attr: {
-          stdDeviation: 13
+          stdDeviation: 5
         }
       },
       '<'
@@ -1124,7 +1114,7 @@ const Animation = () => {
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
       {
         attr: {
-          stdDeviation: 5
+          stdDeviation: 4
         }
       }
     )
@@ -1175,7 +1165,8 @@ const Animation = () => {
     timeline.to(
       ['#bubble1', '#bubble2'],
       {
-        yPercent: 380
+        yPercent: 380,
+        duration: DURATION * 2
       },
       '<'
     )
@@ -1183,7 +1174,7 @@ const Animation = () => {
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
       {
         attr: {
-          stdDeviation: 5
+          stdDeviation: 4
         }
       },
       '<'
@@ -1221,17 +1212,9 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#decision',
-      {
-        startAt: {
-          yPercent: 20
-        },
-        yPercent: 0,
-        autoAlpha: 1
-      },
-      '<'
-    )
+    timeline.to('#decision', {
+      autoAlpha: 1
+    })
     timeline.to('#backgroundBG', {
       fill: '#1C484A'
     })
@@ -1245,21 +1228,19 @@ const Animation = () => {
     timeline.to(
       '#decision',
       {
-        yPercent: -20,
         autoAlpha: 0
       },
       '<'
     )
-    timeline.to(
-      ['#arrow1', '#arrow2', '#arrow3', '#arrow4'],
-      {
-        autoAlpha: 0
-      },
-      '<'
-    )
+    timeline.to(['#arrow1', '#arrow2', '#arrow3', '#arrow4'], {
+      autoAlpha: 0,
+      duration: DURATION * 2
+    })
     timeline.addLabel('end-sequence-20')
 
-    timeline.timeScale(1).play()
+    timeline.timeScale(0.8).play()
+
+    // GSDevTools.create({ animation: timeline, timeScale: 0.8 })
   }, [])
 
   return (
@@ -1963,13 +1944,13 @@ const Animation = () => {
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            values="0 0 0 0 0.152941 0 0 0 0 0.498039 0 0 0 0 0.509804 0 0 0 1 0"
           />
           <feOffset />
           <feGaussianBlur stdDeviation="3" />
           <feColorMatrix
             type="matrix"
-            values="0.10980392156862745 0 0 0 0 0 0.2823529411764706 0 0 0 0 0 0.2901960784313726 0 0 0 0 0 1 0"
+            values="0.13 0 0 0 0 0 0.370 0 0 0 0 0.380 0 0 0 0 1 0"
           />
           <feBlend
             mode="normal"
@@ -1997,7 +1978,7 @@ const Animation = () => {
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+            values="0 0 0 0 0.152941 0 0 0 0 0.498039 0 0 0 0 0.509804 0 0 0 1 0"
           />
           <feOffset />
           <feGaussianBlur stdDeviation="3" />
