@@ -41,7 +41,7 @@ const CustomLink = forwardRef<
   return (
     <Link href={href}>
       <a
-        className="inline-flex justify-center w-full px-6 text-base text-center transition-colors duration-150 cursor-pointer text-aserto-grey-60 font-roboto hover:text-aserto-grey-90 hover:outline-none"
+        className="inline-flex w-full px-6 text-base transition-colors duration-150 cursor-pointer text-aserto-grey-60 font-roboto hover:text-aserto-grey-90 hover:outline-none"
         {...rest}
         ref={ref}
         {...(isExternal
@@ -164,7 +164,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             e.preventDefault()
           }
         }}
-        sideOffset={-8}
+        sideOffset={-20}
         disableOutsidePointerEvents={false}
         className="bg-aserto-grey-5 border border-aserto-grey-20 rounded-[4px] pt-5 pb-[-4px] mt-3"
         as="ul"
