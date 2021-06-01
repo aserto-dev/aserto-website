@@ -46,7 +46,7 @@ export const headerLinks = [
         isExternal: true
       },
       {
-        label: 'Slack community',
+        label: 'Slack',
         href: 'https://asertocommunity.slack.com',
         isExternal: true
       }

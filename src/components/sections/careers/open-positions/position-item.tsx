@@ -28,7 +28,7 @@ const PositionItem = ({ data }: Props) => (
       <div className="border-t border-aserto-grey-20">
         <Link
           href={`/careers/${data.slug?.current}`}
-          className="flex items-center pt-6 font-medium uppercase font-roboto text-aserto-lochivar-accent-40"
+          className="flex items-center pt-6 font-medium uppercase text-base font-roboto text-aserto-lochivar-accent-40 hover:underline transition-all duration-150"
         >
           VIEW POSITION
         </Link>
