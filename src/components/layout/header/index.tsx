@@ -4,6 +4,7 @@ import clsx from 'clsx'
 // Primitives
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
+import NextLink from 'next/link'
 
 // SVGs
 import MenuIcon from 'icons/menu.svg'
@@ -124,15 +125,16 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button
-            variant="primary"
-            size="sm"
-            as="a"
-            href="#sign-up"
-            className="inline-flex items-center"
-          >
-            Request Early Access
-          </Button>
+          <NextLink href="/#sign-up" passHref>
+            <Button
+              variant="primary"
+              size="sm"
+              as="a"
+              className="inline-flex items-center"
+            >
+              Request Early Access
+            </Button>
+          </NextLink>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
             href="https://console.aserto.com/"

@@ -4,7 +4,7 @@
   font-family: theme('fontFamily.roboto');
 
   p {
-    @apply my-8;
+    @apply my-8 text-xl;
   }
 
   h1,
@@ -37,6 +37,6 @@
   }
 
   a {
-    @apply whitespace-nowrap text-aserto-lochivar-accent-40 hover:underline active:text-aserto-lochivar-accent-50;
+    @apply whitespace-nowrap text-aserto-lochivar-accent-40 text-xl hover:underline active:text-aserto-lochivar-accent-50;
   }
 }

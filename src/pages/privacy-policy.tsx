@@ -30,7 +30,6 @@ const PrivacyPolicy = () => {
         description: 'Description',
         image: 'images/og.png'
       }}
-      withoutNewsletter
     >
       <CustomHead />
       <section className="py-14">

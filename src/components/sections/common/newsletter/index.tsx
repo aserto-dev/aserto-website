@@ -15,7 +15,17 @@ import Button from 'components/primitives/button'
 import s from './newsletter.module.css'
 import { useState } from 'react'
 
-const NewsletterSection = () => {
+export type NewsletterProps = {
+  mailchimpEndpoint: string
+  title: string
+  description: string
+}
+
+const NewsletterSection = ({
+  mailchimpEndpoint,
+  title,
+  description
+}: NewsletterProps) => {
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
@@ -45,15 +55,15 @@ const NewsletterSection = () => {
           </h2>
           <div className="w-full md:w-6/12">
             <h2 className="tracking-normal text-aserto-grey-90 text-4.5xl">
-              Request early access
+              {title}
             </h2>
             <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
-              Sign up now to get ahead of the line.
+              {description}
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center mt-8 lg:mt-0">
+          <div className="flex flex-col items-center justify-center mt-8 lg:mt-0 ml-7">
             <MailchimpSubscribe
-              url="https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1"
+              url={mailchimpEndpoint}
               render={({ subscribe, status, message }) => (
                 <form
                   className="relative flex flex-col self-center"
@@ -85,7 +95,7 @@ const NewsletterSection = () => {
                     />
                     <Button
                       type="submit"
-                      className="mt-4 ml-0 sm:ml-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
+                      className="mt-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
                     >
                       {clearErr === '' ? (
                         'Let’s go!'

@@ -13,14 +13,27 @@ import TheSolution from 'components/sections/homepage/the-solution'
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 import Container from 'components/layout/container'
+import { useEffect } from 'react'
 
 const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  useEffect(() => {
+    if (window.location.hash === '#sign-up') {
+      document.querySelector('#sign-up')?.scrollIntoView()
+    }
+  }, [])
+
   return (
     <PageLayout
       headProps={{
         title: 'Aserto',
         description: 'Description',
         image: 'images/og.png'
+      }}
+      newsletter={{
+        mailchimpEndpoint:
+          'https://aserto.us6.list-manage.com/subscribe/post?u=37bc48a192e946b134dc161ba&amp;id=6b960336df',
+        title: 'Request early access',
+        description: 'Sign up now to get ahead of the line.'
       }}
     >
       <CustomHead />
