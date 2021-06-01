@@ -29,6 +29,7 @@ interface Props {
   newsletter?: {
     copy?: string
     mailchimp?: string
+    description?: string
   }
 }
 
@@ -72,7 +73,7 @@ const PageLayout = ({
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
       {!withoutNewsletter && (
-        <Newsletter copy={newsletter?.copy} mailchimp={newsletter?.mailchimp} />
+        <Newsletter copy={newsletter?.copy} mailchimp={newsletter?.mailchimp} description={newsletter?.description} />
       )}
       <Footer />
     </div>

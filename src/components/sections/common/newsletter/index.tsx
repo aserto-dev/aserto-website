@@ -18,9 +18,10 @@ import { useState } from 'react'
 type Newsletter = {
   mailchimp?: string
   copy?: string
+  description?: string
 }
 
-const NewsletterSection = ({ mailchimp, copy }: Newsletter) => {
+const NewsletterSection = ({ mailchimp, copy, description }: Newsletter) => {
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
@@ -53,7 +54,7 @@ const NewsletterSection = ({ mailchimp, copy }: Newsletter) => {
               {copy ?? 'Request early access'}
             </h2>
             <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
-              Sign up now to get ahead of the line.
+              {description ?? 'Sign up now to get ahead of the line.'}
             </p>
           </div>
           <div className="flex flex-col items-center justify-center mt-8 lg:mt-0 ml-7">
