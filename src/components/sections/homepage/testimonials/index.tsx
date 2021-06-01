@@ -14,6 +14,7 @@ const Testimonials = ({ page }: { page: HomePageFragment }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [cursor, setCursor] = useState('grab')
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    loop: true,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide)
     },
@@ -37,18 +38,6 @@ const Testimonials = ({ page }: { page: HomePageFragment }) => {
           <IconQuote />
         </div>
         <div ref={sliderRef} className="keen-slider" style={{ cursor }}>
-          {page.testimonials?.map((t, i) => {
-            return (
-              <div key={i} className="px-4 keen-slider__slide">
-                <TestimonialItem
-                  profileName={t?.authorName ?? ''}
-                  profileimageSrc={t?.authorAvatar?.asset?.url ?? '/404'}
-                  companyName={t?.authorPosition ?? ''}
-                  quote={<BlockContent blocks={t?.quoteRaw} />}
-                />
-              </div>
-            )
-          })}
           {page.testimonials?.map((t, i) => {
             return (
               <div key={i} className="px-4 keen-slider__slide">
