@@ -25,7 +25,6 @@ const Careers = ({
         description: 'Description',
         image: 'images/og.png'
       }}
-      withoutNewsletter
     >
       <div className="relative">
         <div className="absolute top-0 left-0">
