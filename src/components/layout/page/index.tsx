@@ -73,7 +73,11 @@ const PageLayout = ({
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
       {!withoutNewsletter && (
-        <Newsletter copy={newsletter?.copy} mailchimp={newsletter?.mailchimp} description={newsletter?.description} />
+        <Newsletter
+          copy={newsletter?.copy}
+          mailchimp={newsletter?.mailchimp}
+          description={newsletter?.description}
+        />
       )}
       <Footer />
     </div>
