@@ -8,6 +8,7 @@ const withTM = require('next-transpile-modules')([
 ])
 
 module.exports = withPlugins([withTM, withSvgr], {
+  target: 'serverless',
   future: {
     webpack5: true
   },
