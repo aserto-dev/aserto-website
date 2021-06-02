@@ -24,6 +24,11 @@ const Advisors = ({ page }: { page: AboutPageFragment }) => {
               name={angel?.name ?? ''}
               linkedin={angel?.linkedIn ?? ''}
               position={angel?.position ?? ''}
+              imageSrc={
+                page.angelsWithImage
+                  ? angel?.avatar?.asset?.url ?? undefined
+                  : undefined
+              }
               key={i}
             />
           ))}

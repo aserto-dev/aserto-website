@@ -24,11 +24,13 @@ fragment AboutPage on About {
     ...Founder
   }
   investorsSectionTitle
+  investorsSectionSubtitle
   investors {
     ...Investor
   }
   angelsSectionTitle
   angelsSectionSubtitle
+  angelsWithImage
   angels {
     ...Founder
   }

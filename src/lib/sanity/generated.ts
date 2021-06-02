@@ -43,9 +43,11 @@ export type About = Document & {
   foundersSectionSubtitle?: Maybe<Scalars['String']>
   founders?: Maybe<Array<Maybe<FounderBlock>>>
   investorsSectionTitle?: Maybe<Scalars['String']>
+  investorsSectionSubtitle?: Maybe<Scalars['String']>
   investors?: Maybe<Array<Maybe<InvestorBlock>>>
   angelsSectionTitle?: Maybe<Scalars['String']>
   angelsSectionSubtitle?: Maybe<Scalars['String']>
+  angelsWithImage?: Maybe<Scalars['Boolean']>
   angels?: Maybe<Array<Maybe<FounderBlock>>>
   hiringSectionTitle?: Maybe<Scalars['String']>
   hiringSectionLinkLabel?: Maybe<Scalars['String']>
@@ -65,8 +67,10 @@ export type AboutFilter = {
   foundersSectionTitle?: Maybe<StringFilter>
   foundersSectionSubtitle?: Maybe<StringFilter>
   investorsSectionTitle?: Maybe<StringFilter>
+  investorsSectionSubtitle?: Maybe<StringFilter>
   angelsSectionTitle?: Maybe<StringFilter>
   angelsSectionSubtitle?: Maybe<StringFilter>
+  angelsWithImage?: Maybe<BooleanFilter>
   hiringSectionTitle?: Maybe<StringFilter>
   hiringSectionLinkLabel?: Maybe<StringFilter>
   hiringSectionLinkHref?: Maybe<StringFilter>
@@ -83,8 +87,10 @@ export type AboutSorting = {
   foundersSectionTitle?: Maybe<SortOrder>
   foundersSectionSubtitle?: Maybe<SortOrder>
   investorsSectionTitle?: Maybe<SortOrder>
+  investorsSectionSubtitle?: Maybe<SortOrder>
   angelsSectionTitle?: Maybe<SortOrder>
   angelsSectionSubtitle?: Maybe<SortOrder>
+  angelsWithImage?: Maybe<SortOrder>
   hiringSectionTitle?: Maybe<SortOrder>
   hiringSectionLinkLabel?: Maybe<SortOrder>
   hiringSectionLinkHref?: Maybe<SortOrder>
@@ -1616,8 +1622,10 @@ export type AboutPageFragment = { __typename?: 'About' } & Pick<
   | 'foundersSectionTitle'
   | 'foundersSectionSubtitle'
   | 'investorsSectionTitle'
+  | 'investorsSectionSubtitle'
   | 'angelsSectionTitle'
   | 'angelsSectionSubtitle'
+  | 'angelsWithImage'
   | 'hiringSectionTitle'
   | 'hiringSectionLinkLabel'
   | 'hiringSectionLinkHref'
@@ -1926,11 +1934,13 @@ export const AboutPageFragmentDoc = gql`
       ...Founder
     }
     investorsSectionTitle
+    investorsSectionSubtitle
     investors {
       ...Investor
     }
     angelsSectionTitle
     angelsSectionSubtitle
+    angelsWithImage
     angels {
       ...Founder
     }

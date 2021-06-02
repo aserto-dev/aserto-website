@@ -44,13 +44,10 @@ const FounderItem = ({ image, linkedin, name, position }: Props) => {
             <p className="text-xl text-aserto-grey-90 sm:text-1.5xl">
               {position}
             </p>
-            <Link
-              href={linkedin}
-              className="flex items-center mt-10 font-medium text-white uppercase"
-            >
+            <p className="flex items-center mt-10 font-medium text-white uppercase">
               <LinkedinIcon className="mr-4" />
               Linkedin
-            </Link>
+            </p>
           </div>
         </div>
       </Link>
