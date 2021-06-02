@@ -168,7 +168,7 @@ const Animation = () => {
     timeline.to('#policy', {
       ease: 'back.out(1)',
       autoAlpha: 1
-    })
+    }, '<')
     timeline.to(
       '#filterPolicy feGaussianBlur',
       {
@@ -245,9 +245,6 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#policy', {
-      autoAlpha: 0
-    })
     timeline.to(
       ['#sidecar1 .bg', '#sidecar2 .bg'],
       {
@@ -299,6 +296,9 @@ const Animation = () => {
       },
       '<'
     )
+    timeline.to('#policy', {
+      autoAlpha: 0
+    })
     timeline.addLabel('end-sequence-7')
     timeline.addLabel('start-sequence-8')
     timeline.to(
@@ -422,6 +422,28 @@ const Animation = () => {
       {
         attr: {
           in: 'FillPaint'
+        }
+      },
+      '<'
+    )
+    timeline.to('#user', {
+      ease: 'back.out(1)',
+      autoAlpha: 1
+    }, '<')
+    timeline.to(
+      '#filterPolicy feGaussianBlur',
+      {
+        attr: {
+          stdDeviation: 8
+        }
+      },
+      '<'
+    )
+    timeline.set(
+      '#filterPolicy > feColorMatrix:first-of-type',
+      {
+        attr: {
+          in: 'SourceAlpha'
         }
       },
       '<'
@@ -652,28 +674,28 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-11')
     timeline.addLabel('start-sequence-12')
-    timeline.to('#user', {
-      ease: 'back.out(1)',
-      autoAlpha: 1
-    })
-    timeline.to(
-      '#filterPolicy feGaussianBlur',
-      {
-        attr: {
-          stdDeviation: 8
-        }
-      },
-      '<'
-    )
-    timeline.set(
-      '#filterPolicy > feColorMatrix:first-of-type',
-      {
-        attr: {
-          in: 'SourceAlpha'
-        }
-      },
-      '<'
-    )
+    // timeline.to('#user', {
+    //   ease: 'back.out(1)',
+    //   autoAlpha: 1
+    // })
+    // timeline.to(
+    //   '#filterPolicy feGaussianBlur',
+    //   {
+    //     attr: {
+    //       stdDeviation: 8
+    //     }
+    //   },
+    //   '<'
+    // )
+    // timeline.set(
+    //   '#filterPolicy > feColorMatrix:first-of-type',
+    //   {
+    //     attr: {
+    //       in: 'SourceAlpha'
+    //     }
+    //   },
+    //   '<'
+    // )
     timeline.addLabel('end-sequence-12')
     timeline.addLabel('start-sequence-13')
     timeline.set(['#bubble1', '#bubble2'], {
@@ -732,9 +754,6 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#user', {
-      autoAlpha: 0
-    })
     timeline.to(
       ['#sidecar1 .bg', '#sidecar2 .bg'],
       {
@@ -758,6 +777,9 @@ const Animation = () => {
     )
     timeline.to(['#sidecar1 .bg', '#sidecar2 .bg'], {
       fill: '#1C484A'
+    })
+    timeline.to('#user', {
+      autoAlpha: 0
     })
     timeline.addLabel('end-sequence-14')
     timeline.addLabel('start-sequence-15')
@@ -1223,7 +1245,7 @@ const Animation = () => {
     )
     timeline.to('#decision', {
       autoAlpha: 1
-    })
+    }, '<')
     timeline.to('#backgroundBG', {
       fill: '#1C484A'
     })
@@ -1237,9 +1259,9 @@ const Animation = () => {
     timeline.to(
       '#decision',
       {
+        delay: DURATION,
         autoAlpha: 0
       },
-      '<'
     )
     timeline.to(['#arrow1', '#arrow2', '#arrow3', '#arrow4'], {
       autoAlpha: 0,
