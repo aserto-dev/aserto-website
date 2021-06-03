@@ -37,12 +37,10 @@ const FounderItem = ({ image, linkedin, name, position }: Props) => {
                 width={128}
               />
             </div>
-            <h3 className="mb-4 text-5xl tracking-tight text-aserto-grey-90 sm:text-6xl">
+            <h3 className="mb-4 text-4xl tracking-tight text-aserto-grey-90">
               {name}
             </h3>
-            <p className="text-xl text-aserto-grey-90 sm:text-1.5xl">
-              {position}
-            </p>
+            <p className="text-xl text-aserto-grey-90">{position}</p>
             <p className="flex items-center mt-10 font-medium text-white uppercase">
               <LinkedinIcon className="mr-4" />
               Linkedin
