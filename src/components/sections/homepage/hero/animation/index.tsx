@@ -40,6 +40,32 @@ const Animation = () => {
     })
 
     timeline.addLabel('start-sequence-1')
+    timeline.to(
+      '#policy',
+      {
+        delay: DURATION,
+        ease: 'back.out(1)',
+        autoAlpha: 1
+      }, 
+    )
+    timeline.to(
+      '#filterPolicy feGaussianBlur',
+      {
+        attr: {
+          stdDeviation: 8
+        }
+      },
+      '<'
+    )
+    timeline.set(
+      '#filterPolicy > feColorMatrix:first-of-type',
+      {
+        attr: {
+          in: 'SourceAlpha'
+        }
+      },
+      '<'
+    )
     timeline.to('#githubBG', {
       delay: DURATION,
       fill: '#3364AE'
@@ -165,32 +191,32 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-3')
     timeline.addLabel('start-sequence-4')
-    timeline.to(
-      '#policy',
-      {
-        ease: 'back.out(1)',
-        autoAlpha: 1
-      },
-      '<'
-    )
-    timeline.to(
-      '#filterPolicy feGaussianBlur',
-      {
-        attr: {
-          stdDeviation: 8
-        }
-      },
-      '<'
-    )
-    timeline.set(
-      '#filterPolicy > feColorMatrix:first-of-type',
-      {
-        attr: {
-          in: 'SourceAlpha'
-        }
-      },
-      '<'
-    )
+    // timeline.to(
+    //   '#policy',
+    //   {
+    //     ease: 'back.out(1)',
+    //     autoAlpha: 1
+    //   },
+    //   '<'
+    // )
+    // timeline.to(
+    //   '#filterPolicy feGaussianBlur',
+    //   {
+    //     attr: {
+    //       stdDeviation: 8
+    //     }
+    //   },
+    //   '<'
+    // )
+    // timeline.set(
+    //   '#filterPolicy > feColorMatrix:first-of-type',
+    //   {
+    //     attr: {
+    //       in: 'SourceAlpha'
+    //     }
+    //   },
+    //   '<'
+    // )
     timeline.addLabel('end-sequence-4')
     timeline.addLabel('start-sequence-5')
     timeline.set(['#bubble1', '#bubble2'], {
@@ -306,9 +332,36 @@ const Animation = () => {
     timeline.addLabel('end-sequence-7')
     timeline.addLabel('start-sequence-8')
     timeline.to(
-      '#providerBg',
+      '#user',
       {
         delay: 2,
+        ease: 'back.out(1)',
+        autoAlpha: 1
+      },
+      '<'
+    )
+    timeline.to(
+      '#filterPolicy feGaussianBlur',
+      {
+        attr: {
+          stdDeviation: 8
+        }
+      },
+      '<'
+    )
+    timeline.set(
+      '#filterPolicy > feColorMatrix:first-of-type',
+      {
+        attr: {
+          in: 'SourceAlpha'
+        }
+      },
+      '<'
+    )
+    timeline.to(
+      '#providerBg',
+      {
+        delay: DURATION,
         fill: '#0E1F38'
       },
       '<'
@@ -430,32 +483,7 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#user',
-      {
-        ease: 'back.out(1)',
-        autoAlpha: 1
-      },
-      '<'
-    )
-    timeline.to(
-      '#filterPolicy feGaussianBlur',
-      {
-        attr: {
-          stdDeviation: 8
-        }
-      },
-      '<'
-    )
-    timeline.set(
-      '#filterPolicy > feColorMatrix:first-of-type',
-      {
-        attr: {
-          in: 'SourceAlpha'
-        }
-      },
-      '<'
-    )
+    
     timeline.addLabel('end-sequence-9')
     timeline.addLabel('start-sequence-10')
     timeline.to(
@@ -1158,6 +1186,27 @@ const Animation = () => {
     timeline.addLabel('end-sequence-19')
     timeline.addLabel('start-sequence-20')
     timeline.to(
+      '#backgroundBG',
+      {
+        fill: '#237477'
+      },
+      '<'
+    )
+    timeline.to(
+      '#backgroundStroke',
+      {
+        stroke: '#237477'
+      },
+      '<'
+    )
+    timeline.to(
+      '#decision',
+      {
+        autoAlpha: 1
+      },
+      '<'
+    )
+    timeline.to(
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
       {
         attr: {
@@ -1245,27 +1294,7 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#backgroundBG',
-      {
-        fill: '#237477'
-      },
-      '<'
-    )
-    timeline.to(
-      '#backgroundStroke',
-      {
-        stroke: '#237477'
-      },
-      '<'
-    )
-    timeline.to(
-      '#decision',
-      {
-        autoAlpha: 1
-      },
-      '<'
-    )
+    
     timeline.to('#backgroundBG', {
       fill: '#1C484A'
     })
@@ -1288,7 +1317,7 @@ const Animation = () => {
 
     timeline.timeScale(0.9).play()
 
-    // GSDevTools.create({ animation: timeline, timeScale: 0.8 })
+    // GSDevTools.create({ animation: timeline, timeScale: 0.9 })
   }, [])
 
   return (
