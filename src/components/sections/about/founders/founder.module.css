@@ -9,3 +9,7 @@
 .background:hover {
   background-color: #171717;
 }
+
+.founders-text {
+  min-width: 365px;
+}

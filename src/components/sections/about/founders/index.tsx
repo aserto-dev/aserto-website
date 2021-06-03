@@ -2,13 +2,16 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { AboutPageFragment } from 'lib/sanity/generated'
 
+// Style
+import s from './founder.module.css'
+
 // Components
 import Image from '../../../primitives/image'
 
 const Founders = ({ page }: { page: AboutPageFragment }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-8 mb-36 sm:mb-56 lg:py-12">
+    <section className="pt-8 mb-36 sm:mb-56 border-aserto-grey-20 border-t-1">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
@@ -18,14 +21,45 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
             {page.foundersSectionSubtitle}
           </p>
         </div>
-        <div className="flex mt-12">
-          <Image
-            layout="native"
-            width={304}
-            height={389}
-            src="/images/about/gert-omri.jpg"
-          />
-          {/*<div className="flex-1 ml-10">leke</div>*/}
+        <div className="flex lg:mt-10 md:mt-12 mt-12 flex-wrap">
+          <div className="mx-auto lg:mb-0 md:mb-0 mb-10">
+            <Image
+              layout="native"
+              width={304}
+              height={389}
+              src="/images/about/gert-omri.jpg"
+            />
+          </div>
+          <div className={`flex-1 text-lg px-10 lg:pr-0 ${s['founders-text']}`}>
+            <div className="flex items-center mb-4 text-aserto-grey-90 font-bold">
+              Gert Drapers, CTO
+              <Image
+                src="/images/about/linkedIn.svg"
+                className="ml-2"
+                layout="native"
+              />
+            </div>
+            <div className="flex items-center mb-4 text-aserto-grey-90 font-bold">
+              Omri Gazitt, CEO
+              <Image
+                src="/images/about/linkedIn.svg"
+                className="ml-2"
+                layout="native"
+              />
+            </div>
+            <div className={`text-aserto-grey-60 text-lg	mt-10 `}>
+              Omri and Gert have spent over 6 decades between them working on
+              developer products at tech giants like Microsoft, HP Cloud,
+              Splunk, and Hulu, as well as startups like NEON and Puppet.
+              <br />
+              <br />
+              They met at Microsoft while working on developer-facing products
+              like .NET, SQL Server, Visual Studio, Azure, and Active Directory.
+              Aserto is their fourth journey together, inspired by a question
+              they were both asking: "what would Active Directory look like in
+              the age of SaaS and Cloud?"
+            </div>
+          </div>
         </div>
         {/*<div className="grid gap-8 mx-auto mt-20 lg:grid-cols-2">*/}
         {/*  {page.founders?.map((founder, i) => (*/}
