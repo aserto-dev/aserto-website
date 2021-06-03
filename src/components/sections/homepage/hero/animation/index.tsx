@@ -40,14 +40,11 @@ const Animation = () => {
     })
 
     timeline.addLabel('start-sequence-1')
-    timeline.to(
-      '#policy',
-      {
-        delay: DURATION,
-        ease: 'back.out(1)',
-        autoAlpha: 1
-      }, 
-    )
+    timeline.to('#policy', {
+      delay: DURATION,
+      ease: 'back.out(1)',
+      autoAlpha: 1
+    })
     timeline.to(
       '#filterPolicy feGaussianBlur',
       {
@@ -190,34 +187,6 @@ const Animation = () => {
       '<'
     )
     timeline.addLabel('end-sequence-3')
-    timeline.addLabel('start-sequence-4')
-    // timeline.to(
-    //   '#policy',
-    //   {
-    //     ease: 'back.out(1)',
-    //     autoAlpha: 1
-    //   },
-    //   '<'
-    // )
-    // timeline.to(
-    //   '#filterPolicy feGaussianBlur',
-    //   {
-    //     attr: {
-    //       stdDeviation: 8
-    //     }
-    //   },
-    //   '<'
-    // )
-    // timeline.set(
-    //   '#filterPolicy > feColorMatrix:first-of-type',
-    //   {
-    //     attr: {
-    //       in: 'SourceAlpha'
-    //     }
-    //   },
-    //   '<'
-    // )
-    timeline.addLabel('end-sequence-4')
     timeline.addLabel('start-sequence-5')
     timeline.set(['#bubble1', '#bubble2'], {
       yPercent: 380,
@@ -483,7 +452,7 @@ const Animation = () => {
       },
       '<'
     )
-    
+
     timeline.addLabel('end-sequence-9')
     timeline.addLabel('start-sequence-10')
     timeline.to(
@@ -709,30 +678,6 @@ const Animation = () => {
       '<'
     )
     timeline.addLabel('end-sequence-11')
-    timeline.addLabel('start-sequence-12')
-    // timeline.to('#user', {
-    //   ease: 'back.out(1)',
-    //   autoAlpha: 1
-    // })
-    // timeline.to(
-    //   '#filterPolicy feGaussianBlur',
-    //   {
-    //     attr: {
-    //       stdDeviation: 8
-    //     }
-    //   },
-    //   '<'
-    // )
-    // timeline.set(
-    //   '#filterPolicy > feColorMatrix:first-of-type',
-    //   {
-    //     attr: {
-    //       in: 'SourceAlpha'
-    //     }
-    //   },
-    //   '<'
-    // )
-    timeline.addLabel('end-sequence-12')
     timeline.addLabel('start-sequence-13')
     timeline.set(['#bubble1', '#bubble2'], {
       yPercent: 380,
@@ -1294,7 +1239,7 @@ const Animation = () => {
       },
       '<'
     )
-    
+
     timeline.to('#backgroundBG', {
       fill: '#1C484A'
     })
