@@ -21,7 +21,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   }
 
   return (
-    <section className="relative pt-24 mx-auto">
+    <section className="relative pt-10 md:pt-16 lg:pt-24 mx-auto">
       <div className="pt-3 text-center" ref={ref}>
         <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:max-w-3xl lg:max-w-2xl max-w-xl mx-auto xl:text-5xl">
           {page.title}
@@ -29,10 +29,10 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
           {page.subtitle}
         </h2>
-        <div className="flex gap-4 mt-20 flex-wrap lg:flex-nowrap">
+        <div className="flex gap-4 lg:mt-20 md:mt-16 mt-10 flex-wrap lg:flex-nowrap">
           <div
             onClick={() => goToId('intro-1')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center ${s.section} ${s['lochivar-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/auth-easy-Pillar.svg"
@@ -46,7 +46,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
           <div
             onClick={() => goToId('intro-2')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center ${s.section} ${s['indigo-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['indigo-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
@@ -60,7 +60,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
           <div
             onClick={() => goToId('intro-3')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center ${s.section} ${s['plum-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['plum-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/gitops-pillar.svg"
@@ -74,7 +74,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="mt-20 md:mt-36 lg:mt-40">
           <Button>Request beta access</Button>
         </div>
         <div className="mt-24">

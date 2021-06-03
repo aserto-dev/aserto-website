@@ -7,10 +7,6 @@ import PageLayout from 'components/layout/page'
 // Sections
 import Hero from 'components/sections/homepage/hero'
 import Testimonials from 'components/sections/homepage/testimonials'
-<<<<<<< HEAD
-=======
-import TheProblem from 'components/sections/homepage/the-problem'
->>>>>>> 5a9aba1 (Add intro items)
 import Intro from 'components/sections/homepage/intro'
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
