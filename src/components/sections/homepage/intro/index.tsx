@@ -16,7 +16,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
             {page.theProblemSectionTitle}
           </h2>
         </div>
-        <div className="flex mt-32" id="intro-1">
+        <div className="flex mt-32 flex-wrap justify-center" id="intro-1">
           <svg
             width="324"
             height="324"
@@ -139,7 +139,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
               strokeWidth="1.6"
             />
           </svg>
-          <div className="flex-1 ml-20">
+          <div className="flex-1 lg:ml-20 mt-10 md:mt-auto lg:mt-auto">
             <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
               Authorization as easy as an API call
             </h2>
@@ -170,7 +170,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
         </div>
 
         <div className="flex mt-32" id="intro-2">
-          <div className="flex-1 mr-20">
+          <div className="flex-1 lg:mr-20 mt-10 md:mt-auto lg:mt-auto">
             <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
               Authorization as easy as an API call
             </h2>
@@ -432,7 +432,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
             />
           </svg>
 
-          <div className="flex-1 ml-20">
+          <div className="flex-1 lg:ml-20 mt-10 md:mt-auto lg:mt-auto">
             <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
               Authorization as easy as an API call
             </h2>

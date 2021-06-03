@@ -6,13 +6,16 @@
 
 
 .lochivar-gradient-background:hover {
+    border-style: solid;
     background: linear-gradient(0deg, rgba(18, 18, 18, 0.5) 0%, rgba(39, 127, 130, 0.4) 100% );
 }
 
 .indigo-gradient-background:hover {
+    border-style: solid;
     background: linear-gradient(0deg, rgba(18, 18, 18, 0) 0%, rgba(74, 146, 255, 0.4) 100% );
 }
 
 .plum-gradient-background:hover {
+    border-style: solid;
     background: linear-gradient(0deg, rgba(18, 18, 18, 0.5) 0%, rgba(167, 125, 255, 0.4) 100% );
 }

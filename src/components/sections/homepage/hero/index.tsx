@@ -29,10 +29,10 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
           {page.subtitle}
         </h2>
-        <div className="flex gap-4 mt-20 flex-wrap">
+        <div className="flex gap-4 mt-20 flex-wrap lg:flex-nowrap">
           <div
             onClick={() => goToId('intro-1')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 justify-center items-center ${s.section} ${s['lochivar-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center ${s.section} ${s['lochivar-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/auth-easy-Pillar.svg"
@@ -46,7 +46,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
           <div
             onClick={() => goToId('intro-2')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 justify-center items-center ${s.section} ${s['indigo-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center ${s.section} ${s['indigo-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
@@ -60,15 +60,15 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
           <div
             onClick={() => goToId('intro-3')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 justify-center items-center ${s.section} ${s['plum-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center ${s.section} ${s['plum-gradient-background']}`}
           >
             <Image
               src="/images/homepage/carrousel/gitops-pillar.svg"
               alt="auth easy icon"
-              width={178}
-              height={83}
+              width={141}
+              height={69}
             />
-            <h4 className="text-aserto-grey-90 text-md mt-2">
+            <h4 className="text-aserto-grey-90 text-md mt-4">
               Gitops workflow for plicy-as-code
             </h4>
           </div>
