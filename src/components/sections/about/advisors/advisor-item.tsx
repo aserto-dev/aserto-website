@@ -15,7 +15,7 @@ const ProfileItem = ({ linkedin, name, position, imageSrc }: Props) => (
   <Link href={linkedin}>
     <a className="flex flex-col items-center text-center">
       {imageSrc && (
-        <div className="flex overflow-hidden rounded-full">
+        <div className="flex overflow-hidden w-[100px] rounded-full">
           <Image
             className="object-cover"
             src={imageSrc}

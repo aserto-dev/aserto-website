@@ -29,7 +29,7 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
             {page.investorsSectionSubtitle}
           </p>
         )}
-        <div className="flex flex-wrap items-center justify-center mt-16 space-y-8 sm:space-y-0 sm:justify-between sm:flex-nowrap">
+        <div className="flex flex-wrap items-center justify-center mt-16 space-y-8 sm:space-x-8 sm:space-y-0 sm:justify-between sm:flex-nowrap">
           {page.investors?.map((investor, i) => {
             return (
               <a
@@ -38,6 +38,11 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
                 target="_blank"
                 key={i}
                 title={investor?.name ?? ''}
+                className="block"
+                style={{
+                  width:
+                    investor?.image?.asset?.metadata?.dimensions?.width ?? 0
+                }}
               >
                 <Image
                   src={investor?.image?.asset?.url ?? ''}

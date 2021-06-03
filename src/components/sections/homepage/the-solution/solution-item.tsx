@@ -29,7 +29,7 @@ const SolutionItem = ({ isInverted, data }: Props) => {
         </div>
 
         <div
-          className={clsx('mt-0 w-full sm:mt-16 lg:mt-0', {
+          className={clsx('mb-8 w-full sm:mt-16 lg:mb-0 lg:mt-0', {
             'col-start-1': isInverted
           })}
         >

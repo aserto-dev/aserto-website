@@ -20,7 +20,7 @@ const OurValues = ({
 }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 pb-0 mx-auto sm:py-20">
+    <section className="relative w-10/12 py-20 mx-auto">
       <div className="relative z-10 px-0 text-center" ref={section}>
         <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
           {title}
@@ -31,7 +31,7 @@ const OurValues = ({
         />
         {features && (
           <div
-            className={clsx('relative grid gap-4 mx-auto mt-20 lg:gap-8', {
+            className={clsx('relative grid gap-10 mx-auto mt-20 lg:gap-8', {
               'lg:grid-cols-3': cols === 3 || !cols,
               'lg:grid-cols-4': cols === 4
             })}
