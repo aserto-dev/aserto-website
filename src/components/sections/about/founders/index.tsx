@@ -3,7 +3,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 import { AboutPageFragment } from 'lib/sanity/generated'
 
 // Components
-import FounderItem from './founder-item'
+import Image from '../../../primitives/image'
 
 const Founders = ({ page }: { page: AboutPageFragment }) => {
   const [section] = useFadeInBottom()
@@ -18,17 +18,26 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
             {page.foundersSectionSubtitle}
           </p>
         </div>
-        <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-2">
-          {page.founders?.map((founder, i) => (
-            <FounderItem
-              name={founder?.name ?? ''}
-              position={founder?.position ?? ''}
-              image={founder?.avatar?.asset?.url ?? ''}
-              linkedin={founder?.linkedIn ?? ''}
-              key={i}
-            />
-          ))}
+        <div className="flex mt-12">
+          <Image
+            layout="native"
+            width={304}
+            height={389}
+            src="/images/about/gert-omri.jpg"
+          />
+          {/*<div className="flex-1 ml-10">leke</div>*/}
         </div>
+        {/*<div className="grid gap-8 mx-auto mt-20 lg:grid-cols-2">*/}
+        {/*  {page.founders?.map((founder, i) => (*/}
+        {/*    <FounderItem*/}
+        {/*      name={founder?.name ?? ''}*/}
+        {/*      position={founder?.position ?? ''}*/}
+        {/*      image={founder?.avatar?.asset?.url ?? ''}*/}
+        {/*      linkedin={founder?.linkedIn ?? ''}*/}
+        {/*      key={i}*/}
+        {/*    />*/}
+        {/*  ))}*/}
+        {/*</div>*/}
       </div>
     </section>
   )

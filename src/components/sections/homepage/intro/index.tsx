@@ -58,7 +58,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
         </div>
 
         <div
-          className="flex mt-32 flex-wrap justify-center flex-col-reverse	md:flex-row lg:flex-row"
+          className="flex mt-32 flex-wrap justify-center flex-col-reverse md:flex-row lg:flex-row"
           id="intro-2"
         >
           <div className="flex-1 lg:mr-20 mt-10 md:mt-auto lg:mt-auto">
