@@ -8,7 +8,7 @@ import Button from 'components/primitives/button'
 import { HomePageFragment } from 'lib/sanity/generated'
 import Animation from './animation'
 import s from './hero.module.css'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   const [ref] = useFadeInBottom()
@@ -29,12 +29,13 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
           {page.subtitle}
         </h2>
-        <div className="flex gap-4 lg:mt-20 md:mt-16 mt-10 flex-wrap lg:flex-nowrap">
+        <div className="flex gap-4 lg:mt-10 md:mt-10 mt-8 flex-wrap lg:flex-nowrap">
           <div
             onClick={() => goToId('intro-1')}
             className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
           >
             <Image
+              layout="native"
               src="/images/homepage/carrousel/auth-easy-Pillar.svg"
               alt="auth easy icon"
               width={76}
@@ -49,10 +50,11 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['indigo-gradient-background']}`}
           >
             <Image
+              layout="native"
               src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
               alt="enterprise ready icon"
               width={71}
-              height={83}
+              height={84}
             />
             <h4 className="text-aserto-grey-90 text-md mt-2">
               Enterprise-ready permissions and RBAC
@@ -63,10 +65,11 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['plum-gradient-background']}`}
           >
             <Image
+              layout="native"
               src="/images/homepage/carrousel/gitops-pillar.svg"
               alt="auth easy icon"
               width={141}
-              height={69}
+              height={75}
             />
             <h4 className="text-aserto-grey-90 text-md mt-4">
               Gitops workflow for plicy-as-code
@@ -74,7 +77,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
         </div>
 
-        <div className="mt-20 md:mt-36 lg:mt-40">
+        <div className="mt-12 md:mt-16 lg:mt-20">
           <Button>Request beta access</Button>
         </div>
         <div className="mt-24">

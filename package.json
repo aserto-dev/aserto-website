@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start && next export",
+    "export": "next export",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js --fix",
     "gql-codegen": "graphql-codegen --config gql-codegen.yml -r dotenv/config"
