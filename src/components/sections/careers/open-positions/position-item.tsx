@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 // Primitives
 import Link from 'components/primitives/link'
@@ -12,7 +12,9 @@ type Props = {
 const PositionItem = ({ data }: Props) => (
   <div className="flex flex-col justify-between p-6 overflow-hidden border rounded border-aserto-grey-10 h-96">
     <div>
-      <Image src={data.icon?.asset?.url ?? ''} width="48" height="48" />
+      <div className="w-12">
+        <Image src={data.icon?.asset?.url ?? ''} width="48" height="48" />
+      </div>
       <p className="my-6 text-2xl font-medium text-aserto-grey-90 font-roboto">
         {data.title}
       </p>
@@ -28,7 +30,7 @@ const PositionItem = ({ data }: Props) => (
       <div className="border-t border-aserto-grey-20">
         <Link
           href={`/careers/${data.slug?.current}`}
-          className="flex items-center pt-6 font-medium uppercase text-base font-roboto text-aserto-lochivar-accent-40 hover:underline transition-all duration-150"
+          className="flex items-center pt-6 text-base font-medium uppercase transition-all duration-150 font-roboto text-aserto-lochivar-accent-40 hover:underline"
         >
           VIEW POSITION
         </Link>

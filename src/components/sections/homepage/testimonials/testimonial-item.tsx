@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -28,12 +28,14 @@ const TestimonialItem = ({
         </div>
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center">
-            <Image
-              src={profileimageSrc}
-              alt={profileName}
-              width={80}
-              height={80}
-            />
+            <div className="w-20">
+              <Image
+                src={profileimageSrc}
+                alt={profileName}
+                width={80}
+                height={80}
+              />
+            </div>
             <p className="ml-4 font-bold text-aserto-grey-90">
               {profileName} <br />{' '}
               <span className="font-normal text-aserto-grey-60">

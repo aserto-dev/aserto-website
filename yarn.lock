@@ -1532,6 +1532,15 @@
     "@radix-ui/react-polymorphic" "0.0.11"
     "@radix-ui/react-primitive" "0.0.13"
 
+"@radix-ui/react-aspect-ratio@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-aspect-ratio/-/react-aspect-ratio-0.0.13.tgz#62867954c977f22ac0cefedf739e66d1c1427bb7"
+  integrity sha512-cFEu6CBV/qSPdS4DWCGmGpFbK5xgwSr66PUI1BG/yeRQylJw4RZX2uIST/f3WZeIbmGU4q8BTQP+93UFPU3EOw==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-polymorphic" "0.0.11"
+    "@radix-ui/react-primitive" "0.0.13"
+
 "@radix-ui/react-collection@0.0.12":
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-collection/-/react-collection-0.0.12.tgz#5cd09312cdec34fdbbe1d31affaba69eb768e342"

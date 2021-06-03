@@ -1,7 +1,7 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { BlockContent } from 'components/primitives/block-content'
 import { CareersPageFragment } from 'lib/sanity/generated'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 const Hero = ({ page }: { page: CareersPageFragment }) => {
   const [ref] = useFadeInBottom()
@@ -19,11 +19,21 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
           {page.facts?.map((fact, i) => {
             return (
               <div key={i}>
-                <Image
-                  src={fact?.icon?.asset?.url ?? '/404'}
-                  width={fact?.icon?.asset?.metadata?.dimensions?.width ?? 0}
-                  height={fact?.icon?.asset?.metadata?.dimensions?.height ?? 0}
-                />
+                <div
+                  style={{
+                    maxWidth:
+                      fact?.icon?.asset?.metadata?.dimensions?.width ?? 0
+                  }}
+                  className="mx-auto"
+                >
+                  <Image
+                    src={fact?.icon?.asset?.url ?? '/404'}
+                    width={fact?.icon?.asset?.metadata?.dimensions?.width ?? 0}
+                    height={
+                      fact?.icon?.asset?.metadata?.dimensions?.height ?? 0
+                    }
+                  />
+                </div>
                 <p className="mt-2 font-semibold text-aserto-grey-90 text-[22px]">
                   {fact?.title}
                 </p>

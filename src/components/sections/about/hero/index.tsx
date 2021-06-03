@@ -2,7 +2,7 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Primitives
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 import { AboutPageFragment } from 'lib/sanity/generated'
 
 // Styles

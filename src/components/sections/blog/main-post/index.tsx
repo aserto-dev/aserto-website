@@ -1,5 +1,5 @@
 import { isMobileOnly } from 'react-device-detect'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'

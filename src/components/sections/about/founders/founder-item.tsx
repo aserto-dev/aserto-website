@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 // Primitives
 import Link from 'components/primitives/link'
@@ -32,7 +32,6 @@ const FounderItem = ({ image, linkedin, name, position }: Props) => {
               <Image
                 alt={name}
                 height={128}
-                layout="responsive"
                 objectFit="cover"
                 src={image}
                 width={128}

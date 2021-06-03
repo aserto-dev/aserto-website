@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 // Primitives
 import Link from 'components/primitives/link'
@@ -30,7 +30,6 @@ const ProfileItem = ({
           width={80}
           height={80}
           objectFit="cover"
-          layout="responsive"
         />
       </div>
       <div>
@@ -44,7 +43,7 @@ const ProfileItem = ({
     <div className="border-t border-aserto-grey-20">
       <Link
         href={linkedin}
-        className="flex items-center pt-6 font-medium text-white uppercase"
+        className="flex items-center pt-6 text-base font-medium uppercase transition-all duration-150 font-roboto text-aserto-lochivar-accent-40 hover:underline"
       >
         <LinkedinIcon className="mr-4" />
         VIEW PROFILE

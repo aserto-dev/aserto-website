@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 
 type Props = {
   title: string
@@ -7,8 +7,10 @@ type Props = {
 
 const BenefitItem = ({ icon, title }: Props) => {
   return (
-    <div className="relative h-48 text-center sm:h-auto">
-      <Image src={icon} alt="benefit" width={48} height={48} />
+    <div className="relative text-center sm:h-auto">
+      <div className="w-12 mx-auto">
+        <Image src={icon} alt="benefit" width={48} height={48} />
+      </div>
       <h5 className="mt-8 mb-5 text-1.5xl tracking-tight text-aserto-grey-90">
         {title}
       </h5>

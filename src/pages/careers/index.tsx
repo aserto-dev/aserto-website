@@ -10,7 +10,7 @@ import OurValues from 'components/sections/careers/our-values'
 import Benefits from 'components/sections/careers/benefits'
 import OpenPositions from 'components/sections/careers/open-positions'
 import Container from 'components/layout/container'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
 
@@ -27,12 +27,11 @@ const Careers = ({
       }}
     >
       <div className="relative">
-        <div className="absolute top-0 left-0">
+        <div className="absolute top-0 left-0 right-0">
           <Image
             src="/images/careers/background.png"
             width={3840}
             height={1920}
-            priority
             loading="eager"
           />
         </div>

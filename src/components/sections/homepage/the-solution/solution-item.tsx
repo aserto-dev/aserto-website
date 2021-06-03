@@ -1,6 +1,6 @@
 import { useFadeInBottom } from 'hooks/use-gsap'
 import clsx from 'clsx'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 import { SectionBlockFragment } from 'lib/sanity/generated'
 import { BlockContent } from 'components/primitives/block-content'
 
@@ -29,12 +29,18 @@ const SolutionItem = ({ isInverted, data }: Props) => {
         </div>
 
         <div
-          className={clsx('mt-0 sm:mt-16 lg:mt-0', {
+          className={clsx('mt-0 w-full sm:mt-16 lg:mt-0', {
             'col-start-1': isInverted
           })}
         >
           <div className="relative w-full">
-            <div className="overflow-hidden rounded">
+            <div
+              className="mx-auto overflow-hidden rounded"
+              style={{
+                maxWidth: data.image?.asset?.metadata?.dimensions?.width ?? 488,
+                width: '100%'
+              }}
+            >
               <Image
                 src={data.image?.asset?.url ?? '/404'}
                 alt={data.image?.alt ?? ''}

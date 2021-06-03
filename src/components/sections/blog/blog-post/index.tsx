@@ -2,7 +2,7 @@ import Link from 'components/primitives/link'
 import { BlockContent } from 'components/primitives/block-content'
 import { PostFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
-import Image from 'next/image'
+import Image from 'components/primitives/image'
 import s from './blog-post.module.scss'
 import clsx from 'clsx'
 
@@ -26,11 +26,11 @@ const Post = ({ post }: Props) => {
         </h1>
         <div className="flex items-start justify-between mt-24 mb-16 sm:mt-32 pb-14">
           <div className="relative flex items-center flex-grow w-4/12">
-            <div className="flex overflow-hidden rounded-full">
+            <div className="flex w-20 overflow-hidden rounded-full">
               <Image
                 width="80"
                 height="80"
-                src={author?.image?.asset?.url ?? '/404'}
+                src={author?.image?.asset?.url ?? ''}
                 alt={author?.name + ' avatar'}
                 objectFit="cover"
               />
