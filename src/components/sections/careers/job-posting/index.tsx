@@ -11,7 +11,7 @@ type Props = {
 
 const JobPosting = ({ posting }: Props) => {
   return (
-    <section className="relative w-10/12 mx-auto pt-28 mb-52">
+    <section className="relative w-full mx-auto sm:w-10/12 pt-28 mb-52">
       <div>
         <Link
           href="/careers"
@@ -19,13 +19,13 @@ const JobPosting = ({ posting }: Props) => {
         >
           Back to listing
         </Link>
-        <h1 className="text-5xl leading-none tracking-tighter text-white">
+        <h1 className="text-4.5xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-5xl">
           {posting.title}
         </h1>
       </div>
       <BlockContent
         blocks={posting.bodyRaw}
-        className={clsx('mt-20', s.body)}
+        className={clsx('mt-14 sm:mt-20', s.body)}
       />
       {posting.leverHref && (
         <a href={posting.leverHref} target="_blank" rel="noopener">
