@@ -66,10 +66,11 @@ const Post = ({ post }: Props) => {
       </div>
       <div className="w-full mx-auto sm:w-10/12">
         <Image
-          width="1216"
-          height="600"
-          src={post.mainImage?.asset?.url ?? '/404'}
           alt={post.mainImage?.alt ?? 'Post cover'}
+          height="600"
+          objectFit="cover"
+          src={post.mainImage?.asset?.url ?? '/404'}
+          width="1216"
         />
       </div>
       <BlockContent
