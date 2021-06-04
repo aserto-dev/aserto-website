@@ -13,7 +13,7 @@ import Button from 'components/primitives/button'
 
 // Styles
 import s from './newsletter.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type NewsletterProps = {
   mailchimpEndpoint: string
@@ -29,7 +29,28 @@ const NewsletterSection = ({
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
-
+  useEffect(() => {
+    ;(function () {
+      var js,
+        q,
+        d = document,
+        gi = d.getElementById,
+        ce = d.createElement,
+        gt = d.getElementsByTagName,
+        id = 'typef_orm_share',
+        b = 'https://embed.typeform.com/'
+      if (!gi.call(d, id)) {
+        console.log(d)
+        js = ce.call(d, 'script')
+        js.id = id
+        //@ts-ignore
+        js.src = b + 'embed.js'
+        q = gt.call(d, 'script')[0]
+        //@ts-ignore
+        q.parentNode.insertBefore(js, q)
+      }
+    })()
+  }, [])
   return (
     <section
       className="relative z-10 mb-32 bg-aserto-black"
@@ -98,7 +119,14 @@ const NewsletterSection = ({
                       className="mt-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
                     >
                       {clearErr === '' ? (
-                        'Let’s go!'
+                        <a
+                          className="typeform-share button"
+                          href="https://form.typeform.com/to/RMHYXKD5?typeform-medium=embed-snippet"
+                          data-mode="popup"
+                          data-size="100"
+                        >
+                          Let’s go!
+                        </a>
                       ) : status ? (
                         status === 'sending' ? (
                           <svg
@@ -174,6 +202,7 @@ const NewsletterSection = ({
                       ? message
                       : ''}
                   </p>
+                  {/*{status === 'success' ? showTypeformModal() : null}*/}
                 </form>
               )}
             />
