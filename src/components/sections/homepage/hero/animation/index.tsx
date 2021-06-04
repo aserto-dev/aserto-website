@@ -764,8 +764,15 @@ const Animation = () => {
     })
     timeline.addLabel('end-sequence-14')
     timeline.addLabel('start-sequence-15')
+    timeline.to(
+      '#authorization',
+      {
+        delay: 2,
+        autoAlpha: 1
+      }, 
+    )
     timeline.to('#reactBg', {
-      delay: 2,
+      delay: DURATION,
       fill: '#1B283D'
     })
     timeline.to(
@@ -800,13 +807,7 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(
-      '#authorization',
-      {
-        autoAlpha: 1
-      },
-      '<'
-    )
+    
     timeline.addLabel('end-sequence-15')
     timeline.addLabel('start-sequence-16')
     timeline.to('#arrow1', {
@@ -1048,13 +1049,6 @@ const Animation = () => {
       duration: DURATION * 2
     })
     timeline.to(
-      '#authorization',
-      {
-        autoAlpha: 0
-      },
-      '<'
-    )
-    timeline.to(
       '#reactBg',
       {
         fill: '#1B283D'
@@ -1128,14 +1122,24 @@ const Animation = () => {
       },
       '<'
     )
+    timeline.to(['#arrow1', '#arrow2', '#arrow3', '#arrow4'], {
+      autoAlpha: 0,
+      duration: DURATION * 2
+    }, '<')
+    timeline.to(
+      '#authorization',
+      {
+        autoAlpha: 0
+      },
+    )
     timeline.addLabel('end-sequence-19')
     timeline.addLabel('start-sequence-20')
     timeline.to(
       '#backgroundBG',
       {
+        delay: 2,
         fill: '#237477'
-      },
-      '<'
+      },      
     )
     timeline.to(
       '#backgroundStroke',
@@ -1254,10 +1258,7 @@ const Animation = () => {
       delay: DURATION,
       autoAlpha: 0
     })
-    timeline.to(['#arrow1', '#arrow2', '#arrow3', '#arrow4'], {
-      autoAlpha: 0,
-      duration: DURATION * 2
-    })
+    
     timeline.addLabel('end-sequence-20')
 
     timeline.timeScale(0.9).play()
