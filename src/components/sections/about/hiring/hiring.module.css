@@ -4,19 +4,17 @@
 
 .background:after {
   position: absolute;
+  z-index: 5;
   top: 0;
   left: -7.9vw;
 
-  z-index: 5;
-
-  background-image: url('/images/about/bg-hiring.png');
-  background-repeat: no-repeat;
-
   width: 100vw;
-
   height: 100%;
 
   content: '';
+
+  background-image: url('/images/about/bg-hiring.png');
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 800px) {
@@ -28,7 +26,6 @@
 @media screen and (min-width: 1441px) {
   .background:after {
     left: -20%;
-    top: 8%;
   }
 }
 
@@ -38,8 +35,8 @@
   }
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 2000px) {
   .background:after {
-    left: -65%;
+    left: -18%;
   }
 }

@@ -15,7 +15,7 @@ const Hiring = ({ page }: { page: AboutPageFragment }) => {
   return (
     <section
       className={clsx(
-        'relative mx-auto h-screen flex items-center justify-center',
+        'relative mx-auto h-[60vh] flex items-center justify-center',
         s.background
       )}
     >
