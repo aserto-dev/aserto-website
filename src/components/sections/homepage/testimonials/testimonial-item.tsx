@@ -23,7 +23,7 @@ const TestimonialItem = ({
         className="relative z-10 w-full p-10 mx-auto border sm:w-8/12 bg-aserto-black border-aserto-grey-10 rounded-2xl"
         ref={section}
       >
-        <div className="mb-12 text-2xl leading-relaxed text-white font-roboto">
+        <div className="mb-12 leading-relaxed text-white sm:text-2xl font-roboto">
           {quote}
         </div>
         <div className="flex items-center justify-between w-full">

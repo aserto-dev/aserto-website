@@ -143,7 +143,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <Menu show={open} />
+      <Menu show={open} closeMenu={() => setOpen(false)} />
     </header>
   )
 }

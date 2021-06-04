@@ -12,11 +12,12 @@ import s from './menu.module.css'
 import { headerLinks } from '..'
 import { HeaderDropdownLinkMobile } from '../header-dropdown-link'
 
-type Menu = {
+type MenuProps = {
   show: boolean
+  closeMenu: () => void
 }
 
-const Menu = ({ show = false }: Menu) => {
+const Menu = ({ show = false, closeMenu }: MenuProps) => {
   const year = useMemo(() => {
     return new Date().getUTCFullYear()
   }, [])
@@ -25,10 +26,9 @@ const Menu = ({ show = false }: Menu) => {
       className={clsx(
         'fixed left-0 z-20 w-full px-6 py-3 right-1 bg-aserto-grey-5 transition-opacity duration-300',
         s.menu,
-        {
-          'opacity-0 invisible': !show
-        }
+        { 'opacity-0 pointer-events-none': !show }
       )}
+      aria-hidden={!show}
     >
       <nav className="w-full mt-6">
         <ul className="w-full text-center space-y-7">
@@ -36,7 +36,11 @@ const Menu = ({ show = false }: Menu) => {
             if (l.label === 'Product' || l.label === 'Developers') return
             return (
               <li key={i} className="pb-7">
-                <HeaderDropdownLinkMobile link={l} id={`mobile-${i}`} />
+                <HeaderDropdownLinkMobile
+                  link={l}
+                  id={`mobile-${i}`}
+                  onSelect={closeMenu}
+                />
               </li>
             )
           })}
