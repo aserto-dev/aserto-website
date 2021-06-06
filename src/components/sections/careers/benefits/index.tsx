@@ -7,16 +7,16 @@ import BenefitItem from './benefit-item'
 const Benefits = ({ page }: { page: CareersPageFragment }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 mx-auto pb-36 sm:pb-96 py-36">
-      <div className="relative z-10 px-0 text-center" ref={section}>
-        <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
+    <section className="relative w-10/12 mx-auto py-36">
+      <div className="relative z-10 px-0 sm:text-center" ref={section}>
+        <h2 className="mb-10 text-5xl tracking-tight text-center text-aserto-grey-90">
           {page.perksSectionTitle}
         </h2>
         <BlockContent
           className="mx-auto text-aserto-grey-60 text-1.5xl font-roboto tracking-tight"
           blocks={page.perksSectionSubtitleRaw}
         />
-        <div className="relative grid gap-4 mx-auto mt-20 lg:gap-8 lg:grid-cols-4">
+        <div className="relative grid mx-auto mt-20 gap-14 lg:grid-cols-4">
           {page.perks?.map((perk, i) => (
             <BenefitItem
               title={perk?.title ?? ''}

@@ -11,7 +11,7 @@ const BenefitItem = ({ icon, title }: Props) => {
       <div className="w-12 mx-auto">
         <Image src={icon} alt="benefit" width={48} height={48} />
       </div>
-      <h5 className="mt-8 mb-5 text-1.5xl tracking-tight text-aserto-grey-90">
+      <h5 className="mt-8 text-1.5xl tracking-tight text-aserto-grey-90">
         {title}
       </h5>
     </div>

@@ -21,8 +21,8 @@ const OurValues = ({
   const [section] = useFadeInBottom()
   return (
     <section className="relative w-10/12 py-20 mx-auto">
-      <div className="relative z-10 px-0 text-center" ref={section}>
-        <h2 className="mb-10 text-5xl tracking-tight text-aserto-grey-90">
+      <div className="relative z-10 px-0 sm:text-center" ref={section}>
+        <h2 className="mb-10 text-5xl tracking-tight text-center text-aserto-grey-90">
           {title}
         </h2>
         <BlockContent
