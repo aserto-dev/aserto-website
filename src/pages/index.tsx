@@ -40,8 +40,8 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Hero page={page} />
         <Intro page={page} />
         <TheProblem page={page} />
+        <Testimonials page={page} />
       </Container>
-      <Testimonials page={page} />
     </PageLayout>
   )
 }
