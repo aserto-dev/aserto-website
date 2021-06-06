@@ -122,11 +122,11 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           id="btn-scroll"
           className={`mt-12 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
         >
-          <Button>Request beta access</Button>
+          <Button>{page.ctaLabel}</Button>
         </div>
 
         <div className={`mt-12 md:mt-16 lg:mt-20`}>
-          <Button>Request beta access</Button>
+          <Button>{page.ctaLabel}</Button>
         </div>
         <div className="mt-24">
           <svg

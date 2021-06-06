@@ -27,7 +27,7 @@
 
 .btn-container-sticky {
     position: fixed;
-    top: 36rem;
+    bottom: 0;
     z-index: 4;
     left: 0;
     background-color: rgba(0,0,0, .6);
