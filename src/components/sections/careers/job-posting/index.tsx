@@ -11,7 +11,7 @@ type Props = {
 
 const JobPosting = ({ posting }: Props) => {
   return (
-    <section className="relative w-full mx-auto sm:w-10/12 pt-28 mb-52">
+    <section className="relative w-full mx-auto lg:w-10/12 pt-28 mb-52">
       <div>
         <Link
           href="/careers"

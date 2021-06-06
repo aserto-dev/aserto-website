@@ -7,7 +7,7 @@ import BenefitItem from './benefit-item'
 const Benefits = ({ page }: { page: CareersPageFragment }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 mx-auto py-36">
+    <section className="relative mx-auto lg:w-10/12 py-36">
       <div className="relative z-10 px-0 sm:text-center" ref={section}>
         <h2 className="mb-10 text-5xl tracking-tight text-center text-aserto-grey-90">
           {page.perksSectionTitle}

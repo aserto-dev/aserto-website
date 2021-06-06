@@ -25,7 +25,7 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
           {page.investorsSectionTitle}
         </h2>
         {page.investorsSectionSubtitle && (
-          <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12">
+          <p className="max-w-[800px] mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto">
             {page.investorsSectionSubtitle}
           </p>
         )}

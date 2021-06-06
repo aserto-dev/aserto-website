@@ -14,7 +14,7 @@ const Post = ({ post }: Props) => {
   const author = post.authors?.[0]?.author
   return (
     <section className="relative mx-auto pt-28 mb-52">
-      <div className="w-full mx-auto sm:w-10/12">
+      <div className="w-full mx-auto lg:w-10/12">
         <Link
           href="/blog"
           className="inline-block mb-12 text-aserto-grey-60 font-roboto"
@@ -64,7 +64,7 @@ const Post = ({ post }: Props) => {
           </p>
         </div>
       </div>
-      <div className="w-full mx-auto sm:w-10/12">
+      <div className="w-full mx-auto lg:w-10/12">
         <Image
           alt={post.mainImage?.alt ?? 'Post cover'}
           height="600"

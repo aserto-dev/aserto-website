@@ -20,7 +20,7 @@ const OurValues = ({
 }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="relative w-10/12 py-20 mx-auto">
+    <section className="relative py-20 mx-auto lg:w-10/12">
       <div className="relative z-10 px-0 sm:text-center" ref={section}>
         <h2 className="mb-10 text-5xl tracking-tight text-center text-aserto-grey-90">
           {title}

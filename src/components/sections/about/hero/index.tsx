@@ -27,7 +27,7 @@ const Hero = ({ page }: { page: AboutPageFragment }) => {
           {page.title}
         </h1>
         <BlockContent
-          className="w-full mx-auto mt-5 text-base text-left md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl sm:w-10/12 font-roboto"
+          className="w-full mx-auto mt-5 text-base text-left md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl lg:w-10/12 font-roboto"
           blocks={page.subtitleRaw}
         />
       </div>
