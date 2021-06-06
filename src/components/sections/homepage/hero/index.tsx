@@ -9,9 +9,26 @@ import { HomePageFragment } from 'lib/sanity/generated'
 import Animation from './animation'
 import s from './hero.module.css'
 import Image from 'components/primitives/image'
+import { useEffect } from 'react'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   const [ref] = useFadeInBottom()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition =
+        window.scrollY || document.getElementsByTagName('html')[0].scrollTop
+      if (scrollPosition > 222) {
+        document!.getElementById('btn-scroll')!.style!.opacity = '0'
+      } else if (scrollPosition < 296) {
+        document!.getElementById('btn-scroll')!.style!.opacity = '1'
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const goToId = (id: string) => {
     const elmnt = document.getElementById(id)
@@ -29,7 +46,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
           {page.subtitle}
         </h2>
-        <div className="grid grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
+        <div className="grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
           <div
             onClick={() => goToId('intro-1')}
             className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
@@ -101,7 +118,14 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 lg:mt-20">
+        <div
+          id="btn-scroll"
+          className={`mt-12 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
+        >
+          <Button>Request beta access</Button>
+        </div>
+
+        <div className={`mt-12 md:mt-16 lg:mt-20`}>
           <Button>Request beta access</Button>
         </div>
         <div className="mt-24">
