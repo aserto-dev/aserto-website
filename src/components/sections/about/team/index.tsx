@@ -10,7 +10,7 @@ const Team = ({ page }: { page: AboutPageFragment }) => {
 
   if (!page.teamSectionEnabled) return null
   return (
-    <section className="mb-36 sm:mb-56">
+    <section className="mt-36 sm:mt-56">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
@@ -23,7 +23,13 @@ const Team = ({ page }: { page: AboutPageFragment }) => {
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
           {page.team?.map((member, i) => {
             if (!member) return null
-            return <ProfileItem data={member} key={i} />
+            return (
+              <ProfileItem
+                withImage={!!page.membersWithImage}
+                data={member}
+                key={i}
+              />
+            )
           })}
         </div>
       </div>

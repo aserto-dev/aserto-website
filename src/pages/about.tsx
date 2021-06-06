@@ -27,9 +27,9 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <CustomHead />
       <Hero page={page} />
       <Founders page={page} />
-      <Team page={page} />
       <Investors page={page} />
       <Advisors page={page} />
+      <Team page={page} />
       <Hiring page={page} />
     </PageLayout>
   )

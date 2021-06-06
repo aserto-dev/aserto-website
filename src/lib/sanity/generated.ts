@@ -42,10 +42,6 @@ export type About = Document & {
   foundersSectionTitle?: Maybe<Scalars['String']>
   foundersSectionSubtitle?: Maybe<Scalars['String']>
   founders?: Maybe<Array<Maybe<FounderBlock>>>
-  teamSectionEnabled?: Maybe<Scalars['Boolean']>
-  teamSectionTitle?: Maybe<Scalars['String']>
-  teamSectionSubtitle?: Maybe<Scalars['String']>
-  team?: Maybe<Array<Maybe<MemberBlock>>>
   investorsSectionTitle?: Maybe<Scalars['String']>
   investorsSectionSubtitle?: Maybe<Scalars['String']>
   investors?: Maybe<Array<Maybe<InvestorBlock>>>
@@ -53,6 +49,11 @@ export type About = Document & {
   angelsSectionSubtitle?: Maybe<Scalars['String']>
   angelsWithImage?: Maybe<Scalars['Boolean']>
   angels?: Maybe<Array<Maybe<FounderBlock>>>
+  teamSectionEnabled?: Maybe<Scalars['Boolean']>
+  teamSectionTitle?: Maybe<Scalars['String']>
+  teamSectionSubtitle?: Maybe<Scalars['String']>
+  membersWithImage?: Maybe<Scalars['Boolean']>
+  team?: Maybe<Array<Maybe<MemberBlock>>>
   hiringSectionTitle?: Maybe<Scalars['String']>
   hiringSectionLinkLabel?: Maybe<Scalars['String']>
   hiringSectionLinkHref?: Maybe<Scalars['String']>
@@ -70,14 +71,15 @@ export type AboutFilter = {
   title?: Maybe<StringFilter>
   foundersSectionTitle?: Maybe<StringFilter>
   foundersSectionSubtitle?: Maybe<StringFilter>
-  teamSectionEnabled?: Maybe<BooleanFilter>
-  teamSectionTitle?: Maybe<StringFilter>
-  teamSectionSubtitle?: Maybe<StringFilter>
   investorsSectionTitle?: Maybe<StringFilter>
   investorsSectionSubtitle?: Maybe<StringFilter>
   angelsSectionTitle?: Maybe<StringFilter>
   angelsSectionSubtitle?: Maybe<StringFilter>
   angelsWithImage?: Maybe<BooleanFilter>
+  teamSectionEnabled?: Maybe<BooleanFilter>
+  teamSectionTitle?: Maybe<StringFilter>
+  teamSectionSubtitle?: Maybe<StringFilter>
+  membersWithImage?: Maybe<BooleanFilter>
   hiringSectionTitle?: Maybe<StringFilter>
   hiringSectionLinkLabel?: Maybe<StringFilter>
   hiringSectionLinkHref?: Maybe<StringFilter>
@@ -93,14 +95,15 @@ export type AboutSorting = {
   title?: Maybe<SortOrder>
   foundersSectionTitle?: Maybe<SortOrder>
   foundersSectionSubtitle?: Maybe<SortOrder>
-  teamSectionEnabled?: Maybe<SortOrder>
-  teamSectionTitle?: Maybe<SortOrder>
-  teamSectionSubtitle?: Maybe<SortOrder>
   investorsSectionTitle?: Maybe<SortOrder>
   investorsSectionSubtitle?: Maybe<SortOrder>
   angelsSectionTitle?: Maybe<SortOrder>
   angelsSectionSubtitle?: Maybe<SortOrder>
   angelsWithImage?: Maybe<SortOrder>
+  teamSectionEnabled?: Maybe<SortOrder>
+  teamSectionTitle?: Maybe<SortOrder>
+  teamSectionSubtitle?: Maybe<SortOrder>
+  membersWithImage?: Maybe<SortOrder>
   hiringSectionTitle?: Maybe<SortOrder>
   hiringSectionLinkLabel?: Maybe<SortOrder>
   hiringSectionLinkHref?: Maybe<SortOrder>
@@ -1778,6 +1781,7 @@ export type AboutPageFragment = { __typename?: 'About' } & Pick<
   | 'teamSectionEnabled'
   | 'teamSectionTitle'
   | 'teamSectionSubtitle'
+  | 'membersWithImage'
   | 'investorsSectionTitle'
   | 'investorsSectionSubtitle'
   | 'angelsSectionTitle'
@@ -2106,6 +2110,7 @@ export const AboutPageFragmentDoc = gql`
     teamSectionEnabled
     teamSectionTitle
     teamSectionSubtitle
+    membersWithImage
     team {
       ...Member
     }

@@ -10,20 +10,23 @@ import { MemberFragment } from 'lib/sanity/generated'
 
 type Props = {
   data: MemberFragment
+  withImage: boolean
 }
 
-const ProfileItem = ({ data }: Props) => (
+const ProfileItem = ({ data, withImage }: Props) => (
   <div className="flex flex-col p-6 overflow-hidden border rounded border-aserto-grey-10">
     <div className="flex items-center">
-      <div className="w-20 h-20 mr-6">
-        <Image
-          src={data.avatar?.asset?.url ?? ''}
-          alt={data.avatar?.alt ?? data.name ?? 'avatar'}
-          width={80}
-          height={80}
-          objectFit="cover"
-        />
-      </div>
+      {withImage && (
+        <div className="w-20 h-20 mr-6 overflow-hidden rounded-full">
+          <Image
+            src={data.avatar?.asset?.url ?? ''}
+            alt={data.avatar?.alt ?? data.name ?? 'avatar'}
+            width={80}
+            height={80}
+            objectFit="cover"
+          />
+        </div>
+      )}
       <div>
         <p className="text-white font-roboto">{data.name}</p>
         <p className="text-aserto-grey-60 font-roboto">{data.position}</p>

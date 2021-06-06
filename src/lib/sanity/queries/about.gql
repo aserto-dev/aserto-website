@@ -36,6 +36,7 @@ fragment AboutPage on About {
   teamSectionEnabled
   teamSectionTitle
   teamSectionSubtitle
+  membersWithImage
   team {
     ...Member
   }
