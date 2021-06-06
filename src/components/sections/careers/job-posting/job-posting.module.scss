@@ -5,10 +5,7 @@
   color: theme('colors.aserto.grey.60');
 
   p {
-    @apply my-8 text-lg;
-    @screen sm {
-      @apply my-8 text-xl;
-    }
+    @apply my-8 text-lg leading-relaxed;
   }
 
   h1,
@@ -26,7 +23,7 @@
   }
 
   h3 {
-    @apply text-lg tracking-normal;
+    @apply text-[22px] tracking-normal;
   }
 
   ul,
