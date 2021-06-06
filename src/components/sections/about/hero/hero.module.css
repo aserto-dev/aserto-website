@@ -1,22 +1,20 @@
 .background {
-  margin-top: -16vw;
+  margin-top: -80px;
 }
 
 .content {
-  margin-top: -25vw;
+  margin-top: -320px;
 }
 
 .link {
   font-size: inherit !important;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1000px) {
   .background {
-    margin-top: -20vw;
+    margin-top: 0;
   }
-}
 
-@media screen and (max-width: 800px) {
   .content {
     margin-top: -25vw;
   }
