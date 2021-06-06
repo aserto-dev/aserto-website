@@ -13,7 +13,8 @@ import Button from 'components/primitives/button'
 
 // Styles
 import s from './newsletter.module.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { createPopup } from '@typeform/embed'
 
 export type NewsletterProps = {
   mailchimpEndpoint: string
@@ -29,28 +30,9 @@ const NewsletterSection = ({
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
-  useEffect(() => {
-    ;(function () {
-      var js,
-        q,
-        d = document,
-        gi = d.getElementById,
-        ce = d.createElement,
-        gt = d.getElementsByTagName,
-        id = 'typef_orm_share',
-        b = 'https://embed.typeform.com/'
-      if (!gi.call(d, id)) {
-        console.log(d)
-        js = ce.call(d, 'script')
-        js.id = id
-        //@ts-ignore
-        js.src = b + 'embed.js'
-        q = gt.call(d, 'script')[0]
-        //@ts-ignore
-        q.parentNode.insertBefore(js, q)
-      }
-    })()
-  }, [])
+  //TODO move this to env
+  const { toggle } = createPopup('RMHYXKD5')
+
   return (
     <section
       className="relative z-10 mb-32 bg-aserto-black"
@@ -87,6 +69,7 @@ const NewsletterSection = ({
               url={mailchimpEndpoint}
               render={({ subscribe, status, message }) => (
                 <form
+                  id="form-1"
                   className="relative flex flex-col self-center"
                   onSubmit={handleSubmit((data) => {
                     subscribe({ EMAIL: data.email })
@@ -115,18 +98,15 @@ const NewsletterSection = ({
                       className="w-full min-w-[290px] mr-0 md:mr-5 sm:min-w-[300px] lg:min-w-[354px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
                     />
                     <Button
-                      type="submit"
+                      // as="a"
+                      // type="submit"
+                      // href="https://form.typeform.com/to/RMHYXKD5?typeform-medium=embed-snippet"
+                      // data-mode="popup"
+                      // data-size="100"
                       className="mt-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
                     >
                       {clearErr === '' ? (
-                        <a
-                          className="typeform-share button"
-                          href="https://form.typeform.com/to/RMHYXKD5?typeform-medium=embed-snippet"
-                          data-mode="popup"
-                          data-size="100"
-                        >
-                          Let’s go!
-                        </a>
+                        <a>Let’s go!</a>
                       ) : status ? (
                         status === 'sending' ? (
                           <svg
@@ -202,7 +182,7 @@ const NewsletterSection = ({
                       ? message
                       : ''}
                   </p>
-                  {/*{status === 'success' ? showTypeformModal() : null}*/}
+                  {status === 'success' ? toggle() : null}
                 </form>
               )}
             />

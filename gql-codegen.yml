@@ -13,6 +13,3 @@ generates:
   ./src/lib/sanity/graphql.schema.json:
     plugins:
       - 'introspection'
-hooks:
-  afterOneFileWrite:
-    - yarn lint --fix

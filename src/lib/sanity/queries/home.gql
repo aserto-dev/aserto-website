@@ -32,6 +32,28 @@ fragment HomePage on Home {
     authorPosition
     quoteRaw
   }
+  pillars {
+    title
+    image {
+      ...Image
+    }
+    imagePath
+    description
+  }
+  infos {
+    image {
+        ...Image
+    }
+    imagePath
+    title
+    subtitle
+    items {
+      image {
+        ...Image
+      }
+      title
+    }
+  }
 }
 
 query HomePage {

@@ -34,16 +34,22 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
             <div className="flex items-center mb-4 text-aserto-grey-90 font-bold">
               Gert Drapers, CTO
               <Image
+                onClick={() =>
+                  window.open('https://www.linkedin.com/in/gertd/')
+                }
                 src="/images/about/linkedIn.svg"
-                className="ml-2"
+                className="ml-2 cursor-pointer"
                 layout="native"
               />
             </div>
             <div className="flex items-center mb-4 text-aserto-grey-90 font-bold">
               Omri Gazitt, CEO
               <Image
+                onClick={() =>
+                  window.open('https://www.linkedin.com/in/gertd/')
+                }
                 src="/images/about/linkedIn.svg"
-                className="ml-2"
+                className="ml-2 cursor-pointer"
                 layout="native"
               />
             </div>

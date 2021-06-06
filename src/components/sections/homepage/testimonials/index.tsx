@@ -5,7 +5,7 @@ import s from './testimonials.module.css'
 
 const Testimonials = ({ page }: { page: HomePageFragment }) => {
   return (
-    <section className="mx-auto pt-44 sm:pt-80 pb-20 sm:pb-28">
+    <section className="mx-auto sm:pt-24 pb-20 sm:pb-28">
       <div className="px-4 text-center mb-10 sm:px-0">
         <h2 className="text-4xl tracking-tight text-aserto-grey-90">
           {page.testimonialsSectionTitle}

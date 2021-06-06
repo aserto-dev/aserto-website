@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import initGsap from 'lib/gsap'
 import { IdProvider } from '@radix-ui/react-id'
+import '@typeform/embed/build/css/popup.css'
 
 initGsap()
 

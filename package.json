@@ -20,6 +20,7 @@
     "@radix-ui/react-id": "^0.0.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "@tailwindcss/forms": "0.3.2",
+    "@typeform/embed": "^1.8.2",
     "@types/react-mailchimp-subscribe": "^2.1.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",

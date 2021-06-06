@@ -24,9 +24,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         document!.getElementById('btn-scroll')!.style!.opacity = '1'
       }
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
-
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -47,75 +45,40 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           {page.subtitle}
         </h2>
         <div className="grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
-          <div
-            onClick={() => goToId('intro-1')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
-          >
-            <div className="flex items-center">
-              <Image
-                layout="native"
-                src="/images/homepage/carrousel/auth-easy-Pillar.svg"
-                alt="auth easy icon"
-                width={69}
-                height={69}
-              />
-              <h4 className="text-aserto-grey-90 text-md ml-4 font-bold text-lg">
-                Authorization as easy as an API call
-              </h4>
-            </div>
-            <div
-              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
-            >
-              Add powerful authorization capabilities that scale up with your
-              application in a fraction of the time it would take to build it by
-              hand.
-            </div>
-          </div>
-          <div
-            onClick={() => goToId('intro-2')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${s['indigo-gradient-background']}`}
-          >
-            <div className="flex items-center">
-              <img
-                src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
-                alt="enterprise ready icon"
-                width={69}
-                height={69}
-              />
-              <h4 className="text-aserto-grey-90 text-md  ml-4 font-bold text-lg">
-                Enterprise-ready permissions and RBAC
-              </h4>
-            </div>
-            <div
-              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
-            >
-              Sell with confidence into enterprise accounts, knowing their
-              requirements are built into your authorization system.
-            </div>
-          </div>
-          <div
-            onClick={() => goToId('intro-3')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center p-4 lg:p-8 md:p-8 ${s.section} ${s['plum-gradient-background']}`}
-          >
-            <div className="flex items-center">
-              <Image
-                layout="native"
-                src="/images/homepage/carrousel/gitops-pillar.svg"
-                alt="auth easy icon"
-                width={139}
-                height={69}
-              />
-              <h4 className="text-aserto-grey-90 text-md  ml-4 font-bold text-lg">
-                Gitops workflow for policy-as-code
-              </h4>
-            </div>
-            <div
-              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
-            >
-              Express authorization policy in one place, and evolve it through a
-              modern GitOps workflow.
-            </div>
-          </div>
+          {page.pillars?.map((pillar, i) => {
+            if (!pillar) return null
+            return (
+              <div
+                key={pillar.title}
+                onClick={() => goToId(`intro-1-${i + 1}`)}
+                className={`flex-1 flex flex-col border-t border-b border-aserto-${
+                  pillar.color
+                }-100 border-dotted bg-aserto-${
+                  pillar.color
+                }-10 justify-center items-center p-4 lg:p-4 md:p-8 ${
+                  s.section
+                } ${s[pillar.color + '-gradient-background']}`}
+              >
+                <div className="flex items-center">
+                  <Image
+                    layout="native"
+                    src={pillar.imagePath}
+                    alt="auth easy icon"
+                    width={69}
+                    height={69}
+                  />
+                  <h4 className="text-aserto-grey-90 text-md ml-4 font-bold text-lg">
+                    {pillar.title}
+                  </h4>
+                </div>
+                <div
+                  className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
+                >
+                  {pillar.description}
+                </div>
+              </div>
+            )
+          })}
         </div>
 
         <div
