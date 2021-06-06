@@ -29,51 +29,75 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
           {page.subtitle}
         </h2>
-        <div className="flex gap-4 lg:mt-10 md:mt-10 mt-8 flex-wrap lg:flex-nowrap">
+        <div className="grid grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
           <div
             onClick={() => goToId('intro-1')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-lochivar-100 border-dotted bg-aserto-lochivar-10 justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${s['lochivar-gradient-background']}`}
           >
-            <Image
-              layout="native"
-              src="/images/homepage/carrousel/auth-easy-Pillar.svg"
-              alt="auth easy icon"
-              width={76}
-              height={83}
-            />
-            <h4 className="text-aserto-grey-90 text-md mt-2">
-              Authorization as easy as an API call
-            </h4>
+            <div className="flex items-center">
+              <Image
+                layout="native"
+                src="/images/homepage/carrousel/auth-easy-Pillar.svg"
+                alt="auth easy icon"
+                width={69}
+                height={69}
+              />
+              <h4 className="text-aserto-grey-90 text-md ml-4 font-bold text-lg">
+                Authorization as easy as an API call
+              </h4>
+            </div>
+            <div
+              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
+            >
+              Add powerful authorization capabilities that scale up with your
+              application in a fraction of the time it would take to build it by
+              hand.
+            </div>
           </div>
           <div
             onClick={() => goToId('intro-2')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['indigo-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-indigo-accent-30 border-dotted bg-aserto-indigo-10 justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${s['indigo-gradient-background']}`}
           >
-            <Image
-              layout="native"
-              src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
-              alt="enterprise ready icon"
-              width={71}
-              height={84}
-            />
-            <h4 className="text-aserto-grey-90 text-md mt-2">
-              Enterprise-ready permissions and RBAC
-            </h4>
+            <div className="flex items-center">
+              <img
+                src="/images/homepage/carrousel/enterprise-ready-pillar.svg"
+                alt="enterprise ready icon"
+                width={69}
+                height={69}
+              />
+              <h4 className="text-aserto-grey-90 text-md  ml-4 font-bold text-lg">
+                Enterprise-ready permissions and RBAC
+              </h4>
+            </div>
+            <div
+              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
+            >
+              Sell with confidence into enterprise accounts, knowing their
+              requirements are built into your authorization system.
+            </div>
           </div>
           <div
             onClick={() => goToId('intro-3')}
-            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center p-4 lg:p-10 md:p-8 ${s.section} ${s['plum-gradient-background']}`}
+            className={`flex-1 flex flex-col border-t border-b border-aserto-plum-accent-30 border-dotted bg-aserto-plum-10 justify-center items-center p-4 lg:p-8 md:p-8 ${s.section} ${s['plum-gradient-background']}`}
           >
-            <Image
-              layout="native"
-              src="/images/homepage/carrousel/gitops-pillar.svg"
-              alt="auth easy icon"
-              width={141}
-              height={75}
-            />
-            <h4 className="text-aserto-grey-90 text-md mt-4">
-              Gitops workflow for plicy-as-code
-            </h4>
+            <div className="flex items-center">
+              <Image
+                layout="native"
+                src="/images/homepage/carrousel/gitops-pillar.svg"
+                alt="auth easy icon"
+                width={139}
+                height={69}
+              />
+              <h4 className="text-aserto-grey-90 text-md  ml-4 font-bold text-lg">
+                Gitops workflow for policy-as-code
+              </h4>
+            </div>
+            <div
+              className={`text-aserto-grey-60 mt-4 ${s['pillar-card-description']}`}
+            >
+              Express authorization policy in one place, and evolve it through a
+              modern GitOps workflow.
+            </div>
           </div>
         </div>
 

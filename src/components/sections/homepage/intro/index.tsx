@@ -13,7 +13,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
     <section className="pt-8 mt-16 lg:py-12">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
-          <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
+          <h2 className="mb-2 text-4xl tracking-tight text-aserto-grey-90 sm:mb-10">
             {page.theProblemSectionTitle}
           </h2>
         </div>
@@ -23,8 +23,6 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
               src="/images/homepage/intro/auth-easy-circle.svg"
               alt="value"
               layout="responsive"
-              // width={340}
-              // height={340}
             />
           </div>
           <div className="flex-1 lg:ml-20 mt-10 md:mt-auto lg:mt-auto">
@@ -58,10 +56,10 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
         </div>
 
         <div
-          className="flex mt-32 flex-wrap justify-center flex-col-reverse md:flex-row lg:flex-row"
+          className="flex mt-32 flex-wrap justify-center items-center flex-col-reverse md:flex-row lg:flex-row md:items-start lg:items-start "
           id="intro-2"
         >
-          <div className="flex-1 lg:mr-20 mt-10 md:mt-auto lg:mt-auto">
+          <div className="flex-1 lg:mr-20 mt-10 mx-auto md:mt-auto lg:mt-auto">
             <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
               Authorization as easy as an API call
             </h2>

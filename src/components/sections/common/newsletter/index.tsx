@@ -82,7 +82,7 @@ const NewsletterSection = ({
               {description}
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center mt-8 lg:mt-0 ml-7">
+          <div className="flex flex-col items-center justify-center mt-8 lg:mt-0 md:ml-7 lg:ml-7">
             <MailchimpSubscribe
               url={mailchimpEndpoint}
               render={({ subscribe, status, message }) => (

@@ -4,6 +4,10 @@
     cursor: pointer;
 }
 
+.pillar-card-description {
+    height: 84px;
+}
+
 
 .lochivar-gradient-background:hover {
     border-style: solid;
