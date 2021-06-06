@@ -11,6 +11,14 @@
     }
   }
 
+  figure {
+    @apply my-8;
+
+    figcaption {
+      @apply mt-1 text-sm;
+    }
+  }
+
   h1,
   h2,
   h3 {

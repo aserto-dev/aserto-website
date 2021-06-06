@@ -3,8 +3,8 @@ import { GraphQLClient } from 'graphql-request'
 import { getSdk } from './generated'
 
 const config = {
-  projectId: process.env.SANITY_PROJECT_ID as string,
-  dataset: process.env.SANITY_DATASET as string,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   useCdn: process.env.NODE_ENV === 'production'
 }
 
