@@ -19,6 +19,18 @@ const serializers = {
           <figcaption>{props.node.caption}</figcaption>
         </figure>
       )
+    },
+    blogBodyImage: (props: any) => {
+      const [, id, measures, extension] = props.node.asset._ref.split('-')
+      const src = `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}-${measures}.${extension}`
+      return (
+        <figure>
+          <img src={src} alt={props.node.alt} />
+          <figcaption>
+            <DefaultBlockContent blocks={props.node.caption} />
+          </figcaption>
+        </figure>
+      )
     }
   }
 }

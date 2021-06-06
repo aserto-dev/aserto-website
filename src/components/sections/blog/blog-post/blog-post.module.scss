@@ -15,7 +15,12 @@
     @apply my-8;
 
     figcaption {
-      @apply mt-1 text-sm;
+      @apply mt-1 text-base;
+
+      p {
+        margin: 0 !important;
+        font-size: inherit !important;
+      }
     }
   }
 

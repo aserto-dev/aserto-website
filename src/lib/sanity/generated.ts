@@ -173,7 +173,36 @@ export type Block = {
   list?: Maybe<Scalars['String']>
 }
 
-export type BlockOrMainImage = Block | MainImage
+export type BlockOrBlogBodyImage = Block | BlogBodyImage
+
+export type BlogBodyImage = {
+  __typename?: 'BlogBodyImage'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  captionRaw?: Maybe<Scalars['JSON']>
+  /** Important for SEO and accessiblity. */
+  alt?: Maybe<Scalars['String']>
+  asset?: Maybe<SanityImageAsset>
+  hotspot?: Maybe<SanityImageHotspot>
+  crop?: Maybe<SanityImageCrop>
+}
+
+export type BlogBodyImageFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  alt?: Maybe<StringFilter>
+  asset?: Maybe<SanityImageAssetFilter>
+  hotspot?: Maybe<SanityImageHotspotFilter>
+  crop?: Maybe<SanityImageCropFilter>
+}
+
+export type BlogBodyImageSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  alt?: Maybe<SortOrder>
+  hotspot?: Maybe<SanityImageHotspotSorting>
+  crop?: Maybe<SanityImageCropSorting>
+}
 
 export type BooleanFilter = {
   /** Checks if the value is equal to the given input. */
@@ -568,6 +597,8 @@ export type Home = Document & {
   features?: Maybe<Array<Maybe<FeatureBlock>>>
   testimonialsSectionTitle?: Maybe<Scalars['String']>
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>
+  pillars?: Maybe<Array<Maybe<PillarBlock>>>
+  infos?: Maybe<Array<Maybe<InfoBlock>>>
 }
 
 export type HomeFilter = {
@@ -643,6 +674,57 @@ export type ImageSorting = {
   _type?: Maybe<SortOrder>
   hotspot?: Maybe<SanityImageHotspotSorting>
   crop?: Maybe<SanityImageCropSorting>
+}
+
+export type InfoBlock = {
+  __typename?: 'InfoBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  image?: Maybe<MainImage>
+  imagePath?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  subtitle?: Maybe<Scalars['String']>
+  items?: Maybe<Array<Maybe<InfoItemBlock>>>
+}
+
+export type InfoBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  image?: Maybe<MainImageFilter>
+  imagePath?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  subtitle?: Maybe<StringFilter>
+}
+
+export type InfoBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  image?: Maybe<MainImageSorting>
+  imagePath?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  subtitle?: Maybe<SortOrder>
+}
+
+export type InfoItemBlock = {
+  __typename?: 'InfoItemBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  image?: Maybe<MainImage>
+  title?: Maybe<Scalars['String']>
+}
+
+export type InfoItemBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  image?: Maybe<MainImageFilter>
+  title?: Maybe<StringFilter>
+}
+
+export type InfoItemBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  image?: Maybe<MainImageSorting>
+  title?: Maybe<SortOrder>
 }
 
 export type IntFilter = {
@@ -771,6 +853,34 @@ export type MainImageSorting = {
   alt?: Maybe<SortOrder>
   hotspot?: Maybe<SanityImageHotspotSorting>
   crop?: Maybe<SanityImageCropSorting>
+}
+
+export type PillarBlock = {
+  __typename?: 'PillarBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  image?: Maybe<MainImage>
+  imagePath?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  description?: Maybe<Scalars['String']>
+}
+
+export type PillarBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  image?: Maybe<MainImageFilter>
+  imagePath?: Maybe<StringFilter>
+  title?: Maybe<StringFilter>
+  description?: Maybe<StringFilter>
+}
+
+export type PillarBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  image?: Maybe<MainImageSorting>
+  imagePath?: Maybe<SortOrder>
+  title?: Maybe<SortOrder>
+  description?: Maybe<SortOrder>
 }
 
 export type Post = Document & {
