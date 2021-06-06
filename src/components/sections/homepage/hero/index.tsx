@@ -51,21 +51,15 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
               <div
                 key={pillar.title}
                 onClick={() => goToId(`intro-1-${i + 1}`)}
-                className={`flex-1 flex flex-col border-t border-b border-aserto-${
-                  pillar.color
-                }-100 border-dotted bg-aserto-${
-                  pillar.color
-                }-10 justify-center items-center p-4 lg:p-4 md:p-8 ${
+                className={`flex-1 flex flex-col border-t border-b border-aserto-${'lochivar'}-100 border-dotted bg-aserto-${'lochivar'}-10 justify-center items-center p-4 lg:p-4 md:p-8 ${
                   s.section
-                } ${s[pillar.color + '-gradient-background']}`}
+                } ${s['lochivar' + '-gradient-background']}`}
               >
                 <div className="flex items-center">
                   <Image
                     layout="native"
-                    src={pillar.imagePath}
+                    src={String(pillar.imagePath)}
                     alt="auth easy icon"
-                    width={69}
-                    height={69}
                   />
                   <h4 className="text-aserto-grey-90 text-md ml-4 font-bold text-lg">
                     {pillar.title}

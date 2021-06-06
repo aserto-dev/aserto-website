@@ -31,7 +31,9 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
                 />
               </div>
               <div
-                className={`flex-1 lg:ml-20 md:ml-20 mt-10 md:mt-auto lg:mt-auto`}
+                className={`flex-1 mt-10 md:mt-auto lg:mt-auto ${
+                  i != 1 ? 'lg:ml-20 md:ml-20' : 'lg:mr-20 md:mr-20'
+                }`}
                 style={{
                   minWidth: 380
                 }}
