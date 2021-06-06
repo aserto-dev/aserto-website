@@ -7,6 +7,16 @@ fragment Founder on FounderBlock {
   linkedIn
 }
 
+fragment Member on MemberBlock {
+  avatar {
+    ...Image
+  }
+  name
+  position
+  bioRaw
+  linkedIn
+}
+
 fragment Investor on InvestorBlock {
   name
   href
@@ -22,6 +32,12 @@ fragment AboutPage on About {
   foundersSectionSubtitle
   founders {
     ...Founder
+  }
+  teamSectionEnabled
+  teamSectionTitle
+  teamSectionSubtitle
+  team {
+    ...Member
   }
   investorsSectionTitle
   investorsSectionSubtitle

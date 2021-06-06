@@ -12,7 +12,7 @@ import Hiring from 'components/sections/about/hiring'
 import Investors from 'components/sections/about/investors'
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
-// import Team from 'components/sections/about/team'
+import Team from 'components/sections/about/team'
 
 const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -27,7 +27,7 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <CustomHead />
       <Hero page={page} />
       <Founders page={page} />
-      {/* <Team /> */}
+      <Team page={page} />
       <Investors page={page} />
       <Advisors page={page} />
       <Hiring page={page} />

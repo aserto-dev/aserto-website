@@ -42,6 +42,10 @@ export type About = Document & {
   foundersSectionTitle?: Maybe<Scalars['String']>
   foundersSectionSubtitle?: Maybe<Scalars['String']>
   founders?: Maybe<Array<Maybe<FounderBlock>>>
+  teamSectionEnabled?: Maybe<Scalars['Boolean']>
+  teamSectionTitle?: Maybe<Scalars['String']>
+  teamSectionSubtitle?: Maybe<Scalars['String']>
+  team?: Maybe<Array<Maybe<MemberBlock>>>
   investorsSectionTitle?: Maybe<Scalars['String']>
   investorsSectionSubtitle?: Maybe<Scalars['String']>
   investors?: Maybe<Array<Maybe<InvestorBlock>>>
@@ -66,6 +70,9 @@ export type AboutFilter = {
   title?: Maybe<StringFilter>
   foundersSectionTitle?: Maybe<StringFilter>
   foundersSectionSubtitle?: Maybe<StringFilter>
+  teamSectionEnabled?: Maybe<BooleanFilter>
+  teamSectionTitle?: Maybe<StringFilter>
+  teamSectionSubtitle?: Maybe<StringFilter>
   investorsSectionTitle?: Maybe<StringFilter>
   investorsSectionSubtitle?: Maybe<StringFilter>
   angelsSectionTitle?: Maybe<StringFilter>
@@ -86,6 +93,9 @@ export type AboutSorting = {
   title?: Maybe<SortOrder>
   foundersSectionTitle?: Maybe<SortOrder>
   foundersSectionSubtitle?: Maybe<SortOrder>
+  teamSectionEnabled?: Maybe<SortOrder>
+  teamSectionTitle?: Maybe<SortOrder>
+  teamSectionSubtitle?: Maybe<SortOrder>
   investorsSectionTitle?: Maybe<SortOrder>
   investorsSectionSubtitle?: Maybe<SortOrder>
   angelsSectionTitle?: Maybe<SortOrder>
@@ -853,6 +863,35 @@ export type MainImageSorting = {
   alt?: Maybe<SortOrder>
   hotspot?: Maybe<SanityImageHotspotSorting>
   crop?: Maybe<SanityImageCropSorting>
+}
+
+export type MemberBlock = {
+  __typename?: 'MemberBlock'
+  _key?: Maybe<Scalars['String']>
+  _type?: Maybe<Scalars['String']>
+  avatar?: Maybe<MainImage>
+  name?: Maybe<Scalars['String']>
+  position?: Maybe<Scalars['String']>
+  bioRaw?: Maybe<Scalars['JSON']>
+  linkedIn?: Maybe<Scalars['String']>
+}
+
+export type MemberBlockFilter = {
+  _key?: Maybe<StringFilter>
+  _type?: Maybe<StringFilter>
+  avatar?: Maybe<MainImageFilter>
+  name?: Maybe<StringFilter>
+  position?: Maybe<StringFilter>
+  linkedIn?: Maybe<StringFilter>
+}
+
+export type MemberBlockSorting = {
+  _key?: Maybe<SortOrder>
+  _type?: Maybe<SortOrder>
+  avatar?: Maybe<MainImageSorting>
+  name?: Maybe<SortOrder>
+  position?: Maybe<SortOrder>
+  linkedIn?: Maybe<SortOrder>
 }
 
 export type PillarBlock = {
@@ -1720,6 +1759,11 @@ export type FounderFragment = { __typename?: 'FounderBlock' } & Pick<
   'name' | 'position' | 'linkedIn'
 > & { avatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
 
+export type MemberFragment = { __typename?: 'MemberBlock' } & Pick<
+  MemberBlock,
+  'name' | 'position' | 'bioRaw' | 'linkedIn'
+> & { avatar?: Maybe<{ __typename?: 'MainImage' } & ImageFragment> }
+
 export type InvestorFragment = { __typename?: 'InvestorBlock' } & Pick<
   InvestorBlock,
   'name' | 'href'
@@ -1731,6 +1775,9 @@ export type AboutPageFragment = { __typename?: 'About' } & Pick<
   | 'subtitleRaw'
   | 'foundersSectionTitle'
   | 'foundersSectionSubtitle'
+  | 'teamSectionEnabled'
+  | 'teamSectionTitle'
+  | 'teamSectionSubtitle'
   | 'investorsSectionTitle'
   | 'investorsSectionSubtitle'
   | 'angelsSectionTitle'
@@ -1743,6 +1790,7 @@ export type AboutPageFragment = { __typename?: 'About' } & Pick<
     founders?: Maybe<
       Array<Maybe<{ __typename?: 'FounderBlock' } & FounderFragment>>
     >
+    team?: Maybe<Array<Maybe<{ __typename?: 'MemberBlock' } & MemberFragment>>>
     investors?: Maybe<
       Array<Maybe<{ __typename?: 'InvestorBlock' } & InvestorFragment>>
     >
@@ -2024,6 +2072,18 @@ export const FounderFragmentDoc = gql`
   }
   ${ImageFragmentDoc}
 `
+export const MemberFragmentDoc = gql`
+  fragment Member on MemberBlock {
+    avatar {
+      ...Image
+    }
+    name
+    position
+    bioRaw
+    linkedIn
+  }
+  ${ImageFragmentDoc}
+`
 export const InvestorFragmentDoc = gql`
   fragment Investor on InvestorBlock {
     name
@@ -2043,6 +2103,12 @@ export const AboutPageFragmentDoc = gql`
     founders {
       ...Founder
     }
+    teamSectionEnabled
+    teamSectionTitle
+    teamSectionSubtitle
+    team {
+      ...Member
+    }
     investorsSectionTitle
     investorsSectionSubtitle
     investors {
@@ -2059,6 +2125,7 @@ export const AboutPageFragmentDoc = gql`
     hiringSectionLinkHref
   }
   ${FounderFragmentDoc}
+  ${MemberFragmentDoc}
   ${InvestorFragmentDoc}
 `
 export const JobPostingMetaFragmentDoc = gql`
