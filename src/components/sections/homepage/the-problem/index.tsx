@@ -18,11 +18,8 @@ const TheProblem = ({ page }: { page: HomePageFragment }) => {
           <h2 className="mb-2 text-4xl tracking-tight text-aserto-grey-90 sm:mb-10">
             {page.theProblemSectionTitle}
           </h2>
-          <p className="max-w-5xl mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto px-12 tracking-tight">
-            {page.theProblemSectionSubtitle}
-          </p>
         </div>
-        <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
+        <div className="grid gap-8 mx-auto mt-10 lg:grid-cols-3">
           {page.theProblemSectionCards?.map((card, i) => {
             if (!card) return null
             return <ProblemItem data={card} key={i} />

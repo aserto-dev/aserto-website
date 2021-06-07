@@ -35,6 +35,15 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
     }
   }
 
+  const getPillarStyleBasedOnIndex = (index: number) => {
+    const pillarStyleObj = [
+      `border-aserto-lochivar-100 ${s['lochivar-gradient-background']} bg-aserto-lochivar-10`,
+      `border-aserto-indigo-accent-30 ${s['indigo-gradient-background']} bg-aserto-indigo-10`,
+      `border-aserto-plum-accent-30 ${s['plum-gradient-background']} bg-aserto-plum-10`
+    ]
+    return pillarStyleObj[index]
+  }
+
   return (
     <section className="relative pt-10 md:pt-16 lg:pt-24 mx-auto">
       <div className="pt-3 text-center" ref={ref}>
@@ -47,13 +56,12 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
         <div className="grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
           {page.pillars?.map((pillar, i) => {
             if (!pillar) return null
+            const pillarStyle = getPillarStyleBasedOnIndex(i)
             return (
               <div
                 key={pillar.title}
-                onClick={() => goToId(`intro-1-${i + 1}`)}
-                className={`flex-1 flex flex-col border-t border-b border-aserto-${'lochivar'}-100 border-dotted bg-aserto-${'lochivar'}-10 justify-center items-center p-4 lg:p-4 md:p-8 ${
-                  s.section
-                } ${s['lochivar' + '-gradient-background']}`}
+                onClick={() => goToId(`intro-${i + 1}`)}
+                className={`flex-1 flex flex-col border-t border-b border-dotted justify-center items-center p-4 lg:p-4 md:p-8 ${s.section} ${pillarStyle} `}
               >
                 <div className="flex items-center">
                   <Image
