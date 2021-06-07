@@ -16,7 +16,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
           return (
             <div
               key={info?.title}
-              className={`flex mt-32 flex-wrap justify-center ${
+              className={`flex mt-32 flex-wrap justify-center font-roboto ${
                 i === 1
                   ? 'items-center sm:flex-col-reverse md:items-start lg:items-start md:flex-row-reverse lg:flex-row-reverse'
                   : ''

@@ -14,7 +14,7 @@ const IntroItem = ({ text, image }: Props) => (
       width={40}
       height={40}
     />
-    <span className="text-lg text-aserto-grey-60 ml-4">{text}</span>
+    <span className="text-lg font-roboto text-aserto-grey-60 ml-4">{text}</span>
   </div>
 )
 
