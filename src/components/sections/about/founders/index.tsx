@@ -21,7 +21,12 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
             {page.foundersSectionSubtitle}
           </p>
         </div>
-        <div className="flex lg:mt-10 md:mt-12 mt-12 flex-wrap">
+        <div
+          className="flex lg:mt-10 md:mt-12 mt-12 flex-wrap mx-auto"
+          style={{
+            maxWidth: 980
+          }}
+        >
           <div className="mx-auto lg:mb-0 md:mb-0 mb-10">
             <Image
               layout="native"
@@ -67,17 +72,6 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
             </div>
           </div>
         </div>
-        {/*<div className="grid gap-8 mx-auto mt-20 lg:grid-cols-2">*/}
-        {/*  {page.founders?.map((founder, i) => (*/}
-        {/*    <FounderItem*/}
-        {/*      name={founder?.name ?? ''}*/}
-        {/*      position={founder?.position ?? ''}*/}
-        {/*      image={founder?.avatar?.asset?.url ?? ''}*/}
-        {/*      linkedin={founder?.linkedIn ?? ''}*/}
-        {/*      key={i}*/}
-        {/*    />*/}
-        {/*  ))}*/}
-        {/*</div>*/}
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 // Icons
-import LinkedinIcon from 'icons/linkedin-bio.svg'
 import Image from 'components/primitives/image'
 
 type Props = {
@@ -27,7 +26,11 @@ const ProfileItem = ({ linkedin, name, position, imageSrc }: Props) => (
       )}
       <div className="flex items-center justify-center mt-4 text-base tracking-tight text-white sm:text-2xl">
         <p>{name}</p>
-        <LinkedinIcon className="ml-1 sm:ml-2" />
+        <Image
+          src="/images/about/linkedIn.svg"
+          className="ml-1 sm:ml-2 cursor-pointer"
+          layout="native"
+        />
       </div>
       <p className="mt-2 text-aserto-grey-60 font-roboto">{position}</p>
     </a>

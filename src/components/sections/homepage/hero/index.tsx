@@ -23,7 +23,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
     const handleScroll = () => {
       const scrollPosition =
         window.scrollY || document.getElementsByTagName('html')[0].scrollTop
-      if (scrollPosition > 210) {
+      if (scrollPosition > 221) {
         document!.getElementById('btn-scroll')!.style!.opacity = '0'
       } else if (scrollPosition < 296) {
         document!.getElementById('btn-scroll')!.style!.opacity = '1'
