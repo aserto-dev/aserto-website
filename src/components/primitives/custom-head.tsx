@@ -76,8 +76,8 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
         href="/images/favicons/safari-pinned-tab.svg"
         color="#5bbad5"
       />
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#e7e7e7" />
+      <meta name="theme-color" content="#e7e7e7" />
 
       {/* TODO get twitter account */}
       <meta name="twitter:site" content={`@${resolvedMeta.twitterTag}`} />

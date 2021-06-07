@@ -12,10 +12,15 @@ const TheProblem = ({ page }: { page: HomePageFragment }) => {
     <section className="pt-8 mt-16 lg:py-12">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
-          <p className="mb-2 font-bold leading-tight uppercase text-aserto-mojo-accent-20 sm:mb-4 sm:text-base tracking-h4">
+          <h1
+            className="mb-2 tracking-tight text-aserto-grey-90 font-roboto"
+            style={{
+              fontSize: 32
+            }}
+          >
             {page.theProblemSectionLabel}
-          </p>
-          <h2 className="mb-2 text-4xl tracking-tight text-aserto-grey-90 sm:mb-10">
+          </h1>
+          <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 text-xl md:mt-3 font-roboto">
             {page.theProblemSectionTitle}
           </h2>
         </div>

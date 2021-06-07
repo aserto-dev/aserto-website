@@ -58,7 +58,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
     <section className="relative pt-10 md:pt-16 lg:pt-24 mx-auto">
       <div className="pt-3 text-center" ref={ref}>
-        <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:max-w-3xl lg:max-w-2xl max-w-xl mx-auto xl:text-5xl">
+        <h1 className="text-4xl leading-none font-normal tracking-tight text-aserto-grey-90 md:text-6xl xl:max-w-3xl lg:max-w-2xl max-w-xl mx-auto xl:text-5xl">
           {page.title}
         </h1>
         <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
@@ -108,6 +108,14 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </Button>
         </div>
 
+        <h2
+          className="mb-12 tracking-tight text-aserto-grey-90 font-roboto"
+          style={{
+            fontSize: 32
+          }}
+        >
+          Aserto in Action
+        </h2>
         <div>
           {supportedBrowser ? (
             <>

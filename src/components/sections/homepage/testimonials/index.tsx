@@ -77,7 +77,7 @@ const Testimonials = ({ page }: { page: HomePageFragment }) => {
               className={`bg-aserto-grey-5 border-aserto-grey-20 flex-1 min-h-96 p-4 flex flex-col items-center rounded border text-aserto-grey-90 ${s['testimonial-card']}`}
             >
               <Image
-                className="rounded-full"
+                className="rounded-full border-2 border-aserto-lochivar-accent-40"
                 layout="native"
                 width={160}
                 height={160}

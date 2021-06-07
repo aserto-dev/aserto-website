@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-body: 'Open Sans', sans-serif;
+  --font-body: 'Roboto', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
 }
 
