@@ -38,11 +38,16 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
                   minWidth: 346
                 }}
               >
-                <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">
+                <h2
+                  className="mb-2 tracking-tight text-aserto-grey-90 font-roboto"
+                  style={{
+                    fontSize: 32
+                  }}
+                >
                   {info.title}
                 </h2>
-                <h4 className="text-sm text-aserto-grey-90">{info.subtitle}</h4>
-                <div className="mt-4">
+                <h4 className="text-xl text-aserto-grey-90">{info.subtitle}</h4>
+                <div className="mt-4 text-lg">
                   {info?.items?.map((item) => {
                     return (
                       <IntroItem
@@ -52,19 +57,6 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
                       />
                     )
                   })}
-
-                  {/*<IntroItem*/}
-                  {/*  image="/images/homepage/intro/shield.svg"*/}
-                  {/*  text="REST/gRPC API’s with native support for popular languages and frameworks"*/}
-                  {/*/>*/}
-                  {/*<IntroItem*/}
-                  {/*  image="/images/homepage/intro/deployment-arrows.svg"*/}
-                  {/*  text="Flexible deployment model - a hosted service, a local service, or a sidecar."*/}
-                  {/*/>*/}
-                  {/*<IntroItem*/}
-                  {/*  image="/images/homepage/intro/open-source.svg"*/}
-                  {/*  text="Open source authorizer based on CNCF OPA project."*/}
-                  {/*/>*/}
                 </div>
               </div>
             </div>
