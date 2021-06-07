@@ -905,6 +905,7 @@ export type PillarBlock = {
   imagePath?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
   description?: Maybe<Scalars['String']>
+  color?: Maybe<Scalars['String']>
 }
 
 export type PillarBlockFilter = {
@@ -914,6 +915,7 @@ export type PillarBlockFilter = {
   imagePath?: Maybe<StringFilter>
   title?: Maybe<StringFilter>
   description?: Maybe<StringFilter>
+  color?: Maybe<StringFilter>
 }
 
 export type PillarBlockSorting = {
@@ -923,6 +925,7 @@ export type PillarBlockSorting = {
   imagePath?: Maybe<SortOrder>
   title?: Maybe<SortOrder>
   description?: Maybe<SortOrder>
+  color?: Maybe<SortOrder>
 }
 
 export type Post = Document & {
@@ -1684,7 +1687,7 @@ export type FeatureItemFragment = { __typename?: 'FeatureItem' } & Pick<
 
 export type ImageFragment = { __typename?: 'MainImage' } & Pick<
   MainImage,
-  'alt'
+  'caption' | 'alt'
 > & {
     crop?: Maybe<
       { __typename?: 'SanityImageCrop' } & Pick<
@@ -2023,6 +2026,7 @@ export const ImageFragmentDoc = gql`
         }
       }
     }
+    caption
     alt
   }
 `

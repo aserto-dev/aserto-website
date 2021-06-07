@@ -127,7 +127,7 @@ module.exports = {
         16.5: '4.5rem'
       },
       screens: {
-        'sxl': '1300px'
+        sxl: '1300px'
       },
       boxShadow: {
         header: '0px 1px 0px rgba(65, 65, 65, 1)',
