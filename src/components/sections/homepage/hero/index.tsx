@@ -23,7 +23,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
     const handleScroll = () => {
       const scrollPosition =
         window.scrollY || document.getElementsByTagName('html')[0].scrollTop
-      if (scrollPosition > 222) {
+      if (scrollPosition > 210) {
         document!.getElementById('btn-scroll')!.style!.opacity = '0'
       } else if (scrollPosition < 296) {
         document!.getElementById('btn-scroll')!.style!.opacity = '1'
@@ -102,7 +102,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             {page.ctaLabel}
           </Button>
         </div>
-        <div className={`mt-12 md:mt-16 lg:mt-20`}>
+        <div className={`mt-12 mb-20 md:mt-16 lg:mt-20 lg:mb-56 md:mb-56 `}>
           <Button as="a" href="/#sign-up" className="inline-flex items-center">
             {page.ctaLabel}
           </Button>

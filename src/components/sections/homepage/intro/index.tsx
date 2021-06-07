@@ -35,7 +35,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
                   i != 1 ? 'lg:ml-20 md:ml-20' : 'lg:mr-20 md:mr-20'
                 }`}
                 style={{
-                  minWidth: 380
+                  minWidth: 346
                 }}
               >
                 <h2 className="mb-2 text-3xl tracking-tight text-aserto-grey-90">

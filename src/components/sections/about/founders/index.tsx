@@ -46,7 +46,7 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
               Omri Gazitt, CEO
               <Image
                 onClick={() =>
-                  window.open('https://www.linkedin.com/in/gertd/')
+                  window.open('https://www.linkedin.com/in/ogazitt/')
                 }
                 src="/images/about/linkedIn.svg"
                 className="ml-2 cursor-pointer"

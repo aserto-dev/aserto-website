@@ -1261,7 +1261,7 @@ const Animation = () => {
 
   return (
     <svg
-      className="relative z-10 mt-56 w-full max-w-3xl mx-auto sxl:max-w-4xl"
+      className="relative z-10 w-full max-w-3xl mx-auto sxl:max-w-4xl"
       viewBox="0 0 910 650"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
