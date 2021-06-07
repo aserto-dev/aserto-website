@@ -108,12 +108,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </Button>
         </div>
 
-        <h2
-          className="mb-12 tracking-tight text-aserto-grey-90 font-roboto"
-          style={{
-            fontSize: 32
-          }}
-        >
+        <h2 className="mb-12 text-4xl tracking-tight text-aserto-grey-90">
           Aserto in Action
         </h2>
         <div>
