@@ -9,7 +9,7 @@ import Image from '../../../primitives/image'
 const Intro = ({ page }: { page: HomePageFragment }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-8 mt-10 lg:py-10">
+    <section className="mt-10 lg:py-2">
       <div className="mx-auto" ref={section}>
         {page.infos?.map((info, i) => {
           if (!info) return null

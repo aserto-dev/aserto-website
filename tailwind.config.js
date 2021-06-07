@@ -126,6 +126,9 @@ module.exports = {
         14.5: '3.75rem',
         16.5: '4.5rem'
       },
+      screens: {
+        'sxl': '1300px'
+      },
       boxShadow: {
         header: '0px 1px 0px rgba(65, 65, 65, 1)',
         dropdown: '0px 1px 0px #414141',
