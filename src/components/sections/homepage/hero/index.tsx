@@ -79,11 +79,15 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           id="btn-scroll"
           className={`mt-12 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
         >
-          <Button>{page.ctaLabel}</Button>
+          <Button as="a" href="/#sign-up" className="inline-flex items-center">
+            {page.ctaLabel}
+          </Button>
         </div>
 
         <div className={`mt-12 md:mt-16 lg:mt-20`}>
-          <Button>{page.ctaLabel}</Button>
+          <Button as="a" href="/#sign-up" className="inline-flex items-center">
+            {page.ctaLabel}
+          </Button>
         </div>
         <div className="mt-24">
           <svg

@@ -17,22 +17,6 @@ import Menu from './menu'
 
 export const headerLinks = [
   {
-    label: 'Product',
-    href: '',
-    items: [
-      {
-        label: 'Benefits',
-        href: '/#the-solution',
-        isExternal: false
-      },
-      {
-        label: 'Features',
-        href: '/#features',
-        isExternal: false
-      }
-    ]
-  },
-  {
     label: 'Developers',
     href: '',
     items: [
@@ -132,7 +116,7 @@ const Header = () => {
               as="a"
               className="inline-flex items-center"
             >
-              Request Early Access
+              Request Beta Access
             </Button>
           </NextLink>
           <Link
