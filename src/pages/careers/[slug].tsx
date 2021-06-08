@@ -20,8 +20,8 @@ const JobPostingPage = ({ posting }: Props) => {
     <PageLayout
       contain
       headProps={{
-        title: 'Aserto Faq',
-        description: 'Description',
+        title: 'Aserto Careers',
+        description: 'Authorization for All',
         image: 'images/og.png'
       }}
     >

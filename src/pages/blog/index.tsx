@@ -21,7 +21,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       headProps={{
         title: 'Aserto',
-        description: 'Description',
+        description: 'Authorization for All',
         image: 'images/og.png'
       }}
       newsletter={{

@@ -20,8 +20,7 @@ const BlogPost = ({ post }: Props) => {
     <PageLayout
       contain
       headProps={{
-        title: 'Aserto Faq',
-        description: 'Description',
+        description: 'Authorization for All',
         image: 'images/og.png'
       }}
       newsletter={{

@@ -20,7 +20,7 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       headProps={{
         title: 'Aserto',
-        description: 'Description',
+        description: 'Authorization for All',
         image: 'images/og.png'
       }}
     >

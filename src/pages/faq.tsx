@@ -13,8 +13,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <PageLayout
       contain
       headProps={{
-        title: 'Aserto Faq',
-        description: 'Description',
+        description: 'Authorization for All',
         image: 'images/og.png'
       }}
     >

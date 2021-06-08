@@ -28,7 +28,7 @@ const TermsOfService = () => {
       contain
       headProps={{
         title: 'Aserto Faq',
-        description: 'Description',
+        description: '',
         image: 'images/og.png'
       }}
     >
