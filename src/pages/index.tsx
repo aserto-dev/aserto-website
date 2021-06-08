@@ -31,8 +31,8 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       newsletter={{
         mailchimpEndpoint:
           'https://aserto.us6.list-manage.com/subscribe/post?u=37bc48a192e946b134dc161ba&amp;id=6b960336df',
-        title: 'Request early access',
-        description: 'Sign up now to get ahead of the line.'
+        title: 'Request Beta Access',
+        description: 'Sign up to get ahead of the line'
       }}
     >
       <CustomHead />

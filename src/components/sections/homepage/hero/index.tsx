@@ -56,12 +56,12 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   }
 
   return (
-    <section className="relative pt-10 md:pt-16 lg:pt-24 mx-auto">
-      <div className="pt-3 text-center" ref={ref}>
-        <h1 className="text-4xl leading-none font-normal tracking-tight text-aserto-grey-90 md:text-6xl xl:max-w-3xl lg:max-w-2xl max-w-xl mx-auto xl:text-5xl">
+    <section className="relative pt-10 md:pt-10 lg:pt-24 mx-auto">
+      <div className="text-center" ref={ref}>
+        <h1 className="text-4xl leading-none font-normal tracking-tight text-aserto-grey-90 md:text-6xl mx-auto xl:text-5xl">
           {page.title}
         </h1>
-        <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl md:max-w-2xl font-roboto">
+        <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-3 md:text-3xl font-roboto">
           {page.subtitle}
         </h2>
         <div className="grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 gap-4 mt-6 text-left">
