@@ -14,6 +14,7 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
+import { sendEvent } from '../../../lib/ga'
 
 export const headerLinks = [
   {
@@ -56,7 +57,14 @@ export const headerLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-
+  const onClickCTA = () => {
+    sendEvent({
+      action: 'click',
+      params: {
+        event_label: 'Header Request Beta Access'
+      }
+    })
+  }
   useEffect(() => {
     if (open) {
       document.documentElement.style.overflow = 'hidden'
@@ -115,6 +123,7 @@ const Header = () => {
               size="sm"
               as="a"
               className="inline-flex items-center"
+              onClick={onClickCTA}
             >
               Request Beta Access
             </Button>

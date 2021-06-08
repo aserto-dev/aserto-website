@@ -6,7 +6,7 @@ export const pageview = (url: string) => {
 }
 
 // log specific events happening.
-export const event = ({ action, params }: any) => {
+export const sendEvent = ({ action, params }: any) => {
   //@ts-ignore
   window.gtag('event', action, params)
 }

@@ -15,6 +15,7 @@ import Button from 'components/primitives/button'
 import s from './newsletter.module.css'
 import { useState } from 'react'
 import { createPopup } from '@typeform/embed'
+import { sendEvent } from '../../../../lib/ga'
 
 export type NewsletterProps = {
   mailchimpEndpoint: string
@@ -33,12 +34,23 @@ const NewsletterSection = ({
   const [alreadySawTypeForm, setAlreadySawTypeForm] = useState(false)
   //TODO move this to env
   const { toggle } = createPopup('RMHYXKD5')
+  const onClickCTA = () => {
+    sendEvent({
+      action: 'click',
+      params: {
+        event_label: `${window.location.pathname} Let's go`
+      }
+    })
+  }
+
   const showTypeForm = () => {
+    onClickCTA()
     if (!alreadySawTypeForm) {
       toggle()
       setAlreadySawTypeForm(true)
     }
   }
+
   return (
     <section
       className="relative z-10 mb-32 bg-aserto-black"
