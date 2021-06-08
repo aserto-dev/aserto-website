@@ -42,7 +42,9 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   const goToId = (id: string) => {
     const elmnt = document.getElementById(id)
     if (elmnt) {
-      elmnt.scrollIntoView({ block: 'end', behavior: 'smooth' })
+      const yOffset = -100
+      const y = elmnt.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }
 
