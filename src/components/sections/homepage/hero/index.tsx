@@ -42,7 +42,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
   const goToId = (id: string) => {
     const elmnt = document.getElementById(id)
     if (elmnt) {
-      elmnt.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      elmnt.scrollIntoView({ block: 'end', behavior: 'smooth' })
     }
   }
 
@@ -96,13 +96,13 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
 
         <div
           id="btn-scroll"
-          className={`mt-12 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
+          className={`mt-10 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
         >
           <Button as="a" href="/#sign-up" className="inline-flex items-center">
             {page.ctaLabel}
           </Button>
         </div>
-        <div className={`mt-12 mb-20 md:mt-16 lg:mt-20 lg:mb-56 md:mb-56 `}>
+        <div className={`mt-10 mb-20 md:mt-14 lg:mt-16 lg:mb-56 md:mb-56 `}>
           <Button as="a" href="/#sign-up" className="inline-flex items-center">
             {page.ctaLabel}
           </Button>

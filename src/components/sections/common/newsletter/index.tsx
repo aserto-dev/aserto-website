@@ -30,9 +30,15 @@ const NewsletterSection = ({
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
+  const [alreadySawTypeForm, setAlreadySawTypeForm] = useState(false)
   //TODO move this to env
   const { toggle } = createPopup('RMHYXKD5')
-
+  const showTypeForm = () => {
+    if (!alreadySawTypeForm) {
+      toggle()
+      setAlreadySawTypeForm(true)
+    }
+  }
   return (
     <section
       className="relative z-10 mb-32 bg-aserto-black"
@@ -182,7 +188,7 @@ const NewsletterSection = ({
                       ? message
                       : ''}
                   </p>
-                  {status === 'success' ? toggle() : null}
+                  {status === 'success' ? showTypeForm() : null}
                 </form>
               )}
             />

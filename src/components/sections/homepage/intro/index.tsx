@@ -15,13 +15,13 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
           if (!info) return null
           return (
             <div
+              id={`intro-${i + 1}`}
               key={info?.title}
               className={`flex mt-32 flex-wrap justify-center font-roboto ${
                 i === 1
                   ? 'items-center sm:flex-col-reverse md:items-start lg:items-start md:flex-row-reverse lg:flex-row-reverse'
                   : ''
               }`}
-              id={`intro-${i + 1}`}
             >
               <div className="lg:w-80 md:w-56 w-52">
                 <Image

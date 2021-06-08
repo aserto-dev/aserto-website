@@ -13,7 +13,7 @@ type Props = {
 const Post = ({ post }: Props) => {
   const author = post.authors?.[0]?.author
   return (
-    <section className="relative mx-auto pt-28 mb-52">
+    <section className="relative mx-auto pt-12 mb-52 lg:pt-24  md:pt-24 mb-52">
       <div className="w-full mx-auto lg:w-10/12">
         <Link
           href="/blog"
@@ -21,10 +21,10 @@ const Post = ({ post }: Props) => {
         >
           Back to listing
         </Link>
-        <h1 className="text-5xl leading-none tracking-tighter text-white xl:text-6.5xl">
+        <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 mx-auto">
           {post.title}
         </h1>
-        <div className="flex items-start justify-between mt-24 mb-16 sm:mt-32 pb-14">
+        <div className="flex items-start justify-between mt-14 mb-16 pb-14">
           <div className="relative flex items-center flex-grow w-4/12">
             <figure className="flex w-20 overflow-hidden rounded-full">
               <Image
