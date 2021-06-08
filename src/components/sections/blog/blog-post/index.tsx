@@ -26,7 +26,7 @@ const Post = ({ post }: Props) => {
         </h1>
         <div className="flex items-start justify-between mt-24 mb-16 sm:mt-32 pb-14">
           <div className="relative flex items-center flex-grow w-4/12">
-            <div className="flex w-20 overflow-hidden rounded-full">
+            <figure className="flex w-20 overflow-hidden rounded-full">
               <Image
                 width="80"
                 height="80"
@@ -34,7 +34,7 @@ const Post = ({ post }: Props) => {
                 alt={author?.name + ' avatar'}
                 objectFit="cover"
               />
-            </div>
+            </figure>
             <div className="ml-6">
               <p className="text-aserto-grey-60 font-roboto">{author?.name}</p>
               <p className="text-aserto-grey-90 font-roboto">
@@ -64,7 +64,7 @@ const Post = ({ post }: Props) => {
           </p>
         </div>
       </div>
-      <div className="w-full mx-auto lg:w-10/12">
+      <figure className="w-full mx-auto lg:w-10/12">
         <Image
           alt={post.mainImage?.alt ?? 'Post cover'}
           height="600"
@@ -72,7 +72,12 @@ const Post = ({ post }: Props) => {
           src={post.mainImage?.asset?.url ?? '/404'}
           width="1216"
         />
-      </div>
+        {post.mainImage?.caption && (
+          <figcaption className="mt-2 text-sm text-aserto-grey-60">
+            {post.mainImage.caption}
+          </figcaption>
+        )}
+      </figure>
       <BlockContent
         blocks={post.bodyRaw}
         className={clsx('w-full sm:w-8/12 mx-auto mt-20', s.body)}

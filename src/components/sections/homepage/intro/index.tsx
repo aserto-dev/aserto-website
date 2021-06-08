@@ -41,7 +41,8 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
                 <h2
                   className="mb-2 tracking-tight text-aserto-grey-90 font-roboto"
                   style={{
-                    fontSize: 32
+                    fontSize: 32,
+                    lineHeight: '36px'
                   }}
                 >
                   {info.title}

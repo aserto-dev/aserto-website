@@ -28,5 +28,6 @@ fragment Image on MainImage {
       }
     }
   }
+  caption
   alt
 }

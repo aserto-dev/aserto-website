@@ -30,6 +30,7 @@ const TestimonialItem = ({
           <div className="flex items-center">
             <div className="w-20">
               <Image
+                className="rounded-full"
                 src={profileimageSrc}
                 alt={profileName}
                 width={80}
