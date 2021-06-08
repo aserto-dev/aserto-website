@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 const defaultMeta = {
   title: 'Aserto - Welcome to modern authorization.',
   description: `Authorization for All`,
-  image: 'https://aserto.basement.studio/images/OG.png',
+  image: 'https://www.aserto.com/images/og.png',
   twitterTag: 'aserto_com'
 }
 
@@ -15,7 +15,7 @@ export type CustomHeadProps = {
 }
 
 const CustomHead = ({ title, description, image }: CustomHeadProps) => {
-  const ogURL = `https://aserto.basement.studio/images/OG.png`
+  const ogURL = `https://www.aserto.com/images/og.png`
 
   const resolvedMeta = useMemo(() => {
     return {
