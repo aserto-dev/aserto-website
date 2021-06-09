@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
       contain
       headProps={{
         title: 'Aserto Privacy Policy',
-        description: 'Authorization for All',
+        description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}
     >

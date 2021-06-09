@@ -25,7 +25,7 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
     <PageLayout
       headProps={{
         title: 'Aserto',
-        description: 'Authorization for All',
+        description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}
       newsletter={{

@@ -21,7 +21,7 @@ const JobPostingPage = ({ posting }: Props) => {
       contain
       headProps={{
         title: 'Aserto Careers',
-        description: 'Authorization for All',
+        description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}
     >
