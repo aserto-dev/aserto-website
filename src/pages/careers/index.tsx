@@ -22,7 +22,7 @@ const Careers = ({
     <PageLayout
       headProps={{
         title: 'Aserto Careers',
-        description: 'Description',
+        description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}
     >

@@ -26,8 +26,8 @@ const PrivacyPolicy = () => {
     <PageLayout
       contain
       headProps={{
-        title: 'Aserto Faq',
-        description: 'Description',
+        title: 'Aserto Privacy Policy',
+        description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}
     >
