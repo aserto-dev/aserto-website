@@ -21,12 +21,14 @@ export type NewsletterProps = {
   mailchimpEndpoint: string
   title: string
   description: string
+  shouldDisplayTypeForm?: boolean
 }
 
 const NewsletterSection = ({
   mailchimpEndpoint,
   title,
-  description
+  description,
+  shouldDisplayTypeForm
 }: NewsletterProps) => {
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
@@ -45,7 +47,7 @@ const NewsletterSection = ({
 
   const showTypeForm = () => {
     onClickCTA()
-    if (!alreadySawTypeForm) {
+    if (!alreadySawTypeForm && shouldDisplayTypeForm) {
       toggle()
       setAlreadySawTypeForm(true)
     }
