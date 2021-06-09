@@ -33,9 +33,12 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
               <Image
                 src={post.mainImage?.asset?.url ?? '/404'}
                 width={mobile ? '375' : '1216'}
-                height={mobile ? '265' : '400'}
+                height={mobile ? '265' : '420'}
                 objectFit="cover"
                 layout="responsive"
+                style={{
+                  objectPosition: 'top'
+                }}
               />
             </div>
             <div className="p-9">
