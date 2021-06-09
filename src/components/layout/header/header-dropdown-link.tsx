@@ -69,7 +69,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           ref={triggerRef}
           data-id={id}
           tabIndex={0}
-          className="focus:outline-none focus:border-transparent focus:shadow-none"
+          className="focus:outline-none focus:border-transparent focus:shadow-none appearance-none"
           as={link.href ? 'a' : 'span'}
         >
           <p className="pt-8 pb-6 text-base transition-colors duration-150 border-b border-transparent border-solid cursor-pointer bg-aserto-grey-5 font-roboto text-aserto-grey-60 hover:text-aserto-grey-90 focus:outline-none focus:border-transparent focus:shadow-none">
