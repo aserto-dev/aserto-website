@@ -21,7 +21,7 @@ const BlogPost = ({ post }: Props) => {
       contain
       headProps={{
         description: 'Welcome to modern authorization',
-        image: 'images/og.png'
+        image: post?.mainImage?.asset?.url || 'images/og.png'
       }}
       newsletter={{
         title: 'Sign up for our newsletter',
