@@ -15,17 +15,15 @@ export type CustomHeadProps = {
 }
 
 const CustomHead = ({ title, description, image }: CustomHeadProps) => {
-  const ogURL = `https://www.aserto.com/images/og.png`
-
   const resolvedMeta = useMemo(() => {
     return {
       title: title ?? defaultMeta.title,
       description: description ?? defaultMeta.description,
       image: image ?? defaultMeta.image,
-      url: ogURL,
+      url: image ?? defaultMeta.image,
       twitterTag: defaultMeta.twitterTag
     }
-  }, [description, image, ogURL, title])
+  }, [description, image, title])
 
   return (
     <Head>
@@ -41,7 +39,8 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
       <meta property="og:description" content={resolvedMeta.description} />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:width" content="1200" />
-      <meta property="og:image" content={resolvedMeta.url} />
+      <meta property="og:image" content={resolvedMeta.image} />
+      <meta property="og:url" content={resolvedMeta.image} />
       <meta property="og:site_name" content={resolvedMeta.title} />
       <meta property="og:title" content={resolvedMeta.title} />
       <meta property="og:type" content="website" />

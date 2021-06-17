@@ -15,13 +15,12 @@ type Props = {
 
 const BlogPost = ({ post }: Props) => {
   if (!post) return <Error statusCode={404} />
-
   return (
     <PageLayout
       contain
       headProps={{
         description: 'Welcome to modern authorization',
-        image: post?.mainImage?.asset?.url || 'images/og.png'
+        image: String(post?.mainImage?.asset?.url)
       }}
       newsletter={{
         title: 'Sign up for our newsletter',
@@ -30,7 +29,6 @@ const BlogPost = ({ post }: Props) => {
           'https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1'
       }}
     >
-      <CustomHead />
       <Post post={post} />
     </PageLayout>
   )
