@@ -33,7 +33,7 @@ export const headerLinks = [
       },
       {
         label: 'Slack',
-        href: 'https://asertocommunity.slack.com',
+        href: 'https://asertocommunity.slack.com/join/shared_invite/zt-p06gin84-xNswWpTGyPDPxCz0LMux3g#/shared-invite/email',
         isExternal: true
       }
     ]
