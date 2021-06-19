@@ -1,5 +1,5 @@
 // Primitives
-import CustomHead from 'components/primitives/custom-head'
+//import CustomHead from 'components/primitives/custom-head'
 
 // Layout
 import PageLayout from 'components/layout/page'
