@@ -127,14 +127,14 @@ const Footer = () => {
                   Careers
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/"
+                  href="/news"
                 >
                   Press
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"

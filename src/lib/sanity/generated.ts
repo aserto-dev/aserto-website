@@ -599,6 +599,7 @@ export type Home = Document & {
   subtitle?: Maybe<Scalars['String']>;
   slogan?: Maybe<Array<Maybe<TextBlock>>>;
   ctaLabel?: Maybe<Scalars['String']>;
+  diagramTitle?: Maybe<Scalars['String']>;
   theProblemSectionLabel?: Maybe<Scalars['String']>;
   theProblemSectionTitle?: Maybe<Scalars['String']>;
   theProblemSectionSubtitle?: Maybe<Scalars['String']>;
@@ -626,6 +627,7 @@ export type HomeFilter = {
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
   ctaLabel?: Maybe<StringFilter>;
+  diagramTitle?: Maybe<StringFilter>;
   theProblemSectionLabel?: Maybe<StringFilter>;
   theProblemSectionTitle?: Maybe<StringFilter>;
   theProblemSectionSubtitle?: Maybe<StringFilter>;
@@ -645,6 +647,7 @@ export type HomeSorting = {
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
   ctaLabel?: Maybe<SortOrder>;
+  diagramTitle?: Maybe<SortOrder>;
   theProblemSectionLabel?: Maybe<SortOrder>;
   theProblemSectionTitle?: Maybe<SortOrder>;
   theProblemSectionSubtitle?: Maybe<SortOrder>;
@@ -898,6 +901,77 @@ export type MemberBlockSorting = {
   linkedIn?: Maybe<SortOrder>;
 };
 
+export type News = Document & {
+  __typename?: 'News';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  newsEntries?: Maybe<Array<Maybe<NewsBlock>>>;
+};
+
+export type NewsBlock = {
+  __typename?: 'NewsBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  titleRaw?: Maybe<Scalars['JSON']>;
+  publication?: Maybe<Scalars['String']>;
+  logo?: Maybe<MainImage>;
+  publishedOn?: Maybe<Scalars['DateTime']>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type NewsBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  publication?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+  publishedOn?: Maybe<DatetimeFilter>;
+  url?: Maybe<StringFilter>;
+};
+
+export type NewsBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  publication?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
+  publishedOn?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
+export type NewsFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+};
+
+export type NewsSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+};
+
 export type PillarBlock = {
   __typename?: 'PillarBlock';
   _key?: Maybe<Scalars['String']>;
@@ -1010,6 +1084,7 @@ export type RootQuery = {
   Author?: Maybe<Author>;
   Home?: Maybe<Home>;
   Faq?: Maybe<Faq>;
+  News?: Maybe<News>;
   About?: Maybe<About>;
   Careers?: Maybe<Careers>;
   JobPosting?: Maybe<JobPosting>;
@@ -1022,6 +1097,7 @@ export type RootQuery = {
   allAuthor: Array<Author>;
   allHome: Array<Home>;
   allFaq: Array<Faq>;
+  allNews: Array<News>;
   allAbout: Array<About>;
   allCareers: Array<Careers>;
   allJobPosting: Array<JobPosting>;
@@ -1057,6 +1133,11 @@ export type RootQueryHomeArgs = {
 
 
 export type RootQueryFaqArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryNewsArgs = {
   id: Scalars['ID'];
 };
 
@@ -1134,6 +1215,14 @@ export type RootQueryAllHomeArgs = {
 export type RootQueryAllFaqArgs = {
   where?: Maybe<FaqFilter>;
   sort?: Maybe<Array<FaqSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllNewsArgs = {
+  where?: Maybe<NewsFilter>;
+  sort?: Maybe<Array<NewsSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2039,6 +2128,35 @@ export type HomePageQuery = (
   )> }
 );
 
+export type NewsItemFragment = (
+  { __typename?: 'NewsBlock' }
+  & Pick<NewsBlock, 'titleRaw' | 'publication' | 'publishedOn' | 'url'>
+  & { logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type NewsPageFragment = (
+  { __typename?: 'News' }
+  & Pick<News, 'title' | 'subtitle'>
+  & { newsEntries?: Maybe<Array<Maybe<(
+    { __typename?: 'NewsBlock' }
+    & NewsItemFragment
+  )>>> }
+);
+
+export type NewsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type NewsPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allNews: Array<(
+    { __typename?: 'News' }
+    & NewsPageFragment
+  )> }
+);
+
 export const ImageFragmentDoc = gql`
     fragment Image on MainImage {
   crop {
@@ -2318,6 +2436,26 @@ export const HomePageFragmentDoc = gql`
     ${SectionBlockFragmentDoc}
 ${FeatureItemFragmentDoc}
 ${ImageFragmentDoc}`;
+export const NewsItemFragmentDoc = gql`
+    fragment NewsItem on NewsBlock {
+  titleRaw
+  publication
+  publishedOn
+  logo {
+    ...Image
+  }
+  url
+}
+    ${ImageFragmentDoc}`;
+export const NewsPageFragmentDoc = gql`
+    fragment NewsPage on News {
+  title
+  subtitle
+  newsEntries {
+    ...NewsItem
+  }
+}
+    ${NewsItemFragmentDoc}`;
 export const AboutPageDocument = gql`
     query AboutPage {
   allAbout(sort: {_createdAt: DESC}, limit: 1) {
@@ -2393,6 +2531,13 @@ export const HomePageDocument = gql`
   }
 }
     ${HomePageFragmentDoc}`;
+export const NewsPageDocument = gql`
+    query NewsPage {
+  allNews(sort: {_createdAt: DESC}, limit: 1) {
+    ...NewsPage
+  }
+}
+    ${NewsPageFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -2427,6 +2572,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     HomePage(variables?: HomePageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomePageQuery>(HomePageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'HomePage');
+    },
+    NewsPage(variables?: NewsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NewsPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<NewsPageQuery>(NewsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NewsPage');
     }
   };
 }

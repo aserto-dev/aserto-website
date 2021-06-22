@@ -1,0 +1,23 @@
+fragment NewsItem on NewsBlock {
+  titleRaw
+  publication
+  publishedOn
+  logo {
+    ...Image
+  }
+  url
+}
+
+fragment NewsPage on News {
+  title
+  subtitle
+  newsEntries {
+    ...NewsItem
+  }
+}
+
+query NewsPage {
+  allNews(sort: { _createdAt: DESC }, limit: 1) {
+    ...NewsPage
+  }
+}
