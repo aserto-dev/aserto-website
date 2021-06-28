@@ -45,6 +45,7 @@ const flattenQuery = (query: ParsedUrlQuery) => {
 
 const checkIfExternal = (url: string) => {
   try {
+    if (url === 'https://console.aserto.com/') return false
     const originUri = new URL('/', originURL)
     const uri = new URL('/', url)
     if (uri.origin === originUri.origin) return false
