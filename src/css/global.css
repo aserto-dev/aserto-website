@@ -35,3 +35,32 @@ body {
   display: none !important;
   -webkit-appearance: none;
 }
+
+.link {
+  text-decoration: none;
+  background-color: transparent;
+  padding-top: 14px;
+  box-sizing: border-box;
+  margin: 0px 40px 0px 0px;
+  font-weight: 400;
+  color: rgb(160, 160, 160) !important;
+}
+
+.link:hover {
+  color: #e7e7e7 !important;
+}
+
+@media (min-width: 540px) and (max-width: 920px) {
+  .link {
+    text-decoration: none;
+    background-color: transparent;
+    padding-top: 14px;
+    box-sizing: border-box;
+    margin: 0px 40px 0px 0px;
+    font-weight: 400;
+    color: rgb(160, 160, 160) !important;
+    display:table-cell;
+    vertical-align: middle;
+  }
+}
+

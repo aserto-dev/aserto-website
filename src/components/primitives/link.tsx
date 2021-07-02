@@ -22,7 +22,7 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
     } = restProps
 
     const isExternal = checkIfExternal(href)
-
+    const navLinkClasses = `link ${className}`
     return (
       <NextLink
         href={href}
@@ -40,12 +40,11 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
           className={
             variant === 'unstyled'
               ? className
+              : variant === 'nav'
+              ? navLinkClasses
               : clsx(
                   className,
                   'whitespace-nowrap text-primary transition-colors duration-150',
-                  {
-                    'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
-                  },
                   {
                     'text-xl text-aserto-lochivar-accent-40 hover:underline focus:text-aserto-lochivar-accent-50':
                       variant === 'color'
