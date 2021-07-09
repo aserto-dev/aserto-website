@@ -10,14 +10,14 @@ import Logo from 'icons/logo-footer.svg'
 // Styles
 import s from './menu.module.css'
 import { headerLinks } from '..'
-import { HeaderDropdownLinkMobile } from '../header-dropdown-link'
+import { NavItemWithDropdown } from '@aserto/aserto-react-components'
 
 type MenuProps = {
   show: boolean
   closeMenu: () => void
 }
 
-const Menu = ({ show = false, closeMenu }: MenuProps) => {
+const Menu = ({ show = false }: MenuProps) => {
   const year = useMemo(() => {
     return new Date().getUTCFullYear()
   }, [])
@@ -36,11 +36,7 @@ const Menu = ({ show = false, closeMenu }: MenuProps) => {
             if (l.label === 'Product' || l.label === 'Developers') return
             return (
               <li key={i} className="pb-7">
-                <HeaderDropdownLinkMobile
-                  link={l}
-                  id={`mobile-${i}`}
-                  onSelect={closeMenu}
-                />
+                <NavItemWithDropdown link={l} id={`mobile-${i}`} />
               </li>
             )
           })}

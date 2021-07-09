@@ -1,6 +1,10 @@
 // Primitives
 
-import { NavBar, NavItem } from '@aserto/aserto-react-components'
+import {
+  NavBar,
+  NavItem,
+  NavItemWithDropdown
+} from '@aserto/aserto-react-components'
 import { sendEvent } from 'lib/ga'
 import Button from 'components/primitives/button'
 import Link from '../../primitives/link'
@@ -144,16 +148,24 @@ const Header = () => {
       <>
         <ul>
           {headerLinks.map((headerLink, index) => {
+            if (headerLink.items.length > 0) {
+              return (
+                <NavItemWithDropdown
+                  key={headerLink.href}
+                  link={headerLink}
+                  id={index}
+                />
+              )
+            }
             return (
               <NavItem key={headerLink.href}>
                 <Link
                   variant="nav"
                   href={headerLink.href}
                   style={{
-                    paddingBottom: 31,
                     cursor: 'pointer'
                   }}
-                  className={`${index === 0 ? 'router-link-exact-active' : ''}`}
+                  className={`${index === 1 ? 'router-link-exact-active' : ''}`}
                 >
                   {headerLink.label}
                 </Link>
