@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'components/primitives/link'
 import { BlockContent } from 'components/primitives/block-content'
 import { PostFragment } from 'lib/sanity/generated'
@@ -10,7 +11,7 @@ type Props = {
   post: PostFragment
 }
 
-const Post = ({ post }: Props) => {
+const PostComponent = ({ post }: Props) => {
   const author = post.authors?.[0]?.author
   return (
     <section className="relative mx-auto pt-12 mb-52 lg:pt-24  md:pt-24 mb-52">
@@ -86,4 +87,5 @@ const Post = ({ post }: Props) => {
   )
 }
 
+const Post = React.memo(PostComponent)
 export default Post

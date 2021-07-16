@@ -4,7 +4,5 @@ const withTM = require('next-transpile-modules')(['gsap'])
 
 module.exports = withPlugins([withTM, withSvgr], {
   target: 'serverless',
-  future: {
-    webpack5: true
-  }
+  webpack5: true
 })

@@ -7,10 +7,11 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js --fix",
+    "export": "next export",
     "gql-codegen": "graphql-codegen --config gql-codegen.yml -r dotenv/config"
   },
   "dependencies": {

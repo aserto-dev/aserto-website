@@ -22,6 +22,7 @@ class MyDocument extends Document {
             src="https://app.termly.io/embed.min.js"
             data-auto-block="on"
             data-website-uuid="8437675d-2ac7-4fbd-8e03-ad2b3b9e974a"
+            defer
           />
           <link
             rel="preconnect"
