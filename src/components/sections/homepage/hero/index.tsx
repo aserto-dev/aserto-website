@@ -89,6 +89,8 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
                 <div className="flex items-center">
                   <Image
                     layout="native"
+                    width={70}
+                    height={70}
                     src={String(pillar.imagePath)}
                     alt="auth easy icon"
                   />

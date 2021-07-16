@@ -38,7 +38,7 @@ export const getStaticPaths = async () => {
       allJobPosting?.map((post) => ({
         params: { slug: post.slug?.current as string }
       })) ?? [],
-    fallback: 'blocking'
+    fallback: false
   }
 }
 
