@@ -14,6 +14,31 @@ export type CustomHeadProps = {
   image?: string
 }
 
+const decodeHTMLEntities = (text: string) => {
+  const entities = [
+    ['amp', '&'],
+    ['apos', "'"],
+    ['#x27', "'"],
+    ['#x2F', '/'],
+    ['#39', "'"],
+    ['#47', '/'],
+    ['lt', '<'],
+    ['gt', '>'],
+    ['nbsp', ' '],
+    ['quot', '"']
+  ]
+  let res = ''
+
+  for (let i = 0, max = entities.length; i < max; ++i) {
+    res = text.replace(
+      new RegExp('&' + entities[i][0] + ';', 'g'),
+      entities[i][1]
+    )
+  }
+
+  return res
+}
+
 const CustomHead = ({ title, description, image }: CustomHeadProps) => {
   const resolvedMeta = useMemo(() => {
     return {
@@ -42,7 +67,10 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
       <meta property="og:image" content={resolvedMeta.image} />
       <meta property="og:url" content={resolvedMeta.image} />
       <meta property="og:site_name" content={resolvedMeta.title} />
-      <meta property="og:title" content={resolvedMeta.title} />
+      <meta
+        property="og:title"
+        content={decodeHTMLEntities(resolvedMeta.title)}
+      />
       <meta property="og:type" content="website" />
 
       {/* Twitter Card */}

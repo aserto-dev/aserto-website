@@ -19,6 +19,7 @@ const BlogPost = ({ post }: Props) => {
     <PageLayout
       contain
       headProps={{
+        title: String(post?.title || '') as string,
         description: 'Welcome to modern authorization',
         image: String(post?.mainImage?.asset?.url)
       }}
