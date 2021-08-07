@@ -35,3 +35,11 @@ body {
   display: none !important;
   -webkit-appearance: none;
 }
+
+pre code {
+  background: #000;
+  border-left: 5px solid #277f82;
+  padding: 0.5em 1.5em;
+  display: block;
+  font-size: 15px;
+}
