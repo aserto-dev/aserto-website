@@ -155,8 +155,6 @@ export type AuthorReferenceFilter = {
   author?: Maybe<AuthorFilter>;
 };
 
-export type AuthorReferenceOrSpan = AuthorReference | Span;
-
 export type AuthorReferenceSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
@@ -190,29 +188,29 @@ export type BlogBodyImage = {
   __typename?: 'BlogBodyImage';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  captionRaw?: Maybe<Scalars['JSON']>;
-  /** Important for SEO and accessiblity. */
-  alt?: Maybe<Scalars['String']>;
   asset?: Maybe<SanityImageAsset>;
   hotspot?: Maybe<SanityImageHotspot>;
   crop?: Maybe<SanityImageCrop>;
+  captionRaw?: Maybe<Scalars['JSON']>;
+  /** Important for SEO and accessiblity. */
+  alt?: Maybe<Scalars['String']>;
 };
 
 export type BlogBodyImageFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
-  alt?: Maybe<StringFilter>;
   asset?: Maybe<SanityImageAssetFilter>;
   hotspot?: Maybe<SanityImageHotspotFilter>;
   crop?: Maybe<SanityImageCropFilter>;
+  alt?: Maybe<StringFilter>;
 };
 
 export type BlogBodyImageSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
-  alt?: Maybe<SortOrder>;
   hotspot?: Maybe<SanityImageHotspotSorting>;
   crop?: Maybe<SanityImageCropSorting>;
+  alt?: Maybe<SortOrder>;
 };
 
 export type BooleanFilter = {
@@ -328,6 +326,34 @@ export type CategorySorting = {
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   description?: Maybe<SortOrder>;
+};
+
+export type Code = {
+  __typename?: 'Code';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  language?: Maybe<Scalars['String']>;
+  filename?: Maybe<Scalars['String']>;
+  code?: Maybe<Scalars['String']>;
+  highlightedLines?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type CodeFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  language?: Maybe<StringFilter>;
+  filename?: Maybe<StringFilter>;
+  code?: Maybe<StringFilter>;
+};
+
+export type CodeOrSpan = Code | Span;
+
+export type CodeSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  language?: Maybe<SortOrder>;
+  filename?: Maybe<SortOrder>;
+  code?: Maybe<SortOrder>;
 };
 
 
@@ -845,31 +871,31 @@ export type MainImage = {
   __typename?: 'MainImage';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  caption?: Maybe<Scalars['String']>;
-  /** Important for SEO and accessiblity. */
-  alt?: Maybe<Scalars['String']>;
   asset?: Maybe<SanityImageAsset>;
   hotspot?: Maybe<SanityImageHotspot>;
   crop?: Maybe<SanityImageCrop>;
+  caption?: Maybe<Scalars['String']>;
+  /** Important for SEO and accessiblity. */
+  alt?: Maybe<Scalars['String']>;
 };
 
 export type MainImageFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
-  caption?: Maybe<StringFilter>;
-  alt?: Maybe<StringFilter>;
   asset?: Maybe<SanityImageAssetFilter>;
   hotspot?: Maybe<SanityImageHotspotFilter>;
   crop?: Maybe<SanityImageCropFilter>;
+  caption?: Maybe<StringFilter>;
+  alt?: Maybe<StringFilter>;
 };
 
 export type MainImageSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
-  caption?: Maybe<SortOrder>;
-  alt?: Maybe<SortOrder>;
   hotspot?: Maybe<SanityImageHotspotSorting>;
   crop?: Maybe<SanityImageCropSorting>;
+  caption?: Maybe<SortOrder>;
+  alt?: Maybe<SortOrder>;
 };
 
 export type MemberBlock = {
@@ -1320,6 +1346,7 @@ export type SanityFileAsset = Document & {
   label?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  altText?: Maybe<Scalars['String']>;
   sha1hash?: Maybe<Scalars['String']>;
   extension?: Maybe<Scalars['String']>;
   mimeType?: Maybe<Scalars['String']>;
@@ -1343,6 +1370,7 @@ export type SanityFileAssetFilter = {
   label?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   description?: Maybe<StringFilter>;
+  altText?: Maybe<StringFilter>;
   sha1hash?: Maybe<StringFilter>;
   extension?: Maybe<StringFilter>;
   mimeType?: Maybe<StringFilter>;
@@ -1364,6 +1392,7 @@ export type SanityFileAssetSorting = {
   label?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   description?: Maybe<SortOrder>;
+  altText?: Maybe<SortOrder>;
   sha1hash?: Maybe<SortOrder>;
   extension?: Maybe<SortOrder>;
   mimeType?: Maybe<SortOrder>;
@@ -1391,6 +1420,7 @@ export type SanityImageAsset = Document & {
   label?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  altText?: Maybe<Scalars['String']>;
   sha1hash?: Maybe<Scalars['String']>;
   extension?: Maybe<Scalars['String']>;
   mimeType?: Maybe<Scalars['String']>;
@@ -1415,6 +1445,7 @@ export type SanityImageAssetFilter = {
   label?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   description?: Maybe<StringFilter>;
+  altText?: Maybe<StringFilter>;
   sha1hash?: Maybe<StringFilter>;
   extension?: Maybe<StringFilter>;
   mimeType?: Maybe<StringFilter>;
@@ -1437,6 +1468,7 @@ export type SanityImageAssetSorting = {
   label?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   description?: Maybe<SortOrder>;
+  altText?: Maybe<SortOrder>;
   sha1hash?: Maybe<SortOrder>;
   extension?: Maybe<SortOrder>;
   mimeType?: Maybe<SortOrder>;
