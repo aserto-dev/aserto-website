@@ -12,7 +12,8 @@
     "type-check": "tsc --pretty --noEmit",
     "lint": "eslint . --ext ts --ext tsx --ext js --fix",
     "export": "next export",
-    "gql-codegen": "graphql-codegen --config gql-codegen.yml -r dotenv/config"
+    "gql-codegen": "graphql-codegen --config gql-codegen.yml -r dotenv/config",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^0.0.13",
@@ -62,6 +63,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "6.0.0",
     "lint-staged": "11.0.0",
+    "next-sitemap": "^1.6.168",
     "postcss": "^8.3.0",
     "prettier": "^2.3.1",
     "react-polymorphic-types": "^1.0.3",
