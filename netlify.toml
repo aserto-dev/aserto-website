@@ -1,8 +1,3 @@
 [build]
   command = "yarn build"
   publish = "out"
-
-[[redirects]]
-  from = "/docs/*"
-  to = "https://docs.aserto.com/docs/:splat"
-  status = 200
