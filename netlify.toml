@@ -4,5 +4,5 @@
 
 [[redirects]]
   from = "/docs/*"
-  to = "https://docs.aserto.com/:splat"
+  to = "https://docs.aserto.com/docs/:splat"
   status = 200
