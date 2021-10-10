@@ -20,7 +20,7 @@ const Team = ({ page }: { page: AboutPageFragment }) => {
             {page.teamSectionSubtitle}
           </p>
         </div>
-        <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
+        <div className="grid w-full grid-cols-2 gap-4 mx-auto mt-20 gap-y-12 sm:gap-12 sm:gap-y-20 lg:grid-cols-4">
           {page.team?.map((member, i) => {
             if (!member) return null
             return (

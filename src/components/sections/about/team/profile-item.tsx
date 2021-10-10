@@ -2,10 +2,10 @@ import { BlockContent } from 'components/primitives/block-content'
 import Image from 'components/primitives/image'
 
 // Primitives
-import Link from 'components/primitives/link'
+//import Link from 'components/primitives/link'
 
 // Icons
-import LinkedinIcon from 'icons/linkedin-bio.svg'
+//import LinkedinIcon from 'icons/linkedin-bio.svg'
 import { MemberFragment } from 'lib/sanity/generated'
 
 type Props = {
@@ -13,6 +13,40 @@ type Props = {
   withImage: boolean
 }
 
+const ProfileItem = ({ data, withImage }: Props) => (
+  <a href={data.linkedIn ?? '/careers#open-positions'}>
+    <div className="flex flex-col items-center text-center">
+      {withImage && (
+        <div className="flex overflow-hidden w-[100px] rounded-full">
+          <Image
+            className="object-cover"
+            src={data.avatar?.asset?.url ?? ''}
+            alt={data.avatar?.alt ?? data.name ?? 'avatar'}
+            width={100}
+            height={100}
+          />
+        </div>
+      )}
+      <div className="flex items-center justify-center mt-4 text-base tracking-tight text-white sm:text-2xl">
+        <p>{data.name}</p>
+        { data.linkedIn && 
+          <Image
+            src="/images/about/linkedIn.svg"
+            className="ml-1 sm:ml-2 cursor-pointer"
+            layout="native"
+          />
+        }
+      </div>
+      <p className="mt-2 text-aserto-grey-60 font-roboto">{data.position}</p>
+      <BlockContent
+        blocks={data.bioRaw}
+        className="leading-relaxed text-aserto-grey-60 font-roboto"
+      />
+    </div>
+  </a>
+)
+
+/* old item
 const ProfileItem = ({ data, withImage }: Props) => (
   <div className="flex flex-col p-6 overflow-hidden border rounded border-aserto-grey-10">
     <div className="flex items-center">
@@ -47,5 +81,6 @@ const ProfileItem = ({ data, withImage }: Props) => (
     </div>
   </div>
 )
+*/
 
 export default ProfileItem
