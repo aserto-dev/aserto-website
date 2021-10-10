@@ -17,6 +17,7 @@ const OpenPositions = ({
   positions: JobPostingMetaFragment[]
 }) => {
   const [section] = useFadeInBottom()
+  const enabledPositions = positions.filter(p => !!p.leverHref)
   return (
     <section className="pt-0 pb-52" id="open-positions">
       <div className="mx-auto" ref={section}>
@@ -30,7 +31,7 @@ const OpenPositions = ({
           />
         </div>
         <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3">
-          {positions.map((position, i) => (
+          {enabledPositions.map((position, i) => (
             <PostionItem data={position} key={i} />
           ))}
         </div>
