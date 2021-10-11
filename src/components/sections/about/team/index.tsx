@@ -10,7 +10,7 @@ const Team = ({ page }: { page: AboutPageFragment }) => {
 
   if (!page.teamSectionEnabled) return null
   return (
-    <section className="mt-36 sm:mt-56">
+    <section className="mt-36 sm:mt-56 mb-32">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
