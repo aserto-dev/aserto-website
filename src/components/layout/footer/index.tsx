@@ -75,17 +75,17 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="https://asertocommunity.slack.com/join/shared_invite/zt-p06gin84-xNswWpTGyPDPxCz0LMux3g#/shared-invite/email"
+                  href="https://join.slack.com/t/asertocommunity/shared_invite/zt-wxv3lezq-4IMPfmOCLjNBPtXA91gEVw"
                 >
-                  Slack
+                  Community Slack
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="https://asertocommunity.slack.com/join/shared_invite/zt-p06gin84-xNswWpTGyPDPxCz0LMux3g#/shared-invite/email"
+                  href="https://openpolicyregistry.io"
                 >
-                  Support
+                  Open Poicy Registry
                 </Link>
               </li>
               <li>
@@ -93,7 +93,7 @@ const Footer = () => {
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="https://aserto.statuspage.io/"
                 >
-                  Status
+                  Service Status
                 </Link>
               </li>
             </ul>

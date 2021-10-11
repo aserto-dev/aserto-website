@@ -22,8 +22,13 @@ export const headerLinks = [
     href: '',
     items: [
       {
-        label: 'Docs',
+        label: 'Documentation',
         href: 'https://docs.aserto.com/',
+        isExternal: true
+      },
+      {
+        label: 'API Reference',
+        href: 'https://aserto.readme.io/',
         isExternal: true
       },
       {
@@ -32,10 +37,20 @@ export const headerLinks = [
         isExternal: true
       },
       {
-        label: 'Slack',
-        href: 'https://asertocommunity.slack.com/join/shared_invite/zt-p06gin84-xNswWpTGyPDPxCz0LMux3g#/shared-invite/email',
+        label: 'SDKs',
+        href: 'https://docs.aserto.com/docs/software-development-kits/sdks',
         isExternal: true
-      }
+      },
+      {
+        label: 'Slack Community',
+        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-wxv3lezq-4IMPfmOCLjNBPtXA91gEVw',
+        isExternal: true
+      },
+      {
+        label: 'Open Policy Registry',
+        href: 'https://openpolicyregistry.io',
+        isExternal: true
+      },
     ]
   },
   {
