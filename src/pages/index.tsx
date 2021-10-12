@@ -25,16 +25,24 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   if (isIE) {
     return (
-        <div
-          style={{width:"70vw", height:"50vh", padding:"30px",
-            marginTop: "10vh",
-            color:"whitesmoke", border: "1px solid white",
-            borderRadius: "10px",
-            fontSize:"40px", display: "flex", margin:"auto"}}>
-          <p>
-            🦖 Looks like you are using IE. Update your browser for more
-            security, speed and the best experience on this site.
-          </p>
+      <div
+        style={{
+          width: '70vw',
+          height: '50vh',
+          padding: '5rem',
+          marginTop: '10vh',
+          color: 'whitesmoke',
+          border: '1px solid white',
+          borderRadius: '10px',
+          fontSize: '40px',
+          display: 'flex',
+          margin: 'auto'
+        }}
+      >
+        <p>
+          🦖 Looks like you are using IE. Update your browser for more security,
+          speed and the best experience on this site.
+        </p>
       </div>
     )
   }
