@@ -85,7 +85,7 @@ const Footer = () => {
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="https://openpolicyregistry.io"
                 >
-                  Open Poicy Registry
+                  Open Policy Registry
                 </Link>
               </li>
               <li>
