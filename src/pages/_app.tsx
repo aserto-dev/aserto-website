@@ -10,6 +10,13 @@ import { pageview } from 'lib/ga'
 initGsap()
 
 const App = ({ Component, pageProps, router }: AppProps) => {
+
+  useEffect(() => {
+    window.setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 200)
+  })
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url)
