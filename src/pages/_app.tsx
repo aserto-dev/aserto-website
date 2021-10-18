@@ -12,7 +12,7 @@ initGsap()
 const App = ({ Component, pageProps, router }: AppProps) => {
 
   useEffect(() => {
-    if (!window) return;
+    if (!window) return
     window.setTimeout(() => {
       window.scrollTo(0, 0)
     }, 200)
