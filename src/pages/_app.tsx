@@ -11,6 +11,10 @@ initGsap()
 
 const App = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
+
+  useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url)
     }
