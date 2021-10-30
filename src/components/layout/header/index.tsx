@@ -38,7 +38,7 @@ export const headerLinks = [
       },
       {
         label: 'SDKs',
-        href: 'https://docs.aserto.com/docs/software-development-kits/sdks',
+        href: 'https://docs.aserto.com/docs/software-development-kits/overview',
         isExternal: true
       },
       {
