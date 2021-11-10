@@ -19,6 +19,7 @@ const JobPostingPage = ({ posting }: Props) => {
   return (
     <PageLayout
       contain
+      footer
       headProps={{
         title: 'Aserto Careers',
         description: 'Welcome to modern authorization',

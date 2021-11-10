@@ -25,6 +25,7 @@ const PrivacyPolicy = () => {
   return (
     <PageLayout
       contain
+      footer
       headProps={{
         title: 'Aserto Privacy Policy',
         description: 'Welcome to modern authorization',

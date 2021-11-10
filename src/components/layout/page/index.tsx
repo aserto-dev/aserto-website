@@ -1,3 +1,5 @@
+import React from 'react'
+
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 
@@ -27,6 +29,7 @@ interface Props {
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   newsletter?: NewsletterProps
+  footer?: boolean
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -48,7 +51,13 @@ const transitionVariants = {
   }
 }
 
-const PageLayout = ({ children, contain, headProps, newsletter }: Props) => {
+const PageLayout = ({
+  children,
+  contain,
+  headProps,
+  newsletter,
+  footer
+}: Props) => {
   return (
     <div className="overflow-hidden">
       <CustomHead {...headProps} />
@@ -63,7 +72,7 @@ const PageLayout = ({ children, contain, headProps, newsletter }: Props) => {
         {contain ? <Container>{children}</Container> : children}
       </motion.main>
       {newsletter && <Newsletter {...newsletter} />}
-      <Footer />
+      {footer && <Footer />}
     </div>
   )
 }
