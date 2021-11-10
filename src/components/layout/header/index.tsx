@@ -43,7 +43,7 @@ export const headerLinks = [
       },
       {
         label: 'Slack Community',
-        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-wxv3lezq-4IMPfmOCLjNBPtXA91gEVw',
+        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg',
         isExternal: true
       },
       {
