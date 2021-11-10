@@ -18,6 +18,7 @@ const BlogPost = ({ post }: Props) => {
   return (
     <PageLayout
       contain
+      footer
       headProps={{
         title: String(post?.title || '') as string,
         description: 'Welcome to modern authorization',

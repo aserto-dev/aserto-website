@@ -12,6 +12,7 @@ const News = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
+      footer
       headProps={{
         title: 'Aserto',
         description: 'Welcome to modern authorization',

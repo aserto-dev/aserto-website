@@ -20,6 +20,7 @@ const Careers = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
+      footer
       headProps={{
         title: 'Aserto Careers',
         description: 'Welcome to modern authorization',

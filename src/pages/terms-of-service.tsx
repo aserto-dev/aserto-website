@@ -26,6 +26,7 @@ const TermsOfService = () => {
   return (
     <PageLayout
       contain
+      footer
       headProps={{
         title: 'Aserto Faq',
         description: '',
