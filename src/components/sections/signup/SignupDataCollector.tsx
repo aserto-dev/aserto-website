@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-const SignupDataCollector = () => {
+export interface signupRequest {
+  email: string
+  recaptcha: string | null
+}
+
+interface signupDataCollectorProps {
+  onSubmit: (request: signupRequest) => void
+}
+
+const SignupDataCollector = (props: signupDataCollectorProps) => {
+  const [signupRequest, setSignupRequest] = useState<signupRequest>({
+    email: '',
+    recaptcha: ''
+  })
+
   return (
     <div
       id="doSignup"
@@ -22,18 +36,31 @@ const SignupDataCollector = () => {
       </div>
       <input
         className="bg-aserto-black border-aserto-lochivar-accent-20 shadow-input text-aserto-grey-60 w-full"
+        onChange={(event) => {
+          setSignupRequest({
+            ...signupRequest,
+            email: event?.target.value
+          })
+        }}
         placeholder="Email"
         style={{ fontSize: '16px', height: '60px' }}
         type="text"
       />
       <div className="bg-aserto-grey-20 w-full" style={{ padding: '9px' }}>
         <ReCAPTCHA
+          onChange={(recaptcha) => {
+            setSignupRequest({
+              ...signupRequest,
+              recaptcha
+            })
+          }}
           sitekey="6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
           theme="dark"
         />
       </div>
-      <input
+      <button
         className="bg-aserto-lochivar-60 font-roboto w-full text-white"
+        onClick={() => props.onSubmit(signupRequest)}
         style={{
           borderRadius: '6px',
           fontSize: '16px',
@@ -41,9 +68,9 @@ const SignupDataCollector = () => {
           lineHeight: '24px',
           marginTop: '37px'
         }}
-        type="submit"
-        value="Sign me up!"
-      />
+      >
+        {'Sign me up!'}
+      </button>
     </div>
   )
 }
