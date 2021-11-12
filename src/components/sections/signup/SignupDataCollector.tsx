@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-
-export interface signupRequest {
-  email: string
-  recaptcha: string | null
-}
+import { signupRequest } from './SignupClient'
 
 interface signupDataCollectorProps {
   onSubmit: (request: signupRequest) => void

@@ -1,24 +1,8 @@
-// Hooks
 import React, { useState } from 'react'
+import { signupRequest, signupResponse, signupUser } from './SignupClient'
 import SignupContainer from './SignupContainer'
-import SignupDataCollector, { signupRequest } from './SignupDataCollector'
+import SignupDataCollector from './SignupDataCollector'
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
-
-interface signupResponse {
-  code: number
-  message: string
-  details: [
-    {
-      '@type': string
-      reason: string
-      domain: string
-      metadata: {
-        'aserto-http-statuscode': string
-        email: string
-      }
-    }
-  ]
-}
 
 interface signupAttempt {
   request: signupRequest | undefined
@@ -32,31 +16,31 @@ const Signup = () => {
   })
 
   const handleSignUpRequest = (request: signupRequest) => {
-    fetch('https://tenant.mitza.eng.aserto.com/api/v1/account/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(request)
-    })
-      .then((res) => res.json())
-      .then((response) => {
-        setSignupAttempt({
-          ...signupAttempt,
-          request,
-          response
-        })
+    signupUser(request).then((response) => {
+      setSignupAttempt({
+        ...signupAttempt,
+        request,
+        response
       })
+    })
   }
 
-  return (
-    <SignupContainer>
-      {!signupAttempt.request
-        ? <SignupDataCollector onSubmit={handleSignUpRequest} />
-        : <SignupSuccessfulNotification email={signupAttempt.request.email} />
+  const toRender = () => {
+    if (!signupAttempt.request || !signupAttempt.response) {
+      return <SignupDataCollector onSubmit={handleSignUpRequest} />
+    } else {
+      switch (signupAttempt.response.status) {
+        case 200:
+          return (
+            <SignupSuccessfulNotification email={signupAttempt.request.email} />
+          )
+        default:
+          return <SignupDataCollector onSubmit={handleSignUpRequest} />
       }
-    </SignupContainer>
-  )
+    }
+  }
+
+  return <SignupContainer>{toRender()}</SignupContainer>
 }
 
 export default Signup
