@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Image from '../../../primitives/image'
+import Link from 'components/primitives/link'
 
 const ServiceError = () => {
   return (
@@ -31,14 +32,20 @@ const ServiceError = () => {
       >
         <div className="flex flex-col font-roboto items-center text-aserto-grey-90 w-full">
           <div style={{ fontSize: '32px', minHeight: '56px' }}>
-            <Fragment>{'Looks like something went wrong!'}</Fragment>
+            Looks like something went wrong!
           </div>
           <div style={{ fontSize: '20px', minHeight: '56px' }}>
-            <Fragment>
-              {
-                "We're sorry about this. Please refresh the page and try again. If problem persists, contact us."
-              }
-            </Fragment>
+            We're sorry about this. Please refresh the page and try again. If
+            problem persists,{' '}
+            {
+              <Link
+                className="text-aserto-lochivar-accent-40 font-roboto"
+                href="mailto:info@aserto.com"
+              >
+                contact us
+              </Link>
+            }
+            .
           </div>
         </div>
         <div style={{ flexGrow: 1, position: 'absolute', bottom: '62px' }}>
