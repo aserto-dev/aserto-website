@@ -1,46 +1,66 @@
-import React, { useState } from 'react'
+import React, { ReactChild, useState } from 'react'
 import { signupRequest, signupResponse, signupUser } from './SignupClient'
 import SignupContainer from './SignupContainer'
 import SignupDataCollector from './SignupDataCollector'
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
+import Error from '../common/error'
 
-interface signupAttempt {
+interface signupState {
   request: signupRequest | undefined
   response: signupResponse | undefined
+  invalidEmailAddresses: Array<string>
 }
 
 const Signup = () => {
-  const [signupAttempt, setSignupAttempt] = useState<signupAttempt>({
+  const [state, setState] = useState<signupState>({
     request: undefined,
-    response: undefined
+    response: undefined,
+    invalidEmailAddresses: []
   })
 
-  const handleSignUpRequest = (request: signupRequest) => {
-    signupUser(request).then((response) => {
-      setSignupAttempt({
-        ...signupAttempt,
-        request,
-        response
-      })
-    })
+  const handleSignUpRequest = async (request: signupRequest) => {
+    const response = await signupUser(request)
+    const newState = {
+      ...state,
+      request,
+      response
+    }
+
+    if (response.status == 400) {
+      newState.invalidEmailAddresses.push(request.email)
+    }
+
+    setState(newState)
   }
 
-  const toRender = () => {
-    if (!signupAttempt.request || !signupAttempt.response) {
-      return <SignupDataCollector onSubmit={handleSignUpRequest} />
-    } else {
-      switch (signupAttempt.response.status) {
-        case 200:
-          return (
-            <SignupSuccessfulNotification email={signupAttempt.request.email} />
-          )
-        default:
-          return <SignupDataCollector onSubmit={handleSignUpRequest} />
-      }
+  let uiState: ReactChild = (
+    <SignupContainer>
+      <SignupDataCollector
+        invalidEmailAddresses={state.invalidEmailAddresses}
+        onSubmit={handleSignUpRequest}
+      />
+    </SignupContainer>
+  )
+
+  if (state.request && state.response) {
+    switch (state.response.status) {
+      case 200:
+        uiState = (
+          <SignupContainer>
+            <SignupSuccessfulNotification email={state.request.email} />
+          </SignupContainer>
+        )
+        break
+      case 500:
+        uiState = <Error />
+        break
+      case 400:
+      default:
+        break
     }
   }
 
-  return <SignupContainer>{toRender()}</SignupContainer>
+  return uiState
 }
 
 export default Signup

@@ -8,14 +8,14 @@ const SignupContainer = ({ children }: ChildrenProps) => {
   return (
     <div
       className="flex flex-col items-center"
-      style={{ gap: '58px', paddingBottom: '225px' }}
+      style={{ gap: '58px', paddingBottom: '225px', paddingTop: '70px' }}
     >
       <div>
         <Image
           layout="native"
-          width={106}
-          height={108}
-          src="/images/aserto-logo.png"
+          width={145}
+          height={150}
+          src="/images/aserto-vertical-color-white-text.svg"
         />
       </div>
       <div
@@ -23,7 +23,7 @@ const SignupContainer = ({ children }: ChildrenProps) => {
         style={{
           backgroundColor: '#262626',
           borderRadius: '11px',
-          height: '397px',
+          height: '420px',
           width: '600px'
         }}
       >
