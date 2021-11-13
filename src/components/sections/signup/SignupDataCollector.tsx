@@ -3,13 +3,13 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import { signupRequest } from './SignupClient'
 
 interface signupDataCollectorProps {
-  invalidEmailAddresses: Array<string>
+  errorMessage: JSX.Element | undefined
   onSubmit: (request: signupRequest) => void
 }
 
 interface signupDataCollectorState {
   request: signupRequest
-  invalidEmailAddresses: Array<string>
+  errorMessage: JSX.Element | undefined
 }
 
 const SignupDataCollector = (props: signupDataCollectorProps) => {
@@ -18,11 +18,10 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
       email: '',
       recaptcha: ''
     },
-    invalidEmailAddresses: props.invalidEmailAddresses
+    errorMessage: undefined
   })
 
-  const isEmailValid = () =>
-    state.invalidEmailAddresses.indexOf(state.request.email) > -1
+  const showError = () => !(!!state.errorMessage)
 
   return (
     <div
@@ -54,7 +53,7 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
         >
           <input
             className={`bg-aserto-black border-aserto-${
-              isEmailValid() ? 'mojo-accent-30' : 'lochivar-accent-20'
+              showError() ? 'mojo-accent-30' : 'lochivar-accent-20'
             } shadow-input text-aserto-grey-60 w-full`}
             onChange={(event) => {
               setState({
@@ -66,9 +65,9 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
             style={{ fontSize: '16px', height: '60px' }}
             type="text"
           />
-          {isEmailValid() && (
+          {showError() && (
             <text className="text-aserto-mojo-accent-30">
-              {'Use a valid email address and try again.'}
+              {props.errorMessage}
             </text>
           )}
         </div>
