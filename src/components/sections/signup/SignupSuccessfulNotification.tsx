@@ -8,7 +8,6 @@ const SignupSuccessfulNotification = (
   props: SignupSuccessfulNotificationProps
 ) => (
   <div
-    id="didSignup"
     className="text-aserto-grey-60"
     style={{ padding: '20px', fontSize: '24px', lineHeight: '32px' }}
   >

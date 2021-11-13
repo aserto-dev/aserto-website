@@ -5,9 +5,7 @@ import React from 'react'
 const Page = () => (
   <div>
     <CustomHead />
-    <section>
-      <Signup />
-    </section>
+    <Signup />
   </div>
 )
 

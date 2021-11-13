@@ -25,7 +25,6 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
 
   return (
     <div
-      id="doSignup"
       className="flex flex-col items-center"
       style={{
         paddingTop: '19px',
