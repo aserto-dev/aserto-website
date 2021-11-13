@@ -23,7 +23,7 @@ const ServiceError = () => {
           className="font-roboto text-aserto-grey-90"
           style={{ fontSize: '92px' }}
         >
-          <Fragment>{'500'}</Fragment>
+          500
         </div>
       </div>
       <div
