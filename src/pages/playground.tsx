@@ -1,11 +1,12 @@
 // Primitives
-import PageLayout from 'components/layout/page'
+import Header from 'components/layout/header'
+import CustomHead from 'components/primitives/custom-head'
 
 import React, { useEffect } from 'react'
 
 const Playground = () => {
   useEffect(() => {
-    ;(function (d, s, id) {
+    ; (function (d, s, id) {
       var js,
         tjs = d.getElementsByTagName(s)[0]
       // react vdom will overwrite - so need to recreate
@@ -20,23 +21,21 @@ const Playground = () => {
     })(document, 'script', 'termly-jssdk')
   }, [])
   return (
-    <PageLayout
-      headProps={{
-        title: 'Aserto',
-        description: 'Welcome to modern authorization',
-        image: 'images/og.png'
-      }}
-    >
+    <div className="overflow-hidden flex flex-col h-screen">
+      <CustomHead
+        title="Aserto"
+        description="Welcome to modern authorization"
+        image="images/og.png"
+      />
+      <div>
+        <Header />
+      </div>
       <iframe
         name="playgroundIframe"
         src="https://aserto-playground.netlify.app/?embedded=1"
-        style={{
-          height: '90vh',
-          width: '100vw',
-          overflow: 'hidden'
-        }}
+        className="w-screen h-full overflow-hidden"
       />
-    </PageLayout>
+    </div>
   )
 }
 
