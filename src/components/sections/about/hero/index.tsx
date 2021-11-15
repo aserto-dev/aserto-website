@@ -13,7 +13,7 @@ const Hero = ({ page }: { page: AboutPageFragment }) => {
   const [ref] = useFadeInBottom()
 
   return (
-    <section className={`mx-auto pb-12 sm:pb-20 ${s.background}`}>
+    <section className={`mx-auto pb-20 ${s.background}`}>
       <div className={s.background}>
         <Image
           src="/images/about/background2.png"

@@ -63,7 +63,7 @@ const PageLayout = ({
       <CustomHead {...headProps} />
       <Header />
       <motion.main
-        className="relative mt-16 bg-aserto-black"
+        className="relative bg-aserto-black"
         animate="enter"
         exit="exit"
         initial="initial"
