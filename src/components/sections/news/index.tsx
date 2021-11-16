@@ -22,7 +22,7 @@ const NewsItems = ({ page }: { page: NewsPageFragment }) => {
   const canShowMore = useMemo(() => {
     const len = (page.newsEntries && page.newsEntries.length) || 0
     return len > shownPages * pageSize
-  }, [page.newsEntries?.length, shownPages])
+  }, [page.newsEntries, shownPages])
 
   return (
     <section className="pb-28">

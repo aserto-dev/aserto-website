@@ -5,13 +5,13 @@ export interface SignupRequest {
 
 export interface SignupResponse {
   status: number
-  body?: signupBody
+  body?: SignupBody
 }
 
 const tenantServiceUrl = () =>
-  process.env.SANITY_READ_TOKEN || 'https://tenant.eng.aserto.com/'
+  process.env.SANITY_READ_TOKEN || 'http://tenant.eng.aserto.com/'
 
-interface signupBody {
+interface SignupBody {
   code: number
   message: string
   details: [
@@ -27,7 +27,7 @@ interface signupBody {
   ]
 }
 
-export const SignupUser = async (
+export const signupUser = async (
   request: SignupRequest
 ): Promise<SignupResponse> => {
   let response: Response

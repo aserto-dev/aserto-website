@@ -17,7 +17,7 @@ const OpenPositions = ({
   positions: JobPostingMetaFragment[]
 }) => {
   const [section] = useFadeInBottom()
-  const enabledPositions = positions.filter(p => !!p.leverHref)
+  const enabledPositions = positions.filter((p) => !!p.leverHref)
   return (
     <section className="pt-0 pb-52" id="open-positions">
       <div className="mx-auto" ref={section}>

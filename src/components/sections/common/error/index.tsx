@@ -35,8 +35,8 @@ const ServiceError = () => {
             Looks like something went wrong!
           </div>
           <div style={{ fontSize: '20px', minHeight: '56px' }}>
-            We're sorry about this. Please refresh the page and try again. If
-            the problem persists,{' '}
+            We&apos;re sorry about this. Please refresh the page and try again.
+            If the problem persists,{' '}
             {
               <Link
                 className="text-aserto-lochivar-accent-40 font-roboto"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SignupRequest, SignupUser } from './SignupClient'
+import { SignupRequest, signupUser } from './SignupClient'
 import SignupContainer from './SignupContainer'
 import SignupDataCollector from './SignupDataCollector'
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
@@ -18,7 +18,7 @@ const Signup = () => {
   })
 
   const handleSignUpRequest = async (request: SignupRequest) => {
-    const response = await SignupUser(request)
+    const response = await signupUser(request)
 
     let newState: SignupState
 

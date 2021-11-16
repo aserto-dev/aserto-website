@@ -50,7 +50,7 @@ export const headerLinks = [
         label: 'Open Policy Registry',
         href: 'https://openpolicyregistry.io',
         isExternal: true
-      },
+      }
     ]
   },
   {

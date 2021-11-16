@@ -17,7 +17,8 @@ const SignupContainer = ({ children }: ChildrenProps) => {
             layout="native"
             width={145}
             height={150}
-            src="/images/aserto-vertical-color-white-text.svg" />
+            src="/images/aserto-vertical-color-white-text.svg"
+          />
         </Link>
       </>
       <div

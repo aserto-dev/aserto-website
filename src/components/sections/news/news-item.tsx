@@ -9,8 +9,11 @@ type Props = {
 
 const NewsItem = ({ data }: Props) => {
   return (
-    <a href={`${data.url}`} target='_news'>
-      <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10" style={{ height: '100%' }}>
+    <a href={`${data.url}`} target="_news">
+      <div
+        className="flex flex-col overflow-hidden border rounded border-aserto-grey-10"
+        style={{ height: '100%' }}
+      >
         <div className="relative flex flex-col justify-between flex-1 px-10 pt-8 bg-aserto-black">
           <Image
             src={data.logo?.asset?.url || '/404'}
