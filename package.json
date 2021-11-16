@@ -22,6 +22,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@tailwindcss/forms": "^0.3.3",
     "@typeform/embed": "^1.8.2",
+    "@types/react-google-recaptcha": "^2.1.2",
     "@types/react-mailchimp-subscribe": "^2.1.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",
@@ -38,6 +39,7 @@
     "react": "^17.0.1",
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^7.8.1",
     "react-icons": "^4.2.0",
     "react-mailchimp-subscribe": "^2.1.3"
@@ -80,51 +82,32 @@
     "trailingComma": "none"
   },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "react",
-      "react-hooks",
-      "@typescript-eslint"
-    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
       "prettier",
       "plugin:prettier/recommended"
     ],
-    "env": {
-      "es6": true,
-      "browser": true,
-      "node": true
+    "globals": {
+      "React":"readonly",
+      "JSX": "readonly"
     },
+    "ignorePatterns":["/.next", "/out", "/src/lib/sanity/generated.ts"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "react",
+      "react-hooks",
+      "@typescript-eslint"
+    ],
     "rules": {
-      "react/react-in-jsx-scope": 0,
-      "react/display-name": 0,
-      "react/prop-types": 0,
-      "@typescript-eslint/explicit-function-return-type": 0,
-      "@typescript-eslint/explicit-member-accessibility": 0,
-      "@typescript-eslint/indent": 0,
-      "@typescript-eslint/member-delimiter-style": 0,
-      "@typescript-eslint/no-explicit-any": 0,
-      "@typescript-eslint/no-var-requires": 0,
-      "@typescript-eslint/no-use-before-define": 0,
-      "@typescript-eslint/ban-ts-comment": 0,
-      "react-hooks/exhaustive-deps": "warn",
       "curly": [
         "error",
         "multi-line"
-      ],
-      "react/jsx-no-target-blank": [
-        2,
-        {
-          "allowReferrer": true
-        }
-      ],
-      "@typescript-eslint/no-unused-vars": [
-        2,
-        {
-          "argsIgnorePattern": "^_"
-        }
       ],
       "no-console": [
         1,
@@ -138,7 +121,46 @@
       "prettier/prettier": [
         "warn"
       ],
-      "@typescript-eslint/explicit-module-boundary-types": "off"
+      "react/display-name": 0,
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-no-target-blank": [
+        2,
+        {
+          "allowReferrer": true
+        }
+      ],
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/member-delimiter-style": 0,
+      "@typescript-eslint/naming-convention": [
+        1,
+        {
+          "selector": "property",
+          "format": ["strictCamelCase"],
+          "filter": {
+            "regex": "[- ]",
+            "match": false
+          }
+        },
+        {
+          "selector": "interface",
+          "format": ["PascalCase"]
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-use-before-define": 0,
+      "@typescript-eslint/ban-ts-comment": 0,
+      "@typescript-eslint/no-unused-vars": [
+        2,
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "@typescript-eslint/no-var-requires": 0
     },
     "settings": {
       "react": {

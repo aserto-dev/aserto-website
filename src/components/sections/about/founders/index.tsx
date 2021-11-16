@@ -67,8 +67,8 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
               They met at Microsoft while working on developer-facing products
               like .NET, SQL Server, Visual Studio, Azure, and Active Directory.
               Aserto is their fourth journey together, inspired by a question
-              they were both asking: "what would a modern authorization solution
-              look like in the age of SaaS and Cloud?"
+              they were both asking: &quot;what would a modern authorization
+              solution look like in the age of SaaS and Cloud?&quot;
             </div>
           </div>
         </div>

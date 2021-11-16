@@ -3,8 +3,6 @@ module.exports = {
   generateRobotsTxt: true,
   outDir: 'out',
   robotsTxtOptions: {
-    additionalSitemaps: [
-      'https://docs.aserto.com/sitemap.xml', 
-    ],
-  },
+    additionalSitemaps: ['https://docs.aserto.com/sitemap.xml']
+  }
 }

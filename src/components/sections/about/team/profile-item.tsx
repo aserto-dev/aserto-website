@@ -29,13 +29,13 @@ const ProfileItem = ({ data, withImage }: Props) => (
       )}
       <div className="flex items-center justify-center mt-4 text-base tracking-tight text-white sm:text-2xl">
         <p>{data.name}</p>
-        { data.linkedIn && 
+        {data.linkedIn && (
           <Image
             src="/images/about/linkedIn.svg"
             className="ml-1 sm:ml-2 cursor-pointer"
             layout="native"
           />
-        }
+        )}
       </div>
       <p className="mt-2 text-aserto-grey-60 font-roboto">{data.position}</p>
       <BlockContent
