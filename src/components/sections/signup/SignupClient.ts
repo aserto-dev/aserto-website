@@ -9,7 +9,7 @@ export interface SignupResponse {
 }
 
 const tenantServiceUrl = () =>
-  process.env.SANITY_READ_TOKEN || 'http://tenant.eng.aserto.com/'
+  process.env.SANITY_READ_TOKEN || 'https://tenant.eng.aserto.com/'
 
 interface SignupBody {
   code: number
