@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 // Primitives
@@ -14,6 +14,7 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
+import PlaygroundBanner from 'components/sections/common/banners/playground'
 
 export const headerLinks = [
   {
@@ -86,8 +87,9 @@ const Header = () => {
   }, [open])
 
   return (
-    <header className="top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
-      <div className="flex items-center justify-between w-full">
+    <header className="top-0 z-40 w-full ">
+      <PlaygroundBanner />
+      <div className="flex items-center justify-between w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
             <LogoMobile />

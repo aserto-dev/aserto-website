@@ -1,25 +1,11 @@
 // Primitives
 import Header from 'components/layout/header'
 import CustomHead from 'components/primitives/custom-head'
-
-import React, { useEffect } from 'react'
+import { PlaygroundSeen } from 'components/sections/common/banners/playground'
 
 const Playground = () => {
-  useEffect(() => {
-    ; (function (d, s, id) {
-      var js,
-        tjs = d.getElementsByTagName(s)[0]
-      // react vdom will overwrite - so need to recreate
-      // this upon page entry
-      //if (d.getElementById(id)) return
-      js = d.createElement(s)
-      js.id = id
-      //@ts-ignore
-      js.src = 'https://app.termly.io/embed-policy.min.js'
-      //@ts-ignore
-      tjs.parentNode.insertBefore(js, tjs)
-    })(document, 'script', 'termly-jssdk')
-  }, [])
+  PlaygroundSeen()
+
   return (
     <div className="overflow-hidden flex flex-col h-screen">
       <CustomHead
