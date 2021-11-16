@@ -19,11 +19,11 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
     }
   })
 
-  const showError = () => !!props.errorMessage
+  const showError = !!props.errorMessage
 
-  const enableSubmit = () => !!state.request.email && !!state.request.recaptcha
+  const enableSubmit = !!state.request.email && !!state.request.recaptcha
 
-  const recaptchaSiteKey = () =>
+  const recaptchaSiteKey =
     process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
     '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
@@ -56,7 +56,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         >
           <input
             className={`bg-aserto-black border-aserto-${
-              showError() ? 'mojo-accent-30' : 'lochivar-accent-20'
+              showError ? 'mojo-accent-30' : 'lochivar-accent-20'
             } shadow-input text-aserto-grey-60 w-full`}
             onChange={(event) => {
               setState({
@@ -68,7 +68,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
             style={{ fontSize: '16px', height: '60px' }}
             type="text"
           />
-          {showError() && (
+          {showError && (
             <div className="text-aserto-mojo-accent-30">
               {props.errorMessage}
             </div>
@@ -82,7 +82,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                 request: { ...state.request, recaptcha }
               })
             }}
-            sitekey={recaptchaSiteKey()}
+            sitekey={recaptchaSiteKey}
             theme="dark"
           />
         </div>
@@ -91,7 +91,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                     hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100 
                     disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
                     disabled:cursor-not-allowed`}
-          disabled={!enableSubmit()}
+          disabled={!enableSubmit}
           onClick={() => props.onSubmit(state.request)}
           style={{
             borderRadius: '6px',
@@ -100,7 +100,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
             lineHeight: '24px'
           }}
         >
-          {'Sign me up!'}
+          Sign me up!
         </button>
       </div>
     </div>
