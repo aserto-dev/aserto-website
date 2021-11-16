@@ -66,6 +66,11 @@ export const headerLinks = [
     label: 'Careers',
     href: '/careers',
     items: []
+  },
+  {
+    label: 'Playground',
+    href: '/playground',
+    items: []
   }
 ]
 
