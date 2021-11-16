@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
 
-interface signupDataCollectorProps {
+interface SignupDataCollectorProps {
   errorMessage?: JSX.Element
   onSubmit: (request: SignupRequest) => void
 }
 
-interface signupDataCollectorState {
+interface SignupDataCollectorState {
   request: SignupRequest
 }
 
-const SignupDataCollector = (props: signupDataCollectorProps) => {
-  const [state, setState] = useState<signupDataCollectorState>({
+const SignupDataCollector = (props: SignupDataCollectorProps) => {
+  const [state, setState] = useState<SignupDataCollectorState>({
     request: {
       email: '',
       recaptcha: ''

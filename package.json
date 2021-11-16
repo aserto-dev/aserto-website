@@ -145,6 +145,10 @@
             "regex": "[- ]",
             "match": false
           }
+        },
+        {
+          "selector": "interface",
+          "format": ["PascalCase"]
         }
       ],
       "@typescript-eslint/no-explicit-any": 0,
