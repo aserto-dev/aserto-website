@@ -1,3 +1,4 @@
+import Link from 'components/primitives/link'
 import React, { ReactChildren, ReactChild } from 'react'
 import Image from '../../primitives/image'
 
@@ -10,14 +11,15 @@ const SignupContainer = ({ children }: ChildrenProps) => {
       className="flex flex-col items-center"
       style={{ gap: '58px', paddingBottom: '225px', paddingTop: '70px' }}
     >
-      <div>
-        <Image
-          layout="native"
-          width={145}
-          height={150}
-          src="/images/aserto-vertical-color-white-text.svg"
-        />
-      </div>
+      <>
+        <Link href="/">
+          <Image
+            layout="native"
+            width={145}
+            height={150}
+            src="/images/aserto-vertical-color-white-text.svg" />
+        </Link>
+      </>
       <div
         className="border border-aserto-grey-20 border-opacity-100 w-full"
         style={{

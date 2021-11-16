@@ -1,12 +1,15 @@
-export interface signupRequest {
+export interface SignupRequest {
   email: string
   recaptcha: string | null
 }
 
-export interface signupResponse {
+export interface SignupResponse {
   status: number
-  body: signupBody | undefined
+  body?: signupBody
 }
+
+const tenantServiceUrl = () =>
+  process.env.SANITY_READ_TOKEN || 'https://tenant.eng.aserto.com/'
 
 interface signupBody {
   code: number
@@ -24,29 +27,25 @@ interface signupBody {
   ]
 }
 
-export const signupUser = async (
-  request: signupRequest
-): Promise<signupResponse> => {
+export const SignupUser = async (
+  request: SignupRequest
+): Promise<SignupResponse> => {
   let response: Response
   let responseBody: any
 
   try {
-    response = await fetch(
-      'http://tenant.eng.aserto.com/api/v1/account/signup',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(request)
-      }
-    )
+    response = await fetch(tenantServiceUrl() + 'api/v1/account/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request)
+    })
 
     responseBody = await response.json()
   } catch (e) {
     return {
-      status: 500,
-      body: undefined
+      status: 500
     }
   }
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Image from '../../../primitives/image'
 import Link from 'components/primitives/link'
 
@@ -36,7 +36,7 @@ const ServiceError = () => {
           </div>
           <div style={{ fontSize: '20px', minHeight: '56px' }}>
             We're sorry about this. Please refresh the page and try again. If
-            problem persists,{' '}
+            the problem persists,{' '}
             {
               <Link
                 className="text-aserto-lochivar-accent-40 font-roboto"
@@ -49,12 +49,14 @@ const ServiceError = () => {
           </div>
         </div>
         <div style={{ flexGrow: 1, position: 'absolute', bottom: '62px' }}>
-          <Image
-            layout="native"
-            width={78}
-            height={80}
-            src="/images/aserto-vertical-color-white-text.svg"
-          />
+          <Link href="/">
+            <Image
+              layout="native"
+              width={78}
+              height={80}
+              src="/images/aserto-vertical-color-white-text.svg"
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { signupRequest } from './SignupClient'
+import { SignupRequest } from './SignupClient'
 
 interface signupDataCollectorProps {
-  errorMessage: JSX.Element | undefined
-  onSubmit: (request: signupRequest) => void
+  errorMessage?: JSX.Element
+  onSubmit: (request: SignupRequest) => void
 }
 
 interface signupDataCollectorState {
-  request: signupRequest
-  errorMessage: JSX.Element | undefined
+  request: SignupRequest
 }
 
 const SignupDataCollector = (props: signupDataCollectorProps) => {
@@ -17,11 +16,16 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
     request: {
       email: '',
       recaptcha: ''
-    },
-    errorMessage: undefined
+    }
   })
 
-  const showError = () => !(!!state.errorMessage)
+  const showError = () => !!props.errorMessage
+
+  const enableSubmit = () => !!state.request.email && !!state.request.recaptcha
+
+  const recaptchaSiteKey = () =>
+    process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
+    '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
   return (
     <div
@@ -65,9 +69,9 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
             type="text"
           />
           {showError() && (
-            <text className="text-aserto-mojo-accent-30">
+            <div className="text-aserto-mojo-accent-30">
               {props.errorMessage}
-            </text>
+            </div>
           )}
         </div>
         <div className="bg-aserto-grey-20 w-full" style={{ padding: '9px' }}>
@@ -78,12 +82,16 @@ const SignupDataCollector = (props: signupDataCollectorProps) => {
                 request: { ...state.request, recaptcha }
               })
             }}
-            sitekey="6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
+            sitekey={recaptchaSiteKey()}
             theme="dark"
           />
         </div>
         <button
-          className="bg-aserto-lochivar-60 font-roboto w-full text-white"
+          className={`font-roboto w-full  bg-aserto-lochivar-60 text-white 
+                    hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100 
+                    disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
+                    disabled:cursor-not-allowed`}
+          disabled={!enableSubmit()}
           onClick={() => props.onSubmit(state.request)}
           style={{
             borderRadius: '6px',
