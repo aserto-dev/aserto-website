@@ -15,6 +15,7 @@ import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
 import { sendEvent } from '../../../lib/ga'
+import { isIE } from 'react-device-detect'
 
 export const headerLinks = [
   {
@@ -87,7 +88,29 @@ const Header = () => {
       document.documentElement.style.overflow = 'auto'
     }
   }, [open])
-
+  if (!isIE) {
+    return (
+      <div
+        style={{
+          width: '70vw',
+          height: '50vh',
+          padding: '5rem',
+          marginTop: '10vh',
+          color: 'whitesmoke',
+          border: '1px solid white',
+          borderRadius: '10px',
+          fontSize: '40px',
+          display: 'flex',
+          margin: 'auto'
+        }}
+      >
+        <p>
+          🦖 Looks like you are using IE. Update your browser for more security,
+          speed and the best experience on this site.
+        </p>
+      </div>
+    )
+  }
   return (
     <header className="top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
       <div className="flex items-center justify-between w-full">
