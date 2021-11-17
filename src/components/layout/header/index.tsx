@@ -88,7 +88,7 @@ const Header = () => {
       document.documentElement.style.overflow = 'auto'
     }
   }, [open])
-  if (!isIE) {
+  if (isIE) {
     return (
       <div
         style={{
