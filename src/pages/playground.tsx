@@ -1,10 +1,11 @@
 // Primitives
 import Header from 'components/layout/header'
 import CustomHead from 'components/primitives/custom-head'
-import { PlaygroundSeen } from 'components/sections/common/banners/playground'
+import PlaygroundBannerContext from 'components/sections/common/banners/playground/PlaygroundBannerContext'
+import { useContext } from 'react'
 
 const Playground = () => {
-  PlaygroundSeen()
+  useContext(PlaygroundBannerContext).hideBanner()
 
   return (
     <div className="overflow-hidden flex flex-col h-screen">

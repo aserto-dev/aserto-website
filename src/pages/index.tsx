@@ -16,7 +16,6 @@ import Container from 'components/layout/container'
 import TheProblem from '../components/sections/homepage/the-problem'
 
 const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
   if (isIE) {
     return (
       <div

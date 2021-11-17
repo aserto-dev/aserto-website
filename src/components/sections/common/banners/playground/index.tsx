@@ -1,17 +1,12 @@
 import Link from 'components/primitives/link'
-import React from 'react'
-
-const isClient = typeof window !== 'undefined'
-
-const storageKey = 'aserto-playground-seen'
-
-export const PlaygroundSeen = () => {
-  isClient && localStorage.setItem(storageKey, 'true')
-}
+import React, { useContext } from 'react'
+import PlaygroundBannerContext from './PlaygroundBannerContext'
 
 const PlaygroundBanner = () => {
-  if (isClient && !localStorage.getItem(storageKey)) {
-    return (
+  const isVisible = useContext(PlaygroundBannerContext).isVisible
+
+  return (
+    isVisible && (
       <div
         className="bg-aserto-lochivar-80 flex flex-col justify-center text-center text-white"
         style={{ height: '36px' }}
@@ -24,9 +19,7 @@ const PlaygroundBanner = () => {
         </span>
       </div>
     )
-  }
-
-  return null
+  )
 }
 
 export default PlaygroundBanner

@@ -4,8 +4,9 @@ import { AnimatePresence } from 'framer-motion'
 import initGsap from 'lib/gsap'
 import { IdProvider } from '@radix-ui/react-id'
 import '@typeform/embed/build/css/popup.css'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { pageview } from 'lib/ga'
+import { PlaygroundBannerContextProvider } from 'components/sections/common/banners/playground/PlaygroundBannerContext'
 
 initGsap()
 
@@ -31,7 +32,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <IdProvider>
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+        <PlaygroundBannerContextProvider>
+          <Component {...pageProps} key={router.route} />
+        </PlaygroundBannerContextProvider>
       </AnimatePresence>
     </IdProvider>
   )
