@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  lints:
+    name: Check lints
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: yarn install --frozen-lockfile
+      - name: ESLint & Prettier
+        run: yarn lint
+
+  types:
+    name: Check types
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: yarn install --frozen-lockfile
+      - name: TypeScript
+        run: yarn type-check
