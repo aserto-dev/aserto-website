@@ -1,4 +1,4 @@
-window.onload = () => {
+window.onload = function() {
   var ua = window.navigator.userAgent
   var ie11 = ua.indexOf('Trident/')
   var olderIe = ua.indexOf('MSIE ')
