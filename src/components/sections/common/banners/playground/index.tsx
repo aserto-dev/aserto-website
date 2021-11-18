@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import PlaygroundBannerContext from './PlaygroundBannerContext'
 
 const PlaygroundBanner = () => {
-  const isVisible = useContext(PlaygroundBannerContext).isVisible
+  const { isVisible } = useContext(PlaygroundBannerContext)
 
   return (
     isVisible && (

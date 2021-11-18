@@ -1,14 +1,16 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react'
 
-const storageKey = 'aserto-playground-seen'
-
-interface PlaygroundBannerContextState {
-  isVisible: boolean
-}
+const playgroundSeenStorageKey = 'aserto-playground-seen'
 
 interface PlaygroundBannerParams {
-  isVisible: boolean
   hideBanner: () => void
+  isVisible: boolean
 }
 
 const PlaygroundBannerContext = createContext<PlaygroundBannerParams>({
@@ -23,26 +25,30 @@ interface PlaygroundBannerContextParams {
 export const PlaygroundBannerContextProvider = ({
   children
 }: PlaygroundBannerContextParams) => {
-  const [state, setState] = useState<PlaygroundBannerContextState>({
-    isVisible: true
-  })
+  const [isVisible, setIsVisible] = useState(true)
 
-  const hideBanner = () => {
-    if (state.isVisible) {
-      setState({ isVisible: false })
-    }
-  }
+  const hideBanner = useCallback(() => {
+    setIsVisible(false)
+  }, [])
 
   useEffect(() => {
-    if (state.isVisible && localStorage.getItem(storageKey) == 'true') {
+    if (
+      isVisible &&
+      localStorage.getItem(playgroundSeenStorageKey) === 'true'
+    ) {
       hideBanner()
-    } else if (!state.isVisible) {
-      localStorage.setItem(storageKey, 'true')
+    } else if (!isVisible) {
+      localStorage.setItem(playgroundSeenStorageKey, 'true')
     }
-  })
+  }, [hideBanner, isVisible])
+
+  const value = useMemo(
+    () => ({ isVisible, hideBanner }),
+    [isVisible, hideBanner]
+  )
 
   return (
-    <PlaygroundBannerContext.Provider value={{ ...state, hideBanner }}>
+    <PlaygroundBannerContext.Provider value={value}>
       {children}
     </PlaygroundBannerContext.Provider>
   )
