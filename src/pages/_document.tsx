@@ -57,6 +57,7 @@ class MyDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             />
           </noscript>
+          <script type="text/javascript" src="/ieChecking.js" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_CODE}`}

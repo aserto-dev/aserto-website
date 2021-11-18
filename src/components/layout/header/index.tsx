@@ -87,7 +87,6 @@ const Header = () => {
       document.documentElement.style.overflow = 'auto'
     }
   }, [open])
-
   return (
     <header className="top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
       <div className="flex items-center justify-between w-full">
