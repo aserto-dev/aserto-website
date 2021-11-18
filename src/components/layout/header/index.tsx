@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 // Primitives
@@ -14,7 +14,7 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 
 import Menu from './menu'
-import { sendEvent } from '../../../lib/ga'
+import PlaygroundBanner from 'components/sections/common/banners/playground'
 
 export const headerLinks = [
   {
@@ -67,19 +67,17 @@ export const headerLinks = [
     label: 'Careers',
     href: '/careers',
     items: []
+  },
+  {
+    label: 'Playground',
+    href: '/playground',
+    items: []
   }
 ]
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-  const onClickCTA = () => {
-    sendEvent({
-      action: 'click',
-      params: {
-        event_label: 'Header Request Beta Access'
-      }
-    })
-  }
+
   useEffect(() => {
     if (open) {
       document.documentElement.style.overflow = 'hidden'
@@ -89,8 +87,9 @@ const Header = () => {
   }, [open])
 
   return (
-    <header className="top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
-      <div className="flex items-center justify-between w-full">
+    <header className="top-0 z-40 w-full ">
+      <PlaygroundBanner />
+      <div className="flex items-center justify-between w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
             <LogoMobile />
@@ -132,15 +131,14 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <NextLink href="/#sign-up" passHref>
+          <NextLink href="/signup" passHref>
             <Button
               variant="primary"
               size="sm"
               as="a"
               className="inline-flex items-center"
-              onClick={onClickCTA}
             >
-              Request Beta Access
+              Join the Beta
             </Button>
           </NextLink>
           <Link
