@@ -1,4 +1,4 @@
-function testIE() {
+window.onload = () => {
   var ua = window.navigator.userAgent
   var ie11 = ua.indexOf('Trident/')
   var olderIe = ua.indexOf('MSIE ')
@@ -19,5 +19,3 @@ function testIE() {
       '</div>'
   }
 }
-
-window.addEventListener('load', testIE)
