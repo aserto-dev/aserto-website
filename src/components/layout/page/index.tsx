@@ -59,7 +59,7 @@ const PageLayout = ({
   footer
 }: Props) => {
   return (
-    <div className="overflow-hidden">
+    <div className="h-screen">
       <CustomHead {...headProps} />
       <Header />
       <motion.main
