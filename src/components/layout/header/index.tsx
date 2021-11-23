@@ -88,7 +88,10 @@ const Header = () => {
     }
   }, [open])
   return (
-    <header className="sticky top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0">
+    <header
+      className="sticky top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0"
+      style={{ position: '-webkit-sticky' }}
+    >
       <div className="flex items-center justify-between w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">

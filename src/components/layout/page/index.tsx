@@ -59,7 +59,7 @@ const PageLayout = ({
   footer
 }: Props) => {
   return (
-    <div className="h-screen">
+    <div className="h-full">
       <CustomHead {...headProps} />
       <Header />
       <motion.main
