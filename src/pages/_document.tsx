@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="h-full">
         <Head>
           <link
             rel="preconnect"
@@ -83,7 +83,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className="bg-aserto-black">
+        <body className="h-full bg-aserto-black">
           <Main />
           <NextScript />
         </body>
