@@ -46,7 +46,7 @@ const Signup = () => {
                   className="text-aserto-grey-90 font-roboto"
                   href="https://console.aserto.com/"
                 >
-                  sign up
+                  sign in
                 </Link>
               }
             </>
