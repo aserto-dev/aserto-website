@@ -29,6 +29,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
   return (
     <IdProvider>
       <AnimatePresence exitBeforeEnter>

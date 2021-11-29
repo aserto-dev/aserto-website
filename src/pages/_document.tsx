@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="h-full">
         <Head>
           <link
             rel="preconnect"
@@ -57,6 +57,7 @@ class MyDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             />
           </noscript>
+          <script type="text/javascript" src="/ieChecking.js" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_CODE}`}
@@ -82,7 +83,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className="bg-aserto-black">
+        <body className="h-full bg-aserto-black">
           <Main />
           <NextScript />
         </body>
