@@ -1,15 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
 
+export enum SignupDataCollectorVisualMode {
+  Editing,
+  Pending
+}
 interface SignupDataCollectorProps {
   errorMessage?: JSX.Element
   onSubmit: (request: SignupRequest) => void
+  visualMode: SignupDataCollectorVisualMode
 }
 
 interface SignupDataCollectorState {
   request: SignupRequest
 }
+
+const recaptchaRef = React.createRef<ReCAPTCHA>()
+const recaptchaSiteKey =
+  process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
+  '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
   const [state, setState] = useState<SignupDataCollectorState>({
@@ -21,11 +31,21 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
 
   const showError = !!props.errorMessage
 
-  const enableSubmit = !!state.request.email && !!state.request.recaptcha
+  const enableEmailInput =
+    props.visualMode === SignupDataCollectorVisualMode.Editing
 
-  const recaptchaSiteKey =
-    process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
-    '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
+  const enableSubmit =
+    !!state.request.email &&
+    !!state.request.recaptcha &&
+    props.visualMode === SignupDataCollectorVisualMode.Editing
+
+  useEffect(() => {
+    switch (props.visualMode) {
+      case SignupDataCollectorVisualMode.Editing:
+        recaptchaRef?.current?.reset()
+        break
+    }
+  }, [props.visualMode])
 
   return (
     <div
@@ -58,6 +78,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
             className={`bg-aserto-black border-aserto-${
               showError ? 'mojo-accent-30' : 'lochivar-accent-20'
             } shadow-input text-aserto-grey-60 w-full`}
+            disabled={!enableEmailInput}
             onChange={(event) => {
               setState({
                 ...state,
@@ -82,6 +103,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                 request: { ...state.request, recaptcha }
               })
             }}
+            ref={recaptchaRef}
             sitekey={recaptchaSiteKey}
             theme="dark"
           />
@@ -92,7 +114,9 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                     disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
                     disabled:cursor-not-allowed`}
           disabled={!enableSubmit}
-          onClick={() => props.onSubmit(state.request)}
+          onClick={() => {
+            props.onSubmit(state.request)
+          }}
           style={{
             borderRadius: '6px',
             fontSize: '16px',

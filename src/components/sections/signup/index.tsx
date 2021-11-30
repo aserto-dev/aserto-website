@@ -2,22 +2,35 @@ import React, { useState } from 'react'
 import { SignupRequest, signupUser } from './SignupClient'
 import SignupContainer from './SignupContainer'
 import SignupDataCollector from './SignupDataCollector'
+import { SignupDataCollectorVisualMode } from './SignupDataCollector'
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
 
 type SignupState =
   | { type: 'SERVICE_ERROR' }
-  | { type: 'INPUT'; errorMessage?: JSX.Element }
+  | {
+      type: 'INPUT'
+      errorMessage?: JSX.Element
+      visualState: SignupDataCollectorVisualMode
+    }
   | { type: 'SUCCESS'; emailAddress: string }
 
 const Signup = () => {
   const [state, setState] = useState<SignupState>({
     errorMessage: undefined,
-    type: 'INPUT'
+    type: 'INPUT',
+    visualState: SignupDataCollectorVisualMode.Editing
   })
 
   const handleSignUpRequest = async (request: SignupRequest) => {
+    if (state.type === 'INPUT') {
+      setState({
+        ...state,
+        visualState: SignupDataCollectorVisualMode.Pending
+      })
+    }
+
     const response = await signupUser(request)
 
     let newState: SignupState
@@ -32,7 +45,8 @@ const Signup = () => {
       case 400:
         newState = {
           type: 'INPUT',
-          errorMessage: <>Use a valid email address and try again.</>
+          errorMessage: <>Use a valid email address and try again.</>,
+          visualState: SignupDataCollectorVisualMode.Editing
         }
         break
       case 409:
@@ -50,7 +64,8 @@ const Signup = () => {
                 </Link>
               }
             </>
-          )
+          ),
+          visualState: SignupDataCollectorVisualMode.Editing
         }
         break
       case 401:
@@ -69,6 +84,7 @@ const Signup = () => {
           <SignupDataCollector
             errorMessage={state.errorMessage}
             onSubmit={handleSignUpRequest}
+            visualMode={state.visualState}
           />
         </SignupContainer>
       )
