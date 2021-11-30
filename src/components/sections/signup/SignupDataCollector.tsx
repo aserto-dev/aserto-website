@@ -90,8 +90,10 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
             type="text"
           />
           {showError && (
-            <div className="text-aserto-mojo-accent-30">
-              {props.errorMessage}
+            <div className="h-[40px] flex flex-col justify-evenly">
+              <p className=" text-aserto-mojo-accent-30">
+                {props.errorMessage}
+              </p>
             </div>
           )}
         </div>
