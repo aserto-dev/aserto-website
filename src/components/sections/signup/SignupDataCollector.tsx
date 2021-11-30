@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
@@ -75,9 +76,12 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           style={{ height: '60px', overflowY: 'visible' }}
         >
           <input
-            className={`bg-aserto-black border-aserto-${
-              showError ? 'mojo-accent-30' : 'lochivar-accent-20'
-            } shadow-input text-aserto-grey-60 w-full`}
+            className={clsx(
+              'bg-aserto-black',
+              { 'border-aserto-mojo-accent-30': showError },
+              { 'border-aserto-grey-30': !showError },
+              'focus:border-aserto-lochivar-accent-20 shadow-input text-aserto-grey-60 w-full'
+            )}
             disabled={!enableEmailInput}
             onChange={(event) => {
               setState({
