@@ -1,31 +1,45 @@
-import React, { useState } from 'react'
+import clsx from 'clsx'
+import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
 
+export enum SignupDataCollectorVisualMode {
+  Editing,
+  Pending
+}
 interface SignupDataCollectorProps {
   errorMessage?: JSX.Element
   onSubmit: (request: SignupRequest) => void
+  visualMode: SignupDataCollectorVisualMode
 }
 
-interface SignupDataCollectorState {
-  request: SignupRequest
-}
+const recaptchaRef = React.createRef<ReCAPTCHA>()
+const recaptchaSiteKey =
+  process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
+  '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
-  const [state, setState] = useState<SignupDataCollectorState>({
-    request: {
-      email: '',
-      recaptcha: ''
-    }
-  })
+  const [email, setEmail] = useState<string>('')
+  const [recaptcha, setRecaptcha] = useState<string>('')
 
   const showError = !!props.errorMessage
 
-  const enableSubmit = !!state.request.email && !!state.request.recaptcha
+  const disableEmailInput =
+    props.visualMode !== SignupDataCollectorVisualMode.Editing
 
-  const recaptchaSiteKey =
-    process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
-    '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
+  const disableSubmit =
+    !email ||
+    !recaptcha ||
+    props.visualMode !== SignupDataCollectorVisualMode.Editing
+
+  useEffect(() => {
+    switch (props.visualMode) {
+      case SignupDataCollectorVisualMode.Editing:
+        recaptchaRef?.current?.reset()
+        setRecaptcha('')
+        break
+    }
+  }, [props.visualMode, setRecaptcha])
 
   return (
     <div
@@ -55,33 +69,32 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           style={{ height: '60px', overflowY: 'visible' }}
         >
           <input
-            className={`bg-aserto-black border-aserto-${
-              showError ? 'mojo-accent-30' : 'lochivar-accent-20'
-            } shadow-input text-aserto-grey-60 w-full`}
+            className={clsx(
+              'bg-aserto-black',
+              { 'border-aserto-mojo-accent-30': showError },
+              { 'border-aserto-grey-30': !showError },
+              'focus:border-aserto-lochivar-accent-20 shadow-input text-aserto-grey-60 w-full'
+            )}
+            disabled={disableEmailInput}
             onChange={(event) => {
-              setState({
-                ...state,
-                request: { ...state.request, email: event?.target.value }
-              })
+              setEmail(event?.target.value)
             }}
             placeholder="Email"
             style={{ fontSize: '16px', height: '60px' }}
             type="text"
           />
           {showError && (
-            <div className="text-aserto-mojo-accent-30">
-              {props.errorMessage}
+            <div className="h-[40px] flex flex-col justify-evenly">
+              <p className=" text-aserto-mojo-accent-30">
+                {props.errorMessage}
+              </p>
             </div>
           )}
         </div>
         <div className="bg-aserto-grey-20 w-full" style={{ padding: '9px' }}>
           <ReCAPTCHA
-            onChange={(recaptcha) => {
-              setState({
-                ...state,
-                request: { ...state.request, recaptcha }
-              })
-            }}
+            onChange={(recaptcha) => setRecaptcha(recaptcha || '')}
+            ref={recaptchaRef}
             sitekey={recaptchaSiteKey}
             theme="dark"
           />
@@ -91,8 +104,13 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                     hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100 
                     disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
                     disabled:cursor-not-allowed`}
-          disabled={!enableSubmit}
-          onClick={() => props.onSubmit(state.request)}
+          disabled={disableSubmit}
+          onClick={() => {
+            props.onSubmit({
+              recaptcha,
+              email
+            })
+          }}
           style={{
             borderRadius: '6px',
             fontSize: '16px',
