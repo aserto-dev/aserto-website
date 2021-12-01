@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { SignupRequest, signupUser } from './SignupClient'
 import SignupContainer from './SignupContainer'
-import SignupDataCollector, { SignupDataCollectorVisualMode } from './SignupDataCollector'
+import SignupDataCollector, {
+  SignupDataCollectorVisualMode
+} from './SignupDataCollector'
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'

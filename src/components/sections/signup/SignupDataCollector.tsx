@@ -19,8 +19,8 @@ const recaptchaSiteKey =
   '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
-  const [email, setEmail] = useState<string | null>(null)
-  const [recaptcha, setRecaptcha] = useState<string | null>(null)
+  const [email, setEmail] = useState<string>('')
+  const [recaptcha, setRecaptcha] = useState<string>('')
 
   const showError = !!props.errorMessage
 
@@ -36,7 +36,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
     switch (props.visualMode) {
       case SignupDataCollectorVisualMode.Editing:
         recaptchaRef?.current?.reset()
-        setRecaptcha(null)
+        setRecaptcha('')
         break
     }
   }, [props.visualMode, setRecaptcha])
@@ -93,7 +93,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         </div>
         <div className="bg-aserto-grey-20 w-full" style={{ padding: '9px' }}>
           <ReCAPTCHA
-            onChange={(recaptcha) => setRecaptcha(recaptcha)}
+            onChange={(recaptcha) => setRecaptcha(recaptcha || '')}
             ref={recaptchaRef}
             sitekey={recaptchaSiteKey}
             theme="dark"

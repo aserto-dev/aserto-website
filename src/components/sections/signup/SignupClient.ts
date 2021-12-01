@@ -1,6 +1,6 @@
 export interface SignupRequest {
-  email: string | null
-  recaptcha: string | null
+  email: string
+  recaptcha: string
 }
 
 export interface SignupResponse {
