@@ -14,7 +14,7 @@ const SignupSuccessfulNotification = (
     <p>You&apos;re almost there!</p>
     <br />
     <p>
-      {`An email is on its way to ${props.email}.Once you receive it, click the confirmation link  to get things started.`}
+      {`An email is on its way to ${props.email}. Once you receive it, click the confirmation link to verify your account and set your password.`}
     </p>
     <br />
     <p>See you soon!</p>
