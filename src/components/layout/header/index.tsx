@@ -87,11 +87,11 @@ const Header = () => {
   }, [open])
   return (
     <header
-      className="sticky top-0 z-40 w-full px-6 py-3 bg-aserto-grey-5 shadow-header lg:py-0"
+      className="sticky top-0 z-40 w-full"
       style={{ position: '-webkit-sticky' }}
     >
       <PlaygroundBanner />
-      <div className="flex items-center justify-between w-full">
+      <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
             <LogoMobile />
