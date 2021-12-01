@@ -1,5 +1,5 @@
 export interface SignupRequest {
-  email: string
+  email: string | null
   recaptcha: string | null
 }
 
@@ -9,7 +9,7 @@ export interface SignupResponse {
 }
 
 const tenantServiceUrl = () =>
-  process.env.SANITY_READ_TOKEN || 'https://tenant.eng.aserto.com/'
+  process.env.ASERTO_TENANT_ENDPOINT || 'https://tenant.eng.aserto.com/'
 
 interface SignupBody {
   code: number
