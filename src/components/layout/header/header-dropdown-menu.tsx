@@ -7,10 +7,17 @@ type HeaderDropdownMenuProps = {
 const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
   const [showMenu, setShowMenu] = useState(false)
   return (
-    <div className="relative">
+    <div
+      role="button"
+      className="relative"
+      tabIndex={0}
+      onBlur={() => setShowMenu(false)}
+      onFocus={() => setShowMenu(true)}
+    >
       <a
         className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
         onMouseEnter={() => setShowMenu(true)}
+        onSelect={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
       >
         {link.label}
