@@ -15,7 +15,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
       onFocus={() => setShowMenu(true)}
     >
       <a
-        className="text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
+        className="text-base font-roboto pb-6 pt-6 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
@@ -26,15 +26,13 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         onMouseEnter={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
         style={{ display: showMenu ? 'flex' : 'none', left: '-40px' }}
-        className="text-aserto-grey-60 absolute top-10 w-48 bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded p-4 border flex flex-col cursor-pointer"
+        className="text-aserto-grey-60 absolute top-10 w-48 bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer"
       >
-        {link.items?.map((item, index) => (
+        {link.items?.map((item) => (
           <a
             key={item.href}
             className={
-              link.items && index < link.items?.length - 1
-                ? 'pb-6 bg-aserto-grey-5'
-                : 'bg-aserto-grey-5'
+              'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
             }
             href={item.href}
             target="_blank"

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/dist/client/router'
 import { FiChevronDown } from 'react-icons/fi'
-import HeaderDropdownMenu from "./header-dropdown-menu";
+import HeaderDropdownMenu from './header-dropdown-menu'
 
 export type HeaderLink = {
   label: string | React.ReactNode
@@ -64,9 +64,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
 
   const trigger = useMemo(() => {
     if (link.items?.length) {
-      return (
-        <HeaderDropdownMenu link={link} />
-      )
+      return <HeaderDropdownMenu link={link} />
     } else if (link.href) {
       return (
         <a
