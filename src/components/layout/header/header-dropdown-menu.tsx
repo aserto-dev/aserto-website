@@ -9,16 +9,16 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
   return (
     <div
       role="button"
-      className="relative"
+      className="relative flex items-center h-20"
       tabIndex={0}
-      onBlur={() => setShowMenu(false)}
-      onFocus={() => setShowMenu(true)}
     >
       <a
-        className="text-base font-roboto pb-6 pt-6 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
+        className="pt-2 text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
+        onBlur={() => setShowMenu(false)}
+        onFocus={() => setShowMenu(true)}
       >
         {link.label}
       </a>
