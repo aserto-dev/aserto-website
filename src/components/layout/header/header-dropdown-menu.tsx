@@ -14,7 +14,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
     >
       <a
         style={{paddingTop: "7px"}}
-        className="text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
+        className="text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer h-20 flex items-center"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
@@ -26,7 +26,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
       <div
         onMouseEnter={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
-        style={{ display: showMenu ? 'flex' : 'none', left: '-40px', top: '69px' }}
+        style={{ display: showMenu ? 'flex' : 'none', left: '-55px', top: '69px' }}
         className="text-aserto-grey-60 absolute w-48 bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer"
       >
         {link.items?.map((item) => (
