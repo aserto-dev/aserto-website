@@ -13,7 +13,8 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
       tabIndex={0}
     >
       <a
-        className="pt-2 text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
+        style={{paddingTop: "7px"}}
+        className="text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}
