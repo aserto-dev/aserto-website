@@ -1,4 +1,4 @@
-import { tenantServiceUrl } from "lib/constants"
+import { tenantServiceUrl } from 'lib/constants'
 
 export interface SignupRequest {
   email: string
