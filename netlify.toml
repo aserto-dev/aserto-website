@@ -46,4 +46,4 @@
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.beta.aserto.com"
-    ASERTO_WEBSITE_URL = "https://beta-master--aserto.netlify.app"
+    ASERTO_WEBSITE_URL = "https://beta--aserto.netlify.app"
