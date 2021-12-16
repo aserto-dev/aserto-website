@@ -10,8 +10,6 @@ export interface SignupResponse {
   body?: SignupBody
 }
 
-
-
 interface SignupBody {
   code: number
   message: string
