@@ -4,41 +4,46 @@
   [context.production.environment]
     ASERTO_CONSOLE_ROOT_URL = "https://console.aserto.com"
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = 6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
+    ASERTO_WEBSITE_URL = "https://aserto.com"
 
 [context.int]
   publish = "out"
   command = "yarn build"
   [context.int.environment]
-    ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app/"
+    ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = 6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.int.aserto.com"
+    ASERTO_WEBSITE_URL = "https://int--aserto-website.netlfiy.app"
 
 [context.preproduction]
   publish = "out"
   command = "yarn build"
   [context.integration.environment]
-    ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app/"
+    ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = 6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
+    ASERTO_WEBSITE_URL = "https://preproduction--aserto-website.netlfiy.app"
 
 [context.main]
   publish = "out"
   command = "yarn build"
   [context.main.environment]
-    ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app/"
+    ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = 6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-"zXgwgDBveO6N
     ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
+    ASERTO_WEBSITE_URL = "https://main--aserto-website.netlfiy.app"
 
 [context.beta]
   publish = "out"
   command = "yarn build"
   [context.beta.environment]
-    ASERTO_CONSOLE_ROOT_URL = "https://beta--aserto-console.netlify.app/"
+    ASERTO_CONSOLE_ROOT_URL = "https://beta--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = 6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.beta.aserto.com"
+    ASERTO_WEBSITE_URL = "https://beta-master--aserto.netlify.app"

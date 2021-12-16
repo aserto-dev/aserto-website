@@ -1,12 +1,9 @@
 // Primitives
 import Header from 'components/layout/header'
 import CustomHead from 'components/primitives/custom-head'
+import { asertoPlaygroundRootUrl } from 'lib/constants'
 
 import React, { useEffect } from 'react'
-
-const asertoPlaygroundRootUrl = () =>
-  process.env.ASERTO_PLAYGROUND_ROOT_URL ||
-  'https://aserto-playground.netlify.app'
 
 const Playground = () => {
   useEffect(() => {
@@ -36,7 +33,7 @@ const Playground = () => {
       </div>
       <iframe
         name="playgroundIframe"
-        src={asertoPlaygroundRootUrl() + '/?embedded=1'}
+        src={asertoPlaygroundRootUrl + '/?embedded=1'}
         className="w-screen h-full overflow-hidden"
       />
     </div>

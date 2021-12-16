@@ -1,3 +1,5 @@
+import { tenantServiceUrl } from "lib/constants"
+
 export interface SignupRequest {
   email: string
   recaptcha: string
@@ -8,8 +10,7 @@ export interface SignupResponse {
   body?: SignupBody
 }
 
-const tenantServiceUrl = () =>
-  process.env.ASERTO_TENANT_SERVICE_URL || 'https://tenant.eng.aserto.com/'
+
 
 interface SignupBody {
   code: number
@@ -34,7 +35,7 @@ export const signupUser = async (
   let responseBody: any
 
   try {
-    response = await fetch(tenantServiceUrl() + 'api/v1/account/signup', {
+    response = await fetch(tenantServiceUrl + '/api/v1/account/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
