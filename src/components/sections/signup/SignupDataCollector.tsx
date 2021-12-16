@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { recaptchaSiteKey } from 'lib/constants'
 import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
@@ -14,9 +15,6 @@ interface SignupDataCollectorProps {
 }
 
 const recaptchaRef = React.createRef<ReCAPTCHA>()
-const recaptchaSiteKey =
-  process.env.ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
-  '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
 
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
   const [email, setEmail] = useState<string>('')
