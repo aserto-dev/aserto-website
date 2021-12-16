@@ -21,7 +21,7 @@
 [context.preproduction]
   publish = "out"
   command = "yarn build"
-  [context.integration.environment]
+  [context.preproduction.environment]
     ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
@@ -34,7 +34,7 @@
   [context.main.environment]
     ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
-    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-"zXgwgDBveO6N
+    ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
     ASERTO_WEBSITE_URL = "https://main--aserto-website.netlfiy.app"
 
