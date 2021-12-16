@@ -4,6 +4,10 @@ import CustomHead from 'components/primitives/custom-head'
 
 import React, { useEffect } from 'react'
 
+const asertoPlaygroundRootUrl = () =>
+  process.env.ASERTO_PLAYGROUND_ROOT_URL ||
+  'https://aserto-playground.netlify.app'
+
 const Playground = () => {
   useEffect(() => {
     ; (function (d, s, id) {
@@ -32,7 +36,7 @@ const Playground = () => {
       </div>
       <iframe
         name="playgroundIframe"
-        src="https://aserto-playground.netlify.app/?embedded=1"
+        src={asertoPlaygroundRootUrl() + '/?embedded=1'}
         className="w-screen h-full overflow-hidden"
       />
     </div>

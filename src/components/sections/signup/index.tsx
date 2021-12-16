@@ -8,6 +8,9 @@ import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
 
+const asertoConsoleRootUrl = () =>
+  process.env.ASERTO_CONSOLE_ROOT_URL || 'https://console.eng.aserto.com/'
+
 type SignupState =
   | { type: 'SERVICE_ERROR' }
   | {
@@ -59,7 +62,7 @@ const Signup = () => {
               {
                 <Link
                   className="text-aserto-grey-90 font-roboto"
-                  href="https://console.aserto.com/"
+                  href={asertoConsoleRootUrl()}
                 >
                   sign in
                 </Link>

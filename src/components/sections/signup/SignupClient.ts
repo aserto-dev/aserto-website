@@ -9,7 +9,7 @@ export interface SignupResponse {
 }
 
 const tenantServiceUrl = () =>
-  process.env.ASERTO_TENANT_ENDPOINT || 'https://tenant.eng.aserto.com/'
+  process.env.ASERTO_TENANT_SERVICE_URL || 'https://tenant.eng.aserto.com/'
 
 interface SignupBody {
   code: number
