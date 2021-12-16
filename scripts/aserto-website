@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+echo "Aserto ENG"
+
+export VAULT_ADDR=https://vault.eng.aserto.com
+vault login --method=github
+
+for KEY in NEXT_PUBLIC_GA_CODE \
+           NEXT_PUBLIC_MAILCHIMP_ENDPOINT \
+           SANITY_DATASET \
+           SANITY_GRAPHQL_ENDPOINT \
+           SANITY_PROJECT_ID \
+           SANITY_READ_TOKEN
+do
+    export $KEY=$(vault kv get -field $KEY kv/aserto-website)
+done
+
+for KEY in SANITY_DATASET \
+           SANITY_PROJECT_ID
+do
+    export NEXT_PUBLIC_$KEY=$(vault kv get -field $KEY kv/aserto-website)
+done
