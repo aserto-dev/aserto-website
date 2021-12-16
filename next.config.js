@@ -2,7 +2,4 @@ const withPlugins = require('next-compose-plugins')
 const withSvgr = require('next-svgr')
 const withTM = require('next-transpile-modules')(['gsap'])
 
-module.exports = withPlugins([withTM, withSvgr], {
-  target: 'serverless',
-  webpack5: true
-})
+module.exports = withPlugins([withTM, withSvgr], {})
