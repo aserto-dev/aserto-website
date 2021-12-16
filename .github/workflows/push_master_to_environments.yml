@@ -1,9 +1,9 @@
-name: Push master branch to other environments
+name: Push main branch to other environments
 
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   VAULT_ADDR: https://vault.eng.aserto.com/
@@ -17,7 +17,7 @@ jobs:
         target_branch: [
           int,
           preproduction,
-          main
+          production
         ]
 
     steps:
@@ -69,7 +69,7 @@ jobs:
           git fetch origin
           git fetch origin ${{ matrix.target_branch }}
           echo "PREVIOUS_COMMIT_HASH=$(git rev-parse --short origin/${{ matrix.target_branch }})" >> $GITHUB_ENV
-          echo "COMMIT_HASH=$(git rev-parse --short origin/master)" >> $GITHUB_ENV
+          echo "COMMIT_HASH=$(git rev-parse --short origin/main)" >> $GITHUB_ENV
 
       - name: Push source branch to target branch
         if: ${{ success() }}
@@ -83,7 +83,7 @@ jobs:
         uses: slackapi/slack-github-action@v1.14.0
         with:
           channel-id: 'C02BD9UH0D9'
-          slack-message: Pushed `master` (<${{ github.server_url }}/${{ github.repository }}/compare/${{ env.PREVIOUS_COMMIT_HASH }}..${{ env.COMMIT_HASH }}|${{ env.COMMIT_HASH }}>) to `${{ matrix.target_branch }}` successfully.
+          slack-message: Pushed `main` (<${{ github.server_url }}/${{ github.repository }}/compare/${{ env.PREVIOUS_COMMIT_HASH }}..${{ env.COMMIT_HASH }}|${{ env.COMMIT_HASH }}>) to `${{ matrix.target_branch }}` successfully.
         env:
           SLACK_BOT_TOKEN: ${{ steps.vault.outputs.SLACK_BOT_TOKEN }}
 
@@ -93,7 +93,7 @@ jobs:
         with:
           channel-id: 'C02BD9UH0D9'
           slack-message: |
-            Push from `master` to `${{ matrix.target_branch }}` *failed*.
+            Push from `main` to `${{ matrix.target_branch }}` *failed*.
             Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         env:
           SLACK_BOT_TOKEN: ${{ steps.vault.outputs.SLACK_BOT_TOKEN }}
