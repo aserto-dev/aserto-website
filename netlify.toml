@@ -16,7 +16,7 @@
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.int.aserto.com"
-    ASERTO_WEBSITE_URL = "https://int--aserto-website.netlfiy.app"
+    ASERTO_WEBSITE_URL = "https://int--aserto.netlify.app"
 
 [context.preproduction]
   publish = "out"
@@ -26,7 +26,7 @@
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
-    ASERTO_WEBSITE_URL = "https://preproduction--aserto-website.netlfiy.app"
+    ASERTO_WEBSITE_URL = "https://preproduction--aserto.netlify.app"
 
 [context.main]
   publish = "out"
@@ -36,7 +36,7 @@
     ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
-    ASERTO_WEBSITE_URL = "https://main--aserto-website.netlfiy.app"
+    ASERTO_WEBSITE_URL = "https://main--aserto.netlify.app"
 
 [context.beta]
   publish = "out"
@@ -46,4 +46,4 @@
     ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO"
     ASERTO_TENANT_SERVICE_URL = "https://tenant.beta.aserto.com"
-    ASERTO_WEBSITE_URL = "https://beta--aserto-website.netlify.app"
+    ASERTO_WEBSITE_URL = "https://beta--aserto.netlify.app"
