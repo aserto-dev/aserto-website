@@ -1,0 +1,26 @@
+fragment CaseStudyMeta on CaseStudy {
+  _id
+  _createdAt
+  company
+  logo {
+    ...Image
+  }
+  titleRaw
+  slug {
+    current
+  }
+}
+
+fragment CaseStudy on CaseStudy {
+  ...CaseStudyMeta
+  overviewRaw
+  challengeRaw
+  solutionRaw
+  resultsRaw
+  impact {
+    icon {
+      ...Image
+    }
+    title
+  }
+}

@@ -287,6 +287,97 @@ export type CareersSorting = {
   openPositionsSectionTitle?: Maybe<SortOrder>;
 };
 
+export type CaseStudiesPage = Document & {
+  __typename?: 'CaseStudiesPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+};
+
+export type CaseStudiesPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+};
+
+export type CaseStudiesPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+};
+
+export type CaseStudy = Document & {
+  __typename?: 'CaseStudy';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  company?: Maybe<Scalars['String']>;
+  titleRaw?: Maybe<Scalars['JSON']>;
+  logo?: Maybe<MainImage>;
+  slug?: Maybe<Slug>;
+  overviewRaw?: Maybe<Scalars['JSON']>;
+  challengeRaw?: Maybe<Scalars['JSON']>;
+  solutionRaw?: Maybe<Scalars['JSON']>;
+  resultsRaw?: Maybe<Scalars['JSON']>;
+  impact?: Maybe<Array<Maybe<FeatureItem>>>;
+};
+
+export type CaseStudyFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  company?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+  slug?: Maybe<SlugFilter>;
+};
+
+export type CaseStudySorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  company?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
+  slug?: Maybe<SlugSorting>;
+};
+
 export type Category = Document & {
   __typename?: 'Category';
   /** Document ID */
@@ -1114,6 +1205,8 @@ export type RootQuery = {
   About?: Maybe<About>;
   Careers?: Maybe<Careers>;
   JobPosting?: Maybe<JobPosting>;
+  CaseStudy?: Maybe<CaseStudy>;
+  CaseStudiesPage?: Maybe<CaseStudiesPage>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1127,6 +1220,8 @@ export type RootQuery = {
   allAbout: Array<About>;
   allCareers: Array<Careers>;
   allJobPosting: Array<JobPosting>;
+  allCaseStudy: Array<CaseStudy>;
+  allCaseStudiesPage: Array<CaseStudiesPage>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1179,6 +1274,16 @@ export type RootQueryCareersArgs = {
 
 
 export type RootQueryJobPostingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryCaseStudyArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryCaseStudiesPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -1273,6 +1378,22 @@ export type RootQueryAllCareersArgs = {
 export type RootQueryAllJobPostingArgs = {
   where?: Maybe<JobPostingFilter>;
   sort?: Maybe<Array<JobPostingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllCaseStudyArgs = {
+  where?: Maybe<CaseStudyFilter>;
+  sort?: Maybe<Array<CaseStudySorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllCaseStudiesPageArgs = {
+  where?: Maybe<CaseStudiesPageFilter>;
+  sort?: Maybe<Array<CaseStudiesPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1826,6 +1947,32 @@ export type TextBlockSorting = {
   text?: Maybe<SortOrder>;
 };
 
+export type CaseStudyMetaFragment = (
+  { __typename?: 'CaseStudy' }
+  & Pick<CaseStudy, '_id' | '_createdAt' | 'company' | 'titleRaw'>
+  & { logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )> }
+);
+
+export type CaseStudyFragment = (
+  { __typename?: 'CaseStudy' }
+  & Pick<CaseStudy, 'overviewRaw' | 'challengeRaw' | 'solutionRaw' | 'resultsRaw'>
+  & { impact?: Maybe<Array<Maybe<(
+    { __typename?: 'FeatureItem' }
+    & Pick<FeatureItem, 'title'>
+    & { icon?: Maybe<(
+      { __typename?: 'MainImage' }
+      & ImageFragment
+    )> }
+  )>>> }
+  & CaseStudyMetaFragment
+);
+
 export type FeatureItemFragment = (
   { __typename?: 'FeatureItem' }
   & Pick<FeatureItem, 'title'>
@@ -2075,6 +2222,63 @@ export type JobPostingQuery = (
   )> }
 );
 
+export type CaseStudiesPageFragment = (
+  { __typename?: 'CaseStudiesPage' }
+  & Pick<CaseStudiesPage, 'title' | 'subtitle'>
+);
+
+export type CaseStudiesPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CaseStudiesPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allCaseStudiesPage: Array<(
+    { __typename?: 'CaseStudiesPage' }
+    & CaseStudiesPageFragment
+  )>, allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & CaseStudyMetaFragment
+  )> }
+);
+
+export type CaseStudyIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CaseStudyIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & CaseStudyMetaFragment
+  )> }
+);
+
+export type CaseStudyPathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CaseStudyPathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type CaseStudyQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type CaseStudyQuery = (
+  { __typename?: 'RootQuery' }
+  & { allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & CaseStudyFragment
+  )> }
+);
+
 export type FaqItemFragment = (
   { __typename?: 'FaqBlock' }
   & Pick<FaqBlock, 'title'>
@@ -2224,6 +2428,36 @@ export const ImageFragmentDoc = gql`
   alt
 }
     `;
+export const CaseStudyMetaFragmentDoc = gql`
+    fragment CaseStudyMeta on CaseStudy {
+  _id
+  _createdAt
+  company
+  logo {
+    ...Image
+  }
+  titleRaw
+  slug {
+    current
+  }
+}
+    ${ImageFragmentDoc}`;
+export const CaseStudyFragmentDoc = gql`
+    fragment CaseStudy on CaseStudy {
+  ...CaseStudyMeta
+  overviewRaw
+  challengeRaw
+  solutionRaw
+  resultsRaw
+  impact {
+    icon {
+      ...Image
+    }
+    title
+  }
+}
+    ${CaseStudyMetaFragmentDoc}
+${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -2398,6 +2632,12 @@ export const CareersPageFragmentDoc = gql`
     ${ImageFragmentDoc}
 ${SectionBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
+export const CaseStudiesPageFragmentDoc = gql`
+    fragment CaseStudiesPage on CaseStudiesPage {
+  title
+  subtitle
+}
+    `;
 export const FaqItemFragmentDoc = gql`
     fragment FaqItem on FaqBlock {
   title
@@ -2545,6 +2785,40 @@ export const JobPostingDocument = gql`
   }
 }
     ${JobPostingFragmentDoc}`;
+export const CaseStudiesPageDocument = gql`
+    query CaseStudiesPage {
+  allCaseStudiesPage(sort: {_createdAt: DESC}, limit: 1) {
+    ...CaseStudiesPage
+  }
+  allCaseStudy(sort: {_createdAt: DESC}) {
+    ...CaseStudyMeta
+  }
+}
+    ${CaseStudiesPageFragmentDoc}
+${CaseStudyMetaFragmentDoc}`;
+export const CaseStudyIndexDocument = gql`
+    query CaseStudyIndex {
+  allCaseStudy(sort: {_createdAt: DESC}) {
+    ...CaseStudyMeta
+  }
+}
+    ${CaseStudyMetaFragmentDoc}`;
+export const CaseStudyPathsDocument = gql`
+    query CaseStudyPaths {
+  allCaseStudy {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const CaseStudyDocument = gql`
+    query CaseStudy($slug: String!) {
+  allCaseStudy(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...CaseStudy
+  }
+}
+    ${CaseStudyFragmentDoc}`;
 export const FaqPageDocument = gql`
     query FaqPage {
   allFaq(sort: {_createdAt: DESC}, limit: 1) {
@@ -2598,6 +2872,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     JobPosting(variables: JobPostingQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<JobPostingQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<JobPostingQuery>(JobPostingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'JobPosting');
+    },
+    CaseStudiesPage(variables?: CaseStudiesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudiesPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CaseStudiesPageQuery>(CaseStudiesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudiesPage');
+    },
+    CaseStudyIndex(variables?: CaseStudyIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudyIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CaseStudyIndexQuery>(CaseStudyIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudyIndex');
+    },
+    CaseStudyPaths(variables?: CaseStudyPathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudyPathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CaseStudyPathsQuery>(CaseStudyPathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudyPaths');
+    },
+    CaseStudy(variables: CaseStudyQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudyQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CaseStudyQuery>(CaseStudyDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudy');
     },
     FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');
