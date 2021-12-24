@@ -350,6 +350,7 @@ export type CaseStudy = Document & {
   solutionRaw?: Maybe<Scalars['JSON']>;
   resultsRaw?: Maybe<Scalars['JSON']>;
   impact?: Maybe<Array<Maybe<FeatureItem>>>;
+  quote?: Maybe<TestimonialBlock>;
 };
 
 export type CaseStudyFilter = {
@@ -364,6 +365,7 @@ export type CaseStudyFilter = {
   company?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
+  quote?: Maybe<TestimonialBlockFilter>;
 };
 
 export type CaseStudySorting = {
@@ -376,6 +378,7 @@ export type CaseStudySorting = {
   company?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
+  quote?: Maybe<TestimonialBlockSorting>;
 };
 
 export type Category = Document & {
@@ -1969,7 +1972,14 @@ export type CaseStudyFragment = (
       { __typename?: 'MainImage' }
       & ImageFragment
     )> }
-  )>>> }
+  )>>>, quote?: Maybe<(
+    { __typename?: 'TestimonialBlock' }
+    & Pick<TestimonialBlock, 'authorName' | 'authorPosition' | 'quoteRaw'>
+    & { authorAvatar?: Maybe<(
+      { __typename?: 'MainImage' }
+      & ImageFragment
+    )> }
+  )> }
   & CaseStudyMetaFragment
 );
 
@@ -2454,6 +2464,14 @@ export const CaseStudyFragmentDoc = gql`
       ...Image
     }
     title
+  }
+  quote {
+    authorAvatar {
+      ...Image
+    }
+    authorName
+    authorPosition
+    quoteRaw
   }
 }
     ${CaseStudyMetaFragmentDoc}

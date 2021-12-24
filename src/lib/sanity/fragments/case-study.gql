@@ -23,4 +23,12 @@ fragment CaseStudy on CaseStudy {
     }
     title
   }
+  quote {
+    authorAvatar {
+      ...Image
+    }
+    authorName
+    authorPosition
+    quoteRaw
+  }
 }
