@@ -21,7 +21,7 @@ const QuoteItem = ({
     >
     <div className="flex">
       <div className="w-2/12">
-        <center>
+        <div className="flex justify-center align-center">
           <Image
             className="rounded-full border-2 border-aserto-lochivar-accent-40"
             layout="native"
@@ -29,7 +29,7 @@ const QuoteItem = ({
             height={100}
             src={authorImageSrc}
           />
-        </center>
+        </div>
         <div className="text-center text-aserto-grey-90 font-bold text-lg mt-4">
           {authorName}
         </div>
@@ -37,7 +37,7 @@ const QuoteItem = ({
       </div>
 
       <BlockContent
-        className="w-10/12 mt-10 px-2"
+        className="w-10/12 mt-10 px-3"
         blocks={quote}
       />
     </div>
