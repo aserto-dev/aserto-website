@@ -22,13 +22,13 @@ const QuoteItem = ({
     <div className="flex">
       <div className="w-2/12">
         <center>
-        <Image
-          className="rounded-full border-2 border-aserto-lochivar-accent-40"
-          layout="native"
-          width={100}
-          height={100}
-          src={authorImageSrc}
-        />
+          <Image
+            className="rounded-full border-2 border-aserto-lochivar-accent-40"
+            layout="native"
+            width={100}
+            height={100}
+            src={authorImageSrc}
+          />
         </center>
         <div className="text-center text-aserto-grey-90 font-bold text-lg mt-4">
           {authorName}
