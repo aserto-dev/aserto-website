@@ -31,17 +31,16 @@ const CaseStudy = ({ caseStudy }: Props) => {
 
       {/* logo and impact */}
       <div className="flex mb-20">
-        <div className="w-4/12">
+        <div className="w-4/12 flex items-center justify-center bg-white mr-10">
           <div
             className="w-10/12"
-            style={{ background: 'white', paddingLeft: 20, paddingRight: 20 }}
           >
             <Image
               src={caseStudy.logo?.asset?.url || '/404'}
               alt="Company logo"
               width={384}
               height={150}
-              objectFit="scale-down"
+              objectFit="contain"
               layout="responsive"
             />
           </div>
