@@ -12,7 +12,7 @@ const CaseStudyItem = ({ data }: Props) => {
   return (
     <Link href={`/casestudies/${data.slug?.current}`}>
       <a className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">
-        <div style={{ background: "white", paddingLeft: 20, paddingRight: 20 }}>
+        <div style={{ background: 'white', paddingLeft: 20, paddingRight: 20 }}>
           <Image
             src={data.logo?.asset?.url || '/404'}
             alt="Company logo"

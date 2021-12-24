@@ -11,7 +11,11 @@ import CaseStudyItem from './caseStudy-item'
 
 const pageSize = 6
 
-const CaseStudies = ({ caseStudies }: { caseStudies: CaseStudyMetaFragment[] }) => {
+const CaseStudies = ({
+  caseStudies
+}: {
+  caseStudies: CaseStudyMetaFragment[]
+}) => {
   const [section] = useFadeInBottom()
   const [shownPages, setShownPages] = useState(1)
 

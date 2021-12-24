@@ -32,7 +32,10 @@ const CaseStudy = ({ caseStudy }: Props) => {
       {/* logo and impact */}
       <div className="flex mb-20">
         <div className="w-4/12">
-          <div className="w-10/12" style={{ background: "white", paddingLeft: 20, paddingRight: 20 }}>
+          <div
+            className="w-10/12"
+            style={{ background: 'white', paddingLeft: 20, paddingRight: 20 }}
+          >
             <Image
               src={caseStudy.logo?.asset?.url || '/404'}
               alt="Company logo"
@@ -45,12 +48,12 @@ const CaseStudy = ({ caseStudy }: Props) => {
         </div>
         <div className="w-8/12">
           {caseStudy.impact?.map((item, i) => (
-              <ImpactItem
-                title={item?.title ?? ''}
-                icon={item?.icon?.asset?.url ?? '/404'}
-                key={i}
-              />
-            ))}
+            <ImpactItem
+              title={item?.title ?? ''}
+              icon={item?.icon?.asset?.url ?? '/404'}
+              key={i}
+            />
+          ))}
         </div>
       </div>
 
@@ -60,7 +63,6 @@ const CaseStudy = ({ caseStudy }: Props) => {
         authorImageSrc={caseStudy.quote?.authorAvatar?.asset?.url ?? ''}
         quote={caseStudy.quote?.quoteRaw}
       />
-
 
       <h2 className="mt-20 text-2xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-3xl">
         About {caseStudy.company}
