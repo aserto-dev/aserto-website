@@ -1,5 +1,4 @@
 import { CaseStudyMetaFragment } from 'lib/sanity/generated'
-import { formatPostDate } from 'lib/util'
 import Image from 'components/primitives/image'
 import Link from 'next/link'
 import { BlockContent } from 'components/primitives/block-content'
