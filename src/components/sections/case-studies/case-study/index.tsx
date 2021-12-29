@@ -30,7 +30,7 @@ const CaseStudy = ({ caseStudy }: Props) => {
       />
 
       {/* logo and impact */}
-      <div className="bg-white">
+      <div className="bg-white rounded-[6px]">
         <div className="flex items-center justify-center py-12">
           <Image
             src={caseStudy.logo?.asset?.url || '/404'}
