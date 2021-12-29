@@ -26,34 +26,29 @@ const CaseStudy = ({ caseStudy }: Props) => {
       {/* title */}
       <BlockContent
         blocks={caseStudy.titleRaw}
-        className="mt-5 mb-20 text-center text-4.5xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-5xl"
+        className="mt-5 mb-10 text-center text-4xl sm:leading-none text-aserto-grey-90 sm:text-4xl px-20"
       />
 
       {/* logo and impact */}
-      <div className="flex mb-20">
-        <div className="w-4/12 flex items-center justify-center bg-white mr-10">
-          <div
-            className="w-10/12"
-          >
-            <Image
-              src={caseStudy.logo?.asset?.url || '/404'}
-              alt="Company logo"
-              width={384}
-              height={150}
-              objectFit="contain"
-              layout="responsive"
-            />
-          </div>
+      <div className="bg-white">
+        <div className="flex items-center justify-center py-12">
+          <Image
+            src={caseStudy.logo?.asset?.url || '/404'}
+            alt="Company logo"
+            width={280}
+            height={176}
+            layout="native"
+          />
         </div>
-        <div className="w-8/12">
-          {caseStudy.impact?.map((item, i) => (
-            <ImpactItem
-              title={item?.title ?? ''}
-              icon={item?.icon?.asset?.url ?? '/404'}
-              key={i}
-            />
-          ))}
-        </div>
+      </div>
+      <div className="relative grid mx-auto mt-10 gap-[8rem] lg:grid-cols-3 mb-10">
+        {caseStudy.impact?.map((item, i) => (
+          <ImpactItem
+            title={item?.title ?? ''}
+            icon={item?.icon?.asset?.url ?? '/404'}
+            key={i}
+          />
+        ))}
       </div>
 
       <QuoteItem
@@ -63,28 +58,28 @@ const CaseStudy = ({ caseStudy }: Props) => {
         quote={caseStudy.quote?.quoteRaw}
       />
 
-      <h2 className="mt-20 text-2xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-3xl">
+      <h2 className="mt-20 text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
         About {caseStudy.company}
       </h2>
       <BlockContent
         blocks={caseStudy.overviewRaw}
         className={clsx('mt-5 sm:mt-5', s.body)}
       />
-      <h2 className="text-2xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-3xl">
+      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
         Challenge
       </h2>
       <BlockContent
         blocks={caseStudy.challengeRaw}
         className={clsx('mt-5 sm:mt-5', s.body)}
       />
-      <h2 className="text-2xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-3xl">
+      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
         Solution
       </h2>
       <BlockContent
         blocks={caseStudy.solutionRaw}
         className={clsx('mt-5 sm:mt-5', s.body)}
       />
-      <h2 className="text-2xl tracking-tight leading-tight sm:leading-none sm:tracking-tighter text-white sm:text-3xl">
+      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
         Results
       </h2>
       <BlockContent
