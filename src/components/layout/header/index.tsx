@@ -12,7 +12,7 @@ import CloseIcon from 'icons/menu-close.svg'
 import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
-
+import { asertoConsoleRootUrl } from 'lib/constants'
 import Menu from './menu'
 import { sendEvent } from '../../../lib/ga'
 
@@ -147,7 +147,7 @@ const Header = () => {
           </NextLink>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
-            href="https://console.aserto.com/"
+            href={asertoConsoleRootUrl}
           >
             Sign In
           </Link>
