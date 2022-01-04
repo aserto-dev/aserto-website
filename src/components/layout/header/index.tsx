@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 // Primitives
@@ -14,7 +14,7 @@ import LogoMobile from 'icons/logo-header-mobile.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import Menu from './menu'
-import PlaygroundBanner from 'components/sections/common/banners/playground'
+import { sendEvent } from '../../../lib/ga'
 
 export const headerLinks = [
   {
@@ -67,17 +67,19 @@ export const headerLinks = [
     label: 'Careers',
     href: '/careers',
     items: []
-  },
-  {
-    label: 'Playground',
-    href: '/playground',
-    items: []
   }
 ]
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-
+  const onClickCTA = () => {
+    sendEvent({
+      action: 'click',
+      params: {
+        event_label: 'Header Request Beta Access'
+      }
+    })
+  }
   useEffect(() => {
     if (open) {
       document.documentElement.style.overflow = 'hidden'
@@ -90,7 +92,6 @@ const Header = () => {
       className="sticky top-0 z-40 w-full"
       style={{ position: '-webkit-sticky' }}
     >
-      <PlaygroundBanner />
       <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
@@ -133,14 +134,15 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <NextLink href="/signup" passHref>
+          <NextLink href="/#sign-up" passHref>
             <Button
               variant="primary"
               size="sm"
               as="a"
               className="inline-flex items-center"
+              onClick={onClickCTA}
             >
-              Join the Beta
+              Request Beta Access
             </Button>
           </NextLink>
           <Link

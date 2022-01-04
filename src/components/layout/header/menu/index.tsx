@@ -24,9 +24,9 @@ const Menu = ({ show = false, closeMenu }: MenuProps) => {
   return (
     <section
       className={clsx(
-        'left-0 z-20 w-full px-6 py-3 right-1 bg-aserto-grey-5 transition-opacity duration-300',
+        'fixed left-0 z-20 w-full px-6 py-3 right-1 bg-aserto-grey-5 transition-opacity duration-300',
         s.menu,
-        { 'opacity-0 pointer-events-none hidden': !show }
+        { 'opacity-0 pointer-events-none': !show }
       )}
       aria-hidden={!show}
     >

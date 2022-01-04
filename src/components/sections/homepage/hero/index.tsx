@@ -14,6 +14,7 @@ import Button from 'components/primitives/button'
 import Animation from './animation'
 import s from './hero.module.css'
 import Image from 'components/primitives/image'
+import { sendEvent } from '../../../../lib/ga'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   const [ref] = useFadeInBottom()
@@ -55,6 +56,15 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
       `border-aserto-plum-accent-30 ${s['plum-gradient-background']} bg-aserto-plum-10`
     ]
     return pillarStyleObj[index]
+  }
+
+  const onClickCTA = () => {
+    sendEvent({
+      action: 'click',
+      params: {
+        event_label: 'Home Request Beta Access'
+      }
+    })
   }
 
   return (
@@ -102,13 +112,23 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           id="btn-scroll"
           className={`mt-10 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
         >
-          <Button as="a" href="/signup" className="inline-flex items-center">
-            Join the Beta
+          <Button
+            onClick={onClickCTA}
+            as="a"
+            href="/#sign-up"
+            className="inline-flex items-center"
+          >
+            {page.ctaLabel}
           </Button>
         </div>
         <div className={`mt-10 mb-20 md:mt-14 lg:mt-16 lg:mb-56 md:mb-56 `}>
-          <Button as="a" href="/signup" className="inline-flex items-center">
-            Join the Beta
+          <Button
+            onClick={onClickCTA}
+            as="a"
+            href="/#sign-up"
+            className="inline-flex items-center"
+          >
+            {page.ctaLabel}
           </Button>
         </div>
 
