@@ -2,6 +2,14 @@
 
 - [Sanity Studio](https://sanity-gatsby-blog-studio-be6f2wek.netlify.app/)
 
+## Developing locally
+`yarn dev`
+This command starts the server on localhost:3000 with hot reload enabled. Before you run this command, be sure to execute:
+
+`. ./scripts/aserto-website` 
+
+Provide that script with your GitHub PAT so it can talk to https://vault.eng.aserto.com and pull secrets required to interact with Sanity. Otherwise, you will see an error referencing `only Absolute URLs are supported`.
+
 ## Featured aspects of the stack
 
 - Typescript

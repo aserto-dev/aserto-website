@@ -16,10 +16,7 @@ body {
   scroll-behavior: smooth;
 }
 
-html,
-body {
-  overflow-x: hidden;
-}
+html
 
 .video::-webkit-media-controls-panel {
   display: none !important;

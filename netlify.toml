@@ -1,3 +1,49 @@
-[build]
-  command = "yarn build"
+[context.production]
   publish = "out"
+  command = "yarn build"
+  [context.production.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://console.aserto.com"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://aserto.com"
+
+[context.int]
+  publish = "out"
+  command = "yarn build"
+  [context.int.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.int.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://int--aserto.netlify.app"
+
+[context.preproduction]
+  publish = "out"
+  command = "yarn build"
+  [context.preproduction.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://preproduction--aserto.netlify.app"
+
+[context.main]
+  publish = "out"
+  command = "yarn build"
+  [context.main.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://main--aserto.netlify.app"
+
+[context.beta]
+  publish = "out"
+  command = "yarn build"
+  [context.beta.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://beta--aserto-console.netlify.app"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.beta.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://beta--aserto.netlify.app"

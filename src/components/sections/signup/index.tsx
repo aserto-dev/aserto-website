@@ -7,6 +7,7 @@ import SignupDataCollector, {
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
+import { asertoConsoleRootUrl } from 'lib/constants'
 
 type SignupState =
   | { type: 'SERVICE_ERROR' }
@@ -59,7 +60,7 @@ const Signup = () => {
               {
                 <Link
                   className="text-aserto-grey-90 font-roboto"
-                  href="https://console.aserto.com/"
+                  href={asertoConsoleRootUrl}
                 >
                   sign in
                 </Link>
