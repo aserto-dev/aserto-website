@@ -1,8 +1,9 @@
 // Primitives
 import Header from 'components/layout/header'
 import CustomHead from 'components/primitives/custom-head'
+import { asertoPlaygroundRootUrl } from 'lib/constants'
+import React, { useContext, useEffect } from 'react'
 import PlaygroundBannerContext from 'components/sections/common/banners/playground/PlaygroundBannerContext'
-import { useContext, useEffect } from 'react'
 
 const Playground = () => {
   const { hideBanner } = useContext(PlaygroundBannerContext)
@@ -21,7 +22,7 @@ const Playground = () => {
       </div>
       <iframe
         name="playgroundIframe"
-        src="https://aserto-playground.netlify.app/?embedded=1"
+        src={asertoPlaygroundRootUrl + '/?embedded=1'}
         className="w-screen h-full overflow-hidden"
       />
     </div>
