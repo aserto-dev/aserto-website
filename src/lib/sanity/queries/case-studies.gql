@@ -1,0 +1,33 @@
+fragment CaseStudiesPage on CaseStudiesPage {
+  title
+  subtitle
+}
+
+query CaseStudiesPage {
+  allCaseStudiesPage(sort: { _createdAt: DESC }, limit: 1) {
+    ...CaseStudiesPage
+  }
+  allCaseStudy(sort: { _createdAt: DESC }) {
+    ...CaseStudyMeta
+  }
+}
+
+query CaseStudyIndex {
+  allCaseStudy(sort: { _createdAt: DESC }) {
+    ...CaseStudyMeta
+  }
+}
+
+query CaseStudyPaths {
+  allCaseStudy {
+    slug {
+      current
+    }
+  }
+}
+
+query CaseStudy($slug: String!) {
+  allCaseStudy(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...CaseStudy
+  }
+}
