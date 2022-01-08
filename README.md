@@ -1,6 +1,6 @@
 # Aserto Website
 
-- [Sanity Studio](https://sanity-gatsby-blog-studio-be6f2wek.netlify.app/)
+- [Sanity Studio](https://studio.aserto.com)
 
 ## Developing locally
 `yarn dev`
