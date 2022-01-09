@@ -6183,6 +6183,18 @@
             "deprecationReason": null
           },
           {
+            "name": "customerSpotlightSectionTitle",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "testimonialsSectionTitle",
             "description": null,
             "args": [],
@@ -6465,6 +6477,18 @@
             "deprecationReason": null
           },
           {
+            "name": "customerSpotlightSectionTitle",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "testimonialsSectionTitle",
             "description": null,
             "type": {
@@ -6669,6 +6693,18 @@
           },
           {
             "name": "featuresSectionTitle",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "customerSpotlightSectionTitle",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -13111,6 +13147,18 @@
             "deprecationReason": null
           },
           {
+            "name": "uploadId",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "path",
             "description": null,
             "args": [],
@@ -13381,6 +13429,18 @@
             "deprecationReason": null
           },
           {
+            "name": "uploadId",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "path",
             "description": null,
             "type": {
@@ -13621,6 +13681,18 @@
           },
           {
             "name": "assetId",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "uploadId",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -14473,6 +14545,18 @@
             "deprecationReason": null
           },
           {
+            "name": "blurHash",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "hasAlpha",
             "description": null,
             "args": [],
@@ -14581,6 +14665,18 @@
             "deprecationReason": null
           },
           {
+            "name": "blurHash",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "hasAlpha",
             "description": null,
             "type": {
@@ -14677,6 +14773,18 @@
           },
           {
             "name": "lqip",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "blurHash",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -17347,7 +17455,20 @@
           {
             "name": "args",
             "description": null,
-            "args": [],
+            "args": [
+              {
+                "name": "includeDeprecated",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": "false",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
             "type": {
               "kind": "NON_NULL",
               "name": null,

@@ -13,8 +13,9 @@ import cms from 'lib/sanity'
 import Container from 'components/layout/container'
 import { useEffect } from 'react'
 import TheProblem from '../components/sections/homepage/the-problem'
+import CustomerSpotlight from 'components/sections/homepage/customers'
 
-const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const HomePage = ({ page, caseStudies }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
     if (window.location.hash === '#sign-up') {
       document.querySelector('#sign-up')?.scrollIntoView()
@@ -42,6 +43,7 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Hero page={page} />
         <Intro page={page} />
         <TheProblem page={page} />
+        <CustomerSpotlight page={page} caseStudies={caseStudies} />
         <Testimonials page={page} />
       </Container>
     </PageLayout>
@@ -49,10 +51,10 @@ const HomePage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
 }
 
 export const getStaticProps = async () => {
-  const { allHome } = await cms().HomePage()
+  const { allHome, allCaseStudy } = await cms().HomePage()
   const page = allHome[0]
   return {
-    props: { page },
+    props: { page, caseStudies: allCaseStudy },
     revalidate: 1
   }
 }
