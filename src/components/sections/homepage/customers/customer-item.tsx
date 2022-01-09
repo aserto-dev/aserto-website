@@ -34,19 +34,19 @@ const CustomerSpotlightItem = ({ data }: Props) => {
                   layout="responsive"
                 /> 
               </div> :
-              <div className={clsx('text-3xl text-white flex items-center', s['final-card'])}>
+              <div className={clsx('text-3xl text-white flex items-center', s['final-card'], 'sm:h-1/2')}>
                 <span className="w-full text-center text-aserto-grey-90">All case studies</span>
               </div>
             }
-            <div className="relative flex flex-col justify-between flex-1 px-8 py-8 bg-aserto-grey-20">
+            <div className="relative flex flex-col justify-between flex-1 px-5 py-7 bg-aserto-grey-20">
               <div className="flex-1">
                 <BlockContent
-                  className="text-center text-xl text-aserto-grey-90 sm:text-xl"
+                  className="text-center text-lg lg:text-xl text-aserto-grey-90"
                   blocks={data.titleRaw}
                 />
               </div>
 
-              <div className="text-center text-aserto-lochivar-accent-40 mt-10 text-xl">
+              <div className="text-center text-aserto-lochivar-accent-40 mt-10 text-lg lg:text-xl">
                 <a className="hover:underline">
                   {data.slug?.current ? 'View case study' : 'View all case studies'}
                 </a>

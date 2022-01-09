@@ -61,7 +61,7 @@ const CustomerSpotlight = ({
         </div>
         {slider && (
           <Container className="mt-8">
-            <div className="flex justify-center space-x-5">
+            <div className="flex justify-center space-x-2 lg:space-x-5">
               {[...Array(slider.details().size).keys()].map((i) => {
                 const isSelected = currentSlide === i
                 return (
@@ -71,7 +71,7 @@ const CustomerSpotlight = ({
                       slider.moveToSlideRelative(i)
                     }}
                     className={clsx(
-                      'w-6 h-6 transition-colors focus:outline-none rounded-full border border-aserto-grey-70',
+                      'w-3 h-3 lg:w-6 lg:h-6 transition-colors focus:outline-none rounded-full border border-aserto-grey-70',
                       { 'bg-aserto-grey-90': isSelected }
                     )}
                   />
