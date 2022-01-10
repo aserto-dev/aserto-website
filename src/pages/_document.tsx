@@ -79,10 +79,19 @@ class MyDocument extends Document {
             gtag('config', '${process.env.NEXT_PUBLIC_GA_CODE}', {
               page_path: window.location.pathname,
             });
-          `
+            `
             }}
           />
-          {/* hubspot cookie */}
+          {/* set initial hubspot page */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              var _hsq = window._hsq = window._hsq || [];
+              _hsq.push(['setPath', '/']);
+            `
+            }}
+          />
+          {/* load hubspot cookie */}
           <script
             type="text/javascript"
             id="hs-script-loader"
