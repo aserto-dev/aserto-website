@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { useForm } from 'react-hook-form'
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import { HubspotRequest, hubspotSignup } from 'lib/hubspot/HubSpotClient'
 
 // Layout
 import Container from 'components/layout/container'
@@ -33,10 +34,21 @@ const NewsletterSection = ({
   const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
   const [clearErr, setClearErr] = useState('')
+  const [email, setEmail] = useState('')
   const [alreadySawTypeForm, setAlreadySawTypeForm] = useState(false)
   //TODO move this to env
   const { toggle } = createPopup('RMHYXKD5')
   const onClickCTA = () => {
+    // add new user's email to hubspot
+    if (email) {
+      const hubspotRequest : HubspotRequest = { 
+        email, 
+        lifecycleStage: 'subscriber' 
+      }
+      hubspotSignup(hubspotRequest)
+    }
+    setEmail('')
+
     sendEvent({
       action: 'click',
       params: {
@@ -92,6 +104,7 @@ const NewsletterSection = ({
                   id="form-1"
                   className="relative flex flex-col self-center"
                   onSubmit={handleSubmit((data) => {
+                    setEmail(data.email)
                     subscribe({ EMAIL: data.email })
                     setClearErr(`${status}`)
                     setTimeout(() => {
