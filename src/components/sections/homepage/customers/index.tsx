@@ -89,36 +89,6 @@ const CustomerSpotlight = ({
           </Container>
         )}
       </div>
-      {/*
-      <div
-        className={`lg:grid md:grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 md:grid-cols-3 gap-4 ${s['customer-grid']} hidden`}
-      >
-        {page.testimonials?.map((testimonial, i) => {
-          return (
-            <div
-              key={String(testimonial?.authorName ?? i)}
-              className={`bg-aserto-grey-5 border-aserto-grey-20 flex-1 min-h-96 p-4 flex flex-col items-center rounded border text-aserto-grey-90 ${s['customer-card']}`}
-            >
-              <Image
-                className="rounded-full border-2 border-aserto-lochivar-accent-40"
-                layout="native"
-                width={160}
-                height={160}
-                src={testimonial?.authorAvatar?.asset?.url ?? ''}
-              />
-              <div className="text-aserto-grey-90 font-bold text-lg mt-4">
-                {testimonial?.authorName}
-              </div>
-              <div>{testimonial?.authorPosition}</div>
-              <BlockContent
-                className="mt-10 px-2"
-                blocks={testimonial?.quoteRaw}
-              />
-            </div>
-          )
-        })}
-      </div>
-      */}
     </section>
   )
 }
