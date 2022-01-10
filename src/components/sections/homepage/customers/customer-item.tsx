@@ -22,7 +22,7 @@ const CustomerSpotlightItem = ({ data }: Props) => {
         ref={section}
       >
         <Link href={`/casestudies/${data.slug?.current}`}>
-          <a className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">
+          <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
             {data.slug?.current ? 
               <div className="bg-white p-5 rounded">
                 <Image
@@ -52,7 +52,7 @@ const CustomerSpotlightItem = ({ data }: Props) => {
                 </a>
               </div>
             </div>
-          </a>
+          </div>
         </Link>
       </div>
     </div>
