@@ -36,7 +36,10 @@ const QuoteItem = ({
           <div className="text-center">{authorTitle}</div>
         </div>
 
-        <BlockContent className="lg:w-8/12 my-5 px-3 text-lg lg:text-1.5xl italic" blocks={quote} />
+        <BlockContent
+          className="lg:w-8/12 my-5 px-3 text-lg lg:text-1.5xl italic"
+          blocks={quote}
+        />
       </div>
     </div>
   )

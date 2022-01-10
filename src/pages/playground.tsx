@@ -7,7 +7,7 @@ import React, { useEffect } from 'react'
 
 const Playground = () => {
   useEffect(() => {
-    ; (function (d, s, id) {
+    ;(function (d, s, id) {
       var js,
         tjs = d.getElementsByTagName(s)[0]
       // react vdom will overwrite - so need to recreate

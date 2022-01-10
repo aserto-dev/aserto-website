@@ -8,9 +8,10 @@ import Container from 'components/layout/container'
 import clsx from 'clsx'
 
 const CustomerSpotlight = ({
-  page, caseStudies
+  page,
+  caseStudies
 }: {
-  page: HomePageFragment,
+  page: HomePageFragment
   caseStudies: CaseStudyMetaFragment[]
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -26,22 +27,29 @@ const CustomerSpotlight = ({
       setCursor('grab')
     }
   })
-  const spotlightItems : CaseStudyMetaFragment[] = [...caseStudies, {
-    slug: { current: '' },
-    titleRaw: [{
-      children: [{
-        text: 'Aserto helps customers solve challenging authorization problems',
-        _type: 'span'
-      }],
-      style: 'normal',
-      _type: 'block'
-    }],
-    logo: {
-      asset: {
-        url: ''
+  const spotlightItems: CaseStudyMetaFragment[] = [
+    ...caseStudies,
+    {
+      slug: { current: '' },
+      titleRaw: [
+        {
+          children: [
+            {
+              text: 'Aserto helps customers solve challenging authorization problems',
+              _type: 'span'
+            }
+          ],
+          style: 'normal',
+          _type: 'block'
+        }
+      ],
+      logo: {
+        asset: {
+          url: ''
+        }
       }
     }
-  }]
+  ]
   return (
     <section className="mx-auto mt-20 lg:mt-0 md:mt-0 sm:pt-24 pb-20 sm:pb-28">
       <div className="text-center mb-10 sm:px-0">

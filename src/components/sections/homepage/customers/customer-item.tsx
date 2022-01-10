@@ -23,7 +23,7 @@ const CustomerSpotlightItem = ({ data }: Props) => {
       >
         <Link href={`/casestudies/${data.slug?.current}`}>
           <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
-            {data.slug?.current ? 
+            {data.slug?.current ? (
               <div className="bg-white p-5 rounded">
                 <Image
                   src={data.logo?.asset?.url || '/404'}
@@ -32,12 +32,21 @@ const CustomerSpotlightItem = ({ data }: Props) => {
                   height={150}
                   objectFit="contain"
                   layout="responsive"
-                /> 
-              </div> :
-              <div className={clsx('text-3xl text-white flex items-center', s['final-card'], 'sm:h-1/2')}>
-                <span className="w-full text-center text-aserto-grey-90">All case studies</span>
+                />
               </div>
-            }
+            ) : (
+              <div
+                className={clsx(
+                  'text-3xl text-white flex items-center',
+                  s['final-card'],
+                  'sm:h-1/2'
+                )}
+              >
+                <span className="w-full text-center text-aserto-grey-90">
+                  All case studies
+                </span>
+              </div>
+            )}
             <div className="relative flex flex-col justify-between flex-1 px-5 py-7 bg-aserto-grey-20">
               <div className="flex-1">
                 <BlockContent
@@ -48,7 +57,9 @@ const CustomerSpotlightItem = ({ data }: Props) => {
 
               <div className="text-center text-aserto-lochivar-accent-40 mt-10 text-lg lg:text-xl">
                 <a className="hover:underline">
-                  {data.slug?.current ? 'View case study' : 'View all case studies'}
+                  {data.slug?.current
+                    ? 'View case study'
+                    : 'View all case studies'}
                 </a>
               </div>
             </div>

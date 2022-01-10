@@ -15,13 +15,17 @@ export const hubspotSignup = async (
 ): Promise<HubspotResponse> => {
   let response: Response
   let responseBody: any
-  const hutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1")
-  console.log(hutk)
+  const hutk = document.cookie.replace(
+    /(?:(?:^|.*;\s*)hubspotutk\s*=\s*([^;]*).*$)|^.*$/,
+    '$1'
+  )
   const body = JSON.stringify({
-    fields: [{
+    fields: [
+      {
         name: 'email',
         value: request.email
-      }, {
+      },
+      {
         name: 'lifecyclestage',
         value: request.lifecycleStage
       }
@@ -33,7 +37,6 @@ export const hubspotSignup = async (
   })
 
   try {
-    console.log('hubspot')
     response = await fetch(hubspotUrl, {
       method: 'POST',
       headers: {

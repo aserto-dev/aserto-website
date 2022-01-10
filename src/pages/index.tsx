@@ -15,7 +15,10 @@ import { useEffect } from 'react'
 import TheProblem from '../components/sections/homepage/the-problem'
 import CustomerSpotlight from 'components/sections/homepage/customers'
 
-const HomePage = ({ page, caseStudies }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const HomePage = ({
+  page,
+  caseStudies
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
     if (window.location.hash === '#sign-up') {
       document.querySelector('#sign-up')?.scrollIntoView()

@@ -41,9 +41,9 @@ const NewsletterSection = ({
   const onClickCTA = () => {
     // add new user's email to hubspot
     if (email) {
-      const hubspotRequest : HubspotRequest = { 
-        email, 
-        lifecycleStage: 'subscriber' 
+      const hubspotRequest: HubspotRequest = {
+        email,
+        lifecycleStage: 'subscriber'
       }
       hubspotSignup(hubspotRequest)
     }

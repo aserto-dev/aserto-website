@@ -59,44 +59,44 @@ const CaseStudy = ({ caseStudy }: Props) => {
       />
 
       <div className="px-5">
-      <h2 className="mt-20 text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
-        About {caseStudy.company}
-      </h2>
-      <BlockContent
-        blocks={caseStudy.overviewRaw}
-        className={clsx('mt-5 sm:mt-5', s.body)}
-      />
-      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
-        Challenge
-      </h2>
-      <BlockContent
-        blocks={caseStudy.challengeRaw}
-        className={clsx('mt-5 sm:mt-5', s.body)}
-      />
-      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
-        Solution
-      </h2>
-      <BlockContent
-        blocks={caseStudy.solutionRaw}
-        className={clsx('mt-5 sm:mt-5', s.body)}
-      />
-      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
-        Results
-      </h2>
-      <BlockContent
-        blocks={caseStudy.resultsRaw}
-        className={clsx('mt-5 sm:mt-5', s.body)}
-      />
-      <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
-        Benefits
-      </h2>
-      <ul className={clsx('mt-5 sm:mt-5 text-lg list-disc list-inside', s.body)}>
-       {caseStudy.impact?.map((item, i) => (
-          <li key={i}>
-            {item?.title ?? ''}
-          </li>
-        ))}
-      </ul>
+        <h2 className="mt-20 text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl">
+          About {caseStudy.company}
+        </h2>
+        <BlockContent
+          blocks={caseStudy.overviewRaw}
+          className={clsx('mt-5 sm:mt-5', s.body)}
+        />
+        <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
+          Challenge
+        </h2>
+        <BlockContent
+          blocks={caseStudy.challengeRaw}
+          className={clsx('mt-5 sm:mt-5', s.body)}
+        />
+        <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
+          Solution
+        </h2>
+        <BlockContent
+          blocks={caseStudy.solutionRaw}
+          className={clsx('mt-5 sm:mt-5', s.body)}
+        />
+        <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
+          Results
+        </h2>
+        <BlockContent
+          blocks={caseStudy.resultsRaw}
+          className={clsx('mt-5 sm:mt-5', s.body)}
+        />
+        <h2 className="text-2xl leading-tight sm:leading-none text-aserto-grey-90 sm:text-3xl mt-12">
+          Benefits
+        </h2>
+        <ul
+          className={clsx('mt-5 sm:mt-5 text-lg list-disc list-inside', s.body)}
+        >
+          {caseStudy.impact?.map((item, i) => (
+            <li key={i}>{item?.title ?? ''}</li>
+          ))}
+        </ul>
       </div>
     </section>
   )
