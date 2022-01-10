@@ -82,6 +82,14 @@ class MyDocument extends Document {
           `
             }}
           />
+          {/* hubspot cookie */}
+          <script
+            type="text/javascript"
+            id="hs-script-loader"
+            async
+            defer
+            src="//js.hs-scripts.com/8658136.js"
+          />
         </Head>
         <body className="h-full bg-aserto-black">
           <Main />
