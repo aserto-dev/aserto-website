@@ -6,6 +6,7 @@ import { IdProvider } from '@radix-ui/react-id'
 import '@typeform/embed/build/css/popup.css'
 import { useEffect } from 'react'
 import { pageview } from 'lib/ga'
+import { useTrackingCode } from 'react-hubspot-tracking-code-hook'
 
 initGsap()
 
@@ -17,6 +18,9 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url)
+      // update Hubspot page tracking
+      const { setPathPageView } = useTrackingCode()
+      setPathPageView(url)
     }
     //When the component is mounted, subscribe to router changes
     //and log those page views
