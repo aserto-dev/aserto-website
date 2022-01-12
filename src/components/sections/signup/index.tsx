@@ -8,6 +8,11 @@ import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
 import { asertoConsoleRootUrl } from 'lib/constants'
+import {
+  HubspotRequest,
+  HubspotResponse,
+  hubspotSignup
+} from 'lib/hubspot/HubSpotClient'
 
 type SignupState =
   | { type: 'SERVICE_ERROR' }
@@ -36,12 +41,26 @@ const Signup = () => {
     const response = await signupUser(request)
 
     let newState: SignupState
+    let hubspotRequest: HubspotRequest
+    let hubspotResponse: HubspotResponse
 
     switch (response.status) {
       case 200:
         newState = {
           type: 'SUCCESS',
           emailAddress: request.email
+        }
+
+        // add new user's email to hubspot
+        hubspotRequest = {
+          email: request.email,
+          lifecycleStage: 'lead'
+        }
+        hubspotResponse = await hubspotSignup(hubspotRequest)
+        if (hubspotResponse.status !== 200) {
+          // for now just log an error in the console
+          // when we have central error reporting, should report this
+          console.error(`Hubspot error: ${hubspotResponse.message}`)
         }
         break
       case 400:
