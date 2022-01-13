@@ -7,6 +7,7 @@ import SignupDataCollector, {
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
+import Image from '../../primitives/image'
 import { asertoConsoleRootUrl } from 'lib/constants'
 
 type SignupState =
@@ -83,11 +84,21 @@ const Signup = () => {
     case 'INPUT':
       return (
         <SignupContainer>
-          <SignupDataCollector
-            errorMessage={state.errorMessage}
-            onSubmit={handleSignUpRequest}
-            visualMode={state.visualState}
-          />
+          <>
+            <Image
+              className="mx-auto"
+              style={{ marginTop: '10px' }}
+              layout="native"
+              width={97}
+              height={100}
+              src="/images/aserto-vertical-color-white-text.svg"
+            />
+            <SignupDataCollector
+              errorMessage={state.errorMessage}
+              onSubmit={handleSignUpRequest}
+              visualMode={state.visualState}
+            />
+          </>
         </SignupContainer>
       )
     case 'SUCCESS':
