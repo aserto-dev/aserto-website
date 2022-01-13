@@ -729,6 +729,7 @@ export type Home = Document & {
   theSolutionSectionCards?: Maybe<Array<Maybe<SectionBlock>>>;
   featuresSectionTitle?: Maybe<Scalars['String']>;
   features?: Maybe<Array<Maybe<FeatureBlock>>>;
+  customerSpotlightSectionTitle?: Maybe<Scalars['String']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
   pillars?: Maybe<Array<Maybe<PillarBlock>>>;
@@ -754,6 +755,7 @@ export type HomeFilter = {
   theSolutionSectionLabel?: Maybe<StringFilter>;
   theSolutionSectionTitle?: Maybe<StringFilter>;
   featuresSectionTitle?: Maybe<StringFilter>;
+  customerSpotlightSectionTitle?: Maybe<StringFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
 };
 
@@ -774,6 +776,7 @@ export type HomeSorting = {
   theSolutionSectionLabel?: Maybe<SortOrder>;
   theSolutionSectionTitle?: Maybe<SortOrder>;
   featuresSectionTitle?: Maybe<SortOrder>;
+  customerSpotlightSectionTitle?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
 };
 
@@ -1550,6 +1553,7 @@ export type SanityImageAsset = Document & {
   mimeType?: Maybe<Scalars['String']>;
   size?: Maybe<Scalars['Float']>;
   assetId?: Maybe<Scalars['String']>;
+  uploadId?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   metadata?: Maybe<SanityImageMetadata>;
@@ -1575,6 +1579,7 @@ export type SanityImageAssetFilter = {
   mimeType?: Maybe<StringFilter>;
   size?: Maybe<FloatFilter>;
   assetId?: Maybe<StringFilter>;
+  uploadId?: Maybe<StringFilter>;
   path?: Maybe<StringFilter>;
   url?: Maybe<StringFilter>;
   metadata?: Maybe<SanityImageMetadataFilter>;
@@ -1598,6 +1603,7 @@ export type SanityImageAssetSorting = {
   mimeType?: Maybe<SortOrder>;
   size?: Maybe<SortOrder>;
   assetId?: Maybe<SortOrder>;
+  uploadId?: Maybe<SortOrder>;
   path?: Maybe<SortOrder>;
   url?: Maybe<SortOrder>;
   metadata?: Maybe<SanityImageMetadataSorting>;
@@ -1693,6 +1699,7 @@ export type SanityImageMetadata = {
   dimensions?: Maybe<SanityImageDimensions>;
   palette?: Maybe<SanityImagePalette>;
   lqip?: Maybe<Scalars['String']>;
+  blurHash?: Maybe<Scalars['String']>;
   hasAlpha?: Maybe<Scalars['Boolean']>;
   isOpaque?: Maybe<Scalars['Boolean']>;
 };
@@ -1704,6 +1711,7 @@ export type SanityImageMetadataFilter = {
   dimensions?: Maybe<SanityImageDimensionsFilter>;
   palette?: Maybe<SanityImagePaletteFilter>;
   lqip?: Maybe<StringFilter>;
+  blurHash?: Maybe<StringFilter>;
   hasAlpha?: Maybe<BooleanFilter>;
   isOpaque?: Maybe<BooleanFilter>;
 };
@@ -1715,6 +1723,7 @@ export type SanityImageMetadataSorting = {
   dimensions?: Maybe<SanityImageDimensionsSorting>;
   palette?: Maybe<SanityImagePaletteSorting>;
   lqip?: Maybe<SortOrder>;
+  blurHash?: Maybe<SortOrder>;
   hasAlpha?: Maybe<SortOrder>;
   isOpaque?: Maybe<SortOrder>;
 };
@@ -2315,7 +2324,7 @@ export type FaqPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'testimonialsSectionTitle'>
   & { slogan?: Maybe<Array<Maybe<(
     { __typename?: 'TextBlock' }
     & Pick<TextBlock, 'text'>
@@ -2371,6 +2380,9 @@ export type HomePageQuery = (
   & { allHome: Array<(
     { __typename?: 'Home' }
     & HomePageFragment
+  )>, allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & CaseStudyMetaFragment
   )> }
 );
 
@@ -2691,6 +2703,7 @@ export const HomePageFragmentDoc = gql`
       ...FeatureItem
     }
   }
+  customerSpotlightSectionTitle
   testimonialsSectionTitle
   testimonials {
     authorAvatar {
@@ -2853,8 +2866,12 @@ export const HomePageDocument = gql`
   allHome(sort: {_createdAt: DESC}, limit: 1) {
     ...HomePage
   }
+  allCaseStudy(sort: {_createdAt: DESC}) {
+    ...CaseStudyMeta
+  }
 }
-    ${HomePageFragmentDoc}`;
+    ${HomePageFragmentDoc}
+${CaseStudyMetaFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {

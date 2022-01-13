@@ -23,6 +23,7 @@ fragment HomePage on Home {
       ...FeatureItem
     }
   }
+  customerSpotlightSectionTitle
   testimonialsSectionTitle
   testimonials {
     authorAvatar {
@@ -59,5 +60,8 @@ fragment HomePage on Home {
 query HomePage {
   allHome(sort: { _createdAt: DESC }, limit: 1) {
     ...HomePage
+  }
+  allCaseStudy(sort: { _createdAt: DESC }) {
+    ...CaseStudyMeta
   }
 }
