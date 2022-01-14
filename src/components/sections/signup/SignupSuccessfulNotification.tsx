@@ -2,6 +2,7 @@ import React from 'react'
 
 interface SignupSuccessfulNotificationProps {
   email: string
+  closeModal: () => void
 }
 
 const SignupSuccessfulNotification = (
@@ -36,7 +37,7 @@ const SignupSuccessfulNotification = (
       className={`font-roboto w-full border border-[#4a4a4a] bg-aserto-grey-10
                 text-aserto-grey-90 hover:bg-aserto-grey-20 active:bg-aserto-grey-30 
                 disabled:bg-aserto-grey-5 disabled:bg-aserto-grey-30`}
-      // onClick={}
+      onClick={props.closeModal}
       style={{
         borderRadius: '6px',
         fontSize: '16px',

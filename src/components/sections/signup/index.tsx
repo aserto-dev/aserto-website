@@ -19,7 +19,7 @@ type SignupState =
     }
   | { type: 'SUCCESS'; emailAddress: string }
 
-const Signup = () => {
+const Signup = ({ closeModal }: { closeModal: () => void }) => {
   const [state, setState] = useState<SignupState>({
     errorMessage: undefined,
     type: 'INPUT',
@@ -83,7 +83,7 @@ const Signup = () => {
   switch (state.type) {
     case 'INPUT':
       return (
-        <SignupContainer>
+        <SignupContainer closeModal={closeModal}>
           <>
             <Image
               className="mx-auto"
@@ -103,8 +103,11 @@ const Signup = () => {
       )
     case 'SUCCESS':
       return (
-        <SignupContainer>
-          <SignupSuccessfulNotification email={state.emailAddress} />
+        <SignupContainer closeModal={closeModal}>
+          <SignupSuccessfulNotification
+            email={state.emailAddress}
+            closeModal={closeModal}
+          />
         </SignupContainer>
       )
     case 'SERVICE_ERROR':

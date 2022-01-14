@@ -14,10 +14,12 @@ import Button from 'components/primitives/button'
 import Animation from './animation'
 import s from './hero.module.css'
 import Image from 'components/primitives/image'
+import Signup from 'components/sections/signup'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   const [ref] = useFadeInBottom()
   const [supportedBrowser, setSupportedBrowser] = useState(true)
+  const [showSignupModal, setShowSignupModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +61,9 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
 
   return (
     <section className="relative pt-10 md:pt-10 lg:pt-24 mx-auto">
+      {showSignupModal && (
+        <Signup closeModal={() => setShowSignupModal(false)} />
+      )}
       <div className="text-center" ref={ref}>
         <h1 className="text-4xl leading-none font-normal tracking-tight text-aserto-grey-90 md:text-6xl mx-auto xl:text-5xl">
           {page.title}
@@ -102,12 +107,20 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           id="btn-scroll"
           className={`mt-10 mg:hidden lg:hidden ${s['btn-container-sticky']}`}
         >
-          <Button as="a" href="/signup" className="inline-flex items-center">
+          <Button
+            as="a"
+            className="inline-flex items-center cursor-pointer"
+            onClick={() => setShowSignupModal(true)}
+          >
             Join the Beta
           </Button>
         </div>
         <div className={`mt-10 mb-20 md:mt-14 lg:mt-16 lg:mb-56 md:mb-56 `}>
-          <Button as="a" href="/signup" className="inline-flex items-center">
+          <Button
+            as="a"
+            className="inline-flex items-center cursor-pointer"
+            onClick={() => setShowSignupModal(true)}
+          >
             Join the Beta
           </Button>
         </div>

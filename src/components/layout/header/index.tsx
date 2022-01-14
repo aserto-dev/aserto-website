@@ -4,7 +4,9 @@ import clsx from 'clsx'
 // Primitives
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
-import NextLink from 'next/link'
+
+//Components
+import Signup from 'components/sections/signup'
 
 // SVGs
 import MenuIcon from 'icons/menu.svg'
@@ -77,6 +79,7 @@ export const headerLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false)
+  const [showSignupModal, setShowSignupModal] = useState(false)
 
   useEffect(() => {
     if (open) {
@@ -90,6 +93,9 @@ const Header = () => {
       className="sticky top-0 z-40 w-full"
       style={{ position: '-webkit-sticky' }}
     >
+      {showSignupModal && (
+        <Signup closeModal={() => setShowSignupModal(false)} />
+      )}
       <PlaygroundBanner />
       <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
@@ -133,16 +139,15 @@ const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <NextLink href="/signup" passHref>
-            <Button
-              variant="primary"
-              size="sm"
-              as="a"
-              className="inline-flex items-center"
-            >
-              Join the Beta
-            </Button>
-          </NextLink>
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
+            className="inline-flex items-center cursor-pointer"
+            onClick={() => setShowSignupModal(true)}
+          >
+            Join the Beta
+          </Button>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
