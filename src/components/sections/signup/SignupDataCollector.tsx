@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { recaptchaSiteKey } from 'lib/constants'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
 
@@ -25,9 +25,16 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
   const disableEmailInput =
     props.visualMode !== SignupDataCollectorVisualMode.Editing
 
+  const validateEmail = useMemo(() => {
+    return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+      email
+    )
+  }, [email])
+
   const disableSubmit =
     !email ||
     !recaptcha ||
+    !validateEmail ||
     props.visualMode !== SignupDataCollectorVisualMode.Editing
 
   useEffect(() => {
