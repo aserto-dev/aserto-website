@@ -49,32 +49,26 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
   return (
     <div className="flex flex-col">
       <div
-        className="font-roboto text-aserto-grey-90 text-center"
-        style={{ fontSize: '20px', lineHeight: '28px', margin: '20px 0' }}
+        className={`font-roboto text-aserto-grey-90 text-center text-[20px]
+                  leading-[24px] my-[20px] mx-0`}
       >
         Sign up for our beta!
       </div>
       <div className="flex flex-col gap-[40px]">
-        <div style={{ height: '60px', overflowY: 'visible' }}>
+        <div className="h-[60px] overflow-y-visible">
           <input
             className={clsx(
-              'bg-aserto-black',
+              'bg-aserto-black text-aserto-grey-60 w-[500px] h-[60px]',
               { 'border-aserto-mojo-accent-30': showError },
               { 'border-aserto-grey-30': !showError },
-              `focus:border-aserto-lochivar-accent-20 text-aserto-grey-60
-               focus:ring-0`
+              `rounded-[2px] focus:border-aserto-lochivar-accent-20
+              focus:ring-0 focus:shadow-input text-[16px]`
             )}
             disabled={disableEmailInput}
             onChange={(event) => {
               setEmail(event?.target.value)
             }}
             placeholder="Email"
-            style={{
-              fontSize: '16px',
-              height: '60px',
-              width: '500px',
-              borderRadius: '2px'
-            }}
             type="text"
           />
           {showError && (
@@ -90,7 +84,8 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           theme="dark"
         />
         <button
-          className={`font-roboto w-full  bg-aserto-lochivar-60 text-white 
+          className={`font-roboto text-white text-[16px] rounded-[6px]
+                    w-full h-[60px] bg-aserto-lochivar-60 leading-[24px]
                     hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100 
                     disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
                     disabled:cursor-not-allowed`}
@@ -100,12 +95,6 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
               recaptcha,
               email
             })
-          }}
-          style={{
-            borderRadius: '6px',
-            fontSize: '16px',
-            height: '60px',
-            lineHeight: '24px'
           }}
         >
           Sign me up!

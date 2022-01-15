@@ -10,7 +10,7 @@ const SignupSuccessfulNotification = (
 ) => (
   <div>
     <img
-      className="mx-auto mt-[30px] mb-[45px]"
+      className="ml-[145px] mt-[30px] mb-[45px]"
       src="/images/email-sent.svg"
       alt="Email Sent"
       height={100}
