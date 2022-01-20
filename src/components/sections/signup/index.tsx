@@ -19,7 +19,7 @@ type SignupState =
     }
   | { type: 'SUCCESS'; emailAddress: string }
 
-const Signup = ({ closeModal }: { closeModal: () => void }) => {
+const Signup = ({ closeModal }: { closeModal?: () => void }) => {
   const [state, setState] = useState<SignupState>({
     errorMessage: undefined,
     type: 'INPUT',

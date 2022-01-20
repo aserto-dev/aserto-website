@@ -8,17 +8,21 @@ import React, {
 
 interface ChildrenProps {
   children: ReactChild | ReactChildren
-  closeModal: () => void
+  closeModal?: () => void
 }
 const SignupContainer = ({ children, closeModal }: ChildrenProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const useOutsideAlerter = (
     ref: RefObject<HTMLDivElement>,
-    closeModal: () => void
+    closeModal?: () => void
   ) => {
     useEffect(() => {
       function handleClickOutside(e: MouseEvent) {
-        if (ref.current && !ref.current.contains(e.target as HTMLDivElement)) {
+        if (
+          ref.current &&
+          !ref.current.contains(e.target as HTMLDivElement) &&
+          closeModal
+        ) {
           closeModal()
         }
       }
