@@ -51,11 +51,12 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         <div className="h-[60px] overflow-y-visible">
           <input
             className={clsx(
-              'bg-aserto-black text-aserto-grey-60 w-[500px] h-[60px]',
+              'bg-aserto-black text-aserto-grey-60',
               { 'border-aserto-mojo-accent-30': showError },
               { 'border-aserto-grey-30': !showError },
               `rounded-[2px] focus:border-aserto-lochivar-accent-20
-              focus:ring-0 focus:shadow-input text-[16px]`
+              focus:ring-0 focus:shadow-input text-[16px]
+              w-[80vw] sm:w-[500px] h-[48px] sm:h-[60px]`
             )}
             disabled={disableEmailInput}
             onChange={(event) => {
@@ -77,9 +78,9 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           theme="dark"
         />
         <button
-          className={`font-roboto text-white text-[16px] rounded-[6px]
-                    w-full h-[60px] bg-aserto-lochivar-60 leading-[24px]
-                    hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100 
+          className={`font-roboto text-white text-[16px] rounded-[6px] w-full
+                    h-[48px] sm:h-[60px] leading-[24px] bg-aserto-lochivar-60
+                    hover:bg-aserto-lochivar-90 active:bg-aserto-lochivar-100
                     disabled:bg-aserto-lochivar-30 disabled:text-aserto-grey-40
                     disabled:cursor-not-allowed`}
           disabled={disableSubmit}

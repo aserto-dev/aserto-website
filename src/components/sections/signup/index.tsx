@@ -86,11 +86,8 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
         <SignupContainer closeModal={closeModal}>
           <>
             <Image
-              className="mx-auto"
-              style={{ marginTop: '10px' }}
+              className="mx-auto mt=[10px] w-[58px] sm:w-[97px]"
               layout="native"
-              width={97}
-              height={100}
               src="/images/aserto-vertical-color-white-text.svg"
             />
             <SignupDataCollector
