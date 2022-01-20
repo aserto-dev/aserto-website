@@ -18,6 +18,9 @@ const recaptchaSiteKey =
 const asertoPlaygroundRootUrl =
   process.env.NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL ||
   'https://aserto-playground.netlify.app'
+const hubspotUrl =
+  process.env.NEXT_PUBLIC_HUBSPOT_URL ||
+  'https://api.hsforms.com/submissions/v3/integration/submit/8658136/5bfa769c-94f7-4483-a54e-d72bbdf2c828'
 
 export {
   asertoConsoleRootUrl,
@@ -28,5 +31,6 @@ export {
   isServer,
   originURL,
   recaptchaSiteKey,
-  tenantServiceUrl
+  tenantServiceUrl,
+  hubspotUrl
 }
