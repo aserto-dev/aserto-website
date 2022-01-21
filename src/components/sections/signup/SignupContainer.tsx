@@ -36,21 +36,12 @@ const SignupContainer = ({ children, closeModal }: ChildrenProps) => {
   useOutsideAlerter(ref, closeModal)
 
   return (
-    <div
-      className="fixed top-0 left-0 h-full w-full z-50 bg-black/20"
-      style={{
-        background:
-          'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )'
-      }}
-    >
+    <div className="fixed top-0 left-0 h-full w-full z-50 sm:bg-modal">
       <div
-        className="fixed top-1/2 left-1/2 bg-aserto-grey-10
-                  p-[20px] border-2 border-[#46d2d7] rounded-[11px]"
+        className="fixed top-1/2 left-1/2 bg-aserto-grey-10 shadow-modal
+                  p-[20px] border-2 border-[#46d2d7] rounded-[11px]
+                  transform -translate-x-1/2 -translate-y-1/2"
         ref={ref}
-        style={{
-          boxShadow: '0px 2px 22px 8px rgba(70,210,215,0.6)',
-          transform: 'translate(-50%,-50%)'
-        }}
       >
         {children}
       </div>
