@@ -1,0 +1,21 @@
+fragment Pricing on Pricing {
+  title
+  subtitle
+  pricingTable {
+    title
+    features {
+      rows {
+        cells
+      }
+    }
+  }
+}
+
+query Pricing {
+  allPricing(sort: { _createdAt: DESC }, limit: 1) {
+    ...Pricing
+  }
+  allEdition(sort: { index: ASC }) {
+    ...Edition
+  }
+}

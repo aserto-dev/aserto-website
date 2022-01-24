@@ -1,0 +1,12 @@
+fragment Edition on Edition {
+  _id
+  _createdAt
+  index
+  title
+  description
+  buttonText
+  buttonUrl
+  price
+  timeUnit
+  features
+}
