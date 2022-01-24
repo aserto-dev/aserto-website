@@ -9,9 +9,7 @@ const TableRows = ({ rows }: Props) => {
   return (
     <div>
       {rows.map((r, i) => {
-        return (
-          <Row key={i} row={r} />
-        )
+        return <Row key={i} row={r} />
       })}
     </div>
   )

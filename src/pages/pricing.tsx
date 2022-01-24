@@ -21,7 +21,7 @@ const PricingPage = ({
     <PageLayout
       footer
       headProps={{
-        title: 'Aserto Case Studies',
+        title: 'Aserto Pricing',
         description: 'Welcome to modern authorization',
         image: 'images/og.png'
       }}

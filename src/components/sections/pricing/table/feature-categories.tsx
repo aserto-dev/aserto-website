@@ -6,10 +6,10 @@ type Props = {
 }
 
 const FeatureCategories = ({ categories }: Props) => {
-
   return (
     <div className="mt-5">
-    { categories && categories.map((c, i) => <FeatureCategory key={i} category={c} />) }
+      {categories &&
+        categories.map((c, i) => <FeatureCategory key={i} category={c} />)}
     </div>
   )
 }

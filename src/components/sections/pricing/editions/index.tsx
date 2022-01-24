@@ -14,12 +14,7 @@ const Editions = ({ editions }: { editions: Edition[] }) => {
         <div className="grid w-full grid-cols-1 gap-4 mx-auto mt-20 gap-y-12 sm:gap-4 sm:gap-y-20 md:grid-cols-2 lg:grid-cols-4">
           {editions.map((e, i) => {
             if (!e) return null
-            return (
-              <EditionItem
-                data={e}
-                key={i}
-              />
-            )
+            return <EditionItem data={e} key={i} />
           })}
         </div>
       </div>

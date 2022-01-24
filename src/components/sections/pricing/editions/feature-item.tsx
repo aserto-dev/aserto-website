@@ -7,10 +7,10 @@ type Props = {
   bullet: boolean
 }
 
-const Bullet = ({ data, bullet } : Props) => {
+const Bullet = ({ data, bullet }: Props) => {
   return (
     <div className="flex px-6 mt-3 text-base tracking-tight text-aserto-grey-90 font-roboto">
-      { bullet && 
+      {bullet && (
         <div className={s.bullet}>
           <Image
             src="/images/pricing/Oval.svg"
@@ -19,8 +19,10 @@ const Bullet = ({ data, bullet } : Props) => {
             height={14}
           />
         </div>
-      }
-      <div className={clsx("text-md", bullet ? "ml-3" : "font-bold")}>{data}&nbsp;</div>
+      )}
+      <div className={clsx('text-md', bullet ? 'ml-3' : 'font-bold')}>
+        {data}&nbsp;
+      </div>
     </div>
   )
 }
