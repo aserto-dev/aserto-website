@@ -19,8 +19,8 @@ const QuoteItem = ({
     <div
       className={`bg-aserto-grey-5 border-aserto-grey-20 flex-1 min-h-96 p-4 flex flex-col items-center rounded border text-aserto-grey-90 ${s['testimonial-card']}`}
     >
-      <div className="flex">
-        <div className="w-4/12 my-5">
+      <div className="lg:flex">
+        <div className="lg:w-4/12 my-5">
           <div className="flex justify-center align-center">
             <Image
               className="rounded-full border-2 border-aserto-lochivar-accent-40"
@@ -36,7 +36,10 @@ const QuoteItem = ({
           <div className="text-center">{authorTitle}</div>
         </div>
 
-        <BlockContent className="w-8/12 my-5 px-3 text-1.5xl italic" blocks={quote} />
+        <BlockContent
+          className="lg:w-8/12 my-5 px-3 text-lg lg:text-1.5xl italic"
+          blocks={quote}
+        />
       </div>
     </div>
   )

@@ -514,6 +514,63 @@ export type DocumentSorting = {
   _rev?: Maybe<SortOrder>;
 };
 
+export type Edition = Document & {
+  __typename?: 'Edition';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  index?: Maybe<Scalars['Float']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  buttonText?: Maybe<Scalars['String']>;
+  buttonUrl?: Maybe<Scalars['String']>;
+  price?: Maybe<Scalars['String']>;
+  timeUnit?: Maybe<Scalars['String']>;
+  features?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type EditionFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  index?: Maybe<FloatFilter>;
+  title?: Maybe<StringFilter>;
+  description?: Maybe<StringFilter>;
+  buttonText?: Maybe<StringFilter>;
+  buttonUrl?: Maybe<StringFilter>;
+  price?: Maybe<StringFilter>;
+  timeUnit?: Maybe<StringFilter>;
+};
+
+export type EditionSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  index?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  description?: Maybe<SortOrder>;
+  buttonText?: Maybe<SortOrder>;
+  buttonUrl?: Maybe<SortOrder>;
+  price?: Maybe<SortOrder>;
+  timeUnit?: Maybe<SortOrder>;
+};
+
 export type Faq = Document & {
   __typename?: 'Faq';
   /** Document ID */
@@ -729,6 +786,7 @@ export type Home = Document & {
   theSolutionSectionCards?: Maybe<Array<Maybe<SectionBlock>>>;
   featuresSectionTitle?: Maybe<Scalars['String']>;
   features?: Maybe<Array<Maybe<FeatureBlock>>>;
+  customerSpotlightSectionTitle?: Maybe<Scalars['String']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
   pillars?: Maybe<Array<Maybe<PillarBlock>>>;
@@ -754,6 +812,7 @@ export type HomeFilter = {
   theSolutionSectionLabel?: Maybe<StringFilter>;
   theSolutionSectionTitle?: Maybe<StringFilter>;
   featuresSectionTitle?: Maybe<StringFilter>;
+  customerSpotlightSectionTitle?: Maybe<StringFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
 };
 
@@ -774,6 +833,7 @@ export type HomeSorting = {
   theSolutionSectionLabel?: Maybe<SortOrder>;
   theSolutionSectionTitle?: Maybe<SortOrder>;
   featuresSectionTitle?: Maybe<SortOrder>;
+  customerSpotlightSectionTitle?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
 };
 
@@ -1176,6 +1236,70 @@ export type PostSorting = {
   mainImage?: Maybe<MainImageSorting>;
 };
 
+export type Pricing = Document & {
+  __typename?: 'Pricing';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  pricingTable?: Maybe<Array<Maybe<PricingFeatureCategory>>>;
+};
+
+export type PricingFeatureCategory = {
+  __typename?: 'PricingFeatureCategory';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  features?: Maybe<Table>;
+};
+
+export type PricingFeatureCategoryFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  features?: Maybe<TableFilter>;
+};
+
+export type PricingFeatureCategorySorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  features?: Maybe<TableSorting>;
+};
+
+export type PricingFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+};
+
+export type PricingSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+};
+
 export type QuestionBlock = {
   __typename?: 'QuestionBlock';
   _key?: Maybe<Scalars['String']>;
@@ -1210,6 +1334,8 @@ export type RootQuery = {
   JobPosting?: Maybe<JobPosting>;
   CaseStudy?: Maybe<CaseStudy>;
   CaseStudiesPage?: Maybe<CaseStudiesPage>;
+  Edition?: Maybe<Edition>;
+  Pricing?: Maybe<Pricing>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1225,6 +1351,8 @@ export type RootQuery = {
   allJobPosting: Array<JobPosting>;
   allCaseStudy: Array<CaseStudy>;
   allCaseStudiesPage: Array<CaseStudiesPage>;
+  allEdition: Array<Edition>;
+  allPricing: Array<Pricing>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1287,6 +1415,16 @@ export type RootQueryCaseStudyArgs = {
 
 
 export type RootQueryCaseStudiesPageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryEditionArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryPricingArgs = {
   id: Scalars['ID'];
 };
 
@@ -1397,6 +1535,22 @@ export type RootQueryAllCaseStudyArgs = {
 export type RootQueryAllCaseStudiesPageArgs = {
   where?: Maybe<CaseStudiesPageFilter>;
   sort?: Maybe<Array<CaseStudiesPageSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllEditionArgs = {
+  where?: Maybe<EditionFilter>;
+  sort?: Maybe<Array<EditionSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllPricingArgs = {
+  where?: Maybe<PricingFilter>;
+  sort?: Maybe<Array<PricingSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1550,6 +1704,7 @@ export type SanityImageAsset = Document & {
   mimeType?: Maybe<Scalars['String']>;
   size?: Maybe<Scalars['Float']>;
   assetId?: Maybe<Scalars['String']>;
+  uploadId?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   metadata?: Maybe<SanityImageMetadata>;
@@ -1575,6 +1730,7 @@ export type SanityImageAssetFilter = {
   mimeType?: Maybe<StringFilter>;
   size?: Maybe<FloatFilter>;
   assetId?: Maybe<StringFilter>;
+  uploadId?: Maybe<StringFilter>;
   path?: Maybe<StringFilter>;
   url?: Maybe<StringFilter>;
   metadata?: Maybe<SanityImageMetadataFilter>;
@@ -1598,6 +1754,7 @@ export type SanityImageAssetSorting = {
   mimeType?: Maybe<SortOrder>;
   size?: Maybe<SortOrder>;
   assetId?: Maybe<SortOrder>;
+  uploadId?: Maybe<SortOrder>;
   path?: Maybe<SortOrder>;
   url?: Maybe<SortOrder>;
   metadata?: Maybe<SanityImageMetadataSorting>;
@@ -1693,6 +1850,7 @@ export type SanityImageMetadata = {
   dimensions?: Maybe<SanityImageDimensions>;
   palette?: Maybe<SanityImagePalette>;
   lqip?: Maybe<Scalars['String']>;
+  blurHash?: Maybe<Scalars['String']>;
   hasAlpha?: Maybe<Scalars['Boolean']>;
   isOpaque?: Maybe<Scalars['Boolean']>;
 };
@@ -1704,6 +1862,7 @@ export type SanityImageMetadataFilter = {
   dimensions?: Maybe<SanityImageDimensionsFilter>;
   palette?: Maybe<SanityImagePaletteFilter>;
   lqip?: Maybe<StringFilter>;
+  blurHash?: Maybe<StringFilter>;
   hasAlpha?: Maybe<BooleanFilter>;
   isOpaque?: Maybe<BooleanFilter>;
 };
@@ -1715,6 +1874,7 @@ export type SanityImageMetadataSorting = {
   dimensions?: Maybe<SanityImageDimensionsSorting>;
   palette?: Maybe<SanityImagePaletteSorting>;
   lqip?: Maybe<SortOrder>;
+  blurHash?: Maybe<SortOrder>;
   hasAlpha?: Maybe<SortOrder>;
   isOpaque?: Maybe<SortOrder>;
 };
@@ -1905,6 +2065,40 @@ export type StringFilter = {
   nin?: Maybe<Array<Scalars['String']>>;
 };
 
+export type Table = {
+  __typename?: 'Table';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  rows?: Maybe<Array<Maybe<TableRow>>>;
+};
+
+export type TableFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+};
+
+export type TableRow = {
+  __typename?: 'TableRow';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  cells?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type TableRowFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+};
+
+export type TableRowSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+};
+
+export type TableSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+};
+
 export type TestimonialBlock = {
   __typename?: 'TestimonialBlock';
   _key?: Maybe<Scalars['String']>;
@@ -1981,6 +2175,11 @@ export type CaseStudyFragment = (
     )> }
   )> }
   & CaseStudyMetaFragment
+);
+
+export type EditionFragment = (
+  { __typename?: 'Edition' }
+  & Pick<Edition, '_id' | '_createdAt' | 'index' | 'title' | 'description' | 'buttonText' | 'buttonUrl' | 'price' | 'timeUnit' | 'features'>
 );
 
 export type FeatureItemFragment = (
@@ -2315,7 +2514,7 @@ export type FaqPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'testimonialsSectionTitle'>
   & { slogan?: Maybe<Array<Maybe<(
     { __typename?: 'TextBlock' }
     & Pick<TextBlock, 'text'>
@@ -2371,6 +2570,9 @@ export type HomePageQuery = (
   & { allHome: Array<(
     { __typename?: 'Home' }
     & HomePageFragment
+  )>, allCaseStudy: Array<(
+    { __typename?: 'CaseStudy' }
+    & CaseStudyMetaFragment
   )> }
 );
 
@@ -2400,6 +2602,36 @@ export type NewsPageQuery = (
   & { allNews: Array<(
     { __typename?: 'News' }
     & NewsPageFragment
+  )> }
+);
+
+export type PricingFragment = (
+  { __typename?: 'Pricing' }
+  & Pick<Pricing, 'title' | 'subtitle'>
+  & { pricingTable?: Maybe<Array<Maybe<(
+    { __typename?: 'PricingFeatureCategory' }
+    & Pick<PricingFeatureCategory, 'title'>
+    & { features?: Maybe<(
+      { __typename?: 'Table' }
+      & { rows?: Maybe<Array<Maybe<(
+        { __typename?: 'TableRow' }
+        & Pick<TableRow, 'cells'>
+      )>>> }
+    )> }
+  )>>> }
+);
+
+export type PricingQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PricingQuery = (
+  { __typename?: 'RootQuery' }
+  & { allPricing: Array<(
+    { __typename?: 'Pricing' }
+    & PricingFragment
+  )>, allEdition: Array<(
+    { __typename?: 'Edition' }
+    & EditionFragment
   )> }
 );
 
@@ -2476,6 +2708,20 @@ export const CaseStudyFragmentDoc = gql`
 }
     ${CaseStudyMetaFragmentDoc}
 ${ImageFragmentDoc}`;
+export const EditionFragmentDoc = gql`
+    fragment Edition on Edition {
+  _id
+  _createdAt
+  index
+  title
+  description
+  buttonText
+  buttonUrl
+  price
+  timeUnit
+  features
+}
+    `;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -2691,6 +2937,7 @@ export const HomePageFragmentDoc = gql`
       ...FeatureItem
     }
   }
+  customerSpotlightSectionTitle
   testimonialsSectionTitle
   testimonials {
     authorAvatar {
@@ -2746,6 +2993,20 @@ export const NewsPageFragmentDoc = gql`
   }
 }
     ${NewsItemFragmentDoc}`;
+export const PricingFragmentDoc = gql`
+    fragment Pricing on Pricing {
+  title
+  subtitle
+  pricingTable {
+    title
+    features {
+      rows {
+        cells
+      }
+    }
+  }
+}
+    `;
 export const AboutPageDocument = gql`
     query AboutPage {
   allAbout(sort: {_createdAt: DESC}, limit: 1) {
@@ -2853,8 +3114,12 @@ export const HomePageDocument = gql`
   allHome(sort: {_createdAt: DESC}, limit: 1) {
     ...HomePage
   }
+  allCaseStudy(sort: {_createdAt: DESC}) {
+    ...CaseStudyMeta
+  }
 }
-    ${HomePageFragmentDoc}`;
+    ${HomePageFragmentDoc}
+${CaseStudyMetaFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {
@@ -2862,6 +3127,17 @@ export const NewsPageDocument = gql`
   }
 }
     ${NewsPageFragmentDoc}`;
+export const PricingDocument = gql`
+    query Pricing {
+  allPricing(sort: {_createdAt: DESC}, limit: 1) {
+    ...Pricing
+  }
+  allEdition(sort: {index: ASC}) {
+    ...Edition
+  }
+}
+    ${PricingFragmentDoc}
+${EditionFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -2911,6 +3187,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     NewsPage(variables?: NewsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NewsPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NewsPageQuery>(NewsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NewsPage');
+    },
+    Pricing(variables?: PricingQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PricingQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PricingQuery>(PricingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pricing');
     }
   };
 }

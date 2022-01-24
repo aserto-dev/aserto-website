@@ -6865,6 +6865,11 @@ react-hook-form@^7.8.1:
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.20.5.tgz#69d563c9cceafb2d4449bd3c28d17342b57b5830"
   integrity sha512-xYeBmQW6oqxDYAYVWIoZYC7tRD6lJBJt9b8Rr1Mv/VhZ+ZUCy2IuXlm2YA9i0/zl0TKKxqBWQOxGEb3qyVIhMg==
 
+react-hubspot-tracking-code-hook@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-hubspot-tracking-code-hook/-/react-hubspot-tracking-code-hook-1.2.2.tgz#8c50b39a1ab47fafd0773a641ed4ba2ea03a9d6a"
+  integrity sha512-ZKLmeEEOLtD2MllRauqy2Uux7qoD3uQtYrXW1GK0Qy9mByDMCsINFr9FBMavuIKGZjwm2fuqPnvCMW0oLJOiiQ==
+
 react-icons@^4.2.0:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"

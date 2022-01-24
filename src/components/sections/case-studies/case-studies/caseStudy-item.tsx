@@ -10,7 +10,7 @@ type Props = {
 const CaseStudyItem = ({ data }: Props) => {
   return (
     <Link href={`/casestudies/${data.slug?.current}`}>
-      <a className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">
+      <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
         <div className="bg-white px-5 rounded">
           <Image
             src={data.logo?.asset?.url || '/404'}
@@ -33,7 +33,7 @@ const CaseStudyItem = ({ data }: Props) => {
             <a className="hover:underline">View case study</a>
           </div>
         </div>
-      </a>
+      </div>
     </Link>
   )
 }
