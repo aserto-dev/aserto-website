@@ -1,0 +1,83 @@
+.body {
+  font-family: theme('fontFamily.roboto');
+  line-height: theme('lineHeight.loose');
+
+  color: theme('colors.aserto.grey.60');
+
+  p {
+    @apply my-8 text-lg leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-aserto-grey-90 mt-5 tracking-tighter;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-[24px] tracking-normal;
+  }
+
+  ul,
+  ol {
+    padding-left: 24px;
+
+    list-style: initial;
+    @apply space-y-2;
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  a {
+    @apply whitespace-nowrap text-aserto-lochivar-accent-40 text-xl hover:underline active:text-aserto-lochivar-accent-50;
+  }
+}
+
+.title {
+  height: 60px;
+  padding: 0px 20px;
+  background-color: rgba(231, 231, 231, 0.1);
+  background-size: cover;
+  font-size: 16px;
+  color: #e7e7e7;
+  text-decoration: none solid rgb(231, 231, 231);
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.rowname {
+  height: 60px;
+  padding: 0px 20px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #414141;
+  background-size: cover;
+  font-size: 14px;
+  color: #e7e7e7;
+  text-decoration: none solid rgb(231, 231, 231);
+  line-height: 18px;
+}
+
+.cell {
+  height: 60px;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #414141;
+  background-size: cover;
+  font-size: 16px;
+  color: #e7e7e7;
+  text-decoration: none solid rgb(231, 231, 231);
+  line-height: 18px;
+}
+
+.checkmark {
+  width: 18px;
+  height: 13px;
+  fill: #e6e6e6;  
+}
