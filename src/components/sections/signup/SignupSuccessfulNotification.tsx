@@ -8,21 +8,14 @@ interface SignupSuccessfulNotificationProps {
 const SignupSuccessfulNotification = (
   props: SignupSuccessfulNotificationProps
 ) => (
-  <div>
-    <img
-      className="ml-[145px] mt-[30px] mb-[45px]"
+  <div className="text-[16px] leading=[24px]">
+    <img // get centered image?
+      className="mx-[auto] mt-[15px] mb-[25px] sm:mt-[30px] sm:mb-[45px]
+                pr-[20px] sm:pr-[27px] w-[104px] sm:w-[174px]"
       src="/images/email-sent.svg"
       alt="Email Sent"
-      height={100}
     />
-    <div
-      className="text-aserto-grey-90 my-[30px]"
-      style={{
-        width: '500px',
-        fontSize: '16px',
-        lineHeight: '24px'
-      }}
-    >
+    <div className="text-aserto-grey-90 my-[30px] w-[80vw] sm:w-[500px]">
       <p>You&apos;re almost there!</p>
       <br />
       <p>
@@ -35,16 +28,12 @@ const SignupSuccessfulNotification = (
     </div>
     {props.closeModal && (
       <button
-        className={`font-roboto w-full border border-[#4a4a4a] bg-aserto-grey-10
-                text-aserto-grey-90 hover:bg-aserto-grey-20 active:bg-aserto-grey-30 
-                disabled:bg-aserto-grey-5 disabled:bg-aserto-grey-30`}
+        className={`font-roboto w-full h-[48px] sm:h-[60px] rounded-[6px]
+                  border border-[#4a4a4a] text-aserto-grey-90
+                  bg-aserto-grey-10 hover:bg-aserto-grey-20
+                  active:bg-aserto-grey-30 disabled:bg-aserto-grey-5
+                  disabled:bg-aserto-grey-30`}
         onClick={props.closeModal}
-        style={{
-          borderRadius: '6px',
-          fontSize: '16px',
-          height: '60px',
-          lineHeight: '24px'
-        }}
       >
         Close
       </button>
