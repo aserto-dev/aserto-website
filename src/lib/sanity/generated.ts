@@ -1252,6 +1252,7 @@ export type Pricing = Document & {
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   pricingTable?: Maybe<Array<Maybe<PricingFeatureCategory>>>;
+  editionNameToHighlight?: Maybe<Scalars['String']>;
 };
 
 export type PricingFeatureCategory = {
@@ -1287,6 +1288,7 @@ export type PricingFilter = {
   _key?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
+  editionNameToHighlight?: Maybe<StringFilter>;
 };
 
 export type PricingSorting = {
@@ -1298,6 +1300,7 @@ export type PricingSorting = {
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
+  editionNameToHighlight?: Maybe<SortOrder>;
 };
 
 export type QuestionBlock = {
@@ -2607,7 +2610,7 @@ export type NewsPageQuery = (
 
 export type PricingFragment = (
   { __typename?: 'Pricing' }
-  & Pick<Pricing, 'title' | 'subtitle'>
+  & Pick<Pricing, 'title' | 'subtitle' | 'editionNameToHighlight'>
   & { pricingTable?: Maybe<Array<Maybe<(
     { __typename?: 'PricingFeatureCategory' }
     & Pick<PricingFeatureCategory, 'title'>
@@ -2997,6 +3000,7 @@ export const PricingFragmentDoc = gql`
     fragment Pricing on Pricing {
   title
   subtitle
+  editionNameToHighlight
   pricingTable {
     title
     features {

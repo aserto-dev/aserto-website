@@ -1,1 +1,9 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible" preserveAspectRatio="none" viewBox="0 0 2011 2011" width="2011" height="2011"><g transform="translate(0, 0)"><defs><path id="path-16429170063431941" d="M1005.5000000000016 0 C1560.4505571287152 0 2011.0000000000032 450.5494428712834 2011.0000000000032 1005.5000000000016 C2011.0000000000032 1560.4505571287152 1560.4505571287152 2011.0000000000032 1005.5000000000016 2011.0000000000032 C450.5494428712834 2011.0000000000032 0 1560.4505571287152 0 1005.5000000000016 C0 450.5494428712834 450.5494428712834 0 1005.5000000000016 0 Z" vector-effect="non-scaling-stroke"/><radialGradient id="gradient-16429170063591943" vector-effect="non-scaling-stroke"><stop offset="0%" stop-color="rgb(62,202,207)" stop-opacity="1" vector-effect="non-scaling-stroke"/><stop offset="100%" stop-color="rgba(18,18,18,0)" stop-opacity="0" vector-effect="non-scaling-stroke"/></radialGradient></defs><g transform="translate(0, 0)"><path d="M1005.5000000000016 0 C1560.4505571287152 0 2011.0000000000032 450.5494428712834 2011.0000000000032 1005.5000000000016 C2011.0000000000032 1560.4505571287152 1560.4505571287152 2011.0000000000032 1005.5000000000016 2011.0000000000032 C450.5494428712834 2011.0000000000032 0 1560.4505571287152 0 1005.5000000000016 C0 450.5494428712834 450.5494428712834 0 1005.5000000000016 0 Z" style="stroke: rgb(140, 140, 140); stroke-width: 0; stroke-linecap: butt; stroke-linejoin: miter; fill: url(&quot;#gradient-16429170063591943&quot;);" vector-effect="non-scaling-stroke"/></g></g></svg>
+<svg width="2048" height="2048" viewBox="0 0 2048 2048" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="2048" height="2048" fill="url(#paint0_radial_6_5)"/>
+<defs>
+<radialGradient id="paint0_radial_6_5" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1024 1024) rotate(90) scale(1024)">
+<stop stop-color="#3ECACF" stop-opacity="0.8"/>
+<stop offset="0.885417" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

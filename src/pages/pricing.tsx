@@ -27,18 +27,17 @@ const PricingPage = ({
       }}
     >
       <div className="relative">
-        <div className="absolute top-[-478px] left-[-323px] right-0">
+        <div className="absolute top-[-478px] left-0 right-0">
           <Image
             src="/images/pricing/background.svg"
-            width={2011}
-            height={2011}
             loading="eager"
+            layout="responsive"
           />
         </div>
         <CustomHead />
         <Container>
           <Hero page={page} />
-          <Editions editions={editions} />
+          <Editions page={page} editions={editions} />
           <PricingTable page={page} editions={editions} />
         </Container>
       </div>
