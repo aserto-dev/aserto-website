@@ -8,14 +8,17 @@ import FeatureItem from './feature-item'
 
 type Props = {
   data: Edition
+  editionNameToHighlight: string
 }
 
-const EditionItem = ({ data }: Props) => {
+const EditionItem = ({ data, editionNameToHighlight }: Props) => {
   return (
     <div
       className={clsx(
         s.body,
-        data.index === 2 ? s['edition-recommended'] : s.edition
+        data.title === editionNameToHighlight
+          ? s['edition-recommended']
+          : s.edition
       )}
     >
       <div className="items-center justify-center mt-5 text-base tracking-tight text-white sm:text-2xl">

@@ -1,6 +1,7 @@
 fragment Pricing on Pricing {
   title
   subtitle
+  editionNameToHighlight
   pricingTable {
     title
     features {
