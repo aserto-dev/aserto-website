@@ -6740,6 +6740,18 @@
             "deprecationReason": null
           },
           {
+            "name": "customerSpotlightSectionEnabled",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "testimonialsSectionTitle",
             "description": null,
             "args": [],
@@ -7034,6 +7046,18 @@
             "deprecationReason": null
           },
           {
+            "name": "customerSpotlightSectionEnabled",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "testimonialsSectionTitle",
             "description": null,
             "type": {
@@ -7250,6 +7274,18 @@
           },
           {
             "name": "customerSpotlightSectionTitle",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "customerSpotlightSectionEnabled",
             "description": null,
             "type": {
               "kind": "ENUM",
