@@ -787,6 +787,7 @@ export type Home = Document & {
   featuresSectionTitle?: Maybe<Scalars['String']>;
   features?: Maybe<Array<Maybe<FeatureBlock>>>;
   customerSpotlightSectionTitle?: Maybe<Scalars['String']>;
+  customerSpotlightSectionEnabled?: Maybe<Scalars['Boolean']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
   pillars?: Maybe<Array<Maybe<PillarBlock>>>;
@@ -813,6 +814,7 @@ export type HomeFilter = {
   theSolutionSectionTitle?: Maybe<StringFilter>;
   featuresSectionTitle?: Maybe<StringFilter>;
   customerSpotlightSectionTitle?: Maybe<StringFilter>;
+  customerSpotlightSectionEnabled?: Maybe<BooleanFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
 };
 
@@ -834,6 +836,7 @@ export type HomeSorting = {
   theSolutionSectionTitle?: Maybe<SortOrder>;
   featuresSectionTitle?: Maybe<SortOrder>;
   customerSpotlightSectionTitle?: Maybe<SortOrder>;
+  customerSpotlightSectionEnabled?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
 };
 
@@ -2517,7 +2520,7 @@ export type FaqPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'customerSpotlightSectionEnabled' | 'testimonialsSectionTitle'>
   & { slogan?: Maybe<Array<Maybe<(
     { __typename?: 'TextBlock' }
     & Pick<TextBlock, 'text'>
@@ -2941,6 +2944,7 @@ export const HomePageFragmentDoc = gql`
     }
   }
   customerSpotlightSectionTitle
+  customerSpotlightSectionEnabled
   testimonialsSectionTitle
   testimonials {
     authorAvatar {

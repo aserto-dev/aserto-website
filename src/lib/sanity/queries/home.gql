@@ -24,6 +24,7 @@ fragment HomePage on Home {
     }
   }
   customerSpotlightSectionTitle
+  customerSpotlightSectionEnabled
   testimonialsSectionTitle
   testimonials {
     authorAvatar {
