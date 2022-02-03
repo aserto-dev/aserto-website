@@ -32,7 +32,9 @@ const HomePage = ({
         <Hero page={page} />
         <Intro page={page} />
         <TheProblem page={page} />
-        <CustomerSpotlight page={page} caseStudies={caseStudies} />
+        {page.customerSpotlightSectionEnabled && (
+          <CustomerSpotlight page={page} caseStudies={caseStudies} />
+        )}
         <Testimonials page={page} />
       </Container>
     </PageLayout>

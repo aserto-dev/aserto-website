@@ -33,7 +33,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [router.events])
+  }, [router.events, setPathPageView])
 
   return (
     <IdProvider>
