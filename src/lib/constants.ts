@@ -20,7 +20,6 @@ const asertoPlaygroundRootUrl =
   'https://aserto-playground.netlify.app'
 const hubspotUrl =
   process.env.NEXT_PUBLIC_HUBSPOT_URL ||
-  //'https://api.hsforms.com/submissions/v3/integration/submit/8658136/5bfa769c-94f7-4483-a54e-d72bbdf2c828'
   'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
 
 export {

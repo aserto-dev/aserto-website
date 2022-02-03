@@ -4,8 +4,9 @@ import { AnimatePresence } from 'framer-motion'
 import initGsap from 'lib/gsap'
 import { IdProvider } from '@radix-ui/react-id'
 import '@typeform/embed/build/css/popup.css'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { pageview } from 'lib/ga'
+import { PlaygroundBannerContextProvider } from 'components/sections/common/banners/playground/PlaygroundBannerContext'
 import { useTrackingCode } from 'react-hubspot-tracking-code-hook'
 
 initGsap()
@@ -15,11 +16,12 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     window.history.scrollRestoration = 'manual'
   }, [])
 
+  // update Hubspot page tracking
+  const { setPathPageView } = useTrackingCode()
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       pageview(url)
-      // update Hubspot page tracking
-      const { setPathPageView } = useTrackingCode()
       setPathPageView(url)
     }
     //When the component is mounted, subscribe to router changes
@@ -31,12 +33,14 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [router.events])
+  }, [router.events, setPathPageView])
 
   return (
     <IdProvider>
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
+        <PlaygroundBannerContextProvider>
+          <Component {...pageProps} key={router.route} />
+        </PlaygroundBannerContextProvider>
       </AnimatePresence>
     </IdProvider>
   )
