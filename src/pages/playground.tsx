@@ -2,10 +2,12 @@
 import Header from 'components/layout/header'
 import CustomHead from 'components/primitives/custom-head'
 import { asertoPlaygroundRootUrl } from 'lib/constants'
-
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+import PlaygroundBannerContext from 'components/sections/common/banners/playground/PlaygroundBannerContext'
 
 const Playground = () => {
+  const { hideBanner } = useContext(PlaygroundBannerContext)
+  useEffect(() => hideBanner(), [hideBanner])
   useEffect(() => {
     ;(function (d, s, id) {
       var js,
