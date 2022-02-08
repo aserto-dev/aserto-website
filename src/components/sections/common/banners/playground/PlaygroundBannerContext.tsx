@@ -15,7 +15,7 @@ interface PlaygroundBannerParams {
 
 const PlaygroundBannerContext = createContext<PlaygroundBannerParams>({
   hideBanner: () => {},
-  isVisible: true
+  isVisible: false
 })
 
 interface PlaygroundBannerContextParams {
@@ -25,22 +25,18 @@ interface PlaygroundBannerContextParams {
 export const PlaygroundBannerContextProvider = ({
   children
 }: PlaygroundBannerContextParams) => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
 
   const hideBanner = useCallback(() => {
     setIsVisible(false)
+    localStorage.setItem(playgroundSeenStorageKey, 'true')
   }, [])
 
   useEffect(() => {
-    if (
-      isVisible &&
-      localStorage.getItem(playgroundSeenStorageKey) === 'true'
-    ) {
-      hideBanner()
-    } else if (!isVisible) {
-      localStorage.setItem(playgroundSeenStorageKey, 'true')
+    if (!isVisible && localStorage.getItem(playgroundSeenStorageKey) === null) {
+      setIsVisible(true)
     }
-  }, [hideBanner, isVisible])
+  }, [isVisible])
 
   const value = useMemo(
     () => ({ isVisible, hideBanner }),
