@@ -43,8 +43,8 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
               'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
             }
             href={item.href}
-            target={item.isExternal ? "_blank" : undefined}
-            rel={item.isExternal ? "noreferrer" : undefined}
+            target={item.isExternal ? '_blank' : undefined}
+            rel="noopener noreferrer"
           >
             {item.label}
           </a>

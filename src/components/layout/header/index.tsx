@@ -42,7 +42,7 @@ export const headerLinks = [
         label: 'FAQ',
         href: '/faq',
         isExternal: false
-      },
+      }
     ]
   },
   {
@@ -100,7 +100,7 @@ export const headerLinks = [
     label: 'Careers',
     href: '/careers',
     items: []
-  },
+  }
 ]
 
 const Header = () => {
