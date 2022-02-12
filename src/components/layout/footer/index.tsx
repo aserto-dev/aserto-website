@@ -28,45 +28,6 @@ const Footer = () => {
           className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-5"
           ref={ref}
         >
-          <div className="row-start-2 lg:row-auto">
-            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
-              Product
-            </p>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/#the-solution"
-                >
-                  Benefits
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/casestudies"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/pricing"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/faq"
-                >
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Developers
@@ -110,6 +71,45 @@ const Footer = () => {
                   href="https://aserto.statuspage.io/"
                 >
                   Service Status
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="row-start-2 lg:row-auto">
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Product
+            </p>
+            <ul className="mt-4 space-y-4">
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/#the-solution"
+                >
+                  Benefits
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/casestudies"
+                >
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/pricing"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/faq"
+                >
+                  FAQ
                 </Link>
               </li>
             </ul>

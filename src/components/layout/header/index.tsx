@@ -20,32 +20,6 @@ import PlaygroundBanner from 'components/sections/common/banners/playground'
 
 export const headerLinks = [
   {
-    label: 'Product',
-    href: '',
-    items: [
-      {
-        label: 'Benefits',
-        href: '/#the-solution',
-        isExternal: false
-      },
-      {
-        label: 'Case Studies',
-        href: '/casestudies',
-        isExternal: false
-      },
-      {
-        label: 'Pricing',
-        href: '/pricing',
-        isExternal: false
-      },
-      {
-        label: 'FAQ',
-        href: '/faq',
-        isExternal: false
-      }
-    ]
-  },
-  {
     label: 'Developers',
     href: '',
     items: [
@@ -78,6 +52,32 @@ export const headerLinks = [
         label: 'Open Policy Registry',
         href: 'https://openpolicyregistry.io',
         isExternal: true
+      }
+    ]
+  },
+  {
+    label: 'Product',
+    href: '',
+    items: [
+      {
+        label: 'Benefits',
+        href: '/#the-solution',
+        isExternal: false
+      },
+      {
+        label: 'Case Studies',
+        href: '/casestudies',
+        isExternal: false
+      },
+      {
+        label: 'Pricing',
+        href: '/pricing',
+        isExternal: false
+      },
+      {
+        label: 'FAQ',
+        href: '/faq',
+        isExternal: false
       }
     ]
   },
