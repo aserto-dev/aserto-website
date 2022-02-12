@@ -108,7 +108,9 @@ const Header = () => {
   const [showSignupModal, setShowSignupModal] = useState(false)
 
   useEffect(() => {
-    if (window.location.hash.indexOf('signup') >= 0) {
+
+    if (window.location.hash.indexOf('signup') >= 0 ||
+        window.location.hash.indexOf('sign-up')) {
       setShowSignupModal(true)
       history.pushState(
         null,
