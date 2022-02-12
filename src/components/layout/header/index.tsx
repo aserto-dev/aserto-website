@@ -108,6 +108,17 @@ const Header = () => {
   const [showSignupModal, setShowSignupModal] = useState(false)
 
   useEffect(() => {
+    if (window.location.hash.indexOf('signup') >= 0) {
+      setShowSignupModal(true)
+      history.pushState(
+        null,
+        '',
+        window.location.pathname + window.location.search
+      )
+    }
+  }, [])
+
+  useEffect(() => {
     if (open) {
       document.documentElement.style.overflow = 'hidden'
     } else {
