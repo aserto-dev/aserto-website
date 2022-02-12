@@ -20,6 +20,32 @@ import PlaygroundBanner from 'components/sections/common/banners/playground'
 
 export const headerLinks = [
   {
+    label: 'Product',
+    href: '',
+    items: [
+      {
+        label: 'Benefits',
+        href: '/#the-solution',
+        isExternal: false
+      },
+      {
+        label: 'Case Studies',
+        href: '/casestudies',
+        isExternal: false
+      },
+      {
+        label: 'Pricing',
+        href: '/pricing',
+        isExternal: false
+      },
+      {
+        label: 'FAQ',
+        href: '/faq',
+        isExternal: false
+      },
+    ]
+  },
+  {
     label: 'Developers',
     href: '',
     items: [
@@ -44,7 +70,7 @@ export const headerLinks = [
         isExternal: true
       },
       {
-        label: 'Slack Community',
+        label: 'Community Slack',
         href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg',
         isExternal: true
       },
@@ -54,6 +80,11 @@ export const headerLinks = [
         isExternal: true
       }
     ]
+  },
+  {
+    label: 'Playground',
+    href: '/playground',
+    items: []
   },
   {
     label: 'Blog',
@@ -70,11 +101,6 @@ export const headerLinks = [
     href: '/careers',
     items: []
   },
-  {
-    label: 'Playground',
-    href: '/playground',
-    items: []
-  }
 ]
 
 const Header = () => {

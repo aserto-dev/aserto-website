@@ -44,6 +44,22 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/casestudies"
+                >
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/pricing"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="/faq"
                 >
                   FAQ
@@ -61,7 +77,7 @@ const Footer = () => {
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="https://docs.aserto.com/"
                 >
-                  Docs
+                  Documentation
                 </Link>
               </li>
               <li>
