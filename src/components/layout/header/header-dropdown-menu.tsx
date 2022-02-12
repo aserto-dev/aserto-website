@@ -6,6 +6,7 @@ type HeaderDropdownMenuProps = {
 }
 const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
   const [showMenu, setShowMenu] = useState(false)
+  const width = link.label === 'Developers' ? 'w-48' : 'w-40'
   return (
     <div className="relative flex items-center h-20" tabIndex={0}>
       <a
@@ -28,10 +29,10 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         onMouseLeave={() => setShowMenu(false)}
         style={{
           display: showMenu ? 'flex' : 'none',
-          left: '-55px',
+          left: '-17px', // '-55px',
           top: '69px'
         }}
-        className="text-aserto-grey-60 absolute w-48 bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer"
+        className={`text-aserto-grey-60 absolute ${width} bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer`}
         aria-expanded={showMenu}
       >
         {link.items?.map((item) => (
@@ -42,8 +43,9 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
               'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
             }
             href={item.href}
-            target="_blank"
-            rel="noreferrer"
+            {...(item.isExternal
+              ? { rel: 'noopener noreferrer', target: '_blank' }
+              : undefined)}
           >
             {item.label}
           </a>
