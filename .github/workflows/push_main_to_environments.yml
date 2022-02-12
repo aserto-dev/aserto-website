@@ -20,9 +20,7 @@ jobs:
     strategy:
       matrix:
         target_branch: [
-          int,
           preproduction,
-          production
         ]
 
     steps:

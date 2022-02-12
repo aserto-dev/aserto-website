@@ -66,7 +66,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.0.8",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "graphql-tag": "^2.12.6",
     "husky": "6.0.0",
     "lint-staged": "11.0.0",
@@ -96,7 +96,8 @@
       "eslint:recommended",
       "plugin:react/recommended",
       "prettier",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:react-hooks/recommended"
     ],
     "globals": {
       "React": "readonly",
@@ -110,7 +111,6 @@
     "parser": "@typescript-eslint/parser",
     "plugins": [
       "react",
-      "react-hooks",
       "@typescript-eslint"
     ],
     "rules": {
@@ -131,7 +131,6 @@
         "warn"
       ],
       "react/display-name": 0,
-      "react-hooks/exhaustive-deps": "warn",
       "react/jsx-no-target-blank": [
         2,
         {
@@ -140,6 +139,7 @@
       ],
       "react/prop-types": 0,
       "react/react-in-jsx-scope": 0,
+      "eqeqeq": 2,
       "@typescript-eslint/explicit-function-return-type": 0,
       "@typescript-eslint/explicit-member-accessibility": 0,
       "@typescript-eslint/explicit-module-boundary-types": "off",
