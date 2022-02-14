@@ -7,6 +7,7 @@ import SignupDataCollector, {
 import SignupSuccessfulNotification from './SignupSuccessfulNotification'
 import Error from '../common/error'
 import Link from 'components/primitives/link'
+import Image from '../../primitives/image'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import {
   HubspotRequest,
@@ -23,7 +24,7 @@ type SignupState =
     }
   | { type: 'SUCCESS'; emailAddress: string }
 
-const Signup = () => {
+const Signup = ({ closeModal }: { closeModal?: () => void }) => {
   const [state, setState] = useState<SignupState>({
     errorMessage: undefined,
     type: 'INPUT',
@@ -101,18 +102,28 @@ const Signup = () => {
   switch (state.type) {
     case 'INPUT':
       return (
-        <SignupContainer>
-          <SignupDataCollector
-            errorMessage={state.errorMessage}
-            onSubmit={handleSignUpRequest}
-            visualMode={state.visualState}
-          />
+        <SignupContainer closeModal={closeModal}>
+          <>
+            <Image
+              className="mx-auto mt=[10px] w-[58px] sm:w-[97px]"
+              layout="native"
+              src="/images/aserto-vertical-color-white-text.svg"
+            />
+            <SignupDataCollector
+              errorMessage={state.errorMessage}
+              onSubmit={handleSignUpRequest}
+              visualMode={state.visualState}
+            />
+          </>
         </SignupContainer>
       )
     case 'SUCCESS':
       return (
-        <SignupContainer>
-          <SignupSuccessfulNotification email={state.emailAddress} />
+        <SignupContainer closeModal={closeModal}>
+          <SignupSuccessfulNotification
+            email={state.emailAddress}
+            closeModal={closeModal}
+          />
         </SignupContainer>
       )
     case 'SERVICE_ERROR':

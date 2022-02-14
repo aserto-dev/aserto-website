@@ -132,7 +132,12 @@ module.exports = {
       boxShadow: {
         header: '0px 1px 0px rgba(65, 65, 65, 1)',
         dropdown: '0px 1px 0px #414141',
-        input: '0px 0px 0px 2px rgba(39, 127, 130, 0.6)'
+        input: '0px 0px 0px 2px rgba(39, 127, 130, 0.6)',
+        modal: '0px 2px 22px 8px rgba(70, 210, 215, 0.6)'
+      },
+      backgroundImage: {
+        modal:
+          'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'
