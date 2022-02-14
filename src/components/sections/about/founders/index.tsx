@@ -11,7 +11,7 @@ import Image from '../../../primitives/image'
 const Founders = ({ page }: { page: AboutPageFragment }) => {
   const [section] = useFadeInBottom()
   return (
-    <section className="pt-8 mb-36 sm:mb-56 border-aserto-grey-20 border-t-1">
+    <section id="founders" className="pt-8 mb-36 sm:mb-56 border-aserto-grey-20 border-t-1">
       <div className="mx-auto" ref={section}>
         <div className="text-center">
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
