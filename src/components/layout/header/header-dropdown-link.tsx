@@ -56,7 +56,7 @@ const CustomLink = forwardRef<
 })
 
 export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
-  const { isOpen, open, close, toggle } = useDropdown()
+  const { isOpen, close, toggle } = useDropdown()
   const [focusOnClose, setFocusOnClose] = useState(true)
   const triggerRef = useRef(null)
   const router = useRouter()
@@ -100,7 +100,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
         </span>
       )
     }
-  }, [link.items?.length, link.href, link.label, open, id, pathname])
+  }, [link, pathname])
 
   useEffect(() => {
     function handleMouseMove(e: MouseEvent) {
