@@ -100,6 +100,11 @@ export const headerLinks = [
     label: 'Careers',
     href: '/careers',
     items: []
+  },
+  {
+    label: 'Quickstarts',
+    href: '/quickstarts',
+    items: []
   }
 ]
 
