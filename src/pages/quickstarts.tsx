@@ -1,0 +1,85 @@
+// Primitives
+import CustomHead from 'components/primitives/custom-head'
+
+// Layout
+import PageLayout from 'components/layout/page'
+
+// Sections
+import Hero from 'components/sections/quickstarts/hero'
+import Card from 'components/sections/quickstarts/card'
+import Container from 'components/layout/container'
+import Image from 'components/primitives/image'
+
+const quickstarts = [
+  {
+    title: 'Peoplefinder node.js / React sample',
+    icons: ['nodejs', 'react'],
+    link: 'peoplefinder-github-acmecorp-netlify',
+    sccIcons: [
+      {
+        icon: 'github',
+        label: 'GitHub',
+        desc: 'Source code provider'
+      },
+      {
+        icon: 'acmecorp',
+        label: 'Acmecorp sample IDP',
+        desc: 'Identity provider'
+      }
+    ]
+  },
+  {
+    title: 'Peoplefinder node.js / React sample',
+    icons: ['nodejs', 'react'],
+    link: 'peoplefinder-github-auth0-netlify',
+    sccIcons: [
+      {
+        icon: 'github',
+        label: 'GitHub',
+        desc: 'Source code provider'
+      },
+      {
+        icon: 'auth0',
+        label: 'Auth0',
+        desc: 'Identity provider'
+      }
+    ]
+  }
+]
+
+const Quickstarts = () => {
+  return (
+    <PageLayout
+      footer
+      headProps={{
+        title: 'Aserto Quickstarts',
+        description: 'Select a quickstart template',
+        image: 'images/og.png'
+      }}
+    >
+      <div className="relative">
+        <div className="absolute top-[-400px] left-0 right-0">
+          <Image
+            src="/images/quickstarts/background.svg"
+            width={2100}
+            height={2100}
+            loading="eager"
+          />
+        </div>
+        <CustomHead />
+        <Container>
+          <Hero />
+          <section className="pb-28">
+            <div className="flex flex-wrap items-center justify-center gap-[20px]">
+              {quickstarts.map((quickstart, i) => (
+                <Card key={i} {...quickstart} />
+              ))}
+            </div>
+          </section>
+        </Container>
+      </div>
+    </PageLayout>
+  )
+}
+
+export default Quickstarts
