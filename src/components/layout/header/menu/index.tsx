@@ -33,7 +33,13 @@ const Menu = ({ show = false, closeMenu }: MenuProps) => {
       <nav className="w-full mt-6">
         <ul className="w-full text-center space-y-7">
           {headerLinks.map((l, i) => {
-            if (l.label === 'Product' || l.label === 'Developers') return
+            if (
+              l.label === 'Product' ||
+              l.label === 'Developers' ||
+              l.label === 'Playground'
+            ) {
+              return
+            }
             return (
               <li key={i} className="pb-7">
                 <HeaderDropdownLinkMobile
