@@ -97,7 +97,9 @@ class MyDocument extends Document {
             id="hs-script-loader"
             async
             defer
-            src={`//js.hs-scripts.com/${process.env.NEXT_PUBLIC_HUBSPOT_ACCOUNT_ID ?? '21300286'}.js`}
+            src={`//js.hs-scripts.com/${
+              process.env.NEXT_PUBLIC_HUBSPOT_ACCOUNT_ID ?? '21300286'
+            }.js`}
           />
         </Head>
         <body className="h-full bg-aserto-black">
