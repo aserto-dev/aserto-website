@@ -31,7 +31,7 @@ export const headerLinks = [
       {
         label: 'Documentation',
         href: 'https://docs.aserto.com/',
-        isExternal: true
+        isExternal: false
       },
       {
         label: 'API Reference',
