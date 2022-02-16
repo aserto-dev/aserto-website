@@ -45,7 +45,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         className={`font-roboto text-aserto-grey-90 text-center text-[20px]
                   leading-[24px] my-[20px] mx-0`}
       >
-        Sign up for our beta!
+        Enter a valid email to create an account:
       </div>
       <div className="flex flex-col gap-[40px]">
         <div className="h-[60px] overflow-y-visible">
