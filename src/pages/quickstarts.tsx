@@ -60,7 +60,7 @@ const Quickstarts = () => {
       <div className="relative">
         <div className="absolute top-[-400px] left-0 right-0">
           <Image
-            src="/images/quickstarts/background.svg"
+            src="/images/blog/bg-gradient.png"
             width={2100}
             height={2100}
             loading="eager"

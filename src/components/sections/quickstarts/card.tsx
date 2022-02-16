@@ -1,3 +1,5 @@
+import Link from 'components/primitives/link'
+
 type CardProps = {
   title: string
   icons: string[]
@@ -8,12 +10,8 @@ type CardProps = {
 const Card = ({ title, icons, link, sccIcons }: CardProps) => {
   return (
     <div
-      className="w-[560px] h-[300px] bg-aserto-grey-10 border border-aserto-grey-40 
-      rounded-[11px] text-aserto-grey-90 p-[20px] mb-[50px] font-roboto
-      cursor-pointer hover:bg-aserto-grey-20 hover:shadow-quickstart"
-      onClick={() =>
-        window.open(`https://console.aserto.com/ui/quickstarts/${link}`)
-      }
+      className="relative w-[560px] h-[340px] bg-aserto-grey-10 border border-aserto-grey-40 rounded-[11px]
+      text-aserto-grey-90 px-[20px] pt-[20px] mb-[50px] font-roboto hover:border-aserto-lochivar-accent-30"
     >
       <p className="text-[22px] text-center">{title}</p>
       <div className="flex items-center justify-center my-[30px] gap-[30px]">
@@ -40,6 +38,21 @@ const Card = ({ title, icons, link, sccIcons }: CardProps) => {
             </p>
           </div>
         ))}
+      </div>
+      <div className="bg-aserto-grey-20 w-full text=[16px] absolute bottom-0 left-0 p-[10px] rounded-b-[11px]">
+        <p className="text-center">
+          {"Don't have an account? "}
+          <Link className="text-aserto-lochivar-accent-30" href="/#signup">
+            Create an account.
+          </Link>{' '}
+          Or,{' '}
+          <Link
+            className="text-aserto-lochivar-accent-30"
+            href={`https://console.aserto.com/ui/quickstarts/${link}`}
+          >
+            launch this Quickstart
+          </Link>
+        </p>
       </div>
     </div>
   )
