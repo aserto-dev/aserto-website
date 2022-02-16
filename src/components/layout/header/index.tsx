@@ -24,6 +24,11 @@ export const headerLinks = [
     href: '',
     items: [
       {
+        label: 'Quickstarts',
+        href: '/quickstarts',
+        isExternal: false
+      },
+      {
         label: 'Documentation',
         href: 'https://docs.aserto.com/',
         isExternal: true
@@ -99,11 +104,6 @@ export const headerLinks = [
   {
     label: 'Careers',
     href: '/careers',
-    items: []
-  },
-  {
-    label: 'Quickstarts',
-    href: '/quickstarts',
     items: []
   }
 ]
