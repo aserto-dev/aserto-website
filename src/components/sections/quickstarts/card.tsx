@@ -1,4 +1,5 @@
 import Link from 'components/primitives/link'
+import { asertoConsoleRootUrl } from 'lib/constants'
 
 type CardProps = {
   title: string
@@ -48,7 +49,7 @@ const Card = ({ title, icons, link, sccIcons }: CardProps) => {
           Or,{' '}
           <Link
             className="text-aserto-lochivar-accent-30"
-            href={`https://console.aserto.com/ui/quickstarts/${link}`}
+            href={`${asertoConsoleRootUrl}/ui/quickstarts/${link}`}
           >
             launch this Quickstart
           </Link>
