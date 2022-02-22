@@ -1,3 +1,4 @@
+import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
 import { asertoConsoleRootUrl } from 'lib/constants'
 
@@ -6,12 +7,13 @@ type CardProps = {
   icons: string[]
   link: string
   sccIcons: Array<{ icon: string; label: string; desc: string }>
+  showSignupModal: () => void
 }
 
-const Card = ({ title, icons, link, sccIcons }: CardProps) => {
+const Card = ({ title, icons, link, sccIcons, showSignupModal }: CardProps) => {
   return (
     <div
-      className="relative w-[560px] h-[340px] bg-aserto-grey-10 border border-aserto-grey-40 rounded-[11px]
+      className="relative w-[560px] h-[420px] bg-aserto-grey-10 border border-aserto-grey-40 rounded-[11px]
       text-aserto-grey-90 px-[20px] pt-[20px] mb-[50px] font-roboto hover:border-aserto-lochivar-accent-30"
     >
       <p className="text-[22px] text-center">{title}</p>
@@ -41,17 +43,19 @@ const Card = ({ title, icons, link, sccIcons }: CardProps) => {
         ))}
       </div>
       <div className="bg-aserto-grey-20 w-full text=[16px] absolute bottom-0 left-0 p-[10px] rounded-b-[11px]">
-        <p className="text-center">
-          {"Don't have an account? "}
-          <Link className="text-aserto-lochivar-accent-30" href="/#signup">
-            Create an account.
-          </Link>{' '}
-          Or,{' '}
+        <p className="text-center leading-[60px]">
+          {"To launch, you'll first need an account: "}
+          <Button variant="primary" size="sm" onClick={showSignupModal}>
+            Create an account
+          </Button>
+        </p>
+        <p className="text-center leading-[40px]">
+          Already have an account?{' '}
           <Link
-            className="text-aserto-lochivar-accent-30"
+            className="text-aserto-lochivar-accent-30 hover:underline"
             href={`${asertoConsoleRootUrl}/ui/quickstarts/${link}`}
           >
-            launch this Quickstart
+            Launch Quickstart
           </Link>
         </p>
       </div>
