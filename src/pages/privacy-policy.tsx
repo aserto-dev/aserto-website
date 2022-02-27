@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -28,11 +25,10 @@ const PrivacyPolicy = () => {
       footer
       headProps={{
         title: 'Aserto Privacy Policy',
-        description: 'Welcome to modern authorization',
+        description: 'Aserto privacy policy',
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <section className="py-14">
         <div
           className="mt-12"

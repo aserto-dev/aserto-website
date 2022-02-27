@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
@@ -21,12 +18,11 @@ const JobPostingPage = ({ posting }: Props) => {
       contain
       footer
       headProps={{
-        title: 'Aserto Careers',
-        description: 'Welcome to modern authorization',
+        title: `${posting.title} - Aserto Job Posting`,
+        description: `Aserto job description for ${posting.title}`,
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <JobPosting posting={posting} />
     </PageLayout>
   )

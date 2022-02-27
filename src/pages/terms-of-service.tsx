@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -28,12 +25,11 @@ const TermsOfService = () => {
       contain
       footer
       headProps={{
-        title: 'Aserto Faq',
-        description: '',
+        title: 'Aserto Terms of Service',
+        description: 'Aserto terms of service',
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <section className="py-14">
         <div
           className="mt-12"

@@ -26,8 +26,8 @@ const Playground = () => {
   return (
     <div className="overflow-hidden flex flex-col h-screen">
       <CustomHead
-        title="Aserto"
-        description="Welcome to modern authorization"
+        title="Aserto Playground"
+        description="Aserto Playground allows developers to construct authorization policies"
         image="images/og.png"
       />
       <div>

@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -20,12 +17,11 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer
       headProps={{
-        title: 'Aserto',
-        description: 'Welcome to modern authorization',
+        title: 'About Aserto',
+        description: 'Aserto mission, founders, team, investors, and advisors',
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <Hero page={page} />
       <Founders page={page} />
       <Team page={page} />

@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -21,7 +18,7 @@ const CaseStudiesPage = ({
       footer
       headProps={{
         title: 'Aserto Case Studies',
-        description: 'Welcome to modern authorization',
+        description: 'Case studies of happy Aserto customers',
         image: 'images/og.png'
       }}
     >
@@ -34,7 +31,6 @@ const CaseStudiesPage = ({
             loading="eager"
           />
         </div>
-        <CustomHead />
         <Container>
           <Hero page={page} />
           <CaseStudies caseStudies={caseStudies} />
