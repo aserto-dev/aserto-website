@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://aserto.com',
+  siteUrl: process.env.SITE_URL || 'https://www.aserto.com',
   generateRobotsTxt: true,
   outDir: 'out',
   robotsTxtOptions: {
