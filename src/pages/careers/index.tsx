@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -22,8 +19,8 @@ const Careers = ({
     <PageLayout
       footer
       headProps={{
-        title: 'Aserto Careers',
-        description: 'Welcome to modern authorization',
+        title: 'Aserto Careers, Culture, and Values',
+        description: 'Aserto culture, values, and open positions',
         image: 'images/og.png'
       }}
     >
@@ -36,7 +33,6 @@ const Careers = ({
             loading="eager"
           />
         </div>
-        <CustomHead />
         <Container>
           <Hero page={page} />
           <OurValues

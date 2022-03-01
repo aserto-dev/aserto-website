@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -22,7 +19,7 @@ const PricingPage = ({
       footer
       headProps={{
         title: 'Aserto Pricing',
-        description: 'Welcome to modern authorization',
+        description: 'Pricing for the editions of the Aserto authorization service',
         image: 'images/og.png'
       }}
     >
@@ -34,7 +31,6 @@ const PricingPage = ({
             layout="responsive"
           />
         </div>
-        <CustomHead />
         <Container>
           <Hero page={page} />
           <Editions page={page} editions={editions} />

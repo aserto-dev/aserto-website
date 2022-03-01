@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
@@ -21,12 +18,11 @@ const CaseStudyPage = ({ caseStudy }: Props) => {
       contain
       footer
       headProps={{
-        title: 'Aserto Case Study',
-        description: 'Welcome to modern authorization',
+        title: `${caseStudy.company} - Aserto Case Study`,
+        description: `Case study of how ${caseStudy.company} used Aserto for authorization`,
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <CaseStudy caseStudy={caseStudy} />
     </PageLayout>
   )

@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
@@ -14,11 +11,11 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer
       headProps={{
-        description: 'Welcome to modern authorization',
+        title: 'Frequently Asked Questions - Aserto',
+        description: 'Frequently asked questions about authentication and authorization',
         image: 'images/og.png'
       }}
     >
-      <CustomHead />
       <section className="py-20">
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           {page.title}

@@ -1,6 +1,3 @@
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import Hero from 'components/sections/news/hero'
@@ -14,8 +11,8 @@ const News = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer
       headProps={{
-        title: 'Aserto',
-        description: 'Welcome to modern authorization',
+        title: 'Aserto News',
+        description: 'Recent news articles about Aserto',
         image: 'images/og.png'
       }}
       newsletter={{
@@ -25,7 +22,6 @@ const News = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           'https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1'
       }}
     >
-      <CustomHead />
       <Hero page={page} />
       <NewsItems page={page} />
     </PageLayout>

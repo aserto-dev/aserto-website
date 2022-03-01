@@ -1,6 +1,3 @@
-// Primitives
-//import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import Post from 'components/sections/blog/blog-post'
@@ -20,8 +17,8 @@ const BlogPost = ({ post }: Props) => {
       contain
       footer
       headProps={{
-        title: String(post?.title || '') as string,
-        description: 'Welcome to modern authorization',
+        title: `${String(post?.title || '') as string} - Aserto Blog`,
+        description: `${String(post?.title || '') as string}`,
         image: String(post?.mainImage?.asset?.url)
       }}
       newsletter={{
