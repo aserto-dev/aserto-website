@@ -36,7 +36,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="https://docs.aserto.com/"
+                  href="https://docs.aserto.com"
                 >
                   Documentation
                 </Link>

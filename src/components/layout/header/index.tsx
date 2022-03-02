@@ -30,7 +30,7 @@ export const headerLinks = [
       },
       {
         label: 'Documentation',
-        href: 'https://docs.aserto.com/',
+        href: 'https://docs.aserto.com',
         isExternal: false
       },
       {
