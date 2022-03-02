@@ -27,7 +27,7 @@ const HomePage = ({
         image: 'images/og.png'
       }}
     >
-      <CustomHead 
+      <CustomHead
         title="Aserto - Welcome to modern authorization"
         description="Aserto provides cloud-native authorization as a service for developers"
         image="images/og.png"
