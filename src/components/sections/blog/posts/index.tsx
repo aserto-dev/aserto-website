@@ -26,8 +26,18 @@ const Posts = ({ posts }: { posts: PostMetaFragment[] }) => {
   return (
     <section className="pb-28">
       <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3" ref={section}>
-        {posts.slice(0, shownPages * pageSize).map((post) => {
-          return <BlogItem data={post} key={post._id} />
+        {posts.map((post, index) => {
+          return index < shownPages * pageSize ? (
+            <BlogItem data={post} key={post._id} />
+          ) : (
+            <a
+              className="hidden"
+              href={`/blog/${post.slug?.current}`}
+              key={post._id}
+            >
+              {post.title}
+            </a>
+          )
         })}
       </div>
       {canShowMore && (

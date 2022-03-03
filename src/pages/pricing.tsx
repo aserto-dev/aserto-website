@@ -19,7 +19,8 @@ const PricingPage = ({
       footer
       headProps={{
         title: 'Aserto Pricing',
-        description: 'Pricing for the editions of the Aserto authorization service',
+        description:
+          'Pricing for the editions of the Aserto authorization service',
         image: 'images/og.png'
       }}
     >

@@ -12,7 +12,8 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       footer
       headProps={{
         title: 'Frequently Asked Questions - Aserto',
-        description: 'Frequently asked questions about authentication and authorization',
+        description:
+          'Frequently asked questions about authentication and authorization',
         image: 'images/og.png'
       }}
     >
