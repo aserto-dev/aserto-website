@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
@@ -74,7 +71,6 @@ const Quickstarts = () => {
             loading="eager"
           />
         </div>
-        <CustomHead />
         <Container>
           <Hero />
           <section className="pb-28">
