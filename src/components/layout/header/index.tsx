@@ -183,12 +183,12 @@ const Header = () => {
             />
           ))}
         </nav>
-        <div className="hidden lg:block">
+        <div className="hidden lg:block whitespace-nowrap">
           <Button
             variant="primary"
             size="sm"
             as="a"
-            className="inline-flex items-center cursor-pointer"
+            className="ml-8 inline-flex items-center cursor-pointer"
             onClick={() => setShowSignupModal(true)}
           >
             Create an account
