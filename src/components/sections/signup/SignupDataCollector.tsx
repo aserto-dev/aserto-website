@@ -42,10 +42,11 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
   return (
     <div className="flex flex-col">
       <div
-        className={`font-roboto text-aserto-grey-90 text-center text-[20px]
+        className={`font-roboto text-aserto-grey-90 text-[20px]
                   leading-[24px] my-[20px] mx-0`}
       >
-        Enter a valid email to create an account:
+        <b>Aserto is in open beta!</b> To create an account, you'll need to enter a valid email address. We'll 
+        send you an email to confirm your account and complete the signup process. 
       </div>
       <div className="flex flex-col gap-[40px]">
         <div className="h-[60px] overflow-y-visible">
