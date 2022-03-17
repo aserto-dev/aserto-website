@@ -5,13 +5,23 @@ import clsx from 'clsx'
 
 type Props = {
   variant?: 'unstyled' | 'nav' | 'color'
+  isExternal?: boolean
 } & JSX.IntrinsicElements['a'] &
   Omit<NextLinkProps, 'as' | 'passHref'>
 
 const Link = forwardRef<HTMLAnchorElement, Props>(
-  ({ children, className, variant, ...restProps }, ref) => {
-    const {
+  (
+    {
       href,
+      children,
+      className,
+      variant,
+      isExternal = checkIfExternal(href),
+      ...restProps
+    },
+    ref
+  ) => {
+    const {
       // NextLink Props
       replace,
       scroll,
@@ -20,8 +30,6 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
       // Rest
       ...aProps
     } = restProps
-
-    const isExternal = checkIfExternal(href)
 
     return (
       <NextLink

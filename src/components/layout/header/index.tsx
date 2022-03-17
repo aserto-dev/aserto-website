@@ -196,6 +196,7 @@ const Header = () => {
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
+            isExternal={false}
           >
             Sign In
           </Link>
