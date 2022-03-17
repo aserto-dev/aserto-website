@@ -112,7 +112,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             className="inline-flex items-center cursor-pointer"
             onClick={() => setShowSignupModal(true)}
           >
-            Join the Beta
+            Sign Up
           </Button>
         </div>
         <div className={`mt-10 mb-20 md:mt-14 lg:mt-16 lg:mb-56 md:mb-56 `}>
@@ -121,7 +121,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             className="inline-flex items-center cursor-pointer"
             onClick={() => setShowSignupModal(true)}
           >
-            Join the Beta
+            Sign Up
           </Button>
         </div>
 
