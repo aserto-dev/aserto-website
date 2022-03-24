@@ -1,9 +1,8 @@
 // Layout
 import PageLayout from 'components/layout/page'
-import cms from 'lib/sanity'
 import Script from 'next/script'
 
-const News = () => {
+const Events = () => {
   return (
     <PageLayout
       contain
@@ -12,12 +11,6 @@ const News = () => {
         title: 'Aserto Events',
         description: 'Aserto Events',
         image: 'images/og.png'
-      }}
-      newsletter={{
-        title: 'Sign up for our newsletter',
-        description: 'Get the latest company updates and technology articles',
-        mailchimpEndpoint:
-          'https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1'
       }}
     >
       {/* <!-- Start of Meetings Embed Script --> */}
@@ -34,16 +27,4 @@ const News = () => {
   )
 }
 
-export const getStaticProps = async () => {
-  const { allNews } = await cms().NewsPage()
-  const page = allNews[0]
-
-  return {
-    props: {
-      page
-    },
-    revalidate: 1
-  }
-}
-
-export default News
+export default Events
