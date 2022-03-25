@@ -15,7 +15,7 @@ const BlogPost = ({ post }: Props) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: `${String(post?.title || '') as string} - Aserto Blog`,
         description: `${String(post?.title || '') as string}`,

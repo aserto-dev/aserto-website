@@ -6,7 +6,7 @@ const Events = () => {
   return (
     <PageLayout
       contain
-      footer
+      footer="slim"
       headProps={{
         title: 'Aserto Events',
         description: 'Aserto Events',

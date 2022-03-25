@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Privacy Policy',
         description: 'Aserto privacy policy',

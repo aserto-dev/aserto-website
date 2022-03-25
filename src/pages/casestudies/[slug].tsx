@@ -16,7 +16,7 @@ const CaseStudyPage = ({ caseStudy }: Props) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: `${caseStudy.company} - Aserto Case Study`,
         description: `Case study of how ${caseStudy.company} used Aserto for authorization`,

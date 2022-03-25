@@ -16,7 +16,7 @@ const PricingPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Pricing',
         description:
