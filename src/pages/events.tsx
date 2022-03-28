@@ -34,7 +34,7 @@ const Events = () => {
           <section className="pb-20 md:pb-10 flex flex-wrap justify-center gap-[25px]">
             <div
               className="w-[450px] h-[655px] text-aserto-grey-90
-              my-[15px] rounded-[6px] bg-aserto-black opacity-80"
+              my-[15px] rounded-[6px] bg-aserto-black"
             >
               <div className="p-[15px]">
                 <h2 className="text-2xl">{meetHeader}</h2>
@@ -46,14 +46,20 @@ const Events = () => {
                   alt="Valencia, Spain"
                   src="images/events/Valencia.jpeg"
                 />
-                <img
-                  className={clsx(
-                    'absolute bottom-0 w-full px-[15px] bg-white rounded-b-[6px]',
-                    imgOpacity
-                  )}
-                  alt="KubeCon"
-                  src="images/events/kccnc-eu-2022-black.svg"
-                />
+                <a
+                  href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className={clsx(
+                      'absolute bottom-0 w-full px-[15px] bg-white rounded-b-[6px]',
+                      imgOpacity
+                    )}
+                    alt="KubeCon"
+                    src="images/events/kccnc-eu-2022-black.svg"
+                  />
+                </a>
               </div>
             </div>
             <div className="w-[700px] rounded-[6px]">
