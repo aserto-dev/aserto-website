@@ -11,7 +11,7 @@ const SlimFooter = () => {
 
   return (
     <footer
-      className="bg-aserto-grey-5 absolute bottom-0 w-full h-[48px] leading-[48px] text-center"
+      className="bg-aserto-grey-5 w-full h-[48px] leading-[48px] text-center"
       ref={ref}
     >
       <p className="text-aserto-grey-60 font-roboto">
