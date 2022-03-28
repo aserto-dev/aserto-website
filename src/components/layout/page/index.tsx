@@ -24,12 +24,16 @@ const Footer = dynamic(() => import('../footer'), {
   ssr: false
 })
 
+const SlimFooter = dynamic(() => import('../slimfooter'), {
+  ssr: false
+})
+
 interface Props {
   children?: React.ReactNode
   contain?: boolean
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   newsletter?: NewsletterProps
-  footer?: boolean
+  footer?: 'regular' | 'slim'
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -73,7 +77,7 @@ const PageLayout = ({
           {contain ? <Container>{children}</Container> : children}
         </motion.main>
         {newsletter && <Newsletter {...newsletter} />}
-        {footer && <Footer />}
+        {footer && footer === 'regular' ? <Footer /> : <SlimFooter />}
       </div>
     </>
   )

@@ -52,7 +52,7 @@ const Quickstarts = () => {
 
   return (
     <PageLayout
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Quickstarts',
         description: 'Select a quickstart template',

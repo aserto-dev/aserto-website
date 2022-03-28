@@ -23,7 +23,7 @@ const TermsOfService = () => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Terms of Service',
         description: 'Aserto terms of service',
