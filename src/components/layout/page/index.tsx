@@ -77,7 +77,7 @@ const PageLayout = ({
           {contain ? <Container>{children}</Container> : children}
         </motion.main>
         {newsletter && <Newsletter {...newsletter} />}
-        {footer && footer === 'regular' ? <Footer /> : <SlimFooter />}
+        {!!footer && (footer === 'regular' ? <Footer /> : <SlimFooter />)}
       </div>
     </>
   )
