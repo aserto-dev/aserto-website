@@ -15,7 +15,7 @@ const CaseStudiesPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Case Studies',
         description: 'Case studies of happy Aserto customers',

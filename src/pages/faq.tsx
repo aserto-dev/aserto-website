@@ -9,7 +9,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: 'Frequently Asked Questions - Aserto',
         description:

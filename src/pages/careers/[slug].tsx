@@ -16,7 +16,7 @@ const JobPostingPage = ({ posting }: Props) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: `${posting.title} - Aserto Job Posting`,
         description: `Aserto job description for ${posting.title}`,

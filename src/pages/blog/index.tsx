@@ -16,7 +16,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: 'Aserto Blog',
         description:

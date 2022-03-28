@@ -15,7 +15,7 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
-      footer
+      footer="regular"
       headProps={{
         title: 'About Aserto',
         description: 'Aserto mission, founders, team, investors, and advisors',
