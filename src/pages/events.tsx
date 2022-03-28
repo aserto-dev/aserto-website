@@ -9,6 +9,9 @@ import Hero from 'components/sections/events/hero'
 import Container from 'components/layout/container'
 
 const Events = () => {
+  const windowTitle = 'Aserto Events'
+  const windowDescription = 'Aserto Events'
+  const favicon = 'images/og.png'
   const bgColor = 'bg-gradient-to-t from-aserto-black to-aserto-indigo-100'
   const pageInfo = {
     title: 'Meet Aserto at KubeCon EU',
@@ -17,15 +20,23 @@ const Events = () => {
   const meetHeader = 'We would love to meet up!'
   const meetText = `Please reserve a suitable time during the event using the 
     form and we promise to confirm with you as soon as we can.`
-  const imgOpacity = 'opacity-80'
+  const eventBannerOpacity = 'opacity-80'
+  const eventBannerAlt = 'KubeCon'
+  const eventBannerSrc = 'images/events/kccnc-eu-2022-black.svg'
+  const eventBannerHref =
+    'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/'
+  const locationImageAlt = 'Valencia, Spain'
+  const locationImageSrc = 'images/events/Valencia.jpeg'
+  const hubSpotDataSrc =
+    'https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true'
 
   return (
     <PageLayout
       footer="slim"
       headProps={{
-        title: 'Aserto Events',
-        description: 'Aserto Events',
-        image: 'images/og.png'
+        title: windowTitle,
+        description: windowDescription,
+        image: favicon
       }}
     >
       <div className={clsx('relative', bgColor)}>
@@ -43,21 +54,17 @@ const Events = () => {
               <div className="relative">
                 <img
                   className="h-[506px] object-cover rounded-b-[6px]"
-                  alt="Valencia, Spain"
-                  src="images/events/Valencia.jpeg"
+                  alt={locationImageAlt}
+                  src={locationImageSrc}
                 />
-                <a
-                  href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href={eventBannerHref} target="_blank" rel="noreferrer">
                   <img
                     className={clsx(
                       'absolute bottom-0 w-full px-[15px] bg-white rounded-b-[6px]',
-                      imgOpacity
+                      eventBannerOpacity
                     )}
-                    alt="KubeCon"
-                    src="images/events/kccnc-eu-2022-black.svg"
+                    alt={eventBannerAlt}
+                    src={eventBannerSrc}
                   />
                 </a>
               </div>
@@ -66,7 +73,7 @@ const Events = () => {
               {/* <!-- Start of Meetings Embed Script --> */}
               <div
                 className="meetings-iframe-container"
-                data-src="https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true"
+                data-src={hubSpotDataSrc}
               ></div>
               <Script
                 type="text/javascript"
