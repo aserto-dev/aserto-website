@@ -20,47 +20,6 @@ import Menu from './menu'
 
 export const headerLinks = [
   {
-    label: 'Developers',
-    href: '',
-    items: [
-      {
-        label: 'Quickstarts',
-        href: '/quickstarts',
-        isExternal: false
-      },
-      {
-        label: 'Documentation',
-        href: 'https://docs.aserto.com/docs/',
-        isExternal: false
-      },
-      {
-        label: 'API Reference',
-        href: 'https://aserto.readme.io/',
-        isExternal: true
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/aserto-dev',
-        isExternal: true
-      },
-      {
-        label: 'SDKs',
-        href: 'https://docs.aserto.com/docs/software-development-kits/overview',
-        isExternal: true
-      },
-      {
-        label: 'Community Slack',
-        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg',
-        isExternal: true
-      },
-      {
-        label: 'Open Policy Registry',
-        href: 'https://openpolicyregistry.io',
-        isExternal: true
-      }
-    ]
-  },
-  {
     label: 'Product',
     href: '',
     items: [
@@ -70,7 +29,7 @@ export const headerLinks = [
         isExternal: false
       },
       {
-        label: 'Case Studies',
+        label: 'Case studies',
         href: '/casestudies',
         isExternal: false
       },
@@ -86,6 +45,47 @@ export const headerLinks = [
       }
     ]
   },
+  {
+    label: 'Developers',
+    href: '',
+    items: [
+      {
+        label: 'Quickstarts',
+        href: '/quickstarts',
+        isExternal: false
+      },
+      {
+        label: 'Documentation',
+        href: 'https://docs.aserto.com/docs/',
+        isExternal: true
+      },
+      {
+        label: 'API reference',
+        href: 'https://aserto.readme.io/',
+        isExternal: true
+      },
+      {
+        label: 'GitHub',
+        href: 'https://github.com/aserto-dev',
+        isExternal: true
+      },
+      {
+        label: 'SDKs',
+        href: 'https://docs.aserto.com/docs/software-development-kits/overview',
+        isExternal: true
+      },
+      {
+        label: 'Open policy registry',
+        href: 'https://openpolicyregistry.io',
+        isExternal: true
+      },
+      {
+        label: 'Slack',
+        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg',
+        isExternal: true
+      }
+    ]
+  },
   // {
   //   label: 'Playground',
   //   href: '/playground',
@@ -97,14 +97,25 @@ export const headerLinks = [
     items: []
   },
   {
-    label: 'About',
-    href: '/about',
-    items: []
-  },
-  {
-    label: 'Careers',
-    href: '/careers',
-    items: []
+    label: 'Company',
+    href: '',
+    items: [
+      {
+        label: 'About Aserto',
+        href: '/about',
+        isExternal: false
+      },
+      {
+        label: 'Events',
+        href: '/events',
+        isExternal: false
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        isExternal: false
+      }
+    ]
   }
 ]
 
