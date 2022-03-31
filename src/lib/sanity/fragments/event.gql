@@ -1,0 +1,21 @@
+fragment Event on Event {
+  _id
+  _createdAt
+  title
+  slug {
+    current
+  }
+  heading
+  subheading
+  backgroundColor
+  hubspotMeetingDataSource
+  locationHeading
+  locationSubheading
+  eventLocationImage {
+    ...HtmlImage
+  }
+  eventBannerImage {
+    ...LinkedHtmlImage
+  }
+  eventBannerOpacity
+}

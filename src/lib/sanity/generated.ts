@@ -571,6 +571,115 @@ export type EditionSorting = {
   timeUnit?: Maybe<SortOrder>;
 };
 
+export type Event = Document & {
+  __typename?: 'Event';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  slug?: Maybe<Slug>;
+  heading?: Maybe<Scalars['String']>;
+  subheading?: Maybe<Scalars['String']>;
+  /** Example: `bg-gradient-to-t from-aserto-black to-aserto-indigo-100` */
+  backgroundColor?: Maybe<Scalars['String']>;
+  locationHeading?: Maybe<Scalars['String']>;
+  locationSubheading?: Maybe<Scalars['String']>;
+  eventLocationImage?: Maybe<HtmlImage>;
+  eventBannerImage?: Maybe<LinkedHtmlImage>;
+  /** 0-100 */
+  eventBannerOpacity?: Maybe<Scalars['Float']>;
+  /** The value of the `data-src` field in the hubspot embed snippet. Example: `https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true`. */
+  hubspotMeetingDataSource?: Maybe<Scalars['String']>;
+};
+
+export type EventFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  slug?: Maybe<SlugFilter>;
+  heading?: Maybe<StringFilter>;
+  subheading?: Maybe<StringFilter>;
+  backgroundColor?: Maybe<StringFilter>;
+  locationHeading?: Maybe<StringFilter>;
+  locationSubheading?: Maybe<StringFilter>;
+  eventLocationImage?: Maybe<HtmlImageFilter>;
+  eventBannerImage?: Maybe<LinkedHtmlImageFilter>;
+  eventBannerOpacity?: Maybe<FloatFilter>;
+  hubspotMeetingDataSource?: Maybe<StringFilter>;
+};
+
+export type EventSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  slug?: Maybe<SlugSorting>;
+  heading?: Maybe<SortOrder>;
+  subheading?: Maybe<SortOrder>;
+  backgroundColor?: Maybe<SortOrder>;
+  locationHeading?: Maybe<SortOrder>;
+  locationSubheading?: Maybe<SortOrder>;
+  eventLocationImage?: Maybe<HtmlImageSorting>;
+  eventBannerImage?: Maybe<LinkedHtmlImageSorting>;
+  eventBannerOpacity?: Maybe<SortOrder>;
+  hubspotMeetingDataSource?: Maybe<SortOrder>;
+};
+
+export type EventsPage = Document & {
+  __typename?: 'EventsPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type EventsPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+};
+
+export type EventsPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+};
+
 export type Faq = Document & {
   __typename?: 'Faq';
   /** Document ID */
@@ -840,6 +949,34 @@ export type HomeSorting = {
   testimonialsSectionTitle?: Maybe<SortOrder>;
 };
 
+export type HtmlImage = {
+  __typename?: 'HtmlImage';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  asset?: Maybe<SanityImageAsset>;
+  hotspot?: Maybe<SanityImageHotspot>;
+  crop?: Maybe<SanityImageCrop>;
+  /** Important for SEO and accessiblity. */
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type HtmlImageFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  asset?: Maybe<SanityImageAssetFilter>;
+  hotspot?: Maybe<SanityImageHotspotFilter>;
+  crop?: Maybe<SanityImageCropFilter>;
+  alt?: Maybe<StringFilter>;
+};
+
+export type HtmlImageSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  hotspot?: Maybe<SanityImageHotspotSorting>;
+  crop?: Maybe<SanityImageCropSorting>;
+  alt?: Maybe<SortOrder>;
+};
+
 export type IdFilter = {
   /** Checks if the value is equal to the given input. */
   eq?: Maybe<Scalars['ID']>;
@@ -1022,6 +1159,38 @@ export type JobPostingSorting = {
   slug?: Maybe<SlugSorting>;
   publishedAt?: Maybe<SortOrder>;
   icon?: Maybe<MainImageSorting>;
+};
+
+export type LinkedHtmlImage = {
+  __typename?: 'LinkedHtmlImage';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  asset?: Maybe<SanityImageAsset>;
+  hotspot?: Maybe<SanityImageHotspot>;
+  crop?: Maybe<SanityImageCrop>;
+  /** Important for SEO and accessiblity. */
+  alt?: Maybe<Scalars['String']>;
+  /** Hyperlink target for the Image */
+  href?: Maybe<Scalars['String']>;
+};
+
+export type LinkedHtmlImageFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  asset?: Maybe<SanityImageAssetFilter>;
+  hotspot?: Maybe<SanityImageHotspotFilter>;
+  crop?: Maybe<SanityImageCropFilter>;
+  alt?: Maybe<StringFilter>;
+  href?: Maybe<StringFilter>;
+};
+
+export type LinkedHtmlImageSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  hotspot?: Maybe<SanityImageHotspotSorting>;
+  crop?: Maybe<SanityImageCropSorting>;
+  alt?: Maybe<SortOrder>;
+  href?: Maybe<SortOrder>;
 };
 
 export type MainImage = {
@@ -1342,6 +1511,8 @@ export type RootQuery = {
   CaseStudiesPage?: Maybe<CaseStudiesPage>;
   Edition?: Maybe<Edition>;
   Pricing?: Maybe<Pricing>;
+  EventsPage?: Maybe<EventsPage>;
+  Event?: Maybe<Event>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1359,6 +1530,8 @@ export type RootQuery = {
   allCaseStudiesPage: Array<CaseStudiesPage>;
   allEdition: Array<Edition>;
   allPricing: Array<Pricing>;
+  allEventsPage: Array<EventsPage>;
+  allEvent: Array<Event>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1431,6 +1604,16 @@ export type RootQueryEditionArgs = {
 
 
 export type RootQueryPricingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryEventsPageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryEventArgs = {
   id: Scalars['ID'];
 };
 
@@ -1557,6 +1740,22 @@ export type RootQueryAllEditionArgs = {
 export type RootQueryAllPricingArgs = {
   where?: Maybe<PricingFilter>;
   sort?: Maybe<Array<PricingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllEventsPageArgs = {
+  where?: Maybe<EventsPageFilter>;
+  sort?: Maybe<Array<EventsPageSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllEventArgs = {
+  where?: Maybe<EventFilter>;
+  sort?: Maybe<Array<EventSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2188,6 +2387,22 @@ export type EditionFragment = (
   & Pick<Edition, '_id' | '_createdAt' | 'index' | 'title' | 'description' | 'buttonText' | 'buttonUrl' | 'price' | 'timeUnit' | 'features'>
 );
 
+export type EventFragment = (
+  { __typename?: 'Event' }
+  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheading' | 'eventBannerOpacity'>
+  & { slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )>, eventLocationImage?: Maybe<(
+    { __typename?: 'HtmlImage' }
+    & HtmlImageFragment
+  )>, eventBannerImage?: Maybe<(
+    { __typename?: 'LinkedHtmlImage' }
+    & Pick<LinkedHtmlImage, 'href'>
+    & LinkedHtmlImageFragment
+  )> }
+);
+
 export type FeatureItemFragment = (
   { __typename?: 'FeatureItem' }
   & Pick<FeatureItem, 'title'>
@@ -2197,9 +2412,53 @@ export type FeatureItemFragment = (
   )> }
 );
 
+export type HtmlImageFragment = (
+  { __typename?: 'HtmlImage' }
+  & Pick<HtmlImage, 'alt'>
+  & { crop?: Maybe<(
+    { __typename?: 'SanityImageCrop' }
+    & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
+  )>, hotspot?: Maybe<(
+    { __typename?: 'SanityImageHotspot' }
+    & Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>
+  )>, asset?: Maybe<(
+    { __typename?: 'SanityImageAsset' }
+    & Pick<SanityImageAsset, '_id' | 'url' | 'title' | 'assetId' | 'path'>
+    & { metadata?: Maybe<(
+      { __typename?: 'SanityImageMetadata' }
+      & { dimensions?: Maybe<(
+        { __typename?: 'SanityImageDimensions' }
+        & Pick<SanityImageDimensions, 'width' | 'height'>
+      )> }
+    )> }
+  )> }
+);
+
 export type ImageFragment = (
   { __typename?: 'MainImage' }
   & Pick<MainImage, 'caption' | 'alt'>
+  & { crop?: Maybe<(
+    { __typename?: 'SanityImageCrop' }
+    & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
+  )>, hotspot?: Maybe<(
+    { __typename?: 'SanityImageHotspot' }
+    & Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>
+  )>, asset?: Maybe<(
+    { __typename?: 'SanityImageAsset' }
+    & Pick<SanityImageAsset, '_id' | 'url' | 'title' | 'assetId' | 'path'>
+    & { metadata?: Maybe<(
+      { __typename?: 'SanityImageMetadata' }
+      & { dimensions?: Maybe<(
+        { __typename?: 'SanityImageDimensions' }
+        & Pick<SanityImageDimensions, 'width' | 'height'>
+      )> }
+    )> }
+  )> }
+);
+
+export type LinkedHtmlImageFragment = (
+  { __typename?: 'LinkedHtmlImage' }
+  & Pick<LinkedHtmlImage, 'alt' | 'href'>
   & { crop?: Maybe<(
     { __typename?: 'SanityImageCrop' }
     & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
@@ -2494,6 +2753,63 @@ export type CaseStudyQuery = (
   )> }
 );
 
+export type EventsPageFragment = (
+  { __typename?: 'EventsPage' }
+  & Pick<EventsPage, 'title'>
+);
+
+export type EventsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type EventsPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allEventsPage: Array<(
+    { __typename?: 'EventsPage' }
+    & EventsPageFragment
+  )>, allEvent: Array<(
+    { __typename?: 'Event' }
+    & EventFragment
+  )> }
+);
+
+export type EventIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type EventIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allEvent: Array<(
+    { __typename?: 'Event' }
+    & EventFragment
+  )> }
+);
+
+export type EventPathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type EventPathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allEvent: Array<(
+    { __typename?: 'Event' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type EventQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type EventQuery = (
+  { __typename?: 'RootQuery' }
+  & { allEvent: Array<(
+    { __typename?: 'Event' }
+    & EventFragment
+  )> }
+);
+
 export type FaqItemFragment = (
   { __typename?: 'FaqBlock' }
   & Pick<FaqBlock, 'title'>
@@ -2728,6 +3044,100 @@ export const EditionFragmentDoc = gql`
   features
 }
     `;
+export const HtmlImageFragmentDoc = gql`
+    fragment HtmlImage on HtmlImage {
+  crop {
+    _key
+    _type
+    top
+    bottom
+    left
+    right
+  }
+  hotspot {
+    _key
+    _type
+    x
+    y
+    height
+    width
+  }
+  asset {
+    _id
+    url
+    title
+    assetId
+    path
+    metadata {
+      dimensions {
+        width
+        height
+      }
+    }
+  }
+  alt
+}
+    `;
+export const LinkedHtmlImageFragmentDoc = gql`
+    fragment LinkedHtmlImage on LinkedHtmlImage {
+  crop {
+    _key
+    _type
+    top
+    bottom
+    left
+    right
+  }
+  hotspot {
+    _key
+    _type
+    x
+    y
+    height
+    width
+  }
+  asset {
+    _id
+    url
+    title
+    assetId
+    path
+    metadata {
+      dimensions {
+        width
+        height
+      }
+    }
+  }
+  alt
+  href
+}
+    `;
+export const EventFragmentDoc = gql`
+    fragment Event on Event {
+  _id
+  _createdAt
+  title
+  slug {
+    current
+  }
+  heading
+  subheading
+  backgroundColor
+  hubspotMeetingDataSource
+  locationHeading
+  locationSubheading
+  eventLocationImage {
+    ...HtmlImage
+  }
+  eventBannerImage {
+    ...LinkedHtmlImage
+    href
+  }
+  eventBannerOpacity
+}
+    ${HtmlImageFragmentDoc}
+${LinkedHtmlImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -2906,6 +3316,11 @@ export const CaseStudiesPageFragmentDoc = gql`
     fragment CaseStudiesPage on CaseStudiesPage {
   title
   subtitle
+}
+    `;
+export const EventsPageFragmentDoc = gql`
+    fragment EventsPage on EventsPage {
+  title
 }
     `;
 export const FaqItemFragmentDoc = gql`
@@ -3106,6 +3521,40 @@ export const CaseStudyDocument = gql`
   }
 }
     ${CaseStudyFragmentDoc}`;
+export const EventsPageDocument = gql`
+    query EventsPage {
+  allEventsPage(sort: {_createdAt: DESC}, limit: 1) {
+    ...EventsPage
+  }
+  allEvent(sort: {_createdAt: DESC}) {
+    ...Event
+  }
+}
+    ${EventsPageFragmentDoc}
+${EventFragmentDoc}`;
+export const EventIndexDocument = gql`
+    query EventIndex {
+  allEvent(sort: {_createdAt: DESC}) {
+    ...Event
+  }
+}
+    ${EventFragmentDoc}`;
+export const EventPathsDocument = gql`
+    query EventPaths {
+  allEvent {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const EventDocument = gql`
+    query Event($slug: String!) {
+  allEvent(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...Event
+  }
+}
+    ${EventFragmentDoc}`;
 export const FaqPageDocument = gql`
     query FaqPage {
   allFaq(sort: {_createdAt: DESC}, limit: 1) {
@@ -3186,6 +3635,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     CaseStudy(variables: CaseStudyQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudyQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<CaseStudyQuery>(CaseStudyDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudy');
+    },
+    EventsPage(variables?: EventsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventsPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<EventsPageQuery>(EventsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'EventsPage');
+    },
+    EventIndex(variables?: EventIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<EventIndexQuery>(EventIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'EventIndex');
+    },
+    EventPaths(variables?: EventPathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventPathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<EventPathsQuery>(EventPathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'EventPaths');
+    },
+    Event(variables: EventQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<EventQuery>(EventDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Event');
     },
     FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');

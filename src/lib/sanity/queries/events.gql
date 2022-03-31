@@ -1,0 +1,32 @@
+fragment EventsPage on EventsPage {
+  title
+}
+
+query EventsPage {
+  allEventsPage(sort: { _createdAt: DESC }, limit: 1) {
+    ...EventsPage
+  }
+  allEvent(sort: { _createdAt: DESC }) {
+    ...Event
+  }
+}
+
+query EventIndex {
+  allEvent(sort: { _createdAt: DESC }) {
+    ...Event
+  }
+}
+
+query EventPaths {
+  allEvent {
+    slug {
+      current
+    }
+  }
+}
+
+query Event($slug: String!) {
+  allEvent(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...Event
+  }
+}
