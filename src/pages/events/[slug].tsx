@@ -34,9 +34,9 @@ const EventPage = ({ event }: Props) => {
   const eventBannerOpacity = `opacity-${event.eventBannerOpacity || 80}`
   const eventBannerAlt = event.eventBannerImage?.alt!
   const eventBannerSrc = event.eventBannerImage?.asset?.url!
-  const eventBannerHref = event.eventBannerImage?.href!
-  const locationImageAlt = event.eventLocationImage?.alt!
-  const locationImageSrc = event.eventLocationImage?.asset?.url!
+  const eventBannerHref = event.eventBannerImageHref!
+  const locationImageAlt = event.locationImage?.alt!
+  const locationImageSrc = event.locationImage?.asset?.url!
   const hubSpotDataSrc =
     event.hubspotMeetingDataSource ||
     'https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true'

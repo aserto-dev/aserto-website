@@ -592,8 +592,10 @@ export type Event = Document & {
   backgroundColor?: Maybe<Scalars['String']>;
   locationHeading?: Maybe<Scalars['String']>;
   locationSubheading?: Maybe<Scalars['String']>;
-  eventLocationImage?: Maybe<HtmlImage>;
-  eventBannerImage?: Maybe<LinkedHtmlImage>;
+  locationImage?: Maybe<MainImage>;
+  eventBannerImage?: Maybe<MainImage>;
+  /** Where to navigate when banner is clicked */
+  eventBannerImageHref?: Maybe<Scalars['String']>;
   /** 0-100 */
   eventBannerOpacity?: Maybe<Scalars['Float']>;
   /** The value of the `data-src` field in the hubspot embed snippet. Example: `https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true`. */
@@ -616,8 +618,9 @@ export type EventFilter = {
   backgroundColor?: Maybe<StringFilter>;
   locationHeading?: Maybe<StringFilter>;
   locationSubheading?: Maybe<StringFilter>;
-  eventLocationImage?: Maybe<HtmlImageFilter>;
-  eventBannerImage?: Maybe<LinkedHtmlImageFilter>;
+  locationImage?: Maybe<MainImageFilter>;
+  eventBannerImage?: Maybe<MainImageFilter>;
+  eventBannerImageHref?: Maybe<StringFilter>;
   eventBannerOpacity?: Maybe<FloatFilter>;
   hubspotMeetingDataSource?: Maybe<StringFilter>;
 };
@@ -636,8 +639,9 @@ export type EventSorting = {
   backgroundColor?: Maybe<SortOrder>;
   locationHeading?: Maybe<SortOrder>;
   locationSubheading?: Maybe<SortOrder>;
-  eventLocationImage?: Maybe<HtmlImageSorting>;
-  eventBannerImage?: Maybe<LinkedHtmlImageSorting>;
+  locationImage?: Maybe<MainImageSorting>;
+  eventBannerImage?: Maybe<MainImageSorting>;
+  eventBannerImageHref?: Maybe<SortOrder>;
   eventBannerOpacity?: Maybe<SortOrder>;
   hubspotMeetingDataSource?: Maybe<SortOrder>;
 };
@@ -949,34 +953,6 @@ export type HomeSorting = {
   testimonialsSectionTitle?: Maybe<SortOrder>;
 };
 
-export type HtmlImage = {
-  __typename?: 'HtmlImage';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  asset?: Maybe<SanityImageAsset>;
-  hotspot?: Maybe<SanityImageHotspot>;
-  crop?: Maybe<SanityImageCrop>;
-  /** Important for SEO and accessiblity. */
-  alt?: Maybe<Scalars['String']>;
-};
-
-export type HtmlImageFilter = {
-  _key?: Maybe<StringFilter>;
-  _type?: Maybe<StringFilter>;
-  asset?: Maybe<SanityImageAssetFilter>;
-  hotspot?: Maybe<SanityImageHotspotFilter>;
-  crop?: Maybe<SanityImageCropFilter>;
-  alt?: Maybe<StringFilter>;
-};
-
-export type HtmlImageSorting = {
-  _key?: Maybe<SortOrder>;
-  _type?: Maybe<SortOrder>;
-  hotspot?: Maybe<SanityImageHotspotSorting>;
-  crop?: Maybe<SanityImageCropSorting>;
-  alt?: Maybe<SortOrder>;
-};
-
 export type IdFilter = {
   /** Checks if the value is equal to the given input. */
   eq?: Maybe<Scalars['ID']>;
@@ -1159,38 +1135,6 @@ export type JobPostingSorting = {
   slug?: Maybe<SlugSorting>;
   publishedAt?: Maybe<SortOrder>;
   icon?: Maybe<MainImageSorting>;
-};
-
-export type LinkedHtmlImage = {
-  __typename?: 'LinkedHtmlImage';
-  _key?: Maybe<Scalars['String']>;
-  _type?: Maybe<Scalars['String']>;
-  asset?: Maybe<SanityImageAsset>;
-  hotspot?: Maybe<SanityImageHotspot>;
-  crop?: Maybe<SanityImageCrop>;
-  /** Important for SEO and accessiblity. */
-  alt?: Maybe<Scalars['String']>;
-  /** Hyperlink target for the Image */
-  href?: Maybe<Scalars['String']>;
-};
-
-export type LinkedHtmlImageFilter = {
-  _key?: Maybe<StringFilter>;
-  _type?: Maybe<StringFilter>;
-  asset?: Maybe<SanityImageAssetFilter>;
-  hotspot?: Maybe<SanityImageHotspotFilter>;
-  crop?: Maybe<SanityImageCropFilter>;
-  alt?: Maybe<StringFilter>;
-  href?: Maybe<StringFilter>;
-};
-
-export type LinkedHtmlImageSorting = {
-  _key?: Maybe<SortOrder>;
-  _type?: Maybe<SortOrder>;
-  hotspot?: Maybe<SanityImageHotspotSorting>;
-  crop?: Maybe<SanityImageCropSorting>;
-  alt?: Maybe<SortOrder>;
-  href?: Maybe<SortOrder>;
 };
 
 export type MainImage = {
@@ -2389,17 +2333,16 @@ export type EditionFragment = (
 
 export type EventFragment = (
   { __typename?: 'Event' }
-  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheading' | 'eventBannerOpacity'>
+  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheading' | 'eventBannerImageHref' | 'eventBannerOpacity'>
   & { slug?: Maybe<(
     { __typename?: 'Slug' }
     & Pick<Slug, 'current'>
-  )>, eventLocationImage?: Maybe<(
-    { __typename?: 'HtmlImage' }
-    & HtmlImageFragment
+  )>, locationImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
   )>, eventBannerImage?: Maybe<(
-    { __typename?: 'LinkedHtmlImage' }
-    & Pick<LinkedHtmlImage, 'href'>
-    & LinkedHtmlImageFragment
+    { __typename?: 'MainImage' }
+    & ImageFragment
   )> }
 );
 
@@ -2412,53 +2355,9 @@ export type FeatureItemFragment = (
   )> }
 );
 
-export type HtmlImageFragment = (
-  { __typename?: 'HtmlImage' }
-  & Pick<HtmlImage, 'alt'>
-  & { crop?: Maybe<(
-    { __typename?: 'SanityImageCrop' }
-    & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
-  )>, hotspot?: Maybe<(
-    { __typename?: 'SanityImageHotspot' }
-    & Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>
-  )>, asset?: Maybe<(
-    { __typename?: 'SanityImageAsset' }
-    & Pick<SanityImageAsset, '_id' | 'url' | 'title' | 'assetId' | 'path'>
-    & { metadata?: Maybe<(
-      { __typename?: 'SanityImageMetadata' }
-      & { dimensions?: Maybe<(
-        { __typename?: 'SanityImageDimensions' }
-        & Pick<SanityImageDimensions, 'width' | 'height'>
-      )> }
-    )> }
-  )> }
-);
-
 export type ImageFragment = (
   { __typename?: 'MainImage' }
   & Pick<MainImage, 'caption' | 'alt'>
-  & { crop?: Maybe<(
-    { __typename?: 'SanityImageCrop' }
-    & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
-  )>, hotspot?: Maybe<(
-    { __typename?: 'SanityImageHotspot' }
-    & Pick<SanityImageHotspot, '_key' | '_type' | 'x' | 'y' | 'height' | 'width'>
-  )>, asset?: Maybe<(
-    { __typename?: 'SanityImageAsset' }
-    & Pick<SanityImageAsset, '_id' | 'url' | 'title' | 'assetId' | 'path'>
-    & { metadata?: Maybe<(
-      { __typename?: 'SanityImageMetadata' }
-      & { dimensions?: Maybe<(
-        { __typename?: 'SanityImageDimensions' }
-        & Pick<SanityImageDimensions, 'width' | 'height'>
-      )> }
-    )> }
-  )> }
-);
-
-export type LinkedHtmlImageFragment = (
-  { __typename?: 'LinkedHtmlImage' }
-  & Pick<LinkedHtmlImage, 'alt' | 'href'>
   & { crop?: Maybe<(
     { __typename?: 'SanityImageCrop' }
     & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
@@ -3044,75 +2943,6 @@ export const EditionFragmentDoc = gql`
   features
 }
     `;
-export const HtmlImageFragmentDoc = gql`
-    fragment HtmlImage on HtmlImage {
-  crop {
-    _key
-    _type
-    top
-    bottom
-    left
-    right
-  }
-  hotspot {
-    _key
-    _type
-    x
-    y
-    height
-    width
-  }
-  asset {
-    _id
-    url
-    title
-    assetId
-    path
-    metadata {
-      dimensions {
-        width
-        height
-      }
-    }
-  }
-  alt
-}
-    `;
-export const LinkedHtmlImageFragmentDoc = gql`
-    fragment LinkedHtmlImage on LinkedHtmlImage {
-  crop {
-    _key
-    _type
-    top
-    bottom
-    left
-    right
-  }
-  hotspot {
-    _key
-    _type
-    x
-    y
-    height
-    width
-  }
-  asset {
-    _id
-    url
-    title
-    assetId
-    path
-    metadata {
-      dimensions {
-        width
-        height
-      }
-    }
-  }
-  alt
-  href
-}
-    `;
 export const EventFragmentDoc = gql`
     fragment Event on Event {
   _id
@@ -3127,17 +2957,16 @@ export const EventFragmentDoc = gql`
   hubspotMeetingDataSource
   locationHeading
   locationSubheading
-  eventLocationImage {
-    ...HtmlImage
+  locationImage {
+    ...Image
   }
   eventBannerImage {
-    ...LinkedHtmlImage
-    href
+    ...Image
   }
+  eventBannerImageHref
   eventBannerOpacity
 }
-    ${HtmlImageFragmentDoc}
-${LinkedHtmlImageFragmentDoc}`;
+    ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id

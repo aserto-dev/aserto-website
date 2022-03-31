@@ -11,11 +11,12 @@ fragment Event on Event {
   hubspotMeetingDataSource
   locationHeading
   locationSubheading
-  eventLocationImage {
-    ...HtmlImage
+  locationImage {
+    ...Image
   }
   eventBannerImage {
-    ...LinkedHtmlImage
+    ...Image
   }
+  eventBannerImageHref
   eventBannerOpacity
 }

@@ -5142,12 +5142,12 @@
             "deprecationReason": null
           },
           {
-            "name": "eventLocationImage",
+            "name": "locationImage",
             "description": null,
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "HtmlImage",
+              "name": "MainImage",
               "ofType": null
             },
             "isDeprecated": false,
@@ -5159,7 +5159,19 @@
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "LinkedHtmlImage",
+              "name": "MainImage",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "eventBannerImageHref",
+            "description": "Where to navigate when banner is clicked",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -5376,11 +5388,11 @@
             "deprecationReason": null
           },
           {
-            "name": "eventLocationImage",
+            "name": "locationImage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "HtmlImageFilter",
+              "name": "MainImageFilter",
               "ofType": null
             },
             "defaultValue": null,
@@ -5392,7 +5404,19 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "LinkedHtmlImageFilter",
+              "name": "MainImageFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "eventBannerImageHref",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
               "ofType": null
             },
             "defaultValue": null,
@@ -5591,11 +5615,11 @@
             "deprecationReason": null
           },
           {
-            "name": "eventLocationImage",
+            "name": "locationImage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "HtmlImageSorting",
+              "name": "MainImageSorting",
               "ofType": null
             },
             "defaultValue": null,
@@ -5607,7 +5631,19 @@
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "LinkedHtmlImageSorting",
+              "name": "MainImageSorting",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "eventBannerImageHref",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
               "ofType": null
             },
             "defaultValue": null,
@@ -8290,243 +8326,6 @@
         "possibleTypes": null
       },
       {
-        "kind": "OBJECT",
-        "name": "HtmlImage",
-        "description": null,
-        "fields": [
-          {
-            "name": "_key",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "asset",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageAsset",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageHotspot",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageCrop",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": "Important for SEO and accessiblity.",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "HtmlImageFilter",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_key",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "asset",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageAssetFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageHotspotFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageCropFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "HtmlImageSorting",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_key",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageHotspotSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageCropSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
         "kind": "INPUT_OBJECT",
         "name": "IDFilter",
         "description": null,
@@ -10068,279 +9867,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "MainImageSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "LinkedHtmlImage",
-        "description": null,
-        "fields": [
-          {
-            "name": "_key",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "asset",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageAsset",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageHotspot",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "SanityImageCrop",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": "Important for SEO and accessiblity.",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "href",
-            "description": "Hyperlink target for the Image",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "LinkedHtmlImageFilter",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_key",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "asset",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageAssetFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageHotspotFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageCropFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "href",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "LinkedHtmlImageSorting",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "_key",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "_type",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "hotspot",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageHotspotSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "crop",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SanityImageCropSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "alt",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "href",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
               "ofType": null
             },
             "defaultValue": null,
