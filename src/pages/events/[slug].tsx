@@ -31,7 +31,7 @@ const EventPage = ({ event }: Props) => {
     event.locationSubheading ||
     `Please reserve a suitable time during the event using the 
     form and we promise to confirm with you as soon as we can.`
-  const eventBannerOpacity = `opacity-${event.eventBannerOpacity || 80}`
+  const eventBannerOpacity = `opacity-80`
   const eventBannerAlt = event.eventBannerImage?.alt!
   const eventBannerSrc = event.eventBannerImage?.asset?.url!
   const eventBannerHref = event.eventBannerImageHref!
