@@ -64,19 +64,23 @@ const PageLayout = ({
 }: Props) => {
   return (
     <>
-      <Header />
-      <div className="overflow-hidden">
-        <CustomHead {...headProps} />
-        <motion.main
-          className="relative bg-aserto-black"
-          animate="enter"
-          exit="exit"
-          initial="initial"
-          variants={transitionVariants}
-        >
-          {contain ? <Container>{children}</Container> : children}
-        </motion.main>
-        {newsletter && <Newsletter {...newsletter} />}
+      <div className="flex flex-col h-screen justify-between">
+        <div>
+          <Header />
+          <div className="overflow-hidden">
+            <CustomHead {...headProps} />
+            <motion.main
+              className="relative bg-aserto-black"
+              animate="enter"
+              exit="exit"
+              initial="initial"
+              variants={transitionVariants}
+            >
+              {contain ? <Container>{children}</Container> : children}
+            </motion.main>
+            {newsletter && <Newsletter {...newsletter} />}
+          </div>
+        </div>
         {!!footer && (footer === 'regular' ? <Footer /> : <SlimFooter />)}
       </div>
     </>

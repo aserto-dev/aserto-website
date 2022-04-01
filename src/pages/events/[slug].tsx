@@ -1,33 +1,44 @@
-import clsx from 'clsx'
-
 // Layout
 import PageLayout from 'components/layout/page'
+import cms from 'lib/sanity'
+import { GetStaticProps } from 'next'
+import { EventFragment } from 'lib/sanity/generated'
+import Error from 'next/error'
+import clsx from 'clsx'
+import Container from 'components/layout/container'
+import Hero from 'components/sections/events/hero'
 import Script from 'next/script'
 
-// Sections
-import Hero from 'components/sections/events/hero'
-import Container from 'components/layout/container'
+type Props = {
+  event: EventFragment
+}
 
-const Events = () => {
-  const windowTitle = 'Aserto Events'
-  const windowDescription = 'Aserto Events'
+const EventPage = ({ event }: Props) => {
+  if (!event) return <Error statusCode={404} />
+
+  const windowTitle = `Meet Aserto at ${event.title || 'this event'}`
+  const windowDescription = `Meet Aserto at ${event.title || 'this event'}`
   const favicon = 'images/og.png'
-  const bgColor = 'bg-gradient-to-t from-aserto-black to-aserto-indigo-100'
+  const bgColor =
+    event.backgroundColor ||
+    'bg-gradient-to-t from-aserto-black to-aserto-indigo-100'
   const pageInfo = {
-    title: 'Meet Aserto at KubeCon EU',
-    subtitle: 'May 17-20 2022 in Valencia, Spain'
+    title: event.heading!,
+    subtitle: event.subheading!
   }
-  const meetHeader = 'We would love to meet up!'
-  const meetText = `Please reserve a suitable time during the event using the 
+  const meetHeader = event.locationHeading || 'We would love to meet up!'
+  const meetText =
+    event.locationSubheading ||
+    `Please reserve a suitable time during the event using the 
     form and we promise to confirm with you as soon as we can.`
-  const eventBannerOpacity = 'opacity-80'
-  const eventBannerAlt = 'KubeCon'
-  const eventBannerSrc = 'images/events/kccnc-eu-2022-black.svg'
-  const eventBannerHref =
-    'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/'
-  const locationImageAlt = 'Valencia, Spain'
-  const locationImageSrc = 'images/events/Valencia.jpeg'
+  const eventBannerOpacity = `opacity-80`
+  const eventBannerAlt = event.eventBannerImage?.alt!
+  const eventBannerSrc = event.eventBannerImage?.asset?.url!
+  const eventBannerHref = event.eventBannerImageHref!
+  const locationImageAlt = event.locationImage?.alt!
+  const locationImageSrc = event.locationImage?.asset?.url!
   const hubSpotDataSrc =
+    event.hubspotMeetingDataSource ||
     'https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true'
 
   return (
@@ -88,4 +99,27 @@ const Events = () => {
   )
 }
 
-export default Events
+export const getStaticPaths = async () => {
+  const { allEvent } = await cms().EventPaths()
+  return {
+    paths:
+      allEvent?.map((event) => ({
+        params: { slug: event.slug?.current as string }
+      })) ?? [],
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
+  const slug = ctx.params?.slug as string
+  const {
+    allEvent: [event]
+  } = await cms().Event({ slug })
+
+  return {
+    props: { event },
+    revalidate: 1
+  }
+}
+
+export default EventPage
