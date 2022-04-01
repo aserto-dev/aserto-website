@@ -154,29 +154,9 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="mailto:info@aserto.com"
+                  href="/contact"
                 >
                   Contact us
-                  <svg
-                    className="inline-block ml-2"
-                    width="16"
-                    height="17"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M2.666 3.167h10.667c.733 0 1.333.6 1.333 1.333v8c0 .734-.6 1.334-1.333 1.334H2.666c-.733 0-1.333-.6-1.333-1.334v-8c0-.733.6-1.333 1.333-1.333z"
-                      stroke="#A0A0A0"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M14.666 4.5L8 9.167 1.333 4.5"
-                      stroke="#A0A0A0"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
                 </Link>
               </li>
             </ul>
