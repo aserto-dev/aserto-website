@@ -38,7 +38,9 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 }
 
 export const getStaticProps = async () => {
-  const { allPost } = await cms().BlogIndex()
+  const { allPost } = await cms().BlogIndex({
+    now: new Date(Date.now()).toISOString()
+  })
 
   return {
     props: {

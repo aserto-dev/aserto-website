@@ -1,5 +1,5 @@
-query BlogIndex {
-  allPost(sort: { publishedAt: DESC }) {
+query BlogIndex($now: DateTime) {
+  allPost(sort: { publishedAt: DESC } where: {_: { is_draft: false}, publishedAt: {lt: $now}}) {
     ...PostMeta
   }
 }
