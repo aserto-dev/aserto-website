@@ -111,6 +111,11 @@ export const headerLinks = [
         isExternal: false
       },
       {
+        label: 'Contact us',
+        href: '/contact',
+        isExternal: false
+      },
+      {
         label: 'Careers',
         href: '/careers',
         isExternal: false

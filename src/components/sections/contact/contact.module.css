@@ -1,0 +1,120 @@
+.hubspot {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* .hubspot .hubspot-container {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: #2a2a2a;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-radius: 11px !important;
+  -moz-border-radius: 11px !important;
+  -webkit-border-radius: 11px !important;
+  border-color: #717171 !important;
+  border-style: solid !important;
+  padding-top: 62px !important;
+  padding-bottom: 62px !important;
+  padding-left: 21px !important;
+  padding-right: 21px !important;
+  margin: 0 auto;
+} */
+
+/* .hubspot .hs-form .hs-error-msgs { */
+.hubspot form fieldset div ul li label:last-child {
+	color: #ff4a4a !important;
+	/* color: red !important; */
+}
+
+
+.hubspot input[type='text'],
+.hubspot input[type='email'],
+.hubspot textarea {
+  width: 100% !important;
+}
+
+.hubspot input:not([type='checkbox'], [type='submit']),
+.hubspot select,
+.hubspot textarea {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border: 1px solid #595959;
+  border-radius: 2px;
+  margin: 20px 0;
+}
+
+.hubspot input[type='checkbox'] {
+  width: 14px !important;
+  height: 14px !important;
+  margin-right: 15px !important;
+  /* margin-top: -2px; */
+  /* margin-right: 10px; */
+  margin-top: 5px;
+}
+
+/* .hubspot .hs-input:not([type=file]) {
+	width: 100%;
+	font-size: 14px;
+	background-color: #277f82;
+	color: #ffffff;
+	border-radius: 4px;
+	padding: 9px 0px;
+} */
+
+.hubspot fieldset {
+  color: #e7e7e7;
+  max-width: 100% !important;
+  /* margin-bottom: 10px !important; */
+}
+
+.hubspot p {
+  float: left !important;
+  width: 100% !important;
+  padding-bottom: 20px !important;
+  /* color: #e7e7e7 !important; */
+  /* font-weight: 600 !important; */
+  letter-spacing: 0px !important;
+  font-size: 12px !important;
+  /* font-family: 'Roboto' !important; */
+}
+
+.hubspot .hs-form .hs-error-msgs label,
+.hubspot .hs-form .hs-error-msgs label span {
+  font-family: 'Roboto', Arial !important;
+  letter-spacing: 1px !important;
+  font-weight: 300 !important;
+  font-size: 14px !important;
+  color: #ff4a4a !important;
+}
+
+.hubspot input[type='submit']{
+  width: 100%;
+  height: 36px;
+  padding: 9px 0px;
+	margin-top: 20px;
+  border-radius: 4px;
+  background-color: #277f82;
+  background-size: cover;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none solid rgb(255, 255, 255);
+  line-height: 18px;
+  text-align: center;
+	cursor: pointer;
+}
+
+.hubspot .hs-form input[type='submit']:hover {
+  background: #2f989c !important;
+  color: #ffffff !important;
+  border-color: #2f989c !important;
+}
+.hubspot .grecaptcha-badge {
+  width: auto !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
