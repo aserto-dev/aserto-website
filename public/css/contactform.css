@@ -187,7 +187,6 @@ input[type='number']:focus,
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding: 0 10px !important;
 }
 @media screen and (max-width: 767px) {
   .hs-form .form-columns-2 > div.hs-form-field,
