@@ -164,6 +164,7 @@ input[type='number']:focus,
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
   width: 100%;
   padding: 9px 0;
   margin-top: 15px;
