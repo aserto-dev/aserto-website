@@ -2476,7 +2476,9 @@ export type AboutPageQuery = (
   )> }
 );
 
-export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+export type BlogIndexQueryVariables = Exact<{
+  now?: Maybe<Scalars['DateTime']>;
+}>;
 
 
 export type BlogIndexQuery = (
@@ -3267,8 +3269,11 @@ export const AboutPageDocument = gql`
 }
     ${AboutPageFragmentDoc}`;
 export const BlogIndexDocument = gql`
-    query BlogIndex {
-  allPost(sort: {publishedAt: DESC}) {
+    query BlogIndex($now: DateTime) {
+  allPost(
+    sort: {publishedAt: DESC}
+    where: {_: {is_draft: false}, publishedAt: {lt: $now}}
+  ) {
     ...PostMeta
   }
 }
