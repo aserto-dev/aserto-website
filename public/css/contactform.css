@@ -47,7 +47,7 @@ fieldset .input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.hs-form fieldset .hs-form-field {
+.hs-form fieldset .hs-form-field, .hs_error_rollup {
   padding: 0 10px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -88,7 +88,6 @@ input[type='number'],
 .hs-form input[type='password'],
 .hs-form input[type='range'],
 .hs-form input[type='search'],
-.hs-form input[type='tel'],
 .hs-form input[type='text'],
 .hs-form input[type='time'],
 .hs-form input[type='url'],
@@ -120,12 +119,10 @@ input[type='number'],
   -webkit-box-sizing: border-box;
   height: auto !important;
 }
-
 .hs-form input[type='email']:focus,
 input[type='number']:focus,
 .hs-form input[type='password']:focus,
 .hs-form input[type='search']:focus,
-.hs-form input[type='tel']:focus,
 .hs-form input[type='text']:focus,
 .hs-form .input textarea:focus,
 .hs-form .hs-input textarea:focus,
@@ -150,7 +147,6 @@ input[type='number']:focus,
 .hs-form input[type='reset'],
 .hs-form input[type='submit'] {
   font-family: 'Roboto', Arial !important;
-  /* letter-spacing: 1px !important; */
   font-weight: 600 !important;
   font-size: 14px !important;
   color: #fff !important;
@@ -168,6 +164,7 @@ input[type='number']:focus,
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  cursor: pointer;
   width: 100%;
   padding: 9px 0;
   margin-top: 15px;
@@ -190,7 +187,6 @@ input[type='number']:focus,
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding: 0 10px !important;
 }
 @media screen and (max-width: 767px) {
   .hs-form .form-columns-2 > div.hs-form-field,
@@ -242,9 +238,13 @@ input[type='number']:focus,
   width: 14px !important;
   height: 14px !important;
   margin-right: 15px !important;
-  margin-top: 5px;
+  margin-bottom: 4px;
   --tw-ring-offset-shadow: none;
   --tw-ring-shadow: none;
+}
+.hs-form a {
+  color: #2f989c;
+  text-decoration: underline;
 }
 .fn-date-picker .pika-button {
   text-align: center !important;
