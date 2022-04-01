@@ -215,13 +215,15 @@ input[type='number']:focus,
   text-align: center !important;
 }
 .hs-form .hs-error-msgs label,
-.hs-form .hs-error-msgs label span,
-.hs-form .hs-form-required {
+.hs-form .hs-error-msgs label span {
   font-family: 'Roboto', Arial !important;
   letter-spacing: 1px !important;
   font-weight: 300 !important;
   font-size: 14px !important;
   color: #ff4a4a !important;
+}
+.hs-form .hs-form-required {
+  color: #2f989c !important;
 }
 .hs-form button:hover,
 .hs-form input[type='button']:hover,
