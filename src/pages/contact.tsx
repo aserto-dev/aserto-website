@@ -14,10 +14,13 @@ const Contact = () => {
     >
       <div
         className="relative bg-gradient-to-t from-aserto-black to-aserto-lochivar-50
-          md:py-[100px] md:px-auto p-[20px] h-full w-full items-center"
+          py-10 md:py-20 md:px-auto p-[20px] h-full w-full items-center"
       >
+        <h1 className="text-5xl leading-none text-aserto-grey-90 text-center mb-10 md:mb-20">
+          Contact us
+        </h1>
         <div
-          className="md:w-[700px] md:mx-auto p-[20px] bg-aserto-grey-10
+          className="md:w-[600px] md:mx-auto p-[20px] bg-aserto-grey-10
             border border-[#717171] rounded-[11px] shadow-contact"
         >
           <HubspotContactForm />
