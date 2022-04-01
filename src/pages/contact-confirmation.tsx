@@ -11,7 +11,6 @@ const ContactConfirmation = () => {
       }}
     >
       <div className="relative bg-gradient-to-t from-aserto-black to-aserto-lochivar-50">
-        {/* to-aserto-lochivar-accent-10 to-aserto-lochivar-50 */}
         <div className="relative mx-auto mb-40 px-[20px] h-full w-full items-center text-center text-aserto-grey-90">
           <img
             className="w-[450px] mx-auto"
