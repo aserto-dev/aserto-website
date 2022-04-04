@@ -4,7 +4,7 @@ import { Author } from 'lib/sanity/generated'
 
 const AuthorCard = ({ author }: { author: Author }) => {
   return (
-    <div className="relative flex items-center flex-grow">
+    <div className="relative flex items-center">
       <figure className="flex w-20 overflow-hidden rounded-full">
         <Image
           width="80"
