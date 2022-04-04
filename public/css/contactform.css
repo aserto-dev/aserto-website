@@ -2,9 +2,6 @@
   max-width: 100%;
   margin: auto;
 }
-fieldset .input {
-  margin-right: 0 !important;
-}
 .hs-form ul {
   list-style-type: none;
   margin-left: 0;
@@ -13,26 +10,13 @@ fieldset .input {
 .hs-form fieldset.form-columns-1 .hs-input:not([type='checkbox']) {
   width: 100% !important;
 }
-.hs-form fieldset {
-  max-width: 100% !important;
-}
 .hs-form fieldset.form-columns-3 .hs-form-field {
   width: 33.333% !important;
 }
-.hs-form fieldset {
-  margin-bottom: 0 !important;
-}
-.hs-form .hs-form-field {
-  margin-bottom: 15px;
-}
-.hs-form ul li {
-  margin-top: 4px;
-  margin-bottom: 4px !important;
-  float: left;
-  width: 100%;
-}
-.hs-form fieldset textarea.hs-input {
-  min-height: 200px;
+@media screen and (max-width: 400px) {
+  .hs-form fieldset.form-columns-3 .hs-form-field {
+    width: 100% !important;
+  }
 }
 .hs-form fieldset.form-columns-2 .hs-form-field {
   width: 50%;
@@ -47,19 +31,24 @@ fieldset .input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.hs-form fieldset .hs-form-field, .hs_error_rollup {
+.hs-form ul li {
+  margin-top: 4px;
+  margin-bottom: 4px !important;
+  float: left;
+  width: 100%;
+}
+.hs-form .hs-form-field textarea.hs-input {
+  min-height: 200px;
+}
+.hs-form .hs-form-field, .hs_error_rollup {
   padding: 0 10px;
+  margin-bottom: 15px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .hs_cos_wrapper.form-title {
   display: none;
-}
-@media screen and (max-width: 400px) {
-  .hs-form fieldset.form-columns-3 .hs-form-field {
-    width: 100% !important;
-  }
 }
 .hs-form label,
 .hs-form label span {
@@ -175,15 +164,24 @@ input[type='number']:focus,
   transition: all 0.2s linear;
   -khtml-transition: all 0.2s linear;
 }
+.hs-form button:hover,
+.hs-form input[type='button']:hover,
+.hs-form input[type='reset']:hover,
+.hs-form input[type='submit']:hover {
+  background: #2f989c !important;
+  color: #ffffff !important;
+  border-color: #2f989c !important;
+}
 .hs-form .hs-submit {
   display: inline-block;
   width: 100%;
 }
 .hs-form .hs-submit .actions {
   width: 100% !important;
+  padding: 0 10px;
   float: left !important;
   clear: both !important;
-  text-align: left !important;
+  text-align: center !important;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -207,9 +205,6 @@ input[type='number']:focus,
   letter-spacing: 0px !important;
   font-size: 12px !important;
 }
-.hs-form .hs-submit .actions {
-  text-align: center !important;
-}
 .hs-form .hs-error-msgs label,
 .hs-form .hs-error-msgs label span {
   font-family: 'Roboto', Arial !important;
@@ -220,14 +215,6 @@ input[type='number']:focus,
 }
 .hs-form .hs-form-required {
   color: #2f989c !important;
-}
-.hs-form button:hover,
-.hs-form input[type='button']:hover,
-.hs-form input[type='reset']:hover,
-.hs-form input[type='submit']:hover {
-  background: #2f989c !important;
-  color: #ffffff !important;
-  border-color: #2f989c !important;
 }
 .grecaptcha-badge {
   width: auto !important;
@@ -243,7 +230,7 @@ input[type='number']:focus,
   --tw-ring-shadow: none;
 }
 .hs-form a {
-  color: #2f989c;
+  color: #67CBCF;
   text-decoration: underline;
 }
 .fn-date-picker .pika-button {
