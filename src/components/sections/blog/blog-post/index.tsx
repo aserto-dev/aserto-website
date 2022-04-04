@@ -6,15 +6,16 @@ import { formatPostDate } from 'lib/util'
 import Image from 'components/primitives/image'
 import s from './blog-post.module.scss'
 import clsx from 'clsx'
+import AuthorCard from './AuthorCard'
 
 type Props = {
   post: PostFragment
 }
 
 const PostComponent = ({ post }: Props) => {
-  const author = post.authors?.[0]?.author
+  const authors = post.authors || []
   return (
-    <section className="relative mx-auto pt-12 mb-52 lg:pt-24  md:pt-24 mb-52">
+    <section className="relative mx-auto pt-12 lg:pt-24  md:pt-24 mb-52">
       <div className="w-full mx-auto lg:w-10/12">
         <Link
           href="/blog"
@@ -26,23 +27,24 @@ const PostComponent = ({ post }: Props) => {
           {post.title}
         </h1>
         <div className="flex items-start justify-between mt-14 mb-16 pb-14">
-          <div className="relative flex items-center flex-grow w-4/12">
-            <figure className="flex w-20 overflow-hidden rounded-full">
-              <Image
-                width="80"
-                height="80"
-                src={author?.image?.asset?.url ?? ''}
-                alt={author?.name + ' avatar'}
-                objectFit="cover"
-              />
-            </figure>
-            <div className="ml-6">
-              <p className="text-aserto-grey-60 font-roboto">{author?.name}</p>
-              <p className="text-aserto-grey-90 font-roboto">
-                {author?.position}
+          <div className="relative flex flex-col flex-grow w-4/12">
+            <div className="flex flex-row flex-wrap-reverse">
+              <div className="flex flex-row flex-wrap flex-start gap-10 justify-between">
+                {authors.map(
+                  (a) =>
+                    !!a?.author && (
+                      <AuthorCard
+                        key={a.author.slug?.current || 'undefined'}
+                        author={a.author}
+                      />
+                    )
+                )}
+              </div>
+              <p className="text-aserto-grey-90 font-roboto ml-auto">
+                {formatPostDate(post.publishedAt)}
               </p>
             </div>
-            <div className="absolute left-0 flex w-full uppercase -bottom-14 text-aserto-grey-60 font-roboto">
+            <div className="relative left-0 flex flex-wrap w-full uppercase -bottom-14 text-aserto-grey-60 font-roboto">
               {post.categories?.map((c, i, { length }) => {
                 const isLast = i === length - 1
                 return (
@@ -60,9 +62,6 @@ const PostComponent = ({ post }: Props) => {
               })}
             </div>
           </div>
-          <p className="text-aserto-grey-90 font-roboto">
-            {formatPostDate(post.publishedAt)}
-          </p>
         </div>
       </div>
       <figure className="w-full mx-auto lg:w-10/12">
