@@ -28,19 +28,21 @@ const PostComponent = ({ post }: Props) => {
         </h1>
         <div className="flex items-start justify-between mt-14 mb-16 pb-14">
           <div className="relative flex flex-col flex-grow w-4/12">
-            <div className="flex flex-row flex-wrap gap-10">
-              {authors.map(
-                (a) =>
-                  !!a?.author && (
-                    <AuthorCard
-                      key={a.author.slug?.current || 'undefined'}
-                      author={a.author}
-                    />
-                  )
-              )}
+            <div className="flex flex-row-reverse flex-wrap gap-10">
               <p className="text-aserto-grey-90 font-roboto ml-auto">
                 {formatPostDate(post.publishedAt)}
               </p>
+              {authors
+                .reverse()
+                .map(
+                  (a) =>
+                    !!a?.author && (
+                      <AuthorCard
+                        key={a.author.slug?.current || 'undefined'}
+                        author={a.author}
+                      />
+                    )
+                )}
             </div>
             <div className="relative left-0 flex flex-wrap w-full uppercase -bottom-14 text-aserto-grey-60 font-roboto">
               {post.categories?.map((c, i, { length }) => {
