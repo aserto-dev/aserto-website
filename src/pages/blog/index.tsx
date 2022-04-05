@@ -25,9 +25,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       }}
       newsletter={{
         title: 'Sign up for our newsletter',
-        description: 'Get the latest company updates and technology articles',
-        mailchimpEndpoint:
-          'https://aserto.us1.list-manage.com/subscribe/post?u=69b1ad0e50144ade95e55f9d1&amp;id=016646afa1'
+        description: 'Get the latest company updates and technology articles'
       }}
     >
       <Hero />
