@@ -236,3 +236,19 @@ input[type='number']:focus,
 .fn-date-picker .pika-button {
   text-align: center !important;
 }
+
+.submitted-message.hs-form-0ba34fad-afcf-4dde-8b51-b73c32c9595c {
+  color: #e7e7e7 !important;
+}
+
+fieldset .input {
+  margin-right: 0 !important;
+}
+
+.hs-form input:-webkit-autofill,
+.hs-form input:-webkit-autofill:hover, 
+.hs-form input:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px #121212 inset !important;
+  color: #E7E7E7 !important;
+  -webkit-text-fill-color: #E7E7E7 !important;
+}

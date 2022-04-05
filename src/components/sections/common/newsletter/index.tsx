@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { useForm } from 'react-hook-form'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
-import { HubspotRequest, hubspotSignup } from 'lib/hubspot/HubSpotClient'
+// import { useForm } from 'react-hook-form'
+// import MailchimpSubscribe from 'react-mailchimp-subscribe'
+// import { HubspotRequest, hubspotSignup } from 'lib/hubspot/HubSpotClient'
 
 // Layout
 import Container from 'components/layout/container'
@@ -10,13 +10,14 @@ import Container from 'components/layout/container'
 import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Primitives
-import Button from 'components/primitives/button'
+// import Button from 'components/primitives/button'
 
 // Styles
 import s from './newsletter.module.css'
-import { useState } from 'react'
-import { createPopup } from '@typeform/embed'
-import { sendEvent } from '../../../../lib/ga'
+// import { useState } from 'react'
+// import { createPopup } from '@typeform/embed'
+// import { sendEvent } from '../../../../lib/ga'
+import HubspotNewsletterSignup from './HubspotNewsletterSignup'
 
 export type NewsletterProps = {
   mailchimpEndpoint: string
@@ -26,44 +27,44 @@ export type NewsletterProps = {
 }
 
 const NewsletterSection = ({
-  mailchimpEndpoint,
+  // mailchimpEndpoint,
   title,
-  description,
-  shouldDisplayTypeForm
+  description
+  // shouldDisplayTypeForm
 }: NewsletterProps) => {
-  const { register, handleSubmit } = useForm<{ email: string }>()
+  // const { register, handleSubmit } = useForm<{ email: string }>()
   const [section] = useFadeInBottom()
-  const [clearErr, setClearErr] = useState('')
-  const [email, setEmail] = useState('')
-  const [alreadySawTypeForm, setAlreadySawTypeForm] = useState(false)
+  // const [clearErr, setClearErr] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [alreadySawTypeForm, setAlreadySawTypeForm] = useState(false)
   //TODO move this to env
-  const { toggle } = createPopup('RMHYXKD5')
-  const onClickCTA = () => {
-    // add new user's email to hubspot
-    if (email) {
-      const hubspotRequest: HubspotRequest = {
-        email,
-        lifecycleStage: 'subscriber'
-      }
-      hubspotSignup(hubspotRequest)
-    }
-    setEmail('')
+  // const { toggle } = createPopup('RMHYXKD5')
+  // const onClickCTA = () => {
+  //   // add new user's email to hubspot
+  //   if (email) {
+  //     const hubspotRequest: HubspotRequest = {
+  //       email,
+  //       lifecycleStage: 'subscriber'
+  //     }
+  //     hubspotSignup(hubspotRequest)
+  //   }
+  //   setEmail('')
 
-    sendEvent({
-      action: 'click',
-      params: {
-        event_label: `${window.location.pathname} Let's go`
-      }
-    })
-  }
+  //   sendEvent({
+  //     action: 'click',
+  //     params: {
+  //       event_label: `${window.location.pathname} Let's go`
+  //     }
+  //   })
+  // }
 
-  const showTypeForm = () => {
-    onClickCTA()
-    if (!alreadySawTypeForm && shouldDisplayTypeForm) {
-      toggle()
-      setAlreadySawTypeForm(true)
-    }
-  }
+  // const showTypeForm = () => {
+  //   onClickCTA()
+  //   if (!alreadySawTypeForm && shouldDisplayTypeForm) {
+  //     toggle()
+  //     setAlreadySawTypeForm(true)
+  //   }
+  // }
 
   return (
     <section
@@ -74,20 +75,10 @@ const NewsletterSection = ({
       <Container>
         <div
           className={clsx(
-            'px-6 py-6 rounded-lg md:py-16 md:px-16 flex flex-col md:flex-row lg:items-center lg:justify-between text-center md:text-left',
+            'px-6 py-6 rounded-lg md:py-16 md:px-16 flex flex-col md:flex-row md:items-center md:justify-evenly text-center md:text-left',
             s.background
           )}
         >
-          <h2
-            style={{
-              visibility: 'hidden',
-              opacity: 0,
-              position: 'absolute'
-            }}
-            className="text-xl sm:text-2xl font-extrabold tracking-normal text-white sm:text-2.5xl font-roboto text-center w-full"
-          >
-            Thanks for signing up! Expect to hear from us soon.
-          </h2>
           <div className="w-full md:w-6/12">
             <h2 className="tracking-normal text-aserto-grey-90 text-4.5xl">
               {title}
@@ -96,8 +87,9 @@ const NewsletterSection = ({
               {description}
             </p>
           </div>
-          <div className="flex flex-col items-center justify-center mt-8 lg:mt-0 md:ml-7 lg:ml-7">
-            <MailchimpSubscribe
+          <div className="flex flex-col items-center justify-center my-8 md:my-0 md:mx-7">
+            <HubspotNewsletterSignup />
+            {/* <MailchimpSubscribe
               url={mailchimpEndpoint}
               render={({ subscribe, status, message }) => (
                 <form
@@ -130,14 +122,7 @@ const NewsletterSection = ({
                       })}
                       className="w-full min-w-[290px] mr-0 md:mr-5 sm:min-w-[300px] lg:min-w-[354px] px-5 transition-all duration-150 border rounded sm:w-6/12 h-[58px] placeholder-aserto-grey-30 border-aserto-grey-30 bg-aserto-black text-aserto-grey-90 sm:py-0 outline-none focus:ring-0 focus:border-aserto-lochivar-accent-20 focus:shadow-input"
                     />
-                    <Button
-                      // as="a"
-                      // type="submit"
-                      // href="https://form.typeform.com/to/RMHYXKD5?typeform-medium=embed-snippet"
-                      // data-mode="popup"
-                      // data-size="100"
-                      className="mt-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]"
-                    >
+                    <Button className="mt-4 sm:mt-0 w-[137px] whitespace-nowrap flex items-center justify-center min-h-[58px]">
                       {clearErr === '' ? (
                         <a>Let’s go!</a>
                       ) : status ? (
@@ -218,7 +203,7 @@ const NewsletterSection = ({
                   {status === 'success' ? showTypeForm() : null}
                 </form>
               )}
-            />
+            /> */}
           </div>
         </div>
       </Container>
