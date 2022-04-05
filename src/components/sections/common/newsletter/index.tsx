@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import HubspotNewsletterSignup from './HubspotNewsletterSignup'
+import HubspotForm from '../../../../lib/hubspot/HubspotForm'
 
 // Layout
 import Container from 'components/layout/container'
@@ -40,7 +40,7 @@ const NewsletterSection = ({ title, description }: NewsletterProps) => {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center my-8 md:my-0 md:mx-7">
-            <HubspotNewsletterSignup />
+            <HubspotForm formId="0ba34fad-afcf-4dde-8b51-b73c32c9595c" />
           </div>
         </div>
       </Container>

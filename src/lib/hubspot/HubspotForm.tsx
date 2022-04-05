@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const HubspotNewsletterSignup = () => {
+const HubspotForm = ({ formId }: { formId: string }) => {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://js.hsforms.net/forms/v2.js'
@@ -13,12 +13,12 @@ const HubspotNewsletterSignup = () => {
         window.hbspt.forms.create({
           region: 'na1',
           portalId: '21300286',
-          formId: '0ba34fad-afcf-4dde-8b51-b73c32c9595c',
+          formId,
           target: '#hubspotForm'
         })
       }
     })
-  }, [])
+  }, [formId])
 
   return (
     <>
@@ -28,4 +28,4 @@ const HubspotNewsletterSignup = () => {
   )
 }
 
-export default HubspotNewsletterSignup
+export default HubspotForm
