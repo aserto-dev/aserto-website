@@ -1,7 +1,7 @@
 // Layout
 import PageLayout from 'components/layout/page'
 
-import HubspotContactForm from 'components/sections/contact/HubspotContactForm'
+import HubspotForm from 'lib/hubspot/HubspotForm'
 
 const Contact = () => {
   return (
@@ -28,7 +28,7 @@ const Contact = () => {
           className="md:w-[600px] md:mx-auto p-[20px] bg-aserto-grey-10
             border border-[#717171] rounded-[11px] shadow-contact"
         >
-          <HubspotContactForm />
+          <HubspotForm formId="fc7c232e-cab9-4eb5-822e-5d0c0d3d2714" />
         </div>
       </div>
     </PageLayout>

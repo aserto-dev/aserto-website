@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-const HubspotContactForm = () => {
+const HubspotForm = ({ formId }: { formId: string }) => {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://js.hsforms.net/forms/v2.js'
@@ -13,12 +13,12 @@ const HubspotContactForm = () => {
         window.hbspt.forms.create({
           region: 'na1',
           portalId: '21300286',
-          formId: 'fc7c232e-cab9-4eb5-822e-5d0c0d3d2714',
+          formId,
           target: '#hubspotForm'
         })
       }
     })
-  }, [])
+  }, [formId])
 
   return (
     <>
@@ -28,4 +28,4 @@ const HubspotContactForm = () => {
   )
 }
 
-export default HubspotContactForm
+export default HubspotForm
