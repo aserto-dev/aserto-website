@@ -10,14 +10,12 @@ const Events = () => {
 
   return (
     <PageLayout
-      contain
-      footer="regular"
       headProps={{
         title: 'Aserto Events',
         description: 'Meet the Aserto team at these events.',
         image: 'images/og.png'
       }}
-    ></PageLayout>
+    />
   )
 }
 
