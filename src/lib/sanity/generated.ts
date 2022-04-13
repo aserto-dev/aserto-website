@@ -586,6 +586,7 @@ export type Event = Document & {
   _key?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
+  mainEventsPageImage?: Maybe<MainImage>;
   heading?: Maybe<Scalars['String']>;
   subheading?: Maybe<Scalars['String']>;
   /** Example: `bg-gradient-to-t from-aserto-black to-aserto-indigo-100` */
@@ -613,6 +614,7 @@ export type EventFilter = {
   _key?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
+  mainEventsPageImage?: Maybe<MainImageFilter>;
   heading?: Maybe<StringFilter>;
   subheading?: Maybe<StringFilter>;
   backgroundColor?: Maybe<StringFilter>;
@@ -633,6 +635,7 @@ export type EventSorting = {
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
+  mainEventsPageImage?: Maybe<MainImageSorting>;
   heading?: Maybe<SortOrder>;
   subheading?: Maybe<SortOrder>;
   backgroundColor?: Maybe<SortOrder>;
@@ -2341,6 +2344,9 @@ export type EventFragment = (
   )>, eventBannerImage?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
+  )>, mainEventsPageImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
   )> }
 );
 
@@ -2965,6 +2971,9 @@ export const EventFragmentDoc = gql`
   }
   eventBannerImageHref
   eventBannerOpacity
+  mainEventsPageImage {
+    ...Image
+  }
 }
     ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`

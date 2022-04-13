@@ -5082,6 +5082,18 @@
             "deprecationReason": null
           },
           {
+            "name": "mainEventsPageImage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MainImage",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "heading",
             "description": null,
             "args": [],
@@ -5328,6 +5340,18 @@
             "deprecationReason": null
           },
           {
+            "name": "mainEventsPageImage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MainImageFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "heading",
             "description": null,
             "type": {
@@ -5536,6 +5560,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "SlugSorting",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "mainEventsPageImage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "MainImageSorting",
               "ofType": null
             },
             "defaultValue": null,
