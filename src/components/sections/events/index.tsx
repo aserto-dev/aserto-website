@@ -27,7 +27,6 @@ const EventsItems = ({ page, events }: Props) => {
   const canShowMore = useMemo(() => {
     return events.length > shownPages * pageSize
   }, [events.length, shownPages])
-  console.log(events)
   return (
     <section className="pb-28">
       <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3" ref={section}>
