@@ -5388,18 +5388,6 @@
             "deprecationReason": null
           },
           {
-            "name": "locationHeading",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "locationImage",
             "description": null,
             "type": {
@@ -5604,18 +5592,6 @@
           },
           {
             "name": "backgroundColor",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "locationHeading",
             "description": null,
             "type": {
               "kind": "ENUM",
