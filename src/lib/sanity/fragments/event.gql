@@ -10,7 +10,7 @@ fragment Event on Event {
   backgroundColor
   hubspotMeetingDataSource
   locationHeading
-  locationSubheading
+  locationSubheadingRaw
   locationImage {
     ...Image
   }
