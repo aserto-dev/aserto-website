@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import Container from 'components/layout/container'
 import Hero from 'components/sections/events/hero'
 import Script from 'next/script'
+import { BlockContent } from 'components/primitives/block-content'
 
 type Props = {
   event: EventFragment
@@ -27,10 +28,7 @@ const EventPage = ({ event }: Props) => {
     subtitle: event.subheading!
   }
   const meetHeader = event.locationHeading || 'We would love to meet up!'
-  const meetText =
-    event.locationSubheading ||
-    `Please reserve a suitable time during the event using the 
-    form and we promise to confirm with you as soon as we can.`
+  const meetText = event.locationSubheadingRaw
   const eventBannerOpacity = `opacity-80`
   const eventBannerAlt = event.eventBannerImage?.alt!
   const eventBannerSrc = event.eventBannerImage?.asset?.url!
@@ -57,7 +55,10 @@ const EventPage = ({ event }: Props) => {
             >
               <div className="p-[15px]">
                 <h2 className="text-2xl">{meetHeader}</h2>
-                <h3 className="text-base mt-[15px]">{meetText}</h3>
+                <BlockContent
+                  className="text-base mt-[15px] whitespace-normal"
+                  blocks={meetText}
+                />
               </div>
               <div className="relative">
                 <img

@@ -591,7 +591,7 @@ export type Event = Document & {
   /** Example: `bg-gradient-to-t from-aserto-black to-aserto-indigo-100` */
   backgroundColor?: Maybe<Scalars['String']>;
   locationHeading?: Maybe<Scalars['String']>;
-  locationSubheading?: Maybe<Scalars['String']>;
+  locationSubheadingRaw?: Maybe<Scalars['JSON']>;
   locationImage?: Maybe<MainImage>;
   eventBannerImage?: Maybe<MainImage>;
   /** Where to navigate when banner is clicked */
@@ -617,7 +617,6 @@ export type EventFilter = {
   subheading?: Maybe<StringFilter>;
   backgroundColor?: Maybe<StringFilter>;
   locationHeading?: Maybe<StringFilter>;
-  locationSubheading?: Maybe<StringFilter>;
   locationImage?: Maybe<MainImageFilter>;
   eventBannerImage?: Maybe<MainImageFilter>;
   eventBannerImageHref?: Maybe<StringFilter>;
@@ -638,7 +637,6 @@ export type EventSorting = {
   subheading?: Maybe<SortOrder>;
   backgroundColor?: Maybe<SortOrder>;
   locationHeading?: Maybe<SortOrder>;
-  locationSubheading?: Maybe<SortOrder>;
   locationImage?: Maybe<MainImageSorting>;
   eventBannerImage?: Maybe<MainImageSorting>;
   eventBannerImageHref?: Maybe<SortOrder>;
@@ -2333,7 +2331,7 @@ export type EditionFragment = (
 
 export type EventFragment = (
   { __typename?: 'Event' }
-  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheading' | 'eventBannerImageHref' | 'eventBannerOpacity'>
+  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheadingRaw' | 'eventBannerImageHref' | 'eventBannerOpacity'>
   & { slug?: Maybe<(
     { __typename?: 'Slug' }
     & Pick<Slug, 'current'>
@@ -2958,7 +2956,7 @@ export const EventFragmentDoc = gql`
   backgroundColor
   hubspotMeetingDataSource
   locationHeading
-  locationSubheading
+  locationSubheadingRaw
   locationImage {
     ...Image
   }
