@@ -37,10 +37,7 @@ const EventPage = ({ event }: Props) => {
   const eventBannerHref = event.eventBannerImageHref!
   const locationImageAlt = event.locationImage?.alt!
   const locationImageSrc = event.locationImage?.asset?.url!
-  const hubSpotDataSrc =
-    event.hubspotMeetingDataSource ||
-    'https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true'
-
+  const hubSpotDataSrc = event.hubspotMeetingDataSource
   return (
     <PageLayout
       footer="slim"
@@ -80,18 +77,20 @@ const EventPage = ({ event }: Props) => {
                 </a>
               </div>
             </div>
-            <div className="w-[700px] rounded-[6px]">
-              {/* <!-- Start of Meetings Embed Script --> */}
-              <div
-                className="meetings-iframe-container"
-                data-src={hubSpotDataSrc}
-              ></div>
-              <Script
-                type="text/javascript"
-                src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-              ></Script>
-              {/*   <!-- End of Meetings Embed Script --> */}
-            </div>
+            {!!hubSpotDataSrc && (
+              <div className="w-[700px] rounded-[6px]">
+                {/* <!-- Start of Meetings Embed Script --> */}
+                <div
+                  className="meetings-iframe-container"
+                  data-src={hubSpotDataSrc}
+                ></div>
+                <Script
+                  type="text/javascript"
+                  src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+                ></Script>
+                {/*   <!-- End of Meetings Embed Script --> */}
+              </div>
+            )}
           </section>
         </Container>
       </div>

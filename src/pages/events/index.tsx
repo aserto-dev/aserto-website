@@ -1,22 +1,41 @@
 import PageLayout from 'components/layout/page'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import EventsItems from 'components/sections/events'
+import Hero from 'components/sections/events/hero'
+import cms from 'lib/sanity'
+import { InferGetStaticPropsType } from 'next'
 
-const Events = () => {
-  const router = useRouter()
-  useEffect(() => {
-    router.push('/events/kubecon-eu-2022')
-  }, [router])
-
+const Events = ({
+  page,
+  events
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
+      contain
+      footer="regular"
       headProps={{
         title: 'Aserto Events',
         description: 'Meet the Aserto team at these events.',
         image: 'images/og.png'
       }}
-    />
+    >
+      <Hero
+        page={{
+          title: 'Events',
+          subtitle: 'Meet the Aserto team!'
+        }}
+      />
+      <EventsItems page={page} events={events} />
+    </PageLayout>
   )
+}
+
+export const getStaticProps = async () => {
+  const { allEventsPage, allEvent } = await cms().EventsPage()
+  const page = allEventsPage[0]
+  return {
+    props: { page, events: allEvent },
+    revalidate: 1
+  }
 }
 
 export default Events
