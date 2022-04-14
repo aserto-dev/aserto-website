@@ -7,8 +7,8 @@ const EventsItem = ({ event }: { event: Event }) => {
     <Link href={`/events/${event.slug?.current}`}>
       <a className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">
         <Image
-          src={event.locationImage?.asset?.url || '/404'}
-          alt={event.locationImage?.alt || ''}
+          src={event.mainEventsPageImage?.asset?.url || '/404'}
+          alt={event.mainEventsPageImage?.alt || ''}
           width={384}
           height={298}
           objectFit="cover"
