@@ -18,13 +18,8 @@ const Events = ({
         image: 'images/og.png'
       }}
     >
-      <Hero
-        page={{
-          title: 'Events',
-          subtitle: 'Meet the Aserto team!'
-        }}
-      />
-      <EventsItems page={page} events={events} />
+      <Hero page={page} />
+      <EventsItems events={events} />
     </PageLayout>
   )
 }

@@ -1,13 +1,8 @@
-import { Event, EventsPage } from 'lib/sanity/generated'
+import { Event } from 'lib/sanity/generated'
 import Image from 'components/primitives/image'
 import Link from 'next/link'
 
-type Props = {
-  page: EventsPage
-  event: Event
-}
-
-const EventsItem = ({ page, event }: Props) => {
+const EventsItem = ({ event }: { event: Event }) => {
   return (
     <Link href={`/events/${event.slug?.current}`}>
       <a className="flex flex-col overflow-hidden border rounded border-aserto-grey-10">

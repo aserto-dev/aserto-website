@@ -3,7 +3,7 @@ import Button from 'components/primitives/button'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
-import { EventFragment, EventsPageFragment } from 'lib/sanity/generated'
+import { EventFragment } from 'lib/sanity/generated'
 import { useCallback, useMemo, useState } from 'react'
 
 // Components
@@ -11,12 +11,7 @@ import EventItem from './event-item'
 
 const pageSize = 6
 
-type Props = {
-  page: EventsPageFragment
-  events: EventFragment[]
-}
-
-const EventsItems = ({ page, events }: Props) => {
+const EventsItems = ({ events }: { events: EventFragment[] }) => {
   const [section] = useFadeInBottom()
   const [shownPages, setShownPages] = useState(1)
 
@@ -32,7 +27,7 @@ const EventsItems = ({ page, events }: Props) => {
       <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3" ref={section}>
         {events.map((event, index) => {
           return index < shownPages * pageSize ? (
-            <EventItem event={event} key={index} page={page} />
+            <EventItem event={event} key={index} />
           ) : (
             <a
               className="hidden"

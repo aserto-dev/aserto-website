@@ -661,6 +661,7 @@ export type EventsPage = Document & {
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
 };
 
 export type EventsPageFilter = {
@@ -673,6 +674,7 @@ export type EventsPageFilter = {
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
 };
 
 export type EventsPageSorting = {
@@ -683,6 +685,7 @@ export type EventsPageSorting = {
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
 };
 
 export type Faq = Document & {
@@ -2660,7 +2663,7 @@ export type CaseStudyQuery = (
 
 export type EventsPageFragment = (
   { __typename?: 'EventsPage' }
-  & Pick<EventsPage, 'title'>
+  & Pick<EventsPage, 'title' | 'subtitle'>
 );
 
 export type EventsPageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3159,6 +3162,7 @@ export const CaseStudiesPageFragmentDoc = gql`
 export const EventsPageFragmentDoc = gql`
     fragment EventsPage on EventsPage {
   title
+  subtitle
 }
     `;
 export const FaqItemFragmentDoc = gql`
