@@ -1,7 +1,8 @@
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { EventsPage } from 'lib/sanity/generated'
 
-const Hero = ({ page }: { page: { title: string; subtitle: string } }) => {
+const Hero = ({ page }: { page: EventsPage }) => {
   const [ref] = useFadeInBottom()
   return (
     <section className="relative mx-auto py-10 text-center" ref={ref}>

@@ -586,6 +586,7 @@ export type Event = Document & {
   _key?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
+  mainEventsPageImage?: Maybe<MainImage>;
   heading?: Maybe<Scalars['String']>;
   subheading?: Maybe<Scalars['String']>;
   /** Example: `bg-gradient-to-t from-aserto-black to-aserto-indigo-100` */
@@ -613,6 +614,7 @@ export type EventFilter = {
   _key?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
+  mainEventsPageImage?: Maybe<MainImageFilter>;
   heading?: Maybe<StringFilter>;
   subheading?: Maybe<StringFilter>;
   backgroundColor?: Maybe<StringFilter>;
@@ -633,6 +635,7 @@ export type EventSorting = {
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
+  mainEventsPageImage?: Maybe<MainImageSorting>;
   heading?: Maybe<SortOrder>;
   subheading?: Maybe<SortOrder>;
   backgroundColor?: Maybe<SortOrder>;
@@ -658,6 +661,7 @@ export type EventsPage = Document & {
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
 };
 
 export type EventsPageFilter = {
@@ -670,6 +674,7 @@ export type EventsPageFilter = {
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
 };
 
 export type EventsPageSorting = {
@@ -680,6 +685,7 @@ export type EventsPageSorting = {
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
 };
 
 export type Faq = Document & {
@@ -2341,6 +2347,9 @@ export type EventFragment = (
   )>, eventBannerImage?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
+  )>, mainEventsPageImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
   )> }
 );
 
@@ -2654,7 +2663,7 @@ export type CaseStudyQuery = (
 
 export type EventsPageFragment = (
   { __typename?: 'EventsPage' }
-  & Pick<EventsPage, 'title'>
+  & Pick<EventsPage, 'title' | 'subtitle'>
 );
 
 export type EventsPageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2965,6 +2974,9 @@ export const EventFragmentDoc = gql`
   }
   eventBannerImageHref
   eventBannerOpacity
+  mainEventsPageImage {
+    ...Image
+  }
 }
     ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
@@ -3150,6 +3162,7 @@ export const CaseStudiesPageFragmentDoc = gql`
 export const EventsPageFragmentDoc = gql`
     fragment EventsPage on EventsPage {
   title
+  subtitle
 }
     `;
 export const FaqItemFragmentDoc = gql`
