@@ -8,6 +8,7 @@
     NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://aserto.com"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
+    NEXT_PUBLIC_GA_CODE = 'UA-188518006-1'
 
 [context.int]
   publish = "out"
@@ -19,6 +20,7 @@
     NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.int.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://int--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
+    NEXT_PUBLIC_GA_CODE = 'DISABLED'
 
 [context.preproduction]
   publish = "out"
@@ -30,6 +32,7 @@
     NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.prod.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://preproduction--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
+    NEXT_PUBLIC_GA_CODE = 'DISABLED'
 
 [context.main]
   publish = "out"
@@ -41,14 +44,4 @@
     NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://main--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
-
-[context.beta]
-  publish = "out"
-  command = "yarn build"
-  [context.beta.environment]
-    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://beta--aserto-console.netlify.app"
-    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
-    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LcQrYAdAAAAADA-SKEebrAuX5s0z4oXJDrtzOqO"
-    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.beta.aserto.com"
-    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://beta--aserto.netlify.app"
-    NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
+    NEXT_PUBLIC_GA_CODE = 'DISABLED'
