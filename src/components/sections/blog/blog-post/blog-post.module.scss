@@ -11,6 +11,7 @@
     }
 
     code {
+      overflow-x: scroll;
       @apply text-aserto-grey-90;
     }  
   }
@@ -67,7 +68,7 @@
   }
 
   code {
-    @apply text-aserto-grey-90;
+    @apply text-aserto-grey-10;
   }
 }
 
