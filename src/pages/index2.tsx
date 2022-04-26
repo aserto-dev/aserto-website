@@ -28,8 +28,56 @@ const HomePage = () => {
         description="Aserto provides cloud-native authorization as a service for developers"
         image="images/og.png"
       />
+      <Container className="px-[65px] py-[100px] text-aserto-grey-90">
+        <h2 className="text-[36px] font-medium text-center">
+          Stop reinventing the wheel
+        </h2>
+        <img
+          className="w-[640px] my-[45px] mx-auto"
+          src="images/homepage/wheel-man.svg"
+          alt="Reinventing the wheel"
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
+          <div className="p-[18px] bg-aserto-grey-20 rounded-[6px]">
+            <h4 className="font-bold pb-[10px] text-[22px]">
+              Authorization is complex
+            </h4>
+            <p className="text-[18px] leading-[28px] self-end">
+              {`Evaluating policy against real-time user attributes with
+              millisecond latency and 100% availability is a distributed systems
+              problem. Most engineering teams can't justify taking the time to
+              fully solve it.`}
+            </p>
+          </div>
+          <div className="p-[20px] bg-aserto-grey-20 rounded-[6px]">
+            <h4 className="font-bold pb-[10px] text-[22px]">
+              Requirements will evolve as your company grows
+            </h4>
+            <p className="text-[18px] leading-[28px]">
+              {`Custom roles. Custom attributes. Integration with enterprise
+              identity providers and directories. Decision logs. ISO 27001. As
+              products move up-market, teams that build them can't keep up.`}
+            </p>
+          </div>
+          <div className="p-[20px] bg-aserto-grey-20 rounded-[6px]">
+            <h4 className="font-bold pb-[10px] text-[22px]">{`Don't build undifferentiated plumbing`}</h4>
+            <p className="text-[18px] leading-[28px]">
+              {`"I want to rewrite RBAC!" said no engineer, ever. Your team
+              could be working on end-user features instead of undifferentiated
+              heavy lifting.`}
+            </p>
+          </div>
+        </div>
+      </Container>
+      <Container className="px-[65px] py-[100px] text-aserto-grey-90">
+        <h2 className="text-[36px] font-medium text-center">
+          Built for developers
+        </h2>
+      </Container>
       <Container className="py-[50px] bg-aserto-grey-10 text-aserto-grey-90 text-center">
-        <h2 className="text-[36px] pb-[50px]">Join the community</h2>
+        <h2 className="text-[36px] pb-[50px] font-medium">
+          Join the community
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-80 py-[45px] px-[50px]">
           <div className="w-full">
             <img
@@ -57,7 +105,7 @@ const HomePage = () => {
             <img
               className="w-[80px] mb-[30px] mx-auto"
               src="images/aserto-logo.png"
-              alt="Lottie"
+              alt="Aserto Logo"
             />
             <h4 className="text-[22px] font-semibold">
               Sign up for our newsletter
@@ -86,7 +134,7 @@ const HomePage = () => {
             src="images/lottie.png"
             alt="Lottie"
           />
-          <h2 className="text-[36px]">{`Let's talk about your authorization challenges`}</h2>
+          <h2 className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</h2>
           <div className="my-[50px]">
             <Button
               variant="primary"
