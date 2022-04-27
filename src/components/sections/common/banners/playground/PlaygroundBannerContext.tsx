@@ -6,7 +6,7 @@ import React, {
   useState
 } from 'react'
 
-const playgroundSeenStorageKey = 'aserto-playground-seen'
+const bannerSeenStorageKey = 'aserto-banner-seen'
 
 interface PlaygroundBannerParams {
   hideBanner: () => void
@@ -29,11 +29,11 @@ export const PlaygroundBannerContextProvider = ({
 
   const hideBanner = useCallback(() => {
     setIsVisible(false)
-    localStorage.setItem(playgroundSeenStorageKey, 'true')
+    localStorage.setItem(bannerSeenStorageKey, 'true')
   }, [])
 
   useEffect(() => {
-    if (!isVisible && localStorage.getItem(playgroundSeenStorageKey) === null) {
+    if (!isVisible && localStorage.getItem(bannerSeenStorageKey) === null) {
       setIsVisible(true)
     }
   }, [isVisible])
