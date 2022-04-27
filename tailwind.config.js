@@ -139,7 +139,9 @@ module.exports = {
       },
       backgroundImage: {
         modal:
-          'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )'
+          'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )',
+        homepageInfo:
+          'linear-gradient(180deg, rgba(42,42,42,1) 0%, rgba(65,65,65,1) 30%, rgba(65,65,65,1) 40%, rgba(18,18,18,1) 100%);'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'

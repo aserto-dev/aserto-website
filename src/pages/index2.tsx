@@ -1,3 +1,6 @@
+import { InferGetStaticPropsType } from 'next'
+import cms from 'lib/sanity'
+
 // Primitives
 import CustomHead from 'components/primitives/custom-head'
 import Button from 'components/primitives/button'
@@ -7,13 +10,14 @@ import PageLayout from 'components/layout/page'
 import Container from 'components/sections/homepage/container'
 
 // Sections
-// import Hero from 'components/sections/homepage/hero'
-// import Testimonials from 'components/sections/homepage/testimonials'
-// import Intro from 'components/sections/homepage/intro'
-// import TheProblem from '../components/sections/homepage/the-problem'
-// import CustomerSpotlight from 'components/sections/homepage/customers'
+import Hero from 'components/sections/homepage/hero2'
+import Testimonials from 'components/sections/homepage/testimonials2'
+import LatestInfo from 'components/sections/homepage/latest'
 
-const HomePage = () => {
+const HomePage = ({
+  post,
+  event
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       footer="regular"
@@ -28,7 +32,8 @@ const HomePage = () => {
         description="Aserto provides cloud-native authorization as a service for developers"
         image="images/og.png"
       />
-      <Container className="px-[65px] py-[100px] text-aserto-grey-90">
+      <Hero />
+      <Container className="px-[65px] py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           Stop reinventing the wheel
         </h2>
@@ -37,7 +42,7 @@ const HomePage = () => {
           src="images/homepage/wheel-man.svg"
           alt="Reinventing the wheel"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4 sm:px-0 sm:gap-4">
           <div className="p-[18px] bg-aserto-grey-20 rounded-[6px]">
             <h4 className="font-bold pb-[10px] text-[22px]">
               Authorization is complex
@@ -69,10 +74,16 @@ const HomePage = () => {
           </div>
         </div>
       </Container>
-      <Container className="px-[65px] py-[100px] text-aserto-grey-90">
+      <Container className="px-[65px] py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           Built for developers
         </h2>
+        <Testimonials />
+        <LatestInfo
+          title={'Our latest content and events'}
+          latestBlogPost={post}
+          latestEvent={event}
+        />
       </Container>
       <Container className="py-[50px] bg-aserto-grey-10 text-aserto-grey-90 text-center">
         <h2 className="text-[36px] pb-[50px] font-medium">
@@ -150,6 +161,21 @@ const HomePage = () => {
       </Container>
     </PageLayout>
   )
+}
+
+export const getStaticProps = async () => {
+  const { allPost } = await cms().BlogIndex({
+    now: new Date(Date.now()).toISOString()
+  })
+  const { allEvent } = await cms().EventsPage()
+
+  return {
+    props: {
+      post: allPost[0],
+      event: allEvent[0]
+    },
+    revalidate: 1
+  }
 }
 
 export default HomePage
