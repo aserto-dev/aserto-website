@@ -50,7 +50,7 @@ const Contact = () => {
             />
             <p>Schedule a 1-on-1 meeting with an Aserto engineer.</p>
             <Link
-              href=""
+              href="/contact-engineer"
               className="w-full p-[10px] mt-[30px] bg-aserto-lochivar-100 border-2 inline-block
                 border-aserto-lochivar-100 rounded-[4px] text-[14px] font-semibold
                 hover:bg-aserto-lochivar-accent-10 hover:border-aserto-lochivar-accent-10 hover:text-white"
