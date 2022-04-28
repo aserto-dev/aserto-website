@@ -13,6 +13,7 @@ import Container from 'components/sections/homepage/container'
 import Hero from 'components/sections/homepage/hero2'
 import Testimonials from 'components/sections/homepage/testimonials2'
 import LatestInfo from 'components/sections/homepage/latest'
+import Intro from 'components/sections/homepage/intro2'
 
 const HomePage = ({
   post,
@@ -33,6 +34,7 @@ const HomePage = ({
         image="images/og.png"
       />
       <Hero />
+      <Intro />
       <Container className="px-[65px] py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           Stop reinventing the wheel

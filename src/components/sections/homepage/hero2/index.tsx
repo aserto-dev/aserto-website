@@ -30,7 +30,10 @@ const Hero = () => {
           Get started free
         </Button>
         <p className="sm:ml-[45px] sm:mt-0 mt-[45px] text-aserto-grey-90 sm:inline-flex text-[16px]">
-          <a className="underline">Chat with an engineer</a>&nbsp;
+          <a className="underline" href="/contact-engineer">
+            Speak with an engineer
+          </a>
+          &nbsp;
           {'>'}
         </p>
       </div>

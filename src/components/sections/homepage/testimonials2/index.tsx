@@ -44,17 +44,15 @@ const Testimonials = () => {
         //       obvious to analyze. Aserto has made AuthZ something we're not
         //       scared of anymore.”`
         quoteRaw: (
-          <p>
-            <em>
-              {`“Authorization has been a constant worry over the last two
+          <em>
+            {`“Authorization has been a constant worry over the last two
               years - everyone was scared of it. With Aserto, I'm so much more
               comfortable with authorization because I can see what's going on.
               Before, it was a dark art - we had a muddled permission structure.
               With Aserto, we have clear policies that are easy to implement and
               obvious to analyze. Aserto has made AuthZ something we're not
               scared of anymore.”`}
-            </em>
-          </p>
+          </em>
         )
       },
       {
@@ -71,13 +69,11 @@ const Testimonials = () => {
           }
         },
         quoteRaw: (
-          <p>
-            <em>
-              {`“A policy-centric authorization solution for developers is a glaring
+          <em>
+            {`“A policy-centric authorization solution for developers is a glaring
               hole in the market, and there is no team on the planet better equipped
               to build it to enterprise-grade."`}
-            </em>
-          </p>
+          </em>
         )
       },
       {
@@ -94,15 +90,13 @@ const Testimonials = () => {
           }
         },
         quoteRaw: (
-          <p>
-            <em>
-              {`“Authorization involves really hard problems that I want experts to
+          <em>
+            {`“Authorization involves really hard problems that I want experts to
               solve. We like to focus our internal engineering efforts on our customers
               and their problems. Aserto allows us to do just that, at a small fraction
               of the cost it would take to build and maintain it ourselves, not to
               mention the opportunity cost."`}
-            </em>
-          </p>
+          </em>
         )
       }
       // {
@@ -119,7 +113,6 @@ const Testimonials = () => {
       //     }
       //   },
       //   quoteRaw: (
-      //     <p>
       //       <em>
       //         {`“Authorization has been a constant worry over the last two
       //         years - everyone was scared of it. With Aserto, I'm so much more
@@ -129,7 +122,6 @@ const Testimonials = () => {
       //         obvious to analyze. Aserto has made AuthZ something we're not
       //         scared of anymore.”`}
       //       </em>
-      //     </p>
       //   )
       // }
     ]
