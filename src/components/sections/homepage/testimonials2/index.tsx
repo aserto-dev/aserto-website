@@ -1,25 +1,27 @@
 // import { BlockContent } from 'components/primitives/block-content'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import TestimonialItem from './testimonial-item'
-import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
-import { useState } from 'react'
-import Container from 'components/layout/container'
-import clsx from 'clsx'
 
 const Testimonials = () => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [cursor, setCursor] = useState('grab')
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    slideChanged(s) {
-      setCurrentSlide(s.details().relativeSlide)
-    },
-    dragStart: () => {
-      setCursor('grabbing')
-    },
-    dragEnd: () => {
-      setCursor('grab')
-    }
-  })
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
 
   const page = {
     testimonials: [
@@ -36,13 +38,6 @@ const Testimonials = () => {
             url: 'images/aserto-logo.png'
           }
         },
-        // quoteRaw: `“Authorization has been a constant worry over the last two
-        //       years - everyone was scared of it. With Aserto, I'm so much more
-        //       comfortable with authorization because I can see what's going on.
-        //       Before, it was a dark art - we had a muddled permission structure.
-        //       With Aserto, we have clear policies that are easy to implement and
-        //       obvious to analyze. Aserto has made AuthZ something we're not
-        //       scared of anymore.”`
         quoteRaw: (
           <em>
             {`“Authorization has been a constant worry over the last two
@@ -98,93 +93,82 @@ const Testimonials = () => {
               mention the opportunity cost."`}
           </em>
         )
+      },
+      {
+        authorName: 'Mathias Biilmann Christensen',
+        authorAvatar: {
+          asset: {
+            url: 'images/aserto-logo.png'
+          }
+        },
+        authorPosition: 'Co-founder & CEO, Netlify',
+        companyImage: {
+          asset: {
+            url: 'images/aserto-logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"As millions of developers and businesses are adopting a Jamstack approach,
+              most modern web applications involve multiple APIs and services. Aserto's
+              promise of separating policies from code could radically simplify the
+              implementation of authorization across the front-end UI and the larger
+              world of back-end functions and endpoints."`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Grant Miller',
+        authorAvatar: {
+          asset: {
+            url: 'images/aserto-logo.png'
+          }
+        },
+        authorPosition: 'Co-founder / CEO, Replicated',
+        companyImage: {
+          asset: {
+            url: 'images/aserto-logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"B2B SaaS vendors have a huge opportunity going after the enterprise,
+            but only if they meet enterprise expectations, as we've captured in
+            EnterpriseReady.io. Replicated serves 50% of the F100, and we know first-hand
+            that authorization and RBAC are table-stakes for enterprise adoption. It's
+            obvious to me that partnering with Aserto is a far better approach compared
+            to rolling your own and having to reinvent the wheel."`}
+          </em>
+        )
       }
-      // {
-      //   authorName: 'Someone else',
-      //   authorAvatar: {
-      //     asset: {
-      //       url: 'images/aserto-logo.png'
-      //     }
-      //   },
-      //   authorPosition: 'Head of Technology, Metrikus',
-      //   companyImage: {
-      //     asset: {
-      //       url: 'images/aserto-logo.png'
-      //     }
-      //   },
-      //   quoteRaw: (
-      //       <em>
-      //         {`“Authorization has been a constant worry over the last two
-      //         years - everyone was scared of it. With Aserto, I'm so much more
-      //         comfortable with authorization because I can see what's going on.
-      //         Before, it was a dark art - we had a muddled permission structure.
-      //         With Aserto, we have clear policies that are easy to implement and
-      //         obvious to analyze. Aserto has made AuthZ something we're not
-      //         scared of anymore.”`}
-      //       </em>
-      //   )
-      // }
     ]
   }
   return (
-    <section className="mx-auto mt-20 lg:mt-0 md-mt-0  sm:pt-24 pb-20 sm:pb-28">
-      <div className="lg:hidden md:hidden">
-        <div ref={sliderRef} className="keen-slider" style={{ cursor }}>
-          {page.testimonials?.map((t, i) => {
-            return (
-              <div key={i} className="px-4 keen-slider__slide">
+    <>
+      <link rel="stylesheet" href="/css/carousel.css"></link>
+      <section className="mx-auto mt-20 lg:mt-0 md:mt-0 lg:pt-24 pb-20 lg:pb-28">
+        <div className="mx-4">
+          <Slider {...settings}>
+            {page.testimonials?.map((testimonial, i) => {
+              return (
                 <TestimonialItem
-                  profileName={t?.authorName ?? ''}
-                  profileImageSrc={t?.authorAvatar?.asset?.url ?? '/404'}
-                  companyInfo={t?.authorPosition ?? ''}
-                  companyImageSrc={t?.companyImage?.asset?.url ?? '/404'}
-                  quote={t?.quoteRaw}
-                  // quote={<BlockContent blocks={t?.quoteRaw} />}
+                  key={String(testimonial?.authorName ?? i)}
+                  companyInfo={testimonial?.authorPosition ?? ''}
+                  companyImageSrc={
+                    testimonial?.companyImage?.asset?.url ?? '/404'
+                  }
+                  profileImageSrc={
+                    testimonial?.authorAvatar?.asset?.url ?? '/404'
+                  }
+                  profileName={testimonial?.authorName}
+                  quote={testimonial?.quoteRaw}
                 />
-              </div>
-            )
-          })}
+              )
+            })}
+          </Slider>
         </div>
-        {slider && (
-          <Container className="mt-8">
-            <div className="flex justify-center space-x-2">
-              {[...Array(slider.details().size).keys()].map((i) => {
-                const isSelected = currentSlide === i
-                return (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      slider.moveToSlideRelative(i)
-                    }}
-                    className={clsx(
-                      'w-3 h-3 transition-colors focus:outline-none rounded-full border border-aserto-grey-70',
-                      { 'bg-aserto-grey-90': isSelected }
-                    )}
-                  />
-                )
-              })}
-            </div>
-          </Container>
-        )}
-      </div>
-      {/* <div
-        className={`lg:grid md:grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 md:grid-cols-3 gap-4 hidden`}
-      > */}
-      <div className={`sm:flex sm:flex-nowrap sm:items-stretch gap-4 hidden`}>
-        {page.testimonials?.map((testimonial, i) => {
-          return (
-            <TestimonialItem
-              key={String(testimonial?.authorName ?? i)}
-              companyInfo={testimonial?.authorPosition ?? ''}
-              companyImageSrc={testimonial?.companyImage?.asset?.url ?? '/404'}
-              profileImageSrc={testimonial?.authorAvatar?.asset?.url ?? '/404'}
-              profileName={testimonial?.authorName}
-              quote={testimonial?.quoteRaw}
-            />
-          )
-        })}
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
