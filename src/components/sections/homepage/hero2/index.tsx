@@ -8,7 +8,7 @@ import Signup from 'components/sections/signup'
 const Hero = () => {
   const [showSignupModal, setShowSignupModal] = useState(false)
   return (
-    <Container className="py-[100px]">
+    <Container className="py-[100px] bg-hero">
       {showSignupModal && (
         <Signup closeModal={() => setShowSignupModal(false)} />
       )}

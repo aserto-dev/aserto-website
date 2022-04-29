@@ -15,8 +15,8 @@ const Intro = () => {
             for any language or framework.
           </p>
         </div>
-        <div>
-          {/* <div className="w-[400px] h-[400px] bg-homepageGlow"></div> */}
+        <div className="relative">
+          <div className="-z-10 hidden md:block absolute right-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
           <CodeBrowser />
         </div>
       </div>
@@ -28,8 +28,12 @@ const Intro = () => {
             access control, audit trails, and custom roles.
           </p>
         </div>
-        <div className="md:order-1">
-          <img className="w-[700px]" src="images/homepage/elastic-rego.png" />
+        <div className="relative md:order-1">
+          <div className="-z-10 hidden md:block absolute left-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+          <img
+            className="relative w-[700px]"
+            src="images/homepage/elastic-rego.png"
+          />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-evenly mb-40 md:mb-72">
@@ -40,8 +44,12 @@ const Intro = () => {
             millisecond latency and 100% availability.
           </p>
         </div>
-        <div>
-          <img className="w-[700px]" src="images/homepage/kubernetes-pod.png" />
+        <div className="relative">
+          <div className="-z-10 hidden md:block absolute right-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+          <img
+            className="relative w-[700px]"
+            src="images/homepage/kubernetes-pod.png"
+          />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-evenly mb-40 md:mb-72">
@@ -51,9 +59,10 @@ const Intro = () => {
             artifact registry, logging system, tech stack.
           </p>
         </div>
-        <div className="md:order-1">
+        <div className="relative md:order-1">
+          <div className="-z-10 hidden md:block absolute left-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
           <img
-            className="w-[700px]"
+            className="relative w-[700px]"
             src="images/homepage/aserto-control-plane.png"
           />
         </div>
@@ -65,8 +74,12 @@ const Intro = () => {
             Projects such as OPA, OCI, and Sigstore.
           </p>
         </div>
-        <div>
-          <img className="w-[700px]" src="images/homepage/authorizer.png" />
+        <div className="relative">
+          <div className="-z-10 hidden md:block absolute right-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+          <img
+            className="relative w-[700px]"
+            src="images/homepage/authorizer.png"
+          />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-evenly mb-40 md:mb-72">
@@ -76,9 +89,10 @@ const Intro = () => {
             policy-as-code, and GitOps best practices.
           </p>
         </div>
-        <div className="md:order-1">
+        <div className="relative md:order-1">
+          <div className="-z-10 hidden md:block absolute left-1/4 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
           <img
-            className="w-[700px]"
+            className="relative w-[700px]"
             src="images/homepage/source-code-workflows.png"
           />
         </div>
