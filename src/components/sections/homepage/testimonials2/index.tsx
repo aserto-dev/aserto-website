@@ -29,13 +29,13 @@ const Testimonials = () => {
         authorName: 'Sam Hall',
         authorAvatar: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Sam-Hall.png'
           }
         },
         authorPosition: 'Head of Technology, Metrikus',
         companyImage: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Metrikus-Logo.png'
           }
         },
         quoteRaw: (
@@ -54,13 +54,13 @@ const Testimonials = () => {
         authorName: 'James Lindenbaum',
         authorAvatar: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/James-Lindenbaum.png'
           }
         },
         authorPosition: 'Founder, Heroku & Heavybit',
         companyImage: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Heavybit-Logo.png'
           }
         },
         quoteRaw: (
@@ -75,13 +75,13 @@ const Testimonials = () => {
         authorName: 'David Kerber',
         authorAvatar: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/David-Kerber.png'
           }
         },
         authorPosition: 'VP of Technology, Spreetail',
         companyImage: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Spreetail-Logo.png'
           }
         },
         quoteRaw: (
@@ -98,13 +98,13 @@ const Testimonials = () => {
         authorName: 'Mathias Biilmann Christensen',
         authorAvatar: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Mathias-Biilmann-Christensen.png'
           }
         },
         authorPosition: 'Co-founder & CEO, Netlify',
         companyImage: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Netlify-Logo.png'
           }
         },
         quoteRaw: (
@@ -121,13 +121,13 @@ const Testimonials = () => {
         authorName: 'Grant Miller',
         authorAvatar: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Grant-Miller.png'
           }
         },
         authorPosition: 'Co-founder / CEO, Replicated',
         companyImage: {
           asset: {
-            url: 'images/aserto-logo.png'
+            url: 'images/testimonials/Replicated-Logo.png'
           }
         },
         quoteRaw: (
