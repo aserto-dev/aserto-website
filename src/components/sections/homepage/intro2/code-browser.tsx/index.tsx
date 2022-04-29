@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Container from '../../container'
 import Tab from './tab'
 
 const snippets: Record<string, string> = {
@@ -49,7 +48,7 @@ const snippets: Record<string, string> = {
 const CodeBrowser = () => {
   const [language, setLanguage] = useState<string>('nodejs')
   return (
-    <Container className="my-8">
+    <div>
       <div className="w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px] items-center overflow-scroll border border-aserto-grey-70 rounded-[6px]">
         <pre>
           <code className="text-white border-0 bg-aserto-black">
@@ -83,7 +82,7 @@ const CodeBrowser = () => {
           onClick={() => setLanguage('aspnet')}
         />
       </div>
-    </Container>
+    </div>
   )
 }
 

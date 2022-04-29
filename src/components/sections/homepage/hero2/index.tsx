@@ -18,7 +18,7 @@ const Hero = () => {
         alt="Aserto Logo"
       />
       <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
-        The fastest path to enterprise-grade authorization
+        The fastest path to enterprise-grade authorization.
       </h1>
       <div className="mt-[50px] text-center">
         <Button

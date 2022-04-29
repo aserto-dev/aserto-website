@@ -37,7 +37,7 @@ const HomePage = ({
       <Intro />
       <Container className="px-[65px] py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
-          Stop reinventing the wheel
+          {`Don't build undifferentiated plumbing`}
         </h2>
         <img
           className="w-[640px] my-[45px] mx-auto"
