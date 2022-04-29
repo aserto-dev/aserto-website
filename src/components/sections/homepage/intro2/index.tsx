@@ -5,8 +5,8 @@ const Intro = () => {
   return (
     <Container className="text-aserto-grey-90">
       <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-        Cloud Native Authorization-as-a-service, <br /> built to evolve with
-        your customer requirements.
+        Powerful authorization-as-a-service,
+        <br /> built to evolve with your customer requirements.
       </h1>
       <div className="flex flex-col md:flex-row justify-evenly mb-40 md:mb-72">
         <div className="md:translate-y-1/3 mb-8">
