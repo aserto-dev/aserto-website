@@ -141,8 +141,9 @@ module.exports = {
         modal:
           'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )',
         hero: 'linear-gradient(180deg, #36B1B5 0%, #121212 60%)',
+        benefitsCta: 'linear-gradient(0, #1D8E92 0%, #121212 100%)',
         homepageGlow:
-          'radial-gradient(50% 50% at 50% 50%, #3ECACF 0%, #121212 100%)'
+          'radial-gradient(50% 50% at 50% 50%, rgba(62, 202, 207, 0.8) 0%, rgba(62, 202, 207, 0) 100%)'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'

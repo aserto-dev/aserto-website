@@ -25,7 +25,7 @@ export const headerLinks = [
     items: [
       {
         label: 'Benefits',
-        href: '/#the-solution',
+        href: '/benefits',
         isExternal: false
       },
       {
