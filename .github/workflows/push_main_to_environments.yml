@@ -21,8 +21,7 @@ jobs:
       matrix:
         target_branch: [
           eng,
-          preproduction,
-          production
+          preproduction
         ]
 
     steps:
