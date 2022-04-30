@@ -1,14 +1,9 @@
-name: Push main branch to other environments
+name: Push preproduction branch to production
 
 
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-  # For now we want to manually control deployments to Website production
-  # push:
-  #   branches:
-  #     - main
 
 env:
   VAULT_ADDR: https://vault.eng.aserto.com/
@@ -20,8 +15,7 @@ jobs:
     strategy:
       matrix:
         target_branch: [
-          eng,
-          preproduction
+          production
         ]
 
     steps:
@@ -73,7 +67,7 @@ jobs:
           git fetch origin
           git fetch origin ${{ matrix.target_branch }}
           echo "PREVIOUS_COMMIT_HASH=$(git rev-parse --short origin/${{ matrix.target_branch }})" >> $GITHUB_ENV
-          echo "COMMIT_HASH=$(git rev-parse --short origin/main)" >> $GITHUB_ENV
+          echo "COMMIT_HASH=$(git rev-parse --short origin/preproduction)" >> $GITHUB_ENV
 
       - name: Push source branch to target branch
         if: ${{ success() }}
@@ -87,7 +81,7 @@ jobs:
         uses: slackapi/slack-github-action@v1.14.0
         with:
           channel-id: 'C02BD9UH0D9'
-          slack-message: "aserto-website: Pushed `main` (<${{ github.server_url }}/${{ github.repository }}/compare/${{ env.PREVIOUS_COMMIT_HASH }}..${{ env.COMMIT_HASH }}|${{ env.COMMIT_HASH }}>) to `${{ matrix.target_branch }}` successfully."
+          slack-message: "aserto-website: Pushed `preproduction` (<${{ github.server_url }}/${{ github.repository }}/compare/${{ env.PREVIOUS_COMMIT_HASH }}..${{ env.COMMIT_HASH }}|${{ env.COMMIT_HASH }}>) to `${{ matrix.target_branch }}` successfully."
         env:
           SLACK_BOT_TOKEN: ${{ steps.vault.outputs.SLACK_BOT_TOKEN }}
 
@@ -97,7 +91,7 @@ jobs:
         with:
           channel-id: 'C02BD9UH0D9'
           slack-message: |
-            "aserto-website: Push from `main` to `${{ matrix.target_branch }}` *failed*."
+            "aserto-website: Push from `preproduction` to `${{ matrix.target_branch }}` *failed*."
             Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         env:
           SLACK_BOT_TOKEN: ${{ steps.vault.outputs.SLACK_BOT_TOKEN }}
