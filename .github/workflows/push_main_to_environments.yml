@@ -2,13 +2,10 @@ name: Push main branch to other environments
 
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-  # For now we want to manually control deployments to Website production
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
 env:
   VAULT_ADDR: https://vault.eng.aserto.com/
@@ -21,8 +18,7 @@ jobs:
       matrix:
         target_branch: [
           eng,
-          preproduction,
-          production
+          preproduction
         ]
 
     steps:
