@@ -9,10 +9,10 @@ import PageLayout from 'components/layout/page'
 import Container from 'components/sections/homepage/container'
 
 // Sections
-import Hero from 'components/sections/homepage/hero2'
-import Testimonials from 'components/sections/homepage/testimonials2'
+import Hero from 'components/sections/homepage/hero'
+import Testimonials from 'components/sections/homepage/testimonials'
 import LatestInfo from 'components/sections/homepage/latest'
-import Intro from 'components/sections/homepage/intro2'
+import Intro from 'components/sections/homepage/intro'
 import CallToAction from 'components/sections/homepage/call-to-action'
 
 const HomePage = ({

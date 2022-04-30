@@ -45,7 +45,10 @@ const Intro = () => {
           </Link>
         </div>
         <div className="relative md:order-1">
-          <img className="w-[700px]" src="images/homepage/elastic-rego.png" />
+          <img
+            className="w-[700px]"
+            src="images/homepage/intro/elastic-rego.png"
+          />
         </div>
       </div>
       <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
@@ -66,7 +69,10 @@ const Intro = () => {
           </Link>
         </div>
         <div className="relative">
-          <img className="w-[700px]" src="images/homepage/kubernetes-pod.png" />
+          <img
+            className="w-[700px]"
+            src="images/homepage/intro/kubernetes-pod.png"
+          />
         </div>
       </div>
       <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
@@ -87,7 +93,7 @@ const Intro = () => {
         <div className="relative md:order-1">
           <img
             className="w-[700px]"
-            src="images/homepage/aserto-control-plane.png"
+            src="images/homepage/intro/aserto-control-plane.png"
           />
         </div>
       </div>
@@ -107,7 +113,10 @@ const Intro = () => {
           </Link>
         </div>
         <div className="relative">
-          <img className="w-[700px]" src="images/homepage/authorizer.png" />
+          <img
+            className="w-[700px]"
+            src="images/homepage/intro/authorizer.png"
+          />
         </div>
       </div>
       <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
@@ -128,7 +137,7 @@ const Intro = () => {
         <div className="relative md:order-1">
           <img
             className="w-[700px]"
-            src="images/homepage/source-code-workflows.png"
+            src="images/homepage/intro/source-code-workflows.png"
           />
         </div>
       </div>
