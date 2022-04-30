@@ -38,6 +38,18 @@
   publish = "out"
   command = "yarn build"
   [context.main.environment]
+    NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://eng--aserto-console.netlify.app"
+    NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
+    NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
+    NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.eng.aserto.com"
+    NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://eng--aserto.netlify.app"
+    NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
+    NEXT_PUBLIC_GA_CODE = 'DISABLED'
+
+[context.main]
+  publish = "out"
+  command = "yarn build"
+  [context.main.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
     NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
