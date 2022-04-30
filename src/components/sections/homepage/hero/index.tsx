@@ -22,19 +22,19 @@ const Hero = () => {
       <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
         The fastest path to enterprise-grade authorization.
       </h1>
-      <div className="mt-[50px] text-center">
+      <div className="flex flex-col sm:flex-row mt-[50px] justify-center text-center gap-8 sm:gap-4">
         <Button
           variant="primary"
           size="sm"
-          className="inline-flex h-[48px] px-[20px] items-center cursor-pointer text-[16px]"
+          className="inline-block h-[48px] px-[20px] items-center cursor-pointer text-[16px] self-center"
           onClick={() => setShowSignupModal(true)}
         >
           Get started free
         </Button>
         <Link
           href="/contact-engineer"
-          className="inline-flex sm:ml-[45px] sm:mt-0 mt-[45px] h-[48px] px-[20px] text-[16px] font-semibold
-          text-aserto-lochivar-accent-40 border-2 border-aserto-lochivar-100 rounded-[4px] items-center
+          className="inline-block sm:mt-0 h-[48px] leading-[48px] px-[20px] text-[16px] font-semibold
+          text-aserto-lochivar-accent-40 border-2 border-aserto-lochivar-100 rounded-[4px] self-center
           hover:border-aserto-lochivar-accent-10 hover:underline focus:text-aserto-lochivar-accent-20"
         >
           Speak with an engineer
