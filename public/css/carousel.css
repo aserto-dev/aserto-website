@@ -1,0 +1,17 @@
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+  margin: 0 0.5rem;
+}
+
+.slick-slide > div {
+  height: 100% !important;
+}
+
+.slick-slide img {
+  display: inline-block;
+  height: 200px;
+}

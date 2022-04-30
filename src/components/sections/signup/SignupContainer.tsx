@@ -9,8 +9,13 @@ import React, {
 interface ChildrenProps {
   children: ReactChild | ReactChildren
   closeModal?: () => void
+  background?: boolean
 }
-const SignupContainer = ({ children, closeModal }: ChildrenProps) => {
+const SignupContainer = ({
+  children,
+  closeModal,
+  background = true
+}: ChildrenProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const useOutsideAlerter = (
     ref: RefObject<HTMLDivElement>,
@@ -36,7 +41,11 @@ const SignupContainer = ({ children, closeModal }: ChildrenProps) => {
   useOutsideAlerter(ref, closeModal)
 
   return (
-    <div className="fixed top-0 left-0 h-full w-full z-50 sm:bg-modal">
+    <div
+      className={`fixed top-0 left-0 h-full w-full z-50 ${
+        background && 'sm:bg-modal'
+      }`}
+    >
       <div
         className="fixed top-1/2 left-1/2 bg-aserto-grey-10 shadow-modal
                   p-[20px] border-2 border-[#46d2d7] rounded-[11px]
