@@ -10,14 +10,14 @@ const Benefits = () => {
     <PageLayout
       footer="regular"
       headProps={{
-        title: 'Aserto',
-        description: 'Welcome to modern authorization',
+        title: 'Aserto Benefits',
+        description: 'Aserto Benefits',
         image: 'images/og.png'
       }}
     >
       <CustomHead
-        title="Aserto - Welcome to modern authorization"
-        description="Aserto provides cloud-native authorization as a service for developers"
+        title="Aserto - Benefits"
+        description="Aserto solution benefits for cloud-native authorization"
         image="images/og.png"
       />
       <Hero />
@@ -33,6 +33,7 @@ const Benefits = () => {
               Get started easily by importing your permissions from your API
               contracts.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Create a set of extensible roles and assign them to users and
               groups.
@@ -53,6 +54,7 @@ const Benefits = () => {
               fine-grained access control access control, audit trails, and
               custom roles.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Create policies that both control access and drive front-end
               behavior.
@@ -72,6 +74,7 @@ const Benefits = () => {
               Use our hosted authorizer to develop your application without
               deploying anything.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Minimize latency and maximize availability in production by
               deploying the authorizer as a sidecar or microservice in your
@@ -83,7 +86,7 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Picks up where your identity provider leaves off
+          Easy to integrate into your tech stack
         </h1>
         <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72">
           <div className="-z-100 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -91,6 +94,7 @@ const Benefits = () => {
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               API-first design with gRPC and REST bindings for every operation.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               SDKs for popular languages and frameworks - node.js, Golang,
               gorilla/mux, python, flask, .NET, React, and more coming every
@@ -111,6 +115,7 @@ const Benefits = () => {
               Connect your identity providers to the Aserto directory as the
               source of truth for user data.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Control the mapping between IDP attributes and the Aserto
               directory.
@@ -129,6 +134,7 @@ const Benefits = () => {
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Create a policy-as-code workflow using your source code provider.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Build, tag, push, pull policy images in your container registry,
               or use ours.
@@ -151,6 +157,7 @@ const Benefits = () => {
               Accelerate your path to SOC 2 and ISO 27001 with centralized audit
               trails for every authorization decision.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Stream your decision logs into your log management systems / SIEM.
             </p>
@@ -168,6 +175,7 @@ const Benefits = () => {
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Leverages the best of the open cloud native ecosystem.
             </p>
+            <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
               Open source authorizer and toolchain you can use standalone, or
               manage using our control plane.

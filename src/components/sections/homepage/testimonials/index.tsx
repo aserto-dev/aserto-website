@@ -26,52 +26,6 @@ const Testimonials = () => {
   const page = {
     testimonials: [
       {
-        authorName: 'Sam Hall',
-        authorAvatar: {
-          asset: {
-            url: 'images/testimonials/Sam-Hall.png'
-          }
-        },
-        authorPosition: 'Head of Technology, Metrikus',
-        companyImage: {
-          asset: {
-            url: 'images/testimonials/Metrikus-Logo.png'
-          }
-        },
-        quoteRaw: (
-          <em>
-            {`“Authorization has been a constant worry over the last two
-              years - everyone was scared of it. With Aserto, I'm so much more
-              comfortable with authorization because I can see what's going on.
-              Before, it was a dark art - we had a muddled permission structure.
-              With Aserto, we have clear policies that are easy to implement and
-              obvious to analyze. Aserto has made AuthZ something we're not
-              scared of anymore.”`}
-          </em>
-        )
-      },
-      {
-        authorName: 'James Lindenbaum',
-        authorAvatar: {
-          asset: {
-            url: 'images/testimonials/James-Lindenbaum.png'
-          }
-        },
-        authorPosition: 'Founder, Heroku & Heavybit',
-        companyImage: {
-          asset: {
-            url: 'images/testimonials/Heavybit-Logo.png'
-          }
-        },
-        quoteRaw: (
-          <em>
-            {`“A policy-centric authorization solution for developers is a glaring
-              hole in the market, and there is no team on the planet better equipped
-              to build it to enterprise-grade."`}
-          </em>
-        )
-      },
-      {
         authorName: 'David Kerber',
         authorAvatar: {
           asset: {
@@ -118,6 +72,74 @@ const Testimonials = () => {
         )
       },
       {
+        authorName: 'Tom Preston-Werner',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Tom-Preston-Werner.png'
+          }
+        },
+        authorPosition: 'Co-founder, GitHub',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/GitHub-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"Building & managing an authorization/RBAC system is a huge pain, 
+              especially at enterprise scale. So stop! Aserto has a distributed, 
+              millisecond latency, 100% availability API for that. 
+              I'm excited to help as an angel investor!"`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Sam Hall',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Sam-Hall.png'
+          }
+        },
+        authorPosition: 'Head of Technology, Metrikus',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Metrikus-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`“Authorization has been a constant worry over the last two
+              years - everyone was scared of it. With Aserto, I'm so much more
+              comfortable with authorization because I can see what's going on.
+              Before, it was a dark art - we had a muddled permission structure.
+              With Aserto, we have clear policies that are easy to implement and
+              obvious to analyze. Aserto has made AuthZ something we're not
+              scared of anymore.”`}
+          </em>
+        )
+      },
+      {
+        authorName: 'James Lindenbaum',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/James-Lindenbaum.png'
+          }
+        },
+        authorPosition: 'Founder, Heroku & Heavybit',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Heavybit-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`“A policy-centric authorization solution for developers is a glaring
+              hole in the market, and there is no team on the planet better equipped
+              to build it to enterprise-grade."`}
+          </em>
+        )
+      },
+      {
         authorName: 'Grant Miller',
         authorAvatar: {
           asset: {
@@ -143,6 +165,7 @@ const Testimonials = () => {
       }
     ]
   }
+
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
