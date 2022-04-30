@@ -1,6 +1,8 @@
 import PageLayout from 'components/layout/page'
 import Button from 'components/primitives/button'
 import CustomHead from 'components/primitives/custom-head'
+import Hero from 'components/sections/benefits/hero'
+import Video from 'components/sections/benefits/video'
 import Container from 'components/sections/homepage/container'
 
 const Benefits = () => {
@@ -18,6 +20,8 @@ const Benefits = () => {
         description="Aserto provides cloud-native authorization as a service for developers"
         image="images/og.png"
       />
+      <Hero />
+      <Video embed="https://www.youtube.com/embed/RJkgmdjJn_w" />
       <Container className="text-aserto-grey-90">
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
           Map your APIs to permissions, and assign them to flexible roles
