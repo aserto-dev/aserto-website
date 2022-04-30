@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 // Primitives
 import Button from 'components/primitives/button'
+import Link from 'components/primitives/link'
+
 import Container from '../container'
 import Signup from 'components/sections/signup'
 
@@ -24,18 +26,19 @@ const Hero = () => {
         <Button
           variant="primary"
           size="sm"
-          className="inline-flex h-[50px] px-[20px] items-center cursor-pointer text-[16px]"
+          className="inline-flex h-[48px] px-[20px] items-center cursor-pointer text-[16px]"
           onClick={() => setShowSignupModal(true)}
         >
           Get started free
         </Button>
-        <p className="sm:ml-[45px] sm:mt-0 mt-[45px] text-aserto-grey-90 sm:inline-flex text-[16px]">
-          <a className="underline" href="/contact-engineer">
-            Speak with an engineer
-          </a>
-          &nbsp;
-          {'>'}
-        </p>
+        <Link
+          href="/contact-engineer"
+          className="inline-flex sm:ml-[45px] sm:mt-0 mt-[45px] h-[48px] px-[20px] text-[16px] font-semibold
+          text-aserto-lochivar-accent-40 border-2 border-aserto-lochivar-100 rounded-[4px] items-center
+          hover:border-aserto-lochivar-accent-10 hover:underline focus:text-aserto-lochivar-accent-20"
+        >
+          Speak with an engineer
+        </Link>
       </div>
     </Container>
   )
