@@ -67,7 +67,7 @@ const HomePage = ({
             </p>
           </div>
           <div className="p-[20px] bg-aserto-grey-20 rounded-[6px]">
-            <h4 className="font-bold pb-[10px] text-[22px]">{`Don't build undifferentiated plumbing`}</h4>
+            <h4 className="font-bold pb-[10px] text-[22px]">{`You could be building customer value`}</h4>
             <p className="text-[18px] leading-[28px]">
               {`"I want to rewrite RBAC!" said no engineer, ever. Your team
               could be working on end-user features instead of undifferentiated
@@ -78,7 +78,7 @@ const HomePage = ({
       </Container>
       <Container className="px-[65px] py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
-          Built for developers
+          Built by developers, for developers
         </h2>
         <Testimonials />
         <LatestInfo

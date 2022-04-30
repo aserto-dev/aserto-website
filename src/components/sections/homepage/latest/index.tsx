@@ -16,14 +16,14 @@ const LatestInfo = ({ title, latestBlogPost, latestEvent }: Props) => {
         itemDesc: latestBlogPost?.excerptRaw,
         itemImage: latestBlogPost?.mainImage,
         linkText: 'Read more on our Blog',
-        itemUrl: latestBlogPost?.slug?.current
+        itemUrl: `/blog/${latestBlogPost?.slug?.current}`
       },
       {
         itemTitle: latestEvent?.title,
         itemDesc: latestEvent?.subheading,
         itemImage: latestEvent?.locationImage,
         linkText: 'Learn more',
-        itemUrl: latestEvent.slug?.current
+        itemUrl: `/events/${latestEvent.slug?.current}`
       }
     ]
   }
