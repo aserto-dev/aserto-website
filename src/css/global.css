@@ -40,3 +40,13 @@ pre code {
   display: block;
   font-size: 15px;
 }
+.codeblock code {
+  color: #67cbcf;
+  font-family: 'Ubuntu Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace !important;
+}
+
+.codeblock span {
+  background-color: #121212 !important;
+  height: 100%;
+}

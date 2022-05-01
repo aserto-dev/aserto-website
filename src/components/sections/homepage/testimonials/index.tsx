@@ -1,101 +1,197 @@
-import { BlockContent } from 'components/primitives/block-content'
-import { HomePageFragment } from 'lib/sanity/generated'
+// import { BlockContent } from 'components/primitives/block-content'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import TestimonialItem from './testimonial-item'
-import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
-import { useState } from 'react'
-import Image from 'components/primitives/image'
-import s from './testimonials.module.css'
-import Container from 'components/layout/container'
-import clsx from 'clsx'
 
-const Testimonials = ({ page }: { page: HomePageFragment }) => {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [cursor, setCursor] = useState('grab')
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    slideChanged(s) {
-      setCurrentSlide(s.details().relativeSlide)
-    },
-    dragStart: () => {
-      setCursor('grabbing')
-    },
-    dragEnd: () => {
-      setCursor('grab')
-    }
-  })
+const Testimonials = () => {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
+
+  const page = {
+    testimonials: [
+      {
+        authorName: 'David Kerber',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/David-Kerber.png'
+          }
+        },
+        authorPosition: 'VP of Technology, Spreetail',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Spreetail-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`“Authorization involves really hard problems that I want experts to
+              solve. We like to focus our internal engineering efforts on our customers
+              and their problems. Aserto allows us to do just that, at a small fraction
+              of the cost it would take to build and maintain it ourselves, not to
+              mention the opportunity cost."`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Mathias Biilmann Christensen',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Mathias-Biilmann-Christensen.png'
+          }
+        },
+        authorPosition: 'Co-founder & CEO, Netlify',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Netlify-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"As millions of developers and businesses are adopting a Jamstack approach,
+              most modern web applications involve multiple APIs and services. Aserto's
+              promise of separating policies from code could radically simplify the
+              implementation of authorization across the front-end UI and the larger
+              world of back-end functions and endpoints."`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Tom Preston-Werner',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Tom-Preston-Werner.png'
+          }
+        },
+        authorPosition: 'Co-founder, GitHub',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/GitHub-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"Building & managing an authorization/RBAC system is a huge pain, 
+              especially at enterprise scale. So stop! Aserto has a distributed, 
+              millisecond latency, 100% availability API for that. 
+              I'm excited to help as an angel investor!"`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Sam Hall',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Sam-Hall.png'
+          }
+        },
+        authorPosition: 'Head of Technology, Metrikus',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Metrikus-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`“Authorization has been a constant worry over the last two
+              years - everyone was scared of it. With Aserto, I'm so much more
+              comfortable with authorization because I can see what's going on.
+              Before, it was a dark art - we had a muddled permission structure.
+              With Aserto, we have clear policies that are easy to implement and
+              obvious to analyze. Aserto has made AuthZ something we're not
+              scared of anymore.”`}
+          </em>
+        )
+      },
+      {
+        authorName: 'James Lindenbaum',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/James-Lindenbaum.png'
+          }
+        },
+        authorPosition: 'Founder, Heroku & Heavybit',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Heavybit-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`“A policy-centric authorization solution for developers is a glaring
+              hole in the market, and there is no team on the planet better equipped
+              to build it to enterprise-grade."`}
+          </em>
+        )
+      },
+      {
+        authorName: 'Grant Miller',
+        authorAvatar: {
+          asset: {
+            url: 'images/testimonials/Grant-Miller.png'
+          }
+        },
+        authorPosition: 'Co-founder / CEO, Replicated',
+        companyImage: {
+          asset: {
+            url: 'images/testimonials/Replicated-Logo.png'
+          }
+        },
+        quoteRaw: (
+          <em>
+            {`"B2B SaaS vendors have a huge opportunity going after the enterprise,
+            but only if they meet enterprise expectations, as we've captured in
+            EnterpriseReady.io. Replicated serves 50% of the F100, and we know first-hand
+            that authorization and RBAC are table-stakes for enterprise adoption. It's
+            obvious to me that partnering with Aserto is a far better approach compared
+            to rolling your own and having to reinvent the wheel."`}
+          </em>
+        )
+      }
+    ]
+  }
+
   return (
-    <section className="mx-auto mt-20 lg:mt-0 md-mt-0  sm:pt-24 pb-20 sm:pb-28">
-      <div className="px-4 text-center mb-10 sm:px-0">
-        <h2 className="text-4xl tracking-tight text-aserto-grey-90">
-          {page.testimonialsSectionTitle}
-        </h2>
-      </div>
-      <div className="lg:hidden md:hidden">
-        <div ref={sliderRef} className="keen-slider" style={{ cursor }}>
-          {page.testimonials?.map((t, i) => {
-            return (
-              <div key={i} className="px-4 keen-slider__slide">
+    <>
+      <link rel="stylesheet" href="/css/carousel.css"></link>
+      <section className="mx-auto mt-20 lg:mt-0 md:mt-0 lg:pt-24 pb-20 lg:pb-28">
+        <div className="mx-4">
+          <Slider {...settings}>
+            {page.testimonials?.map((testimonial, i) => {
+              return (
                 <TestimonialItem
-                  profileName={t?.authorName ?? ''}
-                  profileimageSrc={t?.authorAvatar?.asset?.url ?? '/404'}
-                  companyName={t?.authorPosition ?? ''}
-                  quote={<BlockContent blocks={t?.quoteRaw} />}
+                  key={String(testimonial?.authorName ?? i)}
+                  companyInfo={testimonial?.authorPosition ?? ''}
+                  companyImageSrc={
+                    testimonial?.companyImage?.asset?.url ?? '/404'
+                  }
+                  profileImageSrc={
+                    testimonial?.authorAvatar?.asset?.url ?? '/404'
+                  }
+                  profileName={testimonial?.authorName}
+                  quote={testimonial?.quoteRaw}
                 />
-              </div>
-            )
-          })}
+              )
+            })}
+          </Slider>
         </div>
-        {slider && (
-          <Container className="mt-8">
-            <div className="flex justify-center space-x-2">
-              {[...Array(slider.details().size).keys()].map((i) => {
-                const isSelected = currentSlide === i
-                return (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      slider.moveToSlideRelative(i)
-                    }}
-                    className={clsx(
-                      'w-3 h-3 transition-colors focus:outline-none rounded-full border border-aserto-grey-70',
-                      { 'bg-aserto-grey-70': isSelected }
-                    )}
-                  />
-                )
-              })}
-            </div>
-          </Container>
-        )}
-      </div>
-      <div
-        className={`lg:grid md:grid lg:grid-flow-col md:grid-flow-col lg:grid-cols-3 md:grid-cols-3 gap-4 ${s['testimonial-grid']} hidden`}
-      >
-        {page.testimonials?.map((testimonial, i) => {
-          return (
-            <div
-              key={String(testimonial?.authorName ?? i)}
-              className={`bg-aserto-grey-5 border-aserto-grey-20 flex-1 min-h-96 p-4 flex flex-col items-center rounded border text-aserto-grey-90 ${s['testimonial-card']}`}
-            >
-              <Image
-                className="rounded-full border-2 border-aserto-lochivar-accent-40"
-                layout="native"
-                width={160}
-                height={160}
-                src={testimonial?.authorAvatar?.asset?.url ?? ''}
-              />
-              <div className="text-aserto-grey-90 font-bold text-lg mt-4">
-                {testimonial?.authorName}
-              </div>
-              <div>{testimonial?.authorPosition}</div>
-              <BlockContent
-                className="mt-10 px-2"
-                blocks={testimonial?.quoteRaw}
-              />
-            </div>
-          )
-        })}
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

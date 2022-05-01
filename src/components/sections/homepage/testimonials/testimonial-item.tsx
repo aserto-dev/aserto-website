@@ -1,50 +1,47 @@
 import Image from 'components/primitives/image'
 
-// Hooks
-import { useFadeInBottom } from 'hooks/use-gsap'
-
 type Props = {
-  companyName: string
-  profileimageSrc: string
+  companyInfo: string
+  companyImageSrc: string
+  profileImageSrc: string
   profileName: string
   quote: React.ReactNode
 }
 
 const TestimonialItem = ({
-  companyName,
-  profileimageSrc,
+  companyInfo,
+  companyImageSrc,
+  profileImageSrc,
   profileName,
   quote
 }: Props) => {
-  const [section] = useFadeInBottom()
   return (
-    <div className="relative">
-      <div
-        className="relative z-10 w-full p-10 mx-auto border sm:w-8/12 bg-aserto-black border-aserto-grey-10 rounded-2xl"
-        ref={section}
-      >
-        <div className="mb-12 leading-relaxed text-white sm:text-2xl font-roboto">
-          {quote}
+    <div
+      key={profileName}
+      className={`bg-aserto-grey-10 text-aserto-grey-90 border-2 border-aserto-grey-30 rounded-[6px] h-full`}
+    >
+      <div className="relative w-full pb-[50%]">
+        <div className="absolute w-full">
+          <Image
+            className="w-1/2 inline-block object-cover"
+            layout="native"
+            src={profileImageSrc ?? ''}
+          />
+          <Image
+            className="w-1/2 inline-block object-cover"
+            layout="native"
+            src={companyImageSrc ?? ''}
+          />
         </div>
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center">
-            <div className="w-20">
-              <Image
-                className="rounded-full"
-                src={profileimageSrc}
-                alt={profileName}
-                width={80}
-                height={80}
-              />
-            </div>
-            <p className="ml-4 font-bold text-aserto-grey-90">
-              {profileName} <br />{' '}
-              <span className="font-normal text-aserto-grey-60">
-                {companyName}
-              </span>{' '}
-            </p>
-          </div>
-        </div>
+      </div>
+      <div className="p-[30px] text-[18px]">
+        <h4 className="font-bold text-[22px]">{profileName}</h4>
+        <p>{companyInfo}</p>
+        <p className="my-[30px]">{quote}</p>
+        {/* <BlockContent
+          className="mt-10 px-2"
+          blocks={quote}
+        /> */}
       </div>
     </div>
   )

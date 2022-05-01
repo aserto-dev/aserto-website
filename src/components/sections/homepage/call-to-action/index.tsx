@@ -29,7 +29,7 @@ const CallToAction = () => {
           <div className="w-full">
             <img
               className="w-[80px] mb-[30px] mx-auto"
-              src="images/slack.svg"
+              src="images/slack-logo.svg"
               alt="Lottie"
             />
             <h4 className="text-[22px] font-semibold">Join our slack</h4>
