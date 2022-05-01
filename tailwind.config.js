@@ -162,5 +162,5 @@ module.exports = {
       opacity: ['group-hover']
     }
   },
-  plugins: [require('@tailwindcss/forms')]
+  plugins: [require('@tailwindcss/forms'), require('tailwind-scrollbar-hide')]
 }
