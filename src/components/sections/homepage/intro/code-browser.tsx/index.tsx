@@ -21,10 +21,9 @@ asertoAuthorizer := AsertoAuthorizer(...)
 router.Use(asertoAuthorizer.Handler)`,
   python: `from flask_aserto import AsertoMiddleware
 # ...
-@app.route('/protected_route/<parameter>', 
-  methods=['GET, POST'])
+@app.route('/protected_route/<parameter>', methods=['GET, POST'])
 @aserto.authorize`,
-  csharp: `using Microsoft.AspNetCore.Authorization;
+  java: `using Microsoft.AspNetCore.Authorization;
 using Aserto.AspNetCore.Middleware.Policies;
 using Aserto.AspNetCore.Middleware.Extensions;
 public void ConfigureServices(IServiceCollection services) {
@@ -75,10 +74,10 @@ const CodeBrowser = () => {
           onClick={() => setLanguage('python')}
         />
         <Tab
-          active={language === 'csharp'}
+          active={language === 'java'}
           language="ASP.Net"
           imgUrl="images/homepage/aspnet.svg"
-          onClick={() => setLanguage('csharp')}
+          onClick={() => setLanguage('java')}
         />
       </div>
     </div>
