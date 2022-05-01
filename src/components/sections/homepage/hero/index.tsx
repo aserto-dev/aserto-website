@@ -26,14 +26,14 @@ const Hero = () => {
         <Button
           variant="primary"
           size="sm"
-          className="inline-block h-[48px] px-[20px] items-center cursor-pointer text-[16px] self-center"
+          className="inline-flex w-[221px] h-[48px] px-[20px] justify-center items-center cursor-pointer text-[16px] self-center"
           onClick={() => setShowSignupModal(true)}
         >
           Get started free
         </Button>
         <Link
           href="/contact-engineer"
-          className="inline-block sm:mt-0 h-[48px] leading-[48px] px-[20px] text-[16px] font-semibold
+          className="inline-flex w-[221px] sm:mt-0 h-[48px] leading-[48px] px-[20px] text-[16px] font-semibold
           text-aserto-lochivar-accent-40 border-2 border-aserto-lochivar-100 rounded-[4px] self-center
           hover:border-aserto-lochivar-accent-10 hover:underline focus:text-aserto-lochivar-accent-20"
         >
