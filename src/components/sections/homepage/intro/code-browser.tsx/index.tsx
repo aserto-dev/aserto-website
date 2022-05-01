@@ -1,67 +1,82 @@
 import { useState } from 'react'
 import Tab from './tab'
+import { CodeBlock, monokai } from 'react-code-blocks'
 
 const snippets: Record<string, string> = {
-  nodejs: `const { jwtAuthz } = require("express-jwt-aserto");\nconst checkAuthz = jwtAuthz({ ... });\napp.get("/protectPath/:param", checkJwt, checkAuthz, async (req, res) => { ... }`,
-  go: `func AsertoAuthorizer(authClient authorizer.AuthorizerClient, policyID, policyRoot, decision string) *std.Middleware {
-    mw := std.New(
-      authClient,
-      middleware.Policy{
-        ID:       policyID,
-        Decision: decision,
-      },
-    )
-  
-    mw.Identity.JWT().FromHeader("Authorization")
-    mw.WithPolicyFromURL(policyRoot)
-    return mw
-  }
-  
-  // ...
-  
-  asertoAuthorizer := AsertoAuthorizer(...)
-  router.Use(asertoAuthorizer.Handler)`,
+  js: `const { jwtAuthz } = require("express-jwt-aserto");
+const checkAuthz = jwtAuthz({ ... });
+app.get("/protectPath/:param", checkJwt, checkAuthz, 
+  async (req, res) => { ... }`,
+  go: `func AsertoAuthorizer(
+  authClient authorizer.AuthorizerClient, policyID, 
+  policyRoot, decision string
+) *std.Middleware {
+  mw := std.New(
+    authClient,
+    middleware.Policy{
+      ID:       policyID,
+      Decision: decision,
+    },
+  )
+  mw.Identity.JWT().FromHeader("Authorization")
+  mw.WithPolicyFromURL(policyRoot)
+  return mw
+}
+
+// ...
+
+asertoAuthorizer := AsertoAuthorizer(...)
+router.Use(asertoAuthorizer.Handler)`,
   python: `from flask_aserto import AsertoMiddleware
-  # ...
-  @app.route('/protected_route/<parameter>', methods=['GET, POST'])
-  @aserto.authorize`,
-  aspnet: `using Microsoft.AspNetCore.Authorization;
-  using Aserto.AspNetCore.Middleware.Policies;
-  using Aserto.AspNetCore.Middleware.Extensions;
+# ...
+@app.route('/protected_route/<parameter>', 
+  methods=['GET, POST'])
+@aserto.authorize`,
+  csharp: `using Microsoft.AspNetCore.Authorization;
+using Aserto.AspNetCore.Middleware.Policies;
+using Aserto.AspNetCore.Middleware.Extensions;
+//...
+
+public void ConfigureServices(
+  IServiceCollection services) {
   //...
-  
-  public void ConfigureServices(IServiceCollection services)
-  {
-      //...
-      services.AddAsertoAuthorization(options => Configuration.GetSection("Aserto").Bind(options));
-  
-      services.AddAuthorization(options =>
-      {
-          var policy = new AuthorizationPolicyBuilder(CookieAuthenticationDefaults.AuthenticationScheme);
-          policy.AddRequirements(new AsertoDecisionRequirement());
-          options.DefaultPolicy = policy.Build();
-      });
-  
-      services.AddControllersWithViews();
-  }`
+  services.AddAsertoAuthorization(options => 
+    Configuration.GetSection("Aserto").Bind(options));
+
+  services.AddAuthorization(options => {
+    var policy = new AuthorizationPolicyBuilder(
+      CookieAuthenticationDefaults.
+        AuthenticationScheme);
+    policy.AddRequirements(
+      new AsertoDecisionRequirement());
+    options.DefaultPolicy = policy.Build();
+  });
+
+  services.AddControllersWithViews();
+}`
 }
 const CodeBrowser = () => {
-  const [language, setLanguage] = useState<string>('nodejs')
+  const [language, setLanguage] = useState<string>('js')
   return (
     <div className="relative">
-      <div className="w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px] items-center overflow-scroll border border-aserto-grey-70 rounded-[6px]">
-        <pre>
-          <code className="text-white border-0 bg-aserto-black">
-            {snippets[language]}
-          </code>
-        </pre>
+      <div
+        className="codeblock w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px]
+        items-center overflow-scroll border border-aserto-grey-70 rounded-[6px] p-[10px]"
+      >
+        <CodeBlock
+          codeblock
+          language={language}
+          showLineNumbers={false}
+          text={snippets[language]}
+          theme={monokai}
+        />
       </div>
       <div className="flex gap-[4px]">
         <Tab
-          active={language === 'nodejs'}
+          active={language === 'js'}
           language="Node.js"
           imgUrl="images/quickstarts/nodejs.svg"
-          onClick={() => setLanguage('nodejs')}
+          onClick={() => setLanguage('js')}
         />
         <Tab
           active={language === 'go'}
@@ -76,10 +91,10 @@ const CodeBrowser = () => {
           onClick={() => setLanguage('python')}
         />
         <Tab
-          active={language === 'aspnet'}
+          active={language === 'csharp'}
           language="ASP.Net"
           imgUrl="images/homepage/aspnet.svg"
-          onClick={() => setLanguage('aspnet')}
+          onClick={() => setLanguage('csharp')}
         />
       </div>
     </div>
