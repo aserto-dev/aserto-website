@@ -58,7 +58,7 @@ const HomePage = ({
           </div>
           <div className="p-[20px] bg-aserto-grey-20 rounded-[6px]">
             <h4 className="font-bold pb-[10px] text-[22px]">
-              Requirements will evolve as your company grows
+              Requirements constantly evolve
             </h4>
             <p className="text-[18px] leading-[28px]">
               {`Custom roles. Custom attributes. Integration with enterprise
