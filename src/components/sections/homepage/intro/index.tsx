@@ -101,7 +101,7 @@ const Intro = () => {
         <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
         <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
           <p>
-            Open source authorizer based on LF/CNCF{' '}
+            Open source toolchain based on LF/CNCF{' '}
             <br className="hidden md:block" />
             Projects such as OPA, OCI, and Sigstore.
           </p>

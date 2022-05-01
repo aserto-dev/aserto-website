@@ -177,7 +177,7 @@ const Benefits = () => {
             </p>
             <br />
             <p className="text-[20px] md:w-[500px] text-center md:text-left mx-4">
-              Open source authorizer and toolchain you can use standalone, or
+              Open source toolchain you can use standalone, or
               manage using our control plane.
             </p>
           </div>
