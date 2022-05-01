@@ -6,52 +6,35 @@ const snippets: Record<string, string> = {
   js: `const { jwtAuthz } = require("express-jwt-aserto")
 const checkAuthz = jwtAuthz({ ... })
 app.get("/protectPath/:param", checkJwt, checkAuthz, 
-  async (req, res) => { ... })`,
-  go: `func AsertoAuthorizer(
-  authClient authorizer.AuthorizerClient, policyID, 
-  policyRoot, decision string
-) *std.Middleware {
-  mw := std.New(
-    authClient,
-    middleware.Policy{
-      ID:       policyID,
-      Decision: decision,
-    },
+  async (req, res) => { ... }
+)`,
+  go: `func AsertoAuthorizer(authClient authorizer.AuthorizerClient, 
+  policyID, policyRoot, decision string) *std.Middleware {
+  mw := std.New(authClient, middleware.Policy{
+      ID: policyID, Decision: decision },
   )
   mw.Identity.JWT().FromHeader("Authorization")
   mw.WithPolicyFromURL(policyRoot)
   return mw
 }
-
-// ...
-
 asertoAuthorizer := AsertoAuthorizer(...)
 router.Use(asertoAuthorizer.Handler)`,
   python: `from flask_aserto import AsertoMiddleware
 # ...
-@app.route('/protected_route/<parameter>', 
-  methods=['GET, POST'])
+@app.route('/protected_route/<parameter>', methods=['GET, POST'])
 @aserto.authorize`,
-  csharp: `using Microsoft.AspNetCore.Authorization;
+  java: `using Microsoft.AspNetCore.Authorization;
 using Aserto.AspNetCore.Middleware.Policies;
 using Aserto.AspNetCore.Middleware.Extensions;
-//...
-
-public void ConfigureServices(
-  IServiceCollection services) {
-  //...
+public void ConfigureServices(IServiceCollection services) {
   services.AddAsertoAuthorization(options => 
     Configuration.GetSection("Aserto").Bind(options));
-
   services.AddAuthorization(options => {
     var policy = new AuthorizationPolicyBuilder(
-      CookieAuthenticationDefaults.
-        AuthenticationScheme);
-    policy.AddRequirements(
-      new AsertoDecisionRequirement());
+      CookieAuthenticationDefaults.AuthenticationScheme);
+    policy.AddRequirements(new AsertoDecisionRequirement());
     options.DefaultPolicy = policy.Build();
   });
-
   services.AddControllersWithViews();
 }`
 }
@@ -60,7 +43,7 @@ const CodeBrowser = () => {
   return (
     <div className="relative">
       <div
-        className="codeblock w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px]
+        className="codeblock w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px] text-sm
         items-center overflow-scroll border border-aserto-grey-70 rounded-[6px] p-[10px]"
       >
         <CodeBlock
@@ -91,10 +74,10 @@ const CodeBrowser = () => {
           onClick={() => setLanguage('python')}
         />
         <Tab
-          active={language === 'csharp'}
+          active={language === 'java'}
           language="ASP.Net"
           imgUrl="images/homepage/aspnet.svg"
-          onClick={() => setLanguage('csharp')}
+          onClick={() => setLanguage('java')}
         />
       </div>
     </div>
