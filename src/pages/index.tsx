@@ -24,12 +24,12 @@ const HomePage = ({
       footer="regular"
       headProps={{
         title: 'Aserto',
-        description: 'Welcome to modern authorization',
+        description: 'The fastest path to enterprise-grade authorization',
         image: 'images/og.png'
       }}
     >
       <CustomHead
-        title="Aserto - Welcome to modern authorization"
+        title="Aserto - The fastest path to enterprise-grade authorization"
         description="Aserto provides cloud-native authorization as a service for developers"
         image="images/og.png"
       />
