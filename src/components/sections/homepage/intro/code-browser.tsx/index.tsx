@@ -3,10 +3,10 @@ import Tab from './tab'
 import { CodeBlock, monokai } from 'react-code-blocks'
 
 const snippets: Record<string, string> = {
-  js: `const { jwtAuthz } = require("express-jwt-aserto");
-const checkAuthz = jwtAuthz({ ... });
+  js: `const { jwtAuthz } = require("express-jwt-aserto")
+const checkAuthz = jwtAuthz({ ... })
 app.get("/protectPath/:param", checkJwt, checkAuthz, 
-  async (req, res) => { ... }`,
+  async (req, res) => { ... })`,
   go: `func AsertoAuthorizer(
   authClient authorizer.AuthorizerClient, policyID, 
   policyRoot, decision string
