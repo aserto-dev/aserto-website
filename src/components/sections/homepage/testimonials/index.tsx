@@ -8,6 +8,7 @@ const Testimonials = () => {
   const settings = {
     dots: true,
     infinite: false,
+    mobileFirst: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,

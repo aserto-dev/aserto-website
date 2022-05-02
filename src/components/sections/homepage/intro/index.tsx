@@ -9,11 +9,11 @@ const Intro = () => {
         Powerful authorization-as-a-service,
         <br /> built to evolve with your customer requirements.
       </h1>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Zero-to-RBAC in under a day <br className="hidden md:block" />
+            Zero-to-RBAC in under a day <br className="hidden xl:block" />
             for any language or framework.
           </p>
           <Link
@@ -23,18 +23,18 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative md:flex md:flex-row md:justify-center">
           <CodeBrowser />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:order-2 xl:translate-y-1/3 mb-8 mx-4">
           <p>
             Scale up to enterprise requirements with{' '}
-            <br className="hidden md:block" />
+            <br className="hidden xl:block" />
             deep IDP integration, ABAC, fine-grained{' '}
-            <br className="hidden md:block" />
+            <br className="hidden xl:block" />
             access control, audit trails, and custom roles.
           </p>
           <Link
@@ -44,21 +44,21 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/elastic-rego.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:translate-y-1/3 mb-8 mx-4">
           <p>
             Deploy the authorizer as a sidecar or{' '}
-            <br className="hidden md:block" />
+            <br className="hidden xl:block" />
             microservice in your cloud, providing{' '}
-            <br className="hidden md:block" />
+            <br className="hidden xl:block" />
             millisecond latency and 100% availability.
           </p>
           <Link
@@ -68,20 +68,21 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/kubernetes-pod.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:order-2 xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Integrate with your identity provider,{' '}
-            <br className="hidden md:block" />
-            artifact registry, logging system, tech stack.
+            Integrate with your identity provider, artifact registry,{' '}
+            <span className="whitespace-nowrap">
+              logging system, tech stack.
+            </span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
@@ -90,20 +91,19 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/aserto-control-plane.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Open source toolchain based on LF/CNCF{' '}
-            <br className="hidden md:block" />
-            Projects such as OPA, OCI, and Sigstore.
+            Open source toolchain based on LF/CNCF Projects such as{' '}
+            <span className="whitespace-nowrap">OPA, OCI, and Sigstore.</span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
@@ -112,20 +112,21 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/authorizer.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center xl:text-left xl:order-2 xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Leverage familiar container workflows,{' '}
-            <br className="hidden md:block" />
-            policy-as-code, and GitOps best practices.
+            Leverage familiar container workflows, policy-as-code,{' '}
+            <span className="whitespace-nowrap">
+              and GitOps best practices.
+            </span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
@@ -134,7 +135,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/source-code-workflows.png"

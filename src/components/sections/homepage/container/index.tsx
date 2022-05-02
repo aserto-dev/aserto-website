@@ -7,7 +7,9 @@ interface Props {
 
 const Container = ({ children, className }: Props) => (
   <section className={clsx('relative px-4', className)}>
-    <div className="max-w-screen-xl mx-auto">{children}</div>
+    <div className="lg:max-w-screen-md xl:max-w-screen-xl mx-auto">
+      {children}
+    </div>
   </section>
 )
 
