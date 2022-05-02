@@ -23,7 +23,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row justify-center">
           <CodeBrowser />
         </div>
       </div>
@@ -44,7 +44,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative xl:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/elastic-rego.png"
@@ -68,7 +68,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/kubernetes-pod.png"
@@ -90,7 +90,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative xl:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/aserto-control-plane.png"
@@ -101,7 +101,7 @@ const Intro = () => {
         <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
         <div className="text-center xl:text-left xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Open source authorizer based on LF/CNCF{' '}
+            Open source toolchain based on LF/CNCF{' '}
             <br className="hidden xl:block" />
             Projects such as OPA, OCI, and Sigstore.
           </p>
@@ -112,7 +112,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/authorizer.png"
@@ -134,7 +134,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative xl:order-1">
+        <div className="relative xl:order-1 flex flex-row justify-center">
           <img
             className="w-[700px]"
             src="images/homepage/intro/source-code-workflows.png"
