@@ -23,7 +23,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative flex flex-row justify-center">
+        <div className="relative md:flex md:flex-row md:justify-center">
           <CodeBrowser />
         </div>
       </div>
