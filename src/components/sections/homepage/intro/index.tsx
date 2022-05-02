@@ -9,11 +9,11 @@ const Intro = () => {
         Powerful authorization-as-a-service,
         <br /> built to evolve with your customer requirements.
       </h1>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:translate-y-1/3 mb-8 mx-4">
           <p>
-            Zero-to-RBAC in under a day <br className="hidden md:block" />
+            Zero-to-RBAC in under a day <br className="hidden lg:block" />
             for any language or framework.
           </p>
           <Link
@@ -27,14 +27,14 @@ const Intro = () => {
           <CodeBrowser />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:order-2 lg:translate-y-1/3 mb-8 mx-4">
           <p>
             Scale up to enterprise requirements with{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             deep IDP integration, ABAC, fine-grained{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             access control, audit trails, and custom roles.
           </p>
           <Link
@@ -44,21 +44,21 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative lg:order-1">
           <img
             className="w-[700px]"
             src="images/homepage/intro/elastic-rego.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:translate-y-1/3 mb-8 mx-4">
           <p>
             Deploy the authorizer as a sidecar or{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             microservice in your cloud, providing{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             millisecond latency and 100% availability.
           </p>
           <Link
@@ -75,12 +75,12 @@ const Intro = () => {
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:order-2 lg:translate-y-1/3 mb-8 mx-4">
           <p>
             Integrate with your identity provider,{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             artifact registry, logging system, tech stack.
           </p>
           <Link
@@ -90,19 +90,19 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative lg:order-1">
           <img
             className="w-[700px]"
             src="images/homepage/intro/aserto-control-plane.png"
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:translate-y-1/3 mb-8 mx-4">
           <p>
-            Open source toolchain based on LF/CNCF{' '}
-            <br className="hidden md:block" />
+            Open source authorizer based on LF/CNCF{' '}
+            <br className="hidden lg:block" />
             Projects such as OPA, OCI, and Sigstore.
           </p>
           <Link
@@ -119,12 +119,12 @@ const Intro = () => {
           />
         </div>
       </div>
-      <div className="relative flex flex-col md:flex-row justify-evenly mb-40 md:mb-72 text-[20px] font-semibold">
-        <div className="-z-10 hidden md:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-        <div className="text-center md:text-left md:order-2 md:translate-y-1/3 mb-8 mx-4">
+      <div className="relative flex flex-col lg:flex-row justify-evenly mb-40 lg:mb-72 text-[20px] font-semibold">
+        <div className="-z-10 hidden lg:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
+        <div className="text-center lg:text-left lg:order-2 lg:translate-y-1/3 mb-8 mx-4">
           <p>
             Leverage familiar container workflows,{' '}
-            <br className="hidden md:block" />
+            <br className="hidden lg:block" />
             policy-as-code, and GitOps best practices.
           </p>
           <Link
@@ -134,7 +134,7 @@ const Intro = () => {
             {`Learn more >`}
           </Link>
         </div>
-        <div className="relative md:order-1">
+        <div className="relative lg:order-1">
           <img
             className="w-[700px]"
             src="images/homepage/intro/source-code-workflows.png"
