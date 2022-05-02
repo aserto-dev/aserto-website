@@ -145,10 +145,7 @@ const Benefits = () => {
             </p>
           </div>
           <div className="xl:relative flex flex-row justify-center">
-            <img
-              className="w-[700px]"
-              src="https://raw.githubusercontent.com/opcr-io/policy/main/assets/demo-policy.gif"
-            />
+            <img className="w-[700px]" src="images/benefits/demo-policy.gif" />
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
