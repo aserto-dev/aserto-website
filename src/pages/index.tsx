@@ -35,7 +35,7 @@ const HomePage = ({
       />
       <Hero />
       <Intro />
-      <Container className="px-[65px] py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
+      <Container className="py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           {`Don't build undifferentiated plumbing`}
         </h2>
@@ -44,7 +44,7 @@ const HomePage = ({
           src="images/homepage/wheel-man.svg"
           alt="Reinventing the wheel"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4 sm:px-0 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
           <div className="p-[18px] bg-aserto-grey-20 rounded-[6px]">
             <h4 className="font-bold pb-[10px] text-[22px]">
               Authorization is complex
@@ -76,7 +76,7 @@ const HomePage = ({
           </div>
         </div>
       </Container>
-      <Container className="px-[65px] py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
+      <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           Built by developers, for developers
         </h2>

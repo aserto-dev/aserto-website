@@ -28,7 +28,7 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:translate-y-1/3 mb-8">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:translate-y-1/3 mb-8">
             <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
               Get started easily by importing your permissions from your API
               contracts.
@@ -49,14 +49,14 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-100 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:order-2 xl:translate-y-1/3 mb-8">
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:order-2 xl:translate-y-1/3 mb-8">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               Easily evolve from simple RBAC to enterprise-ready ABAC and
               fine-grained access control access control, audit trails, and
               custom roles.
             </p>
             <br />
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               Create policies that both control access and drive front-end
               behavior.
             </p>
@@ -71,7 +71,7 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:translate-y-1/3 mb-8">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:translate-y-1/3 mb-8">
             <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
               Use our hosted authorizer to develop your application without
               deploying anything.
@@ -92,12 +92,12 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-100 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:order-2 xl:translate-y-1/3 mb-8">
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:order-2 xl:translate-y-1/3 mb-8">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               API-first design with gRPC and REST bindings for every operation.
             </p>
             <br />
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               SDKs for popular languages and frameworks - node.js, Golang,
               gorilla/mux, python, flask, .NET, React, and more coming every
               week.
@@ -113,7 +113,7 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:translate-y-1/3 mb-8">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:translate-y-1/3 mb-8">
             <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
               Connect your identity providers to the Aserto directory as the
               source of truth for user data.
@@ -134,7 +134,7 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:translate-y-1/3 mb-8">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:translate-y-1/3 mb-8">
             <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
               Create a policy-as-code workflow using your source code provider.
             </p>
@@ -157,13 +157,13 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-100 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:order-2 xl:translate-y-1/3 mb-8">
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:order-2 xl:translate-y-1/3 mb-8">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               Accelerate your path to SOC 2 and ISO 27001 with centralized audit
               trails for every authorization decision.
             </p>
             <br />
-            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
+            <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4 xl:ml-auto">
               Stream your decision logs into your log management systems / SIEM.
             </p>
           </div>
@@ -176,7 +176,7 @@ const Benefits = () => {
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
-          <div className="xl:translate-y-1/3 mb-8">
+          <div className="sm:w-9/12 lg:w-1/2 mx-auto xl:translate-y-1/3 mb-8">
             <p className="text-[20px] xl:w-[500px] text-center xl:text-left mx-4">
               Leverages the best of the open cloud native ecosystem.
             </p>
