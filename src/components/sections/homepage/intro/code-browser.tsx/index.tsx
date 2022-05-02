@@ -43,7 +43,7 @@ const CodeBrowser = () => {
   return (
     <div className="relative">
       <div
-        className="codeblock w-full sm:w-[700px] h-[285px] bg-aserto-black my-[10px] text-sm
+        className="codeblock w-full sm:w-[700px] h-[287px] bg-aserto-black my-[10px] text-sm
         items-center overflow-scroll border border-aserto-grey-70 rounded-[6px] p-[10px] scrollbar-hide"
       >
         <CodeBlock
