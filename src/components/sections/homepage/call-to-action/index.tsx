@@ -25,7 +25,7 @@ const CallToAction = () => {
         <h2 className="text-[36px] pb-[50px] font-medium">
           Join the community
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 xl:gap-80 py-[45px] px-[50px]">
+        <div className="grid sm:grid-rows-2 sm:grid-flow-col xl:gap-x-80 gap-12 py-[45px] px-[50px]">
           <div className="w-full">
             <img
               className="w-[80px] mb-[30px] mx-auto"
@@ -34,9 +34,11 @@ const CallToAction = () => {
             />
             <h4 className="text-[22px] font-semibold">Join our slack</h4>
             <p className="text-[18px]">
-              Discuss authorization patterns, get answers, and interact with our
-              growing community.
+              Discuss authorization patterns, get answers, and engage with our
+              community.
             </p>
+          </div>
+          <div>
             <Button
               variant="primary"
               size="sm"
@@ -61,6 +63,8 @@ const CallToAction = () => {
               Get the latest technology articles and company updates in your
               inbox.
             </p>
+          </div>
+          <div>
             <Button
               variant="primary"
               size="sm"
