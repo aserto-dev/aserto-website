@@ -44,7 +44,8 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Industrial-strength policy engine under the hood
+          Industrial-strength policy engine{' '}
+          <span className="whitespace-nowrap">under the hood</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-100 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -65,7 +66,8 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          The same authorizer, deployed in our cloud or yours
+          The same authorizer, deployed in{' '}
+          <span className="whitespace-nowrap">our cloud or yours</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -106,7 +108,8 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Picks up where your identity provider leaves off
+          Picks up where your identity provider{' '}
+          <span className="whitespace-nowrap">leaves off</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -126,7 +129,8 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Treat policies as code, and build them into immutable, signed images
+          Treat policies as code, and build them into immutable,{' '}
+          <span className="whitespace-nowrap">signed images</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -148,7 +152,8 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Enterprise-ready audit trails for every authorization decision
+          Enterprise-ready audit trails for every{' '}
+          <span className="whitespace-nowrap">authorization decision</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-100 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
@@ -167,7 +172,7 @@ const Benefits = () => {
           </div>
         </div>
         <h1 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-          Built on an open foundation
+          Built on an <span className="whitespace-nowrap">open foundation</span>
         </h1>
         <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
           <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>

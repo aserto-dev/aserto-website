@@ -25,7 +25,7 @@ const CallToAction = () => {
         <h2 className="text-[36px] pb-[50px] font-medium">
           Join the community
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-80 py-[45px] px-[50px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 xl:gap-80 py-[45px] px-[50px]">
           <div className="w-full">
             <img
               className="w-[80px] mb-[30px] mx-auto"

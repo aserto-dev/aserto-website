@@ -79,9 +79,10 @@ const Intro = () => {
         <div className="-z-10 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
         <div className="text-center xl:text-left xl:order-2 xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Integrate with your identity provider,{' '}
-            <br className="hidden xl:block" />
-            artifact registry, logging system, tech stack.
+            Integrate with your identity provider, artifact registry,{' '}
+            <span className="whitespace-nowrap">
+              logging system, tech stack.
+            </span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
@@ -101,9 +102,8 @@ const Intro = () => {
         <div className="-z-10 hidden xl:block absolute right-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
         <div className="text-center xl:text-left xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Open source toolchain based on LF/CNCF{' '}
-            <br className="hidden xl:block" />
-            Projects such as OPA, OCI, and Sigstore.
+            Open source toolchain based on LF/CNCF Projects such as{' '}
+            <span className="whitespace-nowrap">OPA, OCI, and Sigstore.</span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
@@ -123,9 +123,10 @@ const Intro = () => {
         <div className="-z-10 hidden xl:block absolute left-0 -top-1/4 w-[500px] h-[500px] bg-homepageGlow"></div>
         <div className="text-center xl:text-left xl:order-2 xl:translate-y-1/3 mb-8 mx-4">
           <p>
-            Leverage familiar container workflows,{' '}
-            <br className="hidden xl:block" />
-            policy-as-code, and GitOps best practices.
+            Leverage familiar container workflows, policy-as-code,{' '}
+            <span className="whitespace-nowrap">
+              and GitOps best practices.
+            </span>
           </p>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
