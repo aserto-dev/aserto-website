@@ -1058,6 +1058,52 @@ export type IntFilter = {
   lte?: Maybe<Scalars['Int']>;
 };
 
+export type Integration = Document & {
+  __typename?: 'Integration';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  technology?: Maybe<Scalars['String']>;
+  titleRaw?: Maybe<Scalars['JSON']>;
+  logo?: Maybe<MainImage>;
+  slug?: Maybe<Slug>;
+  bodyRaw?: Maybe<Scalars['JSON']>;
+};
+
+export type IntegrationFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  technology?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+  slug?: Maybe<SlugFilter>;
+};
+
+export type IntegrationSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  technology?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
+  slug?: Maybe<SlugSorting>;
+};
+
 export type InvestorBlock = {
   __typename?: 'InvestorBlock';
   _key?: Maybe<Scalars['String']>;
@@ -1461,6 +1507,7 @@ export type RootQuery = {
   Pricing?: Maybe<Pricing>;
   EventsPage?: Maybe<EventsPage>;
   Event?: Maybe<Event>;
+  Integration?: Maybe<Integration>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1480,6 +1527,7 @@ export type RootQuery = {
   allPricing: Array<Pricing>;
   allEventsPage: Array<EventsPage>;
   allEvent: Array<Event>;
+  allIntegration: Array<Integration>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1562,6 +1610,11 @@ export type RootQueryEventsPageArgs = {
 
 
 export type RootQueryEventArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryIntegrationArgs = {
   id: Scalars['ID'];
 };
 
@@ -1704,6 +1757,14 @@ export type RootQueryAllEventsPageArgs = {
 export type RootQueryAllEventArgs = {
   where?: Maybe<EventFilter>;
   sort?: Maybe<Array<EventSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllIntegrationArgs = {
+  where?: Maybe<IntegrationFilter>;
+  sort?: Maybe<Array<IntegrationSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2384,6 +2445,24 @@ export type ImageFragment = (
   )> }
 );
 
+export type IntegrationMetaFragment = (
+  { __typename?: 'Integration' }
+  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw'>
+  & { logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )> }
+);
+
+export type IntegrationFragment = (
+  { __typename?: 'Integration' }
+  & Pick<Integration, 'bodyRaw'>
+  & IntegrationMetaFragment
+);
+
 export type PostMetaFragment = (
   { __typename?: 'Post' }
   & Pick<Post, '_id' | 'publishedAt' | 'title' | 'excerptRaw'>
@@ -2806,6 +2885,55 @@ export type HomePageQuery = (
   )> }
 );
 
+export type IntegrationsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IntegrationsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allIntegration: Array<(
+    { __typename?: 'Integration' }
+    & IntegrationMetaFragment
+  )> }
+);
+
+export type IntegrationIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IntegrationIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allIntegration: Array<(
+    { __typename?: 'Integration' }
+    & IntegrationMetaFragment
+  )> }
+);
+
+export type IntegrationPathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type IntegrationPathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allIntegration: Array<(
+    { __typename?: 'Integration' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type IntegrationQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type IntegrationQuery = (
+  { __typename?: 'RootQuery' }
+  & { allIntegration: Array<(
+    { __typename?: 'Integration' }
+    & IntegrationFragment
+  )> }
+);
+
 export type NewsItemFragment = (
   { __typename?: 'NewsBlock' }
   & Pick<NewsBlock, 'titleRaw' | 'publication' | 'publishedOn' | 'url'>
@@ -2979,6 +3107,26 @@ export const EventFragmentDoc = gql`
   }
 }
     ${ImageFragmentDoc}`;
+export const IntegrationMetaFragmentDoc = gql`
+    fragment IntegrationMeta on Integration {
+  _id
+  _createdAt
+  technology
+  logo {
+    ...Image
+  }
+  titleRaw
+  slug {
+    current
+  }
+}
+    ${ImageFragmentDoc}`;
+export const IntegrationFragmentDoc = gql`
+    fragment Integration on Integration {
+  ...IntegrationMeta
+  bodyRaw
+}
+    ${IntegrationMetaFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -3422,6 +3570,36 @@ export const HomePageDocument = gql`
 }
     ${HomePageFragmentDoc}
 ${CaseStudyMetaFragmentDoc}`;
+export const IntegrationsDocument = gql`
+    query Integrations {
+  allIntegration(sort: {_createdAt: DESC}) {
+    ...IntegrationMeta
+  }
+}
+    ${IntegrationMetaFragmentDoc}`;
+export const IntegrationIndexDocument = gql`
+    query IntegrationIndex {
+  allIntegration(sort: {_createdAt: DESC}) {
+    ...IntegrationMeta
+  }
+}
+    ${IntegrationMetaFragmentDoc}`;
+export const IntegrationPathsDocument = gql`
+    query IntegrationPaths {
+  allIntegration {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const IntegrationDocument = gql`
+    query Integration($slug: String!) {
+  allIntegration(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...Integration
+  }
+}
+    ${IntegrationFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {
@@ -3498,6 +3676,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     HomePage(variables?: HomePageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomePageQuery>(HomePageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'HomePage');
+    },
+    Integrations(variables?: IntegrationsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<IntegrationsQuery>(IntegrationsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Integrations');
+    },
+    IntegrationIndex(variables?: IntegrationIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<IntegrationIndexQuery>(IntegrationIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'IntegrationIndex');
+    },
+    IntegrationPaths(variables?: IntegrationPathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationPathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<IntegrationPathsQuery>(IntegrationPathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'IntegrationPaths');
+    },
+    Integration(variables: IntegrationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<IntegrationQuery>(IntegrationDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Integration');
     },
     NewsPage(variables?: NewsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NewsPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NewsPageQuery>(NewsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NewsPage');

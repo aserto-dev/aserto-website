@@ -1,0 +1,25 @@
+query Integrations {
+  allIntegration(sort: { _createdAt: DESC }) {
+    ...IntegrationMeta
+  }
+}
+
+query IntegrationIndex {
+  allIntegration(sort: { _createdAt: DESC }) {
+    ...IntegrationMeta
+  }
+}
+
+query IntegrationPaths {
+  allIntegration {
+    slug {
+      current
+    }
+  }
+}
+
+query Integration($slug: String!) {
+  allIntegration(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...Integration
+  }
+}
