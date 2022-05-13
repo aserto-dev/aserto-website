@@ -34,7 +34,7 @@ export const getStaticPaths = async () => {
   const { allIntegration } = await cms().IntegrationPaths()
   return {
     paths:
-    allIntegration?.map((integration) => ({
+      allIntegration?.map((integration) => ({
         params: { slug: integration.slug?.current as string }
       })) ?? [],
     fallback: false
