@@ -29,7 +29,7 @@ const CallToAction = () => {
           <div className="w-full">
             <img
               className="w-[80px] mb-[30px] mx-auto"
-              src="images/slack-logo.svg"
+              src="/images/slack-logo.svg"
               alt="Lottie"
             />
             <h4 className="text-[22px] font-semibold">Join our slack</h4>
@@ -53,7 +53,7 @@ const CallToAction = () => {
           <div className="w-full">
             <img
               className="w-[80px] mb-[30px] mx-auto"
-              src="images/aserto-logo.png"
+              src="/images/aserto-logo.png"
               alt="Aserto Logo"
             />
             <h4 className="text-[22px] font-semibold">
@@ -82,7 +82,7 @@ const CallToAction = () => {
         <div>
           <img
             className="w-[480px] h-[350px] object-cover mx-auto"
-            src="images/lottie.png"
+            src="/images/lottie.png"
             alt="Lottie"
           />
           <h2 className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</h2>

@@ -1,0 +1,53 @@
+.body {
+  font-family: theme('fontFamily.roboto');
+  line-height: theme('lineHeight.loose');
+
+  color: theme('colors.aserto.grey.60');
+
+  p {
+    @apply my-8 text-lg leading-relaxed;
+
+    strong {
+      @apply text-aserto-grey-90;
+    }
+
+    code {
+      overflow-x: scroll;
+      @apply text-aserto-grey-90;
+    }  
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-aserto-grey-90 mt-12 mb-8;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-[22px] tracking-normal;
+  }
+
+  ul,
+  ol {
+    padding-left: 24px;
+
+    list-style: initial;
+    @apply space-y-2;
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  a {
+    @apply whitespace-nowrap text-aserto-lochivar-accent-40 hover:underline active:text-aserto-lochivar-accent-50;
+  }
+}

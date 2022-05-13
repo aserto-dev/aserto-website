@@ -1,0 +1,17 @@
+fragment IntegrationMeta on Integration {
+  _id
+  _createdAt
+  technology
+  logo {
+    ...Image
+  }
+  titleRaw
+  slug {
+    current
+  }
+}
+
+fragment Integration on Integration {
+  ...IntegrationMeta
+  bodyRaw
+}
