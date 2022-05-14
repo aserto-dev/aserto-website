@@ -22,13 +22,13 @@ const CaseStudy = ({ integration }: Props) => {
       </div>
 
       {/* logo and impact */}
-      <div className="bg-white rounded-[6px]">
+      <div className="bg-aserto-grey-5 rounded-[6px]">
         <div className="flex items-center justify-center py-12">
           <Image
             src={integration.logo?.asset?.url || '/404'}
             alt="Technology logo"
-            width={280}
-            height={176}
+            width={795}
+            height={154}
             layout="native"
           />
         </div>
@@ -37,7 +37,7 @@ const CaseStudy = ({ integration }: Props) => {
       {/* title */}
       <BlockContent
         blocks={integration.titleRaw}
-        className="mt-5 mb-10 text-center text-5xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20"
+        className="mt-5 mb-10 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20"
       />
 
       <div className="px-5">
