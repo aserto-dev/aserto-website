@@ -11,8 +11,9 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer="regular"
       headProps={{
-        title: 'Frequently Asked Questions - Aserto',
+        title: page.metadata?.title ?? 'Frequently Asked Questions - Aserto',
         description:
+          page.metadata?.description ??
           'Frequently asked questions about authentication and authorization',
         image: 'images/og.png'
       }}

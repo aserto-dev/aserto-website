@@ -9,6 +9,10 @@ fragment NewsItem on NewsBlock {
 }
 
 fragment NewsPage on News {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   newsEntries {

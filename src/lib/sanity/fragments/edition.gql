@@ -1,6 +1,10 @@
 fragment Edition on Edition {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   index
   title
   description

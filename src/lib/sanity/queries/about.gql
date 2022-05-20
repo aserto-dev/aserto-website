@@ -26,6 +26,10 @@ fragment Investor on InvestorBlock {
 }
 
 fragment AboutPage on About {
+  metadata {
+    title
+    description
+  }
   title
   subtitleRaw
   foundersSectionTitle

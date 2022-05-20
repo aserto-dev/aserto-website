@@ -19,8 +19,12 @@ const IntegrationPage = ({ integration }: Props) => {
       contain
       footer="regular"
       headProps={{
-        title: `Aserto - integration with ${integration.technology}`,
-        description: `Aserto technology integration with ${integration.technology}`,
+        title:
+          integration.metadata?.title ??
+          `Aserto - integration with ${integration.technology}`,
+        description:
+          integration.metadata?.description ??
+          `Aserto technology integration with ${integration.technology}`,
         image: 'images/og.png'
       }}
     >

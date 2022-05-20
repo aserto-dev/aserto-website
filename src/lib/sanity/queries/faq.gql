@@ -8,6 +8,10 @@ fragment FaqItem on FaqBlock {
 
 query FaqPage {
   allFaq(sort: { _createdAt: DESC }, limit: 1) {
+    metadata {
+      title
+      description
+    }
     title
     subtitle
     faqs {

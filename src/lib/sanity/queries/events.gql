@@ -1,4 +1,8 @@
 fragment EventsPage on EventsPage {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
 }

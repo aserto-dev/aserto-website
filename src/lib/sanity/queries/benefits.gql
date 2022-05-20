@@ -1,0 +1,17 @@
+fragment BenefitsPage on Benefits {
+  metadata {
+    title
+    description
+  }
+  title
+  youtubeUrl
+  benefit {
+    ...SectionBlock
+  }
+}
+
+query BenefitsPage {
+  allBenefits(sort: { _createdAt: DESC }, limit: 1) {
+    ...BenefitsPage
+  }
+}

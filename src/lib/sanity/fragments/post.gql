@@ -1,5 +1,9 @@
 fragment PostMeta on Post {
   _id
+  metadata {
+    title
+    description
+  }
   publishedAt
   mainImage {
     ...Image

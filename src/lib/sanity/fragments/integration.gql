@@ -1,6 +1,10 @@
 fragment IntegrationMeta on Integration {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   technology
   logo {
     ...Image

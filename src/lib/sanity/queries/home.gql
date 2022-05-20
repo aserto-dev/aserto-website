@@ -1,4 +1,8 @@
 fragment HomePage on Home {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   slogan {
