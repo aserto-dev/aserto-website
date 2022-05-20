@@ -35,6 +35,7 @@ export type About = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
   foundersSectionTitle?: Maybe<Scalars['String']>;
@@ -66,6 +67,7 @@ export type AboutFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   foundersSectionTitle?: Maybe<StringFilter>;
   foundersSectionSubtitle?: Maybe<StringFilter>;
@@ -90,6 +92,7 @@ export type AboutSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   foundersSectionTitle?: Maybe<SortOrder>;
   foundersSectionSubtitle?: Maybe<SortOrder>;
@@ -120,6 +123,7 @@ export type Author = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   name?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
@@ -136,6 +140,7 @@ export type AuthorFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   name?: Maybe<StringFilter>;
   position?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
@@ -167,10 +172,56 @@ export type AuthorSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   name?: Maybe<SortOrder>;
   position?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
   image?: Maybe<MainImageSorting>;
+};
+
+export type Benefits = Document & {
+  __typename?: 'Benefits';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  title?: Maybe<Scalars['String']>;
+  youtubeUrl?: Maybe<Scalars['String']>;
+  benefit?: Maybe<Array<Maybe<SectionBlock>>>;
+};
+
+export type BenefitsFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  title?: Maybe<StringFilter>;
+  youtubeUrl?: Maybe<StringFilter>;
+};
+
+export type BenefitsSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  title?: Maybe<SortOrder>;
+  youtubeUrl?: Maybe<SortOrder>;
 };
 
 export type Block = {
@@ -233,6 +284,7 @@ export type Careers = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   firstSubtitle?: Maybe<Scalars['String']>;
   facts?: Maybe<Array<Maybe<FeatureItem>>>;
@@ -262,6 +314,7 @@ export type CareersFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   firstSubtitle?: Maybe<StringFilter>;
   cultureSectionTitle?: Maybe<StringFilter>;
@@ -278,6 +331,7 @@ export type CareersSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   firstSubtitle?: Maybe<SortOrder>;
   cultureSectionTitle?: Maybe<SortOrder>;
@@ -300,6 +354,7 @@ export type CaseStudiesPage = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
 };
@@ -313,6 +368,7 @@ export type CaseStudiesPageFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
 };
@@ -324,6 +380,7 @@ export type CaseStudiesPageSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
 };
@@ -341,6 +398,7 @@ export type CaseStudy = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   company?: Maybe<Scalars['String']>;
   titleRaw?: Maybe<Scalars['JSON']>;
   logo?: Maybe<MainImage>;
@@ -362,6 +420,7 @@ export type CaseStudyFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   company?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
@@ -375,6 +434,7 @@ export type CaseStudySorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   company?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
@@ -394,6 +454,7 @@ export type Category = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
 };
@@ -407,6 +468,7 @@ export type CategoryFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   description?: Maybe<StringFilter>;
 };
@@ -418,6 +480,7 @@ export type CategorySorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   description?: Maybe<SortOrder>;
 };
@@ -527,6 +590,7 @@ export type Edition = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   index?: Maybe<Scalars['Float']>;
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
@@ -546,6 +610,7 @@ export type EditionFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   index?: Maybe<FloatFilter>;
   title?: Maybe<StringFilter>;
   description?: Maybe<StringFilter>;
@@ -562,6 +627,7 @@ export type EditionSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   index?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   description?: Maybe<SortOrder>;
@@ -584,6 +650,7 @@ export type Event = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
   mainEventsPageImage?: Maybe<MainImage>;
@@ -612,6 +679,7 @@ export type EventFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
   mainEventsPageImage?: Maybe<MainImageFilter>;
@@ -633,6 +701,7 @@ export type EventSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
   mainEventsPageImage?: Maybe<MainImageSorting>;
@@ -660,6 +729,7 @@ export type EventsPage = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
 };
@@ -673,6 +743,7 @@ export type EventsPageFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
 };
@@ -684,6 +755,7 @@ export type EventsPageSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
 };
@@ -701,6 +773,7 @@ export type Faq = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   faqs?: Maybe<Array<Maybe<FaqBlock>>>;
@@ -735,6 +808,7 @@ export type FaqFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
 };
@@ -746,6 +820,7 @@ export type FaqSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
 };
@@ -889,6 +964,7 @@ export type Home = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   slogan?: Maybe<Array<Maybe<TextBlock>>>;
@@ -920,6 +996,7 @@ export type HomeFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
   ctaLabel?: Maybe<StringFilter>;
@@ -942,6 +1019,7 @@ export type HomeSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
   ctaLabel?: Maybe<SortOrder>;
@@ -1071,6 +1149,7 @@ export type Integration = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   technology?: Maybe<Scalars['String']>;
   titleRaw?: Maybe<Scalars['JSON']>;
   logo?: Maybe<MainImage>;
@@ -1087,6 +1166,7 @@ export type IntegrationFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   technology?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
@@ -1099,6 +1179,7 @@ export type IntegrationSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   technology?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
@@ -1143,6 +1224,7 @@ export type JobPosting = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   /** Titles should be catchy, descriptive, and not too long */
   title?: Maybe<Scalars['String']>;
   team?: Maybe<Scalars['String']>;
@@ -1164,6 +1246,7 @@ export type JobPostingFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   team?: Maybe<StringFilter>;
   leverHref?: Maybe<StringFilter>;
@@ -1179,6 +1262,7 @@ export type JobPostingSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   team?: Maybe<SortOrder>;
   leverHref?: Maybe<SortOrder>;
@@ -1260,6 +1344,7 @@ export type News = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   newsEntries?: Maybe<Array<Maybe<NewsBlock>>>;
@@ -1303,6 +1388,7 @@ export type NewsFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
 };
@@ -1314,8 +1400,33 @@ export type NewsSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
+};
+
+export type PageMetadata = {
+  __typename?: 'PageMetadata';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  /** <head><title>{title}</title></head> */
+  title?: Maybe<Scalars['String']>;
+  /** <head><meta name="description" content="{description}" /></head> */
+  description?: Maybe<Scalars['String']>;
+};
+
+export type PageMetadataFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  description?: Maybe<StringFilter>;
+};
+
+export type PageMetadataSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  description?: Maybe<SortOrder>;
 };
 
 export type PillarBlock = {
@@ -1362,6 +1473,7 @@ export type Post = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   /** Titles should be catchy, descriptive, and not too long */
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
@@ -1383,6 +1495,7 @@ export type PostFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
   publishedAt?: Maybe<DatetimeFilter>;
@@ -1396,6 +1509,7 @@ export type PostSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
   publishedAt?: Maybe<SortOrder>;
@@ -1415,6 +1529,7 @@ export type Pricing = Document & {
   /** Current document revision */
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   pricingTable?: Maybe<Array<Maybe<PricingFeatureCategory>>>;
@@ -1452,6 +1567,7 @@ export type PricingFilter = {
   _updatedAt?: Maybe<DatetimeFilter>;
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
   editionNameToHighlight?: Maybe<StringFilter>;
@@ -1464,6 +1580,7 @@ export type PricingSorting = {
   _updatedAt?: Maybe<SortOrder>;
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
   editionNameToHighlight?: Maybe<SortOrder>;
@@ -1491,60 +1608,52 @@ export type QuestionBlockSorting = {
 
 export type RootQuery = {
   __typename?: 'RootQuery';
-  SiteSettings?: Maybe<SiteSettings>;
-  Post?: Maybe<Post>;
-  Category?: Maybe<Category>;
-  Author?: Maybe<Author>;
-  Home?: Maybe<Home>;
-  Faq?: Maybe<Faq>;
-  News?: Maybe<News>;
   About?: Maybe<About>;
+  Author?: Maybe<Author>;
+  Benefits?: Maybe<Benefits>;
   Careers?: Maybe<Careers>;
-  JobPosting?: Maybe<JobPosting>;
-  CaseStudy?: Maybe<CaseStudy>;
   CaseStudiesPage?: Maybe<CaseStudiesPage>;
+  CaseStudy?: Maybe<CaseStudy>;
+  Category?: Maybe<Category>;
   Edition?: Maybe<Edition>;
-  Pricing?: Maybe<Pricing>;
-  EventsPage?: Maybe<EventsPage>;
   Event?: Maybe<Event>;
+  EventsPage?: Maybe<EventsPage>;
+  Faq?: Maybe<Faq>;
+  Home?: Maybe<Home>;
   Integration?: Maybe<Integration>;
+  JobPosting?: Maybe<JobPosting>;
+  News?: Maybe<News>;
+  Post?: Maybe<Post>;
+  Pricing?: Maybe<Pricing>;
+  SiteSettings?: Maybe<SiteSettings>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
-  allSiteSettings: Array<SiteSettings>;
-  allPost: Array<Post>;
-  allCategory: Array<Category>;
-  allAuthor: Array<Author>;
-  allHome: Array<Home>;
-  allFaq: Array<Faq>;
-  allNews: Array<News>;
   allAbout: Array<About>;
+  allAuthor: Array<Author>;
+  allBenefits: Array<Benefits>;
   allCareers: Array<Careers>;
-  allJobPosting: Array<JobPosting>;
-  allCaseStudy: Array<CaseStudy>;
   allCaseStudiesPage: Array<CaseStudiesPage>;
+  allCaseStudy: Array<CaseStudy>;
+  allCategory: Array<Category>;
   allEdition: Array<Edition>;
-  allPricing: Array<Pricing>;
-  allEventsPage: Array<EventsPage>;
   allEvent: Array<Event>;
+  allEventsPage: Array<EventsPage>;
+  allFaq: Array<Faq>;
+  allHome: Array<Home>;
   allIntegration: Array<Integration>;
+  allJobPosting: Array<JobPosting>;
+  allNews: Array<News>;
+  allPost: Array<Post>;
+  allPricing: Array<Pricing>;
+  allSiteSettings: Array<SiteSettings>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
 };
 
 
-export type RootQuerySiteSettingsArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryPostArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryCategoryArgs = {
+export type RootQueryAboutArgs = {
   id: Scalars['ID'];
 };
 
@@ -1554,22 +1663,7 @@ export type RootQueryAuthorArgs = {
 };
 
 
-export type RootQueryHomeArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryFaqArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryNewsArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type RootQueryAboutArgs = {
+export type RootQueryBenefitsArgs = {
   id: Scalars['ID'];
 };
 
@@ -1579,7 +1673,7 @@ export type RootQueryCareersArgs = {
 };
 
 
-export type RootQueryJobPostingArgs = {
+export type RootQueryCaseStudiesPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -1589,7 +1683,7 @@ export type RootQueryCaseStudyArgs = {
 };
 
 
-export type RootQueryCaseStudiesPageArgs = {
+export type RootQueryCategoryArgs = {
   id: Scalars['ID'];
 };
 
@@ -1599,7 +1693,7 @@ export type RootQueryEditionArgs = {
 };
 
 
-export type RootQueryPricingArgs = {
+export type RootQueryEventArgs = {
   id: Scalars['ID'];
 };
 
@@ -1609,12 +1703,42 @@ export type RootQueryEventsPageArgs = {
 };
 
 
-export type RootQueryEventArgs = {
+export type RootQueryFaqArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryHomeArgs = {
   id: Scalars['ID'];
 };
 
 
 export type RootQueryIntegrationArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryJobPostingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryNewsArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryPostArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryPricingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQuerySiteSettingsArgs = {
   id: Scalars['ID'];
 };
 
@@ -1634,25 +1758,9 @@ export type RootQueryDocumentArgs = {
 };
 
 
-export type RootQueryAllSiteSettingsArgs = {
-  where?: Maybe<SiteSettingsFilter>;
-  sort?: Maybe<Array<SiteSettingsSorting>>;
-  limit?: Maybe<Scalars['Int']>;
-  offset?: Maybe<Scalars['Int']>;
-};
-
-
-export type RootQueryAllPostArgs = {
-  where?: Maybe<PostFilter>;
-  sort?: Maybe<Array<PostSorting>>;
-  limit?: Maybe<Scalars['Int']>;
-  offset?: Maybe<Scalars['Int']>;
-};
-
-
-export type RootQueryAllCategoryArgs = {
-  where?: Maybe<CategoryFilter>;
-  sort?: Maybe<Array<CategorySorting>>;
+export type RootQueryAllAboutArgs = {
+  where?: Maybe<AboutFilter>;
+  sort?: Maybe<Array<AboutSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1666,33 +1774,9 @@ export type RootQueryAllAuthorArgs = {
 };
 
 
-export type RootQueryAllHomeArgs = {
-  where?: Maybe<HomeFilter>;
-  sort?: Maybe<Array<HomeSorting>>;
-  limit?: Maybe<Scalars['Int']>;
-  offset?: Maybe<Scalars['Int']>;
-};
-
-
-export type RootQueryAllFaqArgs = {
-  where?: Maybe<FaqFilter>;
-  sort?: Maybe<Array<FaqSorting>>;
-  limit?: Maybe<Scalars['Int']>;
-  offset?: Maybe<Scalars['Int']>;
-};
-
-
-export type RootQueryAllNewsArgs = {
-  where?: Maybe<NewsFilter>;
-  sort?: Maybe<Array<NewsSorting>>;
-  limit?: Maybe<Scalars['Int']>;
-  offset?: Maybe<Scalars['Int']>;
-};
-
-
-export type RootQueryAllAboutArgs = {
-  where?: Maybe<AboutFilter>;
-  sort?: Maybe<Array<AboutSorting>>;
+export type RootQueryAllBenefitsArgs = {
+  where?: Maybe<BenefitsFilter>;
+  sort?: Maybe<Array<BenefitsSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1706,9 +1790,9 @@ export type RootQueryAllCareersArgs = {
 };
 
 
-export type RootQueryAllJobPostingArgs = {
-  where?: Maybe<JobPostingFilter>;
-  sort?: Maybe<Array<JobPostingSorting>>;
+export type RootQueryAllCaseStudiesPageArgs = {
+  where?: Maybe<CaseStudiesPageFilter>;
+  sort?: Maybe<Array<CaseStudiesPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1722,9 +1806,9 @@ export type RootQueryAllCaseStudyArgs = {
 };
 
 
-export type RootQueryAllCaseStudiesPageArgs = {
-  where?: Maybe<CaseStudiesPageFilter>;
-  sort?: Maybe<Array<CaseStudiesPageSorting>>;
+export type RootQueryAllCategoryArgs = {
+  where?: Maybe<CategoryFilter>;
+  sort?: Maybe<Array<CategorySorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1738,9 +1822,9 @@ export type RootQueryAllEditionArgs = {
 };
 
 
-export type RootQueryAllPricingArgs = {
-  where?: Maybe<PricingFilter>;
-  sort?: Maybe<Array<PricingSorting>>;
+export type RootQueryAllEventArgs = {
+  where?: Maybe<EventFilter>;
+  sort?: Maybe<Array<EventSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1754,9 +1838,17 @@ export type RootQueryAllEventsPageArgs = {
 };
 
 
-export type RootQueryAllEventArgs = {
-  where?: Maybe<EventFilter>;
-  sort?: Maybe<Array<EventSorting>>;
+export type RootQueryAllFaqArgs = {
+  where?: Maybe<FaqFilter>;
+  sort?: Maybe<Array<FaqSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllHomeArgs = {
+  where?: Maybe<HomeFilter>;
+  sort?: Maybe<Array<HomeSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1765,6 +1857,46 @@ export type RootQueryAllEventArgs = {
 export type RootQueryAllIntegrationArgs = {
   where?: Maybe<IntegrationFilter>;
   sort?: Maybe<Array<IntegrationSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllJobPostingArgs = {
+  where?: Maybe<JobPostingFilter>;
+  sort?: Maybe<Array<JobPostingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllNewsArgs = {
+  where?: Maybe<NewsFilter>;
+  sort?: Maybe<Array<NewsSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllPostArgs = {
+  where?: Maybe<PostFilter>;
+  sort?: Maybe<Array<PostSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllPricingArgs = {
+  where?: Maybe<PricingFilter>;
+  sort?: Maybe<Array<PricingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllSiteSettingsArgs = {
+  where?: Maybe<SiteSettingsFilter>;
+  sort?: Maybe<Array<SiteSettingsSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2361,7 +2493,10 @@ export type TextBlockSorting = {
 export type CaseStudyMetaFragment = (
   { __typename?: 'CaseStudy' }
   & Pick<CaseStudy, '_id' | '_createdAt' | 'company' | 'titleRaw'>
-  & { logo?: Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, logo?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )>, slug?: Maybe<(
@@ -2394,12 +2529,19 @@ export type CaseStudyFragment = (
 export type EditionFragment = (
   { __typename?: 'Edition' }
   & Pick<Edition, '_id' | '_createdAt' | 'index' | 'title' | 'description' | 'buttonText' | 'buttonUrl' | 'price' | 'timeUnit' | 'features'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )> }
 );
 
 export type EventFragment = (
   { __typename?: 'Event' }
   & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheadingRaw' | 'eventBannerImageHref' | 'eventBannerOpacity'>
-  & { slug?: Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slug?: Maybe<(
     { __typename?: 'Slug' }
     & Pick<Slug, 'current'>
   )>, locationImage?: Maybe<(
@@ -2448,7 +2590,10 @@ export type ImageFragment = (
 export type IntegrationMetaFragment = (
   { __typename?: 'Integration' }
   & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw'>
-  & { logo?: Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, logo?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )>, slug?: Maybe<(
@@ -2466,7 +2611,10 @@ export type IntegrationFragment = (
 export type PostMetaFragment = (
   { __typename?: 'Post' }
   & Pick<Post, '_id' | 'publishedAt' | 'title' | 'excerptRaw'>
-  & { mainImage?: Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, mainImage?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )>, slug?: Maybe<(
@@ -2536,7 +2684,10 @@ export type InvestorFragment = (
 export type AboutPageFragment = (
   { __typename?: 'About' }
   & Pick<About, 'title' | 'subtitleRaw' | 'foundersSectionTitle' | 'foundersSectionSubtitle' | 'teamSectionEnabled' | 'teamSectionTitle' | 'teamSectionSubtitle' | 'membersWithImage' | 'investorsSectionTitle' | 'investorsSectionSubtitle' | 'angelsSectionTitle' | 'angelsSectionSubtitle' | 'angelsWithImage' | 'hiringSectionTitle' | 'hiringSectionLinkLabel' | 'hiringSectionLinkHref'>
-  & { founders?: Maybe<Array<Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, founders?: Maybe<Array<Maybe<(
     { __typename?: 'FounderBlock' }
     & FounderFragment
   )>>>, team?: Maybe<Array<Maybe<(
@@ -2559,6 +2710,29 @@ export type AboutPageQuery = (
   & { allAbout: Array<(
     { __typename?: 'About' }
     & AboutPageFragment
+  )> }
+);
+
+export type BenefitsPageFragment = (
+  { __typename?: 'Benefits' }
+  & Pick<Benefits, 'title' | 'youtubeUrl'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, benefit?: Maybe<Array<Maybe<(
+    { __typename?: 'SectionBlock' }
+    & SectionBlockFragment
+  )>>> }
+);
+
+export type BenefitsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BenefitsPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allBenefits: Array<(
+    { __typename?: 'Benefits' }
+    & BenefitsPageFragment
   )> }
 );
 
@@ -2605,7 +2779,10 @@ export type BlogPostQuery = (
 export type JobPostingMetaFragment = (
   { __typename?: 'JobPosting' }
   & Pick<JobPosting, 'title' | 'team' | 'leverHref' | 'publishedAt' | 'descriptionRaw'>
-  & { slug?: Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slug?: Maybe<(
     { __typename?: 'Slug' }
     & Pick<Slug, 'current'>
   )>, icon?: Maybe<(
@@ -2623,7 +2800,10 @@ export type JobPostingFragment = (
 export type CareersPageFragment = (
   { __typename?: 'Careers' }
   & Pick<Careers, 'title' | 'firstSubtitle' | 'subtitleRaw' | 'cultureSectionTitle' | 'cultureSectionSubtitleRaw' | 'cultureSectionTaglineRaw' | 'diversitySectionTitle' | 'diversitySectionSubtitleRaw' | 'valuesSectionTitle' | 'valuesSectionSubtitleRaw' | 'perksSectionTitle' | 'perksSectionSubtitleRaw' | 'openPositionsSectionTitle' | 'openPositionsSectionSubtitleRaw'>
-  & { facts?: Maybe<Array<Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, facts?: Maybe<Array<Maybe<(
     { __typename?: 'FeatureItem' }
     & Pick<FeatureItem, 'title'>
     & { icon?: Maybe<(
@@ -2686,6 +2866,10 @@ export type JobPostingQuery = (
 export type CaseStudiesPageFragment = (
   { __typename?: 'CaseStudiesPage' }
   & Pick<CaseStudiesPage, 'title' | 'subtitle'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )> }
 );
 
 export type CaseStudiesPageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2743,6 +2927,10 @@ export type CaseStudyQuery = (
 export type EventsPageFragment = (
   { __typename?: 'EventsPage' }
   & Pick<EventsPage, 'title' | 'subtitle'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )> }
 );
 
 export type EventsPageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -2814,7 +3002,10 @@ export type FaqPageQuery = (
   & { allFaq: Array<(
     { __typename?: 'Faq' }
     & Pick<Faq, 'title' | 'subtitle'>
-    & { faqs?: Maybe<Array<Maybe<(
+    & { metadata?: Maybe<(
+      { __typename?: 'PageMetadata' }
+      & Pick<PageMetadata, 'title' | 'description'>
+    )>, faqs?: Maybe<Array<Maybe<(
       { __typename?: 'FaqBlock' }
       & FaqItemFragment
     )>>> }
@@ -2824,7 +3015,10 @@ export type FaqPageQuery = (
 export type HomePageFragment = (
   { __typename?: 'Home' }
   & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'customerSpotlightSectionEnabled' | 'testimonialsSectionTitle'>
-  & { slogan?: Maybe<Array<Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slogan?: Maybe<Array<Maybe<(
     { __typename?: 'TextBlock' }
     & Pick<TextBlock, 'text'>
   )>>>, theProblemSectionCards?: Maybe<Array<Maybe<(
@@ -2946,7 +3140,10 @@ export type NewsItemFragment = (
 export type NewsPageFragment = (
   { __typename?: 'News' }
   & Pick<News, 'title' | 'subtitle'>
-  & { newsEntries?: Maybe<Array<Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, newsEntries?: Maybe<Array<Maybe<(
     { __typename?: 'NewsBlock' }
     & NewsItemFragment
   )>>> }
@@ -2966,7 +3163,10 @@ export type NewsPageQuery = (
 export type PricingFragment = (
   { __typename?: 'Pricing' }
   & Pick<Pricing, 'title' | 'subtitle' | 'editionNameToHighlight'>
-  & { pricingTable?: Maybe<Array<Maybe<(
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, pricingTable?: Maybe<Array<Maybe<(
     { __typename?: 'PricingFeatureCategory' }
     & Pick<PricingFeatureCategory, 'title'>
     & { features?: Maybe<(
@@ -3032,6 +3232,10 @@ export const CaseStudyMetaFragmentDoc = gql`
     fragment CaseStudyMeta on CaseStudy {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   company
   logo {
     ...Image
@@ -3070,6 +3274,10 @@ export const EditionFragmentDoc = gql`
     fragment Edition on Edition {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   index
   title
   description
@@ -3084,6 +3292,10 @@ export const EventFragmentDoc = gql`
     fragment Event on Event {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   title
   slug {
     current
@@ -3111,6 +3323,10 @@ export const IntegrationMetaFragmentDoc = gql`
     fragment IntegrationMeta on Integration {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   technology
   logo {
     ...Image
@@ -3130,6 +3346,10 @@ export const IntegrationFragmentDoc = gql`
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
+  metadata {
+    title
+    description
+  }
   publishedAt
   mainImage {
     ...Image
@@ -3196,6 +3416,10 @@ export const InvestorFragmentDoc = gql`
     ${ImageFragmentDoc}`;
 export const AboutPageFragmentDoc = gql`
     fragment AboutPage on About {
+  metadata {
+    title
+    description
+  }
   title
   subtitleRaw
   foundersSectionTitle
@@ -3228,8 +3452,34 @@ export const AboutPageFragmentDoc = gql`
     ${FounderFragmentDoc}
 ${MemberFragmentDoc}
 ${InvestorFragmentDoc}`;
+export const SectionBlockFragmentDoc = gql`
+    fragment SectionBlock on SectionBlock {
+  image {
+    ...Image
+  }
+  title
+  subtitleRaw
+}
+    ${ImageFragmentDoc}`;
+export const BenefitsPageFragmentDoc = gql`
+    fragment BenefitsPage on Benefits {
+  metadata {
+    title
+    description
+  }
+  title
+  youtubeUrl
+  benefit {
+    ...SectionBlock
+  }
+}
+    ${SectionBlockFragmentDoc}`;
 export const JobPostingMetaFragmentDoc = gql`
     fragment JobPostingMeta on JobPosting {
+  metadata {
+    title
+    description
+  }
   title
   team
   leverHref
@@ -3249,15 +3499,6 @@ export const JobPostingFragmentDoc = gql`
   bodyRaw
 }
     ${JobPostingMetaFragmentDoc}`;
-export const SectionBlockFragmentDoc = gql`
-    fragment SectionBlock on SectionBlock {
-  image {
-    ...Image
-  }
-  title
-  subtitleRaw
-}
-    ${ImageFragmentDoc}`;
 export const FeatureItemFragmentDoc = gql`
     fragment FeatureItem on FeatureItem {
   icon {
@@ -3268,6 +3509,10 @@ export const FeatureItemFragmentDoc = gql`
     ${ImageFragmentDoc}`;
 export const CareersPageFragmentDoc = gql`
     fragment CareersPage on Careers {
+  metadata {
+    title
+    description
+  }
   title
   firstSubtitle
   facts {
@@ -3303,12 +3548,20 @@ ${SectionBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
 export const CaseStudiesPageFragmentDoc = gql`
     fragment CaseStudiesPage on CaseStudiesPage {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
 }
     `;
 export const EventsPageFragmentDoc = gql`
     fragment EventsPage on EventsPage {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
 }
@@ -3324,6 +3577,10 @@ export const FaqItemFragmentDoc = gql`
     `;
 export const HomePageFragmentDoc = gql`
     fragment HomePage on Home {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   slogan {
@@ -3398,6 +3655,10 @@ export const NewsItemFragmentDoc = gql`
     ${ImageFragmentDoc}`;
 export const NewsPageFragmentDoc = gql`
     fragment NewsPage on News {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   newsEntries {
@@ -3407,6 +3668,10 @@ export const NewsPageFragmentDoc = gql`
     ${NewsItemFragmentDoc}`;
 export const PricingFragmentDoc = gql`
     fragment Pricing on Pricing {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   editionNameToHighlight
@@ -3427,6 +3692,13 @@ export const AboutPageDocument = gql`
   }
 }
     ${AboutPageFragmentDoc}`;
+export const BenefitsPageDocument = gql`
+    query BenefitsPage {
+  allBenefits(sort: {_createdAt: DESC}, limit: 1) {
+    ...BenefitsPage
+  }
+}
+    ${BenefitsPageFragmentDoc}`;
 export const BlogIndexDocument = gql`
     query BlogIndex($now: DateTime) {
   allPost(
@@ -3551,6 +3823,10 @@ export const EventDocument = gql`
 export const FaqPageDocument = gql`
     query FaqPage {
   allFaq(sort: {_createdAt: DESC}, limit: 1) {
+    metadata {
+      title
+      description
+    }
     title
     subtitle
     faqs {
@@ -3628,6 +3904,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     AboutPage(variables?: AboutPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<AboutPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<AboutPageQuery>(AboutPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'AboutPage');
+    },
+    BenefitsPage(variables?: BenefitsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BenefitsPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<BenefitsPageQuery>(BenefitsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'BenefitsPage');
     },
     BlogIndex(variables?: BlogIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<BlogIndexQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<BlogIndexQuery>(BlogIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'BlogIndex');

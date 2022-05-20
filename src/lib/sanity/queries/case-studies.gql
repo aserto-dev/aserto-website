@@ -1,4 +1,8 @@
 fragment CaseStudiesPage on CaseStudiesPage {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
 }

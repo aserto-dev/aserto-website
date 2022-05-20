@@ -17,8 +17,12 @@ const BlogPost = ({ post }: Props) => {
       contain
       footer="regular"
       headProps={{
-        title: `${String(post?.title || '') as string} - Aserto Blog`,
-        description: `${String(post?.title || '') as string}`,
+        title:
+          post.metadata?.title ??
+          `${String(post?.title || '') as string} - Aserto Blog`,
+        description:
+          post.metadata?.description ??
+          `${String(post?.title || '') as string}`,
         image: String(post?.mainImage?.asset?.url)
       }}
       newsletter={{

@@ -1,4 +1,8 @@
 fragment Pricing on Pricing {
+  metadata {
+    title
+    description
+  }
   title
   subtitle
   editionNameToHighlight

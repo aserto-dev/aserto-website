@@ -1,9 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 
-// Primitives
-import CustomHead from 'components/primitives/custom-head'
-
 // Layout
 import PageLayout from 'components/layout/page'
 import Container from 'components/sections/homepage/container'
@@ -17,22 +14,22 @@ import CallToAction from 'components/sections/homepage/call-to-action'
 
 const HomePage = ({
   post,
-  event
+  event,
+  page
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       footer="regular"
       headProps={{
-        title: 'Aserto',
-        description: 'The fastest path to enterprise-grade authorization',
+        title:
+          page.metadata?.title ??
+          'Aserto - The fastest path to enterprise-grade authorization',
+        description:
+          page.metadata?.description ??
+          'Aserto provides cloud-native authorization as a service for developers',
         image: 'images/og.png'
       }}
     >
-      <CustomHead
-        title="Aserto - The fastest path to enterprise-grade authorization"
-        description="Aserto provides cloud-native authorization as a service for developers"
-        image="images/og.png"
-      />
       <Hero />
       <Intro />
       <Container className="py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
@@ -97,11 +94,13 @@ export const getStaticProps = async () => {
     now: new Date(Date.now()).toISOString()
   })
   const { allEvent } = await cms().EventsPage()
+  const { allHome } = await cms().HomePage()
 
   return {
     props: {
       post: allPost[0],
-      event: allEvent[0]
+      event: allEvent[0],
+      page: allHome[0]
     },
     revalidate: 1
   }

@@ -1,6 +1,10 @@
 fragment Event on Event {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   title
   slug {
     current

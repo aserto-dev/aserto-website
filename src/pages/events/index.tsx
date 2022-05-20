@@ -13,8 +13,9 @@ const Events = ({
       contain
       footer="regular"
       headProps={{
-        title: 'Aserto Events',
-        description: 'Meet the Aserto team at these events.',
+        title: page.metadata?.title ?? 'Aserto Events',
+        description:
+          page.metadata?.description ?? 'Meet the Aserto team at these events.',
         image: 'images/og.png'
       }}
     >

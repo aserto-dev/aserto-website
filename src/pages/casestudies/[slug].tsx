@@ -18,8 +18,12 @@ const CaseStudyPage = ({ caseStudy }: Props) => {
       contain
       footer="regular"
       headProps={{
-        title: `${caseStudy.company} - Aserto Case Study`,
-        description: `Case study of how ${caseStudy.company} used Aserto for authorization`,
+        title:
+          caseStudy.metadata?.title ??
+          `${caseStudy.company} - Aserto Case Study`,
+        description:
+          caseStudy.metadata?.title ??
+          `Case study of how ${caseStudy.company} used Aserto for authorization`,
         image: 'images/og.png'
       }}
     >

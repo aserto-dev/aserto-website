@@ -1,6 +1,10 @@
 fragment CaseStudyMeta on CaseStudy {
   _id
   _createdAt
+  metadata {
+    title
+    description
+  }
   company
   logo {
     ...Image

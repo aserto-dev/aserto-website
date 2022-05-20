@@ -17,8 +17,11 @@ type Props = {
 const EventPage = ({ event }: Props) => {
   if (!event) return <Error statusCode={404} />
 
-  const windowTitle = `Meet Aserto at ${event.title || 'this event'}`
-  const windowDescription = `Meet Aserto at ${event.title || 'this event'}`
+  const windowTitle =
+    event.metadata?.title ?? `Meet Aserto at ${event.title || 'this event'}`
+  const windowDescription =
+    event.metadata?.description ??
+    `Meet Aserto at ${event.title || 'this event'}`
   const favicon = 'images/og.png'
   const bgColor =
     event.backgroundColor ||

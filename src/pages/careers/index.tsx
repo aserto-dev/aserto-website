@@ -19,8 +19,10 @@ const Careers = ({
     <PageLayout
       footer="regular"
       headProps={{
-        title: 'Aserto Careers, Culture, and Values',
-        description: 'Aserto culture, values, and open positions',
+        title: page.metadata?.title ?? 'Aserto Careers, Culture, and Values',
+        description:
+          page.metadata?.description ??
+          'Aserto culture, values, and open positions',
         image: 'images/og.png'
       }}
     >

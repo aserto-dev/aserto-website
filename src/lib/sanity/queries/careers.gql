@@ -1,4 +1,8 @@
 fragment JobPostingMeta on JobPosting {
+  metadata {
+    title
+    description
+  }
   title
   team
   leverHref
@@ -18,6 +22,10 @@ fragment JobPosting on JobPosting {
 }
 
 fragment CareersPage on Careers {
+  metadata {
+    title
+    description
+  }
   title
   firstSubtitle
   facts {
