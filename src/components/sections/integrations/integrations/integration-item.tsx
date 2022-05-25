@@ -11,12 +11,12 @@ const IntegrationItem = ({ data }: Props) => {
   return (
     <Link href={`/integrations/${data.slug?.current}`}>
       <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
-        <div className="bg-white px-5 rounded">
+        <div className="bg-aserto-grey-5 px-5 rounded">
           <Image
             src={data.logo?.asset?.url || '/404'}
             alt="Technology logo"
-            width={384}
-            height={150}
+            width={795}
+            height={400}
             objectFit="contain"
             layout="responsive"
           />
