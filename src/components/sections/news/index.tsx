@@ -9,7 +9,7 @@ import { useCallback, useMemo, useState } from 'react'
 // Components
 import NewsItem from './news-item'
 
-const pageSize = 6
+const pageSize = 9
 
 const NewsItems = ({ page }: { page: NewsPageFragment }) => {
   const [section] = useFadeInBottom()
