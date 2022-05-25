@@ -119,6 +119,11 @@ export const headerLinks = [
         label: 'Careers',
         href: '/careers',
         isExternal: false
+      },
+      {
+        label: 'Press',
+        href: '/news',
+        isExternal: false
       }
     ]
   }
