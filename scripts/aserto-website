@@ -6,6 +6,7 @@ export VAULT_ADDR=https://vault.eng.aserto.com
 vault login --method=github
 
 for KEY in NEXT_PUBLIC_GA_CODE \
+           NEXT_PUBLIC_GTM_CODE \
            NEXT_PUBLIC_MAILCHIMP_ENDPOINT \
            NEXT_PUBLIC_HUBSPOT_ACCOUNT_ID \
            SANITY_DATASET \
