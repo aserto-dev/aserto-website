@@ -1,6 +1,6 @@
 export const pageview = (url: string) => {
   //@ts-ignore
-  window.gtag('config', process.env.NEXT_PUBLIC_GA_CODE, {
+  sendEvent('page_view', {
     page_path: url
   })
 }
