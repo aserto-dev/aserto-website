@@ -1,8 +1,8 @@
 export const pageview = (url: string) => {
   //@ts-ignore
   sendEvent('page_view', {
-    page_path: url }
-  )
+    page_path: url
+  })
 }
 
 // log specific events happening.
