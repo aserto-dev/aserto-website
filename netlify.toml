@@ -20,7 +20,7 @@
     NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL = "https://tenant.int.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://int--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
-    NEXT_PUBLIC_GA_CODE = 'UA-188518006-1'
+    NEXT_PUBLIC_GA_CODE = 'DISABLED'
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.preproduction]
