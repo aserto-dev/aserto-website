@@ -78,25 +78,6 @@ class MyDocument extends Document {
             `
             }}
           />
-          {/* set initial hubspot page */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              var _hsq = window._hsq = window._hsq || [];
-              _hsq.push(['setPath', '/']);
-            `
-            }}
-          />
-          {/* load hubspot cookie */}
-          <script
-            type="text/javascript"
-            id="hs-script-loader"
-            async
-            defer
-            src={`//js.hs-scripts.com/${
-              process.env.NEXT_PUBLIC_HUBSPOT_ACCOUNT_ID ?? '21300286'
-            }.js`}
-          />
         </Head>
         <body className="h-full bg-aserto-black">
           <noscript>
