@@ -14,6 +14,7 @@ import {
   HubspotResponse,
   hubspotSignup
 } from 'lib/hubspot/HubSpotClient'
+import { dataLayerPush } from 'lib/ga'
 
 type SignupState =
   | { type: 'SERVICE_ERROR' }
@@ -63,6 +64,10 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
           // when we have central error reporting, should report this
           console.error(`Hubspot error: ${hubspotResponse.message}`)
         }
+
+        dataLayerPush({
+          event: 'signup'
+        })
         break
       case 400:
         newState = {
