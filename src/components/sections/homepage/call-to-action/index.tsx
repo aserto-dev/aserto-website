@@ -3,6 +3,7 @@ import Button from 'components/primitives/button'
 import Container from '../container'
 import SignupContainer from 'components/sections/signup/SignupContainer'
 import HubspotForm from 'lib/hubspot/HubspotForm'
+import { NameToFormId } from 'lib/hubspot/HubspotIds'
 
 const CallToAction = () => {
   const [showBlogModal, setShowBlogModal] = useState(false)
@@ -17,7 +18,7 @@ const CallToAction = () => {
             <h4 className="text-[18px] text-aserto-grey-90 text-center font-semibold my-4">
               Sign up for our newsletter
             </h4>
-            <HubspotForm formId="0ba34fad-afcf-4dde-8b51-b73c32c9595c" />
+            <HubspotForm formId={NameToFormId.newsletter} />
           </>
         </SignupContainer>
       )}
