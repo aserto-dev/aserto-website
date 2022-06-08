@@ -38,7 +38,9 @@ const IntegrationPage = ({ integration }: Props) => {
           Built for developers with{' '}
           <span style={{ color: 'red' }}>&#9829;</span>
         </div>
-        <Testimonials />
+        <div className="max-w-screen-xl mx-auto">
+          <Testimonials />
+        </div>
       </div>
 
       <div className="pt-10">
