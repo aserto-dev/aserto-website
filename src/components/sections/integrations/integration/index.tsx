@@ -30,13 +30,12 @@ const Integration = ({ integration }: Props) => {
       </div>
 
       {/* title */}
-      <BlockContent
-        blocks={integration.titleRaw}
-        className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20"
-      />
+      <h1 className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20">
+        {integration.title}
+      </h1>
 
       {/* banner */}
-      <div className="bg-aserto-grey-5 rounded-[6px]">
+      <div className="bg-aserto-grey-10 rounded-[6px]">
         <div className="flex items-center justify-center py-12">
           <Image
             src={integration.logo?.asset?.url || '/404'}
@@ -49,10 +48,9 @@ const Integration = ({ integration }: Props) => {
       </div>
 
       {/* subtitle */}
-      <BlockContent
-        blocks={integration.subtitleRaw}
-        className="mt-10 mb-10 text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20"
-      />
+      <h2 className="mt-10 mb-10 text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
+        {integration.subtitle}
+      </h2>
 
       <CtaButtons />
 

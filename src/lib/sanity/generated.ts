@@ -1151,8 +1151,8 @@ export type Integration = Document & {
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
   technology?: Maybe<Scalars['String']>;
-  titleRaw?: Maybe<Scalars['JSON']>;
-  subtitleRaw?: Maybe<Scalars['JSON']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
   logo?: Maybe<MainImage>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
@@ -1169,6 +1169,8 @@ export type IntegrationFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   technology?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
 };
@@ -1182,6 +1184,8 @@ export type IntegrationSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   technology?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
 };
@@ -2590,7 +2594,7 @@ export type ImageFragment = (
 
 export type IntegrationMetaFragment = (
   { __typename?: 'Integration' }
-  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw' | 'subtitleRaw'>
+  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'title' | 'subtitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -3332,8 +3336,8 @@ export const IntegrationMetaFragmentDoc = gql`
   logo {
     ...Image
   }
-  titleRaw
-  subtitleRaw
+  title
+  subtitle
   slug {
     current
   }
