@@ -1152,6 +1152,7 @@ export type Integration = Document & {
   metadata?: Maybe<PageMetadata>;
   technology?: Maybe<Scalars['String']>;
   titleRaw?: Maybe<Scalars['JSON']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
   logo?: Maybe<MainImage>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
@@ -2589,7 +2590,7 @@ export type ImageFragment = (
 
 export type IntegrationMetaFragment = (
   { __typename?: 'Integration' }
-  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw'>
+  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw' | 'subtitleRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -3332,6 +3333,7 @@ export const IntegrationMetaFragmentDoc = gql`
     ...Image
   }
   titleRaw
+  subtitleRaw
   slug {
     current
   }

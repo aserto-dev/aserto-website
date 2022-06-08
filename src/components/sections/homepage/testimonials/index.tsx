@@ -30,13 +30,13 @@ const Testimonials = () => {
         authorName: 'David Kerber',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/David-Kerber.png'
+            url: '/images/testimonials/David-Kerber.png'
           }
         },
         authorPosition: 'VP of Technology, Spreetail',
         companyImage: {
           asset: {
-            url: 'images/testimonials/Spreetail-Logo.png'
+            url: '/images/testimonials/Spreetail-Logo.png'
           }
         },
         quoteRaw: (
@@ -53,13 +53,13 @@ const Testimonials = () => {
         authorName: 'Mathias Biilmann Christensen',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/Mathias-Biilmann-Christensen.png'
+            url: '/images/testimonials/Mathias-Biilmann-Christensen.png'
           }
         },
         authorPosition: 'Co-founder & CEO, Netlify',
         companyImage: {
           asset: {
-            url: 'images/testimonials/Netlify-Logo.png'
+            url: '/images/testimonials/Netlify-Logo.png'
           }
         },
         quoteRaw: (
@@ -76,13 +76,13 @@ const Testimonials = () => {
         authorName: 'Tom Preston-Werner',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/Tom-Preston-Werner.png'
+            url: '/images/testimonials/Tom-Preston-Werner.png'
           }
         },
         authorPosition: 'Co-founder, GitHub',
         companyImage: {
           asset: {
-            url: 'images/testimonials/GitHub-Logo.png'
+            url: '/images/testimonials/GitHub-Logo.png'
           }
         },
         quoteRaw: (
@@ -98,13 +98,13 @@ const Testimonials = () => {
         authorName: 'Sam Hall',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/Sam-Hall.png'
+            url: '/images/testimonials/Sam-Hall.png'
           }
         },
         authorPosition: 'Head of Technology, Metrikus',
         companyImage: {
           asset: {
-            url: 'images/testimonials/Metrikus-Logo.png'
+            url: '/images/testimonials/Metrikus-Logo.png'
           }
         },
         quoteRaw: (
@@ -123,13 +123,13 @@ const Testimonials = () => {
         authorName: 'James Lindenbaum',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/James-Lindenbaum.png'
+            url: '/images/testimonials/James-Lindenbaum.png'
           }
         },
         authorPosition: 'Founder, Heroku & Heavybit',
         companyImage: {
           asset: {
-            url: 'images/testimonials/Heavybit-Logo.png'
+            url: '/images/testimonials/Heavybit-Logo.png'
           }
         },
         quoteRaw: (
@@ -144,13 +144,13 @@ const Testimonials = () => {
         authorName: 'Grant Miller',
         authorAvatar: {
           asset: {
-            url: 'images/testimonials/Grant-Miller.png'
+            url: '/images/testimonials/Grant-Miller.png'
           }
         },
         authorPosition: 'Co-founder / CEO, Replicated',
         companyImage: {
           asset: {
-            url: 'images/testimonials/Replicated-Logo.png'
+            url: '/images/testimonials/Replicated-Logo.png'
           }
         },
         quoteRaw: (
@@ -170,7 +170,7 @@ const Testimonials = () => {
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
-      <section className="mx-auto mt-20 lg:mt-0 md:mt-0 lg:pt-24 pb-20 lg:pb-28">
+      <section className="mx-auto mt-10 lg:mt-0 md:mt-10 lg:pt-12 pb-20 lg:pb-28">
         <div className="mx-4">
           <Slider {...settings}>
             {page.testimonials?.map((testimonial, i) => {

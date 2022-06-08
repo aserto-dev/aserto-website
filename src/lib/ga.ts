@@ -8,7 +8,7 @@ export const pageview = (url: string) => {
 // log specific events happening.
 export const sendEvent = ({ action, params }: any) => {
   //@ts-ignore
-  window.gtag('event', action, params)
+  window?.gtag && window.gtag('event', action, params)
 }
 
 // push to dataLayer

@@ -10107,6 +10107,18 @@
             "deprecationReason": null
           },
           {
+            "name": "subtitleRaw",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "JSON",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "logo",
             "description": null,
             "args": [],

@@ -1,27 +1,41 @@
 import Link from 'components/primitives/link'
 import Image from 'components/primitives/image'
-import { BlockContent } from 'components/primitives/block-content'
 import { IntegrationFragment } from 'lib/sanity/generated'
 import s from './integration.module.scss'
 import clsx from 'clsx'
+
+// Layout
+import Container from 'components/layout/container'
+import { BlockContent } from 'components/primitives/block-content'
+
+// Sections
+import CtaButtons from 'components/sections/common/cta-buttons'
 
 type Props = {
   integration: IntegrationFragment
 }
 
-const CaseStudy = ({ integration }: Props) => {
+const Integration = ({ integration }: Props) => {
   return (
-    <section className="relative w-full mx-auto lg:w-10/12 pt-12 mb-52 lg:pt-24  md:pt-24">
-      <div>
-        <Link
-          href="/integrations"
-          className="inline-block mb-12 font-roboto text-aserto-lochivar-accent-40 hover:underline"
-        >
-          Back to all integrations
-        </Link>
+    <section className="relative mx-auto pt-12 mb-20 lg:pt-24 md:pt-24">
+      <div className='w-full mx-auto lg:w-10/12'>
+        <Container>      
+          <Link
+            href="/integrations"
+            className="inline-block mb-12 font-roboto text-aserto-lochivar-accent-40 hover:underline"
+          >
+            Back to all integrations
+          </Link>
+        </Container>
       </div>
 
-      {/* logo and impact */}
+      {/* title */}
+      <BlockContent
+        blocks={integration.titleRaw}
+        className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20"
+      />
+
+      {/* banner */}
       <div className="bg-aserto-grey-5 rounded-[6px]">
         <div className="flex items-center justify-center py-12">
           <Image
@@ -34,20 +48,24 @@ const CaseStudy = ({ integration }: Props) => {
         </div>
       </div>
 
-      {/* title */}
+      {/* subtitle */}
       <BlockContent
-        blocks={integration.titleRaw}
-        className="mt-5 mb-10 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20"
+        blocks={integration.subtitleRaw}
+        className="mt-10 mb-10 text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20"
       />
 
-      <div className="px-5">
-        <BlockContent
-          blocks={integration.bodyRaw}
-          className={clsx('mt-5 sm:mt-5', s.body)}
-        />
+      <CtaButtons />
+
+      <div className='w-full sm:w-8/12 mx-auto'>
+        <Container className="px-5 mt-20">
+          <BlockContent
+            blocks={integration.bodyRaw}
+            className={clsx('mt-5 sm:mt-5', s.body)}
+          />
+        </Container>
       </div>
     </section>
   )
 }
 
-export default CaseStudy
+export default Integration

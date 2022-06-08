@@ -1,10 +1,10 @@
 // Layout
 import PageLayout from 'components/layout/page'
+import Container from 'components/layout/container'
 
 // Sections
 import Hero from 'components/sections/integrations/hero'
 import Integrations from 'components/sections/integrations/integrations'
-import Container from 'components/layout/container'
 import Image from 'components/primitives/image'
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
