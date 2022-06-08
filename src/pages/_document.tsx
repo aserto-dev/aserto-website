@@ -66,7 +66,7 @@ class MyDocument extends Document {
             data-website-uuid="8437675d-2ac7-4fbd-8e03-ad2b3b9e974a"
             async
           />
-          {/* google tag manager */ }
+          {/* google tag manager */}
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -82,13 +82,13 @@ class MyDocument extends Document {
         <body className="h-full bg-aserto-black">
           <noscript>
             <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_CODE}`}
-                height="0"
-                width="0"
-                style={{
-                  display: 'none',
-                  visibility: 'hidden'
-                }}
+              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_CODE}`}
+              height="0"
+              width="0"
+              style={{
+                display: 'none',
+                visibility: 'hidden'
+              }}
             />
           </noscript>
           <Main />

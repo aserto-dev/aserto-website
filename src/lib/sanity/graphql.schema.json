@@ -10095,24 +10095,24 @@
             "deprecationReason": null
           },
           {
-            "name": "titleRaw",
+            "name": "title",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
-              "name": "JSON",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "subtitleRaw",
+            "name": "subtitle",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
-              "name": "JSON",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -10281,6 +10281,30 @@
             "deprecationReason": null
           },
           {
+            "name": "title",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "subtitle",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "logo",
             "description": null,
             "type": {
@@ -10401,6 +10425,30 @@
           },
           {
             "name": "technology",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrder",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "subtitle",
             "description": null,
             "type": {
               "kind": "ENUM",

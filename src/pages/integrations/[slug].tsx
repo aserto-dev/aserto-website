@@ -30,14 +30,13 @@ const IntegrationPage = ({ integration }: Props) => {
         image: 'images/og.png'
       }}
     >
-
       <Integration integration={integration} />
-      
+
       {/* testimonial heading */}
       <div className="bg-aserto-grey-10 px-5 pt-10">
-        <div
-          className="text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
-          Built for developers with <span style={{ color: 'red' }}>&#9829;</span>
+        <div className="text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
+          Built for developers with{' '}
+          <span style={{ color: 'red' }}>&#9829;</span>
         </div>
         <Testimonials />
       </div>
@@ -54,7 +53,6 @@ const IntegrationPage = ({ integration }: Props) => {
       <div className="pb-10">
         <CtaButtons />
       </div>
-
     </PageLayout>
   )
 }

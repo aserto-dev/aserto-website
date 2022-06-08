@@ -9,8 +9,8 @@ fragment IntegrationMeta on Integration {
   logo {
     ...Image
   }
-  titleRaw
-  subtitleRaw
+  title
+  subtitle
   slug {
     current
   }
