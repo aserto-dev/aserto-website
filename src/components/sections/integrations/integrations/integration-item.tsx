@@ -1,7 +1,6 @@
 import { IntegrationMetaFragment } from 'lib/sanity/generated'
 import Image from 'components/primitives/image'
 import Link from 'next/link'
-import { BlockContent } from 'components/primitives/block-content'
 
 type Props = {
   data: IntegrationMetaFragment
@@ -23,10 +22,9 @@ const IntegrationItem = ({ data }: Props) => {
         </div>
         <div className="relative flex flex-col justify-between flex-1 px-8 py-8 bg-aserto-grey-20">
           <div className="flex-1">
-            <BlockContent
-              className="text-xl text-aserto-grey-90 sm:text-xl"
-              blocks={data.titleRaw}
-            />
+            <h4 className="text-xl text-aserto-grey-90 sm:text-xl">
+              {data.title}
+            </h4>
           </div>
 
           <div className="text-aserto-lochivar-accent-40 mt-10 text-xl">
