@@ -18,8 +18,8 @@ type Props = {
 const Integration = ({ integration }: Props) => {
   return (
     <section className="relative mx-auto pt-12 mb-20 lg:pt-24 md:pt-24">
-      <div className='w-full mx-auto lg:w-10/12'>
-        <Container>      
+      <div className="w-full mx-auto lg:w-10/12">
+        <Container>
           <Link
             href="/integrations"
             className="inline-block mb-12 font-roboto text-aserto-lochivar-accent-40 hover:underline"
@@ -54,7 +54,7 @@ const Integration = ({ integration }: Props) => {
 
       <CtaButtons />
 
-      <div className='w-full sm:w-8/12 mx-auto'>
+      <div className="w-full sm:w-8/12 mx-auto">
         <Container className="px-5 mt-20">
           <BlockContent
             blocks={integration.bodyRaw}
