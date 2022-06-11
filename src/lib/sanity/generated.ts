@@ -1631,6 +1631,7 @@ export type RootQuery = {
   Post?: Maybe<Post>;
   Pricing?: Maybe<Pricing>;
   SiteSettings?: Maybe<SiteSettings>;
+  Testimonial?: Maybe<Testimonial>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1652,6 +1653,7 @@ export type RootQuery = {
   allPost: Array<Post>;
   allPricing: Array<Pricing>;
   allSiteSettings: Array<SiteSettings>;
+  allTestimonial: Array<Testimonial>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1744,6 +1746,11 @@ export type RootQueryPricingArgs = {
 
 
 export type RootQuerySiteSettingsArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryTestimonialArgs = {
   id: Scalars['ID'];
 };
 
@@ -1902,6 +1909,14 @@ export type RootQueryAllPricingArgs = {
 export type RootQueryAllSiteSettingsArgs = {
   where?: Maybe<SiteSettingsFilter>;
   sort?: Maybe<Array<SiteSettingsSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllTestimonialArgs = {
+  where?: Maybe<TestimonialFilter>;
+  sort?: Maybe<Array<TestimonialSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2450,6 +2465,27 @@ export type TableSorting = {
   _type?: Maybe<SortOrder>;
 };
 
+export type Testimonial = Document & {
+  __typename?: 'Testimonial';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  index?: Maybe<Scalars['Float']>;
+  picture?: Maybe<MainImage>;
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  quoteRaw?: Maybe<Scalars['JSON']>;
+  logo?: Maybe<MainImage>;
+};
+
 export type TestimonialBlock = {
   __typename?: 'TestimonialBlock';
   _key?: Maybe<Scalars['String']>;
@@ -2474,6 +2510,36 @@ export type TestimonialBlockSorting = {
   authorAvatar?: Maybe<MainImageSorting>;
   authorName?: Maybe<SortOrder>;
   authorPosition?: Maybe<SortOrder>;
+};
+
+export type TestimonialFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  index?: Maybe<FloatFilter>;
+  picture?: Maybe<MainImageFilter>;
+  name?: Maybe<StringFilter>;
+  position?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+};
+
+export type TestimonialSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  index?: Maybe<SortOrder>;
+  picture?: Maybe<MainImageSorting>;
+  name?: Maybe<SortOrder>;
+  position?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
 };
 
 export type TextBlock = {
@@ -2654,6 +2720,18 @@ export type SectionBlockFragment = (
   { __typename?: 'SectionBlock' }
   & Pick<SectionBlock, 'title' | 'subtitleRaw'>
   & { image?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type TestimonialFragment = (
+  { __typename?: 'Testimonial' }
+  & Pick<Testimonial, '_id' | '_createdAt' | 'index' | 'name' | 'position' | 'quoteRaw'>
+  & { picture?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, logo?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )> }
@@ -3081,6 +3159,9 @@ export type HomePageQuery = (
   )>, allCaseStudy: Array<(
     { __typename?: 'CaseStudy' }
     & CaseStudyMetaFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
   )> }
 );
 
@@ -3130,6 +3211,9 @@ export type IntegrationQuery = (
   & { allIntegration: Array<(
     { __typename?: 'Integration' }
     & IntegrationFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
   )> }
 );
 
@@ -3195,6 +3279,17 @@ export type PricingQuery = (
   )>, allEdition: Array<(
     { __typename?: 'Edition' }
     & EditionFragment
+  )> }
+);
+
+export type TestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TestimonialsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
   )> }
 );
 
@@ -3390,6 +3485,22 @@ export const PostFragmentDoc = gql`
   bodyRaw
 }
     ${PostMetaFragmentDoc}`;
+export const TestimonialFragmentDoc = gql`
+    fragment Testimonial on Testimonial {
+  _id
+  _createdAt
+  index
+  picture {
+    ...Image
+  }
+  name
+  position
+  logo {
+    ...Image
+  }
+  quoteRaw
+}
+    ${ImageFragmentDoc}`;
 export const FounderFragmentDoc = gql`
     fragment Founder on FounderBlock {
   avatar {
@@ -3849,9 +3960,13 @@ export const HomePageDocument = gql`
   allCaseStudy(sort: {_createdAt: DESC}) {
     ...CaseStudyMeta
   }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
 }
     ${HomePageFragmentDoc}
-${CaseStudyMetaFragmentDoc}`;
+${CaseStudyMetaFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const IntegrationsDocument = gql`
     query Integrations {
   allIntegration(sort: {_createdAt: DESC}) {
@@ -3880,8 +3995,12 @@ export const IntegrationDocument = gql`
   allIntegration(where: {slug: {current: {eq: $slug}}}, limit: 1) {
     ...Integration
   }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
 }
-    ${IntegrationFragmentDoc}`;
+    ${IntegrationFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {
@@ -3900,6 +4019,13 @@ export const PricingDocument = gql`
 }
     ${PricingFragmentDoc}
 ${EditionFragmentDoc}`;
+export const TestimonialsDocument = gql`
+    query Testimonials {
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${TestimonialFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -3979,6 +4105,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     Pricing(variables?: PricingQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PricingQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PricingQuery>(PricingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pricing');
+    },
+    Testimonials(variables?: TestimonialsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestimonialsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TestimonialsQuery>(TestimonialsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Testimonials');
     }
   };
 }

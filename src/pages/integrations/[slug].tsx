@@ -3,7 +3,7 @@ import PageLayout from 'components/layout/page'
 
 import cms from 'lib/sanity'
 import { GetStaticProps } from 'next'
-import { IntegrationFragment } from 'lib/sanity/generated'
+import { IntegrationFragment, Testimonial } from 'lib/sanity/generated'
 import Error from 'next/error'
 
 import Integration from 'components/sections/integrations/integration'
@@ -12,9 +12,10 @@ import CtaButtons from 'components/sections/common/cta-buttons'
 
 type Props = {
   integration: IntegrationFragment
+  testimonials: Testimonial[]
 }
 
-const IntegrationPage = ({ integration }: Props) => {
+const IntegrationPage = ({ integration, testimonials }: Props) => {
   if (!integration) return <Error statusCode={404} />
 
   return (
@@ -39,7 +40,7 @@ const IntegrationPage = ({ integration }: Props) => {
           <span style={{ color: 'red' }}>&#9829;</span>
         </div>
         <div className="max-w-screen-xl mx-auto">
-          <Testimonials />
+          <Testimonials testimonials={testimonials} />
         </div>
       </div>
 
@@ -75,9 +76,10 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const {
     allIntegration: [integration]
   } = await cms().Integration({ slug })
+  const { allTestimonial } = await cms().Testimonials()
 
   return {
-    props: { integration },
+    props: { integration, testimonials: allTestimonial },
     revalidate: 1
   }
 }
