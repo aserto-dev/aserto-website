@@ -35,7 +35,7 @@ const TestimonialItem = ({
           />
         </div>
       </div>
-      <div className="p-[30px] text-[18px]">
+      <div className="p-[15px] text-[18px]">
         <h4 className="font-bold text-[22px]">{profileName}</h4>
         <p>{companyInfo}</p>
         <BlockContent className="mt-10" blocks={quote} />

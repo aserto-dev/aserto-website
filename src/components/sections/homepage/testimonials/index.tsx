@@ -7,8 +7,9 @@ import { Testimonial } from 'lib/sanity/generated'
 
 const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const settings = {
+    arrows: false,
     dots: true,
-    infinite: false,
+    infinite: true,
     mobileFirst: true,
     speed: 500,
     slidesToShow: 3,
@@ -29,7 +30,7 @@ const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
       <section className="mx-auto mt-10 lg:mt-0 md:mt-10 lg:pt-12 pb-20 lg:pb-28">
-        <div className="mx-4">
+        <div>
           <Slider {...settings}>
             {testimonials?.map((testimonial, i) => {
               return (

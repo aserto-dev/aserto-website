@@ -14,3 +14,13 @@
 .slick-slide img {
   display: inline-block;
 }
+
+.slick-slider .slick-dots {
+  bottom: -35px;
+}
+
+.slick-slider .slick-dots li button:before
+{
+  color: white !important;
+  font-size: 12px;
+}
