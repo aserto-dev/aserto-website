@@ -1,3 +1,4 @@
+import { BlockContent } from 'components/primitives/block-content'
 import Image from 'components/primitives/image'
 
 type Props = {
@@ -34,14 +35,10 @@ const TestimonialItem = ({
           />
         </div>
       </div>
-      <div className="p-[30px] text-[18px]">
+      <div className="p-[15px] text-[18px]">
         <h4 className="font-bold text-[22px]">{profileName}</h4>
         <p>{companyInfo}</p>
-        <p className="my-[30px]">{quote}</p>
-        {/* <BlockContent
-          className="mt-10 px-2"
-          blocks={quote}
-        /> */}
+        <BlockContent className="mt-10" blocks={quote} />
       </div>
     </div>
   )

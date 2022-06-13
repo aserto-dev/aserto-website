@@ -48,7 +48,7 @@ fragment HomePage on Home {
   }
   infos {
     image {
-        ...Image
+      ...Image
     }
     imagePath
     title

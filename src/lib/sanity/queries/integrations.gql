@@ -22,4 +22,8 @@ query Integration($slug: String!) {
   allIntegration(where: { slug: { current: { eq: $slug } } }, limit: 1) {
     ...Integration
   }
+
+  allTestimonial(sort: { index: ASC }) {
+    ...Testimonial
+  }
 }

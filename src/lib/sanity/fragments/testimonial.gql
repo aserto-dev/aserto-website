@@ -1,0 +1,14 @@
+fragment Testimonial on Testimonial {
+  _id
+  _createdAt
+  index
+  picture {
+    ...Image
+  }
+  name
+  position  
+  logo {
+    ...Image
+  }
+  quoteRaw
+}
