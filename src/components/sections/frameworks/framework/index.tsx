@@ -42,16 +42,14 @@ const Framework = ({ frameworkPage }: Props) => {
         </div>
 
         {/* language logo */}
-        <div className="flex items-center justify-center">
-          <div className="flex items-center justify-center py-5 px-5">
-            <Image
-              src={`/images/languages/${language}.svg`}
-              alt="Technology logo"
-              width={100}
-              height={50}
-              layout="native"
-            />
-          </div>
+        <div className="flex items-center justify-center py-5 px-5">
+          <Image
+            src={`/images/languages/${language}.svg`}
+            alt="Technology logo"
+            width={100}
+            height={50}
+            layout="native"
+          />
         </div>
       </div>
 
