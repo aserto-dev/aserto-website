@@ -27,14 +27,15 @@ const CodeBrowser = () => {
     <div className="relative">
       <CodeViewer language={language} />
       <div className="flex gap-[4px]">
-      {tabs.map((t) => (
-        <Tab
-          active={language === t.language}
-          language={t.title}
-          imgUrl={`images/languages/${t.language}.svg`}
-          onClick={() => setLanguage(t.language)}
-        />
-      ))}
+        {tabs.map((t) => (
+          <Tab
+            key={t.language}
+            active={language === t.language}
+            language={t.title}
+            imgUrl={`images/languages/${t.language}.svg`}
+            onClick={() => setLanguage(t.language)}
+          />
+        ))}
       </div>
     </div>
   )

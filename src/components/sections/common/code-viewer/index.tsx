@@ -44,7 +44,7 @@ const languageSetting: Record<string, string> = {
   dotnet: 'java',
   aspnet: 'java',
   java: 'java',
-  ruby: 'ruby',
+  ruby: 'ruby'
 }
 
 const CodeBrowser = ({ language }: { language: string }) => {

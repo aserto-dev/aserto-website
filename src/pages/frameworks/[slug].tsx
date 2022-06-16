@@ -28,7 +28,9 @@ const FrameworkPage = ({ frameworkPage, testimonials }: Props) => {
         description:
           frameworkPage.metadata?.description ??
           `Aserto resources for ${frameworkPage.framework?.framework?.title} applications`,
-        image: `/images/languages/${frameworkPage.framework?.framework?.codename ?? 'js'}.svg`
+        image: `/images/languages/${
+          frameworkPage.framework?.framework?.codename ?? 'js'
+        }.svg`
       }}
     >
       <Framework frameworkPage={frameworkPage} />

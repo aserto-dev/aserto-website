@@ -25,11 +25,7 @@ type SignupState =
     }
   | { type: 'SUCCESS'; emailAddress: string }
 
-const Signup = ({
-  closeModal,
-}: {
-  closeModal?: () => void
-}) => {
+const Signup = ({ closeModal }: { closeModal?: () => void }) => {
   const [state, setState] = useState<SignupState>({
     errorMessage: undefined,
     type: 'INPUT',
@@ -86,18 +82,20 @@ const Signup = ({
           errorMessage: (
             <>
               That email is aleady in use at Aserto.
-              {closeModal && 
-              <>
-                {' '}Use a different email or{' '}
-                {
-                  <Link
-                    className="text-aserto-grey-90 font-roboto"
-                    href={asertoConsoleRootUrl}
-                  >
-                    sign in
-                  </Link>
-                }
-              </>}
+              {closeModal && (
+                <>
+                  {' '}
+                  Use a different email or{' '}
+                  {
+                    <Link
+                      className="text-aserto-grey-90 font-roboto"
+                      href={asertoConsoleRootUrl}
+                    >
+                      sign in
+                    </Link>
+                  }
+                </>
+              )}
             </>
           ),
           visualState: SignupDataCollectorVisualMode.Editing
