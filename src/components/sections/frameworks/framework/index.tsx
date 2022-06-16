@@ -60,14 +60,16 @@ const Framework = ({ frameworkPage }: Props) => {
 
       <CtaButtons />
 
-      <div className="w-full sm:w-8/12 mx-auto">
-        <Container className="px-5 mt-20">
-          <BlockContent
-            blocks={frameworkPage.bodyRaw}
-            className={clsx('m-5 sm:m-5', s.body)}
-          />
-        </Container>
-      </div>
+      {frameworkPage.bodyRaw && (
+        <div className="w-full sm:w-8/12 mx-auto">
+          <Container className="px-5 mt-20">
+            <BlockContent
+              blocks={frameworkPage.bodyRaw}
+              className={clsx('m-5 sm:m-5', s.body)}
+            />
+          </Container>
+        </div>
+      )}
     </section>
   )
 }
