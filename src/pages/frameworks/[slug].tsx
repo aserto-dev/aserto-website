@@ -46,7 +46,7 @@ const FrameworkPage = ({ frameworkPage, testimonials }: Props) => {
         </div>
       </div>
 
-      <div className="pt-10">
+      <div className="pt-10 mx-8">
         <img
           className="w-[480px] h-[350px] object-cover mx-auto"
           src="/images/lottie.png"
