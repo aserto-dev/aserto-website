@@ -47,7 +47,7 @@ const LandingPage = ({ landingPage, testimonials }: Props) => {
       <div className="max-w-container mt-10 mx-auto p-5 max-w-[544px] bg-aserto-grey-10 rounded-[6px]">
         <Signup />
       </div>
-      
+
       <div className="py-10">
         <img
           className="w-[480px] h-[350px] object-cover mx-auto"
