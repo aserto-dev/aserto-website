@@ -81,15 +81,21 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
           type: 'INPUT',
           errorMessage: (
             <>
-              That email is aleady in use at Aserto. Use a different email or{' '}
-              {
-                <Link
-                  className="text-aserto-grey-90 font-roboto"
-                  href={asertoConsoleRootUrl}
-                >
-                  sign in
-                </Link>
-              }
+              That email is aleady in use at Aserto.
+              {closeModal && (
+                <>
+                  {' '}
+                  Use a different email or{' '}
+                  {
+                    <Link
+                      className="text-aserto-grey-90 font-roboto"
+                      href={asertoConsoleRootUrl}
+                    >
+                      sign in
+                    </Link>
+                  }
+                </>
+              )}
             </>
           ),
           visualState: SignupDataCollectorVisualMode.Editing
@@ -106,7 +112,7 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
 
   switch (state.type) {
     case 'INPUT':
-      return (
+      return closeModal ? (
         <SignupContainer closeModal={closeModal}>
           <>
             <Image
@@ -121,15 +127,26 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
             />
           </>
         </SignupContainer>
+      ) : (
+        <SignupDataCollector
+          errorMessage={state.errorMessage}
+          onSubmit={handleSignUpRequest}
+          visualMode={state.visualState}
+        />
       )
     case 'SUCCESS':
-      return (
+      return closeModal ? (
         <SignupContainer closeModal={closeModal}>
           <SignupSuccessfulNotification
             email={state.emailAddress}
             closeModal={closeModal}
           />
         </SignupContainer>
+      ) : (
+        <SignupSuccessfulNotification
+          email={state.emailAddress}
+          closeModal={closeModal}
+        />
       )
     case 'SERVICE_ERROR':
       return <Error />

@@ -926,6 +926,116 @@ export type FounderBlockSorting = {
   linkedIn?: Maybe<SortOrder>;
 };
 
+export type Framework = Document & {
+  __typename?: 'Framework';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  codename?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type FrameworkFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  codename?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+};
+
+export type FrameworkPage = Document & {
+  __typename?: 'FrameworkPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  framework?: Maybe<FrameworkReference>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  slug?: Maybe<Slug>;
+  bodyRaw?: Maybe<Scalars['JSON']>;
+};
+
+export type FrameworkPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  framework?: Maybe<FrameworkReferenceFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+  slug?: Maybe<SlugFilter>;
+};
+
+export type FrameworkPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  framework?: Maybe<FrameworkReferenceSorting>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+  slug?: Maybe<SlugSorting>;
+};
+
+export type FrameworkReference = {
+  __typename?: 'FrameworkReference';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  framework?: Maybe<Framework>;
+};
+
+export type FrameworkReferenceFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  framework?: Maybe<FrameworkFilter>;
+};
+
+export type FrameworkReferenceSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+};
+
+export type FrameworkSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  codename?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+};
+
 export type Geopoint = {
   __typename?: 'Geopoint';
   _key?: Maybe<Scalars['String']>;
@@ -1624,6 +1734,8 @@ export type RootQuery = {
   Event?: Maybe<Event>;
   EventsPage?: Maybe<EventsPage>;
   Faq?: Maybe<Faq>;
+  Framework?: Maybe<Framework>;
+  FrameworkPage?: Maybe<FrameworkPage>;
   Home?: Maybe<Home>;
   Integration?: Maybe<Integration>;
   JobPosting?: Maybe<JobPosting>;
@@ -1646,6 +1758,8 @@ export type RootQuery = {
   allEvent: Array<Event>;
   allEventsPage: Array<EventsPage>;
   allFaq: Array<Faq>;
+  allFramework: Array<Framework>;
+  allFrameworkPage: Array<FrameworkPage>;
   allHome: Array<Home>;
   allIntegration: Array<Integration>;
   allJobPosting: Array<JobPosting>;
@@ -1711,6 +1825,16 @@ export type RootQueryEventsPageArgs = {
 
 
 export type RootQueryFaqArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryFrameworkArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryFrameworkPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -1853,6 +1977,22 @@ export type RootQueryAllEventsPageArgs = {
 export type RootQueryAllFaqArgs = {
   where?: Maybe<FaqFilter>;
   sort?: Maybe<Array<FaqSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllFrameworkArgs = {
+  where?: Maybe<FrameworkFilter>;
+  sort?: Maybe<Array<FrameworkSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllFrameworkPageArgs = {
+  where?: Maybe<FrameworkPageFilter>;
+  sort?: Maybe<Array<FrameworkPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2636,6 +2776,30 @@ export type FeatureItemFragment = (
   )> }
 );
 
+export type FrameworkPageMetaFragment = (
+  { __typename?: 'FrameworkPage' }
+  & Pick<FrameworkPage, '_id' | '_createdAt' | 'title' | 'subtitle'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, framework?: Maybe<(
+    { __typename?: 'FrameworkReference' }
+    & { framework?: Maybe<(
+      { __typename?: 'Framework' }
+      & Pick<Framework, 'codename' | 'title'>
+    )> }
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )> }
+);
+
+export type FrameworkPageFragment = (
+  { __typename?: 'FrameworkPage' }
+  & Pick<FrameworkPage, 'bodyRaw'>
+  & FrameworkPageMetaFragment
+);
+
 export type ImageFragment = (
   { __typename?: 'MainImage' }
   & Pick<MainImage, 'caption' | 'alt'>
@@ -3095,6 +3259,58 @@ export type FaqPageQuery = (
   )> }
 );
 
+export type FrameworkPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageMetaFragment
+  )> }
+);
+
+export type FrameworkPageIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPageIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageMetaFragment
+  )> }
+);
+
+export type FrameworkPathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type FrameworkPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type FrameworkPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
+  )> }
+);
+
 export type HomePageFragment = (
   { __typename?: 'Home' }
   & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'customerSpotlightSectionEnabled' | 'testimonialsSectionTitle'>
@@ -3159,9 +3375,6 @@ export type HomePageQuery = (
   )>, allCaseStudy: Array<(
     { __typename?: 'CaseStudy' }
     & CaseStudyMetaFragment
-  )>, allTestimonial: Array<(
-    { __typename?: 'Testimonial' }
-    & TestimonialFragment
   )> }
 );
 
@@ -3419,6 +3632,33 @@ export const EventFragmentDoc = gql`
   }
 }
     ${ImageFragmentDoc}`;
+export const FrameworkPageMetaFragmentDoc = gql`
+    fragment FrameworkPageMeta on FrameworkPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  framework {
+    framework {
+      codename
+      title
+    }
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+}
+    `;
+export const FrameworkPageFragmentDoc = gql`
+    fragment FrameworkPage on FrameworkPage {
+  ...FrameworkPageMeta
+  bodyRaw
+}
+    ${FrameworkPageMetaFragmentDoc}`;
 export const IntegrationMetaFragmentDoc = gql`
     fragment IntegrationMeta on Integration {
   _id
@@ -3952,6 +4192,40 @@ export const FaqPageDocument = gql`
   }
 }
     ${FaqItemFragmentDoc}`;
+export const FrameworkPagesDocument = gql`
+    query FrameworkPages {
+  allFrameworkPage(sort: {_createdAt: DESC}) {
+    ...FrameworkPageMeta
+  }
+}
+    ${FrameworkPageMetaFragmentDoc}`;
+export const FrameworkPageIndexDocument = gql`
+    query FrameworkPageIndex {
+  allFrameworkPage(sort: {_createdAt: DESC}) {
+    ...FrameworkPageMeta
+  }
+}
+    ${FrameworkPageMetaFragmentDoc}`;
+export const FrameworkPathsDocument = gql`
+    query FrameworkPaths {
+  allFrameworkPage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const FrameworkPageDocument = gql`
+    query FrameworkPage($slug: String!) {
+  allFrameworkPage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...FrameworkPage
+  }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${FrameworkPageFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const HomePageDocument = gql`
     query HomePage {
   allHome(sort: {_createdAt: DESC}, limit: 1) {
@@ -3960,13 +4234,9 @@ export const HomePageDocument = gql`
   allCaseStudy(sort: {_createdAt: DESC}) {
     ...CaseStudyMeta
   }
-  allTestimonial(sort: {index: ASC}) {
-    ...Testimonial
-  }
 }
     ${HomePageFragmentDoc}
-${CaseStudyMetaFragmentDoc}
-${TestimonialFragmentDoc}`;
+${CaseStudyMetaFragmentDoc}`;
 export const IntegrationsDocument = gql`
     query Integrations {
   allIntegration(sort: {_createdAt: DESC}) {
@@ -4084,6 +4354,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');
+    },
+    FrameworkPages(variables?: FrameworkPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPagesQuery>(FrameworkPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPages');
+    },
+    FrameworkPageIndex(variables?: FrameworkPageIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPageIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPageIndexQuery>(FrameworkPageIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPageIndex');
+    },
+    FrameworkPaths(variables?: FrameworkPathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPathsQuery>(FrameworkPathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPaths');
+    },
+    FrameworkPage(variables: FrameworkPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPageQuery>(FrameworkPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPage');
     },
     HomePage(variables?: HomePageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomePageQuery>(HomePageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'HomePage');

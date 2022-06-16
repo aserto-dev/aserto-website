@@ -50,7 +50,7 @@ const IntegrationPage = ({ integration, testimonials }: Props) => {
           src="/images/lottie.png"
           alt="Lottie"
         />
-        <h2 className="text-center text-aserto-grey-90 text-[36px] font-medium">{`Authorizaton as easy as an API call`}</h2>
+        <h2 className="text-center text-aserto-grey-90 text-[36px] font-medium">{`Authorization as easy as an API call`}</h2>
       </div>
 
       <div className="pb-10">
