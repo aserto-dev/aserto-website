@@ -37,7 +37,7 @@ const Framework = ({ frameworkPage }: Props) => {
           {frameworkPage.title}
         </h1>
 
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mx-8">
           <CodeViewer language={language} />
         </div>
 
