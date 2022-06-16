@@ -1386,6 +1386,60 @@ export type JobPostingSorting = {
   icon?: Maybe<MainImageSorting>;
 };
 
+export type LandingPage = Document & {
+  __typename?: 'LandingPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  name?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  logo?: Maybe<MainImage>;
+  slug?: Maybe<Slug>;
+  bodyRaw?: Maybe<Scalars['JSON']>;
+};
+
+export type LandingPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  name?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+  slug?: Maybe<SlugFilter>;
+};
+
+export type LandingPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  name?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
+  slug?: Maybe<SlugSorting>;
+};
+
 export type MainImage = {
   __typename?: 'MainImage';
   _key?: Maybe<Scalars['String']>;
@@ -1739,6 +1793,7 @@ export type RootQuery = {
   Home?: Maybe<Home>;
   Integration?: Maybe<Integration>;
   JobPosting?: Maybe<JobPosting>;
+  LandingPage?: Maybe<LandingPage>;
   News?: Maybe<News>;
   Post?: Maybe<Post>;
   Pricing?: Maybe<Pricing>;
@@ -1763,6 +1818,7 @@ export type RootQuery = {
   allHome: Array<Home>;
   allIntegration: Array<Integration>;
   allJobPosting: Array<JobPosting>;
+  allLandingPage: Array<LandingPage>;
   allNews: Array<News>;
   allPost: Array<Post>;
   allPricing: Array<Pricing>;
@@ -1850,6 +1906,11 @@ export type RootQueryIntegrationArgs = {
 
 
 export type RootQueryJobPostingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryLandingPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -2017,6 +2078,14 @@ export type RootQueryAllIntegrationArgs = {
 export type RootQueryAllJobPostingArgs = {
   where?: Maybe<JobPostingFilter>;
   sort?: Maybe<Array<JobPostingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllLandingPageArgs = {
+  where?: Maybe<LandingPageFilter>;
+  sort?: Maybe<Array<LandingPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2843,6 +2912,21 @@ export type IntegrationFragment = (
   & IntegrationMetaFragment
 );
 
+export type LandingPageFragment = (
+  { __typename?: 'LandingPage' }
+  & Pick<LandingPage, '_id' | '_createdAt' | 'name' | 'title' | 'subtitle' | 'bodyRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )> }
+);
+
 export type PostMetaFragment = (
   { __typename?: 'Post' }
   & Pick<Post, '_id' | 'publishedAt' | 'title' | 'excerptRaw'>
@@ -3430,6 +3514,58 @@ export type IntegrationQuery = (
   )> }
 );
 
+export type LandingPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )> }
+);
+
+export type LandingPageIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPageIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )> }
+);
+
+export type LandingPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type LandingPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type LandingPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
+  )> }
+);
+
 export type NewsItemFragment = (
   { __typename?: 'NewsBlock' }
   & Pick<NewsBlock, 'titleRaw' | 'publication' | 'publishedOn' | 'url'>
@@ -3684,6 +3820,26 @@ export const IntegrationFragmentDoc = gql`
   bodyRaw
 }
     ${IntegrationMetaFragmentDoc}`;
+export const LandingPageFragmentDoc = gql`
+    fragment LandingPage on LandingPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  name
+  logo {
+    ...Image
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+  bodyRaw
+}
+    ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -4271,6 +4427,40 @@ export const IntegrationDocument = gql`
 }
     ${IntegrationFragmentDoc}
 ${TestimonialFragmentDoc}`;
+export const LandingPagesDocument = gql`
+    query LandingPages {
+  allLandingPage(sort: {_createdAt: DESC}) {
+    ...LandingPage
+  }
+}
+    ${LandingPageFragmentDoc}`;
+export const LandingPageIndexDocument = gql`
+    query LandingPageIndex {
+  allLandingPage(sort: {_createdAt: DESC}) {
+    ...LandingPage
+  }
+}
+    ${LandingPageFragmentDoc}`;
+export const LandingPagePathsDocument = gql`
+    query LandingPagePaths {
+  allLandingPage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const LandingPageDocument = gql`
+    query LandingPage($slug: String!) {
+  allLandingPage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...LandingPage
+  }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${LandingPageFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {
@@ -4381,6 +4571,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     Integration(variables: IntegrationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<IntegrationQuery>(IntegrationDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Integration');
+    },
+    LandingPages(variables?: LandingPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPagesQuery>(LandingPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPages');
+    },
+    LandingPageIndex(variables?: LandingPageIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPageIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPageIndexQuery>(LandingPageIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPageIndex');
+    },
+    LandingPagePaths(variables?: LandingPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPagePathsQuery>(LandingPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPagePaths');
+    },
+    LandingPage(variables: LandingPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPageQuery>(LandingPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPage');
     },
     NewsPage(variables?: NewsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NewsPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NewsPageQuery>(NewsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NewsPage');

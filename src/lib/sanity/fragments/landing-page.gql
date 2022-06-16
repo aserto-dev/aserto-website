@@ -1,0 +1,18 @@
+fragment LandingPage on LandingPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  name
+  logo {
+    ...Image
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+  bodyRaw
+}
