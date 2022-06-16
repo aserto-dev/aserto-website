@@ -58,7 +58,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
               { 'border-aserto-grey-30': !showError },
               `rounded-[2px] focus:border-aserto-lochivar-accent-20
               focus:ring-0 focus:shadow-input text-[16px]
-              w-[80vw] sm:w-[500px] h-[48px] sm:h-[60px]`
+              w-full h-[48px] sm:h-[60px]`
             )}
             disabled={disableEmailInput}
             onChange={(event) => {

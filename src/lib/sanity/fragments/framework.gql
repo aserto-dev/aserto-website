@@ -1,0 +1,24 @@
+fragment FrameworkPageMeta on FrameworkPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  framework {
+    framework {
+      codename
+      title
+    }
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+}
+
+fragment FrameworkPage on FrameworkPage {
+  ...FrameworkPageMeta
+  bodyRaw
+}
