@@ -33,7 +33,7 @@ const Framework = ({ frameworkPage }: Props) => {
 
       <div className="max-w-container w-full mx-auto lg:w-11/12">
         {/* title */}
-        <h1 className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 px-10">
+        <h1 className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20 px-5">
           {frameworkPage.title}
         </h1>
 
@@ -54,7 +54,7 @@ const Framework = ({ frameworkPage }: Props) => {
       </div>
 
       {/* subtitle */}
-      <h2 className="mx-5 mt-10 mb-10 text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
+      <h2 className="mx-5 mt-10 mb-10 text-center text-4xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20 px-5">
         {frameworkPage.subtitle}
       </h2>
 
