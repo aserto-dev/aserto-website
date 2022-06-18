@@ -12,11 +12,16 @@ type Props = {
 const CtaButtons = ({ contact, contactEngineer, signup }: Props) => {
   return (
     <>
-      <div className="flex flex-col sm:flex-row mt-[50px] justify-center text-center gap-8 sm:gap-4">
-        {signup && <SignupButton />}
-        {contactEngineer && <ContactEngineerButton />}
-        {contact && <ContactButton />}
-      </div>
+      {contact ? (
+        <div className="mt-[50px]">
+          <ContactButton />
+        </div>
+      ) : (
+        <div className="flex flex-col sm:flex-row mt-[50px] justify-center text-center gap-8 sm:gap-4">
+          {signup && <SignupButton />}
+          {contactEngineer && <ContactEngineerButton />}
+        </div>
+      )}
     </>
   )
 }
