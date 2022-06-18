@@ -21,4 +21,10 @@ fragment FrameworkPageMeta on FrameworkPage {
 fragment FrameworkPage on FrameworkPage {
   ...FrameworkPageMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }

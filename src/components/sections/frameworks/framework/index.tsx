@@ -58,7 +58,7 @@ const Framework = ({ frameworkPage }: Props) => {
         {frameworkPage.subtitle}
       </h2>
 
-      <CtaButtons />
+      <CtaButtons signup contactEngineer />
 
       {frameworkPage.bodyRaw && (
         <div className="w-full sm:w-8/12 mx-auto">

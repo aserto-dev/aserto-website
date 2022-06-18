@@ -52,16 +52,18 @@ const Integration = ({ integration }: Props) => {
         {integration.subtitle}
       </h2>
 
-      <CtaButtons />
+      <CtaButtons signup contactEngineer />
 
-      <div className="w-full sm:w-8/12 mx-auto">
-        <Container className="px-5 mt-20">
-          <BlockContent
-            blocks={integration.bodyRaw}
-            className={clsx('mt-5 sm:mt-5', s.body)}
-          />
-        </Container>
-      </div>
+      {integration.bodyRaw && (
+        <div className="w-full sm:w-8/12 mx-auto">
+          <Container className="px-5 mt-20">
+            <BlockContent
+              blocks={integration.bodyRaw}
+              className={clsx('mt-5 sm:mt-5', s.body)}
+            />
+          </Container>
+        </div>
+      )}
     </section>
   )
 }

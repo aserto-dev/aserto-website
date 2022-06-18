@@ -8,7 +8,7 @@ import Error from 'next/error'
 
 import Integration from 'components/sections/integrations/integration'
 import Testimonials from 'components/sections/homepage/testimonials'
-import CtaButtons from 'components/sections/common/cta-buttons'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 
 type Props = {
   integration: IntegrationFragment
@@ -44,18 +44,7 @@ const IntegrationPage = ({ integration, testimonials }: Props) => {
         </div>
       </div>
 
-      <div className="pt-10">
-        <img
-          className="w-[480px] h-[350px] object-cover mx-auto"
-          src="/images/lottie.png"
-          alt="Lottie"
-        />
-        <h2 className="text-center text-aserto-grey-90 text-[36px] font-medium">{`Authorization as easy as an API call`}</h2>
-      </div>
-
-      <div className="pb-10">
-        <CtaButtons />
-      </div>
+      <Lottie {...ctaOptions(integration.callToAction ?? {})} />
     </PageLayout>
   )
 }

@@ -513,6 +513,34 @@ export type CodeSorting = {
   code?: Maybe<SortOrder>;
 };
 
+export type CtaBlock = {
+  __typename?: 'CtaBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  caption?: Maybe<Scalars['String']>;
+  contact?: Maybe<Scalars['Boolean']>;
+  contactEngineer?: Maybe<Scalars['Boolean']>;
+  signup?: Maybe<Scalars['Boolean']>;
+};
+
+export type CtaBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  caption?: Maybe<StringFilter>;
+  contact?: Maybe<BooleanFilter>;
+  contactEngineer?: Maybe<BooleanFilter>;
+  signup?: Maybe<BooleanFilter>;
+};
+
+export type CtaBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  caption?: Maybe<SortOrder>;
+  contact?: Maybe<SortOrder>;
+  contactEngineer?: Maybe<SortOrder>;
+  signup?: Maybe<SortOrder>;
+};
+
 
 export type DateFilter = {
   /** Checks if the value is equal to the given input. */
@@ -975,6 +1003,7 @@ export type FrameworkPage = Document & {
   subtitle?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
 };
 
 export type FrameworkPageFilter = {
@@ -991,6 +1020,7 @@ export type FrameworkPageFilter = {
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type FrameworkPageSorting = {
@@ -1005,6 +1035,7 @@ export type FrameworkPageSorting = {
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type FrameworkReference = {
@@ -1093,6 +1124,7 @@ export type Home = Document & {
   customerSpotlightSectionEnabled?: Maybe<Scalars['Boolean']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
+  callToAction?: Maybe<CtaBlock>;
   pillars?: Maybe<Array<Maybe<PillarBlock>>>;
   infos?: Maybe<Array<Maybe<InfoBlock>>>;
 };
@@ -1120,6 +1152,7 @@ export type HomeFilter = {
   customerSpotlightSectionTitle?: Maybe<StringFilter>;
   customerSpotlightSectionEnabled?: Maybe<BooleanFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type HomeSorting = {
@@ -1143,6 +1176,7 @@ export type HomeSorting = {
   customerSpotlightSectionTitle?: Maybe<SortOrder>;
   customerSpotlightSectionEnabled?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type IdFilter = {
@@ -1266,6 +1300,7 @@ export type Integration = Document & {
   logo?: Maybe<MainImage>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
 };
 
 export type IntegrationFilter = {
@@ -1283,6 +1318,7 @@ export type IntegrationFilter = {
   subtitle?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type IntegrationSorting = {
@@ -1298,6 +1334,7 @@ export type IntegrationSorting = {
   subtitle?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type InvestorBlock = {
@@ -1406,6 +1443,7 @@ export type LandingPage = Document & {
   logo?: Maybe<MainImage>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
 };
 
 export type LandingPageFilter = {
@@ -1423,6 +1461,7 @@ export type LandingPageFilter = {
   subtitle?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type LandingPageSorting = {
@@ -1438,6 +1477,7 @@ export type LandingPageSorting = {
   subtitle?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type MainImage = {
@@ -2866,6 +2906,10 @@ export type FrameworkPageMetaFragment = (
 export type FrameworkPageFragment = (
   { __typename?: 'FrameworkPage' }
   & Pick<FrameworkPage, 'bodyRaw'>
+  & { callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )> }
   & FrameworkPageMetaFragment
 );
 
@@ -2909,6 +2953,10 @@ export type IntegrationMetaFragment = (
 export type IntegrationFragment = (
   { __typename?: 'Integration' }
   & Pick<Integration, 'bodyRaw'>
+  & { callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )> }
   & IntegrationMetaFragment
 );
 
@@ -2924,6 +2972,9 @@ export type LandingPageFragment = (
   )>, slug?: Maybe<(
     { __typename?: 'Slug' }
     & Pick<Slug, 'current'>
+  )>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
   )> }
 );
 
@@ -3424,7 +3475,10 @@ export type HomePageFragment = (
       { __typename?: 'MainImage' }
       & ImageFragment
     )> }
-  )>>>, pillars?: Maybe<Array<Maybe<(
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )>, pillars?: Maybe<Array<Maybe<(
     { __typename?: 'PillarBlock' }
     & Pick<PillarBlock, 'title' | 'imagePath' | 'description'>
     & { image?: Maybe<(
@@ -3793,6 +3847,12 @@ export const FrameworkPageFragmentDoc = gql`
     fragment FrameworkPage on FrameworkPage {
   ...FrameworkPageMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }
     ${FrameworkPageMetaFragmentDoc}`;
 export const IntegrationMetaFragmentDoc = gql`
@@ -3818,6 +3878,12 @@ export const IntegrationFragmentDoc = gql`
     fragment Integration on Integration {
   ...IntegrationMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }
     ${IntegrationMetaFragmentDoc}`;
 export const LandingPageFragmentDoc = gql`
@@ -3838,6 +3904,12 @@ export const LandingPageFragmentDoc = gql`
     current
   }
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }
     ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
@@ -4128,6 +4200,12 @@ export const HomePageFragmentDoc = gql`
     authorName
     authorPosition
     quoteRaw
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
   }
   pillars {
     title

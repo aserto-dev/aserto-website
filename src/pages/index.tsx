@@ -85,7 +85,7 @@ const HomePage = ({
           latestEvent={event}
         />
       </Container>
-      <CallToAction />
+      <CallToAction {...page.callToAction} />
     </PageLayout>
   )
 }

@@ -1,8 +1,8 @@
 import PageLayout from 'components/layout/page'
-import Button from 'components/primitives/button'
 import CustomHead from 'components/primitives/custom-head'
 import Hero from 'components/sections/benefits/hero'
 import Video from 'components/sections/benefits/video'
+import Lottie from 'components/sections/common/lottie/Lottie'
 import Container from 'components/sections/homepage/container'
 
 const Benefits = () => {
@@ -188,27 +188,13 @@ const Benefits = () => {
           </div>
         </div>
       </Container>
-      <Container className="bg-benefitsCta py-[180px] text-aserto-grey-90 text-center">
-        <div>
-          <img
-            className="w-[480px] h-[350px] object-cover mx-auto"
-            src="images/lottie.png"
-            alt="Lottie"
-          />
-          <h2 className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</h2>
-          <div className="my-[50px]">
-            <Button
-              variant="primary"
-              size="sm"
-              as="a"
-              className="bg-white text-black inline-flex items-center cursor-pointer"
-              href="/contact"
-            >
-              Contact us
-            </Button>
-          </div>
-        </div>
-      </Container>
+
+      <div className="bg-benefitsCta">
+        <Lottie
+          caption={`Let's talk about your authorization challenges`}
+          contact
+        />
+      </div>
     </PageLayout>
   )
 }

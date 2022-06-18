@@ -38,6 +38,12 @@ fragment HomePage on Home {
     authorPosition
     quoteRaw
   }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
   pillars {
     title
     image {

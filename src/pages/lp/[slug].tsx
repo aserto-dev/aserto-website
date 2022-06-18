@@ -6,9 +6,10 @@ import { GetStaticProps } from 'next'
 import { LandingPageFragment, Testimonial } from 'lib/sanity/generated'
 import Error from 'next/error'
 
-import LandingPageSection from 'components/sections/landing-pages/landing-page'
+import LandingPageSection from 'components/sections/landing-page'
 import Testimonials from 'components/sections/homepage/testimonials'
 import Signup from 'components/sections/signup'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 
 type Props = {
   landingPage: LandingPageFragment
@@ -48,14 +49,7 @@ const LandingPage = ({ landingPage, testimonials }: Props) => {
         <Signup />
       </div>
 
-      <div className="py-10">
-        <img
-          className="w-[480px] h-[350px] object-cover mx-auto"
-          src="/images/lottie.png"
-          alt="Lottie"
-        />
-        <h2 className="text-center text-aserto-grey-90 text-[36px] font-medium">{`Authorization as easy as an API call`}</h2>
-      </div>
+      <Lottie {...ctaOptions(landingPage.callToAction ?? {})} />
     </PageLayout>
   )
 }

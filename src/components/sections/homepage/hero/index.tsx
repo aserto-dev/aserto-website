@@ -13,7 +13,7 @@ const Hero = () => {
       <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
         The fastest path to enterprise-grade authorization.
       </h1>
-      <CtaButtons />
+      <CtaButtons signup contactEngineer />
     </Container>
   )
 }

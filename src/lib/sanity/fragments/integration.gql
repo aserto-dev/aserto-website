@@ -19,4 +19,10 @@ fragment IntegrationMeta on Integration {
 fragment Integration on Integration {
   ...IntegrationMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }

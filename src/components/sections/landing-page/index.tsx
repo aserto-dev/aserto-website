@@ -1,4 +1,3 @@
-import Link from 'components/primitives/link'
 import Image from 'components/primitives/image'
 import { LandingPageFragment } from 'lib/sanity/generated'
 import s from './landing-page.module.scss'
@@ -17,18 +16,7 @@ type Props = {
 
 const LandingPage = ({ landingPage }: Props) => {
   return (
-    <section className="relative mx-auto pt-12 mb-20 lg:pt-24 md:pt-24">
-      <div className="w-full mx-auto lg:w-10/12">
-        <Container>
-          <Link
-            href="/lp"
-            className="inline-block mb-12 font-roboto text-aserto-lochivar-accent-40 hover:underline"
-          >
-            Back to all landing pages
-          </Link>
-        </Container>
-      </div>
-
+    <section className="relative mx-auto pt-10 mb-20">
       {/* title */}
       <h1 className="mt-5 mb-5 text-center text-5xl lg:text-5xl sm:leading-none text-aserto-grey-90 lg:px-20 px-5">
         {landingPage.title}
@@ -52,16 +40,18 @@ const LandingPage = ({ landingPage }: Props) => {
         {landingPage.subtitle}
       </h2>
 
-      <CtaButtons />
+      <CtaButtons signup contactEngineer />
 
-      <div className="w-full sm:w-8/12 mx-auto">
-        <Container className="px-5 mt-20">
-          <BlockContent
-            blocks={landingPage.bodyRaw}
-            className={clsx('mt-5 sm:mt-5', s.body)}
-          />
-        </Container>
-      </div>
+      {landingPage.bodyRaw && (
+        <div className="w-full sm:w-8/12 mx-auto">
+          <Container className="px-5 mt-20">
+            <BlockContent
+              blocks={landingPage.bodyRaw}
+              className={clsx('mt-5 sm:mt-5', s.body)}
+            />
+          </Container>
+        </div>
+      )}
     </section>
   )
 }

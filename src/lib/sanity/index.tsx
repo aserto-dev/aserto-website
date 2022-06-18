@@ -19,7 +19,7 @@ const cms = () => {
   return getSdk(
     new GraphQLClient(endpoint, {
       headers: {
-        Authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`
+        authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`
       }
     })
   )

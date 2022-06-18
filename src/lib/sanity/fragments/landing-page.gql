@@ -15,4 +15,10 @@ fragment LandingPage on LandingPage {
     current
   }
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }

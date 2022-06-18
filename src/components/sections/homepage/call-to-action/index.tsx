@@ -4,8 +4,10 @@ import Container from '../container'
 import SignupContainer from 'components/sections/signup/SignupContainer'
 import HubspotForm from 'lib/hubspot/HubspotForm'
 import { NameToFormId } from 'lib/hubspot/HubspotIds'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
+import { CtaBlock } from 'lib/sanity/generated'
 
-const CallToAction = () => {
+const CallToAction = (ctaBlock: CtaBlock) => {
   const [showBlogModal, setShowBlogModal] = useState(false)
   return (
     <>
@@ -79,27 +81,8 @@ const CallToAction = () => {
           </div>
         </div>
       </Container>
-      <Container className="py-[180px] text-aserto-grey-90 text-center">
-        <div>
-          <img
-            className="w-[480px] h-[350px] object-cover mx-auto"
-            src="/images/lottie.png"
-            alt="Lottie"
-          />
-          <h2 className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</h2>
-          <div className="my-[50px]">
-            <Button
-              variant="primary"
-              size="sm"
-              as="a"
-              className="inline-flex items-center cursor-pointer"
-              href="/contact"
-            >
-              Contact us
-            </Button>
-          </div>
-        </div>
-      </Container>
+
+      <Lottie {...ctaOptions(ctaBlock)} />
     </>
   )
 }
