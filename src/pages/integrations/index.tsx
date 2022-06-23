@@ -16,7 +16,7 @@ const IntegrationsPage = ({
     <PageLayout
       footer="regular"
       headProps={{
-        title: 'Aserto Integrations',
+        title: 'Integrations - Aserto',
         description: 'Aserto technology integrations',
         image: 'images/og.png'
       }}

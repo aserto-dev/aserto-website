@@ -18,7 +18,7 @@ const PricingPage = ({
     <PageLayout
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'Aserto Pricing',
+        title: page.metadata?.title ?? 'Pricing - Aserto',
         description:
           page.metadata?.description ??
           'Pricing for the editions of the Aserto authorization service',

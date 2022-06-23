@@ -21,7 +21,7 @@ const IntegrationPage = ({ integration }: Props) => {
       headProps={{
         title:
           integration.metadata?.title ??
-          `Aserto - integration with ${integration.technology}`,
+          `Integration with ${integration.technology} - Aserto`,
         description:
           integration.metadata?.description ??
           `Aserto technology integration with ${integration.technology}`,

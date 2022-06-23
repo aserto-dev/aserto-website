@@ -22,9 +22,9 @@ const CallToAction = () => {
         </SignupContainer>
       )}
       <Container className="py-[50px] bg-aserto-grey-10 text-aserto-grey-90 text-center">
-        <h2 className="text-[36px] pb-[50px] font-medium">
+        <div className="text-[36px] pb-[50px] font-medium">
           Join the community
-        </h2>
+        </div>
         <div className="grid sm:grid-rows-2 sm:grid-flow-col xl:gap-x-80 gap-12 py-[45px] px-[50px]">
           <div className="w-full">
             <img
@@ -85,7 +85,7 @@ const CallToAction = () => {
             src="/images/lottie.png"
             alt="Lottie"
           />
-          <h2 className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</h2>
+          <div className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</div>
           <div className="my-[50px]">
             <Button
               variant="primary"

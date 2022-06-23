@@ -18,7 +18,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer="regular"
       headProps={{
-        title: 'Aserto Blog',
+        title: 'Blog - Aserto',
         description:
           'Aserto blog containing technology articles and company updates',
         image: 'images/og.png'

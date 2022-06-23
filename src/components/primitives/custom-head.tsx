@@ -1,11 +1,13 @@
 import Head from 'next/head'
 import { useMemo } from 'react'
+import { useRouter } from 'next/router'
 
 const defaultMeta = {
   title: 'Aserto - Welcome to modern authorization.',
   description: `Authorization for All`,
   image: 'https://www.aserto.com/images/og.png',
-  twitterTag: 'aserto_com'
+  twitterTag: 'aserto_com',
+  baseUrl: `https://www.aserto.com`
 }
 
 export type CustomHeadProps = {
@@ -40,6 +42,10 @@ const decodeHTMLEntities = (text: string) => {
 }
 
 const CustomHead = ({ title, description, image }: CustomHeadProps) => {
+  const router = useRouter()
+  const canonicalUrl = (
+    defaultMeta.baseUrl + (router.asPath === '/' ? '' : router.asPath)
+  ).split('?')[0]
   const resolvedMeta = useMemo(() => {
     return {
       title: title ?? defaultMeta.title,
@@ -53,6 +59,7 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
   return (
     <Head>
       <title>{resolvedMeta.title}</title>
+      <link rel="canonical" href={canonicalUrl} />
       <meta charSet="utf-8" />
       <meta
         name="viewport"

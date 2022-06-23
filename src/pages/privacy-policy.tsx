@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
       contain
       footer="regular"
       headProps={{
-        title: 'Aserto Privacy Policy',
+        title: 'Privacy Policy - Aserto',
         description: 'Aserto privacy policy',
         image: 'images/og.png'
       }}

@@ -25,7 +25,7 @@ const TermsOfService = () => {
       contain
       footer="regular"
       headProps={{
-        title: 'Aserto Terms of Service',
+        title: 'Terms of Service - Aserto',
         description: 'Aserto terms of service',
         image: 'images/og.png'
       }}

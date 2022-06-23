@@ -5,7 +5,7 @@ const ContactConfirmation = () => {
   return (
     <PageLayout
       headProps={{
-        title: 'Thank you',
+        title: 'Thank you - Aserto',
         description: 'Thank you for contacting us',
         image: 'images/og.png'
       }}

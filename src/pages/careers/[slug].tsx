@@ -19,7 +19,7 @@ const JobPostingPage = ({ posting }: Props) => {
       footer="regular"
       headProps={{
         title:
-          posting.metadata?.title ?? `${posting.title} - Aserto Job Posting`,
+          posting.metadata?.title ?? `${posting.title} - Job Posting - Aserto`,
         description:
           posting.metadata?.description ??
           `Aserto job description for ${posting.title}`,
