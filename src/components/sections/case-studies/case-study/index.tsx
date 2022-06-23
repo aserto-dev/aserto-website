@@ -12,6 +12,7 @@ type Props = {
 }
 
 const CaseStudy = ({ caseStudy }: Props) => {
+  console.log(caseStudy.titleRaw[0]?.children[0]?.text)
   return (
     <section className="relative w-full mx-auto lg:w-10/12 pt-12 mb-52 lg:pt-24  md:pt-24">
       <div>
@@ -24,10 +25,9 @@ const CaseStudy = ({ caseStudy }: Props) => {
       </div>
 
       {/* title */}
-      <BlockContent
-        blocks={caseStudy.titleRaw}
-        className="mt-5 mb-10 text-center text-3xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20"
-      />
+      <h1 className="mt-5 mb-10 text-center text-3xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
+        {caseStudy.titleRaw[0]?.children[0]?.text ?? ''}
+      </h1>
 
       {/* logo and impact */}
       <div className="bg-white rounded-[6px]">
