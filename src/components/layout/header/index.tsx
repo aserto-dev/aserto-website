@@ -29,7 +29,7 @@ export const headerLinks = [
         isExternal: false
       },
       {
-        label: 'Case studies',
+        label: 'Customers',
         href: '/customers',
         isExternal: false
       },

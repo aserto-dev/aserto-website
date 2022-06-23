@@ -17,7 +17,7 @@ const CaseStudiesPage = ({
     <PageLayout
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'Case Studies - Aserto',
+        title: page.metadata?.title ?? 'Customers - Aserto',
         description:
           page.metadata?.description ??
           'Case studies of happy Aserto customers',
