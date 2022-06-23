@@ -1,0 +1,29 @@
+query LandingPages {
+  allLandingPage(sort: { _createdAt: DESC }) {
+    ...LandingPage
+  }
+}
+
+query LandingPageIndex {
+  allLandingPage(sort: { _createdAt: DESC }) {
+    ...LandingPage
+  }
+}
+
+query LandingPagePaths {
+  allLandingPage {
+    slug {
+      current
+    }
+  }
+}
+
+query LandingPage($slug: String!) {
+  allLandingPage(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...LandingPage
+  }
+
+  allTestimonial(sort: { index: ASC }) {
+    ...Testimonial
+  }
+}

@@ -513,6 +513,34 @@ export type CodeSorting = {
   code?: Maybe<SortOrder>;
 };
 
+export type CtaBlock = {
+  __typename?: 'CtaBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  caption?: Maybe<Scalars['String']>;
+  contact?: Maybe<Scalars['Boolean']>;
+  contactEngineer?: Maybe<Scalars['Boolean']>;
+  signup?: Maybe<Scalars['Boolean']>;
+};
+
+export type CtaBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  caption?: Maybe<StringFilter>;
+  contact?: Maybe<BooleanFilter>;
+  contactEngineer?: Maybe<BooleanFilter>;
+  signup?: Maybe<BooleanFilter>;
+};
+
+export type CtaBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  caption?: Maybe<SortOrder>;
+  contact?: Maybe<SortOrder>;
+  contactEngineer?: Maybe<SortOrder>;
+  signup?: Maybe<SortOrder>;
+};
+
 
 export type DateFilter = {
   /** Checks if the value is equal to the given input. */
@@ -926,6 +954,119 @@ export type FounderBlockSorting = {
   linkedIn?: Maybe<SortOrder>;
 };
 
+export type Framework = Document & {
+  __typename?: 'Framework';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  codename?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type FrameworkFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  codename?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+};
+
+export type FrameworkPage = Document & {
+  __typename?: 'FrameworkPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  framework?: Maybe<FrameworkReference>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  slug?: Maybe<Slug>;
+  bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type FrameworkPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  framework?: Maybe<FrameworkReferenceFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+  slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type FrameworkPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  framework?: Maybe<FrameworkReferenceSorting>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+  slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
+};
+
+export type FrameworkReference = {
+  __typename?: 'FrameworkReference';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  framework?: Maybe<Framework>;
+};
+
+export type FrameworkReferenceFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  framework?: Maybe<FrameworkFilter>;
+};
+
+export type FrameworkReferenceSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+};
+
+export type FrameworkSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  codename?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+};
+
 export type Geopoint = {
   __typename?: 'Geopoint';
   _key?: Maybe<Scalars['String']>;
@@ -983,6 +1124,7 @@ export type Home = Document & {
   customerSpotlightSectionEnabled?: Maybe<Scalars['Boolean']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
+  callToAction?: Maybe<CtaBlock>;
   pillars?: Maybe<Array<Maybe<PillarBlock>>>;
   infos?: Maybe<Array<Maybe<InfoBlock>>>;
 };
@@ -1010,6 +1152,7 @@ export type HomeFilter = {
   customerSpotlightSectionTitle?: Maybe<StringFilter>;
   customerSpotlightSectionEnabled?: Maybe<BooleanFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type HomeSorting = {
@@ -1033,6 +1176,7 @@ export type HomeSorting = {
   customerSpotlightSectionTitle?: Maybe<SortOrder>;
   customerSpotlightSectionEnabled?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type IdFilter = {
@@ -1151,10 +1295,12 @@ export type Integration = Document & {
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
   technology?: Maybe<Scalars['String']>;
-  titleRaw?: Maybe<Scalars['JSON']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
   logo?: Maybe<MainImage>;
   slug?: Maybe<Slug>;
   bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
 };
 
 export type IntegrationFilter = {
@@ -1168,8 +1314,11 @@ export type IntegrationFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   technology?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
   logo?: Maybe<MainImageFilter>;
   slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type IntegrationSorting = {
@@ -1181,8 +1330,11 @@ export type IntegrationSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   technology?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
   logo?: Maybe<MainImageSorting>;
   slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type InvestorBlock = {
@@ -1269,6 +1421,63 @@ export type JobPostingSorting = {
   slug?: Maybe<SlugSorting>;
   publishedAt?: Maybe<SortOrder>;
   icon?: Maybe<MainImageSorting>;
+};
+
+export type LandingPage = Document & {
+  __typename?: 'LandingPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  name?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  logo?: Maybe<MainImage>;
+  slug?: Maybe<Slug>;
+  bodyRaw?: Maybe<Scalars['JSON']>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type LandingPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  name?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  subtitle?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+  slug?: Maybe<SlugFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type LandingPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  name?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  subtitle?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
+  slug?: Maybe<SlugSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type MainImage = {
@@ -1619,13 +1828,17 @@ export type RootQuery = {
   Event?: Maybe<Event>;
   EventsPage?: Maybe<EventsPage>;
   Faq?: Maybe<Faq>;
+  Framework?: Maybe<Framework>;
+  FrameworkPage?: Maybe<FrameworkPage>;
   Home?: Maybe<Home>;
   Integration?: Maybe<Integration>;
   JobPosting?: Maybe<JobPosting>;
+  LandingPage?: Maybe<LandingPage>;
   News?: Maybe<News>;
   Post?: Maybe<Post>;
   Pricing?: Maybe<Pricing>;
   SiteSettings?: Maybe<SiteSettings>;
+  Testimonial?: Maybe<Testimonial>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -1640,13 +1853,17 @@ export type RootQuery = {
   allEvent: Array<Event>;
   allEventsPage: Array<EventsPage>;
   allFaq: Array<Faq>;
+  allFramework: Array<Framework>;
+  allFrameworkPage: Array<FrameworkPage>;
   allHome: Array<Home>;
   allIntegration: Array<Integration>;
   allJobPosting: Array<JobPosting>;
+  allLandingPage: Array<LandingPage>;
   allNews: Array<News>;
   allPost: Array<Post>;
   allPricing: Array<Pricing>;
   allSiteSettings: Array<SiteSettings>;
+  allTestimonial: Array<Testimonial>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -1708,6 +1925,16 @@ export type RootQueryFaqArgs = {
 };
 
 
+export type RootQueryFrameworkArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryFrameworkPageArgs = {
+  id: Scalars['ID'];
+};
+
+
 export type RootQueryHomeArgs = {
   id: Scalars['ID'];
 };
@@ -1719,6 +1946,11 @@ export type RootQueryIntegrationArgs = {
 
 
 export type RootQueryJobPostingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryLandingPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -1739,6 +1971,11 @@ export type RootQueryPricingArgs = {
 
 
 export type RootQuerySiteSettingsArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryTestimonialArgs = {
   id: Scalars['ID'];
 };
 
@@ -1846,6 +2083,22 @@ export type RootQueryAllFaqArgs = {
 };
 
 
+export type RootQueryAllFrameworkArgs = {
+  where?: Maybe<FrameworkFilter>;
+  sort?: Maybe<Array<FrameworkSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllFrameworkPageArgs = {
+  where?: Maybe<FrameworkPageFilter>;
+  sort?: Maybe<Array<FrameworkPageSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
 export type RootQueryAllHomeArgs = {
   where?: Maybe<HomeFilter>;
   sort?: Maybe<Array<HomeSorting>>;
@@ -1865,6 +2118,14 @@ export type RootQueryAllIntegrationArgs = {
 export type RootQueryAllJobPostingArgs = {
   where?: Maybe<JobPostingFilter>;
   sort?: Maybe<Array<JobPostingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllLandingPageArgs = {
+  where?: Maybe<LandingPageFilter>;
+  sort?: Maybe<Array<LandingPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -1897,6 +2158,14 @@ export type RootQueryAllPricingArgs = {
 export type RootQueryAllSiteSettingsArgs = {
   where?: Maybe<SiteSettingsFilter>;
   sort?: Maybe<Array<SiteSettingsSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllTestimonialArgs = {
+  where?: Maybe<TestimonialFilter>;
+  sort?: Maybe<Array<TestimonialSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2445,6 +2714,27 @@ export type TableSorting = {
   _type?: Maybe<SortOrder>;
 };
 
+export type Testimonial = Document & {
+  __typename?: 'Testimonial';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  index?: Maybe<Scalars['Float']>;
+  picture?: Maybe<MainImage>;
+  name?: Maybe<Scalars['String']>;
+  position?: Maybe<Scalars['String']>;
+  quoteRaw?: Maybe<Scalars['JSON']>;
+  logo?: Maybe<MainImage>;
+};
+
 export type TestimonialBlock = {
   __typename?: 'TestimonialBlock';
   _key?: Maybe<Scalars['String']>;
@@ -2469,6 +2759,36 @@ export type TestimonialBlockSorting = {
   authorAvatar?: Maybe<MainImageSorting>;
   authorName?: Maybe<SortOrder>;
   authorPosition?: Maybe<SortOrder>;
+};
+
+export type TestimonialFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  index?: Maybe<FloatFilter>;
+  picture?: Maybe<MainImageFilter>;
+  name?: Maybe<StringFilter>;
+  position?: Maybe<StringFilter>;
+  logo?: Maybe<MainImageFilter>;
+};
+
+export type TestimonialSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  index?: Maybe<SortOrder>;
+  picture?: Maybe<MainImageSorting>;
+  name?: Maybe<SortOrder>;
+  position?: Maybe<SortOrder>;
+  logo?: Maybe<MainImageSorting>;
 };
 
 export type TextBlock = {
@@ -2565,6 +2885,34 @@ export type FeatureItemFragment = (
   )> }
 );
 
+export type FrameworkPageMetaFragment = (
+  { __typename?: 'FrameworkPage' }
+  & Pick<FrameworkPage, '_id' | '_createdAt' | 'title' | 'subtitle'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, framework?: Maybe<(
+    { __typename?: 'FrameworkReference' }
+    & { framework?: Maybe<(
+      { __typename?: 'Framework' }
+      & Pick<Framework, 'codename' | 'title'>
+    )> }
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )> }
+);
+
+export type FrameworkPageFragment = (
+  { __typename?: 'FrameworkPage' }
+  & Pick<FrameworkPage, 'bodyRaw'>
+  & { callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )> }
+  & FrameworkPageMetaFragment
+);
+
 export type ImageFragment = (
   { __typename?: 'MainImage' }
   & Pick<MainImage, 'caption' | 'alt'>
@@ -2589,7 +2937,7 @@ export type ImageFragment = (
 
 export type IntegrationMetaFragment = (
   { __typename?: 'Integration' }
-  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'titleRaw'>
+  & Pick<Integration, '_id' | '_createdAt' | 'technology' | 'title' | 'subtitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -2605,7 +2953,29 @@ export type IntegrationMetaFragment = (
 export type IntegrationFragment = (
   { __typename?: 'Integration' }
   & Pick<Integration, 'bodyRaw'>
+  & { callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )> }
   & IntegrationMetaFragment
+);
+
+export type LandingPageFragment = (
+  { __typename?: 'LandingPage' }
+  & Pick<LandingPage, '_id' | '_createdAt' | 'name' | 'title' | 'subtitle' | 'bodyRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )> }
 );
 
 export type PostMetaFragment = (
@@ -2649,6 +3019,18 @@ export type SectionBlockFragment = (
   { __typename?: 'SectionBlock' }
   & Pick<SectionBlock, 'title' | 'subtitleRaw'>
   & { image?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type TestimonialFragment = (
+  { __typename?: 'Testimonial' }
+  & Pick<Testimonial, '_id' | '_createdAt' | 'index' | 'name' | 'position' | 'quoteRaw'>
+  & { picture?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, logo?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )> }
@@ -3012,6 +3394,58 @@ export type FaqPageQuery = (
   )> }
 );
 
+export type FrameworkPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageMetaFragment
+  )> }
+);
+
+export type FrameworkPageIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPageIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageMetaFragment
+  )> }
+);
+
+export type FrameworkPathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FrameworkPathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type FrameworkPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type FrameworkPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFrameworkPage: Array<(
+    { __typename?: 'FrameworkPage' }
+    & FrameworkPageFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
+  )> }
+);
+
 export type HomePageFragment = (
   { __typename?: 'Home' }
   & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'customerSpotlightSectionEnabled' | 'testimonialsSectionTitle'>
@@ -3041,7 +3475,10 @@ export type HomePageFragment = (
       { __typename?: 'MainImage' }
       & ImageFragment
     )> }
-  )>>>, pillars?: Maybe<Array<Maybe<(
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+  )>, pillars?: Maybe<Array<Maybe<(
     { __typename?: 'PillarBlock' }
     & Pick<PillarBlock, 'title' | 'imagePath' | 'description'>
     & { image?: Maybe<(
@@ -3125,6 +3562,61 @@ export type IntegrationQuery = (
   & { allIntegration: Array<(
     { __typename?: 'Integration' }
     & IntegrationFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
+  )> }
+);
+
+export type LandingPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )> }
+);
+
+export type LandingPageIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPageIndexQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )> }
+);
+
+export type LandingPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type LandingPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type LandingPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allLandingPage: Array<(
+    { __typename?: 'LandingPage' }
+    & LandingPageFragment
+  )>, allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
   )> }
 );
 
@@ -3190,6 +3682,17 @@ export type PricingQuery = (
   )>, allEdition: Array<(
     { __typename?: 'Edition' }
     & EditionFragment
+  )> }
+);
+
+export type TestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type TestimonialsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allTestimonial: Array<(
+    { __typename?: 'Testimonial' }
+    & TestimonialFragment
   )> }
 );
 
@@ -3319,6 +3822,39 @@ export const EventFragmentDoc = gql`
   }
 }
     ${ImageFragmentDoc}`;
+export const FrameworkPageMetaFragmentDoc = gql`
+    fragment FrameworkPageMeta on FrameworkPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  framework {
+    framework {
+      codename
+      title
+    }
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+}
+    `;
+export const FrameworkPageFragmentDoc = gql`
+    fragment FrameworkPage on FrameworkPage {
+  ...FrameworkPageMeta
+  bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
+}
+    ${FrameworkPageMetaFragmentDoc}`;
 export const IntegrationMetaFragmentDoc = gql`
     fragment IntegrationMeta on Integration {
   _id
@@ -3331,7 +3867,8 @@ export const IntegrationMetaFragmentDoc = gql`
   logo {
     ...Image
   }
-  titleRaw
+  title
+  subtitle
   slug {
     current
   }
@@ -3341,8 +3878,40 @@ export const IntegrationFragmentDoc = gql`
     fragment Integration on Integration {
   ...IntegrationMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }
     ${IntegrationMetaFragmentDoc}`;
+export const LandingPageFragmentDoc = gql`
+    fragment LandingPage on LandingPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  name
+  logo {
+    ...Image
+  }
+  title
+  subtitle
+  slug {
+    current
+  }
+  bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
+}
+    ${ImageFragmentDoc}`;
 export const PostMetaFragmentDoc = gql`
     fragment PostMeta on Post {
   _id
@@ -3384,6 +3953,22 @@ export const PostFragmentDoc = gql`
   bodyRaw
 }
     ${PostMetaFragmentDoc}`;
+export const TestimonialFragmentDoc = gql`
+    fragment Testimonial on Testimonial {
+  _id
+  _createdAt
+  index
+  picture {
+    ...Image
+  }
+  name
+  position
+  logo {
+    ...Image
+  }
+  quoteRaw
+}
+    ${ImageFragmentDoc}`;
 export const FounderFragmentDoc = gql`
     fragment Founder on FounderBlock {
   avatar {
@@ -3616,6 +4201,12 @@ export const HomePageFragmentDoc = gql`
     authorPosition
     quoteRaw
   }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
   pillars {
     title
     image {
@@ -3835,6 +4426,40 @@ export const FaqPageDocument = gql`
   }
 }
     ${FaqItemFragmentDoc}`;
+export const FrameworkPagesDocument = gql`
+    query FrameworkPages {
+  allFrameworkPage(sort: {_createdAt: DESC}) {
+    ...FrameworkPageMeta
+  }
+}
+    ${FrameworkPageMetaFragmentDoc}`;
+export const FrameworkPageIndexDocument = gql`
+    query FrameworkPageIndex {
+  allFrameworkPage(sort: {_createdAt: DESC}) {
+    ...FrameworkPageMeta
+  }
+}
+    ${FrameworkPageMetaFragmentDoc}`;
+export const FrameworkPathsDocument = gql`
+    query FrameworkPaths {
+  allFrameworkPage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const FrameworkPageDocument = gql`
+    query FrameworkPage($slug: String!) {
+  allFrameworkPage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...FrameworkPage
+  }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${FrameworkPageFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const HomePageDocument = gql`
     query HomePage {
   allHome(sort: {_createdAt: DESC}, limit: 1) {
@@ -3874,8 +4499,46 @@ export const IntegrationDocument = gql`
   allIntegration(where: {slug: {current: {eq: $slug}}}, limit: 1) {
     ...Integration
   }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
 }
-    ${IntegrationFragmentDoc}`;
+    ${IntegrationFragmentDoc}
+${TestimonialFragmentDoc}`;
+export const LandingPagesDocument = gql`
+    query LandingPages {
+  allLandingPage(sort: {_createdAt: DESC}) {
+    ...LandingPage
+  }
+}
+    ${LandingPageFragmentDoc}`;
+export const LandingPageIndexDocument = gql`
+    query LandingPageIndex {
+  allLandingPage(sort: {_createdAt: DESC}) {
+    ...LandingPage
+  }
+}
+    ${LandingPageFragmentDoc}`;
+export const LandingPagePathsDocument = gql`
+    query LandingPagePaths {
+  allLandingPage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const LandingPageDocument = gql`
+    query LandingPage($slug: String!) {
+  allLandingPage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...LandingPage
+  }
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${LandingPageFragmentDoc}
+${TestimonialFragmentDoc}`;
 export const NewsPageDocument = gql`
     query NewsPage {
   allNews(sort: {_createdAt: DESC}, limit: 1) {
@@ -3894,6 +4557,13 @@ export const PricingDocument = gql`
 }
     ${PricingFragmentDoc}
 ${EditionFragmentDoc}`;
+export const TestimonialsDocument = gql`
+    query Testimonials {
+  allTestimonial(sort: {index: ASC}) {
+    ...Testimonial
+  }
+}
+    ${TestimonialFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -3953,6 +4623,18 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');
     },
+    FrameworkPages(variables?: FrameworkPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPagesQuery>(FrameworkPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPages');
+    },
+    FrameworkPageIndex(variables?: FrameworkPageIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPageIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPageIndexQuery>(FrameworkPageIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPageIndex');
+    },
+    FrameworkPaths(variables?: FrameworkPathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPathsQuery>(FrameworkPathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPaths');
+    },
+    FrameworkPage(variables: FrameworkPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPageQuery>(FrameworkPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPage');
+    },
     HomePage(variables?: HomePageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<HomePageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomePageQuery>(HomePageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'HomePage');
     },
@@ -3968,11 +4650,26 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     Integration(variables: IntegrationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<IntegrationQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<IntegrationQuery>(IntegrationDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Integration');
     },
+    LandingPages(variables?: LandingPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPagesQuery>(LandingPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPages');
+    },
+    LandingPageIndex(variables?: LandingPageIndexQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPageIndexQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPageIndexQuery>(LandingPageIndexDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPageIndex');
+    },
+    LandingPagePaths(variables?: LandingPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPagePathsQuery>(LandingPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPagePaths');
+    },
+    LandingPage(variables: LandingPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<LandingPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LandingPageQuery>(LandingPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'LandingPage');
+    },
     NewsPage(variables?: NewsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<NewsPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NewsPageQuery>(NewsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'NewsPage');
     },
     Pricing(variables?: PricingQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PricingQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PricingQuery>(PricingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pricing');
+    },
+    Testimonials(variables?: TestimonialsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestimonialsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<TestimonialsQuery>(TestimonialsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Testimonials');
     }
   };
 }

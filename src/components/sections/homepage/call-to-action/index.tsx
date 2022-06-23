@@ -3,8 +3,11 @@ import Button from 'components/primitives/button'
 import Container from '../container'
 import SignupContainer from 'components/sections/signup/SignupContainer'
 import HubspotForm from 'lib/hubspot/HubspotForm'
+import { NameToFormId } from 'lib/hubspot/HubspotIds'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
+import { CtaBlock } from 'lib/sanity/generated'
 
-const CallToAction = () => {
+const CallToAction = (ctaBlock: CtaBlock) => {
   const [showBlogModal, setShowBlogModal] = useState(false)
   return (
     <>
@@ -17,7 +20,7 @@ const CallToAction = () => {
             <h4 className="text-[18px] text-aserto-grey-90 text-center font-semibold my-4">
               Sign up for our newsletter
             </h4>
-            <HubspotForm formId="0ba34fad-afcf-4dde-8b51-b73c32c9595c" />
+            <HubspotForm formId={NameToFormId.newsletter} />
           </>
         </SignupContainer>
       )}
@@ -78,27 +81,8 @@ const CallToAction = () => {
           </div>
         </div>
       </Container>
-      <Container className="py-[180px] text-aserto-grey-90 text-center">
-        <div>
-          <img
-            className="w-[480px] h-[350px] object-cover mx-auto"
-            src="/images/lottie.png"
-            alt="Lottie"
-          />
-          <div className="text-[36px] font-medium">{`Let's talk about your authorization challenges`}</div>
-          <div className="my-[50px]">
-            <Button
-              variant="primary"
-              size="sm"
-              as="a"
-              className="inline-flex items-center cursor-pointer"
-              href="/contact"
-            >
-              Contact us
-            </Button>
-          </div>
-        </div>
-      </Container>
+
+      <Lottie {...ctaOptions(ctaBlock)} />
     </>
   )
 }

@@ -1,0 +1,5 @@
+query Testimonials {
+  allTestimonial(sort: { index: ASC }) {
+    ...Testimonial
+  }
+}

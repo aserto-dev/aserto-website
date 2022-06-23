@@ -9,7 +9,8 @@ fragment IntegrationMeta on Integration {
   logo {
     ...Image
   }
-  titleRaw
+  title
+  subtitle
   slug {
     current
   }
@@ -18,4 +19,10 @@ fragment IntegrationMeta on Integration {
 fragment Integration on Integration {
   ...IntegrationMeta
   bodyRaw
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
 }

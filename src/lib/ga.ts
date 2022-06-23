@@ -1,6 +1,6 @@
 export const pageview = (url: string) => {
   //@ts-ignore
-  window.gtag('config', process.env.NEXT_PUBLIC_GA_CODE, {
+  sendEvent('page_view', {
     page_path: url
   })
 }
@@ -8,5 +8,14 @@ export const pageview = (url: string) => {
 // log specific events happening.
 export const sendEvent = ({ action, params }: any) => {
   //@ts-ignore
-  window.gtag('event', action, params)
+  window?.gtag && window.gtag('event', action, params)
+}
+
+// push to dataLayer
+export const dataLayerPush = (event: any) => {
+  //@ts-ignore
+  const push = window?.dataLayer?.push
+  if (!!push && typeof push === 'function') {
+    push(event)
+  }
 }

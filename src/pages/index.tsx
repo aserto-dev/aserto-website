@@ -15,7 +15,8 @@ import CallToAction from 'components/sections/homepage/call-to-action'
 const HomePage = ({
   post,
   event,
-  page
+  page,
+  testimonials
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
@@ -75,16 +76,16 @@ const HomePage = ({
       </Container>
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
-          Built by developers, for developers
+          {page.testimonialsSectionTitle}
         </h2>
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
         <LatestInfo
           title={'Our latest content and events'}
           latestBlogPost={post}
           latestEvent={event}
         />
       </Container>
-      <CallToAction />
+      <CallToAction {...page.callToAction} />
     </PageLayout>
   )
 }
@@ -95,12 +96,14 @@ export const getStaticProps = async () => {
   })
   const { allEvent } = await cms().EventsPage()
   const { allHome } = await cms().HomePage()
+  const { allTestimonial } = await cms().Testimonials()
 
   return {
     props: {
       post: allPost[0],
       event: allEvent[0],
-      page: allHome[0]
+      page: allHome[0],
+      testimonials: allTestimonial
     },
     revalidate: 1
   }

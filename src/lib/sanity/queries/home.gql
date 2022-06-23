@@ -38,6 +38,12 @@ fragment HomePage on Home {
     authorPosition
     quoteRaw
   }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+  }
   pillars {
     title
     image {
@@ -48,7 +54,7 @@ fragment HomePage on Home {
   }
   infos {
     image {
-        ...Image
+      ...Image
     }
     imagePath
     title

@@ -1,0 +1,29 @@
+query FrameworkPages {
+  allFrameworkPage(sort: { _createdAt: DESC }) {
+    ...FrameworkPageMeta
+  }
+}
+
+query FrameworkPageIndex {
+  allFrameworkPage(sort: { _createdAt: DESC }) {
+    ...FrameworkPageMeta
+  }
+}
+
+query FrameworkPaths {
+  allFrameworkPage {
+    slug {
+      current
+    }
+  }
+}
+
+query FrameworkPage($slug: String!) {
+  allFrameworkPage(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...FrameworkPage
+  }
+
+  allTestimonial(sort: { index: ASC }) {
+    ...Testimonial
+  }
+}

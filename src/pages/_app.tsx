@@ -8,6 +8,7 @@ import React, { useEffect } from 'react'
 import { pageview } from 'lib/ga'
 import { PlaygroundBannerContextProvider } from 'components/sections/common/banners/playground/PlaygroundBannerContext'
 import { useTrackingCode } from 'react-hubspot-tracking-code-hook'
+import { useReportHubspotFormEventsToGoogleAnalytics } from 'lib/hubspot/Hubspot2Ga'
 
 initGsap()
 
@@ -34,6 +35,8 @@ const App = ({ Component, pageProps, router }: AppProps) => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events, setPathPageView])
+
+  useReportHubspotFormEventsToGoogleAnalytics()
 
   return (
     <IdProvider>
