@@ -91,7 +91,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/casestudies"
+                  href="/customers"
                 >
                   Case Studies
                 </Link>

@@ -30,7 +30,7 @@ export const headerLinks = [
       },
       {
         label: 'Case studies',
-        href: '/casestudies',
+        href: '/customers',
         isExternal: false
       },
       {
