@@ -27,7 +27,7 @@ const EditionItem = ({ data, editionNameToHighlight }: Props) => {
           {data.description}
         </div>
         <div className="mt-4 sm:mt-0 whitespace-nowrap flex items-center justify-center min-h-[58px]">
-          <a href={data.buttonUrl ?? ''} target="_blank" rel="noopener">
+          <a href={data.buttonUrl ?? ''}>
             <Button className={s.button}>{data.buttonText}</Button>
           </a>
         </div>
