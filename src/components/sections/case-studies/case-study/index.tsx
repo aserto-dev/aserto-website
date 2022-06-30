@@ -25,9 +25,10 @@ const CaseStudy = ({ caseStudy }: Props) => {
       </div>
 
       {/* title */}
-      <h1 className="mt-5 mb-10 text-center text-3xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20">
-        {caseStudy.titleRaw[0]?.children[0]?.text ?? ''}
-      </h1>
+      <BlockContent
+        blocks={caseStudy.titleRaw}
+        className="mt-5 mb-10 text-center text-3xl lg:text-4xl sm:leading-none text-aserto-grey-90 lg:px-20"
+      />
 
       {/* logo and impact */}
       <div className="bg-white rounded-[6px]">

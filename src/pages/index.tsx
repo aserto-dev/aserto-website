@@ -24,7 +24,7 @@ const HomePage = ({
       headProps={{
         title:
           page.metadata?.title ??
-          'Enterprise-grade authorization-as-a-service for apps',
+          'Enterprise-grade authorization-as-a-service for apps - Aserto',
         description:
           page.metadata?.description ??
           'Aserto provides cloud-native authorization as a service for developers. Add fine-grained RBAC, ABAC, or ACL to your application in under a day.',
