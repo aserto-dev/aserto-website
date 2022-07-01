@@ -5,9 +5,9 @@ import { useRouter } from 'next/router'
 const defaultMeta = {
   title: 'Aserto - Welcome to modern authorization.',
   description: `Authorization for All`,
-  image: `${window.location.origin}/images/og.png`,
+  image: 'https://www.aserto.com/images/og.png',
   twitterTag: 'aserto_com',
-  baseUrl: window.location.origin
+  baseUrl: 'https://www.aserto.com'
 }
 
 export type CustomHeadProps = {
