@@ -20,7 +20,7 @@ const CaseStudyPage = ({ caseStudy }: Props) => {
       headProps={{
         title:
           caseStudy.metadata?.title ??
-          `${caseStudy.company} - Aserto Case Study`,
+          `${caseStudy.company} - Customers - Aserto`,
         description:
           caseStudy.metadata?.title ??
           `Case study of how ${caseStudy.company} used Aserto for authorization`,

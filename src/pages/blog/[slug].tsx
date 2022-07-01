@@ -19,7 +19,7 @@ const BlogPost = ({ post }: Props) => {
       headProps={{
         title:
           post.metadata?.title ??
-          `${String(post?.title || '') as string} - Aserto Blog`,
+          `${String(post?.title || '') as string} - Blog - Aserto`,
         description:
           post.metadata?.description ??
           `${String(post?.title || '') as string}`,

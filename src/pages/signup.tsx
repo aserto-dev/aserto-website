@@ -5,7 +5,7 @@ import React from 'react'
 const Page = () => (
   <>
     <CustomHead
-      title="Aserto Signup"
+      title="Signup - Aserto"
       description="Sign up for a free Aserto account"
     />
     <Signup />

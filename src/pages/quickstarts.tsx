@@ -54,8 +54,9 @@ const Quickstarts = () => {
     <PageLayout
       footer="regular"
       headProps={{
-        title: 'Aserto Quickstarts',
-        description: 'Select a quickstart template',
+        title: 'Application Quickstarts - Development - Aserto',
+        description:
+          'Quickstarts to help you add authorization to your application in no time. Add RBAC to your app in under a day with Aserto',
         image: 'images/og.png'
       }}
     >

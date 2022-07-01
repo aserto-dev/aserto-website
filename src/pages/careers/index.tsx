@@ -19,7 +19,7 @@ const Careers = ({
     <PageLayout
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'Aserto Careers, Culture, and Values',
+        title: page.metadata?.title ?? 'Careers, Culture, and Values - Aserto',
         description:
           page.metadata?.description ??
           'Aserto culture, values, and open positions',

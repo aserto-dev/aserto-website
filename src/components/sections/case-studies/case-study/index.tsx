@@ -16,7 +16,7 @@ const CaseStudy = ({ caseStudy }: Props) => {
     <section className="relative w-full mx-auto lg:w-10/12 pt-12 mb-52 lg:pt-24  md:pt-24">
       <div>
         <Link
-          href="/casestudies"
+          href="/customers"
           className="inline-block mb-12 font-roboto text-aserto-lochivar-accent-40 hover:underline"
         >
           Back to all case studies

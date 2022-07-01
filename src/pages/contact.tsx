@@ -9,8 +9,9 @@ const Contact = () => {
   return (
     <PageLayout
       headProps={{
-        title: 'Contact us',
-        description: 'Contact us',
+        title: 'Contact us - Aserto',
+        description:
+          'Contact Aserto team, join our Slack community or schedule time to speak with an engineer',
         image: 'images/og.png'
       }}
     >

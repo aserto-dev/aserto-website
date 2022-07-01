@@ -11,7 +11,7 @@ const News = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'Aserto News',
+        title: page.metadata?.title ?? 'News - Aserto',
         description:
           page.metadata?.description ?? 'Recent news articles about Aserto',
         image: 'images/og.png'

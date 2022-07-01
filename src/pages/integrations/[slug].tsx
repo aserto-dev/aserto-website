@@ -24,7 +24,7 @@ const IntegrationPage = ({ integration, testimonials }: Props) => {
       headProps={{
         title:
           integration.metadata?.title ??
-          `Aserto - integration with ${integration.technology}`,
+          `${integration.technology} integration - Aserto`,
         description:
           integration.metadata?.description ??
           `Aserto technology integration with ${integration.technology}`,

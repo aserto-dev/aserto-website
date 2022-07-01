@@ -11,10 +11,12 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'Frequently Asked Questions - Aserto',
+        title:
+          page.metadata?.title ??
+          'Authorization Frequently Asked Questions - Aserto',
         description:
           page.metadata?.description ??
-          'Frequently asked questions about authentication and authorization',
+          'Frequently asked questions about authentication, authorization, role or attribute-based access control, access control lists, and fine-grained authorization',
         image: 'images/og.png'
       }}
     >
@@ -32,7 +34,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 {faq?.questions?.map((question, i) => {
                   return (
                     // @ts-ignore
-                    <li key={i} label={question?.question}>
+                    <li key={i} label={<h3>{question?.question}</h3>}>
                       <BlockContent
                         className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto"
                         blocks={question?.answerRaw}

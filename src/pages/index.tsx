@@ -24,10 +24,10 @@ const HomePage = ({
       headProps={{
         title:
           page.metadata?.title ??
-          'Aserto - The fastest path to enterprise-grade authorization',
+          'Enterprise-grade authorization-as-a-service for apps - Aserto',
         description:
           page.metadata?.description ??
-          'Aserto provides cloud-native authorization as a service for developers',
+          'Aserto provides cloud-native authorization as a service for developers. Add fine-grained RBAC, ABAC, or ACL to your application in under a day.',
         image: 'images/og.png'
       }}
     >

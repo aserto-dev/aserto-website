@@ -17,7 +17,7 @@ const About = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       contain
       footer="regular"
       headProps={{
-        title: page.metadata?.title ?? 'About Aserto',
+        title: page.metadata?.title ?? 'About us - Aserto',
         description:
           page.metadata?.description ??
           'Aserto mission, founders, team, investors, and advisors',
