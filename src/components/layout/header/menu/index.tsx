@@ -14,7 +14,7 @@ const Menu = ({ show = false, closeMenu, openModal }: MenuProps) => {
   return (
     <section
       className={clsx(
-        'left-0 z-20 w-full pb-16 right-1 bg-aserto-black transition-opacity duration-300',
+        'left-0 z-20 w-full pb-16 right-1 bg-aserto-grey-5 transition-opacity duration-300',
         { 'opacity-0 pointer-events-none hidden': !show }
       )}
       aria-hidden={!show}
