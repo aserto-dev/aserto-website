@@ -191,7 +191,7 @@ const MobileTrigger = forwardRef<
   const TriggerComponent = href ? 'a' : 'span'
   return (
     <TriggerComponent
-      className="block px-2 text-3xl leading-none tracking-tight text-aserto-grey-90"
+      className="block px-2 text-xl font-semibold leading-none tracking-tight text-aserto-grey-90"
       onClick={onClick}
       href={href}
       ref={ref}
@@ -209,7 +209,7 @@ export const HeaderDropdownLinkMobile = ({
 
   return (
     <div>
-      <span className="inline-flex items-center">
+      <span className="inline-flex px-4 h-16 border-t border-aserto-grey-20 items-center w-full">
         {link.href ? (
           <Link href={link.href} passHref>
             <MobileTrigger
@@ -238,10 +238,10 @@ export const HeaderDropdownLinkMobile = ({
         ) : null}
       </span>
       {isOpen && (
-        <div className="mt-10 space-y-10">
+        <div className="py-8 px-6 space-y-8 bg-aserto-grey-10 border-t border-aserto-grey-20">
           {link?.items?.map((l, i) => {
             return (
-              <div className="text-center" key={i}>
+              <div key={i}>
                 <Link href={l.href}>
                   <a
                     onClick={onSelect}

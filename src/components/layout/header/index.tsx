@@ -86,11 +86,6 @@ export const headerLinks = [
       }
     ]
   },
-  // {
-  //   label: 'Playground',
-  //   href: '/playground',
-  //   items: []
-  // },
   {
     label: 'Blog',
     href: '/blog',
@@ -223,7 +218,11 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <Menu show={open} closeMenu={() => setOpen(false)} />
+      <Menu
+        show={open}
+        closeMenu={() => setOpen(false)}
+        openModal={() => setShowSignupModal(true)}
+      />
     </header>
   )
 }
