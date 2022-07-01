@@ -16,7 +16,7 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           'Authorization Frequently Asked Questions - Aserto',
         description:
           page.metadata?.description ??
-          'Frequently asked questions about authentication, authorization, role or attributed based access management, access lists, and fine-grained authorization',
+          'Frequently asked questions about authentication, authorization, role or attribute-based access control, access control lists, and fine-grained authorization',
         image: 'images/og.png'
       }}
     >

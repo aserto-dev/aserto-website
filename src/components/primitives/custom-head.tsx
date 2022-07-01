@@ -5,9 +5,9 @@ import { useRouter } from 'next/router'
 const defaultMeta = {
   title: 'Aserto - Welcome to modern authorization.',
   description: `Authorization for All`,
-  image: 'https://www.aserto.com/images/og.png',
+  image: `${window.location.origin}/images/og.png`,
   twitterTag: 'aserto_com',
-  baseUrl: `https://www.aserto.com`
+  baseUrl: window.location.origin
 }
 
 export type CustomHeadProps = {
@@ -51,10 +51,10 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
       title: title ?? defaultMeta.title,
       description: description ?? defaultMeta.description,
       image: image ?? defaultMeta.image,
-      url: image ?? defaultMeta.image,
+      url: canonicalUrl,
       twitterTag: defaultMeta.twitterTag
     }
-  }, [description, image, title])
+  }, [description, image, title, canonicalUrl])
 
   return (
     <Head>
@@ -72,7 +72,7 @@ const CustomHead = ({ title, description, image }: CustomHeadProps) => {
       <meta property="og:image:height" content="630" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image" content={resolvedMeta.image} />
-      <meta property="og:url" content={resolvedMeta.image} />
+      <meta property="og:url" content={resolvedMeta.url} />
       <meta property="og:site_name" content={resolvedMeta.title} />
       <meta
         property="og:title"

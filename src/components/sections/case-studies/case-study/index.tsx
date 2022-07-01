@@ -12,7 +12,6 @@ type Props = {
 }
 
 const CaseStudy = ({ caseStudy }: Props) => {
-  console.log(caseStudy.titleRaw[0]?.children[0]?.text)
   return (
     <section className="relative w-full mx-auto lg:w-10/12 pt-12 mb-52 lg:pt-24  md:pt-24">
       <div>

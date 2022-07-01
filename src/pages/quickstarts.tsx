@@ -56,7 +56,7 @@ const Quickstarts = () => {
       headProps={{
         title: 'Application Quickstarts - Development - Aserto',
         description:
-          'Development environment quickstarts to help you add authorization to your application in no time. Add RBAC to your app in under a day with Aserto',
+          'Quickstarts to help you add authorization to your application in no time. Add RBAC to your app in under a day with Aserto',
         image: 'images/og.png'
       }}
     >
