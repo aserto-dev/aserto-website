@@ -96,13 +96,8 @@ export const headerLinks = [
     href: '',
     items: [
       {
-        label: 'About Aserto',
+        label: 'About us',
         href: '/about',
-        isExternal: false
-      },
-      {
-        label: 'Events',
-        href: '/events',
         isExternal: false
       },
       {
