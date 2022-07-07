@@ -36,7 +36,9 @@ const PricingPage = ({
         <Container>
           <Hero page={page} />
           <Editions page={page} editions={editions} />
-          <PricingTable page={page} editions={editions} />
+          <div className="hidden md:block lg:block">
+            <PricingTable page={page} editions={editions} />
+          </div>
         </Container>
       </div>
     </PageLayout>
