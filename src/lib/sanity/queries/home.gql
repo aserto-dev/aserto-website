@@ -3,68 +3,21 @@ fragment HomePage on Home {
     title
     description
   }
-  title
-  subtitle
-  slogan {
-    text
+  tagline
+  positioningStatementRaw
+  valueProps {
+    ...ValueProp
   }
-  ctaLabel
-  theProblemSectionLabel
   theProblemSectionTitle
-  theProblemSectionSubtitle
   theProblemSectionCards {
     ...SectionBlock
   }
-  theSolutionSectionLabel
-  theSolutionSectionTitle
-  theSolutionSectionCards {
-    ...SectionBlock
-  }
-  featuresSectionTitle
-  features {
-    titleRaw
-    blocks {
-      ...FeatureItem
-    }
-  }
-  customerSpotlightSectionTitle
-  customerSpotlightSectionEnabled
   testimonialsSectionTitle
-  testimonials {
-    authorAvatar {
-      ...Image
-    }
-    authorName
-    authorPosition
-    quoteRaw
-  }
   callToAction {
     caption
     signup
     contact
     contactEngineer
-  }
-  pillars {
-    title
-    image {
-      ...Image
-    }
-    imagePath
-    description
-  }
-  infos {
-    image {
-      ...Image
-    }
-    imagePath
-    title
-    subtitle
-    items {
-      image {
-        ...Image
-      }
-      title
-    }
   }
 }
 
