@@ -1,0 +1,7 @@
+fragment ValueProp on ValueProp {
+  image {
+    ...Image
+  }
+  title
+  direction
+}

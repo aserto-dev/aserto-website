@@ -1106,27 +1106,13 @@ export type Home = Document & {
   _rev?: Maybe<Scalars['String']>;
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
-  title?: Maybe<Scalars['String']>;
-  subtitle?: Maybe<Scalars['String']>;
-  slogan?: Maybe<Array<Maybe<TextBlock>>>;
-  ctaLabel?: Maybe<Scalars['String']>;
-  diagramTitle?: Maybe<Scalars['String']>;
-  theProblemSectionLabel?: Maybe<Scalars['String']>;
+  tagline?: Maybe<Scalars['String']>;
+  positioningStatementRaw?: Maybe<Scalars['JSON']>;
+  valueProps?: Maybe<Array<Maybe<ValueProp>>>;
   theProblemSectionTitle?: Maybe<Scalars['String']>;
-  theProblemSectionSubtitle?: Maybe<Scalars['String']>;
   theProblemSectionCards?: Maybe<Array<Maybe<SectionBlock>>>;
-  theSolutionSectionLabel?: Maybe<Scalars['String']>;
-  theSolutionSectionTitle?: Maybe<Scalars['String']>;
-  theSolutionSectionCards?: Maybe<Array<Maybe<SectionBlock>>>;
-  featuresSectionTitle?: Maybe<Scalars['String']>;
-  features?: Maybe<Array<Maybe<FeatureBlock>>>;
-  customerSpotlightSectionTitle?: Maybe<Scalars['String']>;
-  customerSpotlightSectionEnabled?: Maybe<Scalars['Boolean']>;
   testimonialsSectionTitle?: Maybe<Scalars['String']>;
-  testimonials?: Maybe<Array<Maybe<TestimonialBlock>>>;
   callToAction?: Maybe<CtaBlock>;
-  pillars?: Maybe<Array<Maybe<PillarBlock>>>;
-  infos?: Maybe<Array<Maybe<InfoBlock>>>;
 };
 
 export type HomeFilter = {
@@ -1139,18 +1125,8 @@ export type HomeFilter = {
   _rev?: Maybe<StringFilter>;
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
-  title?: Maybe<StringFilter>;
-  subtitle?: Maybe<StringFilter>;
-  ctaLabel?: Maybe<StringFilter>;
-  diagramTitle?: Maybe<StringFilter>;
-  theProblemSectionLabel?: Maybe<StringFilter>;
+  tagline?: Maybe<StringFilter>;
   theProblemSectionTitle?: Maybe<StringFilter>;
-  theProblemSectionSubtitle?: Maybe<StringFilter>;
-  theSolutionSectionLabel?: Maybe<StringFilter>;
-  theSolutionSectionTitle?: Maybe<StringFilter>;
-  featuresSectionTitle?: Maybe<StringFilter>;
-  customerSpotlightSectionTitle?: Maybe<StringFilter>;
-  customerSpotlightSectionEnabled?: Maybe<BooleanFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
 };
@@ -1163,18 +1139,8 @@ export type HomeSorting = {
   _rev?: Maybe<SortOrder>;
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
-  title?: Maybe<SortOrder>;
-  subtitle?: Maybe<SortOrder>;
-  ctaLabel?: Maybe<SortOrder>;
-  diagramTitle?: Maybe<SortOrder>;
-  theProblemSectionLabel?: Maybe<SortOrder>;
+  tagline?: Maybe<SortOrder>;
   theProblemSectionTitle?: Maybe<SortOrder>;
-  theProblemSectionSubtitle?: Maybe<SortOrder>;
-  theSolutionSectionLabel?: Maybe<SortOrder>;
-  theSolutionSectionTitle?: Maybe<SortOrder>;
-  featuresSectionTitle?: Maybe<SortOrder>;
-  customerSpotlightSectionTitle?: Maybe<SortOrder>;
-  customerSpotlightSectionEnabled?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
   callToAction?: Maybe<CtaBlockSorting>;
 };
@@ -2810,6 +2776,31 @@ export type TextBlockSorting = {
   text?: Maybe<SortOrder>;
 };
 
+export type ValueProp = {
+  __typename?: 'ValueProp';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  image?: Maybe<MainImage>;
+  direction?: Maybe<Scalars['String']>;
+};
+
+export type ValuePropFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  image?: Maybe<MainImageFilter>;
+  direction?: Maybe<StringFilter>;
+};
+
+export type ValuePropSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  image?: Maybe<MainImageSorting>;
+  direction?: Maybe<SortOrder>;
+};
+
 export type CaseStudyMetaFragment = (
   { __typename?: 'CaseStudy' }
   & Pick<CaseStudy, '_id' | '_createdAt' | 'company' | 'titleRaw'>
@@ -3031,6 +3022,15 @@ export type TestimonialFragment = (
     { __typename?: 'MainImage' }
     & ImageFragment
   )>, logo?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type ValuePropFragment = (
+  { __typename?: 'ValueProp' }
+  & Pick<ValueProp, 'title' | 'direction'>
+  & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
   )> }
@@ -3448,58 +3448,20 @@ export type FrameworkPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'title' | 'subtitle' | 'ctaLabel' | 'theProblemSectionLabel' | 'theProblemSectionTitle' | 'theProblemSectionSubtitle' | 'theSolutionSectionLabel' | 'theSolutionSectionTitle' | 'featuresSectionTitle' | 'customerSpotlightSectionTitle' | 'customerSpotlightSectionEnabled' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'tagline' | 'positioningStatementRaw' | 'theProblemSectionTitle' | 'testimonialsSectionTitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
-  )>, slogan?: Maybe<Array<Maybe<(
-    { __typename?: 'TextBlock' }
-    & Pick<TextBlock, 'text'>
+  )>, valueProps?: Maybe<Array<Maybe<(
+    { __typename?: 'ValueProp' }
+    & ValuePropFragment
   )>>>, theProblemSectionCards?: Maybe<Array<Maybe<(
     { __typename?: 'SectionBlock' }
     & SectionBlockFragment
-  )>>>, theSolutionSectionCards?: Maybe<Array<Maybe<(
-    { __typename?: 'SectionBlock' }
-    & SectionBlockFragment
-  )>>>, features?: Maybe<Array<Maybe<(
-    { __typename?: 'FeatureBlock' }
-    & Pick<FeatureBlock, 'titleRaw'>
-    & { blocks?: Maybe<Array<Maybe<(
-      { __typename?: 'FeatureItem' }
-      & FeatureItemFragment
-    )>>> }
-  )>>>, testimonials?: Maybe<Array<Maybe<(
-    { __typename?: 'TestimonialBlock' }
-    & Pick<TestimonialBlock, 'authorName' | 'authorPosition' | 'quoteRaw'>
-    & { authorAvatar?: Maybe<(
-      { __typename?: 'MainImage' }
-      & ImageFragment
-    )> }
   )>>>, callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
     & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
-  )>, pillars?: Maybe<Array<Maybe<(
-    { __typename?: 'PillarBlock' }
-    & Pick<PillarBlock, 'title' | 'imagePath' | 'description'>
-    & { image?: Maybe<(
-      { __typename?: 'MainImage' }
-      & ImageFragment
-    )> }
-  )>>>, infos?: Maybe<Array<Maybe<(
-    { __typename?: 'InfoBlock' }
-    & Pick<InfoBlock, 'imagePath' | 'title' | 'subtitle'>
-    & { image?: Maybe<(
-      { __typename?: 'MainImage' }
-      & ImageFragment
-    )>, items?: Maybe<Array<Maybe<(
-      { __typename?: 'InfoItemBlock' }
-      & Pick<InfoItemBlock, 'title'>
-      & { image?: Maybe<(
-        { __typename?: 'MainImage' }
-        & ImageFragment
-      )> }
-    )>>> }
-  )>>> }
+  )> }
 );
 
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -4160,79 +4122,40 @@ export const FaqItemFragmentDoc = gql`
   }
 }
     `;
+export const ValuePropFragmentDoc = gql`
+    fragment ValueProp on ValueProp {
+  image {
+    ...Image
+  }
+  title
+  direction
+}
+    ${ImageFragmentDoc}`;
 export const HomePageFragmentDoc = gql`
     fragment HomePage on Home {
   metadata {
     title
     description
   }
-  title
-  subtitle
-  slogan {
-    text
+  tagline
+  positioningStatementRaw
+  valueProps {
+    ...ValueProp
   }
-  ctaLabel
-  theProblemSectionLabel
   theProblemSectionTitle
-  theProblemSectionSubtitle
   theProblemSectionCards {
     ...SectionBlock
   }
-  theSolutionSectionLabel
-  theSolutionSectionTitle
-  theSolutionSectionCards {
-    ...SectionBlock
-  }
-  featuresSectionTitle
-  features {
-    titleRaw
-    blocks {
-      ...FeatureItem
-    }
-  }
-  customerSpotlightSectionTitle
-  customerSpotlightSectionEnabled
   testimonialsSectionTitle
-  testimonials {
-    authorAvatar {
-      ...Image
-    }
-    authorName
-    authorPosition
-    quoteRaw
-  }
   callToAction {
     caption
     signup
     contact
     contactEngineer
   }
-  pillars {
-    title
-    image {
-      ...Image
-    }
-    imagePath
-    description
-  }
-  infos {
-    image {
-      ...Image
-    }
-    imagePath
-    title
-    subtitle
-    items {
-      image {
-        ...Image
-      }
-      title
-    }
-  }
 }
-    ${SectionBlockFragmentDoc}
-${FeatureItemFragmentDoc}
-${ImageFragmentDoc}`;
+    ${ValuePropFragmentDoc}
+${SectionBlockFragmentDoc}`;
 export const NewsItemFragmentDoc = gql`
     fragment NewsItem on NewsBlock {
   titleRaw
