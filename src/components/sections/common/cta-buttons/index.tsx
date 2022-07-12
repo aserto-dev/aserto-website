@@ -7,9 +7,10 @@ type Props = {
   contact?: boolean
   contactEngineer?: boolean
   signup?: boolean
+  leftAlign?: boolean
 }
 
-const CtaButtons = ({ contact, contactEngineer, signup }: Props) => {
+const CtaButtons = ({ contact, contactEngineer, signup, leftAlign }: Props) => {
   return (
     <>
       {contact ? (
@@ -17,7 +18,11 @@ const CtaButtons = ({ contact, contactEngineer, signup }: Props) => {
           <ContactButton />
         </div>
       ) : (
-        <div className="flex flex-col sm:flex-row mt-[50px] justify-center text-center gap-8 sm:gap-4">
+        <div
+          className={`flex flex-col sm:flex-row mt-[50px] gap-8 sm:gap-4 ${
+            !leftAlign && `justify-center`
+          }`}
+        >
           {signup && <SignupButton />}
           {contactEngineer && <ContactEngineerButton />}
         </div>
