@@ -3,3 +3,11 @@
     @apply whitespace-nowrap text-aserto-lochivar-accent-40 hover:underline active:text-aserto-lochivar-accent-50;
   }
 }
+
+.spaced {
+  div {
+    p {
+      @apply pb-5;
+    }
+  }
+}

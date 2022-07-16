@@ -6,7 +6,7 @@ import Button from 'components/primitives/button'
 import Container from 'components/sections/homepage/container'
 import Signup from 'components/sections/signup'
 
-const Hero = () => {
+const Hero = ({ title }: { title: string }) => {
   const [showSignupModal, setShowSignupModal] = useState(false)
   return (
     <Container className="py-[100px]">
@@ -18,10 +18,12 @@ const Hero = () => {
         src="images/aserto-horizontal-white.svg"
         alt="Aserto Logo"
       />
+      <div className="mx-auto items-center justify-center xl:w-7/12 lg:w-8/12 md:w-10/12">
       <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
-        Powerful authorization-as-a-service,
-        <br /> built to evolve with your customer requirements.
+        { title }
       </h1>
+
+      </div>
       <div className="mt-[50px] text-center">
         <Button
           variant="primary"

@@ -11,7 +11,7 @@ const ValueProp = ({ title, image, direction }: ValuePropFragment) => {
       <div
         className={`text-center xl:text-left ${dirStyle} xl:translate-y-1/3 mb-8 mx-4`}
       >
-        <div className="sm:w-9/12 xl:w-[440px] mx-auto">
+        <div className="sm:w-9/12 xl:w-[430px] mx-auto">
           <h2>{title}</h2>
           <Link
             className="text-aserto-lochivar-accent-40 hover:underline"
