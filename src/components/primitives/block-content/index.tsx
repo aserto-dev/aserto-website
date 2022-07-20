@@ -38,14 +38,16 @@ const serializers = {
 export const BlockContent = ({
   blocks,
   className,
-  unstyled
+  unstyled,
+  spaced,
 }: {
   blocks: any
   className?: string
   unstyled?: boolean
+  spaced?: boolean
 }) => {
   return (
-    <div className={clsx(className, { [s.markdown]: !unstyled })}>
+    <div className={clsx(className, { [s.markdown]: !unstyled }, { [s.spaced]: spaced })}>
       <DefaultBlockContent blocks={blocks} serializers={serializers} />
     </div>
   )
