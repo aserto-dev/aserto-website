@@ -6,6 +6,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Components
 import Animation from './animation'
+import Link from 'components/primitives/link'
 
 const AsertoInAction = () => {
   const [ref] = useFadeInBottom()
@@ -37,9 +38,11 @@ const AsertoInAction = () => {
     <section className="relative pt-10 md:pt-10 lg:pt-24 mx-auto">
       <div className="text-center" ref={ref}>
         <div className="hidden lg:block md:block">
+          {/*
           <h2 className="mb-12 text-4xl tracking-tight text-aserto-grey-90">
             Aserto in Action
           </h2>
+          */}
           <div>
             {supportedBrowser ? (
               <>
@@ -233,3 +236,27 @@ const AsertoInAction = () => {
 }
 
 export default AsertoInAction
+
+export const AsertoInActionValueProp = ({ title, direction }: { title: string, direction: string }) => {
+  const dirStyle = direction === 'left' ? 'xl:order-2' : ''
+  return (
+    <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
+      <div
+        className={`text-center xl:text-left ${dirStyle} xl:translate-y-1/3 mb-8 mx-4`}
+      >
+        <div className="sm:w-9/12 xl:w-[430px] mx-auto">
+          <h2>{title}</h2>
+          <Link
+            className="text-aserto-lochivar-accent-40 hover:underline"
+            href="/benefits"
+          >
+            {`Learn more >`}
+          </Link>
+        </div>
+      </div>
+      <div className="w-[700px]">
+        <AsertoInAction />
+      </div>
+    </div>
+  )
+}
