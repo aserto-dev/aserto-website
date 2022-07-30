@@ -7,7 +7,7 @@ import Container from 'components/sections/homepage/container'
 
 // Sections
 import Hero from 'components/sections/homepage/hero'
-import AsertoInAction from 'components/sections/homepage/aserto-in-action'
+import { AsertoInActionValueProp } from 'components/sections/homepage/aserto-in-action'
 import Testimonials from 'components/sections/homepage/testimonials'
 import LatestInfo from 'components/sections/homepage/latest'
 import Intro from 'components/sections/homepage/intro'
@@ -42,9 +42,10 @@ const HomePage = ({
         }
       />
       <Intro page={page} />
-      <div className="w-full mx-auto">
-        <AsertoInAction />
-      </div>
+      <Container className="text-aserto-grey-90 lg:px-12">
+        <AsertoInActionValueProp direction='right' title='Authorizer locally, manage centrally' />
+      </Container>
+
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
