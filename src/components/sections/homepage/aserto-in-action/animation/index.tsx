@@ -59,10 +59,14 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#githubBG', {
-      delay: DURATION / 2,
-      fill: '#3364AE'
-    }, '<')
+    timeline.to(
+      '#githubBG',
+      {
+        delay: DURATION / 2,
+        fill: '#3364AE'
+      },
+      '<'
+    )
     timeline.to(
       '#githubLogo',
       {
@@ -97,10 +101,14 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-1')
     timeline.addLabel('start-sequence-2')
-    timeline.set('#bubble3', {
-      yPercent: 380,
-      autoAlpha: 1
-    }, '<.3')
+    timeline.set(
+      '#bubble3',
+      {
+        yPercent: 380,
+        autoAlpha: 1
+      },
+      '<.3'
+    )
     timeline.to(
       '#filter3_d feGaussianBlur',
       {
@@ -184,10 +192,14 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-3')
     timeline.addLabel('start-sequence-5')
-    timeline.set(['#bubble1', '#bubble2'], {
-      yPercent: 380,
-      autoAlpha: 1
-    }, '<.3')
+    timeline.set(
+      ['#bubble1', '#bubble2'],
+      {
+        yPercent: 380,
+        autoAlpha: 1
+      },
+      '<.3'
+    )
     timeline.to(
       ['#filter1_d feGaussianBlur', '#filter2_d feGaussianBlur'],
       {
@@ -292,9 +304,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#policy', {
-      autoAlpha: 0
-    }, '<.3')
+    timeline.to(
+      '#policy',
+      {
+        autoAlpha: 0
+      },
+      '<.3'
+    )
     timeline.addLabel('end-sequence-7')
     // start of the federated identity sequence
     timeline.addLabel('start-sequence-8')
@@ -415,9 +431,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#providerBg', {
-      fill: '#121212'
-    }, '<.3')
+    timeline.to(
+      '#providerBg',
+      {
+        fill: '#121212'
+      },
+      '<.3'
+    )
     timeline.to(
       '#provider .text',
       {
@@ -640,9 +660,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#systemBg', {
-      fill: '#121212'
-    }, '<.3')
+    timeline.to(
+      '#systemBg',
+      {
+        fill: '#121212'
+      },
+      '<.3'
+    )
     timeline.to(
       '#system .text',
       {
@@ -677,10 +701,14 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-11')
     timeline.addLabel('start-sequence-13')
-    timeline.set(['#bubble1', '#bubble2'], {
-      yPercent: 380,
-      autoAlpha: 1
-    }, '<.3')
+    timeline.set(
+      ['#bubble1', '#bubble2'],
+      {
+        yPercent: 380,
+        autoAlpha: 1
+      },
+      '<.3'
+    )
     timeline.to(
       ['#filter1_d feGaussianBlur', '#filter2_d feGaussianBlur'],
       {
@@ -754,12 +782,20 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to(['#sidecar1 .bg', '#sidecar2 .bg'], {
-      fill: '#1C484A'
-    }, '<.5')
-    timeline.to('#user', {
-      autoAlpha: 0
-    }, '<.5')
+    timeline.to(
+      ['#sidecar1 .bg', '#sidecar2 .bg'],
+      {
+        fill: '#1C484A'
+      },
+      '<.5'
+    )
+    timeline.to(
+      '#user',
+      {
+        autoAlpha: 0
+      },
+      '<.5'
+    )
     timeline.addLabel('end-sequence-14')
     // authorization sequence
     timeline.addLabel('start-sequence-15')
@@ -767,10 +803,14 @@ const Animation = () => {
       delay: DURATION,
       autoAlpha: 1
     })
-    timeline.to('#reactBg', {
-      //delay: DURATION,
-      fill: '#1B283D'
-    }, '<.3')
+    timeline.to(
+      '#reactBg',
+      {
+        //delay: DURATION,
+        fill: '#1B283D'
+      },
+      '<.3'
+    )
     timeline.to(
       '#react .text',
       {
@@ -806,15 +846,19 @@ const Animation = () => {
 
     timeline.addLabel('end-sequence-15')
     timeline.addLabel('start-sequence-16')
-    timeline.to('#arrow1', {
-      startAt: {
-        xPercent: -20
+    timeline.to(
+      '#arrow1',
+      {
+        startAt: {
+          xPercent: -20
+        },
+        ease: 'back.out(1)',
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: DURATION
       },
-      ease: 'back.out(1)',
-      xPercent: 0,
-      autoAlpha: 1,
-      duration: DURATION
-    }, '<.3')
+      '<.3'
+    )
     timeline.to(
       '#apiBG',
       {
@@ -848,10 +892,14 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#reactBg', {
-      delay: DURATION,
-      fill: '#121212'
-    }, '<')
+    timeline.to(
+      '#reactBg',
+      {
+        delay: DURATION,
+        fill: '#121212'
+      },
+      '<'
+    )
     timeline.to(
       '#react .text',
       {
@@ -886,12 +934,20 @@ const Animation = () => {
     )
     timeline.addLabel('end-sequence-16')
     timeline.addLabel('start-sequence-17')
-    timeline.to('#sidecar1 .bg', {
-      fill: '#277F82'
-    }, '<.3')
-    timeline.to('#sidecar1 .bg', {
-      fill: '#1C484A'
-    }, '<.3')
+    timeline.to(
+      '#sidecar1 .bg',
+      {
+        fill: '#277F82'
+      },
+      '<.3'
+    )
+    timeline.to(
+      '#sidecar1 .bg',
+      {
+        fill: '#1C484A'
+      },
+      '<.3'
+    )
     timeline.to(
       '#arrow3',
       {
@@ -979,9 +1035,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#sidecar2 .bg', {
-      fill: '#277F82'
-    }, '<.3')
+    timeline.to(
+      '#sidecar2 .bg',
+      {
+        fill: '#277F82'
+      },
+      '<.3'
+    )
     timeline.to(
       '#api2Bg',
       {
@@ -1021,29 +1081,41 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#sidecar2 .bg', {
-      fill: '#1C484A'
-    }, '<')
+    timeline.to(
+      '#sidecar2 .bg',
+      {
+        fill: '#1C484A'
+      },
+      '<'
+    )
     timeline.addLabel('end-sequence-18')
     timeline.addLabel('start-sequence-19')
-    timeline.to('#arrow4', {
-      startAt: {
-        xPercent: 20
+    timeline.to(
+      '#arrow4',
+      {
+        startAt: {
+          xPercent: 20
+        },
+        ease: 'back.out(1)',
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: DURATION
       },
-      ease: 'back.out(1)',
-      xPercent: 0,
-      autoAlpha: 1,
-      duration: DURATION
-    }, '<.3')
-    timeline.to('#arrow2', {
-      startAt: {
-        xPercent: 20
+      '<.3'
+    )
+    timeline.to(
+      '#arrow2',
+      {
+        startAt: {
+          xPercent: 20
+        },
+        ease: 'back.out(1)',
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: DURATION
       },
-      ease: 'back.out(1)',
-      xPercent: 0,
-      autoAlpha: 1,
-      duration: DURATION
-    }, '<.3')
+      '<.3'
+    )
     timeline.to(
       '#reactBg',
       {
@@ -1083,9 +1155,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#reactBg', {
-      fill: '#121212'
-    }, '<.3')
+    timeline.to(
+      '#reactBg',
+      {
+        fill: '#121212'
+      },
+      '<.3'
+    )
     timeline.to(
       '#react .text',
       {
@@ -1126,9 +1202,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#authorization', {
-      autoAlpha: 0
-    }, '<.3')
+    timeline.to(
+      '#authorization',
+      {
+        autoAlpha: 0
+      },
+      '<.3'
+    )
     timeline.addLabel('end-sequence-19')
     // decision logs
     timeline.addLabel('start-sequence-20')
@@ -1137,7 +1217,8 @@ const Animation = () => {
       {
         delay: DURATION * 2,
         autoAlpha: 1
-      }, '<'
+      },
+      '<'
     )
     timeline.to(
       ['#sidecarFilter1 feGaussianBlur', '#sidecarFilter2 feGaussianBlur'],
@@ -1145,7 +1226,8 @@ const Animation = () => {
         attr: {
           stdDeviation: 4
         }
-      }, '<.3'
+      },
+      '<.3'
     )
     timeline.set(
       [
@@ -1166,10 +1248,14 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.set(['#bubble1', '#bubble2'], {
-      yPercent: -380,
-      autoAlpha: 1
-    }, '<.3')
+    timeline.set(
+      ['#bubble1', '#bubble2'],
+      {
+        yPercent: -380,
+        autoAlpha: 1
+      },
+      '<.3'
+    )
     timeline.to(
       ['#filter1_d feGaussianBlur', '#filter2_d feGaussianBlur'],
       {
@@ -1191,9 +1277,13 @@ const Animation = () => {
       },
       '<'
     )
-    timeline.to('#backgroundBG', {
-      fill: '#237477'
-    }, '<.3')
+    timeline.to(
+      '#backgroundBG',
+      {
+        fill: '#237477'
+      },
+      '<.3'
+    )
     timeline.to(
       '#backgroundStroke',
       {
@@ -1238,10 +1328,14 @@ const Animation = () => {
       '<'
     )
 
-    timeline.to('#backgroundBG', {
-      delay: DURATION,
-      fill: '#1C484A'
-    }, '<.3')
+    timeline.to(
+      '#backgroundBG',
+      {
+        delay: DURATION,
+        fill: '#1C484A'
+      },
+      '<.3'
+    )
     timeline.to(
       '#backgroundStroke',
       {
@@ -1249,9 +1343,13 @@ const Animation = () => {
       },
       '<.3'
     )
-    timeline.to('#decision', {
-      autoAlpha: 0
-    }, '<.3')
+    timeline.to(
+      '#decision',
+      {
+        autoAlpha: 0
+      },
+      '<.3'
+    )
 
     timeline.addLabel('end-sequence-20')
 

@@ -237,7 +237,13 @@ const AsertoInAction = () => {
 
 export default AsertoInAction
 
-export const AsertoInActionValueProp = ({ title, direction }: { title: string, direction: string }) => {
+export const AsertoInActionValueProp = ({
+  title,
+  direction
+}: {
+  title: string
+  direction: string
+}) => {
   const dirStyle = direction === 'left' ? 'xl:order-2' : ''
   return (
     <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">

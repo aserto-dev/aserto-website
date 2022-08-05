@@ -19,10 +19,9 @@ const Hero = ({ title }: { title: string }) => {
         alt="Aserto Logo"
       />
       <div className="mx-auto items-center justify-center xl:w-7/12 lg:w-8/12 md:w-10/12">
-      <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
-        { title }
-      </h1>
-
+        <h1 className="my-[20px] text-[30px] text-aserto-grey-90 text-center">
+          {title}
+        </h1>
       </div>
       <div className="mt-[50px] text-center">
         <Button
