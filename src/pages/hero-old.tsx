@@ -45,7 +45,7 @@ const HomePage = ({
       <Container className="text-aserto-grey-90 lg:px-12">
         <AsertoInActionValueProp
           direction="right"
-          title="Authorizer locally, manage centrally"
+          title="Authorize locally, manage centrally"
         />
       </Container>
 
