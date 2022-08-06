@@ -8,24 +8,30 @@ import { SectionBlockFragment } from 'lib/sanity/generated'
 import { InferGetStaticPropsType } from 'next'
 
 const BenefitsPage = ({
-  page,
+  page
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const benefits: SectionBlockFragment[] = page.benefit as SectionBlockFragment[]
+  const benefits: SectionBlockFragment[] =
+    page.benefit as SectionBlockFragment[]
   return (
     <PageLayout
       footer="regular"
       headProps={{
-        title:
-          page.metadata?.title ??
-          'Benefits - Aserto',
+        title: page.metadata?.title ?? 'Benefits - Aserto',
         description:
           page.metadata?.description ??
           'Aserto solution benefits for cloud-native authorization',
         image: 'images/og.png'
       }}
     >
-      <Hero title={page.title ?? 'Powerful authorization-as-a-service, built to evolve with your customer requirements.'} />
-      <Video embed={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w' } />
+      <Hero
+        title={
+          page.title ??
+          'Powerful authorization-as-a-service, built to evolve with your customer requirements.'
+        }
+      />
+      <Video
+        embed={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'}
+      />
       <Benefits benefits={benefits} />
 
       <div className="bg-benefitsCta">
@@ -43,7 +49,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      page: allBenefits[0],
+      page: allBenefits[0]
     },
     revalidate: 1
   }

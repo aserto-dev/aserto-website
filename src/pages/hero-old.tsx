@@ -43,7 +43,10 @@ const HomePage = ({
       />
       <Intro page={page} />
       <Container className="text-aserto-grey-90 lg:px-12">
-        <AsertoInActionValueProp direction='right' title='Authorizer locally, manage centrally' />
+        <AsertoInActionValueProp
+          direction="right"
+          title="Authorize locally, manage centrally"
+        />
       </Container>
 
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
