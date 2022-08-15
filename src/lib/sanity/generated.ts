@@ -2536,6 +2536,7 @@ export type SectionBlock = {
   __typename?: 'SectionBlock';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
+  element?: Maybe<Scalars['String']>;
   image?: Maybe<MainImage>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
@@ -2544,6 +2545,7 @@ export type SectionBlock = {
 export type SectionBlockFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
+  element?: Maybe<StringFilter>;
   image?: Maybe<MainImageFilter>;
   title?: Maybe<StringFilter>;
 };
@@ -2551,6 +2553,7 @@ export type SectionBlockFilter = {
 export type SectionBlockSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
+  element?: Maybe<SortOrder>;
   image?: Maybe<MainImageSorting>;
   title?: Maybe<SortOrder>;
 };
@@ -2782,6 +2785,7 @@ export type ValueProp = {
   _type?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   image?: Maybe<MainImage>;
+  element?: Maybe<Scalars['String']>;
   direction?: Maybe<Scalars['String']>;
 };
 
@@ -2790,6 +2794,7 @@ export type ValuePropFilter = {
   _type?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   image?: Maybe<MainImageFilter>;
+  element?: Maybe<StringFilter>;
   direction?: Maybe<StringFilter>;
 };
 
@@ -2798,6 +2803,7 @@ export type ValuePropSorting = {
   _type?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   image?: Maybe<MainImageSorting>;
+  element?: Maybe<SortOrder>;
   direction?: Maybe<SortOrder>;
 };
 
@@ -3008,7 +3014,7 @@ export type PostFragment = (
 
 export type SectionBlockFragment = (
   { __typename?: 'SectionBlock' }
-  & Pick<SectionBlock, 'title' | 'subtitleRaw'>
+  & Pick<SectionBlock, 'title' | 'subtitleRaw' | 'element'>
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -3029,7 +3035,7 @@ export type TestimonialFragment = (
 
 export type ValuePropFragment = (
   { __typename?: 'ValueProp' }
-  & Pick<ValueProp, 'title' | 'direction'>
+  & Pick<ValueProp, 'title' | 'element'>
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -4006,6 +4012,7 @@ export const SectionBlockFragmentDoc = gql`
   }
   title
   subtitleRaw
+  element
 }
     ${ImageFragmentDoc}`;
 export const BenefitsPageFragmentDoc = gql`
@@ -4128,7 +4135,7 @@ export const ValuePropFragmentDoc = gql`
     ...Image
   }
   title
-  direction
+  element
 }
     ${ImageFragmentDoc}`;
 export const HomePageFragmentDoc = gql`

@@ -3,5 +3,5 @@ fragment ValueProp on ValueProp {
     ...Image
   }
   title
-  direction
+  element
 }
