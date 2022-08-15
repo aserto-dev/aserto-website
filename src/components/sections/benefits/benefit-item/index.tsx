@@ -1,10 +1,18 @@
 import { SectionBlockFragment } from 'lib/sanity/generated'
 import Glow from 'components/sections/common/glow'
 import { BlockContent } from 'components/primitives/block-content'
+import CodeBrowser from 'components/sections/homepage/intro/code-browser.tsx'
+import AsertoInAction from 'components/sections/homepage/aserto-in-action'
 
 type Props = SectionBlockFragment & { direction: string }
 
-const BenefitItem = ({ title, subtitleRaw, image, direction }: Props) => {
+const BenefitItem = ({
+  title,
+  subtitleRaw,
+  image,
+  direction,
+  element
+}: Props) => {
   const divStyle = direction === 'left' ? 'xl:order-2' : ''
   const blockStyle = direction === 'left' ? 'xl:ml-auto' : ''
   const imageStyle = direction === 'left' ? 'xl:order-1' : ''
@@ -14,7 +22,7 @@ const BenefitItem = ({ title, subtitleRaw, image, direction }: Props) => {
         {title}
       </h2>
       <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
-        <Glow direction={direction ?? 'left'} />
+        {element !== 'Animation' && <Glow direction={direction ?? 'left'} />}
         <div
           className={`sm:w-9/12 mx-auto ${divStyle} xl:translate-y-1/3 mb-8`}
         >
@@ -27,11 +35,19 @@ const BenefitItem = ({ title, subtitleRaw, image, direction }: Props) => {
         <div
           className={`xl:relative ${imageStyle} flex flex-row justify-center`}
         >
-          <img
-            className="w-[700px]"
-            src={image?.asset?.url ?? '/404'}
-            alt={image?.alt ?? 'value prop image'}
-          />
+          {element === 'CodeBrowser' && <CodeBrowser />}
+          {element === 'Animation' && (
+            <div className="w-[700px]">
+              <AsertoInAction />
+            </div>
+          )}
+          {image?.asset?.url && (
+            <img
+              className="w-[700px]"
+              src={image?.asset?.url ?? '/404'}
+              alt={image?.alt ?? 'value prop image'}
+            />
+          )}
         </div>
       </div>
     </>

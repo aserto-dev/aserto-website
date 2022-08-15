@@ -11,6 +11,7 @@ const Benefits = ({ benefits }: { benefits: SectionBlockFragment[] }) => {
           title={b.title ?? ''}
           subtitleRaw={b.subtitleRaw}
           image={b.image}
+          element={b.element}
           direction={i & 1 ? 'left' : 'right'}
         />
       ))}

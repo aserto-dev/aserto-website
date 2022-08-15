@@ -1,13 +1,17 @@
 import Link from 'components/primitives/link'
 import { ValuePropFragment } from 'lib/sanity/generated'
 import CodeBrowser from './code-browser.tsx'
+import AsertoInAction from 'components/sections/homepage/aserto-in-action'
+
 import Glow from './glow'
 
-const ValueProp = ({ title, image, direction }: ValuePropFragment) => {
+export type ValuePropType = ValuePropFragment & { direction: string }
+
+const ValueProp = ({ title, image, direction, element }: ValuePropType) => {
   const dirStyle = direction === 'left' ? 'xl:order-2' : ''
   return (
     <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72 text-[20px] font-semibold">
-      <Glow direction={direction ?? 'left'} />
+      {element !== 'Animation' && <Glow direction={direction ?? 'left'} />}
       <div
         className={`text-center xl:text-left ${dirStyle} xl:translate-y-1/3 mb-8 mx-4`}
       >
@@ -22,14 +26,18 @@ const ValueProp = ({ title, image, direction }: ValuePropFragment) => {
         </div>
       </div>
       <div className="relative md:flex md:flex-row md:justify-center">
-        {image?.asset?.url ? (
+        {element === 'CodeBrowser' && <CodeBrowser />}
+        {element === 'Animation' && (
+          <div className="w-[700px]">
+            <AsertoInAction />
+          </div>
+        )}
+        {image?.asset?.url && (
           <img
             className="w-[700px]"
             src={image?.asset?.url ?? '/404'}
             alt={image?.alt ?? 'value prop image'}
           />
-        ) : (
-          <CodeBrowser />
         )}
       </div>
     </div>
