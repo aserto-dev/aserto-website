@@ -4,4 +4,6 @@ fragment ValueProp on ValueProp {
   }
   title
   element
+  subtitleRaw
+  glow
 }

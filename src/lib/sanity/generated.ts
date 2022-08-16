@@ -2536,26 +2536,29 @@ export type SectionBlock = {
   __typename?: 'SectionBlock';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
-  element?: Maybe<Scalars['String']>;
-  image?: Maybe<MainImage>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
+  element?: Maybe<Scalars['String']>;
+  image?: Maybe<MainImage>;
+  glow?: Maybe<Scalars['Boolean']>;
 };
 
 export type SectionBlockFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
   element?: Maybe<StringFilter>;
   image?: Maybe<MainImageFilter>;
-  title?: Maybe<StringFilter>;
+  glow?: Maybe<BooleanFilter>;
 };
 
 export type SectionBlockSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
   element?: Maybe<SortOrder>;
   image?: Maybe<MainImageSorting>;
-  title?: Maybe<SortOrder>;
+  glow?: Maybe<SortOrder>;
 };
 
 export type SiteSettings = Document & {
@@ -2784,27 +2787,28 @@ export type ValueProp = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
-  image?: Maybe<MainImage>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
   element?: Maybe<Scalars['String']>;
-  direction?: Maybe<Scalars['String']>;
+  image?: Maybe<MainImage>;
+  glow?: Maybe<Scalars['Boolean']>;
 };
 
 export type ValuePropFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
-  image?: Maybe<MainImageFilter>;
   element?: Maybe<StringFilter>;
-  direction?: Maybe<StringFilter>;
+  image?: Maybe<MainImageFilter>;
+  glow?: Maybe<BooleanFilter>;
 };
 
 export type ValuePropSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
-  image?: Maybe<MainImageSorting>;
   element?: Maybe<SortOrder>;
-  direction?: Maybe<SortOrder>;
+  image?: Maybe<MainImageSorting>;
+  glow?: Maybe<SortOrder>;
 };
 
 export type CaseStudyMetaFragment = (
@@ -3014,7 +3018,7 @@ export type PostFragment = (
 
 export type SectionBlockFragment = (
   { __typename?: 'SectionBlock' }
-  & Pick<SectionBlock, 'title' | 'subtitleRaw' | 'element'>
+  & Pick<SectionBlock, 'title' | 'subtitleRaw' | 'element' | 'glow'>
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -3035,7 +3039,7 @@ export type TestimonialFragment = (
 
 export type ValuePropFragment = (
   { __typename?: 'ValueProp' }
-  & Pick<ValueProp, 'title' | 'element'>
+  & Pick<ValueProp, 'title' | 'element' | 'subtitleRaw' | 'glow'>
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -4013,6 +4017,7 @@ export const SectionBlockFragmentDoc = gql`
   title
   subtitleRaw
   element
+  glow
 }
     ${ImageFragmentDoc}`;
 export const BenefitsPageFragmentDoc = gql`
@@ -4136,6 +4141,8 @@ export const ValuePropFragmentDoc = gql`
   }
   title
   element
+  subtitleRaw
+  glow
 }
     ${ImageFragmentDoc}`;
 export const HomePageFragmentDoc = gql`

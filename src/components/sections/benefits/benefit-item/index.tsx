@@ -11,7 +11,8 @@ const BenefitItem = ({
   subtitleRaw,
   image,
   direction,
-  element
+  element,
+  glow
 }: Props) => {
   const divStyle = direction === 'left' ? 'xl:order-2' : ''
   const blockStyle = direction === 'left' ? 'xl:ml-auto' : ''
@@ -22,7 +23,7 @@ const BenefitItem = ({
         {title}
       </h2>
       <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
-        {element !== 'Animation' && <Glow direction={direction ?? 'left'} />}
+        {!!glow && <Glow direction={direction ?? 'left'} />}
         <div
           className={`sm:w-9/12 mx-auto ${divStyle} xl:translate-y-1/3 mb-8`}
         >

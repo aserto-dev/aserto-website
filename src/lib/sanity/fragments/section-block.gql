@@ -5,4 +5,5 @@ fragment SectionBlock on SectionBlock {
   title
   subtitleRaw
   element
+  glow
 }
