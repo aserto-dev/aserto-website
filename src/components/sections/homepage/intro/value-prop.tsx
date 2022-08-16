@@ -34,7 +34,7 @@ const ValueProp = ({
       <div className="relative md:flex md:flex-row md:justify-center">
         {element === 'CodeBrowser' && <CodeBrowser />}
         {element === 'Animation' && (
-          <div className="w-full xl:w-[700px]">
+          <div className="hidden md:block md:w-[700px]">
             <AsertoInAction />
           </div>
         )}
