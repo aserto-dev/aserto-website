@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { isMobileSafari, isSafari } from 'react-device-detect'
+import { useMemo } from 'react'
+import { isMobile, isSafari } from 'react-device-detect'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -10,7 +10,7 @@ import Link from 'components/primitives/link'
 
 const AsertoInAction = () => {
   const [ref] = useFadeInBottom()
-  const [supportedBrowser, setSupportedBrowser] = useState(true)
+  const supportedBrowser = useMemo(() => !isMobile && !isSafari, [])
 
   /*
   useEffect(() => {
@@ -28,28 +28,17 @@ const AsertoInAction = () => {
   }, [])
   */
 
-  useEffect(() => {
-    if (isSafari || isMobileSafari) {
-      setSupportedBrowser(false)
-    }
-  }, [])
-
   return (
     <section className="relative pt-10 md:pt-10 lg:pt-24 mx-auto">
       <div className="text-center" ref={ref}>
-        <div className="hidden lg:block md:block">
-          {/*
-          <h2 className="mb-12 text-4xl tracking-tight text-aserto-grey-90">
-            Aserto in Action
-          </h2>
-          */}
+        <div>
           <div>
             {supportedBrowser ? (
               <>
                 <svg
                   width="940"
                   height="940"
-                  className="absolute z-0 w-full left-36 -top-32"
+                  className="absolute z-0 w-full -left-12 -top-32"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -60,8 +49,8 @@ const AsertoInAction = () => {
                         maskUnits="userSpaceOnUse"
                         x="214"
                         y="214"
-                        width="512"
-                        height="512"
+                        width="350"
+                        height="350"
                       >
                         <path fill="#fff" d="M214 214h512v512H214z" />
                       </mask>
@@ -225,7 +214,7 @@ const AsertoInAction = () => {
                 loop
                 muted
                 playsInline
-                src="/images/homepage/aserto-safari.mp4"
+                src="/images/homepage/animation-safari.mp4"
               />
             )}
           </div>
