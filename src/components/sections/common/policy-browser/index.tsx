@@ -5,6 +5,7 @@ import CodeViewer from 'components/sections/common/code-viewer'
 import React from 'react'
 
 const settings = {
+  arrows: false,
   dots: true,
   infinite: true,
   mobileFirst: true,
@@ -12,14 +13,8 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   initialSlide: 0,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false
-      }
-    }
-  ]
+  autoplay: true,
+  autoplaySpeed: 3000
 }
 
 const regoPolicies = [
@@ -52,26 +47,26 @@ const regoPolicies = [
   }
 ]
 
-const CodeBrowser = () => {
+const PolicyBrowser = () => {
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
-      <div className="relative px-0 md:px-12 mb-24 border-2 border-aserto-lochivar-100 rounded-[4px]">
-        <div className="w-full md:w-[620px]">
-          {/* <CodeViewer language="rego" snippet={regoPolicies[0].code} /> */}
+      <link rel="stylesheet" href="/css/code-carousel.css"></link>
+      <div className="flex relative px-0 mb-24 border-2 border-aserto-lochivar-100 rounded-[4px]">
+        <div className="w-full md:w-[600px]">
           <Slider {...settings}>
             {regoPolicies?.map((r, i) => {
               return (
-                <React.Fragment key={i}>
+                <div key={i} className="flex flex-col h-[270px]">
                   <CodeViewer
                     language="rego"
                     snippet={r.code}
-                    className="w-full md:w-[600px] h-[200px] border-0 rounded-none my-0"
+                    className="w-full flex-auto md:w-[600px] h-[200px] border-0 rounded-none my-0"
                   />
-                  <div className="w-full sm:w-[600px] h-[50px] leading-[50px] text-center bg-aserto-grey-10">
-                    {r.caption}
+                  <div className="w-full flex-1 md:w-[600px] h-full text-center my-auto items-center bg-aserto-grey-10 p-4">
+                    <span>{r.caption}</span>
                   </div>
-                </React.Fragment>
+                </div>
               )
             })}
           </Slider>
@@ -81,4 +76,4 @@ const CodeBrowser = () => {
   )
 }
 
-export default CodeBrowser
+export default PolicyBrowser
