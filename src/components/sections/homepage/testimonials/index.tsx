@@ -6,6 +6,7 @@ import { Testimonial } from 'lib/sanity/generated'
 
 const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const settings = {
+    arrows: false,
     dots: true,
     infinite: true,
     mobileFirst: true,
@@ -15,15 +16,8 @@ const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1464,
-        settings: {
-          arrows: false
-        }
-      },
-      {
         breakpoint: 1024,
         settings: {
-          arrows: true,
           slidesToShow: 1,
           slidesToScroll: 1
         }
