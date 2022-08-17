@@ -18,12 +18,17 @@ const tabs = [
   {
     language: 'aspnet',
     title: 'ASP.Net'
+  },
+  {
+    language: 'ruby',
+    title: 'Ruby'
   }
 ]
 
 export const snippets: Record<string, string> = {
   js: `const { jwtAuthz } = require("express-jwt-aserto")
 const checkAuthz = jwtAuthz({ ... })
+// ...
 app.get("/protectPath/:param", checkJwt, checkAuthz, 
   async (req, res) => { ... }
 )`,
@@ -45,6 +50,7 @@ router.Use(asertoAuthorizer.Handler)`,
   aspnet: `using Microsoft.AspNetCore.Authorization;
 using Aserto.AspNetCore.Middleware.Policies;
 using Aserto.AspNetCore.Middleware.Extensions;
+
 public void ConfigureServices(IServiceCollection services) {
   services.AddAsertoAuthorization(options => 
     Configuration.GetSection("Aserto").Bind(options));
@@ -55,7 +61,15 @@ public void ConfigureServices(IServiceCollection services) {
     options.DefaultPolicy = policy.Build();
   });
   services.AddControllersWithViews();
-}`
+}`,
+  ruby: `require "aserto/rails"
+
+# authorize single route
+# GET /posts/:id
+def show
+  aserto_authorize!
+  @post = Post.find(params[:id])
+end`
 }
 
 const CodeBrowser = () => {
