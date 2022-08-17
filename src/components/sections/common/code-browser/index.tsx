@@ -21,7 +21,7 @@ const tabs = [
   }
 ]
 
-const snippets: Record<string, string> = {
+export const snippets: Record<string, string> = {
   js: `const { jwtAuthz } = require("express-jwt-aserto")
 const checkAuthz = jwtAuthz({ ... })
 app.get("/protectPath/:param", checkJwt, checkAuthz, 
