@@ -1,5 +1,5 @@
 const Glow = ({ direction }: { direction: string }) => {
-  const offset = `${direction}-40`
+  const offset = direction === 'left' ? 'left-40' : 'right-40'
   return (
     <div className="flex items-stretch items-center">
       <div
