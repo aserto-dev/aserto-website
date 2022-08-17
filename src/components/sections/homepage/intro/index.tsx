@@ -8,7 +8,7 @@ const Intro = ({ page }: { page: any }) => {
   return (
     <Container className="text-aserto-grey-90 lg:px-12">
       <BlockContent
-        className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24"
+        className="text-[30px] leading-[38px] text-center mt-16 mb-24 lg:px-20 xl:px-60"
         blocks={page.positioningStatementRaw}
       />
       {valueProps.map((v, i) => (

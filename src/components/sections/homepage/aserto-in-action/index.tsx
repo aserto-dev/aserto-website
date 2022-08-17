@@ -29,7 +29,7 @@ const AsertoInAction = () => {
   */
 
   return (
-    <section className="relative pt-10 md:pt-10 lg:pt-24 mx-auto">
+    <section className="relative mx-auto">
       <div className="text-center" ref={ref}>
         <div>
           {supportedBrowser ? (

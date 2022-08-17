@@ -6,8 +6,8 @@ const Hero = ({ title }: { title: string }) => {
   return (
     <Container className="bg-hero sm:pt-20 sm:px-16 sm:pb-64 pb-56 pt-8 mb-32">
       <h1
-        className="sm:my-[20px] sm:w-full md:w-3/4 lg:w-7/12 text-[36px] leading-[45px]
-        sm:text-[60px] sm:leading-[70px] text-center sm:text-left text-aserto-grey-90"
+        className="sm:my-[20px] sm:w-full md:w-3/4 lg:w-7/12 text-[30px] leading-[45px]
+        sm:text-[50px] sm:leading-[60px] text-center sm:text-left text-aserto-grey-90"
       >
         {title}
       </h1>
