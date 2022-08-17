@@ -1,7 +1,7 @@
 import { ValuePropFragment } from 'lib/sanity/generated'
 import { BlockContent } from 'components/primitives/block-content'
 
-import CodeBrowser from './code-browser'
+import CodeBrowser from 'components/sections/common/code-browser'
 import AsertoInAction from 'components/sections/homepage/aserto-in-action'
 
 import Glow from './glow'
