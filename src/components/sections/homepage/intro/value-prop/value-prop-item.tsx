@@ -5,6 +5,7 @@ import CodeBrowser from 'components/sections/common/code-browser'
 import AsertoInAction from 'components/sections/homepage/aserto-in-action'
 
 import Glow from './glow'
+import PolicyBrowser from 'components/sections/common/policy-browser'
 
 type ValuePropType = ValuePropFragment & { direction: string }
 
@@ -36,6 +37,7 @@ const ValueProp = ({
       </div>
       <div className="relative md:flex md:flex-row md:justify-center">
         {element === 'CodeBrowser' && <CodeBrowser />}
+        {element === 'PolicyBrowser' && <PolicyBrowser />}
         {element === 'Animation' && (
           <div className="hidden md:block md:w-[700px]">
             <AsertoInAction />
