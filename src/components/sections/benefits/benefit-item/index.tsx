@@ -1,7 +1,7 @@
 import { SectionBlockFragment } from 'lib/sanity/generated'
 import Glow from 'components/sections/common/glow'
 import { BlockContent } from 'components/primitives/block-content'
-import CodeBrowser from 'components/sections/homepage/intro/code-browser.tsx'
+import CodeBrowser from 'components/sections/common/code-browser'
 import AsertoInAction from 'components/sections/homepage/aserto-in-action'
 
 type Props = SectionBlockFragment & { direction: string }
