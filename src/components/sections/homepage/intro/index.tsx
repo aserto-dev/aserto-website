@@ -7,8 +7,13 @@ const Intro = ({ page }: { page: any }) => {
   const valueProps: ValuePropFragment[] = page.valueProps
   return (
     <Container className="text-aserto-grey-90 lg:px-12">
+      <img
+        className="object-fit h-[400px] z-0 absolute -right-2/3 sm:top-32 sm:transform sm:-translate-x-1/2"
+        src="images/homepage/seafloor-teal.svg"
+        alt="Sea Floor"
+      />
       <BlockContent
-        className="text-[30px] leading-[38px] text-center mt-16 mb-24 lg:px-20 xl:px-60 lg:py-20"
+        className="z-1 text-[30px] leading-[38px] text-center mt-16 mb-24 lg:px-20 xl:px-60 lg:py-20"
         blocks={page.positioningStatementRaw}
       />
       {valueProps.map((v, i) => (
