@@ -573,6 +573,61 @@ export type DatetimeFilter = {
   lte?: Maybe<Scalars['DateTime']>;
 };
 
+export type Demo = Document & {
+  __typename?: 'Demo';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  /** Demo Page/ Youtube Demo title */
+  title?: Maybe<Scalars['String']>;
+  youtubeUrl?: Maybe<Scalars['String']>;
+  hubSpotTitle?: Maybe<Scalars['String']>;
+  hubSpotSubtitle?: Maybe<Scalars['String']>;
+  /** To schedule a 1:1 demo with an engineer. */
+  hubSpotDataSrc?: Maybe<Scalars['String']>;
+};
+
+export type DemoFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  title?: Maybe<StringFilter>;
+  youtubeUrl?: Maybe<StringFilter>;
+  hubSpotTitle?: Maybe<StringFilter>;
+  hubSpotSubtitle?: Maybe<StringFilter>;
+  hubSpotDataSrc?: Maybe<StringFilter>;
+};
+
+export type DemoSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  title?: Maybe<SortOrder>;
+  youtubeUrl?: Maybe<SortOrder>;
+  hubSpotTitle?: Maybe<SortOrder>;
+  hubSpotSubtitle?: Maybe<SortOrder>;
+  hubSpotDataSrc?: Maybe<SortOrder>;
+};
+
 /** A Sanity document */
 export type Document = {
   /** Document ID */
@@ -1790,6 +1845,7 @@ export type RootQuery = {
   CaseStudiesPage?: Maybe<CaseStudiesPage>;
   CaseStudy?: Maybe<CaseStudy>;
   Category?: Maybe<Category>;
+  Demo?: Maybe<Demo>;
   Edition?: Maybe<Edition>;
   Event?: Maybe<Event>;
   EventsPage?: Maybe<EventsPage>;
@@ -1815,6 +1871,7 @@ export type RootQuery = {
   allCaseStudiesPage: Array<CaseStudiesPage>;
   allCaseStudy: Array<CaseStudy>;
   allCategory: Array<Category>;
+  allDemo: Array<Demo>;
   allEdition: Array<Edition>;
   allEvent: Array<Event>;
   allEventsPage: Array<EventsPage>;
@@ -1867,6 +1924,11 @@ export type RootQueryCaseStudyArgs = {
 
 
 export type RootQueryCategoryArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryDemoArgs = {
   id: Scalars['ID'];
 };
 
@@ -2012,6 +2074,14 @@ export type RootQueryAllCaseStudyArgs = {
 export type RootQueryAllCategoryArgs = {
   where?: Maybe<CategoryFilter>;
   sort?: Maybe<Array<CategorySorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllDemoArgs = {
+  where?: Maybe<DemoFilter>;
+  sort?: Maybe<Array<DemoSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -3316,6 +3386,21 @@ export type CaseStudyQuery = (
   )> }
 );
 
+export type DemoPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type DemoPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allDemo: Array<(
+    { __typename?: 'Demo' }
+    & Pick<Demo, 'title' | 'youtubeUrl' | 'hubSpotTitle' | 'hubSpotSubtitle' | 'hubSpotDataSrc'>
+    & { metadata?: Maybe<(
+      { __typename?: 'PageMetadata' }
+      & Pick<PageMetadata, 'title' | 'description'>
+    )> }
+  )> }
+);
+
 export type EventsPageFragment = (
   { __typename?: 'EventsPage' }
   & Pick<EventsPage, 'title' | 'subtitle'>
@@ -4314,6 +4399,21 @@ export const CaseStudyDocument = gql`
   }
 }
     ${CaseStudyFragmentDoc}`;
+export const DemoPageDocument = gql`
+    query DemoPage {
+  allDemo(sort: {_createdAt: DESC}, limit: 1) {
+    metadata {
+      title
+      description
+    }
+    title
+    youtubeUrl
+    hubSpotTitle
+    hubSpotSubtitle
+    hubSpotDataSrc
+  }
+}
+    `;
 export const EventsPageDocument = gql`
     query EventsPage {
   allEventsPage(sort: {_createdAt: DESC}, limit: 1) {
@@ -4544,6 +4644,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     CaseStudy(variables: CaseStudyQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<CaseStudyQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<CaseStudyQuery>(CaseStudyDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CaseStudy');
+    },
+    DemoPage(variables?: DemoPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<DemoPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DemoPageQuery>(DemoPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'DemoPage');
     },
     EventsPage(variables?: EventsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventsPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<EventsPageQuery>(EventsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'EventsPage');
