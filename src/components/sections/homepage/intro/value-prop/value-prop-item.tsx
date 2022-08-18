@@ -25,7 +25,7 @@ const ValueProp = ({
         className={`text-center xl:text-left text-[20px] ${dirStyle} flex items-center`}
       >
         <div className="sm:w-9/12 xl:w-[430px] mx-auto">
-          <h2 className="text-[24px] lg:text-[30px] font-semibold leading-8 lg:leading-10">
+          <h2 className="text-[24px] lg:text-[30px] leading-8 lg:leading-10">
             {title}
           </h2>
           <BlockContent
