@@ -34,7 +34,12 @@ const regoPolicies = [
     caption:
       'Model your resource hierarchy and enforce fine-grained authorization',
     code: `allowed {
-  ds.check(input.user.id, "viewer", input.resource.id)
+  ds.check_permission({
+    "sub_id": input.user.id,
+    "obj_type": "document",
+    "permission": "read",
+    "obj_id": input.resource.id
+  })
 }`
   },
   {
@@ -57,11 +62,11 @@ const PolicyBrowser = () => {
           <Slider {...settings}>
             {regoPolicies?.map((r, i) => {
               return (
-                <div key={i} className="flex flex-col h-[270px]">
+                <div key={i} className="flex flex-col h-[280px]">
                   <CodeViewer
                     language="rego"
                     snippet={r.code}
-                    className="w-full flex-auto md:w-[600px] h-[200px] border-0 rounded-none my-0"
+                    className="w-full flex-auto md:w-[600px] h-[210px] border-0 rounded-none my-0"
                   />
                   <div className="w-full flex-1 md:w-[600px] h-full text-center my-auto items-center bg-aserto-grey-10 p-4">
                     <span>{r.caption}</span>
