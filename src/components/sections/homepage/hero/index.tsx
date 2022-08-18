@@ -11,7 +11,6 @@ const Hero = ({ title }: { title: string }) => {
       >
         {title}
       </h1>
-      <CtaButtons signup contactEngineer leftAlign />
       <img
         className="object-cover h-[250px] -mx-8 -bottom-12 absolute
         sm:object-fill sm:h-auto sm:-ml-32 sm:left-1/2 sm:transform sm:-translate-x-1/2"
@@ -46,6 +45,7 @@ const Hero = ({ title }: { title: string }) => {
         src="images/homepage/bubble.svg"
         alt="Bubble"
       />
+      <CtaButtons signup seeDemo leftAlign />
     </Container>
   )
 }
