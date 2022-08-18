@@ -11,6 +11,7 @@ import { BlockContent } from 'components/primitives/block-content'
 // Sections
 import CtaButtons from 'components/sections/common/cta-buttons'
 import CodeViewer from 'components/sections/common/code-viewer'
+import { snippets } from 'components/sections/common/code-browser'
 
 type Props = {
   frameworkPage: FrameworkPageFragment
@@ -38,7 +39,7 @@ const Framework = ({ frameworkPage }: Props) => {
         </h1>
 
         <div className="flex items-center justify-center mx-8">
-          <CodeViewer language={language} />
+          <CodeViewer language={language} snippet={snippets[language]} />
         </div>
 
         {/* language logo */}
