@@ -40,7 +40,7 @@ const LandingPage = ({ landingPage }: Props) => {
         {landingPage.subtitle}
       </h2>
 
-      <CtaButtons signup contactEngineer />
+      <CtaButtons signup contactEngineerDark />
 
       {landingPage.bodyRaw && (
         <div className="w-full sm:w-8/12 mx-auto">

@@ -1,5 +1,5 @@
-import Button from 'components/primitives/button'
 import Container from 'components/sections/homepage/container'
+import ContactEngineerButton from 'components/sections/common/cta-buttons/contact-engineering-button'
 
 const Hero = ({ title }: { title: string }) => {
   return (
@@ -11,15 +11,7 @@ const Hero = ({ title }: { title: string }) => {
         {title}
       </h1>
       <div className="my-[50px] text-center">
-        <Button
-          variant="primary"
-          size="lg"
-          as="a"
-          className="inline-flex items-center cursor-pointer"
-          href="/contact-engineering"
-        >
-          Speak with an engineer
-        </Button>
+        <ContactEngineerButton size="lg" />
       </div>
       <h2 className="text-center text-aserto-grey-90 text-[24px] lg:text-[30px] leading-8 lg:leading-10 mb-20">
         We make it easy for developers to secure access to their cloud apps.
