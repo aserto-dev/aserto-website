@@ -4,7 +4,7 @@ import Script from 'next/script'
 
 const ContactEngineer = () => {
   const page = {
-    title: 'Speak to an Engineer - Aserto',
+    title: 'Speak with an Engineer - Aserto',
     subtitle:
       'Schedule a 1-on-1 meeting with an engineer to talk about how Aserto can help solve your authorization challenges.',
     hubSpotDataSrc:
@@ -13,7 +13,7 @@ const ContactEngineer = () => {
   return (
     <PageLayout
       headProps={{
-        title: 'Speak to an Engineer - Aserto',
+        title: 'Speak with an Engineer - Aserto',
         description:
           "Schedule a 1-on-1 meeting with an Aserto engineer to discuss your specific authorization needs and Aserto's authorization as a service",
         image: 'images/og.png'
