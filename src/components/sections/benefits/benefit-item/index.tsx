@@ -3,6 +3,7 @@ import Glow from 'components/sections/common/glow'
 import { BlockContent } from 'components/primitives/block-content'
 import CodeBrowser from 'components/sections/common/code-browser'
 import AsertoInAction from 'components/sections/homepage/aserto-in-action'
+import PolicyBrowser from 'components/sections/common/policy-browser'
 
 type Props = SectionBlockFragment & { direction: string }
 
@@ -14,44 +15,41 @@ const BenefitItem = ({
   element,
   glow
 }: Props) => {
-  const divStyle = direction === 'left' ? 'xl:order-2' : ''
-  const blockStyle = direction === 'left' ? 'xl:ml-auto' : ''
-  const imageStyle = direction === 'left' ? 'xl:order-1' : ''
+  const dirStyle = direction === 'right' ? 'xl:order-2' : ''
   return (
-    <>
-      <h2 className="text-[30px] leading-[38px] font-semibold text-center mt-16 mb-24">
-        {title}
-      </h2>
-      <div className="xl:relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
-        {!!glow && <Glow direction={direction ?? 'left'} />}
-        <div
-          className={`sm:w-9/12 mx-auto ${divStyle} xl:translate-y-1/3 mb-8`}
-        >
+    <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
+      {!!glow && <Glow direction={direction ?? 'left'} />}
+      <div
+        className={`text-center xl:text-left text-[20px] ${dirStyle} flex items-center`}
+      >
+        <div className="sm:w-9/12 xl:w-[430px] mx-auto">
+          <h2 className="text-[24px] lg:text-[30px] leading-8 lg:leading-10">
+            {title}
+          </h2>
           <BlockContent
-            className={`text-[20px] xl:w-[500px] text-center xl:text-left mx-4 ${blockStyle}`}
+            className={`text-[18px] lg:text-[20px] xl:w-[430px] text-left xl:text-left mt-8`}
             blocks={subtitleRaw}
             spaced
           />
         </div>
-        <div
-          className={`xl:relative ${imageStyle} flex flex-row justify-center`}
-        >
-          {element === 'CodeBrowser' && <CodeBrowser />}
-          {element === 'Animation' && (
-            <div className="w-[700px]">
-              <AsertoInAction />
-            </div>
-          )}
-          {image?.asset?.url && (
-            <img
-              className="w-[700px]"
-              src={image?.asset?.url ?? '/404'}
-              alt={image?.alt ?? 'value prop image'}
-            />
-          )}
-        </div>
       </div>
-    </>
+      <div className="relative md:flex md:flex-row md:justify-center">
+        {element === 'CodeBrowser' && <CodeBrowser />}
+        {element === 'PolicyBrowser' && <PolicyBrowser />}
+        {element === 'Animation' && (
+          <div className="hidden md:block md:w-[700px]">
+            <AsertoInAction />
+          </div>
+        )}
+        {image?.asset?.url && (
+          <img
+            className="object-scale-down mx-auto"
+            src={image?.asset?.url ?? '/404'}
+            alt={image?.alt ?? 'value prop image'}
+          />
+        )}
+      </div>
+    </div>
   )
 }
 
