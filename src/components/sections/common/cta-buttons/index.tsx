@@ -1,16 +1,24 @@
 // Primitives
 import ContactButton from './contact-button'
 import ContactEngineerButton from './contact-engineer-button'
+import SeeDemoButton from './see-demo-button'
 import SignupButton from './signup-button'
 
 type Props = {
   contact?: boolean
   contactEngineer?: boolean
+  seeDemo?: boolean
   signup?: boolean
   leftAlign?: boolean
 }
 
-const CtaButtons = ({ contact, contactEngineer, signup, leftAlign }: Props) => {
+const CtaButtons = ({
+  contact,
+  contactEngineer,
+  seeDemo,
+  signup,
+  leftAlign
+}: Props) => {
   return (
     <>
       {contact ? (
@@ -25,6 +33,7 @@ const CtaButtons = ({ contact, contactEngineer, signup, leftAlign }: Props) => {
         >
           {signup && <SignupButton />}
           {contactEngineer && <ContactEngineerButton />}
+          {seeDemo && <SeeDemoButton />}
         </div>
       )}
     </>

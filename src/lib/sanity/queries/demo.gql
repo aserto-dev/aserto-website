@@ -1,0 +1,13 @@
+query DemoPage {
+  allDemo(sort: { _createdAt: DESC }, limit: 1) {
+    metadata {
+      title
+      description
+    }
+    title
+    youtubeUrl
+    hubSpotTitle
+    hubSpotSubtitle
+    hubSpotDataSrc
+  }
+}
