@@ -11,7 +11,7 @@ const GoodbyePage = () => {
           'This is the Goodbye page where delete account will be redirected'
       }}
     >
-      <div className={`pt-20 ${s.background}`}>
+      <div className={`pt-20 bg-goodbye ${s.background}`}>
         <Container>
           <img
             className="w-[400px] h-[254px] mx-auto "
