@@ -23,21 +23,35 @@ const BenefitsPage = ({
         image: 'images/og.png'
       }}
     >
-      <Hero
-        title={
-          page.title ??
-          'Powerful authorization-as-a-service, built to evolve with your customer requirements.'
-        }
-      />
-      <Video
-        embed={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'}
-      />
+      <div className="relative bg-hero pb-36">
+        <Hero
+          title={
+            page.title ??
+            'Powerful authorization-as-a-service, built to evolve with your customer requirements.'
+          }
+        />
+        <Video
+          embed={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'}
+        />
+        <img
+          className="object-cover h-[250px] -bottom-28 absolute
+        sm:object-fill sm:h-auto sm:-bottom-12 sm:left-1/2 sm:transform sm:-translate-x-1/2"
+          src="images/homepage/seafloor.svg"
+          alt="Sea Floor"
+        />
+        <img
+          className="w-[350px] absolute -bottom-40 right-1/2 transform translate-x-1/2
+        sm:w-[600px] sm:-bottom-80"
+          src="images/homepage/Lottie.svg"
+          alt="Lottie"
+        />
+      </div>
       <Benefits benefits={benefits} />
 
       <div className="bg-benefitsCta">
         <Lottie
           caption={`Let's talk about your authorization challenges`}
-          contact
+          contactEngineer
         />
       </div>
     </PageLayout>
