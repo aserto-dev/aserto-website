@@ -19,7 +19,7 @@ const GoodbyePage = () => {
             alt="Lottie"
           />
           <br></br>
-          <h1 className="text-3xl leading-none text-aserto-grey-90 text-center">
+          <h1 className="text-3xl leading-none font-semibold text-aserto-grey-90 text-center">
             Lottie and our team are sorry to see you go.
           </h1>
           <br></br>
