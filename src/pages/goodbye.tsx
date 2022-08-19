@@ -1,6 +1,5 @@
 import Container from 'components/layout/container'
 import PageLayout from 'components/layout/page'
-import s from '../components/sections/goodbye/goodbye.module.css'
 
 const GoodbyePage = () => {
   return (
@@ -11,7 +10,7 @@ const GoodbyePage = () => {
           'This is the Goodbye page where delete account will be redirected'
       }}
     >
-      <div className={`pt-20 bg-goodbye ${s.background}`}>
+      <div className={`pt-20 bg-goodbye`}>
         <Container>
           <img
             className="w-[400px] h-[254px] mx-auto "
