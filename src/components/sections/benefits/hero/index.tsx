@@ -5,7 +5,7 @@ const Hero = ({ title }: { title: string }) => {
   return (
     <Container className="pt-[100px]">
       <h1
-        className="my-[20px] w-full text-[30px] leading-[45px]
+        className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[45px]
           sm:text-[50px] sm:leading-[60px] text-center text-aserto-grey-90"
       >
         {title}
