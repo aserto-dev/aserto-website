@@ -52,7 +52,7 @@ const Integration = ({ integration }: Props) => {
         {integration.subtitle}
       </h2>
 
-      <CtaButtons signup contactEngineer />
+      <CtaButtons signup contactEngineerDark />
 
       {integration.bodyRaw && (
         <div className="w-full sm:w-8/12 mx-auto">

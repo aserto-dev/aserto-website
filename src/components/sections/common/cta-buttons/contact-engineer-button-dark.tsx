@@ -1,7 +1,7 @@
 // Primitives
 import Link from 'components/primitives/link'
 
-const ContactEngineerButton = () => {
+const ContactEngineerButtonDark = () => {
   return (
     <>
       <Link
@@ -16,4 +16,4 @@ const ContactEngineerButton = () => {
   )
 }
 
-export default ContactEngineerButton
+export default ContactEngineerButtonDark

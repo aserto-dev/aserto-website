@@ -1,12 +1,14 @@
 // Primitives
 import ContactButton from './contact-button'
-import ContactEngineerButton from './contact-engineer-button'
+import ContactEngineerButtonDark from './contact-engineer-button-dark'
+import ContactEngineerButton from './contact-engineering-button'
 import SeeDemoButton from './see-demo-button'
 import SignupButton from './signup-button'
 
 type Props = {
   contact?: boolean
   contactEngineer?: boolean
+  contactEngineerDark?: boolean
   seeDemo?: boolean
   signup?: boolean
   leftAlign?: boolean
@@ -15,28 +17,23 @@ type Props = {
 const CtaButtons = ({
   contact,
   contactEngineer,
+  contactEngineerDark,
   seeDemo,
   signup,
   leftAlign
 }: Props) => {
   return (
-    <>
-      {contact ? (
-        <div className="mt-[50px]">
-          <ContactButton />
-        </div>
-      ) : (
-        <div
-          className={`flex flex-col sm:flex-row mt-[50px] gap-8 sm:gap-4 ${
-            !leftAlign && `justify-center`
-          }`}
-        >
-          {signup && <SignupButton />}
-          {contactEngineer && <ContactEngineerButton />}
-          {seeDemo && <SeeDemoButton />}
-        </div>
-      )}
-    </>
+    <div
+      className={`flex flex-col sm:flex-row mt-[50px] gap-8 sm:gap-4 ${
+        !leftAlign && `justify-center`
+      }`}
+    >
+      {signup && <SignupButton />}
+      {contact && <ContactButton />}
+      {contactEngineer && <ContactEngineerButton size="sm" />}
+      {contactEngineerDark && <ContactEngineerButtonDark />}
+      {seeDemo && <SeeDemoButton />}
+    </div>
   )
 }
 

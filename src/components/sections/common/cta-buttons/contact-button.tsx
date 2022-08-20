@@ -8,7 +8,7 @@ const ContactButton = () => {
         variant="primary"
         size="sm"
         as="a"
-        className="inline-flex items-center cursor-pointer"
+        className="inline-flex items-center justify-center self-center cursor-pointer"
         href="/contact"
       >
         Contact us
