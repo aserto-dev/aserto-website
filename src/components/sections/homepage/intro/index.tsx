@@ -8,7 +8,7 @@ const Intro = ({ page }: { page: any }) => {
   return (
     <Container className="text-aserto-grey-90 lg:px-12">
       <img
-        className="object-fit h-[400px] z-0 absolute left-1/2 top-96 sm:transform sm:-translate-x-1/2"
+        className="object-fit h-[400px] z-0 absolute left-1/3 mt-96 md:mt-64 lg:mt-96 xl:mt-52 top-96"
         src="images/homepage/seafloor-teal.svg"
         alt="Sea Floor"
       />
