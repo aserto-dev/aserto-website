@@ -8,5 +8,4 @@ fragment FeatureBlock on FeatureBlock {
   carouselImages {
     ...Image
   }
-  carouselCaptionRaw
 }

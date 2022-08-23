@@ -8229,18 +8229,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "carouselCaptionRaw",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "JSON",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -13823,12 +13811,12 @@
             "deprecationReason": null
           },
           {
-            "name": "caption",
+            "name": "captionRaw",
             "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
-              "name": "String",
+              "name": "JSON",
               "ofType": null
             },
             "isDeprecated": false,
@@ -13919,18 +13907,6 @@
             "deprecationReason": null
           },
           {
-            "name": "caption",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "alt",
             "description": null,
             "type": {
@@ -13995,18 +13971,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "SanityImageCropSorting",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "caption",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrder",
               "ofType": null
             },
             "defaultValue": null,

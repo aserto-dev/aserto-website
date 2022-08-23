@@ -1,8 +1,9 @@
+import { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { BlockContent } from 'components/primitives/block-content'
 import { FeatureBlock } from 'lib/sanity/generated'
+import { BlockContent } from 'components/primitives/block-content'
 import Container from 'components/sections/homepage/container'
 
 const settings = {
@@ -15,14 +16,15 @@ const settings = {
   slidesToScroll: 1,
   initialSlide: 0
 }
+
 const FeatureBlockItem = ({
   titleRaw,
   subtitleRaw,
   element,
   image,
-  carouselImages,
-  carouselCaptionRaw
+  carouselImages
 }: FeatureBlock) => {
+  const [caption, setCaption] = useState(carouselImages?.[0]?.captionRaw)
   return (
     <Container>
       <link rel="stylesheet" href="/css/carousel.css"></link>
@@ -51,7 +53,12 @@ const FeatureBlockItem = ({
           <>
             <div className="relative px-0 my-24 mx-auto">
               <div className="rego w-3/4 mx-auto">
-                <Slider {...settings}>
+                <Slider
+                  {...settings}
+                  afterChange={(e) =>
+                    setCaption(carouselImages?.[e]?.captionRaw)
+                  }
+                >
                   {carouselImages?.map((c, i) => {
                     return (
                       <img
@@ -64,11 +71,13 @@ const FeatureBlockItem = ({
                 </Slider>
               </div>
             </div>
-            <BlockContent
-              className={`text-[18px] lg:text-[20px] w-3/4 mx-auto mt-8`}
-              blocks={carouselCaptionRaw}
-              spaced
-            />
+            {!!caption && (
+              <BlockContent
+                className={`text-[18px] lg:text-[20px] w-3/4 mx-auto mt-8`}
+                blocks={caption}
+                spaced
+              />
+            )}
           </>
         )}
       </div>

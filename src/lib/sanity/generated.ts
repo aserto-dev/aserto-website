@@ -923,7 +923,6 @@ export type FeatureBlock = {
   element?: Maybe<Scalars['String']>;
   image?: Maybe<MainImage>;
   carouselImages?: Maybe<Array<Maybe<MainImage>>>;
-  carouselCaptionRaw?: Maybe<Scalars['JSON']>;
 };
 
 export type FeatureBlockFilter = {
@@ -1570,7 +1569,7 @@ export type MainImage = {
   asset?: Maybe<SanityImageAsset>;
   hotspot?: Maybe<SanityImageHotspot>;
   crop?: Maybe<SanityImageCrop>;
-  caption?: Maybe<Scalars['String']>;
+  captionRaw?: Maybe<Scalars['JSON']>;
   /** Important for SEO and accessiblity. */
   alt?: Maybe<Scalars['String']>;
 };
@@ -1581,7 +1580,6 @@ export type MainImageFilter = {
   asset?: Maybe<SanityImageAssetFilter>;
   hotspot?: Maybe<SanityImageHotspotFilter>;
   crop?: Maybe<SanityImageCropFilter>;
-  caption?: Maybe<StringFilter>;
   alt?: Maybe<StringFilter>;
 };
 
@@ -1590,7 +1588,6 @@ export type MainImageSorting = {
   _type?: Maybe<SortOrder>;
   hotspot?: Maybe<SanityImageHotspotSorting>;
   crop?: Maybe<SanityImageCropSorting>;
-  caption?: Maybe<SortOrder>;
   alt?: Maybe<SortOrder>;
 };
 
@@ -3026,7 +3023,7 @@ export type EventFragment = (
 
 export type FeatureBlockFragment = (
   { __typename?: 'FeatureBlock' }
-  & Pick<FeatureBlock, 'titleRaw' | 'subtitleRaw' | 'element' | 'carouselCaptionRaw'>
+  & Pick<FeatureBlock, 'titleRaw' | 'subtitleRaw' | 'element'>
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -3075,7 +3072,7 @@ export type FrameworkPageFragment = (
 
 export type ImageFragment = (
   { __typename?: 'MainImage' }
-  & Pick<MainImage, 'caption' | 'alt'>
+  & Pick<MainImage, 'captionRaw' | 'alt'>
   & { crop?: Maybe<(
     { __typename?: 'SanityImageCrop' }
     & Pick<SanityImageCrop, '_key' | '_type' | 'top' | 'bottom' | 'left' | 'right'>
@@ -3905,7 +3902,7 @@ export const ImageFragmentDoc = gql`
       }
     }
   }
-  caption
+  captionRaw
   alt
 }
     `;
@@ -4354,7 +4351,6 @@ export const FeatureBlockFragmentDoc = gql`
   carouselImages {
     ...Image
   }
-  carouselCaptionRaw
 }
     ${ImageFragmentDoc}`;
 export const FeaturesPageFragmentDoc = gql`
