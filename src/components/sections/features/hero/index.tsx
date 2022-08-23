@@ -5,6 +5,7 @@ import {
   FeatureBlockFragment,
   FeaturesPageFragment
 } from 'lib/sanity/generated'
+import FeatureBlockItem from '../feature-block-item'
 
 const Hero = ({ page }: { page: FeaturesPageFragment }) => {
   const heroFeatures: FeatureBlockFragment[] =
@@ -31,18 +32,7 @@ const Hero = ({ page }: { page: FeaturesPageFragment }) => {
         See a demo
       </Button>
       {heroFeatures.map((hf, i) => (
-        <div key={i}>
-          {hf.element === 'Image/gif' && (
-            <>
-              <BlockContent blocks={hf.titleRaw} />
-              <BlockContent blocks={hf.subtitleRaw} />
-              <img
-                src={hf.image?.asset?.url ?? '/404'}
-                alt={hf.image?.alt ?? 'feature'}
-              />
-            </>
-          )}
-        </div>
+        <FeatureBlockItem key={i} {...hf} />
       ))}
     </Container>
   )
