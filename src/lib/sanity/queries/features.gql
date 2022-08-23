@@ -1,0 +1,23 @@
+fragment FeaturesPage on Features {
+  metadata {
+    title
+    description
+  }
+  title
+  subtitleRaw,
+  heroFeatureBlocks {
+    ...FeatureBlock
+  }
+  featureBlocks {
+    ...FeatureBlock
+  }
+  featureItems {
+    ...FeatureItem
+  }
+}
+
+query FeaturesPage {
+  allFeatures(sort: { _createdAt: DESC }, limit: 1) {
+    ...FeaturesPage
+  }
+}

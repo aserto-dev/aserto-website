@@ -196,6 +196,7 @@ export type Benefits = Document & {
   title?: Maybe<Scalars['String']>;
   youtubeUrl?: Maybe<Scalars['String']>;
   benefit?: Maybe<Array<Maybe<SectionBlock>>>;
+  callToAction?: Maybe<CtaBlock>;
 };
 
 export type BenefitsFilter = {
@@ -210,6 +211,7 @@ export type BenefitsFilter = {
   metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   youtubeUrl?: Maybe<StringFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
 };
 
 export type BenefitsSorting = {
@@ -222,6 +224,7 @@ export type BenefitsSorting = {
   metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   youtubeUrl?: Maybe<SortOrder>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type Block = {
@@ -520,6 +523,7 @@ export type CtaBlock = {
   caption?: Maybe<Scalars['String']>;
   contact?: Maybe<Scalars['Boolean']>;
   contactEngineer?: Maybe<Scalars['Boolean']>;
+  contactEngineerDark?: Maybe<Scalars['Boolean']>;
   signup?: Maybe<Scalars['Boolean']>;
 };
 
@@ -529,6 +533,7 @@ export type CtaBlockFilter = {
   caption?: Maybe<StringFilter>;
   contact?: Maybe<BooleanFilter>;
   contactEngineer?: Maybe<BooleanFilter>;
+  contactEngineerDark?: Maybe<BooleanFilter>;
   signup?: Maybe<BooleanFilter>;
 };
 
@@ -538,6 +543,7 @@ export type CtaBlockSorting = {
   caption?: Maybe<SortOrder>;
   contact?: Maybe<SortOrder>;
   contactEngineer?: Maybe<SortOrder>;
+  contactEngineerDark?: Maybe<SortOrder>;
   signup?: Maybe<SortOrder>;
 };
 
@@ -913,17 +919,25 @@ export type FeatureBlock = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   titleRaw?: Maybe<Scalars['JSON']>;
-  blocks?: Maybe<Array<Maybe<FeatureItem>>>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  element?: Maybe<Scalars['String']>;
+  image?: Maybe<MainImage>;
+  carouselImages?: Maybe<Array<Maybe<MainImage>>>;
+  carouselCaptionRaw?: Maybe<Scalars['JSON']>;
 };
 
 export type FeatureBlockFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
+  element?: Maybe<StringFilter>;
+  image?: Maybe<MainImageFilter>;
 };
 
 export type FeatureBlockSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
+  element?: Maybe<SortOrder>;
+  image?: Maybe<MainImageSorting>;
 };
 
 export type FeatureItem = {
@@ -946,6 +960,54 @@ export type FeatureItemSorting = {
   _type?: Maybe<SortOrder>;
   icon?: Maybe<MainImageSorting>;
   title?: Maybe<SortOrder>;
+};
+
+export type Features = Document & {
+  __typename?: 'Features';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  title?: Maybe<Scalars['String']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  heroFeatureBlocks?: Maybe<Array<Maybe<FeatureBlock>>>;
+  featureBlocks?: Maybe<Array<Maybe<FeatureBlock>>>;
+  featureItems?: Maybe<Array<Maybe<FeatureItem>>>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type FeaturesFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  title?: Maybe<StringFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type FeaturesSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  title?: Maybe<SortOrder>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type File = {
@@ -1850,6 +1912,7 @@ export type RootQuery = {
   Event?: Maybe<Event>;
   EventsPage?: Maybe<EventsPage>;
   Faq?: Maybe<Faq>;
+  Features?: Maybe<Features>;
   Framework?: Maybe<Framework>;
   FrameworkPage?: Maybe<FrameworkPage>;
   Home?: Maybe<Home>;
@@ -1876,6 +1939,7 @@ export type RootQuery = {
   allEvent: Array<Event>;
   allEventsPage: Array<EventsPage>;
   allFaq: Array<Faq>;
+  allFeatures: Array<Features>;
   allFramework: Array<Framework>;
   allFrameworkPage: Array<FrameworkPage>;
   allHome: Array<Home>;
@@ -1949,6 +2013,11 @@ export type RootQueryEventsPageArgs = {
 
 
 export type RootQueryFaqArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryFeaturesArgs = {
   id: Scalars['ID'];
 };
 
@@ -2114,6 +2183,14 @@ export type RootQueryAllEventsPageArgs = {
 export type RootQueryAllFaqArgs = {
   where?: Maybe<FaqFilter>;
   sort?: Maybe<Array<FaqSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllFeaturesArgs = {
+  where?: Maybe<FeaturesFilter>;
+  sort?: Maybe<Array<FeaturesSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2947,6 +3024,18 @@ export type EventFragment = (
   )> }
 );
 
+export type FeatureBlockFragment = (
+  { __typename?: 'FeatureBlock' }
+  & Pick<FeatureBlock, 'titleRaw' | 'subtitleRaw' | 'element' | 'carouselCaptionRaw'>
+  & { image?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, carouselImages?: Maybe<Array<Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>>> }
+);
+
 export type FeatureItemFragment = (
   { __typename?: 'FeatureItem' }
   & Pick<FeatureItem, 'title'>
@@ -3486,6 +3575,35 @@ export type FaqPageQuery = (
       { __typename?: 'FaqBlock' }
       & FaqItemFragment
     )>>> }
+  )> }
+);
+
+export type FeaturesPageFragment = (
+  { __typename?: 'Features' }
+  & Pick<Features, 'title' | 'subtitleRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, heroFeatureBlocks?: Maybe<Array<Maybe<(
+    { __typename?: 'FeatureBlock' }
+    & FeatureBlockFragment
+  )>>>, featureBlocks?: Maybe<Array<Maybe<(
+    { __typename?: 'FeatureBlock' }
+    & FeatureBlockFragment
+  )>>>, featureItems?: Maybe<Array<Maybe<(
+    { __typename?: 'FeatureItem' }
+    & FeatureItemFragment
+  )>>> }
+);
+
+export type FeaturesPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FeaturesPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFeatures: Array<(
+    { __typename?: 'Features' }
+    & FeaturesPageFragment
   )> }
 );
 
@@ -4219,6 +4337,40 @@ export const FaqItemFragmentDoc = gql`
   }
 }
     `;
+export const FeatureBlockFragmentDoc = gql`
+    fragment FeatureBlock on FeatureBlock {
+  titleRaw
+  subtitleRaw
+  element
+  image {
+    ...Image
+  }
+  carouselImages {
+    ...Image
+  }
+  carouselCaptionRaw
+}
+    ${ImageFragmentDoc}`;
+export const FeaturesPageFragmentDoc = gql`
+    fragment FeaturesPage on Features {
+  metadata {
+    title
+    description
+  }
+  title
+  subtitleRaw
+  heroFeatureBlocks {
+    ...FeatureBlock
+  }
+  featureBlocks {
+    ...FeatureBlock
+  }
+  featureItems {
+    ...FeatureItem
+  }
+}
+    ${FeatureBlockFragmentDoc}
+${FeatureItemFragmentDoc}`;
 export const ValuePropFragmentDoc = gql`
     fragment ValueProp on ValueProp {
   image {
@@ -4463,6 +4615,13 @@ export const FaqPageDocument = gql`
   }
 }
     ${FaqItemFragmentDoc}`;
+export const FeaturesPageDocument = gql`
+    query FeaturesPage {
+  allFeatures(sort: {_createdAt: DESC}, limit: 1) {
+    ...FeaturesPage
+  }
+}
+    ${FeaturesPageFragmentDoc}`;
 export const FrameworkPagesDocument = gql`
     query FrameworkPages {
   allFrameworkPage(sort: {_createdAt: DESC}) {
@@ -4662,6 +4821,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');
+    },
+    FeaturesPage(variables?: FeaturesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FeaturesPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FeaturesPageQuery>(FeaturesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FeaturesPage');
     },
     FrameworkPages(variables?: FrameworkPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FrameworkPagesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FrameworkPagesQuery>(FrameworkPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FrameworkPages');
