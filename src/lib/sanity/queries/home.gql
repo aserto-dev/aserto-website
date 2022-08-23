@@ -18,6 +18,7 @@ fragment HomePage on Home {
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }
 

@@ -3068,7 +3068,7 @@ export type FrameworkPageFragment = (
   & Pick<FrameworkPage, 'bodyRaw'>
   & { callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
-    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
   & FrameworkPageMetaFragment
 );
@@ -3115,7 +3115,7 @@ export type IntegrationFragment = (
   & Pick<Integration, 'bodyRaw'>
   & { callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
-    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
   & IntegrationMetaFragment
 );
@@ -3134,7 +3134,7 @@ export type LandingPageFragment = (
     & Pick<Slug, 'current'>
   )>, callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
-    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
 );
 
@@ -3593,7 +3593,10 @@ export type FeaturesPageFragment = (
   )>>>, featureItems?: Maybe<Array<Maybe<(
     { __typename?: 'FeatureItem' }
     & FeatureItemFragment
-  )>>> }
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
+  )> }
 );
 
 export type FeaturesPageQueryVariables = Exact<{ [key: string]: never; }>;
@@ -3673,7 +3676,7 @@ export type HomePageFragment = (
     & SectionBlockFragment
   )>>>, callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
-    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer'>
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
 );
 
@@ -4027,6 +4030,7 @@ export const FrameworkPageFragmentDoc = gql`
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }
     ${FrameworkPageMetaFragmentDoc}`;
@@ -4058,6 +4062,7 @@ export const IntegrationFragmentDoc = gql`
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }
     ${IntegrationMetaFragmentDoc}`;
@@ -4084,6 +4089,7 @@ export const LandingPageFragmentDoc = gql`
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }
     ${ImageFragmentDoc}`;
@@ -4368,6 +4374,13 @@ export const FeaturesPageFragmentDoc = gql`
   featureItems {
     ...FeatureItem
   }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
 }
     ${FeatureBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
@@ -4403,6 +4416,7 @@ export const HomePageFragmentDoc = gql`
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }
     ${ValuePropFragmentDoc}

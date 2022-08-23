@@ -1,4 +1,5 @@
 import PageLayout from 'components/layout/page'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/features/hero'
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
@@ -21,6 +22,11 @@ const FeaturesPage = ({
     >
       <div className="relative bg-hero pb-36">
         <Hero page={page} />
+      </div>
+      <div>
+        {!!page.callToAction && (
+          <Lottie {...ctaOptions({ ...page.callToAction })} />
+        )}
       </div>
     </PageLayout>
   )
