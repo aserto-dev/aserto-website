@@ -29,6 +29,11 @@ export const headerLinks = [
         isExternal: false
       },
       {
+        label: 'Features',
+        href: '/features',
+        isExternal: false
+      },
+      {
         label: 'Customers',
         href: '/customers',
         isExternal: false
