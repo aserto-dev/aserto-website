@@ -979,6 +979,7 @@ export type Features = Document & {
   subtitleRaw?: Maybe<Scalars['JSON']>;
   heroFeatureBlocks?: Maybe<Array<Maybe<FeatureBlock>>>;
   featureBlocks?: Maybe<Array<Maybe<FeatureBlock>>>;
+  iconBlockTitleRaw?: Maybe<Scalars['JSON']>;
   featureItems?: Maybe<Array<Maybe<FeatureItem>>>;
   callToAction?: Maybe<CtaBlock>;
 };
@@ -3577,7 +3578,7 @@ export type FaqPageQuery = (
 
 export type FeaturesPageFragment = (
   { __typename?: 'Features' }
-  & Pick<Features, 'title' | 'subtitleRaw'>
+  & Pick<Features, 'title' | 'subtitleRaw' | 'iconBlockTitleRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4367,6 +4368,7 @@ export const FeaturesPageFragmentDoc = gql`
   featureBlocks {
     ...FeatureBlock
   }
+  iconBlockTitleRaw
   featureItems {
     ...FeatureItem
   }

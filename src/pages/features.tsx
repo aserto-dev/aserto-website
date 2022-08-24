@@ -37,7 +37,10 @@ const FeaturesPage = ({
 
       <FeatureBlocks features={features} />
 
-      <IconBlock featureIcons={featureItems} />
+      <IconBlock
+        featureIcons={featureItems}
+        iconBlockTitle={page.iconBlockTitleRaw}
+      />
 
       <div className="bg-featureCta">
         {!!page.callToAction && (
