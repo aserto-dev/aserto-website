@@ -26,5 +26,6 @@ fragment FrameworkPage on FrameworkPage {
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }

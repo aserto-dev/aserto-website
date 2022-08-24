@@ -28,6 +28,6 @@ fragment Image on MainImage {
       }
     }
   }
-  caption
+  captionRaw
   alt
 }

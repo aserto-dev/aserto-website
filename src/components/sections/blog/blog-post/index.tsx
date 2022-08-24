@@ -72,9 +72,9 @@ const PostComponent = ({ post }: Props) => {
           src={post.mainImage?.asset?.url ?? '/404'}
           width="1216"
         />
-        {post.mainImage?.caption && (
+        {post.mainImage?.captionRaw && (
           <figcaption className="mt-2 text-sm text-aserto-grey-60">
-            {post.mainImage.caption}
+            {post.mainImage.captionRaw}
           </figcaption>
         )}
       </figure>

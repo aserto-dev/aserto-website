@@ -144,6 +144,9 @@ module.exports = {
         benefitsCta: 'linear-gradient(0, #23696C 0%, #121212 80%)',
         homepageGlow:
           'radial-gradient(50% 50% at 50% 50%, rgba(62, 202, 207, 0.8) 0%, rgba(62, 202, 207, 0) 100%)',
+        featureHero:
+          'linear-gradient(180deg, #2F9195 0%, #183334 20%, #121212 80%)',
+        featureCta: 'linear-gradient(0, #23696C 0%, #121212 25%)',
         goodbye: 'linear-gradient(0deg, #121212 0%, #414141 100%)'
       },
       fontFamily: {

@@ -24,5 +24,6 @@ fragment Integration on Integration {
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }

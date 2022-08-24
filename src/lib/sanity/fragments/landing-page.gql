@@ -20,5 +20,6 @@ fragment LandingPage on LandingPage {
     signup
     contact
     contactEngineer
+    contactEngineerDark
   }
 }

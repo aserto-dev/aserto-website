@@ -91,6 +91,14 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/features"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
                   href="/faq"
                 >
                   FAQ
@@ -157,6 +165,14 @@ const Footer = () => {
                   href="/careers"
                 >
                   Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/events"
+                >
+                  Events
                 </Link>
               </li>
               <li>

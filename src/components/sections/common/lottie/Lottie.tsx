@@ -6,6 +6,7 @@ type CtaOptions = {
   caption?: string
   contact?: boolean
   contactEngineer?: boolean
+  contactEngineerDark?: boolean
   signup?: boolean
 }
 
@@ -14,7 +15,8 @@ export const ctaOptions = (cta: CtaBlock): CtaOptions => {
     caption: cta.caption ?? 'Authorization as easy as an API call',
     signup: !!cta.signup,
     contact: !!cta.contact,
-    contactEngineer: !!cta.contactEngineer
+    contactEngineer: !!cta.contactEngineer,
+    contactEngineerDark: !!cta.contactEngineerDark
   }
 }
 

@@ -1,0 +1,30 @@
+fragment FeaturesPage on Features {
+  metadata {
+    title
+    description
+  }
+  title
+  subtitleRaw,
+  heroFeatureBlocks {
+    ...FeatureBlock
+  }
+  featureBlocks {
+    ...FeatureBlock
+  }
+  featureItems {
+    ...FeatureItem
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+
+query FeaturesPage {
+  allFeatures(sort: { _createdAt: DESC }, limit: 1) {
+    ...FeaturesPage
+  }
+}

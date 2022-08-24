@@ -1,0 +1,11 @@
+fragment FeatureBlock on FeatureBlock {
+  titleRaw
+  subtitleRaw
+  element
+  image {
+    ...Image
+  }
+  carouselImages {
+    ...Image
+  }
+}
