@@ -1,16 +1,19 @@
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
-import { FeatureBlockFragment } from 'lib/sanity/generated'
+import { FeatureBlockFragment, FeatureItemFragment } from 'lib/sanity/generated'
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import FeatureBlocks from 'components/sections/features/feature-blocks'
 import Hero from 'components/sections/features/hero'
+import IconBlock from 'components/sections/features/icon-block'
 
 const FeaturesPage = ({
   page
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const features: FeatureBlockFragment[] =
     page.featureBlocks as FeatureBlockFragment[]
+  const featureItems: FeatureItemFragment[] =
+    page.featureItems as FeatureItemFragment[]
   return (
     <PageLayout
       footer="regular"
@@ -24,13 +27,19 @@ const FeaturesPage = ({
         image: 'images/og.png'
       }}
     >
-      <div className="relative pb-36">
-        <Hero page={page} />
-      </div>
+      <Hero page={page} />
+
+      <img
+        className="w-[150px] sm:w-[280px] mx-auto my-16 sm:my-24"
+        src="images/homepage/Lottie.svg"
+        alt="Lottie"
+      />
 
       <FeatureBlocks features={features} />
 
-      <div>
+      <IconBlock featureIcons={featureItems} />
+
+      <div className="bg-featureCta">
         {!!page.callToAction && (
           <Lottie {...ctaOptions({ ...page.callToAction })} />
         )}

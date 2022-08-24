@@ -11,7 +11,7 @@ const Hero = ({ page }: { page: FeaturesPageFragment }) => {
   const heroFeatures: FeatureBlockFragment[] =
     page.heroFeatureBlocks as FeatureBlockFragment[]
   return (
-    <Container className="pt-[100px] text-center">
+    <Container className="bg-featureHero pt-[100px] text-center">
       <div>
         <h1
           className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[45px]

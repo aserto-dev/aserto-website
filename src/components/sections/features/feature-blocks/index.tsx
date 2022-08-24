@@ -4,7 +4,7 @@ import FeatureBlockItem from '../feature-block-item'
 
 const FeatureBlocks = ({ features }: { features: FeatureBlockFragment[] }) => {
   return (
-    <Container>
+    <Container className="mb-32">
       {features.map((f, i) => (
         <FeatureBlockItem key={i} {...f} />
       ))}
