@@ -11,6 +11,7 @@ fragment FeaturesPage on Features {
   featureBlocks {
     ...FeatureBlock
   }
+  iconBlockTitleRaw
   featureItems {
     ...FeatureItem
   }

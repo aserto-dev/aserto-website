@@ -8677,6 +8677,18 @@
             "deprecationReason": null
           },
           {
+            "name": "iconBlockTitleRaw",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "JSON",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "featureItems",
             "description": null,
             "args": [],
