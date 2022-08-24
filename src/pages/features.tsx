@@ -1,10 +1,10 @@
-import PageLayout from 'components/layout/page'
-import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
-import FeatureBlockItem from 'components/sections/features/feature-block-item'
-import Hero from 'components/sections/features/hero'
+import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
 import { FeatureBlockFragment } from 'lib/sanity/generated'
-import { InferGetStaticPropsType } from 'next'
+import PageLayout from 'components/layout/page'
+import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
+import FeatureBlocks from 'components/sections/features/feature-blocks'
+import Hero from 'components/sections/features/hero'
 
 const FeaturesPage = ({
   page
@@ -24,12 +24,12 @@ const FeaturesPage = ({
         image: 'images/og.png'
       }}
     >
-      <div className="relative bg-hero pb-36">
+      <div className="relative pb-36">
         <Hero page={page} />
       </div>
-      {features.map((f, i) => (
-        <FeatureBlockItem key={i} {...f} />
-      ))}
+
+      <FeatureBlocks features={features} />
+
       <div>
         {!!page.callToAction && (
           <Lottie {...ctaOptions({ ...page.callToAction })} />

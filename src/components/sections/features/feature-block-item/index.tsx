@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { FeatureBlock } from 'lib/sanity/generated'
 import { BlockContent } from 'components/primitives/block-content'
-import Container from 'components/sections/homepage/container'
 
 const settings = {
   arrows: false,
@@ -26,17 +25,17 @@ const FeatureBlockItem = ({
 }: FeatureBlock) => {
   const [caption, setCaption] = useState(carouselImages?.[0]?.captionRaw)
   return (
-    <Container>
+    <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
-      <div className="relative justify-center text-center text-aserto-grey-90">
-        <div className="w-3/4 mx-auto">
+      <div className="relative justify-center text-left py-24 text-aserto-grey-90">
+        <div className="w-full sm:w-3/4 sm:text-center sm:mx-auto px-4 mb-4">
           <BlockContent
-            className="text-[24px] lg:text-[30px] leading-8 lg:leading-10"
+            className="w-full sm:w-3/4 mx-auto text-[24px] lg:text-[30px] leading-8 lg:leading-10"
             blocks={titleRaw}
           />
           {!!subtitleRaw && (
             <BlockContent
-              className={`text-[18px] lg:text-[20px] mt-8`}
+              className="w-full sm:w-3/4 text-[18px] lg:text-[20px] mt-8 mx-auto"
               blocks={subtitleRaw}
               spaced
             />
@@ -44,15 +43,15 @@ const FeatureBlockItem = ({
         </div>
         {element === 'Image/gif' && (
           <img
-            className="object-scale-down mx-auto"
+            className="w-full sm:w-3/4 object-scale-down mx-auto"
             src={image?.asset?.url ?? '/404'}
             alt={image?.alt ?? 'value prop image'}
           />
         )}
         {element === 'Carousel' && (
           <>
-            <div className="relative px-0 my-24 mx-auto">
-              <div className="rego w-3/4 mx-auto">
+            <div className="relative px-0 my-12 mx-auto">
+              <div className="rego w-full sm:w-3/4 mx-auto">
                 <Slider
                   {...settings}
                   afterChange={(e) =>
@@ -63,6 +62,7 @@ const FeatureBlockItem = ({
                     return (
                       <img
                         key={i}
+                        className="object-scale-down mx-auto"
                         src={c?.asset?.url ?? '/404'}
                         alt={c?.alt ?? 'value prop image'}
                       />
@@ -73,7 +73,7 @@ const FeatureBlockItem = ({
             </div>
             {!!caption && (
               <BlockContent
-                className={`text-[18px] lg:text-[20px] w-3/4 mx-auto mt-8`}
+                className="text-[18px] lg:text-[20px] px-4 sm:w-3/4 sm:mx-auto text-aserto-grey-70"
                 blocks={caption}
                 spaced
               />
@@ -81,7 +81,7 @@ const FeatureBlockItem = ({
           </>
         )}
       </div>
-    </Container>
+    </>
   )
 }
 
