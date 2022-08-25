@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ButtonHTMLAttributes, ClassAttributes, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -6,7 +6,6 @@ import { FeatureBlock } from 'lib/sanity/generated'
 import { BlockContent } from 'components/primitives/block-content'
 
 const settings = {
-  arrows: false,
   dots: true,
   infinite: true,
   mobileFirst: true,
@@ -24,6 +23,33 @@ const FeatureBlockItem = ({
   carouselImages
 }: FeatureBlock) => {
   const [caption, setCaption] = useState(carouselImages?.[0]?.captionRaw)
+
+  const PrevArrow = (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLButtonElement> &
+      ButtonHTMLAttributes<HTMLButtonElement>
+  ) => {
+    const { className, onClick } = props
+    return (
+      <button className={className} onClick={onClick}>
+        <img src="images/carousel-arrow-left.svg" />
+      </button>
+    )
+  }
+
+  const NextArrow = (
+    props: JSX.IntrinsicAttributes &
+      ClassAttributes<HTMLButtonElement> &
+      ButtonHTMLAttributes<HTMLButtonElement>
+  ) => {
+    const { className, onClick } = props
+    return (
+      <button className={className} onClick={onClick}>
+        <img src="images/carousel-arrow-right.svg" />
+      </button>
+    )
+  }
+
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
@@ -51,12 +77,14 @@ const FeatureBlockItem = ({
         {element === 'Carousel' && (
           <>
             <div className="relative px-0 my-12 mx-auto">
-              <div className="rego w-full sm:w-3/4 mx-auto">
+              <div className="rego custom-arrows w-full sm:w-3/4 mx-auto">
                 <Slider
                   {...settings}
                   afterChange={(e) =>
                     setCaption(carouselImages?.[e]?.captionRaw)
                   }
+                  prevArrow={<PrevArrow />}
+                  nextArrow={<NextArrow />}
                 >
                   {carouselImages?.map((c, i) => {
                     return (

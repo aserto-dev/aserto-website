@@ -24,3 +24,7 @@
   color: white !important;
   font-size: 12px;
 }
+
+.custom-arrows .slick-arrow::before {
+  display: none
+}
