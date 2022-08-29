@@ -1896,6 +1896,61 @@ export type QuestionBlockSorting = {
   question?: Maybe<SortOrder>;
 };
 
+export type ResourcePage = Document & {
+  __typename?: 'ResourcePage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  slug?: Maybe<Slug>;
+  title?: Maybe<Scalars['String']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  introTitleRaw?: Maybe<Scalars['JSON']>;
+  introSubtitleRaw?: Maybe<Scalars['JSON']>;
+  introImage?: Maybe<MainImage>;
+  introCaptionRaw?: Maybe<Scalars['JSON']>;
+  sectionBlock?: Maybe<Array<Maybe<SectionBlock>>>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type ResourcePageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  slug?: Maybe<SlugFilter>;
+  title?: Maybe<StringFilter>;
+  introImage?: Maybe<MainImageFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type ResourcePageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  slug?: Maybe<SlugSorting>;
+  title?: Maybe<SortOrder>;
+  introImage?: Maybe<MainImageSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
+};
+
 export type RootQuery = {
   __typename?: 'RootQuery';
   About?: Maybe<About>;
@@ -1920,6 +1975,7 @@ export type RootQuery = {
   News?: Maybe<News>;
   Post?: Maybe<Post>;
   Pricing?: Maybe<Pricing>;
+  ResourcePage?: Maybe<ResourcePage>;
   SiteSettings?: Maybe<SiteSettings>;
   Testimonial?: Maybe<Testimonial>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
@@ -1947,6 +2003,7 @@ export type RootQuery = {
   allNews: Array<News>;
   allPost: Array<Post>;
   allPricing: Array<Pricing>;
+  allResourcePage: Array<ResourcePage>;
   allSiteSettings: Array<SiteSettings>;
   allTestimonial: Array<Testimonial>;
   allSanityImageAsset: Array<SanityImageAsset>;
@@ -2061,6 +2118,11 @@ export type RootQueryPostArgs = {
 
 
 export type RootQueryPricingArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryResourcePageArgs = {
   id: Scalars['ID'];
 };
 
@@ -2261,6 +2323,14 @@ export type RootQueryAllPostArgs = {
 export type RootQueryAllPricingArgs = {
   where?: Maybe<PricingFilter>;
   sort?: Maybe<Array<PricingSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllResourcePageArgs = {
+  where?: Maybe<ResourcePageFilter>;
+  sort?: Maybe<Array<ResourcePageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -3173,6 +3243,27 @@ export type PostFragment = (
   & PostMetaFragment
 );
 
+export type ResourceFragment = (
+  { __typename?: 'ResourcePage' }
+  & Pick<ResourcePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )>, introImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, sectionBlock?: Maybe<Array<Maybe<(
+    { __typename?: 'SectionBlock' }
+    & SectionBlockFragment
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
+  )> }
+);
+
 export type SectionBlockFragment = (
   { __typename?: 'SectionBlock' }
   & Pick<SectionBlock, 'title' | 'subtitleRaw' | 'element' | 'glow'>
@@ -3861,6 +3952,44 @@ export type PricingQuery = (
   )> }
 );
 
+export type ResourcesPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ResourcesPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allResourcePage: Array<(
+    { __typename?: 'ResourcePage' }
+    & ResourceFragment
+  )> }
+);
+
+export type ResourcesPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ResourcesPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allResourcePage: Array<(
+    { __typename?: 'ResourcePage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type ResourcesPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type ResourcesPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allResourcePage: Array<(
+    { __typename?: 'ResourcePage' }
+    & ResourceFragment
+  )> }
+);
+
 export type TestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4132,6 +4261,49 @@ export const PostFragmentDoc = gql`
   bodyRaw
 }
     ${PostMetaFragmentDoc}`;
+export const SectionBlockFragmentDoc = gql`
+    fragment SectionBlock on SectionBlock {
+  image {
+    ...Image
+  }
+  title
+  subtitleRaw
+  element
+  glow
+}
+    ${ImageFragmentDoc}`;
+export const ResourceFragmentDoc = gql`
+    fragment Resource on ResourcePage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  slug {
+    current
+  }
+  title
+  subtitleRaw
+  introTitleRaw
+  introSubtitleRaw
+  introImage {
+    ...Image
+  }
+  introCaptionRaw
+  sectionBlock {
+    ...SectionBlock
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+    ${ImageFragmentDoc}
+${SectionBlockFragmentDoc}`;
 export const TestimonialFragmentDoc = gql`
     fragment Testimonial on Testimonial {
   _id
@@ -4216,17 +4388,6 @@ export const AboutPageFragmentDoc = gql`
     ${FounderFragmentDoc}
 ${MemberFragmentDoc}
 ${InvestorFragmentDoc}`;
-export const SectionBlockFragmentDoc = gql`
-    fragment SectionBlock on SectionBlock {
-  image {
-    ...Image
-  }
-  title
-  subtitleRaw
-  element
-  glow
-}
-    ${ImageFragmentDoc}`;
 export const BenefitsPageFragmentDoc = gql`
     fragment BenefitsPage on Benefits {
   metadata {
@@ -4765,6 +4926,29 @@ export const PricingDocument = gql`
 }
     ${PricingFragmentDoc}
 ${EditionFragmentDoc}`;
+export const ResourcesPagesDocument = gql`
+    query ResourcesPages {
+  allResourcePage(sort: {_createdAt: DESC}) {
+    ...Resource
+  }
+}
+    ${ResourceFragmentDoc}`;
+export const ResourcesPagePathsDocument = gql`
+    query ResourcesPagePaths {
+  allResourcePage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const ResourcesPageDocument = gql`
+    query ResourcesPage($slug: String!) {
+  allResourcePage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...Resource
+  }
+}
+    ${ResourceFragmentDoc}`;
 export const TestimonialsDocument = gql`
     query Testimonials {
   allTestimonial(sort: {index: ASC}) {
@@ -4881,6 +5065,15 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     Pricing(variables?: PricingQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<PricingQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PricingQuery>(PricingDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Pricing');
+    },
+    ResourcesPages(variables?: ResourcesPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ResourcesPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ResourcesPagesQuery>(ResourcesPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ResourcesPages');
+    },
+    ResourcesPagePaths(variables?: ResourcesPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ResourcesPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ResourcesPagePathsQuery>(ResourcesPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ResourcesPagePaths');
+    },
+    ResourcesPage(variables: ResourcesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ResourcesPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ResourcesPageQuery>(ResourcesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ResourcesPage');
     },
     Testimonials(variables?: TestimonialsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestimonialsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<TestimonialsQuery>(TestimonialsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Testimonials');
