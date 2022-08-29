@@ -2,15 +2,18 @@ import { GetStaticProps } from 'next'
 import Error from 'next/error'
 
 import cms from 'lib/sanity'
-import { ResourceFragment } from 'lib/sanity/generated'
+import { ResourceFragment, SectionBlockFragment } from 'lib/sanity/generated'
 
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/resource/hero'
 import Intro from 'components/sections/resource/intro'
+import SectionBlocks from 'components/sections/resource/sectionBlocks'
 
 const ResourcePage = ({ resource }: { resource: ResourceFragment }) => {
   if (!resource) return <Error statusCode={404} />
+  const benefits: SectionBlockFragment[] =
+    resource.sectionBlock as SectionBlockFragment[]
 
   return (
     <PageLayout
@@ -27,7 +30,10 @@ const ResourcePage = ({ resource }: { resource: ResourceFragment }) => {
     >
       <Hero page={resource} />
       <Intro page={resource} />
-      <Lottie {...ctaOptions({ ...resource.callToAction })} />
+      <SectionBlocks sectionBlocks={benefits} />
+      <div className="bg-featureCta">
+        <Lottie {...ctaOptions({ ...resource.callToAction })} />
+      </div>
     </PageLayout>
   )
 }
