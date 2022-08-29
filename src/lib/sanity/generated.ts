@@ -1913,6 +1913,8 @@ export type ResourcePage = Document & {
   slug?: Maybe<Slug>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
+  formId?: Maybe<Scalars['String']>;
+  formTitle?: Maybe<Scalars['String']>;
   introTitleRaw?: Maybe<Scalars['JSON']>;
   introSubtitleRaw?: Maybe<Scalars['JSON']>;
   introImage?: Maybe<MainImage>;
@@ -1933,6 +1935,8 @@ export type ResourcePageFilter = {
   metadata?: Maybe<PageMetadataFilter>;
   slug?: Maybe<SlugFilter>;
   title?: Maybe<StringFilter>;
+  formId?: Maybe<StringFilter>;
+  formTitle?: Maybe<StringFilter>;
   introImage?: Maybe<MainImageFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
 };
@@ -1947,6 +1951,8 @@ export type ResourcePageSorting = {
   metadata?: Maybe<PageMetadataSorting>;
   slug?: Maybe<SlugSorting>;
   title?: Maybe<SortOrder>;
+  formId?: Maybe<SortOrder>;
+  formTitle?: Maybe<SortOrder>;
   introImage?: Maybe<MainImageSorting>;
   callToAction?: Maybe<CtaBlockSorting>;
 };
@@ -3245,7 +3251,7 @@ export type PostFragment = (
 
 export type ResourceFragment = (
   { __typename?: 'ResourcePage' }
-  & Pick<ResourcePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
+  & Pick<ResourcePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'formId' | 'formTitle' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4285,6 +4291,8 @@ export const ResourceFragmentDoc = gql`
   }
   title
   subtitleRaw
+  formId
+  formTitle
   introTitleRaw
   introSubtitleRaw
   introImage {

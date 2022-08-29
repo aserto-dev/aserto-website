@@ -1,7 +1,6 @@
 import { BlockContent } from 'components/primitives/block-content'
 import Container from 'components/sections/homepage/container'
 import HubspotForm from 'lib/hubspot/HubspotForm'
-import { NameToFormId } from 'lib/hubspot/HubspotIds'
 import { ResourceFragment } from 'lib/sanity/generated'
 
 const Hero = ({ page }: { page: ResourceFragment }) => {
@@ -19,17 +18,19 @@ const Hero = ({ page }: { page: ResourceFragment }) => {
           blocks={page.subtitleRaw}
         />
       </div>
-      <div className="lg:w-1/2 lg:inline-flex align-middle my-auto">
-        <div
-          className="md:w-[560px] mx-auto p-[20px] w-full bg-aserto-grey-10
+      {!!page.formId && (
+        <div className="lg:w-1/2 lg:inline-flex align-middle my-auto">
+          <div
+            className="md:w-[560px] mx-auto p-[20px] w-full bg-aserto-grey-10
             border border-[#717171] rounded-[11px]"
-        >
-          <h4 className="text-[30px] font-semibold my-4 text-aserto-grey-90 text-center">
-            Get the report
-          </h4>
-          <HubspotForm formId={NameToFormId.kuppingercoleReport} />
+          >
+            <h4 className="text-[30px] font-semibold my-4 text-aserto-grey-90 text-center">
+              {page.formTitle}
+            </h4>
+            <HubspotForm formId={page.formId} />
+          </div>
         </div>
-      </div>
+      )}
     </Container>
   )
 }
