@@ -6,24 +6,26 @@ import { ResourceFragment } from 'lib/sanity/generated'
 
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
+import Hero from 'components/sections/resource/hero'
 
-const ResourcePage = (page: ResourceFragment) => {
-  if (!page) return <Error statusCode={404} />
+const ResourcePage = ({ resource }: { resource: ResourceFragment }) => {
+  if (!resource) return <Error statusCode={404} />
 
   return (
     <PageLayout
       footer="regular"
       headProps={{
         title:
-          page.metadata?.title ??
+          resource.metadata?.title ??
           'Enterprise-grade authorization-as-a-service for apps - Aserto',
         description:
-          page.metadata?.description ??
+          resource.metadata?.description ??
           'Aserto provides cloud-native authorization as a service for developers. Add fine-grained RBAC, ABAC, or ACL to your application in under a day.',
         image: 'images/og.png'
       }}
     >
-      <Lottie {...ctaOptions({ ...page.callToAction })} />
+      <Hero page={resource} />
+      <Lottie {...ctaOptions({ ...resource.callToAction })} />
     </PageLayout>
   )
 }
@@ -32,8 +34,8 @@ export const getStaticPaths = async () => {
   const { allResourcePage } = await cms().ResourcesPagePaths()
   return {
     paths:
-      allResourcePage?.map((f) => ({
-        params: { slug: f.slug?.current as string }
+      allResourcePage?.map((r) => ({
+        params: { slug: r.slug?.current as string }
       })) ?? [],
     fallback: false
   }
