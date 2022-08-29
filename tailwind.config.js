@@ -149,7 +149,9 @@ module.exports = {
         featureCta: 'linear-gradient(0, #23696C 0%, #121212 25%)',
         goodbye: 'linear-gradient(0deg, #121212 0%, #414141 100%)',
         resourceHero:
-          'linear-gradient(180deg, #2F9195 0%, #183334 40%, #121212 60%)'
+          'linear-gradient(180deg, #2F9195 0%, #183334 40%, #121212 60%)',
+        resourceIntro:
+          'linear-gradient(0, #2F9195 0%, #183334 40%, #121212 60%)'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'

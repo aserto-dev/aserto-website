@@ -7,6 +7,7 @@ import { ResourceFragment } from 'lib/sanity/generated'
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/resource/hero'
+import Intro from 'components/sections/resource/intro'
 
 const ResourcePage = ({ resource }: { resource: ResourceFragment }) => {
   if (!resource) return <Error statusCode={404} />
@@ -25,6 +26,7 @@ const ResourcePage = ({ resource }: { resource: ResourceFragment }) => {
       }}
     >
       <Hero page={resource} />
+      <Intro page={resource} />
       <Lottie {...ctaOptions({ ...resource.callToAction })} />
     </PageLayout>
   )
