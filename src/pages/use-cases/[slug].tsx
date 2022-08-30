@@ -9,6 +9,7 @@ import PageLayout from 'components/layout/page'
 
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/use-case/hero'
+import Intro from 'components/sections/use-case/intro'
 
 const UseCasePage = ({
   useCase
@@ -32,6 +33,7 @@ const UseCasePage = ({
       }}
     >
       <Hero page={useCase} />
+      <Intro page={useCase} />
       <div className="bg-featureCta">
         <Lottie {...ctaOptions({ ...useCase.callToAction })} />
       </div>
