@@ -1,0 +1,32 @@
+fragment UseCase on UseCasePage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  slug {
+    current
+  }
+  title
+  subtitleRaw
+  heroImage {
+    ...Image
+  }
+  introTitleRaw
+  introLeftTextRaw
+  introRightTextRaw
+  useCaseFeatureBlock {
+    ...UseCaseFeature
+  }
+  additionalImage {
+    ...Image
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}

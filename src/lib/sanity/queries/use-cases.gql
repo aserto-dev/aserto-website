@@ -1,0 +1,19 @@
+query UseCasesPages {
+  allUseCasePage(sort: { _createdAt: DESC }) {
+    ...UseCase
+  }
+}
+
+query UseCasesPagePaths {
+  allUseCasePage {
+    slug {
+      current
+    }
+  }
+}
+
+query UseCasesPage($slug: String!) {
+  allUseCasePage(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...UseCase
+  }
+}
