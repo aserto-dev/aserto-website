@@ -1,6 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
-import cms from 'lib/sanity'
-import { ResourceFragment } from 'lib/sanity/generated'
+import { useMemo } from 'react'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -19,17 +17,8 @@ import Logo from 'icons/logo-footer.svg'
 
 const Footer = () => {
   const [ref] = useFadeInBottom()
-  const [resourcePages, setResourcePages] = useState<ResourceFragment[]>()
   const year = useMemo(() => {
     return new Date().getUTCFullYear()
-  }, [])
-
-  useEffect(() => {
-    const getResourcePages = async () => {
-      const { allResourcePage } = await cms().ResourcesPages()
-      setResourcePages(allResourcePage)
-    }
-    getResourcePages().catch(console.error)
   }, [])
 
   return (
@@ -240,19 +229,14 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
-              {!!resourcePages &&
-                resourcePages.map((r) => {
-                  r.slug?.current && (
-                    <li>
-                      <Link
-                        className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                        href={r.slug?.current}
-                      >
-                        {r.title}
-                      </Link>
-                    </li>
-                  )
-                })}
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/resources/policy-based-access-management-market-compass"
+                >
+                  What is Policy-based Access Control?
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
