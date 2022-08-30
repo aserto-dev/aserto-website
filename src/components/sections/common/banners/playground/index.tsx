@@ -11,10 +11,10 @@ const PlaygroundBanner = () => {
                 text-center text-white h-[60px] sm:h-[36px]"
     >
       <span className="align-middle">
-        Going to Kubecon EU?{' '}
+        Going to DeveloperWeek Cloud in Austin?{' '}
         <Link
           className="font-bold underline"
-          href="/events/kubecon-eu-2022"
+          href="/events/developerweek-cloud-2022"
           onClick={hideBanner}
         >
           Meet with the Aserto team!
