@@ -1,4 +1,6 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import cms from 'lib/sanity'
+import { ResourceFragment } from 'lib/sanity/generated'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -17,15 +19,24 @@ import Logo from 'icons/logo-footer.svg'
 
 const Footer = () => {
   const [ref] = useFadeInBottom()
+  const [resourcePages, setResourcePages] = useState<ResourceFragment[]>()
   const year = useMemo(() => {
     return new Date().getUTCFullYear()
+  }, [])
+
+  useEffect(() => {
+    const getResourcePages = async () => {
+      const { allResourcePage } = await cms().ResourcesPages()
+      setResourcePages(allResourcePage)
+    }
+    getResourcePages().catch(console.error)
   }, [])
 
   return (
     <footer className="bg-aserto-grey-5">
       <Container className="pb-10 pt-14">
         <div
-          className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-5"
+          className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-6"
           ref={ref}
         >
           <div>
@@ -214,6 +225,34 @@ const Footer = () => {
                   Privacy Policy
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Resources
+            </p>
+            <ul className="mt-4 space-y-4">
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+              </li>
+              {!!resourcePages &&
+                resourcePages.map((r) => {
+                  r.slug?.current && (
+                    <li>
+                      <Link
+                        className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                        href={r.slug?.current}
+                      >
+                        {r.title}
+                      </Link>
+                    </li>
+                  )
+                })}
             </ul>
           </div>
           <div>
