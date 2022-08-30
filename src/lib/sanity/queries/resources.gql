@@ -1,0 +1,19 @@
+query ResourcesPages {
+  allResourcePage(sort: { _createdAt: DESC }) {
+    ...Resource
+  }
+}
+
+query ResourcesPagePaths {
+  allResourcePage {
+    slug {
+      current
+    }
+  }
+}
+
+query ResourcesPage($slug: String!) {
+  allResourcePage(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...Resource
+  }
+}
