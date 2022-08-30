@@ -50,3 +50,8 @@ pre code {
   background-color: #121212 !important;
   height: 100%;
 }
+
+.resource ul {
+  list-style-type: disc;
+  padding: 2.5rem;
+}

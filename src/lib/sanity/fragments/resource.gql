@@ -1,0 +1,31 @@
+fragment Resource on ResourcePage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  slug {
+    current
+  }
+  title
+  subtitleRaw
+  formId
+  formTitle
+  introTitleRaw
+  introSubtitleRaw
+  introImage {
+    ...Image
+  }
+  introCaptionRaw
+  sectionBlock {
+    ...SectionBlock
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
