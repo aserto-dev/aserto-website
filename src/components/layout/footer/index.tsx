@@ -187,6 +187,29 @@ const Footer = () => {
           </div>
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Resources
+            </p>
+            <ul className="mt-4 space-y-4">
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/resources/policy-based-access-management-market-compass"
+                >
+                  Policy-based access
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Legal
             </p>
             <ul className="mt-4 space-y-4">
@@ -204,29 +227,6 @@ const Footer = () => {
                   href="/privacy-policy"
                 >
                   Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
-              Resources
-            </p>
-            <ul className="mt-4 space-y-4">
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/blog"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/resources/policy-based-access-management-market-compass"
-                >
-                  What is Policy-based Access Control?
                 </Link>
               </li>
             </ul>
