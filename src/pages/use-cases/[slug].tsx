@@ -8,6 +8,7 @@ import { UseCaseFragment } from 'lib/sanity/generated'
 import PageLayout from 'components/layout/page'
 
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
+import Hero from 'components/sections/use-case/hero'
 
 const UseCasePage = ({
   useCase
@@ -30,6 +31,7 @@ const UseCasePage = ({
         image: '/images/og.png'
       }}
     >
+      <Hero page={useCase} />
       <div className="bg-featureCta">
         <Lottie {...ctaOptions({ ...useCase.callToAction })} />
       </div>
