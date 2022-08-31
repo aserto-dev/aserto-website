@@ -5,10 +5,10 @@ import { ResourceFragment } from 'lib/sanity/generated'
 
 const Hero = ({ page }: { page: ResourceFragment }) => {
   return (
-    <Container className="bg-resourceHero pt-8 lg:pt-[100px] flex flex-wrap gap-8">
-      <div className="flex-col align-middle lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
+    <Container className="bg-resourceHero pt-16 lg:pt-[100px] flex flex-wrap gap-8">
+      <div className="flex-col align-top lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
         <h1
-          className="my-[20px] mx-auto w-full text-[30px] leading-[45px]
+          className="mx-auto w-full text-[30px] leading-[45px]
           xl:text-[50px] xl:leading-[60px] text-aserto-grey-90"
         >
           {page.title}
@@ -19,7 +19,7 @@ const Hero = ({ page }: { page: ResourceFragment }) => {
         />
       </div>
       {!!page.formId && (
-        <div className="lg:w-1/2 lg:inline-flex align-middle my-auto">
+        <div className="lg:w-1/2 lg:inline-flex align-top my-auto">
           <div
             className="md:w-[560px] mx-auto p-[20px] w-full bg-aserto-grey-10
             border border-[#717171] rounded-[11px]"
