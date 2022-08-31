@@ -29,8 +29,7 @@ export const getStaticProps = async () => {
   const { allEventsPage, allEvent } = await cms().EventsPage()
   const page = allEventsPage[0]
   return {
-    props: { page, events: allEvent },
-    revalidate: 1
+    props: { page, events: allEvent }
   }
 }
 

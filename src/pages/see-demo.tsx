@@ -69,8 +69,7 @@ export const getStaticProps = async () => {
   const { allDemo } = await cms().DemoPage()
   const page = allDemo[0]
   return {
-    props: { page },
-    revalidate: 1
+    props: { page }
   }
 }
 

@@ -50,8 +50,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   } = await cms().CaseStudy({ slug })
 
   return {
-    props: { caseStudy },
-    revalidate: 1
+    props: { caseStudy }
   }
 }
 

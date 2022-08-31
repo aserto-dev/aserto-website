@@ -49,8 +49,7 @@ export const getStaticProps = async () => {
   const { allPricing, allEdition } = await cms().Pricing()
   const page = allPricing[0]
   return {
-    props: { page, editions: allEdition },
-    revalidate: 1
+    props: { page, editions: allEdition }
   }
 }
 

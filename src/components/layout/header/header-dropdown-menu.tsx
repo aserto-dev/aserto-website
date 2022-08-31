@@ -1,5 +1,6 @@
 import { HeaderLink } from './header-dropdown-link'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 type HeaderDropdownMenuProps = {
   link: HeaderLink
@@ -16,7 +17,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         style={{ paddingTop: '7px' }}
         className="text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer h-20 flex items-center"
         onMouseEnter={() => setShowMenu(true)}
-        onSelect={() => setShowMenu(true)}
+        onSelect={() => setShowMenu(false)}
         onMouseLeave={() => setShowMenu(false)}
         onBlur={() => setShowMenu(false)}
         onFocus={() => setShowMenu(true)}
@@ -35,20 +36,20 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         className={`text-aserto-grey-60 absolute ${width} bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer`}
         aria-expanded={showMenu}
       >
-        {link.items?.map((item) => (
-          <a
-            role="menuitem"
-            key={item.href}
-            className={
-              'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
-            }
-            href={item.href}
-            {...(item.isExternal
-              ? { rel: 'noopener noreferrer', target: '_blank' }
-              : undefined)}
-          >
-            {item.label}
-          </a>
+        {link.items?.map((item, i) => (
+          <Link href={item.href} key={i}>
+            <a onClick={()=> setShowMenu(false)}
+              role="menuitem"
+              className={
+                'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
+              }
+              {...(item.isExternal
+                ? { rel: 'noopener noreferrer', target: '_blank' }
+                : undefined)}
+            >
+              {item.label}
+            </a>
+          </Link>
         ))}
       </div>
     </div>
