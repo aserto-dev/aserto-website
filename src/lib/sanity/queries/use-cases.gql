@@ -1,5 +1,5 @@
 query UseCasesPages {
-  allUseCasePage(sort: { _createdAt: DESC }) {
+  allUseCasePage(sort: { _updatedAt: DESC }) {
     ...UseCase
   }
 }

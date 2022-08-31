@@ -3405,7 +3405,7 @@ export type UseCaseFeatureFragment = (
 
 export type UseCaseFragment = (
   { __typename?: 'UseCasePage' }
-  & Pick<UseCasePage, '_id' | '_createdAt' | 'shortHeaderTitle' | 'shortFooterTitle' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introLeftTextRaw' | 'introRightTextRaw'>
+  & Pick<UseCasePage, '_id' | '_createdAt' | '_updatedAt' | 'shortHeaderTitle' | 'shortFooterTitle' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introLeftTextRaw' | 'introRightTextRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4516,6 +4516,7 @@ export const UseCaseFragmentDoc = gql`
     fragment UseCase on UseCasePage {
   _id
   _createdAt
+  _updatedAt
   metadata {
     title
     description
@@ -5187,7 +5188,7 @@ export const TestimonialsDocument = gql`
     ${TestimonialFragmentDoc}`;
 export const UseCasesPagesDocument = gql`
     query UseCasesPages {
-  allUseCasePage(sort: {_createdAt: DESC}) {
+  allUseCasePage(sort: {_updatedAt: DESC}) {
     ...UseCase
   }
 }
