@@ -5,7 +5,7 @@ import { UseCaseFragment } from 'lib/sanity/generated'
 
 const Hero = ({ page }: { page: UseCaseFragment }) => {
   return (
-    <Container className="bg-resourceHero pt-8 lg:pt-[100px] flex flex-wrap gap-8">
+    <Container className="bg-resourceHero pt-8 lg:pt-[100px] pb-48 flex flex-wrap gap-8">
       <div className="flex-col align-middle lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
         <h1
           className="my-[20px] mx-auto w-full text-[30px] leading-[45px]
