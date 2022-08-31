@@ -1,0 +1,7 @@
+fragment UseCaseFeature on UseCaseFeature {
+  icon {
+    ...Image
+  }
+  titleRaw
+  subTitleRaw
+}

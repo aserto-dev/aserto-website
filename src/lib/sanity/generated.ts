@@ -1911,6 +1911,7 @@ export type ResourcePage = Document & {
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
   slug?: Maybe<Slug>;
+  shortTitle?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
   formId?: Maybe<Scalars['String']>;
@@ -1934,6 +1935,7 @@ export type ResourcePageFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   slug?: Maybe<SlugFilter>;
+  shortTitle?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   formId?: Maybe<StringFilter>;
   formTitle?: Maybe<StringFilter>;
@@ -1950,6 +1952,7 @@ export type ResourcePageSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   slug?: Maybe<SlugSorting>;
+  shortTitle?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   formId?: Maybe<SortOrder>;
   formTitle?: Maybe<SortOrder>;
@@ -1984,6 +1987,7 @@ export type RootQuery = {
   ResourcePage?: Maybe<ResourcePage>;
   SiteSettings?: Maybe<SiteSettings>;
   Testimonial?: Maybe<Testimonial>;
+  UseCasePage?: Maybe<UseCasePage>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -2012,6 +2016,7 @@ export type RootQuery = {
   allResourcePage: Array<ResourcePage>;
   allSiteSettings: Array<SiteSettings>;
   allTestimonial: Array<Testimonial>;
+  allUseCasePage: Array<UseCasePage>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -2139,6 +2144,11 @@ export type RootQuerySiteSettingsArgs = {
 
 
 export type RootQueryTestimonialArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryUseCasePageArgs = {
   id: Scalars['ID'];
 };
 
@@ -2353,6 +2363,14 @@ export type RootQueryAllSiteSettingsArgs = {
 export type RootQueryAllTestimonialArgs = {
   where?: Maybe<TestimonialFilter>;
   sort?: Maybe<Array<TestimonialSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllUseCasePageArgs = {
+  where?: Maybe<UseCasePageFilter>;
+  sort?: Maybe<Array<UseCasePageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -3003,6 +3021,91 @@ export type TextBlockSorting = {
   text?: Maybe<SortOrder>;
 };
 
+export type UseCaseFeature = {
+  __typename?: 'UseCaseFeature';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  icon?: Maybe<MainImage>;
+  titleRaw?: Maybe<Scalars['JSON']>;
+  subTitleRaw?: Maybe<Scalars['JSON']>;
+};
+
+export type UseCaseFeatureFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  icon?: Maybe<MainImageFilter>;
+};
+
+export type UseCaseFeatureSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  icon?: Maybe<MainImageSorting>;
+};
+
+export type UseCasePage = Document & {
+  __typename?: 'UseCasePage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  slug?: Maybe<Slug>;
+  shortHeaderTitle?: Maybe<Scalars['String']>;
+  shortFooterTitle?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  heroImage?: Maybe<MainImage>;
+  introTitleRaw?: Maybe<Scalars['JSON']>;
+  introLeftTextRaw?: Maybe<Scalars['JSON']>;
+  introRightTextRaw?: Maybe<Scalars['JSON']>;
+  useCaseFeatureBlock?: Maybe<Array<Maybe<UseCaseFeature>>>;
+  additionalImage?: Maybe<MainImage>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type UseCasePageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  slug?: Maybe<SlugFilter>;
+  shortHeaderTitle?: Maybe<StringFilter>;
+  shortFooterTitle?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  heroImage?: Maybe<MainImageFilter>;
+  additionalImage?: Maybe<MainImageFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type UseCasePageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  slug?: Maybe<SlugSorting>;
+  shortHeaderTitle?: Maybe<SortOrder>;
+  shortFooterTitle?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  heroImage?: Maybe<MainImageSorting>;
+  additionalImage?: Maybe<MainImageSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
+};
+
 export type ValueProp = {
   __typename?: 'ValueProp';
   _key?: Maybe<Scalars['String']>;
@@ -3251,7 +3354,7 @@ export type PostFragment = (
 
 export type ResourceFragment = (
   { __typename?: 'ResourcePage' }
-  & Pick<ResourcePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'formId' | 'formTitle' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
+  & Pick<ResourcePage, '_id' | '_createdAt' | 'shortTitle' | 'title' | 'subtitleRaw' | 'formId' | 'formTitle' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -3288,6 +3391,39 @@ export type TestimonialFragment = (
   )>, logo?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
+  )> }
+);
+
+export type UseCaseFeatureFragment = (
+  { __typename?: 'UseCaseFeature' }
+  & Pick<UseCaseFeature, 'titleRaw' | 'subTitleRaw'>
+  & { icon?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type UseCaseFragment = (
+  { __typename?: 'UseCasePage' }
+  & Pick<UseCasePage, '_id' | '_createdAt' | 'shortHeaderTitle' | 'shortFooterTitle' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introLeftTextRaw' | 'introRightTextRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )>, heroImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, useCaseFeatureBlock?: Maybe<Array<Maybe<(
+    { __typename?: 'UseCaseFeature' }
+    & UseCaseFeatureFragment
+  )>>>, additionalImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
 );
 
@@ -4007,6 +4143,44 @@ export type TestimonialsQuery = (
   )> }
 );
 
+export type UseCasesPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type UseCasesPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allUseCasePage: Array<(
+    { __typename?: 'UseCasePage' }
+    & UseCaseFragment
+  )> }
+);
+
+export type UseCasesPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type UseCasesPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allUseCasePage: Array<(
+    { __typename?: 'UseCasePage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type UseCasesPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type UseCasesPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allUseCasePage: Array<(
+    { __typename?: 'UseCasePage' }
+    & UseCaseFragment
+  )> }
+);
+
 export const ImageFragmentDoc = gql`
     fragment Image on MainImage {
   crop {
@@ -4289,6 +4463,7 @@ export const ResourceFragmentDoc = gql`
   slug {
     current
   }
+  shortTitle
   title
   subtitleRaw
   formId
@@ -4328,6 +4503,52 @@ export const TestimonialFragmentDoc = gql`
   quoteRaw
 }
     ${ImageFragmentDoc}`;
+export const UseCaseFeatureFragmentDoc = gql`
+    fragment UseCaseFeature on UseCaseFeature {
+  icon {
+    ...Image
+  }
+  titleRaw
+  subTitleRaw
+}
+    ${ImageFragmentDoc}`;
+export const UseCaseFragmentDoc = gql`
+    fragment UseCase on UseCasePage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  slug {
+    current
+  }
+  shortHeaderTitle
+  shortFooterTitle
+  title
+  subtitleRaw
+  heroImage {
+    ...Image
+  }
+  introTitleRaw
+  introLeftTextRaw
+  introRightTextRaw
+  useCaseFeatureBlock {
+    ...UseCaseFeature
+  }
+  additionalImage {
+    ...Image
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+    ${ImageFragmentDoc}
+${UseCaseFeatureFragmentDoc}`;
 export const FounderFragmentDoc = gql`
     fragment Founder on FounderBlock {
   avatar {
@@ -4964,6 +5185,29 @@ export const TestimonialsDocument = gql`
   }
 }
     ${TestimonialFragmentDoc}`;
+export const UseCasesPagesDocument = gql`
+    query UseCasesPages {
+  allUseCasePage(sort: {_createdAt: DESC}) {
+    ...UseCase
+  }
+}
+    ${UseCaseFragmentDoc}`;
+export const UseCasesPagePathsDocument = gql`
+    query UseCasesPagePaths {
+  allUseCasePage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const UseCasesPageDocument = gql`
+    query UseCasesPage($slug: String!) {
+  allUseCasePage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...UseCase
+  }
+}
+    ${UseCaseFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -5085,6 +5329,15 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     Testimonials(variables?: TestimonialsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestimonialsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<TestimonialsQuery>(TestimonialsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Testimonials');
+    },
+    UseCasesPages(variables?: UseCasesPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UseCasesPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UseCasesPagesQuery>(UseCasesPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'UseCasesPages');
+    },
+    UseCasesPagePaths(variables?: UseCasesPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UseCasesPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UseCasesPagePathsQuery>(UseCasesPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'UseCasesPagePaths');
+    },
+    UseCasesPage(variables: UseCasesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UseCasesPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<UseCasesPageQuery>(UseCasesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'UseCasesPage');
     }
   };
 }
