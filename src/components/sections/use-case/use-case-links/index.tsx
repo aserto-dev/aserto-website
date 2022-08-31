@@ -25,11 +25,11 @@ const UseCaseLinks = ({
           />
           <div className="flex flex-col gap-4">
             {links.map((link, i) => (
-              <li
-                key={i}
-                className="text-aserto-lochivar-accent-40 font-semibold text-[20px]"
-              >
-                <Link href={`/use-cases/${link.slug?.current}`}>
+              <li key={i} className="text-aserto-lochivar-accent-40">
+                <Link
+                  className="hover:underline font-semibold text-[20px]"
+                  href={`/use-cases/${link.slug?.current}`}
+                >
                   {link.shortHeaderTitle}
                 </Link>
               </li>
