@@ -8,7 +8,7 @@ const Hero = ({ page }: { page: ResourceFragment }) => {
     <Container className="bg-resourceHero pt-16 lg:pt-[100px] flex flex-wrap gap-8">
       <div className="flex-col align-top lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
         <h1
-          className="mx-auto w-full text-[30px] leading-[45px]
+          className="mx-auto w-full text-[30px] leading-[40px]
           xl:text-[50px] xl:leading-[60px] text-aserto-grey-90"
         >
           {page.title}

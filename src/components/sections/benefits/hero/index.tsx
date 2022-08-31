@@ -3,9 +3,9 @@ import ContactEngineerButton from 'components/sections/common/cta-buttons/contac
 
 const Hero = ({ title }: { title: string }) => {
   return (
-    <Container className="pt-[100px]">
+    <Container className="pt-8 sm:pt-[100px]">
       <h1
-        className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[45px]
+        className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[40px]
           sm:text-[50px] sm:leading-[60px] text-center text-aserto-grey-90"
       >
         {title}

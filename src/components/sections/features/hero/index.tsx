@@ -14,13 +14,13 @@ const Hero = ({ page }: { page: FeaturesPageFragment }) => {
     <Container className="bg-featureHero pt-8 sm:pt-[100px] text-center">
       <div>
         <h1
-          className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[45px]
+          className="my-[20px] mx-auto w-full xl:w-3/4 text-[30px] leading-[40px]
           sm:text-[50px] sm:leading-[60px] text-aserto-grey-90"
         >
           {page.title}
         </h1>
         <BlockContent
-          className="w-full sm:w-3/4 mx-auto mt-16 text-aserto-grey-90
+          className="w-full sm:w-3/4 mx-auto mt-12 text-aserto-grey-90
           text-[24px] lg:text-[30px] leading-8 lg:leading-10 lg:w-10/12 font-roboto"
           blocks={page.subtitleRaw}
         />
