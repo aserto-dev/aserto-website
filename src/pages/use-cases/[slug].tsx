@@ -2,7 +2,11 @@ import { GetStaticProps } from 'next'
 import Error from 'next/error'
 
 import cms from 'lib/sanity'
-import { UseCaseFeatureFragment, UseCaseFragment } from 'lib/sanity/generated'
+import {
+  ImageFragment,
+  UseCaseFeatureFragment,
+  UseCaseFragment
+} from 'lib/sanity/generated'
 
 // Layout
 import PageLayout from 'components/layout/page'
@@ -11,9 +15,11 @@ import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/use-case/hero'
 import Intro from 'components/sections/use-case/intro'
 import Uses from 'components/sections/use-case/uses'
+import UseCaseLinks from 'components/sections/use-case/use-case-links'
 
 const UseCasePage = ({
-  useCase
+  useCase,
+  allUseCases
 }: {
   useCase: UseCaseFragment
   allUseCases: UseCaseFragment[]
@@ -21,6 +27,8 @@ const UseCasePage = ({
   if (!useCase) return <Error statusCode={404} />
   const features: UseCaseFeatureFragment[] =
     useCase.useCaseFeatureBlock as UseCaseFeatureFragment[]
+  const additionalImage: ImageFragment =
+    useCase.additionalImage as ImageFragment
 
   return (
     <PageLayout
@@ -38,6 +46,7 @@ const UseCasePage = ({
       <Hero page={useCase} />
       <Intro page={useCase} />
       <Uses features={features} />
+      <UseCaseLinks image={additionalImage} links={allUseCases} />
       <div className="bg-featureCta">
         <Lottie {...ctaOptions({ ...useCase.callToAction })} />
       </div>

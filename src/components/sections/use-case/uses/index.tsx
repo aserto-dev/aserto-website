@@ -4,7 +4,7 @@ import UseCaseFeatureItem from './use-case-feature-item'
 
 const Uses = ({ features }: { features: UseCaseFeatureFragment[] }) => {
   return (
-    <Container className="text-left pt-32 px-4 sm:px-8">
+    <Container className="text-left py-32 px-4 sm:px-8">
       {features.map((feature, i) => (
         <UseCaseFeatureItem key={i} {...feature} />
       ))}

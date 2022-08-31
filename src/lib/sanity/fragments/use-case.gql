@@ -8,6 +8,8 @@ fragment UseCase on UseCasePage {
   slug {
     current
   }
+  shortHeaderTitle
+  shortFooterTitle
   title
   subtitleRaw
   heroImage {

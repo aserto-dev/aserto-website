@@ -1911,6 +1911,7 @@ export type ResourcePage = Document & {
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
   slug?: Maybe<Slug>;
+  shortTitle?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
   formId?: Maybe<Scalars['String']>;
@@ -1934,6 +1935,7 @@ export type ResourcePageFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   slug?: Maybe<SlugFilter>;
+  shortTitle?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   formId?: Maybe<StringFilter>;
   formTitle?: Maybe<StringFilter>;
@@ -1950,6 +1952,7 @@ export type ResourcePageSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   slug?: Maybe<SlugSorting>;
+  shortTitle?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   formId?: Maybe<SortOrder>;
   formTitle?: Maybe<SortOrder>;
@@ -3054,6 +3057,8 @@ export type UseCasePage = Document & {
   _key?: Maybe<Scalars['String']>;
   metadata?: Maybe<PageMetadata>;
   slug?: Maybe<Slug>;
+  shortHeaderTitle?: Maybe<Scalars['String']>;
+  shortFooterTitle?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
   heroImage?: Maybe<MainImage>;
@@ -3076,6 +3081,8 @@ export type UseCasePageFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   slug?: Maybe<SlugFilter>;
+  shortHeaderTitle?: Maybe<StringFilter>;
+  shortFooterTitle?: Maybe<StringFilter>;
   title?: Maybe<StringFilter>;
   heroImage?: Maybe<MainImageFilter>;
   additionalImage?: Maybe<MainImageFilter>;
@@ -3091,6 +3098,8 @@ export type UseCasePageSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   slug?: Maybe<SlugSorting>;
+  shortHeaderTitle?: Maybe<SortOrder>;
+  shortFooterTitle?: Maybe<SortOrder>;
   title?: Maybe<SortOrder>;
   heroImage?: Maybe<MainImageSorting>;
   additionalImage?: Maybe<MainImageSorting>;
@@ -3345,7 +3354,7 @@ export type PostFragment = (
 
 export type ResourceFragment = (
   { __typename?: 'ResourcePage' }
-  & Pick<ResourcePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'formId' | 'formTitle' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
+  & Pick<ResourcePage, '_id' | '_createdAt' | 'shortTitle' | 'title' | 'subtitleRaw' | 'formId' | 'formTitle' | 'introTitleRaw' | 'introSubtitleRaw' | 'introCaptionRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -3396,7 +3405,7 @@ export type UseCaseFeatureFragment = (
 
 export type UseCaseFragment = (
   { __typename?: 'UseCasePage' }
-  & Pick<UseCasePage, '_id' | '_createdAt' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introLeftTextRaw' | 'introRightTextRaw'>
+  & Pick<UseCasePage, '_id' | '_createdAt' | 'shortHeaderTitle' | 'shortFooterTitle' | 'title' | 'subtitleRaw' | 'introTitleRaw' | 'introLeftTextRaw' | 'introRightTextRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4454,6 +4463,7 @@ export const ResourceFragmentDoc = gql`
   slug {
     current
   }
+  shortTitle
   title
   subtitleRaw
   formId
@@ -4513,6 +4523,8 @@ export const UseCaseFragmentDoc = gql`
   slug {
     current
   }
+  shortHeaderTitle
+  shortFooterTitle
   title
   subtitleRaw
   heroImage {

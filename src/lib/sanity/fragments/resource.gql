@@ -8,6 +8,7 @@ fragment Resource on ResourcePage {
   slug {
     current
   }
+  shortTitle
   title
   subtitleRaw
   formId
