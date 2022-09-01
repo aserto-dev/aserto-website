@@ -104,7 +104,7 @@ const Footer = () => {
               Use Cases
             </p>
             <ul className="mt-4 space-y-4">
-              {useCases.map((uc: UseCaseFragment) => (
+              {useCases.map((uc) => (
                 <li key={uc._id}>
                   <Link
                     className="text-sm leading-normal text-aserto-grey-60 font-roboto"
@@ -231,7 +231,7 @@ const Footer = () => {
                   Success stories
                 </Link>
               </li>
-              {resources.map((r: ResourceFragment) => (
+              {resources.map((r) => (
                 <li key={r._id}>
                   <Link
                     className="text-sm leading-normal text-aserto-grey-60 font-roboto"
