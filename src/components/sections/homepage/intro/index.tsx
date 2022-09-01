@@ -13,7 +13,8 @@ const Intro = ({ page }: { page: any }) => {
         alt="Sea Floor"
       />
       <BlockContent
-        className="z-1 text-[30px] leading-[38px] text-center mt-16 mb-24 lg:px-20 xl:px-60 lg:py-20"
+        className="z-1 text-[26px] lg:text-[34px] leading-8 lg:leading-10 text-center
+        mt-16 mb-24 lg:px-20 xl:px-60 lg:py-20"
         blocks={page.positioningStatementRaw}
       />
       {valueProps.map((v, i) => (

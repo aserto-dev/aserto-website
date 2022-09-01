@@ -1,6 +1,7 @@
 fragment UseCase on UseCasePage {
   _id
   _createdAt
+  _updatedAt
   metadata {
     title
     description

@@ -8,13 +8,13 @@ const Hero = ({ page }: { page: UseCaseFragment }) => {
     <Container className="bg-resourceHero pt-8 lg:pt-[100px] pb-48 flex flex-wrap gap-8">
       <div className="flex-col align-middle lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
         <h1
-          className="my-[20px] mx-auto w-full text-[30px] leading-[45px]
+          className="my-[20px] mx-auto w-full text-[30px] leading-[40px]
           xl:text-[50px] xl:leading-[60px] text-aserto-grey-90"
         >
           {page.title}
         </h1>
         <BlockContent
-          className="resource w-full mx-auto mt-16 text-aserto-grey-90 text-[22px] leading-8"
+          className="resource w-full mx-auto mt-12 text-aserto-grey-90 text-[22px] leading-8"
           blocks={page.subtitleRaw}
         />
         <CtaButtons signup seeDemo leftAlign />
