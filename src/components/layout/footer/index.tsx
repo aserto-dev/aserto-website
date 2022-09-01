@@ -12,6 +12,7 @@ import Container from '../container'
 // Icons
 import IconLinkedin from 'icons/linkedin.svg'
 import IconGithub from 'icons/github.svg'
+import IconSlack from 'icons/slack.svg'
 import IconTwitter from 'icons/twitter.svg'
 import Logo from 'icons/logo-footer.svg'
 
@@ -253,7 +254,7 @@ const Footer = () => {
               <li>
                 <Link href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg">
                   <span className="sr-only">Slack</span>
-                  <IconGithub />
+                  <IconSlack />
                 </Link>
               </li>
               <li>
