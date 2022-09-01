@@ -66,8 +66,7 @@ export const getStaticProps = async () => {
   const { allCareers, allJobPosting } = await cms().CareersPage()
   const page = allCareers[0]
   return {
-    props: { page, jobPostings: allJobPosting },
-    revalidate: 1
+    props: { page, jobPostings: allJobPosting }
   }
 }
 

@@ -53,8 +53,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   } = await cms().BlogPost({ slug })
 
   return {
-    props: { post },
-    revalidate: 1
+    props: { post }
   }
 }
 
