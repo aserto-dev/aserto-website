@@ -1,4 +1,6 @@
 import { useMemo } from 'react'
+import props from 'lib/menu-items'
+import { ResourceFragment, UseCaseFragment } from 'lib/sanity/generated'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -22,6 +24,11 @@ const Footer = () => {
     return new Date().getUTCFullYear()
   }, [])
 
+  const { resources, useCases } = props as unknown as {
+    resources: ResourceFragment[]
+    useCases: UseCaseFragment[]
+  }
+
   return (
     <footer className="bg-aserto-grey-5">
       <Container className="pb-10 pt-14">
@@ -29,7 +36,7 @@ const Footer = () => {
           className="grid grid-cols-2 gap-8 pb-12 mx-auto lg:grid-cols-7"
           ref={ref}
         >
-          <div className="row-start-2 lg:row-auto">
+          <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Product
             </p>
@@ -94,6 +101,23 @@ const Footer = () => {
           </div>
           <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Use Cases
+            </p>
+            <ul className="mt-4 space-y-4">
+              {useCases.map((uc: UseCaseFragment) => (
+                <li key={uc._id}>
+                  <Link
+                    className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                    href={`/use-cases/${uc.slug?.current}`}
+                  >
+                    {uc.shortFooterTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Developers
             </p>
             <ul className="mt-4 space-y-4">
@@ -139,7 +163,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="row-start-1 lg:row-start-auto">
+          <div>
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Company
             </p>
@@ -207,14 +231,16 @@ const Footer = () => {
                   Success stories
                 </Link>
               </li>
-              <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/resources/policy-based-access-management-market-compass"
-                >
-                  Policy-based access
-                </Link>
-              </li>
+              {resources.map((r: ResourceFragment) => (
+                <li key={r._id}>
+                  <Link
+                    className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                    href={`/resources/${r.slug?.current}`}
+                  >
+                    {r.shortTitle}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>

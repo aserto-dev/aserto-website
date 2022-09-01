@@ -8653,6 +8653,11 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
+val-loader@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/val-loader/-/val-loader-5.0.0.tgz#1b7e45c5df207203a4b3f1c45cbc82b018b505b7"
+  integrity sha512-N766NTSjQGVxl/kQ7LRmdnPy3f8ylBx1SxgY/ZfZVnguaHK72uI5koTMMA72wQ8sxLK9TuRxBPd47w58ZI4QBA==
+
 valid-url@1.0.9, valid-url@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/valid-url/-/valid-url-1.0.9.tgz#1c14479b40f1397a75782f115e4086447433a200"
