@@ -70,7 +70,7 @@ export const headerLinks = [
       })
   },
   {
-    label: 'Documentation',
+    label: 'Docs',
     href: 'https://docs.aserto.com/docs/',
     items: []
   },

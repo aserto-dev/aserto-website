@@ -184,6 +184,7 @@ const ResourceFragmentDoc = gql`
       title
       description
     }
+    index
     slug {
       current
     }
@@ -215,7 +216,7 @@ const ResourceFragmentDoc = gql`
 
 const ResourcesPagesDocument = gql`
   query ResourcesPages {
-    allResourcePage(sort: { _createdAt: DESC }) {
+    allResourcePage(sort: { index: ASC }) {
       ...Resource
     }
   }
@@ -237,11 +238,11 @@ const UseCaseFragmentDoc = gql`
   fragment UseCase on UseCasePage {
     _id
     _createdAt
-    _updatedAt
     metadata {
       title
       description
     }
+    index
     slug {
       current
     }
@@ -275,7 +276,7 @@ const UseCaseFragmentDoc = gql`
 
 const UseCasesPagesDocument = gql`
   query UseCasesPages {
-    allUseCasePage(sort: { _updatedAt: DESC }) {
+    allUseCasePage(sort: { index: ASC }) {
       ...UseCase
     }
   }

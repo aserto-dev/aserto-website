@@ -5,6 +5,7 @@ fragment Resource on ResourcePage {
     title
     description
   }
+  index
   slug {
     current
   }

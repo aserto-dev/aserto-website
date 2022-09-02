@@ -1,5 +1,5 @@
 query ResourcesPages {
-  allResourcePage(sort: { _createdAt: DESC }) {
+  allResourcePage(sort: { index: ASC }) {
     ...Resource
   }
 }
