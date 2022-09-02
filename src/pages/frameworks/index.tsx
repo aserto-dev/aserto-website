@@ -42,8 +42,7 @@ const FrameworksPage = ({
 export const getStaticProps = async () => {
   const { allFrameworkPage } = await cms().FrameworkPages()
   return {
-    props: { frameworkPages: allFrameworkPage },
-    revalidate: 1
+    props: { frameworkPages: allFrameworkPage }
   }
 }
 

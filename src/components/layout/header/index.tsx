@@ -20,7 +20,7 @@ import IconSlack from 'icons/slack.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import Menu from './menu'
-import PlaygroundBanner from 'components/sections/common/banners/playground'
+// import PlaygroundBanner from 'components/sections/common/banners/playground'
 
 const { useCases } = props as unknown as {
   resources: ResourceFragment[]
@@ -141,7 +141,6 @@ const Header = () => {
         <Signup closeModal={() => setShowSignupModal(false)} />
       )}
       {/* <PlaygroundBanner /> */}
-      <PlaygroundBanner />
       <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
           <Link href="/">
@@ -173,9 +172,9 @@ const Header = () => {
               id={idx}
               link={{
                 label: each.label,
-                href: each.href ?? '',
+                href: each.href ?? undefined,
                 items: each.items.map((item) => ({
-                  href: item.href ?? '',
+                  href: item.href ?? undefined,
                   label: item.label,
                   isExternal: item.isExternal
                 }))

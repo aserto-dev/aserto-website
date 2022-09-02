@@ -42,8 +42,7 @@ const IntegrationsPage = ({
 export const getStaticProps = async () => {
   const { allIntegration } = await cms().Integrations()
   return {
-    props: { integrations: allIntegration },
-    revalidate: 1
+    props: { integrations: allIntegration }
   }
 }
 

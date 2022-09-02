@@ -68,8 +68,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const { allTestimonial } = await cms().Testimonials()
 
   return {
-    props: { integration, testimonials: allTestimonial },
-    revalidate: 1
+    props: { integration, testimonials: allTestimonial }
   }
 }
 

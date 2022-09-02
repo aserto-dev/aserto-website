@@ -120,8 +120,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   } = await cms().Event({ slug })
 
   return {
-    props: { event },
-    revalidate: 1
+    props: { event }
   }
 }
 

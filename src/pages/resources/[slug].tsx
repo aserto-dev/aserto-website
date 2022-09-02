@@ -58,8 +58,7 @@ export const getStaticProps: GetStaticProps<{
   } = await cms().ResourcesPage({ slug })
 
   return {
-    props: { resource },
-    revalidate: 1
+    props: { resource }
   }
 }
 

@@ -80,8 +80,7 @@ export const getStaticProps = async () => {
       event: allEvent[0],
       page: allHome[0],
       testimonials: allTestimonial
-    },
-    revalidate: 1
+    }
   }
 }
 
