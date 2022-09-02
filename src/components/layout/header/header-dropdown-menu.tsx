@@ -7,7 +7,7 @@ type HeaderDropdownMenuProps = {
 }
 const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
   const [showMenu, setShowMenu] = useState(false)
-  const width = link.label === 'Developers' ? 'w-48' : 'w-40'
+  const width = link.label === 'Use Cases' ? 'w-72' : 'w-40'
   return (
     <div className="relative flex items-center h-20" tabIndex={0}>
       <a
@@ -38,7 +38,8 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
       >
         {link.items?.map((item, i) => (
           <Link href={item.href} key={i}>
-            <a onClick={()=> setShowMenu(false)}
+            <a
+              onClick={() => setShowMenu(false)}
               role="menuitem"
               className={
                 'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
