@@ -64,6 +64,11 @@ export const headerLinks = [
         isExternal: false
       }))
       .concat({
+        label: 'Policy-based access management',
+        href: '/resources/policy-based-access-management-market-compass',
+        isExternal: false
+      })
+      .concat({
         label: 'Success stories',
         href: '/customers',
         isExternal: false
