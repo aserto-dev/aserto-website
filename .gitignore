@@ -11,3 +11,5 @@ out
 logs
 
 .idea
+
+public/rss.xml
