@@ -60,7 +60,7 @@ export const headerLinks = [
     items: useCases
       .map((uc) => ({
         label: uc.shortHeaderTitle,
-        href: `/${uc.slug?.current}`,
+        href: `/use-cases/${uc.slug?.current}`,
         isExternal: false
       }))
       .concat({
