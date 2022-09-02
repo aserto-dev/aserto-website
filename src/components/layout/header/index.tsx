@@ -60,9 +60,14 @@ export const headerLinks = [
     items: useCases
       .map((uc) => ({
         label: uc.shortHeaderTitle,
-        href: `/${uc.slug?.current}`,
+        href: `/use-cases/${uc.slug?.current}`,
         isExternal: false
       }))
+      .concat({
+        label: 'Policy-based access management',
+        href: '/resources/policy-based-access-management-market-compass',
+        isExternal: false
+      })
       .concat({
         label: 'Success stories',
         href: '/customers',
