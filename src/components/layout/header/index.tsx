@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
+import props from 'lib/menu-items'
+import { ResourceFragment, UseCaseFragment } from 'lib/sanity/generated'
 
 // Primitives
 import Button from 'components/primitives/button'
@@ -13,10 +15,17 @@ import MenuIcon from 'icons/menu.svg'
 import CloseIcon from 'icons/menu-close.svg'
 import Logo from 'icons/logo-header.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
+import IconGithub from 'icons/github.svg'
+import IconSlack from 'icons/slack.svg'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import Menu from './menu'
 // import PlaygroundBanner from 'components/sections/common/banners/playground'
+
+const { useCases } = props as unknown as {
+  resources: ResourceFragment[]
+  useCases: UseCaseFragment[]
+}
 
 export const headerLinks = [
   {
@@ -24,7 +33,7 @@ export const headerLinks = [
     href: '',
     items: [
       {
-        label: 'Benefits',
+        label: 'Overview',
         href: '/benefits',
         isExternal: false
       },
@@ -34,62 +43,36 @@ export const headerLinks = [
         isExternal: false
       },
       {
-        label: 'Customers',
-        href: '/customers',
+        label: 'See a demo',
+        href: '/see-demo',
         isExternal: false
       },
       {
         label: 'Pricing',
         href: '/pricing',
         isExternal: false
-      },
-      {
-        label: 'FAQ',
-        href: '/faq',
-        isExternal: false
       }
     ]
   },
   {
-    label: 'Developers',
+    label: 'Use Cases',
     href: '',
-    items: [
-      {
-        label: 'Quickstarts',
-        href: '/quickstarts',
+    items: useCases
+      .map((uc) => ({
+        label: uc.shortHeaderTitle,
+        href: `/${uc.slug?.current}`,
         isExternal: false
-      },
-      {
-        label: 'Documentation',
-        href: 'https://docs.aserto.com/docs/',
-        isExternal: true
-      },
-      {
-        label: 'API reference',
-        href: 'https://aserto.readme.io/',
-        isExternal: true
-      },
-      {
-        label: 'GitHub',
-        href: 'https://github.com/aserto-dev',
-        isExternal: true
-      },
-      {
-        label: 'SDKs',
-        href: 'https://docs.aserto.com/docs/software-development-kits/overview',
-        isExternal: true
-      },
-      {
-        label: 'Open policy registry',
-        href: 'https://openpolicyregistry.io',
-        isExternal: true
-      },
-      {
-        label: 'Slack',
-        href: 'https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg',
-        isExternal: true
-      }
-    ]
+      }))
+      .concat({
+        label: 'Success stories',
+        href: '/customers',
+        isExternal: false
+      })
+  },
+  {
+    label: 'Docs',
+    href: 'https://docs.aserto.com/docs/',
+    items: []
   },
   {
     label: 'Blog',
@@ -101,13 +84,13 @@ export const headerLinks = [
     href: '',
     items: [
       {
-        label: 'About us',
+        label: 'About',
         href: '/about',
         isExternal: false
       },
       {
-        label: 'Contact us',
-        href: '/contact',
+        label: 'Events',
+        href: '/events',
         isExternal: false
       },
       {
@@ -116,8 +99,8 @@ export const headerLinks = [
         isExternal: false
       },
       {
-        label: 'Press',
-        href: '/news',
+        label: 'Contact',
+        href: '/contact',
         isExternal: false
       }
     ]
@@ -199,7 +182,21 @@ const Header = () => {
             />
           ))}
         </nav>
-        <div className="hidden lg:block whitespace-nowrap">
+        <div className="hidden lg:block whitespace-nowrap items-center">
+          <Link
+            className="ml-8 flex inline-flex align-middle"
+            href="https://github.com/aserto-dev"
+          >
+            <span className="sr-only">GitHub</span>
+            <IconGithub />
+          </Link>
+          <Link
+            className="ml-8 flex inline-flex align-middle"
+            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+          >
+            <span className="sr-only">Slack</span>
+            <IconSlack />
+          </Link>
           <Button
             variant="primary"
             size="sm"
@@ -207,14 +204,14 @@ const Header = () => {
             className="ml-8 inline-flex items-center cursor-pointer"
             onClick={() => setShowSignupModal(true)}
           >
-            Try it FREE
+            Sign up
           </Button>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
             isExternal={false}
           >
-            Sign In
+            Sign in
           </Link>
         </div>
       </div>

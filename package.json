@@ -78,7 +78,8 @@
     "react-polymorphic-types": "^1.0.3",
     "sass": "^1.34.1",
     "tailwindcss": "^2.1.4",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "val-loader": "^5.0.0"
   },
   "prettier": {
     "semi": false,
