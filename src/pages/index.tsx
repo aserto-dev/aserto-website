@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
+import generateRSS from 'lib/generateRSS'
 
 // Layout
 import PageLayout from 'components/layout/page'
@@ -62,9 +63,12 @@ export const getStaticProps = async () => {
   const { allPost } = await cms().BlogIndex({
     now: new Date(Date.now()).toISOString()
   })
+
   const { allEvent } = await cms().EventsPage()
   const { allHome } = await cms().HomePage()
   const { allTestimonial } = await cms().Testimonials()
+
+  await generateRSS(allPost)
 
   return {
     props: {
