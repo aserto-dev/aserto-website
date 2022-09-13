@@ -9,9 +9,9 @@ const originURL =
 const asertoConsoleRootUrl =
   process.env.NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL ||
   'https://console.eng.aserto.com'
-const tenantServiceUrl =
-  process.env.NEXT_PUBLIC_ASERTO_TENANT_SERVICE_URL ||
-  'https://tenant.eng.aserto.com'
+const funnelServiceUrl =
+  process.env.NEXT_PUBLIC_ASERTO_FUNNEL_SERVICE_URL ||
+  'https://funnel.eng.aserto.com'
 const recaptchaSiteKey =
   process.env.NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY ||
   '6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N'
@@ -31,6 +31,6 @@ export {
   isServer,
   originURL,
   recaptchaSiteKey,
-  tenantServiceUrl,
+  funnelServiceUrl,
   hubspotUrl
 }

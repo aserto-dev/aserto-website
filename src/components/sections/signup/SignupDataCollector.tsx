@@ -74,7 +74,10 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           )}
         </div>
         <ReCAPTCHA
-          onChange={(recaptcha) => setRecaptcha(recaptcha || '')}
+          onChange={(recaptcha) => {
+            console.log('recaptcha onChange: ' + recaptcha)
+            setRecaptcha(recaptcha || '')
+          }}
           ref={recaptchaRef}
           sitekey={recaptchaSiteKey}
           theme="dark"
@@ -88,8 +91,16 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
           disabled={disableSubmit}
           onClick={() => {
             props.onSubmit({
-              recaptcha,
-              email
+              name: 'Signup',
+              args: [
+                {
+                  params: {
+                    email: email,
+                    recaptcha: recaptcha
+                  },
+                  options: { runType: '1' }
+                }
+              ]
             })
           }}
         >
