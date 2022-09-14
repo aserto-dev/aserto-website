@@ -7,7 +7,7 @@ export interface SignupRequest {
       params: {
         email: string
         recaptcha: string
-      },
+      }
       options: {
         runType: string
       }
@@ -51,7 +51,6 @@ export const signupUser = async (
       body: JSON.stringify(request)
     })
     responseBody = await response.json()
-    
   } catch (e) {
     return {
       status: 500

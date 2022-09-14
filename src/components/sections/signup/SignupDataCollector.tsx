@@ -15,11 +15,10 @@ interface SignupDataCollectorProps {
 }
 
 const recaptchaRef = React.createRef<ReCAPTCHA>()
-
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
   const [email, setEmail] = useState<string>('')
   const [recaptcha, setRecaptcha] = useState<string>('')
-
+  const workflowTypeRun = '1'
   const showError = !!props.errorMessage
 
   const disableEmailInput =
@@ -75,7 +74,6 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         </div>
         <ReCAPTCHA
           onChange={(recaptcha) => {
-            console.log('recaptcha onChange: ' + recaptcha)
             setRecaptcha(recaptcha || '')
           }}
           ref={recaptchaRef}
@@ -98,7 +96,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
                     email: email,
                     recaptcha: recaptcha
                   },
-                  options: { runType: '1' }
+                  options: { runType: workflowTypeRun }
                 }
               ]
             })
