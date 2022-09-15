@@ -29,7 +29,7 @@
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
     NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6LeZ0T0dAAAAAFWzx5r5ePMrPrFjirQ47tUTi9x0"
-    NEXT_PUBLIC_ASERTO_FUNNEL_SERVICE_URL = "https://funnel.eng.aserto.com"
+    NEXT_PUBLIC_ASERTO_FUNNEL_SERVICE_URL = "https://funnel.prod.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://preproduction--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
@@ -53,7 +53,7 @@
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
     NEXT_PUBLIC_ASERTO_SIGNUP_RECAPTCHA_SITEKEY = "6Ld4KRcdAAAAANy9yCpsiTSLLL6-zXgwgDBveO6N"
-    NEXT_PUBLIC_ASERTO_FUNNEL_SERVICE_URL = "https://funnel.main.aserto.com"
+    NEXT_PUBLIC_ASERTO_FUNNEL_SERVICE_URL = "https://funnel.eng.aserto.com"
     NEXT_PUBLIC_ASERTO_WEBSITE_URL = "https://main--aserto.netlify.app"
     NEXT_PUBLIC_HUBSPOT_URL = 'https://api.hsforms.com/submissions/v3/integration/submit/21300286/8ab7a6d3-c090-45db-8a0c-780d4ea53581'
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
