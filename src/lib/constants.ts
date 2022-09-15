@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const workflowTypeRun = '1'
 const originURL =
   process.env.NEXT_PUBLIC_ASERTO_WEBSITE_URL ||
-  'https://main--aserto-console.netlify.app'
+  'https://eng--aserto-console.netlify.app'
 const asertoConsoleRootUrl =
   process.env.NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL ||
   'https://console.eng.aserto.com'
