@@ -3,6 +3,7 @@ const isServer = typeof window === 'undefined'
 const isClient = !isServer
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = process.env.NODE_ENV === 'production'
+const workflowTypeRun = '1'
 const originURL =
   process.env.NEXT_PUBLIC_ASERTO_WEBSITE_URL ||
   'https://main--aserto-console.netlify.app'
@@ -29,6 +30,7 @@ export {
   isDev,
   isProd,
   isServer,
+  workflowTypeRun,
   originURL,
   recaptchaSiteKey,
   funnelServiceUrl,

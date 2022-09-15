@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { recaptchaSiteKey } from 'lib/constants'
+import { recaptchaSiteKey, workflowTypeRun } from 'lib/constants'
 import React, { useEffect, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { SignupRequest } from './SignupClient'
@@ -18,7 +18,6 @@ const recaptchaRef = React.createRef<ReCAPTCHA>()
 const SignupDataCollector = (props: SignupDataCollectorProps) => {
   const [email, setEmail] = useState<string>('')
   const [recaptcha, setRecaptcha] = useState<string>('')
-  const workflowTypeRun = '1'
   const showError = !!props.errorMessage
 
   const disableEmailInput =
