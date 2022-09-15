@@ -50,12 +50,12 @@ const Signup = ({ closeModal }: { closeModal?: () => void }) => {
       case 200:
         newState = {
           type: 'SUCCESS',
-          emailAddress: request.email
+          emailAddress: request.args[0].params.email
         }
 
         // add new user's email to hubspot
         hubspotRequest = {
-          email: request.email,
+          email: request.args[0].params.email,
           lifecycleStage: 'lead'
         }
         hubspotResponse = await hubspotSignup(hubspotRequest)

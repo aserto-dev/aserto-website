@@ -1,8 +1,18 @@
-import { tenantServiceUrl } from 'lib/constants'
+import { funnelServiceUrl } from 'lib/constants'
 
 export interface SignupRequest {
-  email: string
-  recaptcha: string
+  name: string
+  args: [
+    {
+      params: {
+        email: string
+        recaptcha: string
+      }
+      options: {
+        runType: string
+      }
+    }
+  ]
 }
 
 export interface SignupResponse {
@@ -33,14 +43,13 @@ export const signupUser = async (
   let responseBody: any
 
   try {
-    response = await fetch(tenantServiceUrl + '/api/v1/account/signup', {
+    response = await fetch(funnelServiceUrl + '/api/v1/funnel/run', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(request)
     })
-
     responseBody = await response.json()
   } catch (e) {
     return {
