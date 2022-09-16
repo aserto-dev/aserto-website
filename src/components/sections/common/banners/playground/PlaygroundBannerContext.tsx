@@ -6,7 +6,7 @@ import React, {
   useState
 } from 'react'
 
-const bannerSeenStorageKey = 'aserto-banner-seen'
+const bannerSeenStorageKey = 'aserto-pbam-banner-seen'
 
 interface PlaygroundBannerParams {
   hideBanner: () => void

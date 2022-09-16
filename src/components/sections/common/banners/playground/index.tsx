@@ -11,13 +11,13 @@ const PlaygroundBanner = () => {
                 text-center text-white h-[60px] sm:h-[36px]"
     >
       <span className="align-middle">
-        Going to DeveloperWeek Cloud in Austin?{' '}
+        Wondering about Policy-based Access Management?{' '}
         <Link
           className="font-bold underline"
-          href="/events/developerweek-cloud-2022"
+          href="/resources/policy-based-access-management-market-compass"
           onClick={hideBanner}
         >
-          Meet with the Aserto team!
+          Read the report!
         </Link>
       </span>
     </div>
