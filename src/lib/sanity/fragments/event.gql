@@ -26,4 +26,5 @@ fragment Event on Event {
   mainEventsPageImage {
     ...Image
   }
+  feature
 }
