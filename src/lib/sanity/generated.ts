@@ -757,6 +757,7 @@ export type Event = Document & {
   eventBannerOpacity?: Maybe<Scalars['Float']>;
   /** The value of the `data-src` field in the hubspot embed snippet. Example: `https://meetings.hubspot.com/omri-gazitt/conference-event-meeting?embed=true`. */
   hubspotMeetingDataSource?: Maybe<Scalars['String']>;
+  feature?: Maybe<Scalars['Boolean']>;
 };
 
 export type EventFilter = {
@@ -781,6 +782,7 @@ export type EventFilter = {
   eventBannerImageHref?: Maybe<StringFilter>;
   eventBannerOpacity?: Maybe<FloatFilter>;
   hubspotMeetingDataSource?: Maybe<StringFilter>;
+  feature?: Maybe<BooleanFilter>;
 };
 
 export type EventSorting = {
@@ -803,6 +805,7 @@ export type EventSorting = {
   eventBannerImageHref?: Maybe<SortOrder>;
   eventBannerOpacity?: Maybe<SortOrder>;
   hubspotMeetingDataSource?: Maybe<SortOrder>;
+  feature?: Maybe<SortOrder>;
 };
 
 export type EventsPage = Document & {
@@ -3188,7 +3191,7 @@ export type EditionFragment = (
 
 export type EventFragment = (
   { __typename?: 'Event' }
-  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheadingRaw' | 'eventBannerImageHref' | 'eventBannerOpacity'>
+  & Pick<Event, '_id' | '_createdAt' | 'title' | 'heading' | 'subheading' | 'backgroundColor' | 'hubspotMeetingDataSource' | 'locationHeading' | 'locationSubheadingRaw' | 'eventBannerImageHref' | 'eventBannerOpacity' | 'feature'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -3928,6 +3931,9 @@ export type HomePageQuery = (
   )>, allCaseStudy: Array<(
     { __typename?: 'CaseStudy' }
     & CaseStudyMetaFragment
+  )>, allEvent: Array<(
+    { __typename?: 'Event' }
+    & EventFragment
   )> }
 );
 
@@ -4311,6 +4317,7 @@ export const EventFragmentDoc = gql`
   mainEventsPageImage {
     ...Image
   }
+  feature
 }
     ${ImageFragmentDoc}`;
 export const FrameworkPageMetaFragmentDoc = gql`
@@ -5074,9 +5081,13 @@ export const HomePageDocument = gql`
   allCaseStudy(sort: {_createdAt: DESC}) {
     ...CaseStudyMeta
   }
+  allEvent(sort: {_createdAt: DESC}, where: {feature: {eq: true}}, limit: 1) {
+    ...Event
+  }
 }
     ${HomePageFragmentDoc}
-${CaseStudyMetaFragmentDoc}`;
+${CaseStudyMetaFragmentDoc}
+${EventFragmentDoc}`;
 export const IntegrationsDocument = gql`
     query Integrations {
   allIntegration(sort: {_createdAt: DESC}) {

@@ -64,8 +64,8 @@ export const getStaticProps = async () => {
     now: new Date(Date.now()).toISOString()
   })
 
-  const { allEvent } = await cms().EventsPage()
-  const { allHome } = await cms().HomePage()
+  //const { allEvent } = await cms().EventsPage()
+  const { allHome, allEvent } = await cms().HomePage()
   const { allTestimonial } = await cms().Testimonials()
 
   await generateRSS(allPost)
