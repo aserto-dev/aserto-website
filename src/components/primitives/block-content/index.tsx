@@ -2,6 +2,8 @@
 import DefaultBlockContent from '@sanity/block-content-to-react'
 import clsx from 'clsx'
 import s from './block-content.module.scss'
+import getYouTubeId from 'get-youtube-id'
+import YouTube from 'react-youtube'
 
 const serializers = {
   types: {
@@ -31,6 +33,16 @@ const serializers = {
           </figcaption>
         </figure>
       )
+    },
+    youtube: (props: any) => {
+      const { node } = props
+      const { url } = node
+      const id = getYouTubeId(url)
+      const opts = {
+        height: '480',
+        width: '854',
+      }
+      return id ? <YouTube videoId={id} opts={opts}/> : <></>
     }
   }
 }

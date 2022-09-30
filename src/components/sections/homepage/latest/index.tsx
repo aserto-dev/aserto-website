@@ -46,7 +46,7 @@ const LatestInfo = ({ title, latestBlogPost, latestEvent }: Props) => {
               <h4 className="my-[20px] font-bold text-[22px]">
                 {info.itemTitle}
               </h4>
-              {info.itemDesc[0]?._type === 'block' ? (
+              {info.itemDesc && info.itemDesc[0]?._type === 'block' ? (
                 <BlockContent className="text-[18px]" blocks={info.itemDesc} />
               ) : (
                 <p className="text-[18px]">{info.itemDesc}</p>
