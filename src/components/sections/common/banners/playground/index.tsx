@@ -11,13 +11,13 @@ const PlaygroundBanner = () => {
                 text-center text-white h-[60px] sm:h-[36px]"
     >
       <span className="align-middle">
-        Wondering about Policy-based Access Management?{' '}
+        Introducing Topaz, our cloud-native OSS authorizer!{' '}
         <Link
           className="font-bold underline"
-          href="/resources/policy-based-access-management-market-compass"
+          href="/blog/topaz-oss-cloud-native-authorization-combines-opa-zanzibar"
           onClick={hideBanner}
         >
-          Read the report!
+          Read the announcement
         </Link>
       </span>
     </div>
