@@ -299,14 +299,27 @@ const Footer = () => {
           </div>
         </div>
         <div>
+          <Link href="https://trust.aserto.com" className="float-right">
+            <span className="sr-only">SOC 2 Type 2</span>
+            <div className="flex">
+              <img
+                className="h-[50px] md:h-[70px] lg:h-[70px]"
+                src="/images/soc2.png"
+                alt="SOC2 Type 2"
+              />
+              <p className="hidden md:flex lg:flex mt-6 ml-2 text-base text-aserto-grey-60 font-roboto">
+                SOC 2 Type 2 Certified
+              </p>
+            </div>
+          </Link>
           <Link href="/">
             <span className="sr-only">Aserto</span>
             <Logo />
           </Link>
+        </div>
           <p className="mt-6 text-base text-aserto-grey-60 font-roboto">
             &copy; {year} Aserto, Inc. All rights reserved.
           </p>
-        </div>
       </Container>
     </footer>
   )
