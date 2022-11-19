@@ -270,7 +270,7 @@ const Footer = () => {
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Social
             </p>
-            <ul className="mt-4 flex items-center space-x-6">
+            <ul className="mt-5 flex items-center space-x-6">
               <li>
                 <Link href="https://github.com/aserto-dev">
                   <span className="sr-only">GitHub</span>
@@ -296,30 +296,65 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            <div className="hidden lg:block">
+              <p className="mt-10 font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+                Certification
+              </p>
+              <ul className="mt-4 space-y-4">
+                <li>
+                  <Link href="https://trust.aserto.com">
+                    <span className="sr-only">SOC 2 Type 2</span>
+                    <div className="flex">
+                      <img
+                        className="h-[50px] md:h-[70px] lg:h-[70px]"
+                        src="/images/soc2.png"
+                        alt="SOC 2 Type 2"
+                      />
+                      <p className="hidden md:flex lg:flex mt-4 ml-3 text-sm text-aserto-grey-60 font-roboto">
+                        SOC 2<br />
+                        Type 2
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="lg:hidden">
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Certification
+            </p>
+            <ul className="mt-4 space-y-4">
+              <li>
+                <Link href="https://trust.aserto.com">
+                  <span className="sr-only">SOC 2 Type 2</span>
+                  <div className="flex">
+                    <img
+                      className="h-[30px]"
+                      src="/images/soc2.png"
+                      alt="SOC 2 Type 2"
+                    />
+                    <p className="hidden md:flex mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
+                      SOC 2 Type 2 Certified
+                    </p>
+                    <p className="md:hidden mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
+                      SOC 2 Type 2
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div>
-          <Link href="https://trust.aserto.com" className="float-right">
-            <span className="sr-only">SOC 2 Type 2</span>
-            <div className="flex">
-              <img
-                className="h-[50px] md:h-[70px] lg:h-[70px]"
-                src="/images/soc2.png"
-                alt="SOC2 Type 2"
-              />
-              <p className="hidden md:flex lg:flex mt-6 ml-2 text-base text-aserto-grey-60 font-roboto">
-                SOC 2 Type 2 Certified
-              </p>
-            </div>
-          </Link>
           <Link href="/">
             <span className="sr-only">Aserto</span>
             <Logo />
           </Link>
-        </div>
           <p className="mt-6 text-base text-aserto-grey-60 font-roboto">
             &copy; {year} Aserto, Inc. All rights reserved.
           </p>
+        </div>
       </Container>
     </footer>
   )
