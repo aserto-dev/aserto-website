@@ -76,7 +76,7 @@ export const headerLinks = [
   },
   {
     label: 'Docs',
-    href: 'https://docs.aserto.com/docs/',
+    href: 'https://docs.aserto.com/docs',
     items: []
   },
   {
@@ -190,7 +190,7 @@ const Header = () => {
         <div className="hidden lg:block whitespace-nowrap items-center">
           <Link
             className="ml-8 flex inline-flex align-middle"
-            href="https://github.com/aserto-dev"
+            href="https://github.com/aserto-dev/topaz"
           >
             <span className="sr-only">GitHub</span>
             <IconGithub />
