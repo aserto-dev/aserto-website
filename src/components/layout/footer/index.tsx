@@ -124,7 +124,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="https://docs.aserto.com/docs/"
+                  href="https://docs.aserto.com/docs"
                 >
                   Documentation
                 </Link>
@@ -272,7 +272,7 @@ const Footer = () => {
             </p>
             <ul className="mt-5 flex items-center space-x-6">
               <li>
-                <Link href="https://github.com/aserto-dev">
+                <Link href="https://github.com/aserto-dev/topaz">
                   <span className="sr-only">GitHub</span>
                   <IconGithub />
                 </Link>
