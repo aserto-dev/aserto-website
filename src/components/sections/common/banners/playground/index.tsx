@@ -11,13 +11,12 @@ const PlaygroundBanner = () => {
                 text-center text-white h-[60px] sm:h-[36px]"
     >
       <span className="align-middle">
-        Introducing Topaz, our cloud-native OSS authorizer!{' '}
         <Link
           className="font-bold underline"
           href="/blog/topaz-oss-cloud-native-authorization-combines-opa-zanzibar"
           onClick={hideBanner}
         >
-          Read the announcement
+          Get to know Topaz, our cloud-native OSS authorizer!{' '}
         </Link>
       </span>
     </div>
