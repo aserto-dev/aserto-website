@@ -7,7 +7,7 @@ const SectionBlocks = ({
 }: {
   sectionBlocks: SectionBlockFragment[]
 }) => {
-  return (
+  return sectionBlocks ? (
     <Container className="text-aserto-grey-90">
       {sectionBlocks.map((b, i) => (
         <SectionBlockItem
@@ -21,6 +21,8 @@ const SectionBlocks = ({
         />
       ))}
     </Container>
+  ) : (
+    <></>
   )
 }
 
