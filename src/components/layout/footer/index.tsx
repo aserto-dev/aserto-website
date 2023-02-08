@@ -140,9 +140,9 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="https://openpolicyregistry.io"
+                  href="https://openpolicycontainers.com/"
                 >
-                  Open Policy Registry
+                  Open Policy Containers
                 </Link>
               </li>
               <li>
