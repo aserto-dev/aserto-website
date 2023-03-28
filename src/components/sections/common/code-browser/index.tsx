@@ -26,7 +26,7 @@ const tabs = [
 ]
 
 export const snippets: Record<string, string> = {
-  js: `const { jwtAuthz } = require("express-jwt-aserto")
+  js: `const { jwtAuthz } = require("@aserto/aserto-node")
 const checkAuthz = jwtAuthz({ ... })
 // ...
 app.get("/protectPath/:param", checkJwt, checkAuthz, 
