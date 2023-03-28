@@ -7,7 +7,7 @@ const SectionBlocks = ({
 }: {
   sectionBlocks: SectionBlockFragment[]
 }) => {
-  return sectionBlocks ? (
+  return sectionBlocks && (
     <Container className="text-aserto-grey-90">
       {sectionBlocks.map((b, i) => (
         <SectionBlockItem
