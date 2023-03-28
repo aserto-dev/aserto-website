@@ -21,8 +21,6 @@ const SectionBlocks = ({
         />
       ))}
     </Container>
-  ) : (
-    <></>
   )
 }
 
