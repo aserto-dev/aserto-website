@@ -13,10 +13,10 @@ const PlaygroundBanner = () => {
       <span className="align-middle">
         <Link
           className="font-bold underline"
-          href="/blog/topaz-oss-cloud-native-authorization-combines-opa-zanzibar"
+          href="/blog/aserto-sponsors-eic-identiverse-2023"
           onClick={hideBanner}
         >
-          Get to know Topaz, our cloud-native OSS authorizer!{' '}
+          Join our sessions at KubeCon EU, EIC, and Identiverse!{' '}
         </Link>
       </span>
     </div>
