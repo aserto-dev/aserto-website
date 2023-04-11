@@ -35,10 +35,9 @@ const regoPolicies = [
       'Model your resource hierarchy and enforce fine-grained authorization',
     code: `allowed {
   ds.check_permission({
-    "sub_id": input.user.id,
-    "obj_type": "document",
-    "permission": "read",
-    "obj_id": input.resource.id
+    "subject": { "id": input.user.id },
+    "permission": { "name": "read" },
+    "object": { "id": input.resource.id }
   })
 }`
   },
