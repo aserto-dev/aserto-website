@@ -303,16 +303,16 @@ const Footer = () => {
               <ul className="mt-4 space-y-4">
                 <li>
                   <Link href="https://trust.aserto.com">
-                    <span className="sr-only">SOC 2 Type 2</span>
+                    <span className="sr-only">SOC 2 Type II</span>
                     <div className="flex">
                       <img
                         className="h-[50px] md:h-[70px] lg:h-[70px]"
                         src="/images/soc2.png"
-                        alt="SOC 2 Type 2"
+                        alt="SOC 2 Type II"
                       />
                       <p className="hidden md:flex lg:flex mt-4 ml-3 text-sm text-aserto-grey-60 font-roboto">
                         SOC 2<br />
-                        Type 2
+                        Type II
                       </p>
                     </div>
                   </Link>
@@ -327,18 +327,18 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link href="https://trust.aserto.com">
-                  <span className="sr-only">SOC 2 Type 2</span>
+                  <span className="sr-only">SOC 2 Type II</span>
                   <div className="flex">
                     <img
                       className="h-[30px]"
                       src="/images/soc2.png"
-                      alt="SOC 2 Type 2"
+                      alt="SOC 2 Type II"
                     />
                     <p className="hidden md:flex mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
-                      SOC 2 Type 2 Certified
+                      SOC 2 Type II Certified
                     </p>
                     <p className="md:hidden mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
-                      SOC 2 Type 2
+                      SOC 2 Type II
                     </p>
                   </div>
                 </Link>
