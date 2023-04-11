@@ -1,6 +1,7 @@
 export const pageview = (url: string) => {
   //@ts-ignore
   sendEvent('page_view', {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     page_path: url
   })
 }

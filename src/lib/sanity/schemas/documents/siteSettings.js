@@ -2,6 +2,7 @@ export default {
   name: 'siteSettings',
   type: 'document',
   title: 'Site Settings',
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   __experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
