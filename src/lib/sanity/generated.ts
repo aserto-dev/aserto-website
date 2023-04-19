@@ -236,7 +236,7 @@ export type Block = {
   list?: Maybe<Scalars['String']>;
 };
 
-export type BlockOrBlogBodyImage = Block | BlogBodyImage;
+export type BlockOrBlogBodyImageOrYoutube = Block | BlogBodyImage | Youtube;
 
 export type BlogBodyImage = {
   __typename?: 'BlogBodyImage';
@@ -868,6 +868,7 @@ export type Faq = Document & {
   metadata?: Maybe<PageMetadata>;
   title?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
+  slug?: Maybe<Slug>;
   faqs?: Maybe<Array<Maybe<FaqBlock>>>;
 };
 
@@ -903,6 +904,7 @@ export type FaqFilter = {
   metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   subtitle?: Maybe<StringFilter>;
+  slug?: Maybe<SlugFilter>;
 };
 
 export type FaqSorting = {
@@ -915,6 +917,7 @@ export type FaqSorting = {
   metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   subtitle?: Maybe<SortOrder>;
+  slug?: Maybe<SlugSorting>;
 };
 
 export type FeatureBlock = {
@@ -3144,6 +3147,25 @@ export type ValuePropSorting = {
   glow?: Maybe<SortOrder>;
 };
 
+export type Youtube = {
+  __typename?: 'Youtube';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+};
+
+export type YoutubeFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  url?: Maybe<StringFilter>;
+};
+
+export type YoutubeSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+};
+
 export type CaseStudyMetaFragment = (
   { __typename?: 'CaseStudy' }
   & Pick<CaseStudy, '_id' | '_createdAt' | 'company' | 'titleRaw'>
@@ -3800,7 +3822,9 @@ export type FaqItemFragment = (
   )>>> }
 );
 
-export type FaqPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type FaqPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
 
 
 export type FaqPageQuery = (
@@ -3811,10 +3835,27 @@ export type FaqPageQuery = (
     & { metadata?: Maybe<(
       { __typename?: 'PageMetadata' }
       & Pick<PageMetadata, 'title' | 'description'>
+    )>, slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
     )>, faqs?: Maybe<Array<Maybe<(
       { __typename?: 'FaqBlock' }
       & FaqItemFragment
     )>>> }
+  )> }
+);
+
+export type FaqPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FaqPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allFaq: Array<(
+    { __typename?: 'Faq' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
   )> }
 );
 
@@ -5018,20 +5059,32 @@ export const EventDocument = gql`
 }
     ${EventFragmentDoc}`;
 export const FaqPageDocument = gql`
-    query FaqPage {
-  allFaq(sort: {_createdAt: DESC}, limit: 1) {
+    query FaqPage($slug: String!) {
+  allFaq(where: {slug: {current: {eq: $slug}}}, limit: 1) {
     metadata {
       title
       description
     }
     title
     subtitle
+    slug {
+      current
+    }
     faqs {
       ...FaqItem
     }
   }
 }
     ${FaqItemFragmentDoc}`;
+export const FaqPagePathsDocument = gql`
+    query FaqPagePaths {
+  allFaq(sort: {_createdAt: DESC}) {
+    slug {
+      current
+    }
+  }
+}
+    `;
 export const FeaturesPageDocument = gql`
     query FeaturesPage {
   allFeatures(sort: {_createdAt: DESC}, limit: 1) {
@@ -5286,8 +5339,11 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     Event(variables: EventQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<EventQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<EventQuery>(EventDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Event');
     },
-    FaqPage(variables?: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
+    FaqPage(variables: FaqPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FaqPageQuery>(FaqPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPage');
+    },
+    FaqPagePaths(variables?: FaqPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FaqPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<FaqPagePathsQuery>(FaqPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FaqPagePaths');
     },
     FeaturesPage(variables?: FeaturesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<FeaturesPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FeaturesPageQuery>(FeaturesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'FeaturesPage');
