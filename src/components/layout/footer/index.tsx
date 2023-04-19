@@ -84,7 +84,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-60 font-roboto"
-                  href="/faq"
+                  href="/ref/faq"
                 >
                   FAQ
                 </Link>
@@ -221,6 +221,14 @@ const Footer = () => {
                   href="/blog"
                 >
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  href="/ref/glossary"
+                >
+                  Glossary
                 </Link>
               </li>
               <li>
