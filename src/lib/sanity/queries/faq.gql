@@ -6,16 +6,27 @@ fragment FaqItem on FaqBlock {
   }
 }
 
-query FaqPage {
-  allFaq(sort: { _createdAt: DESC }, limit: 1) {
+query FaqPage($slug: String!) {
+  allFaq(where: { slug: { current: { eq: $slug } } }, limit: 1) {
     metadata {
       title
       description
     }
     title
     subtitle
+    slug {
+      current
+    }
     faqs {
       ...FaqItem
+    }
+  }
+}
+
+query FaqPagePaths {
+  allFaq(sort: { _createdAt: DESC }) {
+    slug {
+      current
     }
   }
 }

@@ -2,10 +2,13 @@
 import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
 import { BlockContent } from 'components/primitives/block-content'
-import { InferGetStaticPropsType } from 'next'
-import Accordion from '../components/primitives/accordion'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import Accordion from 'components/primitives/accordion'
+import { Faq } from 'lib/sanity/generated'
 
-const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const FaqPage = ({
+  faq: page
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
       contain
@@ -51,12 +54,29 @@ const Faq = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   )
 }
 
-export const getStaticProps = async () => {
-  const { allFaq } = await cms().FaqPage()
-  const page = allFaq[0]
+export const getStaticPaths = async () => {
+  const { allFaq } = await cms().FaqPagePaths()
   return {
-    props: { page }
+    paths:
+      allFaq?.map((uc) => ({
+        params: { slug: uc.slug?.current as string }
+      })) ?? [],
+    fallback: false
   }
 }
 
-export default Faq
+export const getStaticProps: GetStaticProps<{
+  faq: Faq
+}> = async (ctx) => {
+  const slug = ctx.params?.slug as string
+  const {
+    allFaq: [faq]
+  } = await cms().FaqPage({ slug })
+
+  return {
+    props: { faq },
+    revalidate: 1
+  }
+}
+
+export default FaqPage
