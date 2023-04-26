@@ -16,7 +16,7 @@ const PlaygroundBanner = () => {
           href="/blog/aserto-sponsors-eic-identiverse-2023"
           onClick={hideBanner}
         >
-          Join our sessions at KubeCon EU, EIC, and Identiverse!{' '}
+          Meet us at EIC or Identiverse!{' '}
         </Link>
       </span>
     </div>
