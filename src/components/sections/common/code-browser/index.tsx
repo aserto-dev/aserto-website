@@ -5,7 +5,7 @@ import CodeViewer from 'components/sections/common/code-viewer'
 const tabs = [
   {
     language: 'js',
-    title: 'Node.js'
+    title: 'Node'
   },
   {
     language: 'go',
@@ -16,8 +16,12 @@ const tabs = [
     title: 'Python'
   },
   {
+    language: 'java',
+    title: 'Java'
+  },
+  {
     language: 'aspnet',
-    title: 'ASP.Net'
+    title: '.NET'
   },
   {
     language: 'ruby',
@@ -47,6 +51,16 @@ router.Use(asertoAuthorizer.Handler)`,
 # ...
 @app.route('/protected_route/<parameter>', methods=['GET, POST'])
 @aserto.authorize`,
+  java: `HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+HttpContext context = server.createContext("/api/users");
+
+context.setHandler((exchange) -> {
+  List<Decision> decisions = authzClient.is(
+    new IdentityCtx(jwtToken, IdentityType.IDENTITY_TYPE_JWT),
+    new PolicyCtx("todo", "todo", "todoApp.GET.users", new String[]{"allowed"})
+  );
+  ...
+});`,
   aspnet: `using Microsoft.AspNetCore.Authorization;
 using Aserto.AspNetCore.Middleware.Policies;
 using Aserto.AspNetCore.Middleware.Extensions;
