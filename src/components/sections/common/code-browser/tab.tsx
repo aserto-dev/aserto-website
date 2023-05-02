@@ -11,7 +11,7 @@ const Tab = ({
 }) => {
   return (
     <div
-      className={`cursor-pointer w-[127px] h-[52px] inline-flex items-center rounded-[6px] ${
+      className={`cursor-pointer w-[113px] h-[52px] inline-flex items-center rounded-[6px] ${
         active
           ? 'bg-aserto-grey-20 text-white'
           : 'bg-aserto-grey-10 text-aserto-grey-90'
