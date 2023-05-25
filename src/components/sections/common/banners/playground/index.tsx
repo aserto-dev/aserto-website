@@ -16,7 +16,7 @@ const PlaygroundBanner = () => {
           href="/blog/aserto-sponsors-eic-identiverse-2023"
           onClick={hideBanner}
         >
-          Meet us at EIC or Identiverse!{' '}
+          Meet us at Identiverse!{' '}
         </Link>
       </span>
     </div>
