@@ -13,10 +13,10 @@ const PlaygroundBanner = () => {
       <span className="align-middle">
         <Link
           className="font-bold underline"
-          href="/blog/aserto-sponsors-eic-identiverse-2023"
+          href="/resources/fine-grained-authorization-ebook"
           onClick={hideBanner}
         >
-          Meet us at Identiverse!{' '}
+          Get your copy of the fine-grained authorization eBook!{' '}
         </Link>
       </span>
     </div>
