@@ -26,7 +26,7 @@ const OurValues = ({
           {title}
         </h2>
         <BlockContent
-          className="mx-auto text-aserto-grey-60 text-1.5xl font-roboto tracking-tight"
+          className="mx-auto text-aserto-grey-70 text-1.5xl font-roboto tracking-tight"
           blocks={subtitleRaw}
         />
         {features && (
@@ -48,7 +48,7 @@ const OurValues = ({
         )}
         {taglineRaw && (
           <BlockContent
-            className="mx-auto max-w-[800px] text-1.5xl mt-16 text-aserto-grey-60 font-roboto"
+            className="mx-auto max-w-[800px] text-1.5xl mt-16 text-aserto-grey-70 font-roboto"
             blocks={taglineRaw}
           />
         )}

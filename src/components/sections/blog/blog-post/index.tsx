@@ -19,7 +19,7 @@ const PostComponent = ({ post }: Props) => {
       <div className="w-full mx-auto lg:w-10/12">
         <Link
           href="/blog"
-          className="inline-block mb-12 text-aserto-grey-60 font-roboto"
+          className="inline-block mb-12 text-aserto-grey-70 font-roboto"
         >
           Back to listing
         </Link>
@@ -44,7 +44,7 @@ const PostComponent = ({ post }: Props) => {
                 {formatPostDate(post.publishedAt)}
               </p>
             </div>
-            <div className="relative left-0 flex flex-wrap w-full uppercase -bottom-14 text-aserto-grey-60 font-roboto">
+            <div className="relative left-0 flex flex-wrap w-full uppercase -bottom-14 text-aserto-grey-70 font-roboto">
               {post.categories?.map((c, i, { length }) => {
                 const isLast = i === length - 1
                 return (
@@ -73,7 +73,7 @@ const PostComponent = ({ post }: Props) => {
           width="1216"
         />
         {post.mainImage?.captionRaw && (
-          <figcaption className="mt-2 text-sm text-aserto-grey-60">
+          <figcaption className="mt-2 text-sm text-aserto-grey-70">
             {post.mainImage.captionRaw}
           </figcaption>
         )}

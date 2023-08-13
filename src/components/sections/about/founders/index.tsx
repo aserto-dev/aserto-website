@@ -20,7 +20,7 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
           <h2 className="mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10">
             {page.foundersSectionTitle}
           </h2>
-          <p className="max-w-[800px] mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto">
+          <p className="max-w-[800px] mx-auto text-lg text-aserto-grey-70 sm:text-1.5xl font-roboto">
             {page.foundersSectionSubtitle}
           </p>
         </div>
@@ -61,7 +61,7 @@ const Founders = ({ page }: { page: AboutPageFragment }) => {
                 layout="native"
               />
             </div>
-            <div className={`text-aserto-grey-60 text-lg	mt-10 `}>
+            <div className={`text-aserto-grey-70 text-lg	mt-10 `}>
               Omri and Gert have spent over 6 decades between them working on
               developer products at tech giants like Microsoft, HP Cloud,
               Splunk, and Hulu, as well as startups like NEON and Puppet.

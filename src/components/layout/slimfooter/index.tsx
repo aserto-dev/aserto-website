@@ -14,7 +14,7 @@ const SlimFooter = () => {
       className="bg-aserto-grey-5 w-full h-[48px] leading-[48px] text-center"
       ref={ref}
     >
-      <p className="text-aserto-grey-60 font-roboto">
+      <p className="text-aserto-grey-70 font-roboto">
         &copy; {year} Aserto, Inc. All rights reserved.
       </p>
     </footer>

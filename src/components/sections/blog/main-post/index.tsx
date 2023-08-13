@@ -46,7 +46,7 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
                 {post.title}
               </h3>
               <BlockContent
-                className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-60"
+                className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-70"
                 blocks={post.excerptRaw}
               />
               <time className="text-base tracking-wide">

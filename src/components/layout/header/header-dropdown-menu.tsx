@@ -1,6 +1,6 @@
-import { HeaderLink } from './header-dropdown-link'
-import React, { useState } from 'react'
 import Link from 'next/link'
+import React, { useState } from 'react'
+import { HeaderLink } from './header-dropdown-link'
 
 type HeaderDropdownMenuProps = {
   link: HeaderLink
@@ -15,7 +15,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         aria-haspopup="menu"
         aria-controls="submenu"
         style={{ paddingTop: '7px' }}
-        className="text-base font-roboto transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90 cursor-pointer h-20 flex items-center"
+        className="text-base font-roboto transition-all duration-150 text-aserto-grey-70 hover:text-aserto-grey-90 cursor-pointer h-20 flex items-center"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(false)}
         onMouseLeave={() => setShowMenu(false)}
@@ -33,7 +33,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
           left: '-17px', // '-55px',
           top: '69px'
         }}
-        className={`text-aserto-grey-60 absolute ${width} bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer`}
+        className={`absolute ${width} bg-aserto-grey-5 border-solid border-aserto-grey-30 rounded px-4 pt-4 border flex flex-col cursor-pointer`}
         aria-expanded={showMenu}
       >
         {link.items?.map((item, i) => (
@@ -42,7 +42,7 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
               onClick={() => setShowMenu(false)}
               role="menuitem"
               className={
-                'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-60 hover:text-aserto-grey-90'
+                'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-70 hover:text-aserto-grey-90'
               }
               {...(item.isExternal
                 ? { rel: 'noopener noreferrer', target: '_blank' }

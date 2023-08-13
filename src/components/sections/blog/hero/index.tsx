@@ -11,7 +11,7 @@ const Hero = () => {
       <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 mx-auto">
         Blog
       </h1>
-      <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-60 text-2xl md:mt-3 font-roboto">
+      <h2 className="mx-auto mt-1 text-base md:leading-tight text-aserto-grey-70 text-2xl md:mt-3 font-roboto">
         Company Updates &amp; Technology Articles
       </h2>
     </section>

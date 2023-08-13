@@ -1,5 +1,5 @@
-import { useFadeInBottom } from 'hooks/use-gsap'
 import { BlockContent } from 'components/primitives/block-content'
+import { useFadeInBottom } from 'hooks/use-gsap'
 import { CareersPageFragment } from 'lib/sanity/generated'
 
 import BenefitItem from './benefit-item'
@@ -13,7 +13,7 @@ const Benefits = ({ page }: { page: CareersPageFragment }) => {
           {page.perksSectionTitle}
         </h2>
         <BlockContent
-          className="mx-auto text-aserto-grey-60 text-1.5xl font-roboto tracking-tight"
+          className="mx-auto text-aserto-grey-70 text-1.5xl font-roboto tracking-tight"
           blocks={page.perksSectionSubtitleRaw}
         />
         <div className="relative grid mx-auto mt-20 gap-14 lg:grid-cols-4">

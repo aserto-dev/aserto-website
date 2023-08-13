@@ -25,7 +25,7 @@ const Hiring = ({ page }: { page: AboutPageFragment }) => {
         </h2>
         <Link
           href={page.hiringSectionLinkHref ?? ''}
-          className="flex items-center justify-center w-full mx-auto mt-6 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-10 md:text-2xl font-roboto"
+          className="flex items-center justify-center w-full mx-auto mt-6 text-base md:leading-tight text-aserto-grey-70 sm:text-lg md:mt-10 md:text-2xl font-roboto"
         >
           {page.hiringSectionLinkLabel}
           <IconArrow className="ml-4 -mt-1" />

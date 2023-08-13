@@ -32,7 +32,7 @@ const NewsItem = ({ data }: Props) => {
             </p>
             */}
             <BlockContent
-              className="pb-4 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto"
+              className="pb-4 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-70 font-roboto"
               blocks={data.titleRaw}
             />
             <p className="absolute left-10 bottom-8 text-aserto-grey-90">

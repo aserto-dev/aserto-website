@@ -15,7 +15,7 @@ const FeatureItem = ({ description, icon, title }: Props) => {
       <h5 className="mt-2 mb-5 text-1.5xl tracking-tight text-aserto-grey-90">
         {title}
       </h5>
-      <div className="mt-3 text-lg leading-relaxed text-left text-aserto-grey-60 sm:mt-6 font-roboto">
+      <div className="mt-3 text-lg leading-relaxed text-left text-aserto-grey-70 sm:mt-6 font-roboto">
         {description}
       </div>
     </div>

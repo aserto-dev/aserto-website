@@ -26,7 +26,7 @@ const OpenPositions = ({
             {page.openPositionsSectionTitle}
           </h2>
           <BlockContent
-            className="mx-auto text-aserto-grey-60 text-1.5xl font-roboto tracking-tight max-w-[800px]"
+            className="mx-auto text-aserto-grey-70 text-1.5xl font-roboto tracking-tight max-w-[800px]"
             blocks={page.openPositionsSectionSubtitleRaw}
           />
         </div>

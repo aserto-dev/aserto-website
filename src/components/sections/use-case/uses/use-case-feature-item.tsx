@@ -19,7 +19,7 @@ const UseCaseFeatureItem = ({
           blocks={titleRaw}
         />
         <BlockContent
-          className="text-aserto-grey-60 text-[20px]"
+          className="text-aserto-grey-70 text-[20px]"
           blocks={subTitleRaw}
         />
       </div>

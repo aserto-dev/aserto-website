@@ -6,8 +6,8 @@ import Image from 'components/primitives/image'
 import { AboutPageFragment } from 'lib/sanity/generated'
 
 // Styles
-import s from './hero.module.css'
 import { BlockContent } from 'components/primitives/block-content'
+import s from './hero.module.css'
 
 const Hero = ({ page }: { page: AboutPageFragment }) => {
   const [ref] = useFadeInBottom()
@@ -27,7 +27,7 @@ const Hero = ({ page }: { page: AboutPageFragment }) => {
           {page.title}
         </h1>
         <BlockContent
-          className="w-full mx-auto mt-5 text-base text-left md:leading-tight text-aserto-grey-60 text-xl md:mt-10 md:text-2xl lg:w-10/12 font-roboto"
+          className="w-full mx-auto mt-5 text-base text-left md:leading-tight text-aserto-grey-70 text-xl md:mt-10 md:text-2xl lg:w-10/12 font-roboto"
           blocks={page.subtitleRaw}
         />
       </div>

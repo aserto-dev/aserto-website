@@ -20,11 +20,11 @@ const PositionItem = ({ data }: Props) => (
       </p>
       <BlockContent
         blocks={data.descriptionRaw}
-        className="text-aserto-grey-60 font-roboto"
+        className="text-aserto-grey-70 font-roboto"
       />
     </div>
     <div>
-      <p className="py-6 leading-relaxed text-aserto-grey-60 font-roboto">
+      <p className="py-6 leading-relaxed text-aserto-grey-70 font-roboto">
         {data.team}
       </p>
       <div className="border-t border-aserto-grey-20">
