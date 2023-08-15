@@ -11,16 +11,16 @@ import Link from 'components/primitives/link'
 import Signup from 'components/sections/signup'
 
 // SVGs
-import MenuIcon from 'icons/menu.svg'
-import CloseIcon from 'icons/menu-close.svg'
-import Logo from 'icons/logo-header.svg'
-import LogoMobile from 'icons/logo-header-mobile.svg'
-import IconGithub from 'icons/github.svg'
-import IconSlack from 'icons/slack.svg'
-import { HeaderDropdownLink } from './header-dropdown-link'
-import { asertoConsoleRootUrl } from 'lib/constants'
-import Menu from './menu'
 import PlaygroundBanner from 'components/sections/common/banners/playground'
+import IconGithub from 'icons/github.svg'
+import LogoMobile from 'icons/logo-header-mobile.svg'
+import Logo from 'icons/logo-header.svg'
+import CloseIcon from 'icons/menu-close.svg'
+import MenuIcon from 'icons/menu.svg'
+import IconSlack from 'icons/slack.svg'
+import { asertoConsoleRootUrl } from 'lib/constants'
+import { HeaderDropdownLink } from './header-dropdown-link'
+import Menu from './menu'
 
 const { useCases } = props as unknown as {
   resources: ResourceFragment[]
@@ -212,7 +212,7 @@ const Header = () => {
             Sign up
           </Button>
           <Link
-            className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-60 border-aserto-grey-20"
+            className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
             isExternal={false}
           >

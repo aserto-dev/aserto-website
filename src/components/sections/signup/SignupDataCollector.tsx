@@ -51,7 +51,7 @@ const SignupDataCollector = (props: SignupDataCollectorProps) => {
         <div className="h-[60px] overflow-y-visible">
           <input
             className={clsx(
-              'bg-aserto-black text-aserto-grey-60',
+              'bg-aserto-black text-aserto-grey-70',
               { 'border-aserto-mojo-accent-30': showError },
               { 'border-aserto-grey-30': !showError },
               `rounded-[2px] focus:border-aserto-lochivar-accent-20

@@ -12,7 +12,7 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
         <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
           {page.title}
         </h1>
-        <p className="mt-8 mb-12 text-aserto-grey-60 text-[22px]">
+        <p className="mt-8 mb-12 text-aserto-grey-70 text-[22px]">
           {page.firstSubtitle}
         </p>
         <div className="relative grid items-center gap-4 mx-auto mt-24 lg:gap-8 lg:grid-cols-2">
@@ -42,7 +42,7 @@ const Hero = ({ page }: { page: CareersPageFragment }) => {
           })}
         </div>
         <BlockContent
-          className="w-full mx-auto text-1.5xl text-left mt-16 md:leading-tight text-aserto-grey-60 sm: md:mt-10 sm:text-2xl font-roboto"
+          className="w-full mx-auto text-1.5xl text-left mt-16 md:leading-tight text-aserto-grey-70 sm: md:mt-10 sm:text-2xl font-roboto"
           blocks={page.subtitleRaw}
         />
       </div>

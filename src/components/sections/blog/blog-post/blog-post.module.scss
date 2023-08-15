@@ -5,7 +5,7 @@
   font-family: theme('fontFamily.roboto');
 
   p {
-    @apply my-8 text-lg leading-relaxed;
+    @apply my-8 text-lg text-aserto-grey-70 leading-relaxed;
     strong {
       @apply text-aserto-grey-90;
     }
@@ -53,7 +53,7 @@
 
     list-style: initial;
     @apply space-y-2;
-    @apply text-lg;
+    @apply text-lg text-aserto-grey-70;
     @apply leading-8;
   }
 

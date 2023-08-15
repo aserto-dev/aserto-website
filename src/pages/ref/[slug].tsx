@@ -39,7 +39,7 @@ const FaqPage = ({
                     // @ts-ignore
                     <li key={i} label={<h3>{question?.question}</h3>}>
                       <BlockContent
-                        className="mt-5 text-base md:leading-tight text-aserto-grey-60 sm:text-lg md:mt-5 md:text-xl font-roboto"
+                        className="mt-5 text-base md:leading-tight text-aserto-grey-70 sm:text-lg md:mt-5 md:text-xl font-roboto"
                         blocks={question?.answerRaw}
                       />
                     </li>

@@ -1,9 +1,9 @@
 import Image from 'components/primitives/image'
 
 // Hooks
+import clsx from 'clsx'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import { AboutPageFragment } from 'lib/sanity/generated'
-import clsx from 'clsx'
 
 const Investors = ({ page }: { page: AboutPageFragment }) => {
   const [ref] = useFadeInBottom()
@@ -19,13 +19,13 @@ const Investors = ({ page }: { page: AboutPageFragment }) => {
           className={clsx(
             page.investorsSectionSubtitle
               ? 'mb-2 text-5xl tracking-tight text-aserto-grey-90 sm:mb-10'
-              : 'mb-2 text-base font-bold leading-loose tracking-widest uppercase sm:leading-none text-aserto-grey-60 sm:mb-4'
+              : 'mb-2 text-base font-bold leading-loose tracking-widest uppercase sm:leading-none text-aserto-grey-70 sm:mb-4'
           )}
         >
           {page.investorsSectionTitle}
         </h2>
         {page.investorsSectionSubtitle && (
-          <p className="max-w-[800px] mx-auto text-lg text-aserto-grey-60 sm:text-1.5xl font-roboto">
+          <p className="max-w-[800px] mx-auto text-lg text-aserto-grey-70 sm:text-1.5xl font-roboto">
             {page.investorsSectionSubtitle}
           </p>
         )}

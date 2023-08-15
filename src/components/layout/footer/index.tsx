@@ -1,6 +1,6 @@
-import { useMemo } from 'react'
 import props from 'lib/menu-items'
 import { ResourceFragment, UseCaseFragment } from 'lib/sanity/generated'
+import { useMemo } from 'react'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -12,11 +12,11 @@ import Link from 'components/primitives/link'
 import Container from '../container'
 
 // Icons
-import IconLinkedin from 'icons/linkedin.svg'
 import IconGithub from 'icons/github.svg'
+import IconLinkedin from 'icons/linkedin.svg'
+import Logo from 'icons/logo-footer.svg'
 import IconSlack from 'icons/slack.svg'
 import IconTwitter from 'icons/twitter.svg'
-import Logo from 'icons/logo-footer.svg'
 
 const Footer = () => {
   const [ref] = useFadeInBottom()
@@ -43,7 +43,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/benefits"
                 >
                   Overview
@@ -51,7 +51,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/features"
                 >
                   Features
@@ -59,7 +59,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/see-demo"
                 >
                   See a demo
@@ -67,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/integrations"
                 >
                   Integrations
@@ -75,7 +75,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/frameworks"
                 >
                   Frameworks
@@ -83,7 +83,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/ref/faq"
                 >
                   FAQ
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/pricing"
                 >
                   Pricing
@@ -107,7 +107,7 @@ const Footer = () => {
               {useCases.map((uc) => (
                 <li key={uc._id}>
                   <Link
-                    className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                    className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                     href={`/use-cases/${uc.slug?.current}`}
                   >
                     {uc.shortFooterTitle}
@@ -123,7 +123,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="https://docs.aserto.com/docs"
                 >
                   Documentation
@@ -131,7 +131,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/quickstarts"
                 >
                   Quickstarts
@@ -139,7 +139,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="https://openpolicycontainers.com/"
                 >
                   Open Policy Containers
@@ -147,7 +147,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
                 >
                   Community Slack
@@ -155,7 +155,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="https://aserto.statuspage.io/"
                 >
                   Service Status
@@ -170,7 +170,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/about"
                 >
                   About
@@ -178,7 +178,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/events"
                 >
                   Events
@@ -186,7 +186,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/careers"
                 >
                   Careers
@@ -194,7 +194,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/contact"
                 >
                   Contact
@@ -202,7 +202,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/news"
                 >
                   Press
@@ -217,7 +217,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/blog"
                 >
                   Blog
@@ -225,7 +225,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/ref/glossary"
                 >
                   Glossary
@@ -233,7 +233,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/customers"
                 >
                   Success stories
@@ -242,7 +242,7 @@ const Footer = () => {
               {resources.map((r) => (
                 <li key={r._id}>
                   <Link
-                    className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                    className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                     href={`/resources/${r.slug?.current}`}
                   >
                     {r.shortTitle}
@@ -258,7 +258,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/terms-of-service"
                 >
                   Terms of Service
@@ -266,7 +266,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  className="text-sm leading-normal text-aserto-grey-60 font-roboto"
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/privacy-policy"
                 >
                   Privacy Policy
@@ -318,7 +318,7 @@ const Footer = () => {
                         src="/images/soc2.png"
                         alt="SOC 2 Type II"
                       />
-                      <p className="hidden md:flex lg:flex mt-4 ml-3 text-sm text-aserto-grey-60 font-roboto">
+                      <p className="hidden md:flex lg:flex mt-4 ml-3 text-sm text-aserto-grey-70 font-roboto">
                         SOC 2<br />
                         Type II
                       </p>
@@ -342,10 +342,10 @@ const Footer = () => {
                       src="/images/soc2.png"
                       alt="SOC 2 Type II"
                     />
-                    <p className="hidden md:flex mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
+                    <p className="hidden md:flex mt-1 ml-2 text-sm text-aserto-grey-70 font-roboto">
                       SOC 2 Type II Certified
                     </p>
-                    <p className="md:hidden mt-1 ml-2 text-sm text-aserto-grey-60 font-roboto">
+                    <p className="md:hidden mt-1 ml-2 text-sm text-aserto-grey-70 font-roboto">
                       SOC 2 Type II
                     </p>
                   </div>
@@ -359,7 +359,7 @@ const Footer = () => {
             <span className="sr-only">Aserto</span>
             <Logo />
           </Link>
-          <p className="mt-6 text-base text-aserto-grey-60 font-roboto">
+          <p className="mt-6 text-base text-aserto-grey-70 font-roboto">
             &copy; {year} Aserto, Inc. All rights reserved.
           </p>
         </div>

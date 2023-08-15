@@ -1,8 +1,8 @@
-import { forwardRef, useEffect, useMemo, useState, useRef } from 'react'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { useRouter } from 'next/dist/client/router'
+import Link from 'next/link'
+import { forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import { FiChevronDown } from 'react-icons/fi'
 import HeaderDropdownMenu from './header-dropdown-menu'
 
@@ -47,7 +47,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
                 pathname.includes(`${link.href}`),
-              'border-transparent text-aserto-grey-60': !pathname.includes(
+              'border-transparent text-aserto-grey-70': !pathname.includes(
                 `${link.href}`
               )
             }
@@ -64,7 +64,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
                 pathname.includes(`${link.href}`),
-              'border-transparent text-aserto-grey-60': !pathname.includes(
+              'border-transparent text-aserto-grey-70': !pathname.includes(
                 `${link.href}`
               )
             }

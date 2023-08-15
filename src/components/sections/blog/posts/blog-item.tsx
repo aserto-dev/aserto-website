@@ -1,8 +1,8 @@
+import { BlockContent } from 'components/primitives/block-content'
+import Image from 'components/primitives/image'
 import { PostMetaFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
-import Image from 'components/primitives/image'
 import Link from 'next/link'
-import { BlockContent } from 'components/primitives/block-content'
 
 type Props = {
   data: PostMetaFragment
@@ -26,7 +26,7 @@ const BlogPost = ({ data }: Props) => {
               {data.title}
             </p>
             <BlockContent
-              className="pb-4 mt-3 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-60 font-roboto"
+              className="pb-4 mt-3 mb-8 leading-relaxed tracking-wide sm:mt-5 text-aserto-grey-70 font-roboto"
               blocks={data.excerptRaw}
             />
             <p className="absolute left-10 bottom-8 text-aserto-grey-90">

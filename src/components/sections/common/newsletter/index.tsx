@@ -35,7 +35,7 @@ const NewsletterSection = ({ title, description }: NewsletterProps) => {
             <h2 className="tracking-normal text-aserto-grey-90 text-4.5xl">
               {title}
             </h2>
-            <p className="max-w-3xl mt-4 text-lg text-aserto-grey-60 font-roboto">
+            <p className="max-w-3xl mt-4 text-lg text-aserto-grey-70 font-roboto">
               {description}
             </p>
           </div>

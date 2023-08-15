@@ -15,7 +15,7 @@ const AuthorCard = ({ author }: { author: Author }) => {
         />
       </figure>
       <div className="ml-6">
-        <p className="text-aserto-grey-60 font-roboto">{author?.name}</p>
+        <p className="text-aserto-grey-70 font-roboto">{author?.name}</p>
         <p className="text-aserto-grey-90 font-roboto">{author?.position}</p>
       </div>
     </div>

@@ -37,10 +37,10 @@ const ProfileItem = ({ data, withImage }: Props) => (
           />
         )}
       </div>
-      <p className="mt-2 text-aserto-grey-60 font-roboto">{data.position}</p>
+      <p className="mt-2 text-aserto-grey-70 font-roboto">{data.position}</p>
       <BlockContent
         blocks={data.bioRaw}
-        className="leading-relaxed text-aserto-grey-60 font-roboto"
+        className="leading-relaxed text-aserto-grey-70 font-roboto"
       />
     </div>
   </a>

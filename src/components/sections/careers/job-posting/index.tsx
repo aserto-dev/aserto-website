@@ -15,7 +15,7 @@ const JobPosting = ({ posting }: Props) => {
       <div>
         <Link
           href="/careers"
-          className="inline-block mb-12 text-aserto-grey-60 font-roboto"
+          className="inline-block mb-12 text-aserto-grey-70 font-roboto"
         >
           Back to listing
         </Link>

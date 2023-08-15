@@ -32,7 +32,7 @@ const ProfileItem = ({ linkedin, name, position, imageSrc }: Props) => (
           layout="native"
         />
       </div>
-      <p className="mt-2 text-aserto-grey-60 font-roboto">{position}</p>
+      <p className="mt-2 text-aserto-grey-70 font-roboto">{position}</p>
     </a>
   </Link>
 )
