@@ -24,6 +24,13 @@ const IconBlock = ({ featureIcons, iconBlockTitle }: IconBlockProp) => {
               src={f.icon?.asset?.url ?? '/404'}
               alt={f.icon?.alt ?? 'icon'}
             />
+            {f.icon?.captionRaw && (
+              <BlockContent
+                className="text-center font-semibold w-full lg:w-3/4 mx-auto text-[18px] lg:text-[20px] mb-8"
+                blocks={f.icon.captionRaw}
+                spaced
+              />
+            )}
             <p className="text-center w-full lg:w-3/4 mx-auto text-[18px] lg:text-[20px]">
               {f.title}
             </p>

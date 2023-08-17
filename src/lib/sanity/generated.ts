@@ -1994,6 +1994,7 @@ export type RootQuery = {
   Post?: Maybe<Post>;
   Pricing?: Maybe<Pricing>;
   ResourcePage?: Maybe<ResourcePage>;
+  SolutionPage?: Maybe<SolutionPage>;
   SiteSettings?: Maybe<SiteSettings>;
   Testimonial?: Maybe<Testimonial>;
   UseCasePage?: Maybe<UseCasePage>;
@@ -2023,6 +2024,7 @@ export type RootQuery = {
   allPost: Array<Post>;
   allPricing: Array<Pricing>;
   allResourcePage: Array<ResourcePage>;
+  allSolutionPage: Array<SolutionPage>;
   allSiteSettings: Array<SiteSettings>;
   allTestimonial: Array<Testimonial>;
   allUseCasePage: Array<UseCasePage>;
@@ -2143,6 +2145,11 @@ export type RootQueryPricingArgs = {
 
 
 export type RootQueryResourcePageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQuerySolutionPageArgs = {
   id: Scalars['ID'];
 };
 
@@ -2356,6 +2363,14 @@ export type RootQueryAllPricingArgs = {
 export type RootQueryAllResourcePageArgs = {
   where?: Maybe<ResourcePageFilter>;
   sort?: Maybe<Array<ResourcePageSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllSolutionPageArgs = {
+  where?: Maybe<SolutionPageFilter>;
+  sort?: Maybe<Array<SolutionPageSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -2872,6 +2887,63 @@ export type SlugSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
   current?: Maybe<SortOrder>;
+};
+
+export type SolutionPage = Document & {
+  __typename?: 'SolutionPage';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  index?: Maybe<Scalars['Float']>;
+  slug?: Maybe<Slug>;
+  title?: Maybe<Scalars['String']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  heroImage?: Maybe<MainImage>;
+  benefit?: Maybe<Array<Maybe<SectionBlock>>>;
+  iconBlockTitleRaw?: Maybe<Scalars['JSON']>;
+  featureItems?: Maybe<Array<Maybe<FeatureItem>>>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type SolutionPageFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  index?: Maybe<FloatFilter>;
+  slug?: Maybe<SlugFilter>;
+  title?: Maybe<StringFilter>;
+  heroImage?: Maybe<MainImageFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type SolutionPageSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  index?: Maybe<SortOrder>;
+  slug?: Maybe<SlugSorting>;
+  title?: Maybe<SortOrder>;
+  heroImage?: Maybe<MainImageSorting>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export enum SortOrder {
@@ -3410,6 +3482,30 @@ export type SectionBlockFragment = (
   & { image?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
+  )> }
+);
+
+export type SolutionFragment = (
+  { __typename?: 'SolutionPage' }
+  & Pick<SolutionPage, '_id' | '_createdAt' | 'index' | 'title' | 'subtitleRaw' | 'iconBlockTitleRaw'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, slug?: Maybe<(
+    { __typename?: 'Slug' }
+    & Pick<Slug, 'current'>
+  )>, heroImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, benefit?: Maybe<Array<Maybe<(
+    { __typename?: 'SectionBlock' }
+    & SectionBlockFragment
+  )>>>, featureItems?: Maybe<Array<Maybe<(
+    { __typename?: 'FeatureItem' }
+    & FeatureItemFragment
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
   )> }
 );
 
@@ -4185,6 +4281,44 @@ export type ResourcesPageQuery = (
   )> }
 );
 
+export type SolutionsPagesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SolutionsPagesQuery = (
+  { __typename?: 'RootQuery' }
+  & { allSolutionPage: Array<(
+    { __typename?: 'SolutionPage' }
+    & SolutionFragment
+  )> }
+);
+
+export type SolutionsPagePathsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SolutionsPagePathsQuery = (
+  { __typename?: 'RootQuery' }
+  & { allSolutionPage: Array<(
+    { __typename?: 'SolutionPage' }
+    & { slug?: Maybe<(
+      { __typename?: 'Slug' }
+      & Pick<Slug, 'current'>
+    )> }
+  )> }
+);
+
+export type SolutionsPageQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type SolutionsPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allSolutionPage: Array<(
+    { __typename?: 'SolutionPage' }
+    & SolutionFragment
+  )> }
+);
+
 export type TestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4542,6 +4676,49 @@ export const ResourceFragmentDoc = gql`
 }
     ${ImageFragmentDoc}
 ${SectionBlockFragmentDoc}`;
+export const FeatureItemFragmentDoc = gql`
+    fragment FeatureItem on FeatureItem {
+  icon {
+    ...Image
+  }
+  title
+}
+    ${ImageFragmentDoc}`;
+export const SolutionFragmentDoc = gql`
+    fragment Solution on SolutionPage {
+  _id
+  _createdAt
+  metadata {
+    title
+    description
+  }
+  index
+  slug {
+    current
+  }
+  title
+  subtitleRaw
+  heroImage {
+    ...Image
+  }
+  benefit {
+    ...SectionBlock
+  }
+  iconBlockTitleRaw
+  featureItems {
+    ...FeatureItem
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+    ${ImageFragmentDoc}
+${SectionBlockFragmentDoc}
+${FeatureItemFragmentDoc}`;
 export const TestimonialFragmentDoc = gql`
     fragment Testimonial on Testimonial {
   _id
@@ -4711,14 +4888,6 @@ export const JobPostingFragmentDoc = gql`
   bodyRaw
 }
     ${JobPostingMetaFragmentDoc}`;
-export const FeatureItemFragmentDoc = gql`
-    fragment FeatureItem on FeatureItem {
-  icon {
-    ...Image
-  }
-  title
-}
-    ${ImageFragmentDoc}`;
 export const CareersPageFragmentDoc = gql`
     fragment CareersPage on Careers {
   metadata {
@@ -5250,6 +5419,29 @@ export const ResourcesPageDocument = gql`
   }
 }
     ${ResourceFragmentDoc}`;
+export const SolutionsPagesDocument = gql`
+    query SolutionsPages {
+  allSolutionPage(sort: {index: ASC}) {
+    ...Solution
+  }
+}
+    ${SolutionFragmentDoc}`;
+export const SolutionsPagePathsDocument = gql`
+    query SolutionsPagePaths {
+  allSolutionPage {
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const SolutionsPageDocument = gql`
+    query SolutionsPage($slug: String!) {
+  allSolutionPage(where: {slug: {current: {eq: $slug}}}, limit: 1) {
+    ...Solution
+  }
+}
+    ${SolutionFragmentDoc}`;
 export const TestimonialsDocument = gql`
     query Testimonials {
   allTestimonial(sort: {index: ASC}) {
@@ -5401,6 +5593,15 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     ResourcesPage(variables: ResourcesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<ResourcesPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ResourcesPageQuery>(ResourcesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'ResourcesPage');
+    },
+    SolutionsPages(variables?: SolutionsPagesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SolutionsPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SolutionsPagesQuery>(SolutionsPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'SolutionsPages');
+    },
+    SolutionsPagePaths(variables?: SolutionsPagePathsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SolutionsPagePathsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SolutionsPagePathsQuery>(SolutionsPagePathsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'SolutionsPagePaths');
+    },
+    SolutionsPage(variables: SolutionsPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SolutionsPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<SolutionsPageQuery>(SolutionsPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'SolutionsPage');
     },
     Testimonials(variables?: TestimonialsQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestimonialsQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<TestimonialsQuery>(TestimonialsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'Testimonials');
