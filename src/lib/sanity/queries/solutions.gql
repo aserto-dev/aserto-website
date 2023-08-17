@@ -1,0 +1,19 @@
+query SolutionsPages {
+  allSolutionPage(sort: { index: ASC }) {
+    ...Solution
+  }
+}
+
+query SolutionsPagePaths {
+  allSolutionPage {
+    slug {
+      current
+    }
+  }
+}
+
+query SolutionsPage($slug: String!) {
+  allSolutionPage(where: { slug: { current: { eq: $slug } } }, limit: 1) {
+    ...Solution
+  }
+}
