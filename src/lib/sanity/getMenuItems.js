@@ -176,6 +176,15 @@ const SectionBlockFragmentDoc = gql`
   ${ImageFragmentDoc}
 `
 
+const FeatureItemFragmentDoc = gql`
+  fragment FeatureItem on FeatureItem {
+    icon {
+      ...Image
+    }
+    title
+  }
+`
+
 const ResourceFragmentDoc = gql`
   fragment Resource on ResourcePage {
     _id
@@ -283,6 +292,54 @@ const UseCasesPagesDocument = gql`
   ${UseCaseFragmentDoc}
 `
 
+const SolutionFragmentDoc = gql`
+  fragment Solution on SolutionPage {
+    _id
+    _createdAt
+    metadata {
+      title
+      description
+    }
+    index
+    slug {
+      current
+    }
+    title
+    subtitleRaw
+    shortHeaderTitle
+    shortFooterTitle
+    heroImage {
+      ...Image
+    }
+    benefit {
+      ...SectionBlock
+    }
+    iconBlockTitleRaw
+    featureItems {
+      ...FeatureItem
+    }
+    callToAction {
+      caption
+      signup
+      contact
+      contactEngineer
+      contactEngineerDark
+    }
+  }
+  ${ImageFragmentDoc}
+  ${FeatureItemFragmentDoc}
+  ${SectionBlockFragmentDoc}
+`
+
+const SolutionsPagesDocument = gql`
+  query SolutionsPages {
+    allSolutionPage(sort: { index: ASC }) {
+      ...Solution
+    }
+  }
+  ${SolutionFragmentDoc}
+`
+
 function getSdk(client, withWrapper = defaultWrapper) {
   return {
     ResourcesPages(variables, requestHeaders) {
@@ -293,6 +350,16 @@ function getSdk(client, withWrapper = defaultWrapper) {
             ...wrappedRequestHeaders
           }),
         'ResourcesPages'
+      )
+    },
+    SolutionsPages(variables, requestHeaders) {
+      return withWrapper(
+        (wrappedRequestHeaders) =>
+          client.request(SolutionsPagesDocument, variables, {
+            ...requestHeaders,
+            ...wrappedRequestHeaders
+          }),
+        'SolutionsPages'
       )
     },
     UseCasesPages(variables, requestHeaders) {

@@ -198,5 +198,6 @@
     "*.@(ts|tsx)": [
       "yarn lint --fix"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

@@ -11,6 +11,8 @@ fragment Solution on SolutionPage {
   }
   title
   subtitleRaw
+  shortHeaderTitle
+  shortFooterTitle
   heroImage {
     ...Image
   }
