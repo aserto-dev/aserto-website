@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import props from 'lib/menu-items'
-import { ResourceFragment, UseCaseFragment } from 'lib/sanity/generated'
+import {
+  ResourceFragment,
+  SolutionFragment,
+  UseCaseFragment
+} from 'lib/sanity/generated'
 
 // Primitives
 import Button from 'components/primitives/button'
@@ -22,8 +26,9 @@ import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
 
-const { useCases } = props as unknown as {
+const { solutions } = props as unknown as {
   resources: ResourceFragment[]
+  solutions: SolutionFragment[]
   useCases: UseCaseFragment[]
 }
 
@@ -55,19 +60,14 @@ export const headerLinks = [
     ]
   },
   {
-    label: 'Use Cases',
+    label: 'Solutions',
     href: '',
-    items: useCases
-      .map((uc) => ({
-        label: uc.shortHeaderTitle,
-        href: `/use-cases/${uc.slug?.current}`,
+    items: solutions
+      .map((s) => ({
+        label: s.shortHeaderTitle,
+        href: `/solutions/${s.slug?.current}`,
         isExternal: false
       }))
-      .concat({
-        label: 'Policy-based access management',
-        href: '/resources/policy-based-access-management-market-compass',
-        isExternal: false
-      })
       .concat({
         label: 'Success stories',
         href: '/customers',

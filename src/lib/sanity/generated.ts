@@ -2907,6 +2907,8 @@ export type SolutionPage = Document & {
   slug?: Maybe<Slug>;
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
+  shortHeaderTitle?: Maybe<Scalars['String']>;
+  shortFooterTitle?: Maybe<Scalars['String']>;
   heroImage?: Maybe<MainImage>;
   benefit?: Maybe<Array<Maybe<SectionBlock>>>;
   iconBlockTitleRaw?: Maybe<Scalars['JSON']>;
@@ -2927,6 +2929,8 @@ export type SolutionPageFilter = {
   index?: Maybe<FloatFilter>;
   slug?: Maybe<SlugFilter>;
   title?: Maybe<StringFilter>;
+  shortHeaderTitle?: Maybe<StringFilter>;
+  shortFooterTitle?: Maybe<StringFilter>;
   heroImage?: Maybe<MainImageFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
 };
@@ -2942,6 +2946,8 @@ export type SolutionPageSorting = {
   index?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
   title?: Maybe<SortOrder>;
+  shortHeaderTitle?: Maybe<SortOrder>;
+  shortFooterTitle?: Maybe<SortOrder>;
   heroImage?: Maybe<MainImageSorting>;
   callToAction?: Maybe<CtaBlockSorting>;
 };
@@ -3487,7 +3493,7 @@ export type SectionBlockFragment = (
 
 export type SolutionFragment = (
   { __typename?: 'SolutionPage' }
-  & Pick<SolutionPage, '_id' | '_createdAt' | 'index' | 'title' | 'subtitleRaw' | 'iconBlockTitleRaw'>
+  & Pick<SolutionPage, '_id' | '_createdAt' | 'index' | 'title' | 'subtitleRaw' | 'shortHeaderTitle' | 'shortFooterTitle' | 'iconBlockTitleRaw'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4698,6 +4704,8 @@ export const SolutionFragmentDoc = gql`
   }
   title
   subtitleRaw
+  shortHeaderTitle
+  shortFooterTitle
   heroImage {
     ...Image
   }

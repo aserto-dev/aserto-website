@@ -1,5 +1,9 @@
 import props from 'lib/menu-items'
-import { ResourceFragment, UseCaseFragment } from 'lib/sanity/generated'
+import {
+  ResourceFragment,
+  SolutionFragment,
+  UseCaseFragment
+} from 'lib/sanity/generated'
 import { useMemo } from 'react'
 
 // Hooks
@@ -24,8 +28,9 @@ const Footer = () => {
     return new Date().getUTCFullYear()
   }, [])
 
-  const { resources, useCases } = props as unknown as {
+  const { resources, solutions, useCases } = props as unknown as {
     resources: ResourceFragment[]
+    solutions: SolutionFragment[]
     useCases: UseCaseFragment[]
   }
 
@@ -100,6 +105,22 @@ const Footer = () => {
             </ul>
           </div>
           <div>
+            <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
+              Solutions
+            </p>
+            <ul className="mt-4 space-y-4">
+              {solutions.map((s) => (
+                <li key={s._id}>
+                  <Link
+                    className="text-sm leading-normal text-aserto-grey-70 font-roboto"
+                    href={`/solutions/${s.slug?.current}`}
+                  >
+                    {s.shortFooterTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <br />
             <p className="font-bold leading-normal tracking-wide uppercase text-aserto-grey-90 font-roboto">
               Use Cases
             </p>
