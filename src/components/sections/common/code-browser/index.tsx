@@ -97,7 +97,7 @@ const CodeBrowser = () => {
             key={t.language}
             active={language === t.language}
             language={t.title}
-            imgUrl={`images/languages/${t.language}.svg`}
+            imgUrl={`/images/languages/${t.language}.svg`}
             onClick={() => setLanguage(t.language)}
           />
         ))}
