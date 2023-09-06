@@ -65,7 +65,7 @@ export const headerLinks = [
     items: solutions
       .map((s) => ({
         label: s.shortHeaderTitle,
-        href: `/use-cases/${s.slug?.current}`,
+        href: `/solutions/${s.slug?.current}`,
         isExternal: false
       }))
       .concat({
