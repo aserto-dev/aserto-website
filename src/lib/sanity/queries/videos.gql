@@ -1,0 +1,33 @@
+fragment VideoItem on VideoBlock {
+  url
+  description
+  defaultPreview {
+    ...Image
+  }
+}
+
+fragment VideosPage on Videos {
+  metadata {
+    title
+    description
+  }
+  title
+  subtitleRaw
+  mainYoutubeUrl
+  videoContentBlocks {
+    ...VideoItem
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+
+query VideosPage {
+  allVideos(sort: { _createdAt: DESC }, limit: 1) {
+    ...VideosPage
+  }
+}

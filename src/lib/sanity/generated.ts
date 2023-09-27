@@ -1998,6 +1998,7 @@ export type RootQuery = {
   SiteSettings?: Maybe<SiteSettings>;
   Testimonial?: Maybe<Testimonial>;
   UseCasePage?: Maybe<UseCasePage>;
+  Videos?: Maybe<Videos>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   Document?: Maybe<Document>;
@@ -2028,6 +2029,7 @@ export type RootQuery = {
   allSiteSettings: Array<SiteSettings>;
   allTestimonial: Array<Testimonial>;
   allUseCasePage: Array<UseCasePage>;
+  allVideos: Array<Videos>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allDocument: Array<Document>;
@@ -2165,6 +2167,11 @@ export type RootQueryTestimonialArgs = {
 
 
 export type RootQueryUseCasePageArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type RootQueryVideosArgs = {
   id: Scalars['ID'];
 };
 
@@ -2395,6 +2402,14 @@ export type RootQueryAllTestimonialArgs = {
 export type RootQueryAllUseCasePageArgs = {
   where?: Maybe<UseCasePageFilter>;
   sort?: Maybe<Array<UseCasePageSorting>>;
+  limit?: Maybe<Scalars['Int']>;
+  offset?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryAllVideosArgs = {
+  where?: Maybe<VideosFilter>;
+  sort?: Maybe<Array<VideosSorting>>;
   limit?: Maybe<Scalars['Int']>;
   offset?: Maybe<Scalars['Int']>;
 };
@@ -3223,6 +3238,80 @@ export type ValuePropSorting = {
   element?: Maybe<SortOrder>;
   image?: Maybe<MainImageSorting>;
   glow?: Maybe<SortOrder>;
+};
+
+export type VideoBlock = {
+  __typename?: 'VideoBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  defaultPreview?: Maybe<MainImage>;
+};
+
+export type VideoBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  url?: Maybe<StringFilter>;
+  description?: Maybe<StringFilter>;
+  defaultPreview?: Maybe<MainImageFilter>;
+};
+
+export type VideoBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  url?: Maybe<SortOrder>;
+  description?: Maybe<SortOrder>;
+  defaultPreview?: Maybe<MainImageSorting>;
+};
+
+export type Videos = Document & {
+  __typename?: 'Videos';
+  /** Document ID */
+  _id?: Maybe<Scalars['ID']>;
+  /** Document type */
+  _type?: Maybe<Scalars['String']>;
+  /** Date the document was created */
+  _createdAt?: Maybe<Scalars['DateTime']>;
+  /** Date the document was last modified */
+  _updatedAt?: Maybe<Scalars['DateTime']>;
+  /** Current document revision */
+  _rev?: Maybe<Scalars['String']>;
+  _key?: Maybe<Scalars['String']>;
+  metadata?: Maybe<PageMetadata>;
+  title?: Maybe<Scalars['String']>;
+  subtitleRaw?: Maybe<Scalars['JSON']>;
+  mainYoutubeUrl?: Maybe<Scalars['String']>;
+  videoContentBlocks?: Maybe<Array<Maybe<VideoBlock>>>;
+  callToAction?: Maybe<CtaBlock>;
+};
+
+export type VideosFilter = {
+  /** Apply filters on document level */
+  _?: Maybe<Sanity_DocumentFilter>;
+  _id?: Maybe<IdFilter>;
+  _type?: Maybe<StringFilter>;
+  _createdAt?: Maybe<DatetimeFilter>;
+  _updatedAt?: Maybe<DatetimeFilter>;
+  _rev?: Maybe<StringFilter>;
+  _key?: Maybe<StringFilter>;
+  metadata?: Maybe<PageMetadataFilter>;
+  title?: Maybe<StringFilter>;
+  mainYoutubeUrl?: Maybe<StringFilter>;
+  callToAction?: Maybe<CtaBlockFilter>;
+};
+
+export type VideosSorting = {
+  _id?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _createdAt?: Maybe<SortOrder>;
+  _updatedAt?: Maybe<SortOrder>;
+  _rev?: Maybe<SortOrder>;
+  _key?: Maybe<SortOrder>;
+  metadata?: Maybe<PageMetadataSorting>;
+  title?: Maybe<SortOrder>;
+  mainYoutubeUrl?: Maybe<SortOrder>;
+  callToAction?: Maybe<CtaBlockSorting>;
 };
 
 export type Youtube = {
@@ -4374,6 +4463,41 @@ export type UseCasesPageQuery = (
   )> }
 );
 
+export type VideoItemFragment = (
+  { __typename?: 'VideoBlock' }
+  & Pick<VideoBlock, 'url' | 'description'>
+  & { defaultPreview?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
+export type VideosPageFragment = (
+  { __typename?: 'Videos' }
+  & Pick<Videos, 'title' | 'subtitleRaw' | 'mainYoutubeUrl'>
+  & { metadata?: Maybe<(
+    { __typename?: 'PageMetadata' }
+    & Pick<PageMetadata, 'title' | 'description'>
+  )>, videoContentBlocks?: Maybe<Array<Maybe<(
+    { __typename?: 'VideoBlock' }
+    & VideoItemFragment
+  )>>>, callToAction?: Maybe<(
+    { __typename?: 'CtaBlock' }
+    & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
+  )> }
+);
+
+export type VideosPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type VideosPageQuery = (
+  { __typename?: 'RootQuery' }
+  & { allVideos: Array<(
+    { __typename?: 'Videos' }
+    & VideosPageFragment
+  )> }
+);
+
 export const ImageFragmentDoc = gql`
     fragment Image on MainImage {
   crop {
@@ -5085,6 +5209,36 @@ export const PricingFragmentDoc = gql`
   }
 }
     `;
+export const VideoItemFragmentDoc = gql`
+    fragment VideoItem on VideoBlock {
+  url
+  description
+  defaultPreview {
+    ...Image
+  }
+}
+    ${ImageFragmentDoc}`;
+export const VideosPageFragmentDoc = gql`
+    fragment VideosPage on Videos {
+  metadata {
+    title
+    description
+  }
+  title
+  subtitleRaw
+  mainYoutubeUrl
+  videoContentBlocks {
+    ...VideoItem
+  }
+  callToAction {
+    caption
+    signup
+    contact
+    contactEngineer
+    contactEngineerDark
+  }
+}
+    ${VideoItemFragmentDoc}`;
 export const AboutPageDocument = gql`
     query AboutPage {
   allAbout(sort: {_createdAt: DESC}, limit: 1) {
@@ -5480,6 +5634,13 @@ export const UseCasesPageDocument = gql`
   }
 }
     ${UseCaseFragmentDoc}`;
+export const VideosPageDocument = gql`
+    query VideosPage {
+  allVideos(sort: {_createdAt: DESC}, limit: 1) {
+    ...VideosPage
+  }
+}
+    ${VideosPageFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -5622,6 +5783,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     UseCasesPage(variables: UseCasesPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UseCasesPageQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<UseCasesPageQuery>(UseCasesPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'UseCasesPage');
+    },
+    VideosPage(variables?: VideosPageQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<VideosPageQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<VideosPageQuery>(VideosPageDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'VideosPage');
     }
   };
 }
