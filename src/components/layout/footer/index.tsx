@@ -247,6 +247,14 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-70 font-roboto"
+                  href="/authorization-videos"
+                >
+                  Videos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="/ref/glossary"
                 >
                   Glossary
