@@ -1,9 +1,12 @@
 fragment VideoItem on VideoBlock {
   url
-  description
+  videoType
+  title
+  embedUrl
   defaultPreview {
     ...Image
   }
+  description
 }
 
 fragment VideosPage on Videos {
@@ -14,6 +17,7 @@ fragment VideosPage on Videos {
   title
   subtitleRaw
   mainYoutubeUrl
+  mainYoutubeTitle
   videoContentBlocks {
     ...VideoItem
   }

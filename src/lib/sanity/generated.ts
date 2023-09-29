@@ -3245,24 +3245,33 @@ export type VideoBlock = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  videoType?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  embedUrl?: Maybe<Scalars['String']>;
   defaultPreview?: Maybe<MainImage>;
+  description?: Maybe<Scalars['String']>;
 };
 
 export type VideoBlockFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
   url?: Maybe<StringFilter>;
-  description?: Maybe<StringFilter>;
+  videoType?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  embedUrl?: Maybe<StringFilter>;
   defaultPreview?: Maybe<MainImageFilter>;
+  description?: Maybe<StringFilter>;
 };
 
 export type VideoBlockSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
   url?: Maybe<SortOrder>;
-  description?: Maybe<SortOrder>;
+  videoType?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  embedUrl?: Maybe<SortOrder>;
   defaultPreview?: Maybe<MainImageSorting>;
+  description?: Maybe<SortOrder>;
 };
 
 export type Videos = Document & {
@@ -3282,6 +3291,7 @@ export type Videos = Document & {
   title?: Maybe<Scalars['String']>;
   subtitleRaw?: Maybe<Scalars['JSON']>;
   mainYoutubeUrl?: Maybe<Scalars['String']>;
+  mainYoutubeTitle?: Maybe<Scalars['String']>;
   videoContentBlocks?: Maybe<Array<Maybe<VideoBlock>>>;
   callToAction?: Maybe<CtaBlock>;
 };
@@ -3298,6 +3308,7 @@ export type VideosFilter = {
   metadata?: Maybe<PageMetadataFilter>;
   title?: Maybe<StringFilter>;
   mainYoutubeUrl?: Maybe<StringFilter>;
+  mainYoutubeTitle?: Maybe<StringFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
 };
 
@@ -3311,6 +3322,7 @@ export type VideosSorting = {
   metadata?: Maybe<PageMetadataSorting>;
   title?: Maybe<SortOrder>;
   mainYoutubeUrl?: Maybe<SortOrder>;
+  mainYoutubeTitle?: Maybe<SortOrder>;
   callToAction?: Maybe<CtaBlockSorting>;
 };
 
@@ -4465,7 +4477,7 @@ export type UseCasesPageQuery = (
 
 export type VideoItemFragment = (
   { __typename?: 'VideoBlock' }
-  & Pick<VideoBlock, 'url' | 'description'>
+  & Pick<VideoBlock, 'url' | 'videoType' | 'title' | 'embedUrl' | 'description'>
   & { defaultPreview?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
@@ -4474,7 +4486,7 @@ export type VideoItemFragment = (
 
 export type VideosPageFragment = (
   { __typename?: 'Videos' }
-  & Pick<Videos, 'title' | 'subtitleRaw' | 'mainYoutubeUrl'>
+  & Pick<Videos, 'title' | 'subtitleRaw' | 'mainYoutubeUrl' | 'mainYoutubeTitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -5212,10 +5224,13 @@ export const PricingFragmentDoc = gql`
 export const VideoItemFragmentDoc = gql`
     fragment VideoItem on VideoBlock {
   url
-  description
+  videoType
+  title
+  embedUrl
   defaultPreview {
     ...Image
   }
+  description
 }
     ${ImageFragmentDoc}`;
 export const VideosPageFragmentDoc = gql`
@@ -5227,6 +5242,7 @@ export const VideosPageFragmentDoc = gql`
   title
   subtitleRaw
   mainYoutubeUrl
+  mainYoutubeTitle
   videoContentBlocks {
     ...VideoItem
   }
