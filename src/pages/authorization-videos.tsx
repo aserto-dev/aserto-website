@@ -32,11 +32,8 @@ const Videos = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 className="w-full h-full m-auto overflow-hidden md:w-[810px] md:h-[412px] my-12"
                 width="810"
                 height="412"
-                src={
-                  page.mainYoutubeUrl ??
-                  'https://www.youtube.com/embed/RJkgmdjJn_w'
-                }
-                title="Welcome to Modern Authorization | Aserto Overview"
+                src={page.mainYoutubeUrl ?? ''}
+                title={page.mainYoutubeTitle ?? ''}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
