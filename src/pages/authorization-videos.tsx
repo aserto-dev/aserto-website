@@ -1,5 +1,6 @@
 // Layout
 import PageLayout from 'components/layout/page'
+import SignupButton from 'components/sections/common/cta-buttons/signup-button'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/videos/hero'
 import VideoItem from 'components/sections/videos/video-item'
@@ -46,6 +47,32 @@ const Videos = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           </>
         )}
       </section>
+      {page.videoSectionBlocks &&
+        page.videoSectionBlocks.length > 0 &&
+        page.videoSectionBlocks.map((s, i) => (
+          <div key={i}>
+            <div className="text-center">
+              <SignupButton />
+            </div>
+            <section className="pb-28">
+              {s?.videoContentBlocks && s.videoContentBlocks.length > 0 && (
+                <>
+                  <h3
+                    className="text-center text-aserto-grey-90 text-[30px] leading-[40px]
+              sm:text-[50px] sm:leading-[60px] mt-28"
+                  >
+                    {s.sectionHeading}
+                  </h3>
+                  <div className="grid gap-16 mx-auto mt-24 lg:grid-cols-3">
+                    {s.videoContentBlocks.map((v, i) => {
+                      return <VideoItem data={v || {}} key={i} />
+                    })}
+                  </div>
+                </>
+              )}
+            </section>
+          </div>
+        ))}
       <Lottie {...ctaOptions({ ...page.callToAction })} />
     </PageLayout>
   )

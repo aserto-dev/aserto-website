@@ -9,6 +9,13 @@ fragment VideoItem on VideoBlock {
   description
 }
 
+fragment VideoSectionItem on VideoSectionBlock {
+  sectionHeading
+  videoContentBlocks {
+    ...VideoItem
+  }
+}
+
 fragment VideosPage on Videos {
   metadata {
     title
@@ -20,6 +27,9 @@ fragment VideosPage on Videos {
   mainYoutubeTitle
   videoContentBlocks {
     ...VideoItem
+  }
+  videoSectionBlocks {
+    ...VideoSectionItem
   }
   callToAction {
     caption

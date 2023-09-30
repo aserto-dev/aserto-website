@@ -22,8 +22,8 @@ const VideoItem = ({ data }: Props) => {
             <Image
               src={data.defaultPreview?.asset?.url || ''}
               alt={data.defaultPreview?.alt || ''}
-              className="object-cover h-[200px]"
-              objectFit="contain"
+              className="h-[200px]"
+              objectFit="cover"
               layout="responsive"
             />
           )}
