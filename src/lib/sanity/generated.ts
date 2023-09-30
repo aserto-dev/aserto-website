@@ -3274,6 +3274,26 @@ export type VideoBlockSorting = {
   description?: Maybe<SortOrder>;
 };
 
+export type VideoSectionBlock = {
+  __typename?: 'VideoSectionBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  sectionHeading?: Maybe<Scalars['String']>;
+  videoContentBlocks?: Maybe<Array<Maybe<VideoBlock>>>;
+};
+
+export type VideoSectionBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  sectionHeading?: Maybe<StringFilter>;
+};
+
+export type VideoSectionBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  sectionHeading?: Maybe<SortOrder>;
+};
+
 export type Videos = Document & {
   __typename?: 'Videos';
   /** Document ID */
@@ -3293,6 +3313,7 @@ export type Videos = Document & {
   mainYoutubeUrl?: Maybe<Scalars['String']>;
   mainYoutubeTitle?: Maybe<Scalars['String']>;
   videoContentBlocks?: Maybe<Array<Maybe<VideoBlock>>>;
+  videoSectionBlocks?: Maybe<Array<Maybe<VideoSectionBlock>>>;
   callToAction?: Maybe<CtaBlock>;
 };
 
@@ -4484,6 +4505,15 @@ export type VideoItemFragment = (
   )> }
 );
 
+export type VideoSectionItemFragment = (
+  { __typename?: 'VideoSectionBlock' }
+  & Pick<VideoSectionBlock, 'sectionHeading'>
+  & { videoContentBlocks?: Maybe<Array<Maybe<(
+    { __typename?: 'VideoBlock' }
+    & VideoItemFragment
+  )>>> }
+);
+
 export type VideosPageFragment = (
   { __typename?: 'Videos' }
   & Pick<Videos, 'title' | 'subtitleRaw' | 'mainYoutubeUrl' | 'mainYoutubeTitle'>
@@ -4493,6 +4523,9 @@ export type VideosPageFragment = (
   )>, videoContentBlocks?: Maybe<Array<Maybe<(
     { __typename?: 'VideoBlock' }
     & VideoItemFragment
+  )>>>, videoSectionBlocks?: Maybe<Array<Maybe<(
+    { __typename?: 'VideoSectionBlock' }
+    & VideoSectionItemFragment
   )>>>, callToAction?: Maybe<(
     { __typename?: 'CtaBlock' }
     & Pick<CtaBlock, 'caption' | 'signup' | 'contact' | 'contactEngineer' | 'contactEngineerDark'>
@@ -5233,6 +5266,14 @@ export const VideoItemFragmentDoc = gql`
   description
 }
     ${ImageFragmentDoc}`;
+export const VideoSectionItemFragmentDoc = gql`
+    fragment VideoSectionItem on VideoSectionBlock {
+  sectionHeading
+  videoContentBlocks {
+    ...VideoItem
+  }
+}
+    ${VideoItemFragmentDoc}`;
 export const VideosPageFragmentDoc = gql`
     fragment VideosPage on Videos {
   metadata {
@@ -5246,6 +5287,9 @@ export const VideosPageFragmentDoc = gql`
   videoContentBlocks {
     ...VideoItem
   }
+  videoSectionBlocks {
+    ...VideoSectionItem
+  }
   callToAction {
     caption
     signup
@@ -5254,7 +5298,8 @@ export const VideosPageFragmentDoc = gql`
     contactEngineerDark
   }
 }
-    ${VideoItemFragmentDoc}`;
+    ${VideoItemFragmentDoc}
+${VideoSectionItemFragmentDoc}`;
 export const AboutPageDocument = gql`
     query AboutPage {
   allAbout(sort: {_createdAt: DESC}, limit: 1) {
