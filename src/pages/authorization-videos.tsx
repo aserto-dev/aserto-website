@@ -49,8 +49,8 @@ const Videos = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       </section>
       {page.videoSectionBlocks &&
         page.videoSectionBlocks.length > 0 &&
-        page.videoSectionBlocks.map((s) => (
-          <>
+        page.videoSectionBlocks.map((s, i) => (
+          <div key={i}>
             <div className="text-center">
               <SignupButton />
             </div>
@@ -71,7 +71,7 @@ const Videos = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </>
               )}
             </section>
-          </>
+          </div>
         ))}
       <Lottie {...ctaOptions({ ...page.callToAction })} />
     </PageLayout>
