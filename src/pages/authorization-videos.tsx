@@ -65,7 +65,13 @@ const Videos = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
                   </h3>
                   <div className="grid gap-16 mx-auto mt-24 lg:grid-cols-3">
                     {s.videoContentBlocks.map((v, i) => {
-                      return <VideoItem data={v || {}} linkText={s.linkText || ''} key={i} />
+                      return (
+                        <VideoItem
+                          data={v || {}}
+                          linkText={s.linkText || ''}
+                          key={i}
+                        />
+                      )
                     })}
                   </div>
                 </>
