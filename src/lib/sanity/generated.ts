@@ -3279,6 +3279,7 @@ export type VideoSectionBlock = {
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   sectionHeading?: Maybe<Scalars['String']>;
+  linkText?: Maybe<Scalars['String']>;
   videoContentBlocks?: Maybe<Array<Maybe<VideoBlock>>>;
 };
 
@@ -3286,12 +3287,14 @@ export type VideoSectionBlockFilter = {
   _key?: Maybe<StringFilter>;
   _type?: Maybe<StringFilter>;
   sectionHeading?: Maybe<StringFilter>;
+  linkText?: Maybe<StringFilter>;
 };
 
 export type VideoSectionBlockSorting = {
   _key?: Maybe<SortOrder>;
   _type?: Maybe<SortOrder>;
   sectionHeading?: Maybe<SortOrder>;
+  linkText?: Maybe<SortOrder>;
 };
 
 export type Videos = Document & {
@@ -4507,7 +4510,7 @@ export type VideoItemFragment = (
 
 export type VideoSectionItemFragment = (
   { __typename?: 'VideoSectionBlock' }
-  & Pick<VideoSectionBlock, 'sectionHeading'>
+  & Pick<VideoSectionBlock, 'sectionHeading' | 'linkText'>
   & { videoContentBlocks?: Maybe<Array<Maybe<(
     { __typename?: 'VideoBlock' }
     & VideoItemFragment
@@ -5269,6 +5272,7 @@ export const VideoItemFragmentDoc = gql`
 export const VideoSectionItemFragmentDoc = gql`
     fragment VideoSectionItem on VideoSectionBlock {
   sectionHeading
+  linkText
   videoContentBlocks {
     ...VideoItem
   }

@@ -3,9 +3,10 @@ import Image from 'components/primitives/image'
 
 type Props = {
   data: VideoBlock
+  linkText?: string
 }
 
-const VideoItem = ({ data }: Props) => {
+const VideoItem = ({ data, linkText }: Props) => {
   return (
     <a target="_blank" href={data.url || ''} rel="noopener noreferrer">
       <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
@@ -35,7 +36,7 @@ const VideoItem = ({ data }: Props) => {
             </h4>
           </div>
           <div className="text-aserto-lochivar-accent-40 mt-10 text-xl">
-            <a className="hover:underline">Watch video</a>
+            <a className="hover:underline">{linkText ?? 'Watch video'}</a>
           </div>
         </div>
       </div>
