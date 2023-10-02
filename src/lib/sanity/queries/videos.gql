@@ -11,6 +11,7 @@ fragment VideoItem on VideoBlock {
 
 fragment VideoSectionItem on VideoSectionBlock {
   sectionHeading
+  linkText
   videoContentBlocks {
     ...VideoItem
   }
