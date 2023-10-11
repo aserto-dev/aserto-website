@@ -43,7 +43,7 @@ const Posts = ({ posts }: { posts: PostMetaFragment[] }) => {
       {canShowMore && (
         <div className="mt-24 text-center">
           <Button variant="secondary" size="md" onClick={handleShowMore}>
-            More
+            Morexxxxx
           </Button>
         </div>
       )}

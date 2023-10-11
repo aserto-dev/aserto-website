@@ -16,8 +16,8 @@ type Props = {
 const PostComponent = ({ post }: Props) => {
   const authors = post.authors || []
   return (
-    <div className="flex">
-      <div className="w-4/5 relative pt-12 maxxl:pt-12 lg:pl-32 md:pt-12 mb-52">
+    <div className="flex maxsm:flex-col">
+      <div className="w-4/5 relative pt-12 maxxl:pt-12 lg:pl-32 md:pt-12 mb-4 maxsm:w-full">
         <div className="lg:w-10/12">
           <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 mx-auto">
             {post.title}
@@ -26,7 +26,7 @@ const PostComponent = ({ post }: Props) => {
             <p className="text-aserto-grey-90 font-roboto ml-auto text-sm">
               {formatPostDate(post.publishedAt)}
             </p>
-            <div className=" left-0 flex flex-wrap w-full bottom-14 font-roboto ">
+            <div className="left-0 flex flex-wrap w-full bottom-14 font-roboto ">
               {post.categories?.map((c, i, { length }) => {
                 const isLast = i === length - 1
                 return (
@@ -68,8 +68,8 @@ const PostComponent = ({ post }: Props) => {
           className={clsx('w-full text-justify mt-8', s.body)}
         />
       </div>
-      <div className="w-1/5  ml-3 flow">
-        <div className="pt-12 pl-9 flex flex-row flex-wrap flex-start gap-10 justify-between">
+      <div className="w-1/5  ml-3 flow maxsm:w-4/5">
+        <div className="pt-12 pl-9 flex flex-row flex-wrap flex-start gap-10 justify-between  maxsm:pl-0">
           {authors.map(
             (a) =>
               !!a?.author && (
@@ -80,9 +80,29 @@ const PostComponent = ({ post }: Props) => {
               )
           )}
         </div>
-        <Button className="mt-24 ml-8" size="sm">
-          Subscribe
-        </Button>
+        <div className="flex flex-col mt-24 ml-8 gap-6 mb-4">
+          <Button size="sm">
+            <img
+              src="/images/about/envelope.svg"
+              className="cursor-pointer inline mr-2"
+            />
+            Subscribe
+          </Button>
+          <Button size="sm">
+            <img
+              src="/images/about/slack.svg"
+              className="cursor-pointer inline mr-2"
+            />
+            Join the discussion
+          </Button>
+          <Button size="sm">
+            <img
+              src="/images/about/call.svg"
+              className="cursor-pointer inline mr-2"
+            />
+            Talk to an eng
+          </Button>
+        </div>
       </div>
     </div>
   )

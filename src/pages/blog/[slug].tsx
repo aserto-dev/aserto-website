@@ -13,25 +13,28 @@ type Props = {
 const BlogPost = ({ post }: Props) => {
   if (!post) return <Error statusCode={404} />
   return (
-    <PageLayout
-      contain
-      footer="regular"
-      headProps={{
-        title:
-          post.metadata?.title ??
-          `${String(post?.title || '') as string} - Blog - Aserto`,
-        description:
-          post.metadata?.description ??
-          `${String(post?.title || '') as string}`,
-        image: String(post?.mainImage?.asset?.url)
-      }}
-      newsletter={{
-        title: 'Sign up for our newsletter',
-        description: 'Get the latest company updates and technology articles'
-      }}
-    >
-      <Post post={post} />
-    </PageLayout>
+    <div>
+      <PageLayout
+        isBlog={true}
+        contain
+        footer="regular"
+        headProps={{
+          title:
+            post.metadata?.title ??
+            `${String(post?.title || '') as string} - Blog - Aserto`,
+          description:
+            post.metadata?.description ??
+            `${String(post?.title || '') as string}`,
+          image: String(post?.mainImage?.asset?.url)
+        }}
+        newsletter={{
+          title: 'Sign up for our newsletter',
+          description: 'Get the latest company updates and technology articles'
+        }}
+      >
+        <Post post={post} />
+      </PageLayout>
+    </div>
   )
 }
 
