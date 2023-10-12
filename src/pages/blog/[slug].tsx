@@ -2,15 +2,19 @@
 import PageLayout from 'components/layout/page'
 import Post from 'components/sections/blog/blog-post'
 import cms from 'lib/sanity'
-import { GetStaticProps } from 'next'
-import { PostFragment } from 'lib/sanity/generated'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { PostFragment, PostMetaFragment } from 'lib/sanity/generated'
 import Error from 'next/error'
 
 type Props = {
   post: PostFragment
+  restPosts: PostMetaFragment[]
 }
 
-const BlogPost = ({ post }: Props) => {
+const BlogPost = ({
+  post,
+  restPosts
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!post) return <Error statusCode={404} />
   return (
     <div>
@@ -29,7 +33,9 @@ const BlogPost = ({ post }: Props) => {
         }}
         newsletter={{
           title: 'Sign up for our newsletter',
-          description: 'Get the latest company updates and technology articles'
+          description: 'Get the latest company updates and technology articles',
+          isBlog: true,
+          posts: restPosts
         }}
       >
         <Post post={post} />
@@ -54,9 +60,12 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const {
     allPost: [post]
   } = await cms().BlogPost({ slug })
+  const { allPost: restPosts } = await cms().BlogIndex({
+    now: new Date(Date.now()).toISOString()
+  })
 
   return {
-    props: { post }
+    props: { post, restPosts }
   }
 }
 
