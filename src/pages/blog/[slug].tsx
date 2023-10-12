@@ -19,7 +19,6 @@ const BlogPost = ({
   return (
     <div>
       <PageLayout
-        isBlog={true}
         contain
         footer="regular"
         headProps={{
@@ -34,8 +33,8 @@ const BlogPost = ({
         newsletter={{
           title: 'Sign up for our newsletter',
           description: 'Get the latest company updates and technology articles',
-          isBlog: true,
-          posts: restPosts
+          posts: restPosts,
+          post: post
         }}
       >
         <Post post={post} />

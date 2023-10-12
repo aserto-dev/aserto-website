@@ -34,7 +34,6 @@ interface Props {
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   newsletter?: NewsletterProps
   footer?: 'regular' | 'slim'
-  isBlog?: boolean
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -60,7 +59,6 @@ const PageLayout = ({
   children,
   contain,
   headProps,
-  isBlog,
   newsletter,
   footer
 }: Props) => {
@@ -80,7 +78,7 @@ const PageLayout = ({
             >
               {contain ? <Container>{children}</Container> : children}
             </motion.main>
-            {newsletter && <Newsletter isBlog={isBlog} {...newsletter} />}
+            {newsletter && <Newsletter {...newsletter} />}
           </div>
         </div>
         {!!footer && (footer === 'regular' ? <Footer /> : <SlimFooter />)}
