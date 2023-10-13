@@ -25,10 +25,7 @@ const Posts = ({ posts }: { posts: PostMetaFragment[] }) => {
 
   return (
     <section className="pb-28">
-      <div
-        className="color:red grid gap-8 mx-auto lg:grid-cols-3"
-        ref={section}
-      >
+      <div className="grid gap-8 mx-auto lg:grid-cols-3" ref={section}>
         {posts.map((post, index) => {
           return index < shownPages * pageSize ? (
             <BlogItem data={post} key={post._id} />

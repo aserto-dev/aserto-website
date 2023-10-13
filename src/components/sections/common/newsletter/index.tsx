@@ -17,7 +17,7 @@ export type NewsletterProps = {
   title: string
   description: string
   posts?: PostMetaFragment[]
-  post: PostFragment
+  post?: PostFragment
 }
 const NewsletterSection = ({
   title,
@@ -29,13 +29,13 @@ const NewsletterSection = ({
   const postCategories = post?.categories || []
   const relatedContent =
     posts
-      ?.filter((p) => p._id !== post._id)
+      ?.filter((p) => p._id !== post?._id)
       .filter((p) =>
         p.categories?.map((c) => c?.title).includes(postCategories[0]?.title)
       )
       .sort((a: PostMetaFragment) => {
         return (
-          new Date(post.publishedAt).getTime() -
+          new Date(post?.publishedAt).getTime() -
           new Date(a.publishedAt).getTime()
         )
       })
