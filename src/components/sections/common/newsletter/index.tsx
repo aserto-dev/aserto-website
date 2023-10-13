@@ -68,7 +68,7 @@ const NewsletterSection = ({
         </div>
         {posts ? (
           <div className="w-full flex flex-col">
-            <h1 className="text-2xl ml-2 text-aserto-grey-90 pt-4">
+            <h1 className="text-2xl ml-2 text-aserto-grey-90 pt-4 pb-4">
               Related Content
             </h1>
             <RelatedContent posts={relatedContent}></RelatedContent>

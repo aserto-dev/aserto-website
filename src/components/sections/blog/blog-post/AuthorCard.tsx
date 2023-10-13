@@ -16,23 +16,25 @@ const AuthorCard = ({ author }: { author: Author }) => {
             objectFit="cover"
           />
         </figure>
-        <div className="ml-1 mt-6">
-          <p className="text-aserto-grey-90 font-roboto hover:underline">
-            {author?.name}
-          </p>
-          <p className="text-aserto-grey-90 font-roboto">{author?.position}</p>
-        </div>
-        <div className="flex gap-0.5 maxsm: ml-1">
-          <Image
-            src="/images/about/linkedin_blog.svg"
-            className="cursor-pointer"
-            layout="native"
-          />
-          <Image
-            src="/images/about/twitter.svg"
-            className="cursor-pointer"
-            layout="native"
-          />
+        <div className="flex flex-col ml-2">
+          <div className="ml-1 mt-3">
+            <p className="text-aserto-grey-90 font-roboto">{author?.name}</p>
+            <p className="text-aserto-grey-90 font-roboto">
+              {author?.position}
+            </p>
+          </div>
+          <div className="flex gap-0.5 maxsm: ml-1">
+            <Image
+              src="/images/about/linkedin_blog.svg"
+              className="cursor-pointer"
+              layout="native"
+            />
+            <Image
+              src="/images/about/twitter.svg"
+              className="cursor-pointer"
+              layout="native"
+            />
+          </div>
         </div>
       </div>
     </div>

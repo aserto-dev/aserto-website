@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BlockContent } from 'components/primitives/block-content'
 import { PostFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
@@ -8,6 +8,9 @@ import clsx from 'clsx'
 import AuthorCard from './AuthorCard'
 import Link from 'components/primitives/link'
 import Button from 'components/primitives/button'
+import { NameToFormId } from 'lib/hubspot/HubspotIds'
+import SignupContainer from 'components/sections/signup/SignupContainer'
+import HubspotForm from 'lib/hubspot/HubspotForm'
 
 type Props = {
   post: PostFragment
@@ -15,96 +18,115 @@ type Props = {
 
 const PostComponent = ({ post }: Props) => {
   const authors = post.authors || []
+  const [showBlogModal, setShowBlogModal] = useState(false)
+
   return (
-    <div className="flex maxsm:flex-col">
-      <div className="w-4/5 relative pt-12 maxxl:pt-12 lg:pl-32 md:pt-12 mb-4 maxsm:w-full">
-        <div className="lg:w-10/12">
-          <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 mx-auto">
-            {post.title}
-          </h1>
-          <div className="flex-col mt-2">
-            <p className="text-aserto-grey-90 font-roboto ml-auto text-sm">
-              {formatPostDate(post.publishedAt)}
-            </p>
-            <div className="left-0 flex flex-wrap w-full bottom-14 font-roboto ">
-              {post.categories?.map((c, i, { length }) => {
-                const isLast = i === length - 1
-                return (
-                  <Link
-                    key={i}
-                    className="text-aserto-lochivar-accent-40 hover:underline"
-                    href=""
-                  >
-                    {c?.title}
-                    {isLast ? (
-                      ''
-                    ) : (
-                      <span className="select-none">
-                        &nbsp;&nbsp;|&nbsp;&nbsp;
-                      </span>
-                    )}
-                  </Link>
-                )
-              })}
+    <>
+      {showBlogModal && (
+        <SignupContainer
+          closeModal={() => setShowBlogModal(false)}
+          background={false}
+        >
+          <>
+            <h4 className="text-[18px] text-aserto-grey-90 text-center font-semibold my-4">
+              Sign up for our newsletter
+            </h4>
+            <HubspotForm formId={NameToFormId.newsletter} />
+          </>
+        </SignupContainer>
+      )}
+      <div className="flex maxsm:flex-col">
+        <div className="w-4/5 relative pt-12 maxxl:pt-12 lg:pl-32 md:pt-12 mb-4 maxsm:w-full">
+          <div className="lg:w-10/12">
+            <h1 className="text-4xl leading-none tracking-tight text-aserto-grey-90 mx-auto">
+              {post.title}
+            </h1>
+            <div className="flex-col mt-2">
+              <p className="text-aserto-grey-90 font-roboto ml-auto text-sm">
+                {formatPostDate(post.publishedAt)}
+              </p>
+              <div className="left-0 flex flex-wrap w-full bottom-14 font-roboto ">
+                {post.categories?.map((c, i, { length }) => {
+                  const isLast = i === length - 1
+                  return (
+                    <Link
+                      key={i}
+                      className="text-aserto-lochivar-accent-40 hover:underline"
+                      href=""
+                    >
+                      {c?.title}
+                      {isLast ? (
+                        ''
+                      ) : (
+                        <span className="select-none">
+                          &nbsp;&nbsp;|&nbsp;&nbsp;
+                        </span>
+                      )}
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
           </div>
-        </div>
-        <figure className="w-full pt-8">
-          <Image
-            alt={post.mainImage?.alt ?? 'Post cover'}
-            height="500"
-            objectFit="cover"
-            src={post.mainImage?.asset?.url ?? '/404'}
-            width="1216"
+          <figure className="w-full pt-8">
+            <Image
+              alt={post.mainImage?.alt ?? 'Post cover'}
+              height="500"
+              objectFit="cover"
+              src={post.mainImage?.asset?.url ?? '/404'}
+              width="1216"
+            />
+            {post.mainImage?.captionRaw && (
+              <figcaption className="mt-2 text-sm text-aserto-grey-70">
+                {post.mainImage.captionRaw}
+              </figcaption>
+            )}
+          </figure>
+          <BlockContent
+            blocks={post.bodyRaw}
+            className={clsx('w-full text-justify mt-8', s.body)}
           />
-          {post.mainImage?.captionRaw && (
-            <figcaption className="mt-2 text-sm text-aserto-grey-70">
-              {post.mainImage.captionRaw}
-            </figcaption>
-          )}
-        </figure>
-        <BlockContent
-          blocks={post.bodyRaw}
-          className={clsx('w-full text-justify mt-8', s.body)}
-        />
-      </div>
-      <div className="w-1/5  ml-3 flow maxsm:w-4/5">
-        <div className="pt-12 pl-9 flex flex-row flex-wrap flex-start gap-10 justify-between  maxsm:pl-0">
-          {authors.map(
-            (a) =>
-              !!a?.author && (
-                <AuthorCard
-                  key={a.author.slug?.current || 'undefined'}
-                  author={a.author}
-                />
-              )
-          )}
         </div>
-        <div className="flex flex-col mt-24 ml-8 gap-6 mb-4">
-          <Button size="sm">
-            <img
-              src="/images/about/envelope.svg"
-              className="cursor-pointer inline mr-2"
-            />
-            Subscribe
-          </Button>
-          <Button size="sm">
-            <img
-              src="/images/about/slack.svg"
-              className="cursor-pointer inline mr-2"
-            />
-            Join the discussion
-          </Button>
-          <Button size="sm">
-            <img
-              src="/images/about/call.svg"
-              className="cursor-pointer inline mr-2"
-            />
-            Talk to an eng
-          </Button>
+        <div className="w-1/5  ml-3 flow maxsm:w-4/5">
+          <div className="pt-12 pl-9 flex flex-row flex-wrap flex-start gap-10 justify-between  maxsm:pl-0">
+            {authors.map(
+              (a) =>
+                !!a?.author && (
+                  <AuthorCard
+                    key={a.author.slug?.current || 'undefined'}
+                    author={a.author}
+                  />
+                )
+            )}
+          </div>
+          <div className="flex flex-col mt-24 ml-8 gap-6 mb-4">
+            <Button size="sm" onClick={() => setShowBlogModal(true)}>
+              <img
+                src="/images/about/envelope.svg"
+                className="cursor-pointer inline mr-2 mb-0.5"
+              />
+              Subscribe
+            </Button>
+            <Button size="sm">
+              <img
+                src="/images/about/slack.svg"
+                className="cursor-pointer inline mr-2"
+              />
+              <Link href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg">
+                Join the discussion
+              </Link>
+            </Button>
+            <Button size="sm">
+              <img
+                src="/images/about/call.svg"
+                className="cursor-pointer inline mr-2"
+              />
+              <Link href="/contact-engineer"> Talk to an eng</Link>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
