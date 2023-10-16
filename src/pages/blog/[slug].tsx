@@ -8,12 +8,12 @@ import Error from 'next/error'
 
 type Props = {
   post: PostFragment
-  restPosts: PostMetaFragment[]
+  allPosts: PostMetaFragment[]
 }
 
 const BlogPost = ({
   post,
-  restPosts
+  allPosts
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!post) return <Error statusCode={404} />
   return (
@@ -33,8 +33,7 @@ const BlogPost = ({
         newsletter={{
           title: 'Sign up for our newsletter',
           description: 'Get the latest company updates and technology articles',
-          posts: restPosts,
-          post: post
+          posts: allPosts
         }}
       >
         <Post post={post} />
@@ -59,12 +58,25 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const {
     allPost: [post]
   } = await cms().BlogPost({ slug })
-  const { allPost: restPosts } = await cms().BlogIndex({
+  const { allPost: allPosts } = await cms().BlogIndex({
     now: new Date(Date.now()).toISOString()
   })
-
+  const postCategories = post?.categories || []
+  const posts =
+    allPosts
+      ?.filter((p) => p._id !== post?._id)
+      .filter((p) =>
+        p.categories?.map((c) => c?.title).includes(postCategories[0]?.title)
+      )
+      .sort((a: PostMetaFragment) => {
+        return (
+          new Date(post?.publishedAt).getTime() -
+          new Date(a.publishedAt).getTime()
+        )
+      })
+      .slice(0, 3) || []
   return {
-    props: { post, restPosts }
+    props: { post, allPosts: posts }
   }
 }
 

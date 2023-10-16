@@ -130,6 +130,7 @@ module.exports = {
         sxl: '1300px',
         maxxl: { max: '1279px' },
         maxlg: { max: '1023px' },
+        maxl: { max: '916px' },
         maxmd: { max: '767px' },
         maxsm: { max: '639px' }
       },

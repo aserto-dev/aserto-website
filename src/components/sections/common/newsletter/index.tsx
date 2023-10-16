@@ -10,40 +10,23 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 // Styles
 import s from './newsletter.module.css'
 
-import { PostFragment, PostMetaFragment } from 'lib/sanity/generated'
+import { PostMetaFragment } from 'lib/sanity/generated'
 import RelatedContent from '../related_content/related-content'
 
 export type NewsletterProps = {
   title: string
   description: string
   posts?: PostMetaFragment[]
-  post?: PostFragment
 }
-const NewsletterSection = ({
-  title,
-  description,
-  posts,
-  post
-}: NewsletterProps) => {
+const NewsletterSection = ({ title, description, posts }: NewsletterProps) => {
   const [section] = useFadeInBottom()
-  const postCategories = post?.categories || []
-  const relatedContent =
-    posts
-      ?.filter((p) => p._id !== post?._id)
-      .filter((p) =>
-        p.categories?.map((c) => c?.title).includes(postCategories[0]?.title)
-      )
-      .sort((a: PostMetaFragment) => {
-        return (
-          new Date(post?.publishedAt).getTime() -
-          new Date(a.publishedAt).getTime()
-        )
-      })
-      .slice(0, 3) || []
-
   return (
     <section
-      className="relative z-10 mb-32 bg-aserto-black"
+      className={
+        posts
+          ? 'relative z-10  bg-aserto-black'
+          : 'relative z-10 mb-32 bg-aserto-black'
+      }
       id="sign-up"
       ref={section}
     >
@@ -71,7 +54,7 @@ const NewsletterSection = ({
             <h1 className="text-2xl ml-2 text-aserto-grey-90 pt-4 pb-4">
               Related Content
             </h1>
-            <RelatedContent posts={relatedContent}></RelatedContent>
+            <RelatedContent posts={posts}></RelatedContent>
             <div
               className="grid gap-8 mx-auto mt-20 lg:grid-cols-3"
               ref={section}
