@@ -8,7 +8,6 @@ import {
 } from 'lib/sanity/generated'
 
 // Primitives
-import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
 
 //Components
@@ -202,15 +201,13 @@ const Header = () => {
             <span className="sr-only">Slack</span>
             <IconSlack />
           </Link>
-          <Button
-            variant="primary"
-            size="sm"
-            as="a"
-            className="ml-8 inline-flex items-center cursor-pointer"
-            onClick={() => setShowSignupModal(true)}
+
+          <Link
+            className="pl-6 ml-8 text-base font-medium font-roboto text-aserto-grey-70"
+            href={asertoConsoleRootUrl + '?screen_hint=signup'}
           >
             Sign up
-          </Button>
+          </Link>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
