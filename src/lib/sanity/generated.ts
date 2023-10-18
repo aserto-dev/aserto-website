@@ -128,6 +128,8 @@ export type Author = Document & {
   position?: Maybe<Scalars['String']>;
   slug?: Maybe<Slug>;
   image?: Maybe<MainImage>;
+  linkedin?: Maybe<Scalars['String']>;
+  twitter?: Maybe<Scalars['String']>;
   bioRaw?: Maybe<Scalars['JSON']>;
 };
 
@@ -145,6 +147,8 @@ export type AuthorFilter = {
   position?: Maybe<StringFilter>;
   slug?: Maybe<SlugFilter>;
   image?: Maybe<MainImageFilter>;
+  linkedin?: Maybe<StringFilter>;
+  twitter?: Maybe<StringFilter>;
 };
 
 export type AuthorReference = {
@@ -177,6 +181,8 @@ export type AuthorSorting = {
   position?: Maybe<SortOrder>;
   slug?: Maybe<SlugSorting>;
   image?: Maybe<MainImageSorting>;
+  linkedin?: Maybe<SortOrder>;
+  twitter?: Maybe<SortOrder>;
 };
 
 export type Benefits = Document & {

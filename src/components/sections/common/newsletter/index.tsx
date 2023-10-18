@@ -11,7 +11,6 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 import s from './newsletter.module.css'
 
 import { PostMetaFragment } from 'lib/sanity/generated'
-import RelatedContent from '../related_content/related-content'
 
 export type NewsletterProps = {
   title: string
@@ -49,20 +48,6 @@ const NewsletterSection = ({ title, description, posts }: NewsletterProps) => {
             <HubspotForm formId="0ba34fad-afcf-4dde-8b51-b73c32c9595c" />
           </div>
         </div>
-        {posts ? (
-          <div className="w-full flex flex-col">
-            <h1 className="text-2xl ml-2 text-aserto-grey-90 pt-4 pb-4">
-              Related Content
-            </h1>
-            <RelatedContent posts={posts}></RelatedContent>
-            <div
-              className="grid gap-8 mx-auto mt-20 lg:grid-cols-3"
-              ref={section}
-            ></div>
-          </div>
-        ) : (
-          <></>
-        )}
       </Container>
     </section>
   )

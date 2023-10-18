@@ -122,6 +122,8 @@ module.exports = {
         container: '78rem'
       },
       spacing: {
+        192: '48rem',
+        38: '10.7rem',
         14.25: '3.625rem',
         14.5: '3.75rem',
         16.5: '4.5rem'
@@ -129,8 +131,7 @@ module.exports = {
       screens: {
         sxl: '1300px',
         maxxl: { max: '1279px' },
-        maxlg: { max: '1023px' },
-        maxl: { max: '916px' },
+        maxlg: { max: '1024px' },
         maxmd: { max: '767px' },
         maxsm: { max: '639px' }
       },

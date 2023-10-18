@@ -14,7 +14,7 @@ const RelatedContent = ({
 
   return (
     <div>
-      <Posts posts={restPosts} />
+      <Posts isBlog={true} posts={restPosts} />
     </div>
   )
 }

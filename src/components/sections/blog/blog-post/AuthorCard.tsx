@@ -23,17 +23,21 @@ const AuthorCard = ({ author }: { author: Author }) => {
               {author?.position}
             </p>
           </div>
-          <div className="flex gap-0.5 maxsm: ml-1">
-            <Image
-              src="/images/about/linkedin_blog.svg"
-              className="cursor-pointer"
-              layout="native"
-            />
-            <Image
-              src="/images/about/twitter.svg"
-              className="cursor-pointer"
-              layout="native"
-            />
+          <div className="flex gap-0.5 ml-1">
+            {!author?.linkedin && (
+              <Image
+                src="/images/about/linkedin_blog.svg"
+                className="cursor-pointer"
+                layout="native"
+              />
+            )}
+            {!author?.twitter && (
+              <Image
+                src="/images/about/twitter.svg"
+                className="cursor-pointer"
+                layout="native"
+              />
+            )}
           </div>
         </div>
       </div>

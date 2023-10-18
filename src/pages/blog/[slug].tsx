@@ -5,6 +5,9 @@ import cms from 'lib/sanity'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostFragment, PostMetaFragment } from 'lib/sanity/generated'
 import Error from 'next/error'
+import RelatedContent from 'components/sections/common/related_content/related-content'
+import { useFadeInBottom } from 'hooks/use-gsap'
+import StayInformed from 'components/sections/blog/blog-post/StayInformed'
 
 type Props = {
   post: PostFragment
@@ -15,6 +18,8 @@ const BlogPost = ({
   post,
   allPosts
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [section] = useFadeInBottom()
+
   if (!post) return <Error statusCode={404} />
   return (
     <div>
@@ -37,6 +42,23 @@ const BlogPost = ({
         }}
       >
         <Post post={post} />
+        {allPosts ? (
+          <div className="w-full flex flex-col">
+            <h1 className="text-2xl ml-2 text-aserto-grey-90 mt-8 pb-4">
+              Related Content
+            </h1>
+            <RelatedContent posts={allPosts}></RelatedContent>
+            <div
+              className="grid gap-8 mx-auto mt-20 maxlg:mt-0 lg:grid-cols-3"
+              ref={section}
+            ></div>
+          </div>
+        ) : (
+          <></>
+        )}
+        <div className="lg:hidden">
+          <StayInformed />
+        </div>
       </PageLayout>
     </div>
   )
