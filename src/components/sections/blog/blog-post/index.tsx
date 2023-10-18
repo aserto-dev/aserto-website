@@ -77,7 +77,7 @@ const PostComponent = ({ post }: Props) => {
             className={clsx('w-full mt-8', s.body)}
           />
         </div>
-        <div className="maxlg:border-none border-r border-gray-700"></div>
+        <div className="w-1/12 maxlg:border-none maxlg:hidden border-r border-gray-700"></div>
         <header className="w-1/5 h-full flow  sticky top-38 maxlg:hidden">
           <div className="pl-9 flex flex-row flex-wrap flex-start gap-10 justify-between  maxsm:pl-0">
             {authors.map(

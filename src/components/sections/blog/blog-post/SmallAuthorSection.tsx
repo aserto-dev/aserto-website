@@ -22,7 +22,7 @@ const SmallAuthorCardSection = ({ author }: { author: Author }) => {
             </p>
           </div>
           <div className="flex gap-0.5 ml-1">
-            {!author?.linkedin && (
+            {author?.linkedin && (
               <Image
                 width="16"
                 height="16"
@@ -31,7 +31,7 @@ const SmallAuthorCardSection = ({ author }: { author: Author }) => {
                 layout="native"
               />
             )}
-            {!author?.twitter && (
+            {author?.twitter && (
               <Image
                 width="16"
                 height="16"
