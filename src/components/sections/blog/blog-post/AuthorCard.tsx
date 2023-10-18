@@ -24,14 +24,14 @@ const AuthorCard = ({ author }: { author: Author }) => {
             </p>
           </div>
           <div className="flex gap-0.5 ml-1">
-            {!author?.linkedin && (
+            {author?.linkedin && (
               <Image
                 src="/images/about/linkedin_blog.svg"
                 className="cursor-pointer"
                 layout="native"
               />
             )}
-            {!author?.twitter && (
+            {author?.twitter && (
               <Image
                 src="/images/about/twitter.svg"
                 className="cursor-pointer"
