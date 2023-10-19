@@ -24,6 +24,7 @@ import IconSlack from 'icons/slack.svg'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
+import Button from 'components/primitives/button'
 
 const { solutions } = props as unknown as {
   resources: ResourceFragment[]
@@ -201,13 +202,15 @@ const Header = () => {
             <span className="sr-only">Slack</span>
             <IconSlack />
           </Link>
-
-          <Link
-            className="pl-6 ml-8 text-base font-medium font-roboto text-aserto-grey-70"
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
             href={asertoConsoleRootUrl + '/#signup'}
+            className="ml-8 font-medium inline-flex items-center cursor-pointer"
           >
             Sign up
-          </Link>
+          </Button>
           <Link
             className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
             href={asertoConsoleRootUrl}
