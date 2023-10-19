@@ -144,6 +144,9 @@ module.exports = {
         benefitsCta: 'linear-gradient(0, #23696C 0%, #121212 80%)',
         homepageGlow:
           'radial-gradient(50% 50% at 50% 50%, rgba(62, 202, 207, 0.8) 0%, rgba(62, 202, 207, 0) 100%)',
+        homepageHero: `radial-gradient(117.01% 117.01% at 50% -5.67%, #121212 0%, #121212 76.56%, 
+          rgba(0, 125, 193, 0.6) 85.42%, rgba(39, 127, 130, 0.6) 100%)`,
+        homepageTitle: 'linear-gradient(90deg, #277F82 3.85%, #007DC1 80.04%)',
         featureHero:
           'linear-gradient(180deg, #2F9195 0%, #183334 20%, #121212 80%)',
         featureCta: 'linear-gradient(0, #23696C 0%, #121212 25%)',
