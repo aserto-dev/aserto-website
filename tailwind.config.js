@@ -116,7 +116,9 @@ module.exports = {
             'accent-30': '#844AFF',
             'accent-40': '#A77DFF'
           }
-        }
+        },
+        tealGradient:
+          'linear-gradient(123.65deg, #048A8F 2.56%, #376EBF 96.23%)'
       },
       maxWidth: {
         container: '78rem'

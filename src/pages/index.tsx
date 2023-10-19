@@ -14,6 +14,7 @@ import Intro from 'components/sections/homepage/intro'
 import Problem from 'components/sections/homepage/problem-statement'
 import CallToAction from 'components/sections/homepage/call-to-action'
 import { SectionBlockFragment } from 'lib/sanity/generated'
+import Animations from 'components/sections/homepage/animations'
 
 const HomePage = ({
   post,
@@ -41,6 +42,7 @@ const HomePage = ({
           page.tagline ?? 'The fastest path to enterprise-grade authorization.'
         }
       />
+      <Animations />
       <Intro page={page} />
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
