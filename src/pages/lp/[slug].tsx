@@ -8,7 +8,6 @@ import Error from 'next/error'
 
 import LandingPageSection from 'components/sections/landing-page'
 import Testimonials from 'components/sections/homepage/testimonials'
-import Signup from 'components/sections/signup'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 
 type Props = {
@@ -43,10 +42,6 @@ const LandingPage = ({ landingPage, testimonials }: Props) => {
         <div className="max-w-screen-xl mx-auto">
           <Testimonials testimonials={testimonials} />
         </div>
-      </div>
-
-      <div className="max-w-container mt-10 mx-auto p-5 max-w-[544px] bg-aserto-grey-10 rounded-[6px]">
-        <Signup />
       </div>
 
       <Lottie {...ctaOptions(landingPage.callToAction ?? {})} />
