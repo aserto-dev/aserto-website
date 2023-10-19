@@ -10,12 +10,12 @@
 [[redirects]]
 from = "/#testredirect"
 to = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-status = 200
+status = 301
 
 [[redirects]]
 from = "/anothertestredirect"
 to = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-status = 200
+status = 01
 
 [context.production]
   publish = "out"
