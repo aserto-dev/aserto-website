@@ -204,7 +204,7 @@ const Header = () => {
 
           <Link
             className="pl-6 ml-8 text-base font-medium font-roboto text-aserto-grey-70"
-            href={asertoConsoleRootUrl + '?screen_hint=signup'}
+            href={asertoConsoleRootUrl + '/#signup'}
           >
             Sign up
           </Link>
