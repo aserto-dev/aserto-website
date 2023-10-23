@@ -189,14 +189,14 @@ const Header = () => {
         </nav>
         <div className="hidden lg:block whitespace-nowrap items-center">
           <Link
-            className="ml-8 flex inline-flex align-middle"
+            className="ml-8 inline-flex align-middle"
             href="https://github.com/aserto-dev/topaz"
           >
             <span className="sr-only">GitHub</span>
             <IconGithub />
           </Link>
           <Link
-            className="ml-8 flex inline-flex align-middle"
+            className="ml-8 inline-flex align-middle"
             href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
           >
             <span className="sr-only">Slack</span>

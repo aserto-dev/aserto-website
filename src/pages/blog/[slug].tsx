@@ -22,7 +22,7 @@ const BlogPost = ({
 
   if (!post) return <Error statusCode={404} />
   return (
-    <div>
+    <div className="mx-auto">
       <PageLayout
         contain
         footer="regular"
@@ -42,22 +42,24 @@ const BlogPost = ({
         }}
       >
         <Post post={post} />
-        {allPosts ? (
-          <div className="w-full flex flex-col">
-            <h1 className="text-2xl ml-2 text-aserto-grey-90 mt-8 pb-4">
-              Related Content
-            </h1>
-            <RelatedContent posts={allPosts}></RelatedContent>
-            <div
-              className="grid gap-8 mx-auto mt-20 maxlg:mt-0 lg:grid-cols-3"
-              ref={section}
-            ></div>
-          </div>
-        ) : (
-          <></>
-        )}
-        <div className="lg:hidden">
-          <StayInformed />
+        <div className="w-full maxlg:w-11/12 mx-auto flex flex-col  mt-8 ">
+          {allPosts ? (
+            <>
+              <h1 className="text-2xl text-aserto-grey-90 mt-8 pb-4">
+                Related Content
+              </h1>
+              <RelatedContent posts={allPosts}></RelatedContent>
+              <div
+                className="grid gap-8 mx-auto mt-20 maxlg:mt-0 lg:grid-cols-3"
+                ref={section}
+              ></div>
+              <div className="lg:hidden ">
+                <StayInformed />
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </PageLayout>
     </div>

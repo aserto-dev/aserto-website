@@ -121,6 +121,9 @@ module.exports = {
       maxWidth: {
         container: '78rem'
       },
+      minWidth: {
+        container: '78rem'
+      },
       spacing: {
         192: '48rem',
         38: '10.7rem',
@@ -131,7 +134,7 @@ module.exports = {
       screens: {
         sxl: '1300px',
         maxxl: { max: '1279px' },
-        maxlg: { max: '1024px' },
+        maxlg: { max: '1023px' },
         maxmd: { max: '767px' },
         maxsm: { max: '639px' }
       },

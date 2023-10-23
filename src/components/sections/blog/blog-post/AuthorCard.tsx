@@ -5,7 +5,6 @@ import { Author } from 'lib/sanity/generated'
 const AuthorCard = ({ author }: { author: Author }) => {
   return (
     <div className="relative flex-col items-enter">
-      <h5 className="text-white text-md mb-3 font-roboto ">Author</h5>
       <div className="maxsm:flex ">
         <figure className="flex w-24 h-24 overflow-hidden rounded-full">
           <Image
@@ -16,22 +15,22 @@ const AuthorCard = ({ author }: { author: Author }) => {
             objectFit="cover"
           />
         </figure>
-        <div className="flex flex-col ml-2">
-          <div className="ml-1 mt-3">
+        <div className="flex flex-col">
+          <div className="mt-3">
             <p className="text-aserto-grey-90 font-roboto">{author?.name}</p>
             <p className="text-aserto-grey-90 font-roboto">
               {author?.position}
             </p>
           </div>
-          <div className="flex gap-0.5 ml-1">
-            {author?.linkedin && (
+          <div className="flex gap-1">
+            {!author?.linkedin && (
               <Image
                 src="/images/about/linkedin_blog.svg"
                 className="cursor-pointer"
                 layout="native"
               />
             )}
-            {author?.twitter && (
+            {!author?.twitter && (
               <Image
                 src="/images/about/twitter.svg"
                 className="cursor-pointer"
