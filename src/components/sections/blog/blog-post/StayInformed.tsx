@@ -37,7 +37,7 @@ const StayInformed = () => {
             Subscribe
           </Button>
 
-          <Button className=" w-full" size="sm" paddingContent={false}>
+          <Button className=" w-full" size="sm">
             <img
               src="/images/about/slack.svg"
               className="cursor-pointer inline mr-2"
