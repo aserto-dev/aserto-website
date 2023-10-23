@@ -10,22 +10,15 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 // Styles
 import s from './newsletter.module.css'
 
-import { PostMetaFragment } from 'lib/sanity/generated'
-
 export type NewsletterProps = {
   title: string
   description: string
-  posts?: PostMetaFragment[]
 }
-const NewsletterSection = ({ title, description, posts }: NewsletterProps) => {
+const NewsletterSection = ({ title, description }: NewsletterProps) => {
   const [section] = useFadeInBottom()
   return (
     <section
-      className={
-        posts
-          ? 'relative z-10  bg-aserto-black'
-          : 'relative z-10 mb-32 bg-aserto-black'
-      }
+      className="relative z-10 mb-32 bg-aserto-black"
       id="sign-up"
       ref={section}
     >
