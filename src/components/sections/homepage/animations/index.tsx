@@ -4,11 +4,19 @@ import Container from '../container'
 const Animations = () => {
   return (
     <Container className="sm:pt-20 sm:px-16 sm:pb-64 pb-56 pt-8 mb-32">
-      <div className="flex sm:flex-row flex-col gap-12">
-        <div className="w-[400px] h-[360px] rounded-[4px] border-2 border-tealGradient"></div>
-        <div className="w-[400px] h-[360px] rounded-[4px] border-2 border-tealGradient"></div>
-        <div className="w-[400px] h-[360px] rounded-[4px] border-2 border-tealGradient"></div>
+      <div className="flex md:flex-row flex-col gap-12">
+        <div className="rounded-[40px] bg-tealGradient p-1">
+          <div className="w-[400px] h-[360px] rounded-[40px] bg-aserto-black"></div>
+        </div>
+        <div className="rounded-[40px] bg-tealGradient p-1">
+          <div className="w-[400px] h-[360px] rounded-[40px] bg-aserto-black"></div>
+        </div>
+        <div className="rounded-[40px] bg-tealGradient p-1">
+          <div className="w-[400px] h-[360px] rounded-[40px] bg-aserto-black"></div>
+        </div>
       </div>
+
+      <hr className="p-1 my-28 bg-hrGradient border-t-0" />
 
       <div className="mt-20">
         <iframe
@@ -21,6 +29,8 @@ const Animations = () => {
           allowFullScreen
         ></iframe>
       </div>
+
+      <hr className="p-1 my-28 bg-hrGradient border-t-0" />
     </Container>
   )
 }

@@ -12,7 +12,7 @@ const Problem = ({ title, problems }: Props) => {
     <Container className="py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
       <h2 className="text-[36px] font-medium text-center">{title}</h2>
       <img
-        className="w-[640px] my-[45px] mx-auto"
+        className="w-[512px] my-[45px] mx-auto"
         src="images/homepage/wheel-man.svg"
         alt="Reinventing the wheel"
       />
@@ -25,6 +25,7 @@ const Problem = ({ title, problems }: Props) => {
           />
         ))}
       </div>
+      <hr className="p-[2px] my-8 bg-hrGradient border-t-0" />
     </Container>
   ) : (
     <div />

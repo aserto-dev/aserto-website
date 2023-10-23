@@ -28,6 +28,7 @@ const Intro = ({ page }: { page: any }) => {
           direction={i & 1 ? 'left' : 'right'}
         />
       ))}
+      <hr className="p-[2px] my-8 bg-hrGradient border-t-0" />
     </Container>
   )
 }

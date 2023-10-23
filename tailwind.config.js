@@ -116,9 +116,7 @@ module.exports = {
             'accent-30': '#844AFF',
             'accent-40': '#A77DFF'
           }
-        },
-        tealGradient:
-          'linear-gradient(123.65deg, #048A8F 2.56%, #376EBF 96.23%)'
+        }
       },
       maxWidth: {
         container: '78rem'
@@ -149,6 +147,8 @@ module.exports = {
         homepageHero: `radial-gradient(117.01% 117.01% at 50% -5.67%, #121212 0%, #121212 76.56%, 
           rgba(0, 125, 193, 0.6) 85.42%, rgba(39, 127, 130, 0.6) 100%)`,
         homepageTitle: 'linear-gradient(90deg, #277F82 3.85%, #007DC1 80.04%)',
+        hrGradient:
+          'linear-gradient(90deg, rgba(39, 127, 130, 0) 0%, #277F82 33.33%, #007DC1 66.67%, rgba(0, 125, 193, 0) 100%)',
         featureHero:
           'linear-gradient(180deg, #2F9195 0%, #183334 20%, #121212 80%)',
         featureCta: 'linear-gradient(0, #23696C 0%, #121212 25%)',
@@ -156,7 +156,9 @@ module.exports = {
         resourceHero:
           'linear-gradient(180deg, #2F9195 0%, #183334 40%, #121212 60%)',
         resourceIntro:
-          'linear-gradient(0, #2F9195 0%, #183334 40%, #121212 60%)'
+          'linear-gradient(0, #2F9195 0%, #183334 40%, #121212 60%)',
+        tealGradient:
+          'linear-gradient(123.65deg, #048A8F 2.56%, #376EBF 96.23%)'
       },
       fontFamily: {
         roboto: 'var(--font-roboto)'
