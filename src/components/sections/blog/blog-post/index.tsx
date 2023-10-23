@@ -1,6 +1,6 @@
 import React from 'react'
 import { BlockContent } from 'components/primitives/block-content'
-import { PostFragment, PostMetaFragment } from 'lib/sanity/generated'
+import { PostFragment } from 'lib/sanity/generated'
 import { formatPostDate } from 'lib/util'
 import Image from 'components/primitives/image'
 import s from './blog-post.module.scss'
@@ -11,11 +11,10 @@ import StayInformed from './StayInformed'
 
 type Props = {
   post: PostFragment
-  posts?: PostMetaFragment[]
-  isBlog?: boolean
+  showBlogModal?: () => void
 }
 
-const PostComponent = ({ post }: Props) => {
+const PostComponent = ({ post, showBlogModal }: Props) => {
   const authors = post.authors || []
 
   return (
@@ -90,7 +89,7 @@ const PostComponent = ({ post }: Props) => {
                 )
             )}
           </div>
-          <StayInformed />
+          <StayInformed showBlogModal={showBlogModal} />
         </header>
       </div>
     </>
