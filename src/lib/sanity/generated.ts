@@ -22,6 +22,7 @@ export type Scalars = {
 
 
 
+
 export type About = Document & {
   __typename?: 'About';
   /** Document ID */
@@ -3571,7 +3572,7 @@ export type PostMetaFragment = (
     { __typename?: 'AuthorReference' }
     & { author?: Maybe<(
       { __typename?: 'Author' }
-      & Pick<Author, 'name' | 'bioRaw' | 'position'>
+      & Pick<Author, 'name' | 'bioRaw' | 'position' | 'linkedin' | 'twitter'>
       & { slug?: Maybe<(
         { __typename?: 'Slug' }
         & Pick<Slug, 'current'>
@@ -4799,6 +4800,8 @@ export const PostMetaFragmentDoc = gql`
       image {
         ...Image
       }
+      linkedin
+      twitter
     }
   }
   categories {

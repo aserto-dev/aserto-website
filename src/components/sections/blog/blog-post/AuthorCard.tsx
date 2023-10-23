@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'components/primitives/image'
 import { Author } from 'lib/sanity/generated'
+import Link from 'components/primitives/link'
 
 const AuthorCard = ({ author }: { author: Author }) => {
   return (
@@ -22,20 +23,24 @@ const AuthorCard = ({ author }: { author: Author }) => {
               {author?.position}
             </p>
           </div>
-          <div className="flex gap-1">
-            {!author?.linkedin && (
-              <Image
-                src="/images/about/linkedin_blog.svg"
-                className="cursor-pointer"
-                layout="native"
-              />
+          <div className="flex gap-2">
+            {author?.linkedin && (
+              <Link href={author.linkedin}>
+                <Image
+                  src="/images/about/linkedin_blog.svg"
+                  className="cursor-pointer"
+                  layout="native"
+                />
+              </Link>
             )}
-            {!author?.twitter && (
-              <Image
-                src="/images/about/twitter.svg"
-                className="cursor-pointer"
-                layout="native"
-              />
+            {author?.twitter && (
+              <Link href={author.twitter}>
+                <Image
+                  src="/images/about/twitter.svg"
+                  className="cursor-pointer"
+                  layout="native"
+                />
+              </Link>
             )}
           </div>
         </div>

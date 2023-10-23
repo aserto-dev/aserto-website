@@ -30119,6 +30119,57 @@
     ],
     "directives": [
       {
+        "name": "crossDatasetReference",
+        "description": "Field references one or more document in another dataset",
+        "isRepeatable": false,
+        "locations": [
+          "OBJECT",
+          "FIELD_DEFINITION"
+        ],
+        "args": [
+          {
+            "name": "dataset",
+            "description": "Dataset name",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "typeNames",
+            "description": "Strings of the target types names enabled for this reference",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                }
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ]
+      },
+      {
         "name": "jsonAlias",
         "description": "Field is a \"raw\" JSON alias for a different field",
         "isRepeatable": false,
