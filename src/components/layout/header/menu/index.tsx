@@ -7,10 +7,10 @@ import { HeaderDropdownLinkMobile } from '../header-dropdown-link'
 type MenuProps = {
   show: boolean
   closeMenu: () => void
-  openModal: () => void
+  signupRedirect: () => void
 }
 
-const Menu = ({ show = false, closeMenu, openModal }: MenuProps) => {
+const Menu = ({ show = false, closeMenu, signupRedirect }: MenuProps) => {
   return (
     <section
       className={clsx(
@@ -39,7 +39,7 @@ const Menu = ({ show = false, closeMenu, openModal }: MenuProps) => {
             <span
               onClick={() => {
                 closeMenu()
-                openModal()
+                signupRedirect()
               }}
             >
               Try it FREE

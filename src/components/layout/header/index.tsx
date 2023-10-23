@@ -8,11 +8,7 @@ import {
 } from 'lib/sanity/generated'
 
 // Primitives
-import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
-
-//Components
-import Signup from 'components/sections/signup'
 
 // SVGs
 import PlaygroundBanner from 'components/sections/common/banners/playground'
@@ -25,6 +21,7 @@ import IconSlack from 'icons/slack.svg'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
+import Button from 'components/primitives/button'
 
 const { solutions } = props as unknown as {
   resources: ResourceFragment[]
@@ -114,19 +111,13 @@ export const headerLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-  const [showSignupModal, setShowSignupModal] = useState(false)
 
   useEffect(() => {
     if (
       window.location.hash.indexOf('signup') >= 0 ||
       window.location.hash.indexOf('sign-up') >= 0
     ) {
-      setShowSignupModal(true)
-      history.pushState(
-        null,
-        '',
-        window.location.pathname + window.location.search
-      )
+      window.location.replace(asertoConsoleRootUrl + '/#signup')
     }
   }, [])
 
@@ -142,9 +133,6 @@ const Header = () => {
       className="sticky top-0 z-40 w-full"
       style={{ position: '-webkit-sticky' }}
     >
-      {showSignupModal && (
-        <Signup closeModal={() => setShowSignupModal(false)} />
-      )}
       <PlaygroundBanner />
       <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
         <nav className="flex items-center justify-between w-full lg:hidden">
@@ -206,8 +194,8 @@ const Header = () => {
             variant="primary"
             size="sm"
             as="a"
-            className="ml-8 inline-flex items-center cursor-pointer"
-            onClick={() => setShowSignupModal(true)}
+            href={asertoConsoleRootUrl + '/#signup'}
+            className="ml-8 font-medium inline-flex items-center cursor-pointer"
           >
             Sign up
           </Button>
@@ -223,7 +211,9 @@ const Header = () => {
       <Menu
         show={open}
         closeMenu={() => setOpen(false)}
-        openModal={() => setShowSignupModal(true)}
+        signupRedirect={() =>
+          history.pushState(null, '', asertoConsoleRootUrl + '/#signup')
+        }
       />
     </header>
   )

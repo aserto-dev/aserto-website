@@ -7,10 +7,9 @@ type CardProps = {
   icons: string[]
   link: string
   sccIcons: Array<{ icon: string; label: string; desc: string }>
-  showSignupModal: () => void
 }
 
-const Card = ({ title, icons, link, sccIcons, showSignupModal }: CardProps) => {
+const Card = ({ title, icons, link, sccIcons }: CardProps) => {
   return (
     <div
       className="relative w-[560px] h-[420px] bg-aserto-grey-10 border border-aserto-grey-40 rounded-[11px]
@@ -45,7 +44,12 @@ const Card = ({ title, icons, link, sccIcons, showSignupModal }: CardProps) => {
       <div className="bg-aserto-grey-20 w-full text=[16px] absolute bottom-0 left-0 p-[10px] rounded-b-[11px]">
         <p className="text-center leading-[60px]">
           {"To launch, you'll first need an account: "}
-          <Button variant="primary" size="sm" onClick={showSignupModal}>
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
+            href={asertoConsoleRootUrl + '/#signup'}
+          >
             Create an account
           </Button>
         </p>
