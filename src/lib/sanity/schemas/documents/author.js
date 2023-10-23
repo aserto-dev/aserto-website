@@ -25,6 +25,16 @@ export default {
       title: 'Image'
     },
     {
+      name: 'linkedin',
+      type: 'url',
+      title: 'LinkedIn'
+    },
+    {
+      name: 'twitter',
+      type: 'url',
+      title: 'Twitter'
+    },
+    {
       name: 'bio',
       type: 'bioPortableText',
       title: 'Biography'

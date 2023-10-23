@@ -121,13 +121,22 @@ module.exports = {
       maxWidth: {
         container: '78rem'
       },
+      minWidth: {
+        container: '78rem'
+      },
       spacing: {
+        192: '48rem',
+        38: '10.7rem',
         14.25: '3.625rem',
         14.5: '3.75rem',
         16.5: '4.5rem'
       },
       screens: {
-        sxl: '1300px'
+        sxl: '1300px',
+        maxxl: { max: '1279px' },
+        maxlg: { max: '1023px' },
+        maxmd: { max: '767px' },
+        maxsm: { max: '639px' }
       },
       boxShadow: {
         header: '0px 1px 0px rgba(65, 65, 65, 1)',
