@@ -67,7 +67,7 @@ const PageLayout = ({
       <div className="flex flex-col h-screen justify-between">
         <div>
           <Header />
-          <div className="overflow-hidden">
+          <div>
             <CustomHead {...headProps} />
             <motion.main
               className="relative bg-aserto-black"

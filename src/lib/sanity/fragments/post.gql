@@ -24,6 +24,8 @@ fragment PostMeta on Post {
       image {
         ...Image
       }
+      linkedin
+      twitter
     }
   }
   categories {

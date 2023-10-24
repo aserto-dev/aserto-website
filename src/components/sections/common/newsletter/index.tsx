@@ -14,10 +14,8 @@ export type NewsletterProps = {
   title: string
   description: string
 }
-
 const NewsletterSection = ({ title, description }: NewsletterProps) => {
   const [section] = useFadeInBottom()
-
   return (
     <section
       className="relative z-10 mb-32 bg-aserto-black"

@@ -12,7 +12,6 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const [mainPost, ...restPosts] = posts
     return { mainPost, restPosts }
   }, [posts])
-
   return (
     <PageLayout
       contain

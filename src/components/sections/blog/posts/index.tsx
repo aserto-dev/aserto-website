@@ -11,7 +11,13 @@ import BlogItem from './blog-item'
 
 const pageSize = 6
 
-const Posts = ({ posts }: { posts: PostMetaFragment[] }) => {
+const Posts = ({
+  posts,
+  isBlog
+}: {
+  posts: PostMetaFragment[]
+  isBlog?: boolean
+}) => {
   const [section] = useFadeInBottom()
   const [shownPages, setShownPages] = useState(1)
 
@@ -24,8 +30,8 @@ const Posts = ({ posts }: { posts: PostMetaFragment[] }) => {
   }, [posts.length, shownPages])
 
   return (
-    <section className="pb-28">
-      <div className="grid gap-8 mx-auto mt-20 lg:grid-cols-3" ref={section}>
+    <section className={isBlog ? 'pb-0' : 'pb-28'}>
+      <div className="grid gap-8 mx-auto lg:grid-cols-3" ref={section}>
         {posts.map((post, index) => {
           return index < shownPages * pageSize ? (
             <BlogItem data={post} key={post._id} />

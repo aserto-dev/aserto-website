@@ -40,7 +40,7 @@ const serializers = {
       const id = getYouTubeId(url)
       const opts = {
         height: '480',
-        width: '854'
+        width: '100%'
       }
       return id ? <YouTube videoId={id} opts={opts} /> : <></>
     }
