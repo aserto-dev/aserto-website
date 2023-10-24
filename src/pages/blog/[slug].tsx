@@ -8,10 +8,6 @@ import Error from 'next/error'
 import RelatedContent from 'components/sections/common/related_content/related-content'
 import { useFadeInBottom } from 'hooks/use-gsap'
 import StayInformed from 'components/sections/blog/blog-post/StayInformed'
-import { useState } from 'react'
-import SignupContainer from 'components/sections/signup/SignupContainer'
-import HubspotForm from 'lib/hubspot/HubspotForm'
-import { NameToFormId } from 'lib/hubspot/HubspotIds'
 
 type Props = {
   post: PostFragment
@@ -23,7 +19,6 @@ const BlogPost = ({
   allPosts
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [section] = useFadeInBottom()
-  const [showBlogModal, setShowBlogModal] = useState(false)
 
   if (!post) return <Error statusCode={404} />
   return (
@@ -45,7 +40,7 @@ const BlogPost = ({
           description: 'Get the latest company updates and technology articles'
         }}
       >
-        <Post post={post} showBlogModal={() => setShowBlogModal(true)} />
+        <Post post={post} />
         <div className="w-full maxlg:w-11/12 mx-auto flex flex-col mt-8 ">
           {allPosts ? (
             <>
@@ -65,19 +60,6 @@ const BlogPost = ({
             <></>
           )}
         </div>
-        {showBlogModal && (
-          <SignupContainer
-            closeModal={() => setShowBlogModal(false)}
-            background={false}
-          >
-            <>
-              <h4 className="text-[18px] text-aserto-grey-90 text-center font-semibold my-4">
-                Sign up for our newsletter
-              </h4>
-              <HubspotForm formId={NameToFormId.newsletter} />
-            </>
-          </SignupContainer>
-        )}
       </PageLayout>
     </div>
   )
