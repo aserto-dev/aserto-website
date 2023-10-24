@@ -12,7 +12,7 @@ const StayInformed = () => {
             size="sm"
             onClick={() => {
               const element = document.getElementById('sign-up')
-              element?.scrollIntoView({ behavior: 'smooth' })
+              element?.scrollIntoView({ behavior: 'smooth', block: 'end' })
             }}
           >
             <img
