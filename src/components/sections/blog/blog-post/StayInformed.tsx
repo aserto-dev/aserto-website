@@ -1,6 +1,7 @@
 import Button from 'components/primitives/button'
 import Link from 'components/primitives/link'
-const StayInformed = ({ showBlogModal }: { showBlogModal?: () => void }) => {
+
+const StayInformed = () => {
   return (
     <>
       <div className="mt-24">
@@ -9,7 +10,10 @@ const StayInformed = ({ showBlogModal }: { showBlogModal?: () => void }) => {
           <Button
             className="maxlg:hidden maxsm:w-full  leading-5"
             size="sm"
-            onClick={showBlogModal}
+            onClick={() => {
+              const element = document.getElementById('sign-up')
+              element?.scrollIntoView({ behavior: 'smooth', block: 'end' })
+            }}
           >
             <img
               src="/images/about/envelope.svg"

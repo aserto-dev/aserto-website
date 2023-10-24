@@ -11,10 +11,9 @@ import StayInformed from './StayInformed'
 
 type Props = {
   post: PostFragment
-  showBlogModal?: () => void
 }
 
-const PostComponent = ({ post, showBlogModal }: Props) => {
+const PostComponent = ({ post }: Props) => {
   const authors = post.authors || []
 
   return (
@@ -89,7 +88,7 @@ const PostComponent = ({ post, showBlogModal }: Props) => {
                 )
             )}
           </div>
-          <StayInformed showBlogModal={showBlogModal} />
+          <StayInformed />
         </header>
       </div>
     </>
