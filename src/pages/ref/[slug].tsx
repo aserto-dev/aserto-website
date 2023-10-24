@@ -5,6 +5,7 @@ import { BlockContent } from 'components/primitives/block-content'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Accordion from 'components/primitives/accordion'
 import { Faq } from 'lib/sanity/generated'
+import GlossaryBar from 'icons/glossary-bar.svg'
 
 const FaqPage = ({
   faq: page
@@ -12,6 +13,7 @@ const FaqPage = ({
   return (
     <PageLayout
       contain
+      maxWidth={true}
       footer="regular"
       headProps={{
         title:
@@ -23,29 +25,39 @@ const FaqPage = ({
         image: 'images/og.png'
       }}
     >
-      <section className="py-20">
-        <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
+      <section className="py-20 mx-auto ml-8 maxsm:ml-4">
+        <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
+        <GlossaryBar className="mb-16 w-full" />
         {page.faqs?.map((faq, i) => {
           return (
-            <div key={i}>
-              <h2 className="mt-5 mb-16 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-16 md:text-4.5xl font-roboto">
-                {faq?.title}
-              </h2>
-              <Accordion>
-                {faq?.questions?.map((question, i) => {
-                  return (
-                    // @ts-ignore
-                    <li key={i} label={<h3>{question?.question}</h3>}>
-                      <BlockContent
-                        className="mt-5 text-base md:leading-tight text-aserto-grey-70 sm:text-lg md:mt-5 md:text-xl font-roboto"
-                        blocks={question?.answerRaw}
-                      />
-                    </li>
-                  )
-                })}
-              </Accordion>
+            <div key={i} className="w-full flex maxsm:flex-col gap-12 mb-10 ">
+              <div className="w-1/4 maxsm:w-full">
+                <h2 className="text-2xl md:leading-tight text-aserto-grey-90   font-roboto">
+                  {faq?.title}
+                </h2>
+              </div>
+              <div className="w-2/3 maxsm:w-full">
+                <Accordion>
+                  {faq?.questions?.map((question, i) => {
+                    return (
+                      // @ts-ignore
+                      <li
+                        key={i}
+                        label={
+                          <h2 className="text-2xl">{question?.question}</h2>
+                        }
+                      >
+                        <BlockContent
+                          className=" text-xl md:leading-tight text-aserto-grey-70 sm:text-lg md:text-xl font-roboto mb-4"
+                          blocks={question?.answerRaw}
+                        />
+                      </li>
+                    )
+                  })}
+                </Accordion>
+              </div>
             </div>
           )
         })}

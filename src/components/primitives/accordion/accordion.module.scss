@@ -11,12 +11,11 @@
   margin-right: 0;
 }
 
-.item {
-  border-top: 1px solid theme('colors.aserto.grey.70');
-}
-
 .item span {
-  max-width: 90%;
+  width: 90%;
+  @media (max-width: 639px) {
+    width: 100%;
+  }
 }
 
 .icon {

@@ -20,7 +20,8 @@ const Item = ({ children, isOpen, label, onClick }) => {
     if (isOpen) {
       tl.current.to(innerRef.current, {
         height: 'auto',
-        marginBottom: '3vw'
+        width: '100%',
+        marginBottom: '1vw'
       })
     } else {
       tl.current.to(innerRef.current, {
@@ -36,29 +37,13 @@ const Item = ({ children, isOpen, label, onClick }) => {
       <div
         onClick={_onClick}
         className={clsx(
-          'flex items-center justify-between pt-8 mb-8 cursor-pointer',
+          'flex items-center justify-between mb-8 cursor-pointer',
           styles.item
         )}
       >
-        <span className="pr-8 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:text-2xl font-roboto">
+        <span className="pr-8 w-full text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:text-2xl font-roboto">
           {label}
         </span>
-        <svg
-          style={{ '--rotation': isOpen ? 'rotate(45deg)' : 'rotate(0)' }}
-          className={clsx(
-            'w-8 h-8 transition-transform duration-200',
-            styles.icon
-          )}
-          viewBox="0 0 30 30"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="text-aserto-grey-90"
-            stroke="currentColor"
-            d="M0 14.5h30M15.5 0v30"
-          />
-        </svg>
       </div>
       <span ref={innerRef} className={styles.inner}>
         {children}
@@ -98,7 +83,7 @@ const Accordion = ({ children, allowMultipleOpen = false }) => {
       {children?.map((child, i) => (
         <Item
           key={i}
-          isOpen={!!openSections[child.props.label]}
+          isOpen={true}
           label={child.props.label}
           onClick={_onClick}
         >
