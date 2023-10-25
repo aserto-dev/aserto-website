@@ -3,7 +3,6 @@ import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
 import { BlockContent } from 'components/primitives/block-content'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Accordion from 'components/primitives/accordion'
 import { Faq } from 'lib/sanity/generated'
 import GlossaryBar from 'icons/glossary-bar.svg'
 
@@ -29,29 +28,33 @@ const FaqPage = ({
         <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
-        <GlossaryBar className="mb-14 w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
+        <GlossaryBar className="mb-8 w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
         {page.faqs?.map((faq, i) => {
           return (
-            <div key={i} className="w-full flex maxsm:flex-col gap-12 mb-10 ">
+            <div
+              key={i}
+              className="w-full flex maxsm:flex-col maxsm:gap-0 gap-12 mb-10 "
+            >
               <div className="w-1/4 maxsm:w-full">
-                <h2 className="text-2xl  md:leading-tight text-aserto-grey-90   font-roboto">
+                <h2 className="text-2xl md:leading-tight text-aserto-grey-90 font-roboto">
                   {faq?.title}
                 </h2>
               </div>
               <div className="w-2/3 maxsm:w-full">
-                <Accordion>
-                  {faq?.questions?.map((question, i) => {
-                    return (
-                      // @ts-ignore
-                      <li key={i} label={<h2>{question?.question}</h2>}>
-                        <BlockContent
-                          className=" text-xl md:leading-tight text-aserto-grey-70 sm:text-lg md:text-xl font-roboto mb-4"
-                          blocks={question?.answerRaw}
-                        />
-                      </li>
-                    )
-                  })}
-                </Accordion>
+                {faq?.questions?.map((question) => {
+                  return (
+                    // @ts-ignore
+                    <>
+                      <p className="text-[16px] text-aserto-grey-90 font-roboto">
+                        {question?.question}
+                      </p>
+                      <BlockContent
+                        className="text-[16px] text-aserto-grey-90  font-roboto mb-5"
+                        blocks={question?.answerRaw}
+                      />
+                    </>
+                  )
+                })}
               </div>
             </div>
           )
