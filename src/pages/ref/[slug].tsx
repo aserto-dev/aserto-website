@@ -24,7 +24,7 @@ const FaqPage = ({
         image: 'images/og.png'
       }}
     >
-      <section className="pb-20  pt-6 mx-auto ml-8 maxsm:ml-4">
+      <section className="pb-20 pt-6 mx-auto ml-8 maxsm:ml-4">
         <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
@@ -36,7 +36,7 @@ const FaqPage = ({
               className="w-full flex maxsm:flex-col maxsm:gap-0 gap-12 mb-10 "
             >
               <div className="w-1/4 maxsm:w-full">
-                <h2 className="text-2xl md:leading-tight text-aserto-grey-90 font-roboto">
+                <h2 className="text-3xl md:leading-tight text-aserto-grey-90 font-roboto mb-5">
                   {faq?.title}
                 </h2>
               </div>
@@ -45,9 +45,9 @@ const FaqPage = ({
                   return (
                     // @ts-ignore
                     <>
-                      <p className="text-[16px] text-aserto-grey-90 font-roboto">
+                      <h3 className="text-2xl text-aserto-grey-90 font-roboto mb-3">
                         {question?.question}
-                      </p>
+                      </h3>
                       <BlockContent
                         className="text-[16px] text-aserto-grey-90  font-roboto mb-5"
                         blocks={question?.answerRaw}
