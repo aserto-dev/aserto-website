@@ -37,12 +37,8 @@ const HomePage = ({
         image: 'images/og.png'
       }}
     >
-      <Hero
-        title={
-          page.tagline ?? 'The fastest path to enterprise-grade authorization.'
-        }
-      />
-      <Animations />
+      <Hero page={page} />
+      <Animations page={page} />
       <Intro page={page} />
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
@@ -56,6 +52,12 @@ const HomePage = ({
           latestEvent={event}
         />
       </Container>
+
+      <img
+        className="object-fit h-[200px] absolute left-0 right-0 mx-auto mt-60 sm:mt-52 md:mt-20 lg:mt-56 xl:mt-0 -bottom-4"
+        src="images/homepage/seafloor-teal.svg"
+        alt="Sea Floor"
+      />
       <CallToAction {...page.callToAction} />
     </PageLayout>
   )
