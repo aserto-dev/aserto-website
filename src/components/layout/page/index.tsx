@@ -64,7 +64,7 @@ const PageLayout = ({
 }: Props) => {
   return (
     <>
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-screen justify-between overflow-x-hidden">
         <div>
           <Header />
           <div>
