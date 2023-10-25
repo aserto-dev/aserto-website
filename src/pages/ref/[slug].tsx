@@ -29,7 +29,8 @@ const FaqPage = ({
         <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
-        <GlossaryBar className="mb-16 w-full" />
+        <GlossaryBar className="mb-16  w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
+
         {page.faqs?.map((faq, i) => {
           return (
             <div key={i} className="w-full flex maxsm:flex-col gap-12 mb-10 ">
@@ -43,12 +44,7 @@ const FaqPage = ({
                   {faq?.questions?.map((question, i) => {
                     return (
                       // @ts-ignore
-                      <li
-                        key={i}
-                        label={
-                          <h2 className="text-2xl">{question?.question}</h2>
-                        }
-                      >
+                      <li key={i} label={<h2>{question?.question}</h2>}>
                         <BlockContent
                           className=" text-xl md:leading-tight text-aserto-grey-70 sm:text-lg md:text-xl font-roboto mb-4"
                           blocks={question?.answerRaw}

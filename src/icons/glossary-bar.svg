@@ -3,9 +3,9 @@
 <defs>
 <linearGradient id="paint0_linear_337_642" x1="4" y1="8" x2="4" y2="1448" gradientUnits="userSpaceOnUse">
 <stop stop-color="#277F82" stop-opacity="0"/>
-<stop offset="0.333333" stop-color="#277F82"/>
-<stop offset="0.666667" stop-color="#007DC1"/>
-<stop offset="1" stop-color="#007DC1" stop-opacity="0"/>
+<stop offset="0.2" stop-color="#277F82"/>
+<stop offset="0.8" stop-color="#007DC1"/>
+<stop offset="3" stop-color="#007DC1" stop-opacity="0"/>
 </linearGradient>
 </defs>
 </svg>

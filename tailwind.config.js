@@ -133,6 +133,7 @@ module.exports = {
       },
       screens: {
         sxl: '1300px',
+        '3xl': { min: '1600px' },
         maxxl: { max: '1279px' },
         maxlg: { max: '1023px' },
         maxmd: { max: '767px' },
