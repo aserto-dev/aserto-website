@@ -5,6 +5,14 @@ fragment HomePage on Home {
   }
   tagline
   positioningStatementRaw
+  subtaglineRaw
+  heroImage {
+    ...Image
+  }
+  animatedGifs {
+    ...Image
+  }
+  demoUrl
   valueProps {
     ...ValueProp
   }
@@ -29,7 +37,11 @@ query HomePage {
   allCaseStudy(sort: { _createdAt: DESC }) {
     ...CaseStudyMeta
   }
-  allEvent(sort: { _createdAt: DESC } where: { feature: { eq: true } }, limit: 1) {
+  allEvent(
+    sort: { _createdAt: DESC }
+    where: { feature: { eq: true } }
+    limit: 1
+  ) {
     ...Event
   }
 }
