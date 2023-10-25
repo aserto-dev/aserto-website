@@ -10,8 +10,8 @@ const Container = ({ children, className, maxWidth }: Props) => (
   <div
     className={clsx(
       !maxWidth
-        ? 'max-w-container mx-auto relative'
-        : 'mx-auto max-w-full  relative ',
+        ? 'max-w-container mx-auto px-4 relative'
+        : 'mx-auto max-w-full relative',
       className
     )}
   >
