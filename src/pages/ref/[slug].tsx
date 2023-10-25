@@ -25,17 +25,16 @@ const FaqPage = ({
         image: 'images/og.png'
       }}
     >
-      <section className="py-20 mx-auto ml-8 maxsm:ml-4">
+      <section className="pb-20  pt-6 mx-auto ml-8 maxsm:ml-4">
         <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
-        <GlossaryBar className="mb-16  w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
-
+        <GlossaryBar className="mb-14 w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
         {page.faqs?.map((faq, i) => {
           return (
             <div key={i} className="w-full flex maxsm:flex-col gap-12 mb-10 ">
               <div className="w-1/4 maxsm:w-full">
-                <h2 className="text-2xl md:leading-tight text-aserto-grey-90   font-roboto">
+                <h2 className="text-2xl  md:leading-tight text-aserto-grey-90   font-roboto">
                   {faq?.title}
                 </h2>
               </div>

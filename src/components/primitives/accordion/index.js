@@ -36,12 +36,9 @@ const Item = ({ children, isOpen, label, onClick }) => {
     <div ref={wrapperRef} className={styles.wrapper}>
       <div
         onClick={_onClick}
-        className={clsx(
-          'flex items-center justify-between mb-8 cursor-pointer',
-          styles.item
-        )}
+        className={clsx('flex items-center justify-between mb-8', styles.item)}
       >
-        <span className="pr-8 w-full text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:text-2xl font-roboto">
+        <span className="pr-8 w-full text-2xl md:leading-tight text-aserto-grey-90 font-roboto">
           {label}
         </span>
       </div>
