@@ -1,17 +1,12 @@
 import { BlockContent } from 'components/primitives/block-content'
-import { ValuePropFragment } from 'lib/sanity/generated'
+import { HomePageFragment, ValuePropFragment } from 'lib/sanity/generated'
 import Container from '../container'
 import ValueProp from './value-prop'
 
-const Intro = ({ page }: { page: any }) => {
-  const valueProps: ValuePropFragment[] = page.valueProps
+const Intro = ({ page }: { page: HomePageFragment }) => {
+  const valueProps: ValuePropFragment[] = page.valueProps as ValuePropFragment[]
   return (
     <Container className="text-aserto-grey-90 lg:px-12">
-      <img
-        className="object-fit h-[400px] z-0 absolute left-1/3 mt-60 sm:mt-52 md:mt-20 lg:mt-56 xl:mt-0 top-96"
-        src="images/homepage/seafloor-teal.svg"
-        alt="Sea Floor"
-      />
       <BlockContent
         className="z-1 text-[26px] lg:text-[34px] leading-8 lg:leading-10 text-center
         mt-16 mb-24 lg:px-20 xl:px-60 lg:py-20"
