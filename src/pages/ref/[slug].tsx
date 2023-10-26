@@ -30,7 +30,7 @@ const FaqPage = ({
           return (
             <div
               key={i}
-              className="w-full flex maxsm:flex-col maxsm:gap-0 gap-12 mb-10 "
+              className="w-full flex maxsm:flex-col maxsm:gap-0 gap-12 mb-6 "
             >
               <div className="w-1/4 maxsm:w-full">
                 <h2 className="text-3xl md:leading-tight text-aserto-grey-90 font-roboto mb-5">

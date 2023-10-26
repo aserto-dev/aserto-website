@@ -12,9 +12,7 @@
   }
 }
 .spaced_paragraph {
-  div {
-    p {
-      @apply pb-3;
-    }
+  p {
+    @apply pb-3;
   }
 }
