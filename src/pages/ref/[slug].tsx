@@ -4,15 +4,12 @@ import cms from 'lib/sanity'
 import { BlockContent } from 'components/primitives/block-content'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Faq } from 'lib/sanity/generated'
-import GlossaryBar from 'icons/glossary-bar.svg'
 
 const FaqPage = ({
   faq: page
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
-      contain
-      maxWidth={true}
       footer="regular"
       headProps={{
         title:
@@ -28,7 +25,7 @@ const FaqPage = ({
         <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
-        <GlossaryBar className="mb-8 w-full 2xl:w-[1400px] 3xl:w-[1600px]" />
+        <hr className="p-1 w-full mb-8 bg-hrGradient border-t-0" />
         {page.faqs?.map((faq, i) => {
           return (
             <div
@@ -41,10 +38,9 @@ const FaqPage = ({
                 </h2>
               </div>
               <div className="w-2/3 maxsm:w-full">
-                {faq?.questions?.map((question) => {
+                {faq?.questions?.map((question, j) => {
                   return (
-                    // @ts-ignore
-                    <>
+                    <div key={j}>
                       <h3 className="text-2xl text-aserto-grey-90 font-roboto mb-3">
                         {question?.question}
                       </h3>
@@ -52,7 +48,7 @@ const FaqPage = ({
                         className="text-[16px] text-aserto-grey-90  font-roboto mb-5"
                         blocks={question?.answerRaw}
                       />
-                    </>
+                    </div>
                   )
                 })}
               </div>

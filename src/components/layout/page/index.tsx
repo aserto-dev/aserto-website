@@ -34,7 +34,6 @@ interface Props {
   headProps: React.ComponentPropsWithoutRef<typeof CustomHead>
   newsletter?: NewsletterProps
   footer?: 'regular' | 'slim'
-  maxWidth?: boolean
 }
 
 const easing = [0.175, 0.85, 0.42, 0.96]
@@ -61,8 +60,7 @@ const PageLayout = ({
   contain,
   headProps,
   newsletter,
-  footer,
-  maxWidth
+  footer
 }: Props) => {
   return (
     <>
@@ -78,11 +76,7 @@ const PageLayout = ({
               initial="initial"
               variants={transitionVariants}
             >
-              {contain ? (
-                <Container maxWidth={maxWidth}>{children}</Container>
-              ) : (
-                children
-              )}
+              {contain ? <Container>{children}</Container> : children}
             </motion.main>
             {newsletter && <Newsletter {...newsletter} />}
           </div>
