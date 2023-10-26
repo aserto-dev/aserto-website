@@ -16,10 +16,9 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             {page.tagline}
           </h1>
           <BlockContent
-            className="text-[16px] lg:text-[20px] text-left text-aserto-grey-90
+            className="text-[20px] text-center sm:text-left text-aserto-grey-90
             font-bold font-sf leading-[24px] -mb-4"
             blocks={page.subtaglineRaw}
-            spaced
           />
           <CtaButtons signup seeDemo leftAlign />
         </div>
