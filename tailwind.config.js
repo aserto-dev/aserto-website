@@ -133,6 +133,7 @@ module.exports = {
       },
       screens: {
         sxl: '1300px',
+        '3xl': { min: '1600px' },
         maxxl: { max: '1279px' },
         maxlg: { max: '1023px' },
         maxmd: { max: '767px' },
@@ -149,6 +150,8 @@ module.exports = {
       backgroundImage: {
         modal:
           'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )',
+        hrGradient:
+          'linear-gradient(90deg, rgba(39, 127, 130, 0) 0%, #277F82 33.33%, #007DC1 66.67%, rgba(0, 125, 193, 0) 100%)',
         hero: 'linear-gradient(180deg, #2F9195 0%, #183334 30%)',
         benefitsCta: 'linear-gradient(0, #23696C 0%, #121212 80%)',
         homepageGlow:
