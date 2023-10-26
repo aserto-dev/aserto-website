@@ -45,6 +45,7 @@ const FaqPage = ({
                         {question?.question}
                       </h3>
                       <BlockContent
+                        spacedParagraph
                         className="text-[16px] text-aserto-grey-90  font-roboto mb-5"
                         blocks={question?.answerRaw}
                       />

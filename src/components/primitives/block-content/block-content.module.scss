@@ -11,3 +11,10 @@
     }
   }
 }
+.spaced_paragraph {
+  div {
+    p {
+      @apply pb-3;
+    }
+  }
+}
