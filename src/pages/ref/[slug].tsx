@@ -3,7 +3,6 @@ import PageLayout from 'components/layout/page'
 import cms from 'lib/sanity'
 import { BlockContent } from 'components/primitives/block-content'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import Accordion from 'components/primitives/accordion'
 import { Faq } from 'lib/sanity/generated'
 
 const FaqPage = ({
@@ -11,7 +10,6 @@ const FaqPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageLayout
-      contain
       footer="regular"
       headProps={{
         title:
@@ -23,29 +21,37 @@ const FaqPage = ({
         image: 'images/og.png'
       }}
     >
-      <section className="py-20">
-        <h1 className="text-5xl leading-none tracking-tight text-aserto-grey-90 md:text-6xl xl:text-7.5xl">
+      <section className="pb-20 pt-6 mx-auto ml-8 maxsm:ml-4">
+        <h1 className="text-4xl maxsm:text-3xl leading-none tracking-tight text-aserto-grey-90 mb-6 ">
           {page.title}
         </h1>
+        <hr className="p-1 w-full mb-8 bg-hrGradient border-t-0" />
         {page.faqs?.map((faq, i) => {
           return (
-            <div key={i}>
-              <h2 className="mt-5 mb-16 text-base md:leading-tight text-aserto-grey-90 sm:text-lg md:mt-16 md:text-4.5xl font-roboto">
-                {faq?.title}
-              </h2>
-              <Accordion>
-                {faq?.questions?.map((question, i) => {
+            <div
+              key={i}
+              className="w-full flex maxsm:flex-col maxsm:gap-0 gap-12 mb-10 "
+            >
+              <div className="w-1/4 maxsm:w-full">
+                <h2 className="text-3xl md:leading-tight text-aserto-grey-90 font-roboto mb-5">
+                  {faq?.title}
+                </h2>
+              </div>
+              <div className="w-2/3 maxsm:w-full">
+                {faq?.questions?.map((question, j) => {
                   return (
-                    // @ts-ignore
-                    <li key={i} label={<h3>{question?.question}</h3>}>
+                    <div key={j}>
+                      <h3 className="text-2xl text-aserto-grey-90 font-roboto mb-3">
+                        {question?.question}
+                      </h3>
                       <BlockContent
-                        className="mt-5 text-base md:leading-tight text-aserto-grey-70 sm:text-lg md:mt-5 md:text-xl font-roboto"
+                        className="text-[16px] text-aserto-grey-90  font-roboto mb-5"
                         blocks={question?.answerRaw}
                       />
-                    </li>
+                    </div>
                   )
                 })}
-              </Accordion>
+              </div>
             </div>
           )
         })}
