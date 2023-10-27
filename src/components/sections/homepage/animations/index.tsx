@@ -31,22 +31,24 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
 
       <hr className="p-1 my-28 bg-hrGradient border-t-0" />
 
-      <div className="mt-20">
+      <div className="mt-20 flex flex-col items-center">
         <p
           className="text-[20px] lg:text-[24px] text-center text-aserto-grey-90
             font-bold font-sf leading-[28px] mb-4"
         >
           Watch a demo in 3 minutes
         </p>
-        <iframe
-          className="w-full h-full mx-auto overflow-hidden md:w-[810px] md:h-[457px]"
-          width="810"
-          height="457"
-          src={page.demoUrl || 'https://www.youtube.com/embed/RJkgmdjJn_w'}
-          title="Welcome to Modern Authorization | Aserto Overview"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <div>
+          <iframe
+            className="w-full h-full mx-auto overflow-hidden md:w-[680px] md:h-[408px] lg:w-[810px] lg:h-[457px]"
+            width="810"
+            height="457"
+            src={page.demoUrl || 'https://www.youtube.com/embed/RJkgmdjJn_w'}
+            title="Welcome to Modern Authorization | Aserto Overview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       <hr className="p-1 my-28 bg-hrGradient border-t-0" />
