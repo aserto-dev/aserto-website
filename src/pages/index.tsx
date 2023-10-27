@@ -38,6 +38,9 @@ const HomePage = ({
       }}
     >
       <Hero page={page} />
+      <Container className="bg-aserto-black md:hidden mb-8">
+        <hr className="p-[2px] bg-hrGradient border-t-0" />
+      </Container>
       <Animations page={page} />
       <Intro page={page} />
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
