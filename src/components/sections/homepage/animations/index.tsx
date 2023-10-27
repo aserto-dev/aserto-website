@@ -15,7 +15,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
           page.animatedGifs.map((g, i) => (
             <div
               key={i}
-              className="sm:w-96 sm:h-96 w-60 h-60 rounded-[40px] bg-tealGradient p-1"
+              className="sm:w-96 sm:h-96 w-60 h-60 rounded-[40px] bg-gif p-1"
             >
               <div className="rounded-[40px] h-full bg-aserto-black">
                 <img
