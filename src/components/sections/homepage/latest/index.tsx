@@ -30,7 +30,9 @@ const LatestInfo = ({ title, latestBlogPost, latestEvent }: Props) => {
 
   return (
     <>
-      <div className="text-[36px] font-medium text-center">{page.title}</div>
+      <div className="text-[36px] mt-28 font-medium text-center">
+        {page.title}
+      </div>
       <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-4 gap-12 my-[50px] mx-4 sm:mx-0">
         {page.information.map((info, i) => (
           <div

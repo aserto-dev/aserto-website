@@ -41,11 +41,15 @@ const HomePage = ({
       <Animations page={page} />
       <Intro page={page} />
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
+      <Container className="bg-aserto-grey-10">
+        <hr className="p-[2px] bg-hrGradient border-t-0" />
+      </Container>
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           {page.testimonialsSectionTitle}
         </h2>
         <Testimonials testimonials={testimonials} />
+        <hr className="p-[2px] my-8 bg-hrGradient border-t-0" />
         <LatestInfo
           title={'Our latest content and events'}
           latestBlogPost={post}

@@ -25,7 +25,6 @@ const Problem = ({ title, problems }: Props) => {
           />
         ))}
       </div>
-      <hr className="p-[2px] my-8 bg-hrGradient border-t-0" />
     </Container>
   ) : (
     <div />
