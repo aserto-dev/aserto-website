@@ -5,6 +5,11 @@ import Container from '../container'
 const Animations = ({ page }: { page: HomePageFragment }) => {
   return (
     <Container className="sm:pt-20 sm:px-16 pt-8">
+      <img
+        className="absolute top-96 left-0"
+        src="images/translucent-aserto.svg"
+        alt="Aserto"
+      />
       <div className="flex md:flex-row flex-col md:flex-wrap md:justify-center items-center gap-12">
         {page?.animatedGifs?.length &&
           page.animatedGifs.map((g, i) => (
