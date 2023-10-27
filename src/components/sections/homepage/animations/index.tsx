@@ -10,12 +10,13 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
         src="images/translucent-aserto.svg"
         alt="Aserto"
       />
-      <div className="flex md:flex-row flex-col md:flex-wrap md:justify-center items-center gap-12">
+      <div className="flex md:flex-row flex-col md:justify-center items-center gap-12">
         {page?.animatedGifs?.length &&
           page.animatedGifs.map((g, i) => (
             <div
               key={i}
-              className="sm:w-96 sm:h-96 w-60 h-60 rounded-[40px] bg-gif p-1"
+              className="xl:w-96 xl:h-96 lg:w-72 lg:h-72 md:w-52 md:h-52 w-60 h-60
+              rounded-[40px] bg-gif p-1"
             >
               <div className="rounded-[40px] h-full bg-aserto-black">
                 <img
