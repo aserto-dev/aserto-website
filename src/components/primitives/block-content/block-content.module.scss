@@ -11,3 +11,8 @@
     }
   }
 }
+.spaced_paragraph {
+  p {
+    @apply pb-3;
+  }
+}

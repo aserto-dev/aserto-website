@@ -51,19 +51,22 @@ export const BlockContent = ({
   blocks,
   className,
   unstyled,
-  spaced
+  spaced,
+  spacedParagraph
 }: {
   blocks: any
   className?: string
   unstyled?: boolean
   spaced?: boolean
+  spacedParagraph?: boolean
 }) => {
   return (
     <div
       className={clsx(
         className,
         { [s.markdown]: !unstyled },
-        { [s.spaced]: spaced }
+        { [s.spaced]: spaced },
+        { [s.spaced_paragraph]: spacedParagraph }
       )}
     >
       <DefaultBlockContent blocks={blocks} serializers={serializers} />
