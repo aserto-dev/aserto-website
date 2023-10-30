@@ -6,8 +6,8 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
   return (
     <Container className="sm:pt-20 sm:px-16 pt-8">
       <img
-        className="absolute top-96 left-0"
-        src="images/translucent-aserto.svg"
+        className="absolute top-96 -left-28"
+        src="images/translucent-aserto.png"
         alt="Aserto"
       />
       <div className="flex md:flex-row flex-col md:justify-center items-center gap-12">
