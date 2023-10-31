@@ -84,7 +84,7 @@ class MyDocument extends Document {
             />
           )}
         </Head>
-        <body className="h-full bg-aserto-black">
+        <body className="h-full bg-aserto-black overflow-x-hidden">
           {gtmCode && (
             <noscript>
               <iframe

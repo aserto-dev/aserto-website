@@ -47,7 +47,7 @@ const SignupContainer = ({
       }`}
     >
       <div
-        className="fixed top-1/2 left-1/2 bg-aserto-grey-10 shadow-modal
+        className="fixed top-1/2 left-1/2 w-3/4 sm:w-auto bg-aserto-grey-10 shadow-modal
                   p-[20px] border-2 border-[#46d2d7] rounded-[11px]
                   transform -translate-x-1/2 -translate-y-1/2"
         ref={ref}

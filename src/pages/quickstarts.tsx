@@ -1,12 +1,9 @@
-import { useState } from 'react'
-
 // Layout
 import PageLayout from 'components/layout/page'
 
 // Sections
 import Hero from 'components/sections/quickstarts/hero'
 import Card from 'components/sections/quickstarts/card'
-import Signup from 'components/sections/signup'
 import Container from 'components/layout/container'
 import Image from 'components/primitives/image'
 
@@ -48,8 +45,6 @@ const quickstarts = [
 ]
 
 const Quickstarts = () => {
-  const [showSignupModal, setShowSignupModal] = useState(false)
-
   return (
     <PageLayout
       footer="regular"
@@ -60,9 +55,6 @@ const Quickstarts = () => {
         image: 'images/og.png'
       }}
     >
-      {showSignupModal && (
-        <Signup closeModal={() => setShowSignupModal(false)} />
-      )}
       <div className="relative">
         <div className="absolute top-[-400px] left-0 right-0">
           <Image
@@ -77,11 +69,7 @@ const Quickstarts = () => {
           <section className="pb-28">
             <div className="flex flex-wrap items-center justify-center gap-[20px]">
               {quickstarts.map((quickstart, i) => (
-                <Card
-                  key={i}
-                  showSignupModal={() => setShowSignupModal(true)}
-                  {...quickstart}
-                />
+                <Card key={i} {...quickstart} />
               ))}
             </div>
           </section>
