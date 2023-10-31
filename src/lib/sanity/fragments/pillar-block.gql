@@ -1,0 +1,9 @@
+fragment PillarBlock on PillarBlock {
+  image {
+    ...Image
+  }
+  imagePath
+  title
+  description
+  color
+}

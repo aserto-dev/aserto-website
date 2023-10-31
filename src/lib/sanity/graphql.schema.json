@@ -10930,7 +10930,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "MainImage",
+                "name": "PillarBlock",
                 "ofType": null
               }
             },

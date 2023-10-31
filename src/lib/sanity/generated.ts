@@ -1240,7 +1240,7 @@ export type Home = Document & {
   positioningStatementRaw?: Maybe<Scalars['JSON']>;
   subtaglineRaw?: Maybe<Scalars['JSON']>;
   heroImage?: Maybe<MainImage>;
-  animatedGifs?: Maybe<Array<Maybe<MainImage>>>;
+  animatedGifs?: Maybe<Array<Maybe<PillarBlock>>>;
   demoUrl?: Maybe<Scalars['String']>;
   valueProps?: Maybe<Array<Maybe<ValueProp>>>;
   theProblemSectionTitle?: Maybe<Scalars['String']>;
@@ -3564,6 +3564,15 @@ export type LandingPageFragment = (
   )> }
 );
 
+export type PillarBlockFragment = (
+  { __typename?: 'PillarBlock' }
+  & Pick<PillarBlock, 'imagePath' | 'title' | 'description' | 'color'>
+  & { image?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
 export type PostMetaFragment = (
   { __typename?: 'Post' }
   & Pick<Post, '_id' | 'publishedAt' | 'title' | 'excerptRaw'>
@@ -4195,8 +4204,8 @@ export type HomePageFragment = (
     { __typename?: 'MainImage' }
     & ImageFragment
   )>, animatedGifs?: Maybe<Array<Maybe<(
-    { __typename?: 'MainImage' }
-    & ImageFragment
+    { __typename?: 'PillarBlock' }
+    & PillarBlockFragment
   )>>>, valueProps?: Maybe<Array<Maybe<(
     { __typename?: 'ValueProp' }
     & ValuePropFragment
@@ -5200,6 +5209,17 @@ export const FeaturesPageFragmentDoc = gql`
 }
     ${FeatureBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
+export const PillarBlockFragmentDoc = gql`
+    fragment PillarBlock on PillarBlock {
+  image {
+    ...Image
+  }
+  imagePath
+  title
+  description
+  color
+}
+    ${ImageFragmentDoc}`;
 export const ValuePropFragmentDoc = gql`
     fragment ValueProp on ValueProp {
   image {
@@ -5224,7 +5244,7 @@ export const HomePageFragmentDoc = gql`
     ...Image
   }
   animatedGifs {
-    ...Image
+    ...PillarBlock
   }
   demoUrl
   valueProps {
@@ -5244,6 +5264,7 @@ export const HomePageFragmentDoc = gql`
   }
 }
     ${ImageFragmentDoc}
+${PillarBlockFragmentDoc}
 ${ValuePropFragmentDoc}
 ${SectionBlockFragmentDoc}`;
 export const NewsItemFragmentDoc = gql`
