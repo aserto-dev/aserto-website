@@ -23,7 +23,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
                   {g?.title}
                 </h3>
                 <img
-                  className="rounded-[40px] h-1/2 object-cover my-4"
+                  className="h-1/2 object-cover my-4"
                   src={g?.image?.asset?.url || ''}
                   alt={g?.image?.alt || ''}
                 />
