@@ -3,6 +3,7 @@ import { HomePageFragment } from 'lib/sanity/generated'
 import Container from '../container'
 import CtaButtons from 'components/sections/common/cta-buttons'
 import { BlockContent } from 'components/primitives/block-content'
+import { Player } from '@lottiefiles/react-lottie-player'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
@@ -25,10 +26,13 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
         </div>
         <div className="md:w-1/2 mt-16 md:mt-0">
-          <img
-            className="w-2/3 md:w-full md:max-w-sm h-auto mx-auto"
-            src={page.heroImage?.asset?.url || ''}
-            alt={page.heroImage?.alt || ''}
+          <Player
+            autoplay
+            background="transparent"
+            speed={1}
+            loop
+            src="https://lottie.host/b64c3f96-5c5b-475b-a451-d9e91ba3f774/seOtSjXHtp.json"
+            // style={{ height: '300px', width: '300px' }}
           />
         </div>
         <div className="block md:hidden">
