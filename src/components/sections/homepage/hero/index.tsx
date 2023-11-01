@@ -32,7 +32,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             background="transparent"
             speed={1}
             loop
-            src="https://lottie.host/b64c3f96-5c5b-475b-a451-d9e91ba3f774/seOtSjXHtp.json"
+            src="/homepage-animation.json"
             // style={{ height: '300px', width: '300px' }}
           />
         </div>
