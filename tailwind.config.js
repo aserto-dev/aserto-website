@@ -171,8 +171,7 @@ module.exports = {
           'linear-gradient(0, #2F9195 0%, #183334 40%, #121212 60%)'
       },
       fontFamily: {
-        roboto: 'var(--font-roboto)',
-        sf: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+        roboto: 'var(--font-roboto)'
       },
       fontSize: {
         '1.5xl': '1.375rem',

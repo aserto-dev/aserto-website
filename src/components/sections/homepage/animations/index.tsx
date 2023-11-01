@@ -4,22 +4,22 @@ import Container from '../container'
 
 const Animations = ({ page }: { page: HomePageFragment }) => {
   return (
-    <Container className="sm:px-16 pt-8 font-sf">
+    <Container className="sm:px-16 pt-8 font-roboto">
       <img
         className="absolute top-96 -left-28"
         src="images/translucent-aserto.png"
         alt="Aserto"
       />
-      <div className="flex md:flex-row flex-col md:justify-center items-center gap-12">
+      <div className="flex md:flex-row flex-col md:justify-evenly items-center gap-12 md:gap-0">
         {page?.animatedGifs?.length &&
           page.animatedGifs.map((g, i) => (
             <div
               key={i}
-              className="xl:w-96 xl:h-96 lg:w-72 lg:h-72 md:w-52 md:h-52 w-60 h-60
+              className="xl:w-[360px] xl:h-[360px] lg:w-[272px] lg:h-[272px] md:w-[200px] md:h-[200px] w-60 h-60
               rounded-[40px] bg-gif p-1 text-center"
             >
               <div className="rounded-[40px] h-full bg-aserto-black p-4">
-                <h3 className="text-xl lg:text-3xl xl:text-5xl font-bold text-aserto-grey-90">
+                <h3 className="text-xl lg:text-3xl xl:text-4xl font-bold text-aserto-grey-90 mb-4 lg:mb-8">
                   {g?.title}
                 </h3>
                 <img
