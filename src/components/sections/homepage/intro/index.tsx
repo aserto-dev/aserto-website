@@ -8,6 +8,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
     <Container className="text-aserto-grey-90 lg:px-12">
       {valueProps.map((v, i) => (
         <ValueProp
+          id={`value-prop-${v.title?.split(/[ -]/)[0].toLocaleLowerCase()}`}
           key={i}
           title={v.title ?? ''}
           subtitleRaw={v.subtitleRaw}

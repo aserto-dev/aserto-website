@@ -3,6 +3,7 @@ import { HomePageFragment } from 'lib/sanity/generated'
 import Container from '../container'
 
 const Animations = ({ page }: { page: HomePageFragment }) => {
+  const scrollToIds = ['real', 'zero', 'granular']
   return (
     <Container className="sm:px-16 pt-8 font-roboto">
       <img
@@ -18,7 +19,18 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
               className="xl:w-[360px] xl:h-[360px] lg:w-[272px] lg:h-[272px] md:w-[200px] md:h-[200px] w-60 h-60
               rounded-[40px] bg-gif p-1 text-center"
             >
-              <div className="rounded-[40px] h-full bg-aserto-black p-4">
+              <div
+                className="rounded-[40px] h-full bg-aserto-black p-4 hover:cursor-pointer"
+                onClick={() => {
+                  const element = document.getElementById(
+                    `value-prop-${scrollToIds[i]}`
+                  )
+                  element?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                  })
+                }}
+              >
                 <h3 className="text-xl lg:text-3xl xl:text-4xl font-bold text-aserto-grey-90 mb-4 lg:mb-8">
                   {g?.title}
                 </h3>
