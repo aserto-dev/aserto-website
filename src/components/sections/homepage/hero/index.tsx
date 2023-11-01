@@ -1,51 +1,45 @@
 // Primitives
+import { HomePageFragment } from 'lib/sanity/generated'
 import Container from '../container'
 import CtaButtons from 'components/sections/common/cta-buttons'
+import { BlockContent } from 'components/primitives/block-content'
+import { Player } from '@lottiefiles/react-lottie-player'
 
-const Hero = ({ title }: { title: string }) => {
+const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
-    <Container className="bg-hero sm:pt-20 sm:px-16 sm:pb-64 pb-56 pt-8 mb-32">
-      <h1
-        className="sm:my-[20px] sm:w-full md:w-3/4 lg:w-7/12 text-[30px] leading-[40px]
-        sm:text-[50px] sm:leading-[60px] text-center sm:text-left text-aserto-grey-90"
-      >
-        {title}
-      </h1>
-      <img
-        className="object-cover h-[250px] -mx-8 -bottom-12 absolute
-        sm:object-fill sm:h-auto sm:-ml-32 sm:left-1/2 sm:transform sm:-translate-x-1/2"
-        src="images/homepage/seafloor.svg"
-        alt="Sea Floor"
-      />
-      <img
-        className="w-[350px] -mr-16 absolute -bottom-20 right-1/2 transform translate-x-1/2
-        sm:w-[600px] sm:-bottom-28 sm:-mr-52 lg:-mr-96"
-        src="images/homepage/Lottie.svg"
-        alt="Lottie"
-      />
-      <img
-        className="lg:block hidden -mr-40 absolute right-1/2 -bottom-4 transform translate-x-1/2"
-        src="images/homepage/bubble.svg"
-        alt="Bubble"
-      />
-      <img
-        className="w-[30px] -mr-20 absolute right-1/2 bottom-20 transform translate-x-1/2
-        sm:w-[55px] sm:-mr-12 sm:bottom-12"
-        src="images/homepage/bubble.svg"
-        alt="Bubble"
-      />
-      <img
-        className="w-[40px] -mr-16 absolute right-1/2 bottom-32 transform translate-x-1/2
-        sm:w-[65px] sm:-m-4"
-        src="images/homepage/bubble.svg"
-        alt="Bubble"
-      />
-      <img
-        className="sm:w-[75px] sm:mr-28 bottom-40 w-[52px] absolute right-1/2 transform translate-x-1/2"
-        src="images/homepage/bubble.svg"
-        alt="Bubble"
-      />
-      <CtaButtons signup seeDemo leftAlign />
+    <Container className="md:bg-homepageHero md:pt-20 md:px-16 md:pb-32 pb-20 pt-8 md:mb-32 rounded-[40px]">
+      <div className="flex md:flex-row flex-col gap-4 md:gap-8 lg:gap-20">
+        <div className="max-w-[440px] mx-auto md:max-w-full md:mx-0 md:w-1/2">
+          <h1
+            className="text-center md:text-left text-transparent bg-clip-text bg-homepageTitle
+            my-8 md:my-[20px] text-[28px] md:text-[30px] lg:text-[40px] xl:text-[48px]
+            leading-[40px] lg:leading-[48px] xl:leading-[56px] font-bold font-roboto"
+          >
+            {page.tagline}
+          </h1>
+          <BlockContent
+            className="text-[20px] text-center md:text-left text-aserto-grey-90
+            font-bold font-roboto leading-[24px] -mb-4 my-4 md:my-0"
+            blocks={page.subtaglineRaw}
+          />
+          <div className="hidden md:block">
+            <CtaButtons signup seeDemo leftAlign />
+          </div>
+        </div>
+        <div className="md:w-1/2">
+          <Player
+            autoplay
+            background="transparent"
+            speed={1}
+            loop
+            src="/homepage-animation.json"
+            // style={{ height: '300px', width: '300px' }}
+          />
+        </div>
+        <div className="block md:hidden">
+          <CtaButtons signup seeDemo leftAlign />
+        </div>
+      </div>
     </Container>
   )
 }

@@ -7,7 +7,7 @@ const PlaygroundBanner = () => {
 
   return isVisible ? (
     <div
-      className="bg-aserto-lochivar-80 hidden lg:flex flex-col justify-center
+      className="bg-banner hidden lg:flex flex-col justify-center
                 text-center text-white h-[60px] sm:h-[36px]"
     >
       <span className="align-middle">
