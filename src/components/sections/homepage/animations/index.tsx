@@ -27,7 +27,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
                   )
                   element?.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'center'
+                    block: 'start'
                   })
                 }}
               >
