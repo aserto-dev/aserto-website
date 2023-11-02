@@ -7,7 +7,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
-    <Container className="md:bg-homepageHero md:pt-20 md:px-16 md:pb-32 pb-20 pt-8 md:mb-32 rounded-[40px]">
+    <Container className="md:bg-homepageHero lg:pt-20 md:px-16 lg:pb-32 pb-12 pt-8 md:mb-16 lg:mb-24 rounded-[40px]">
       <div className="flex md:flex-row flex-col gap-4 md:gap-8 lg:gap-20">
         <div className="max-w-[440px] mx-auto md:max-w-full md:mx-0 md:w-1/2">
           <h1
