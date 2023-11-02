@@ -16,6 +16,7 @@ const Intro = ({ page }: { page: HomePageFragment }) => {
           element={v.element}
           glow={v.glow}
           direction={i & 1 ? 'left' : 'right'}
+          last={i === valueProps.length - 1}
         />
       ))}
     </Container>
