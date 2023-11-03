@@ -1241,6 +1241,7 @@ export type Home = Document & {
   subtaglineRaw?: Maybe<Scalars['JSON']>;
   heroImage?: Maybe<MainImage>;
   animatedGifs?: Maybe<Array<Maybe<PillarBlock>>>;
+  demoTitle?: Maybe<Scalars['String']>;
   demoUrl?: Maybe<Scalars['String']>;
   valueProps?: Maybe<Array<Maybe<ValueProp>>>;
   theProblemSectionTitle?: Maybe<Scalars['String']>;
@@ -1261,6 +1262,7 @@ export type HomeFilter = {
   metadata?: Maybe<PageMetadataFilter>;
   tagline?: Maybe<StringFilter>;
   heroImage?: Maybe<MainImageFilter>;
+  demoTitle?: Maybe<StringFilter>;
   demoUrl?: Maybe<StringFilter>;
   theProblemSectionTitle?: Maybe<StringFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
@@ -1277,6 +1279,7 @@ export type HomeSorting = {
   metadata?: Maybe<PageMetadataSorting>;
   tagline?: Maybe<SortOrder>;
   heroImage?: Maybe<MainImageSorting>;
+  demoTitle?: Maybe<SortOrder>;
   demoUrl?: Maybe<SortOrder>;
   theProblemSectionTitle?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
@@ -4196,7 +4199,7 @@ export type FrameworkPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'tagline' | 'positioningStatementRaw' | 'subtaglineRaw' | 'demoUrl' | 'theProblemSectionTitle' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'tagline' | 'positioningStatementRaw' | 'subtaglineRaw' | 'demoTitle' | 'demoUrl' | 'theProblemSectionTitle' | 'testimonialsSectionTitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -5246,6 +5249,7 @@ export const HomePageFragmentDoc = gql`
   animatedGifs {
     ...PillarBlock
   }
+  demoTitle
   demoUrl
   valueProps {
     ...ValueProp
