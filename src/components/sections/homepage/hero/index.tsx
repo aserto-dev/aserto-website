@@ -4,6 +4,7 @@ import Container from '../container'
 import CtaButtons from 'components/sections/common/cta-buttons'
 import { BlockContent } from 'components/primitives/block-content'
 import { Player } from '@lottiefiles/react-lottie-player'
+import { Suspense } from 'react'
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
@@ -26,15 +27,23 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             <CtaButtons signup seeDemo leftAlign />
           </div>
         </div>
-        <div className="md:w-1/2">
-          <Player
-            autoplay
-            background="transparent"
-            speed={1}
-            loop
-            src="/homepage-animation.json"
-            // style={{ height: '300px', width: '300px' }}
-          />
+        <div className="md:w-1/2 mt-12 md:mt-0">
+          <Suspense
+            fallback={
+              <video autoPlay controls>
+                <source src="/homepage-animation.mp4" type="video/mp4" />
+              </video>
+            }
+          >
+            <Player
+              autoplay
+              background="transparent"
+              speed={1}
+              loop
+              src="/homepage-animation.json"
+              // style={{ height: '300px', width: '300px' }}
+            />
+          </Suspense>
         </div>
         <div className="block md:hidden">
           <CtaButtons signup seeDemo leftAlign />
