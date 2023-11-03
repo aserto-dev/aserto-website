@@ -7,7 +7,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
   return (
     <Container className="sm:px-16 pt-8 font-roboto">
       <img
-        className="absolute top-96 -left-28"
+        className="hidden md:block absolute top-96 -left-28"
         src="images/translucent-aserto.png"
         alt="Aserto"
       />
@@ -20,7 +20,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
               rounded-[40px] bg-gif p-1 text-center"
             >
               <div
-                className="rounded-[40px] h-full bg-aserto-black p-4 hover:cursor-pointer"
+                className="relative rounded-[40px] h-full bg-aserto-black p-4 hover:cursor-pointer"
                 onClick={() => {
                   const element = document.getElementById(
                     `value-prop-${scrollToIds[i]}`
@@ -31,11 +31,19 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
                   })
                 }}
               >
-                <h3 className="text-xl lg:text-3xl xl:text-4xl font-bold text-aserto-grey-90 mb-4 lg:mb-8">
+                <img
+                  className="absolute w-3/5 translate-x-1/4 translate-y-1/4"
+                  src="images/translucent-aserto.png"
+                  alt="Aserto"
+                />
+                <h3
+                  className="text-xl lg:text-3xl xl:text-4xl font-bold mb-4 lg:mb-8
+                  text-transparent bg-clip-text bg-homepageTitle"
+                >
                   {g?.title}
                 </h3>
                 <img
-                  className="h-1/2 object-cover my-4"
+                  className="h-1/2 relative object-cover my-4"
                   src={g?.image?.asset?.url || ''}
                   alt={g?.image?.alt || ''}
                 />
