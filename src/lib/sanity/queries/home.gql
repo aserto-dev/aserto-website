@@ -12,6 +12,7 @@ fragment HomePage on Home {
   animatedGifs {
     ...PillarBlock
   }
+  demoTitle
   demoUrl
   valueProps {
     ...ValueProp

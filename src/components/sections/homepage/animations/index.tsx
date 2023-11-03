@@ -65,7 +65,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
           className="text-[20px] lg:text-[24px] text-center text-aserto-grey-90
             font-bold leading-[28px] mb-4"
         >
-          Watch a 3-minute demo
+          {page.demoTitle}
         </p>
         <div>
           <iframe
