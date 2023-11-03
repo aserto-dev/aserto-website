@@ -7,7 +7,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
   return (
     <Container className="sm:px-16 pt-8 font-roboto">
       <img
-        className="absolute top-96 -left-28"
+        className="hidden md:block absolute top-96 -left-28"
         src="images/translucent-aserto.png"
         alt="Aserto"
       />
@@ -43,7 +43,7 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
                   {g?.title}
                 </h3>
                 <img
-                  className="h-1/2 object-cover my-4"
+                  className="h-1/2 relative object-cover my-4"
                   src={g?.image?.asset?.url || ''}
                   alt={g?.image?.alt || ''}
                 />
