@@ -26,7 +26,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
             <CtaButtons signup seeDemo leftAlign />
           </div>
         </div>
-        <div className="md:w-1/2 mt-12 md:mt-0">
+        <div className="md:w-1/2 mt-12 md:mt-0 aspect-square">
           <Player
             autoplay
             background="transparent"
