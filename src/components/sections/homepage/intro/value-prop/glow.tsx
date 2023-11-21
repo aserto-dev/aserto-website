@@ -1,9 +1,9 @@
 const Glow = ({ direction }: { direction: string }) => {
-  const offset = direction === 'left' ? 'left-40' : 'right-40'
+  const offset = direction === 'left' ? 'left-32' : 'right-4'
   return (
     <div className="flex items-stretch items-center">
       <div
-        className={`-z-10 hidden xl:block absolute ${offset} self-center w-[500px] h-[500px] bg-homepageGlow`}
+        className={`-z-10 hidden xl:block absolute ${offset} self-center w-[650px] h-[500px] bg-glow`}
       ></div>
     </div>
   )

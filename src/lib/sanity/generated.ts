@@ -1238,6 +1238,11 @@ export type Home = Document & {
   metadata?: Maybe<PageMetadata>;
   tagline?: Maybe<Scalars['String']>;
   positioningStatementRaw?: Maybe<Scalars['JSON']>;
+  subtaglineRaw?: Maybe<Scalars['JSON']>;
+  heroImage?: Maybe<MainImage>;
+  animatedGifs?: Maybe<Array<Maybe<PillarBlock>>>;
+  demoTitle?: Maybe<Scalars['String']>;
+  demoUrl?: Maybe<Scalars['String']>;
   valueProps?: Maybe<Array<Maybe<ValueProp>>>;
   theProblemSectionTitle?: Maybe<Scalars['String']>;
   theProblemSectionCards?: Maybe<Array<Maybe<SectionBlock>>>;
@@ -1256,6 +1261,9 @@ export type HomeFilter = {
   _key?: Maybe<StringFilter>;
   metadata?: Maybe<PageMetadataFilter>;
   tagline?: Maybe<StringFilter>;
+  heroImage?: Maybe<MainImageFilter>;
+  demoTitle?: Maybe<StringFilter>;
+  demoUrl?: Maybe<StringFilter>;
   theProblemSectionTitle?: Maybe<StringFilter>;
   testimonialsSectionTitle?: Maybe<StringFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
@@ -1270,6 +1278,9 @@ export type HomeSorting = {
   _key?: Maybe<SortOrder>;
   metadata?: Maybe<PageMetadataSorting>;
   tagline?: Maybe<SortOrder>;
+  heroImage?: Maybe<MainImageSorting>;
+  demoTitle?: Maybe<SortOrder>;
+  demoUrl?: Maybe<SortOrder>;
   theProblemSectionTitle?: Maybe<SortOrder>;
   testimonialsSectionTitle?: Maybe<SortOrder>;
   callToAction?: Maybe<CtaBlockSorting>;
@@ -3556,6 +3567,15 @@ export type LandingPageFragment = (
   )> }
 );
 
+export type PillarBlockFragment = (
+  { __typename?: 'PillarBlock' }
+  & Pick<PillarBlock, 'imagePath' | 'title' | 'description' | 'color'>
+  & { image?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )> }
+);
+
 export type PostMetaFragment = (
   { __typename?: 'Post' }
   & Pick<Post, '_id' | 'publishedAt' | 'title' | 'excerptRaw'>
@@ -4179,11 +4199,17 @@ export type FrameworkPageQuery = (
 
 export type HomePageFragment = (
   { __typename?: 'Home' }
-  & Pick<Home, 'tagline' | 'positioningStatementRaw' | 'theProblemSectionTitle' | 'testimonialsSectionTitle'>
+  & Pick<Home, 'tagline' | 'positioningStatementRaw' | 'subtaglineRaw' | 'demoTitle' | 'demoUrl' | 'theProblemSectionTitle' | 'testimonialsSectionTitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
-  )>, valueProps?: Maybe<Array<Maybe<(
+  )>, heroImage?: Maybe<(
+    { __typename?: 'MainImage' }
+    & ImageFragment
+  )>, animatedGifs?: Maybe<Array<Maybe<(
+    { __typename?: 'PillarBlock' }
+    & PillarBlockFragment
+  )>>>, valueProps?: Maybe<Array<Maybe<(
     { __typename?: 'ValueProp' }
     & ValuePropFragment
   )>>>, theProblemSectionCards?: Maybe<Array<Maybe<(
@@ -5186,6 +5212,17 @@ export const FeaturesPageFragmentDoc = gql`
 }
     ${FeatureBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
+export const PillarBlockFragmentDoc = gql`
+    fragment PillarBlock on PillarBlock {
+  image {
+    ...Image
+  }
+  imagePath
+  title
+  description
+  color
+}
+    ${ImageFragmentDoc}`;
 export const ValuePropFragmentDoc = gql`
     fragment ValueProp on ValueProp {
   image {
@@ -5205,6 +5242,15 @@ export const HomePageFragmentDoc = gql`
   }
   tagline
   positioningStatementRaw
+  subtaglineRaw
+  heroImage {
+    ...Image
+  }
+  animatedGifs {
+    ...PillarBlock
+  }
+  demoTitle
+  demoUrl
   valueProps {
     ...ValueProp
   }
@@ -5221,7 +5267,9 @@ export const HomePageFragmentDoc = gql`
     contactEngineerDark
   }
 }
-    ${ValuePropFragmentDoc}
+    ${ImageFragmentDoc}
+${PillarBlockFragmentDoc}
+${ValuePropFragmentDoc}
 ${SectionBlockFragmentDoc}`;
 export const NewsItemFragmentDoc = gql`
     fragment NewsItem on NewsBlock {

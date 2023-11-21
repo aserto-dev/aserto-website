@@ -24,7 +24,7 @@ const CtaButtons = ({
 }: Props) => {
   return (
     <div
-      className={`flex flex-col sm:flex-row mt-[50px] gap-8 sm:gap-4 ${
+      className={`flex flex-col md:flex-row mt-[50px] gap-8 md:gap-4 ${
         !leftAlign && `justify-center`
       }`}
     >

@@ -14,6 +14,7 @@ import Intro from 'components/sections/homepage/intro'
 import Problem from 'components/sections/homepage/problem-statement'
 import CallToAction from 'components/sections/homepage/call-to-action'
 import { SectionBlockFragment } from 'lib/sanity/generated'
+import Animations from 'components/sections/homepage/animations'
 
 const HomePage = ({
   post,
@@ -36,18 +37,22 @@ const HomePage = ({
         image: 'images/og.png'
       }}
     >
-      <Hero
-        title={
-          page.tagline ?? 'The fastest path to enterprise-grade authorization.'
-        }
-      />
+      <Hero page={page} />
+      <Container className="bg-aserto-black md:hidden mb-8">
+        <hr className="p-[2px] bg-hrGradient border-t-0" />
+      </Container>
+      <Animations page={page} />
       <Intro page={page} />
       <Problem title={page.theProblemSectionTitle ?? ''} problems={problems} />
+      <Container className="bg-aserto-grey-10">
+        <hr className="p-[2px] bg-hrGradient border-t-0" />
+      </Container>
       <Container className="py-[100px] bg-aserto-grey-10 bg-homepageInfo text-aserto-grey-90">
         <h2 className="text-[36px] font-medium text-center">
           {page.testimonialsSectionTitle}
         </h2>
         <Testimonials testimonials={testimonials} />
+        <hr className="p-[2px] my-8 bg-hrGradient border-t-0" />
         <LatestInfo
           title={'Our latest content and events'}
           latestBlogPost={post}
@@ -55,6 +60,12 @@ const HomePage = ({
         />
       </Container>
       <CallToAction {...page.callToAction} />
+      <img
+        className="object-fit h-[200px] absolute left-0 right-0 -bottom-20 md:-bottom-16 sm:-bottom-12
+        mx-auto mt-60 sm:mt-52 md:mt-20 lg:mt-56 xl:mt-0"
+        src="images/homepage/seafloor-teal.svg"
+        alt="Sea Floor"
+      />
     </PageLayout>
   )
 }

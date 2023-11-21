@@ -150,15 +150,20 @@ module.exports = {
       backgroundImage: {
         modal:
           'radial-gradient(circle at center, #3ecacf -100%, rgba(18, 18, 18, 0) 100% )',
+        hero: 'linear-gradient(180deg, #2F9195 0%, #183334 30%)',
+        banner:
+          'linear-gradient(90deg, #277F82 0%, #376EBF 33.33%, #BF7937 66.67%, #693BCC 100%)',
+        benefitsCta: 'linear-gradient(0, #23696C 0%, #121212 80%)',
+        homepageHero: `radial-gradient(117.01% 117.01% at 50% -5.67%, #121212 0%, #121212 76.56%, 
+          rgba(0, 125, 193, 0.6) 85.42%, rgba(39, 127, 130, 0.6) 100%)`,
+        homepageTitle: 'linear-gradient(90deg, #277F82 3.85%, #007DC1 80.04%)',
         hrGradient:
           'linear-gradient(90deg, rgba(39, 127, 130, 0) 0%, #277F82 33.33%, #007DC1 66.67%, rgba(0, 125, 193, 0) 100%)',
-        hero: 'linear-gradient(180deg, #2F9195 0%, #183334 30%)',
-        benefitsCta: 'linear-gradient(0, #23696C 0%, #121212 80%)',
-        homepageGlow:
-          'radial-gradient(50% 50% at 50% 50%, rgba(62, 202, 207, 0.8) 0%, rgba(62, 202, 207, 0) 100%)',
         featureHero:
           'linear-gradient(180deg, #2F9195 0%, #183334 20%, #121212 80%)',
         featureCta: 'linear-gradient(0, #23696C 0%, #121212 25%)',
+        gif: 'linear-gradient(123.65deg, #048A8F 2.56%, #376EBF 96.23%)',
+        glow: 'radial-gradient(50% 50% at 50% 50%, #277F82 0%, rgba(85, 171, 174, 0) 100%)',
         goodbye: 'linear-gradient(0deg, #121212 0%, #414141 100%)',
         resourceHero:
           'linear-gradient(180deg, #2F9195 0%, #183334 40%, #121212 60%)',

@@ -55,3 +55,11 @@ pre code {
   list-style-type: disc;
   padding: 2.5rem;
 }
+
+.overflow-div-clip {
+  overflow: clip;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
