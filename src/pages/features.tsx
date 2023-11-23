@@ -1,16 +1,17 @@
 import { InferGetStaticPropsType } from 'next'
 import cms from 'lib/sanity'
-import { FeatureItemFragment } from 'lib/sanity/generated'
+import { FeatureBlockFragment, FeatureItemFragment } from 'lib/sanity/generated'
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import Hero from 'components/sections/features/hero'
 import IconBlock from 'components/sections/features/icon-block'
+import FeatureBlocks from 'components/sections/features/feature-blocks'
 
 const FeaturesPage = ({
   page
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // const features: FeatureBlockFragment[] =
-  //   page.featureBlocks as FeatureBlockFragment[]
+  const features: FeatureBlockFragment[] =
+    page.featureBlocks as FeatureBlockFragment[]
   const featureItems: FeatureItemFragment[] =
     page.featureItems as FeatureItemFragment[]
   return (
@@ -34,7 +35,7 @@ const FeaturesPage = ({
         alt="Lottie"
       />
 
-      {/* <FeatureBlocks features={features} /> */}
+      <FeatureBlocks features={features} />
 
       <IconBlock
         featureIcons={featureItems}

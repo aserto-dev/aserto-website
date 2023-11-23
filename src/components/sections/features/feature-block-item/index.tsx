@@ -60,12 +60,12 @@ const FeatureBlockItem = ({
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
-      <div className="relative flex flex-col xl:flex-row justify-evenly mb-40 xl:mb-72">
+      <div className="relative flex flex-col xl:flex-row justify-evenly mb-20 xl:mt-20 xl:mb-40">
         {/* {!!glow && <Glow direction={direction ?? 'left'} />} */}
         <div
-          className={`text-center xl:text-left text-[20px] ${dirStyle} flex items-center`}
+          className={`text-center xl:text-left text-[20px] ${dirStyle} flex items-center xl:items-start py-20`}
         >
-          <div className="sm:w-9/12 xl:w-[430px] mx-auto">
+          <div className="sm:w-9/12 xl:w-[430px] mx-auto text-aserto-grey-90">
             {!!titleRaw && (
               <BlockContent
                 className="text-[24px] lg:text-[30px] leading-8 lg:leading-10"
@@ -75,14 +75,14 @@ const FeatureBlockItem = ({
             )}
             {!!subtitleRaw && (
               <BlockContent
-                className={`text-[18px] lg:text-[20px] xl:w-[430px] text-left xl:text-left mt-8`}
+                className={`text-[18px] lg:text-[20px] xl:w-[430px] mt-8`}
                 blocks={subtitleRaw}
                 spaced
               />
             )}
           </div>
         </div>
-        <div className="relative md:flex md:flex-row md:justify-center">
+        <div className="relative flex flex-col w-3/4 mx-auto xl:w-7/12">
           {element === 'CodeBrowser' && <CodeBrowser />}
           {element === 'PolicyBrowser' && <PolicyBrowser />}
           {element === 'Animation' && (
@@ -90,24 +90,17 @@ const FeatureBlockItem = ({
               <AsertoInAction />
             </div>
           )}
-          {image?.asset?.url && (
+          {element === 'Image/gif' && (
             <img
               className="object-scale-down mx-auto"
               src={image?.asset?.url ?? '/404'}
               alt={image?.alt ?? 'value prop image'}
             />
           )}
-          {element === 'Image/gif' && (
-            <img
-              className="w-full sm:w-3/4 object-scale-down mx-auto"
-              src={image?.asset?.url ?? '/404'}
-              alt={image?.alt ?? 'value prop image'}
-            />
-          )}
           {element === 'Carousel' && (
             <>
-              <div className="relative px-0 my-12 mx-auto">
-                <div className="rego custom-arrows w-full sm:w-3/4 mx-auto">
+              <div className="relative px-0 my-12">
+                <div className="rego custom-arrows w-full max-w-[100vw] mx-auto">
                   <Slider
                     {...settings}
                     afterChange={(e) =>
@@ -131,7 +124,7 @@ const FeatureBlockItem = ({
               </div>
               {!!caption && (
                 <BlockContent
-                  className="text-[18px] lg:text-[20px] px-4 sm:w-3/4 sm:mx-auto text-aserto-grey-70"
+                  className="text-[18px] lg:text-[20px] w-full px-4 sm:mx-auto text-aserto-grey-70"
                   blocks={caption}
                   spaced
                 />
