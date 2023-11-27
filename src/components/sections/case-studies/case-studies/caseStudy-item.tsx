@@ -9,7 +9,7 @@ type Props = {
 
 const CaseStudyItem = ({ data }: Props) => {
   return (
-    <Link href={`/customers/${data.slug?.current}`}>
+    <Link href={`/customers/${data.slug?.current}`} legacyBehavior>
       <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
         <div className="bg-white px-5 rounded">
           <Image

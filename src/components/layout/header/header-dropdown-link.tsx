@@ -109,7 +109,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
       onOpenChange={toggle}
     >
       {link.href ? (
-        <Link href={link.href} passHref>
+        <Link href={link.href} passHref legacyBehavior>
           {trigger}
         </Link>
       ) : (
@@ -150,7 +150,7 @@ export const HeaderDropdownLinkMobile = ({
     <div>
       <span className="inline-flex px-4 h-16 border-t border-aserto-grey-20 items-center w-full">
         {link.href ? (
-          <Link href={link.href} passHref>
+          <Link href={link.href} passHref legacyBehavior>
             <MobileTrigger
               onClick={link.items?.length && !link.href ? toggle : onSelect}
             >
@@ -181,13 +181,12 @@ export const HeaderDropdownLinkMobile = ({
           {link?.items?.map((l, i) => {
             return (
               <div key={i}>
-                <Link href={l.href}>
-                  <a
-                    onClick={onSelect}
-                    className="inline-flex items-center text-xl transition-colors text-aserto-grey-90 xs:text-2xl"
-                  >
-                    {l.label}
-                  </a>
+                <Link
+                  href={l.href}
+                  onClick={onSelect}
+                  className="inline-flex items-center text-xl transition-colors text-aserto-grey-90 xs:text-2xl"
+                >
+                  {l.label}
                 </Link>
               </div>
             )

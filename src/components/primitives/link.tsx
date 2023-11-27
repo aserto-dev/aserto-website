@@ -39,30 +39,27 @@ const Link = forwardRef<HTMLAnchorElement, Props>(
         shallow={shallow}
         prefetch={prefetch}
         passHref
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener' : undefined}
+        {...aProps}
+        ref={ref}
+        className={
+          variant === 'unstyled'
+            ? className
+            : clsx(
+                className,
+                'whitespace-nowrap text-primary transition-colors duration-150',
+                {
+                  'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
+                },
+                {
+                  'text-xl text-aserto-lochivar-accent-40 hover:underline focus:text-aserto-lochivar-accent-50':
+                    variant === 'color'
+                }
+              )
+        }
       >
-        <a
-          target={isExternal ? '_blank' : undefined}
-          rel={isExternal ? 'noopener' : undefined}
-          {...aProps}
-          ref={ref}
-          className={
-            variant === 'unstyled'
-              ? className
-              : clsx(
-                  className,
-                  'whitespace-nowrap text-primary transition-colors duration-150',
-                  {
-                    'text-xl text-aserto-grey-80 font-bold': variant === 'nav'
-                  },
-                  {
-                    'text-xl text-aserto-lochivar-accent-40 hover:underline focus:text-aserto-lochivar-accent-50':
-                      variant === 'color'
-                  }
-                )
-          }
-        >
-          {children}
-        </a>
+        {children}
       </NextLink>
     )
   }

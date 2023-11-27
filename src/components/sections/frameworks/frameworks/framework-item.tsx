@@ -8,7 +8,7 @@ type Props = {
 
 const FrameworkPageItem = ({ data }: Props) => {
   return (
-    <Link href={`/frameworks/${data.slug?.current}`}>
+    <Link href={`/frameworks/${data.slug?.current}`} legacyBehavior>
       <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
         <div className="bg-aserto-grey-5 p-5 rounded">
           <Image
