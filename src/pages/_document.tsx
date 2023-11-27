@@ -26,11 +26,7 @@ class MyDocument extends Document {
             data-website-uuid="8437675d-2ac7-4fbd-8e03-ad2b3b9e974a"
             async
           />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="preload"
             as="style"

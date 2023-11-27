@@ -27,7 +27,7 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
       ref={ref}
     >
       <Link href={`/blog/${post.slug?.current}`}>
-        <a>
+        {/* <a>
           <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
             <div>
               <Image
@@ -54,7 +54,7 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
               </time>
             </div>
           </div>
-        </a>
+        </a> */}
       </Link>
     </section>
   )
