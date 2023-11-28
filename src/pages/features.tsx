@@ -30,7 +30,7 @@ const FeaturesPage = ({
       <Hero page={page} />
 
       <img
-        className="w-[150px] sm:w-[280px] mx-auto my-16 sm:my-24"
+        className="w-[150px] sm:w-[280px] mx-auto my-16 xl:my-40"
         src="images/homepage/Lottie.svg"
         alt="Lottie"
       />

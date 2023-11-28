@@ -18,7 +18,7 @@ const settings = {
   initialSlide: 0
 }
 
-type FeatureBlockType = FeatureBlock & { direction: string }
+type FeatureBlockType = FeatureBlock & { direction?: 'left' | 'right' }
 
 const FeatureBlockItem = ({
   titleRaw,
@@ -30,6 +30,66 @@ const FeatureBlockItem = ({
 }: FeatureBlockType) => {
   const [caption, setCaption] = useState(carouselImages?.[0]?.captionRaw)
   const dirStyle = direction === 'left' ? 'xl:order-2' : ''
+
+  const displayMedia = (element: FeatureBlock['element']) => {
+    switch (element) {
+      case 'CodeBrowser':
+        return <CodeBrowser />
+      case 'PolicyBrowser':
+        return <PolicyBrowser />
+      case 'Animation':
+        return (
+          <div className="hidden md:block md:w-[700px]">
+            <AsertoInAction />
+          </div>
+        )
+      case 'Image/gif':
+        return (
+          <img
+            className="object-scale-down mx-auto"
+            src={image?.asset?.url ?? '/404'}
+            alt={image?.alt ?? 'value prop image'}
+          />
+        )
+      case 'Carousel':
+        return (
+          <>
+            <div className={`relative px-0 mb-12 ${direction && 'xl:my-12'}`}>
+              <div className="rego custom-arrows w-full max-w-[100vw] mx-auto">
+                <Slider
+                  {...settings}
+                  afterChange={(e) =>
+                    setCaption(carouselImages?.[e]?.captionRaw)
+                  }
+                  prevArrow={<PrevArrow />}
+                  nextArrow={<NextArrow />}
+                >
+                  {carouselImages?.map((c, i) => {
+                    return (
+                      <img
+                        key={i}
+                        className="object-scale-down mx-auto"
+                        src={c?.asset?.url ?? '/404'}
+                        alt={c?.alt ?? 'value prop image'}
+                      />
+                    )
+                  })}
+                </Slider>
+              </div>
+            </div>
+            {!!caption && (
+              <BlockContent
+                className="text-[18px] lg:text-[20px] w-full px-4 sm:mx-auto text-aserto-grey-70"
+                blocks={caption}
+                spaced
+              />
+            )}
+          </>
+        )
+      default:
+        return
+    }
+  }
 
   const PrevArrow = (
     props: JSX.IntrinsicAttributes &
@@ -60,10 +120,15 @@ const FeatureBlockItem = ({
   return (
     <>
       <link rel="stylesheet" href="/css/carousel.css"></link>
-      <div className="relative flex flex-col xl:flex-row justify-evenly mb-20 xl:mt-20 xl:mb-40">
-        {/* {!!glow && <Glow direction={direction ?? 'left'} />} */}
+      <div
+        className={`relative flex flex-col ${
+          direction && 'xl:flex-row'
+        } justify-evenly mb-20 xl:mt-20 xl:mb-40`}
+      >
         <div
-          className={`text-center xl:text-left text-[20px] ${dirStyle} flex items-center xl:items-start py-20`}
+          className={`text-center ${
+            direction && 'xl:text-left xl:items-start'
+          } text-[20px] ${dirStyle} flex items-center py-20`}
         >
           <div className="sm:w-9/12 xl:w-[430px] mx-auto text-aserto-grey-90">
             {!!titleRaw && (
@@ -83,54 +148,7 @@ const FeatureBlockItem = ({
           </div>
         </div>
         <div className="relative flex flex-col w-3/4 mx-auto xl:w-7/12">
-          {element === 'CodeBrowser' && <CodeBrowser />}
-          {element === 'PolicyBrowser' && <PolicyBrowser />}
-          {element === 'Animation' && (
-            <div className="hidden md:block md:w-[700px]">
-              <AsertoInAction />
-            </div>
-          )}
-          {element === 'Image/gif' && (
-            <img
-              className="object-scale-down mx-auto"
-              src={image?.asset?.url ?? '/404'}
-              alt={image?.alt ?? 'value prop image'}
-            />
-          )}
-          {element === 'Carousel' && (
-            <>
-              <div className="relative px-0 my-12">
-                <div className="rego custom-arrows w-full max-w-[100vw] mx-auto">
-                  <Slider
-                    {...settings}
-                    afterChange={(e) =>
-                      setCaption(carouselImages?.[e]?.captionRaw)
-                    }
-                    prevArrow={<PrevArrow />}
-                    nextArrow={<NextArrow />}
-                  >
-                    {carouselImages?.map((c, i) => {
-                      return (
-                        <img
-                          key={i}
-                          className="object-scale-down mx-auto"
-                          src={c?.asset?.url ?? '/404'}
-                          alt={c?.alt ?? 'value prop image'}
-                        />
-                      )
-                    })}
-                  </Slider>
-                </div>
-              </div>
-              {!!caption && (
-                <BlockContent
-                  className="text-[18px] lg:text-[20px] w-full px-4 sm:mx-auto text-aserto-grey-70"
-                  blocks={caption}
-                  spaced
-                />
-              )}
-            </>
-          )}
+          {displayMedia(element)}
         </div>
       </div>
     </>

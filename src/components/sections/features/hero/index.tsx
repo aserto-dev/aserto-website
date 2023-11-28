@@ -35,7 +35,7 @@ const Hero = ({ page }: { page: FeaturesPageFragment }) => {
         See a demo
       </Button>
       {heroFeatures.map((hf, i) => (
-        <FeatureBlockItem direction="left" key={i} {...hf} />
+        <FeatureBlockItem key={i} {...hf} />
       ))}
     </Container>
   )
