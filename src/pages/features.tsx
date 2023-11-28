@@ -3,9 +3,9 @@ import cms from 'lib/sanity'
 import { FeatureBlockFragment, FeatureItemFragment } from 'lib/sanity/generated'
 import PageLayout from 'components/layout/page'
 import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
-import FeatureBlocks from 'components/sections/features/feature-blocks'
 import Hero from 'components/sections/features/hero'
 import IconBlock from 'components/sections/features/icon-block'
+import FeatureBlocks from 'components/sections/features/feature-blocks'
 
 const FeaturesPage = ({
   page
@@ -30,7 +30,7 @@ const FeaturesPage = ({
       <Hero page={page} />
 
       <img
-        className="w-[150px] sm:w-[280px] mx-auto my-16 sm:my-24"
+        className="w-[150px] sm:w-[280px] mx-auto my-16 xl:my-40"
         src="images/homepage/Lottie.svg"
         alt="Lottie"
       />
