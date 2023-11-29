@@ -1,13 +1,7 @@
-import React, {
-  ReactChildren,
-  ReactChild,
-  useRef,
-  useEffect,
-  RefObject
-} from 'react'
+import React, { useRef, useEffect, RefObject, ReactNode } from 'react'
 
 interface ChildrenProps {
-  children: ReactChild | ReactChildren
+  children: ReactNode
   closeModal?: () => void
   background?: boolean
 }
