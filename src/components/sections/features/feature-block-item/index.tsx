@@ -154,7 +154,7 @@ const FeatureBlockItem = ({
         <div
           className={`relative flex flex-col ${
             direction && 'md:items-center'
-          } justify-center w-full mx-auto xl:w-7/12`}
+          } justify-center w-full md:w-3/4 mx-auto xl:w-7/12`}
         >
           {displayMedia(element)}
         </div>
