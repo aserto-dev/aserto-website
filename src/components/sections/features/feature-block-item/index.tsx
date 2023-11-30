@@ -54,7 +54,11 @@ const FeatureBlockItem = ({
       case 'Carousel':
         return (
           <>
-            <div className={`relative px-0 mb-12 ${direction && 'xl:my-12'}`}>
+            <div
+              className={`relative px-0 mb-12 ${
+                direction && 'xl:my-12'
+              } border border-aserto-lochivar-100 rounded-[4px]`}
+            >
               <div className="rego custom-arrows w-full max-w-[100vw] mx-auto">
                 <Slider
                   {...settings}
@@ -68,7 +72,7 @@ const FeatureBlockItem = ({
                     return (
                       <img
                         key={i}
-                        className="object-scale-down mx-auto"
+                        className="object-scale-down mx-auto rounded-[4px]"
                         src={c?.asset?.url ?? '/404'}
                         alt={c?.alt ?? 'value prop image'}
                       />
@@ -79,7 +83,7 @@ const FeatureBlockItem = ({
             </div>
             {!!caption && (
               <BlockContent
-                className="text-[18px] lg:text-[20px] w-full px-4 sm:mx-auto text-aserto-grey-70"
+                className="text-[18px] lg:text-[20px] text-left w-full px-4 sm:mx-auto text-aserto-grey-70"
                 blocks={caption}
                 spaced
               />
@@ -123,14 +127,14 @@ const FeatureBlockItem = ({
       <div
         className={`relative flex flex-col ${
           direction && 'xl:flex-row'
-        } justify-evenly mb-20 xl:mt-20 xl:mb-40`}
+        } justify-evenly mb-20 xl:mt-20 xl:mb-40 text-aserto-grey-90`}
       >
         <div
           className={`text-center ${
             direction && 'xl:text-left xl:items-start'
           } text-[20px] ${dirStyle} flex items-center py-20`}
         >
-          <div className="sm:w-9/12 xl:w-[430px] mx-auto text-aserto-grey-90">
+          <div className="sm:w-9/12 xl:w-[430px] mx-auto">
             {!!titleRaw && (
               <BlockContent
                 className="text-[24px] lg:text-[30px] leading-8 lg:leading-10"
@@ -140,14 +144,18 @@ const FeatureBlockItem = ({
             )}
             {!!subtitleRaw && (
               <BlockContent
-                className={`text-[18px] lg:text-[20px] xl:w-[430px] mt-8`}
+                className={`text-left text-[18px] lg:text-[20px] xl:w-[430px] mt-8`}
                 blocks={subtitleRaw}
                 spaced
               />
             )}
           </div>
         </div>
-        <div className="relative flex flex-col w-3/4 mx-auto xl:w-7/12">
+        <div
+          className={`relative flex flex-col ${
+            direction && 'md:items-center'
+          } justify-center w-full md:w-3/4 mx-auto xl:w-7/12`}
+        >
           {displayMedia(element)}
         </div>
       </div>
