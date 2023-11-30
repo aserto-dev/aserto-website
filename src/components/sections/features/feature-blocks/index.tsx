@@ -1,6 +1,6 @@
 import { FeatureBlockFragment } from 'lib/sanity/generated'
 import FeatureBlockItem from '../feature-block-item'
-import Container from 'components/layout/container'
+import Container from 'components/sections/homepage/container'
 
 const FeatureBlocks = ({ features }: { features: FeatureBlockFragment[] }) => {
   return (
