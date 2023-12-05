@@ -16,16 +16,14 @@ body {
   scroll-behavior: smooth;
 }
 
-html
-
-.video::-webkit-media-controls-panel {
+html .video::-webkit-media-controls-panel {
   display: none !important;
   -webkit-appearance: none;
 }
 
 .video::--webkit-media-controls-play-button {
   display: none !important;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
 }
 
 .video::-webkit-media-controls-start-playback-button {
@@ -42,8 +40,8 @@ pre code {
 }
 .codeblock code {
   color: #67cbcf;
-  font-family: 'Ubuntu Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace !important;
+  font-family: 'Ubuntu Mono', source-code-pro, Menlo, Monaco, Consolas,
+    'Courier New', monospace !important;
 }
 
 .codeblock span {
