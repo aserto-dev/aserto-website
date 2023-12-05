@@ -26,7 +26,7 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
       className={clsx('relative mx-auto mb-32 text-white', s.background)}
       ref={ref}
     >
-      <Link href={`/blog/${post.slug?.current}`} legacyBehavior>
+      <Link href={`/blog/${post.slug?.current}`}>
         <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
           <div>
             <Image
