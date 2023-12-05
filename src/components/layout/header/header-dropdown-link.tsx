@@ -150,7 +150,7 @@ export const HeaderDropdownLinkMobile = ({
     <div>
       <span className="inline-flex px-4 h-16 border-t border-aserto-grey-20 items-center w-full">
         {link.href ? (
-          <Link href={link.href} passHref legacyBehavior>
+          <Link href={link.href} passHref>
             <MobileTrigger
               onClick={link.items?.length && !link.href ? toggle : onSelect}
             >
