@@ -2,7 +2,6 @@ import 'css/global.css'
 import { AppProps } from 'next/app'
 import { AnimatePresence } from 'framer-motion'
 import initGsap from 'lib/gsap'
-import { useId } from '@radix-ui/react-id'
 import '@typeform/embed/build/css/popup.css'
 import React, { useEffect } from 'react'
 import { pageview } from 'lib/ga'
@@ -12,8 +11,6 @@ import { useReportHubspotFormEventsToGoogleAnalytics } from 'lib/hubspot/Hubspot
 
 initGsap()
 const App = ({ Component, pageProps, router }: AppProps) => {
-  const id = useId()
-
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
   }, [])
@@ -42,7 +39,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <AnimatePresence exitBeforeEnter>
       <PlaygroundBannerContextProvider>
-        <Component id={id} {...pageProps} key={router.route} />
+        <Component {...pageProps} key={router.route} />
       </PlaygroundBannerContextProvider>
     </AnimatePresence>
   )
