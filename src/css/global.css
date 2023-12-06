@@ -23,7 +23,7 @@ html .video::-webkit-media-controls-panel {
 
 .video::--webkit-media-controls-play-button {
   display: none !important;
-  /* -webkit-appearance: none; */
+  -webkit-appearance: none;
 }
 
 .video::-webkit-media-controls-start-playback-button {
