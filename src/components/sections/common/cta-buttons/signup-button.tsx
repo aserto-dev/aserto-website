@@ -6,6 +6,7 @@ const SignupButton = () => {
   return (
     <>
       <Button
+        suppressHydrationWarning
         variant="primary"
         size="sm"
         as="a"

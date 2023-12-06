@@ -191,6 +191,7 @@ const Header = () => {
             <IconSlack />
           </Link>
           <Button
+            suppressHydrationWarning
             variant="primary"
             size="sm"
             as="a"
