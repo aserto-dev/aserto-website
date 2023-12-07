@@ -144,6 +144,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-4">
               <li>
                 <Link
+                  suppressHydrationWarning
                   className="text-sm leading-normal text-aserto-grey-70 font-roboto"
                   href="https://docs.aserto.com/docs"
                 >

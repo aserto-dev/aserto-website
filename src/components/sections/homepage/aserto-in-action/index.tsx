@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { isMobile, isSafari } from 'react-device-detect'
-import NoSSR from './NoSSR'
+import NoSSR from '../../common/NoSSR'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'

@@ -22,6 +22,7 @@ import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
 import Button from 'components/primitives/button'
+import NoSSR from 'components/sections/common/NoSSR'
 
 const { solutions } = props as unknown as {
   resources: ResourceFragment[]
@@ -133,89 +134,92 @@ const Header = () => {
       className="sticky top-0 z-40 w-full"
       style={{ position: '-webkit-sticky' }}
     >
-      <PlaygroundBanner />
-      <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
-        <nav className="flex items-center justify-between w-full lg:hidden">
-          <Link href="/">
-            <LogoMobile />
-          </Link>
-          <div className="relative w-6 h-6">
-            <MenuIcon
-              className={clsx('absolute transition-opacity duration-300', {
-                'opacity-0 invisible': open
-              })}
-              onClick={() => setOpen(!open)}
-            />
-            <CloseIcon
-              className={clsx('absolute transition-opacity duration-300', {
-                'opacity-0 invisible': !open
-              })}
-              onClick={() => setOpen(!open)}
-            />
+      <NoSSR>
+        <PlaygroundBanner />
+
+        <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
+          <nav className="flex items-center justify-between w-full lg:hidden">
+            <Link href="/">
+              <LogoMobile />
+            </Link>
+            <div className="relative w-6 h-6">
+              <MenuIcon
+                className={clsx('absolute transition-opacity duration-300', {
+                  'opacity-0 invisible': open
+                })}
+                onClick={() => setOpen(!open)}
+              />
+              <CloseIcon
+                className={clsx('absolute transition-opacity duration-300', {
+                  'opacity-0 invisible': !open
+                })}
+                onClick={() => setOpen(!open)}
+              />
+            </div>
+          </nav>
+          <nav className="items-center hidden space-x-10 lg:flex">
+            <Link href="/">
+              <Logo />
+            </Link>
+
+            <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
+            {headerLinks.map((each, idx) => (
+              <HeaderDropdownLink
+                key={idx}
+                id={idx}
+                link={{
+                  label: each.label,
+                  href: each.href ?? undefined,
+                  items: each.items.map((item) => ({
+                    href: item.href ?? undefined,
+                    label: item.label,
+                    isExternal: item.isExternal
+                  }))
+                }}
+              />
+            ))}
+          </nav>
+          <div className="hidden lg:block whitespace-nowrap items-center">
+            <Link
+              className="ml-8 inline-flex align-middle"
+              href="https://github.com/aserto-dev/topaz"
+            >
+              <span className="sr-only">GitHub</span>
+              <IconGithub />
+            </Link>
+            <Link
+              className="ml-8 inline-flex align-middle"
+              href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+            >
+              <span className="sr-only">Slack</span>
+              <IconSlack />
+            </Link>
+            <Button
+              variant="primary"
+              size="sm"
+              as="a"
+              href={asertoConsoleRootUrl + '/#signup'}
+              className="ml-8 font-medium inline-flex items-center cursor-pointer"
+            >
+              Sign up
+            </Button>
+            <Link
+              className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
+              href={asertoConsoleRootUrl}
+              isExternal={false}
+            >
+              Sign in
+            </Link>
           </div>
-        </nav>
-        <nav className="items-center hidden space-x-10 lg:flex">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
-          {headerLinks.map((each, idx) => (
-            <HeaderDropdownLink
-              key={idx}
-              id={idx}
-              link={{
-                label: each.label,
-                href: each.href ?? undefined,
-                items: each.items.map((item) => ({
-                  href: item.href ?? undefined,
-                  label: item.label,
-                  isExternal: item.isExternal
-                }))
-              }}
-            />
-          ))}
-        </nav>
-        <div className="hidden lg:block whitespace-nowrap items-center">
-          <Link
-            className="ml-8 inline-flex align-middle"
-            href="https://github.com/aserto-dev/topaz"
-          >
-            <span className="sr-only">GitHub</span>
-            <IconGithub />
-          </Link>
-          <Link
-            className="ml-8 inline-flex align-middle"
-            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
-          >
-            <span className="sr-only">Slack</span>
-            <IconSlack />
-          </Link>
-          <Button
-            suppressHydrationWarning
-            variant="primary"
-            size="sm"
-            as="a"
-            href={asertoConsoleRootUrl + '/#signup'}
-            className="ml-8 font-medium inline-flex items-center cursor-pointer"
-          >
-            Sign up
-          </Button>
-          <Link
-            className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
-            href={asertoConsoleRootUrl}
-            isExternal={false}
-          >
-            Sign in
-          </Link>
         </div>
-      </div>
-      <Menu
-        show={open}
-        closeMenu={() => setOpen(false)}
-        signupRedirect={() =>
-          history.pushState(null, '', asertoConsoleRootUrl + '/#signup')
-        }
-      />
+        <Menu
+          show={open}
+          closeMenu={() => setOpen(false)}
+          signupRedirect={() =>
+            history.pushState(null, '', asertoConsoleRootUrl + '/#signup')
+          }
+        />
+      </NoSSR>
     </header>
   )
 }

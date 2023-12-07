@@ -20,7 +20,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           <BlockContent
             className="text-[20px] text-center md:text-left text-aserto-grey-90
             font-bold font-roboto leading-[24px] -mb-4 my-4 md:my-0"
-            blocks={page.subtaglineRaw}
+            blocks={page.subtaglineRaw || ''}
           />
           <div className="hidden md:block">
             <CtaButtons signup seeDemo leftAlign />
