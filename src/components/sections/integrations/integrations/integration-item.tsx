@@ -1,7 +1,6 @@
 import { IntegrationMetaFragment } from 'lib/sanity/generated'
 import Image from 'components/primitives/image'
 import Link from 'next/link'
-import NoSSR from 'components/sections/common/NoSSR'
 
 type Props = {
   data: IntegrationMetaFragment
