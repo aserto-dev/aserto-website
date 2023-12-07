@@ -1,6 +1,7 @@
 import { IntegrationMetaFragment } from 'lib/sanity/generated'
 import Image from 'components/primitives/image'
 import Link from 'next/link'
+import NoSSR from 'components/sections/common/NoSSR'
 
 type Props = {
   data: IntegrationMetaFragment
@@ -28,7 +29,7 @@ const IntegrationItem = ({ data }: Props) => {
           </div>
 
           <div className="text-aserto-lochivar-accent-40 mt-10 text-xl">
-            <a className="hover:underline">View integration</a>
+            <p className="hover:underline">View integration</p>
           </div>
         </div>
       </div>
