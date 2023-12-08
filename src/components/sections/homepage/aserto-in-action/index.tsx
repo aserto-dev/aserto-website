@@ -34,6 +34,7 @@ const AsertoInAction = () => {
     <NoSSR>
       <section className="relative mx-auto my-4">
         <div className="text-center" ref={ref}>
+          <p>test preview</p>
           <div suppressHydrationWarning>
             {supportedBrowser ? (
               <Animation />
