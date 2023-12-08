@@ -61,7 +61,7 @@ const PolicyBrowser = () => {
           <Slider {...settings}>
             {regoPolicies?.map((r, i) => {
               return (
-                <div key={i} className="flex flex-col">
+                <div key={i} className="flex flex-col h-[360px]">
                   <CodeViewer
                     language="rego"
                     snippet={r.code}
