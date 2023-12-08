@@ -31,27 +31,24 @@ const AsertoInAction = () => {
   */
 
   return (
-    <NoSSR>
-      <section className="relative mx-auto my-4">
-        <div className="text-center" ref={ref}>
-          <p>test preview</p>
-          <div suppressHydrationWarning>
-            {supportedBrowser ? (
-              <Animation />
-            ) : (
-              <video
-                className="relative z-10 mx-auto"
-                autoPlay
-                loop
-                muted
-                playsInline
-                src="/images/homepage/animation-safari.mp4"
-              />
-            )}
-          </div>
-        </div>
-      </section>
-    </NoSSR>
+    <section className="relative mx-auto my-4">
+      <div className="text-center" ref={ref}>
+        <NoSSR>
+          {supportedBrowser ? (
+            <Animation />
+          ) : (
+            <video
+              className="relative z-10 mx-auto"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="/images/homepage/animation-safari.mp4"
+            />
+          )}
+        </NoSSR>
+      </div>
+    </section>
   )
 }
 

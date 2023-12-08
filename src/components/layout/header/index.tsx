@@ -136,7 +136,6 @@ const Header = () => {
     >
       <NoSSR>
         <PlaygroundBanner />
-
         <div className="bg-aserto-grey-5 flex items-center justify-between px-6 py-3 lg:py-0 shadow-header w-full">
           <nav className="flex items-center justify-between w-full lg:hidden">
             <Link href="/">
