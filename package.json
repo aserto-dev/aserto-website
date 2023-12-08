@@ -60,7 +60,7 @@
     "@graphql-codegen/typescript": "^1.22.1",
     "@graphql-codegen/typescript-graphql-request": "^3.2.1",
     "@graphql-codegen/typescript-operations": "^1.18.0",
-    "@types/node": "^15.12.1",
+    "@types/node": "^20.0.0",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.6",
     "@types/rss": "^0.0.29",
