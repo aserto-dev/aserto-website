@@ -20,6 +20,7 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-5QFZQHB'
 
 [context.int]
+  publish = ".next"
   command = "yarn build"
   [context.int.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app"
