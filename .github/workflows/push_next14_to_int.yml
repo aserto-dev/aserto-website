@@ -1,4 +1,4 @@
-name: Push main branch to other environments
+name: Push next14 branch to int
 
 
 on:
