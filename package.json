@@ -27,7 +27,7 @@
     "@types/react-slick": "^0.23.8",
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",
-    "eslint-config-next": "^14.0.3",
+    "eslint-config-next": "^14.0.4",
     "framer-motion": "^6.1.5",
     "get-youtube-id": "^1.0.1",
     "graphql": "^15.5.0",
@@ -35,7 +35,7 @@
     "gsap": "./src/lib/gsap/gsap-bonus.tgz",
     "jquery": "3.7.1",
     "keen-slider": "^5.5.0",
-    "next": "^14.0.3",
+    "next": "^14.0.4",
     "next-compose-plugins": "^2.2.1",
     "next-plugin-svgr": "^1.1.10",
     "next-sanity": "^0.2.0",
@@ -106,7 +106,8 @@
       "plugin:react/recommended",
       "prettier",
       "plugin:prettier/recommended",
-      "plugin:react-hooks/recommended"
+      "plugin:react-hooks/recommended",
+      "plugin:@next/next/recommended"
     ],
     "globals": {
       "React": "readonly",
