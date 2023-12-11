@@ -16,22 +16,22 @@ const serializers = {
       const [, id, measures, extension] = props.node.asset._ref.split('-')
       const src = `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}-${measures}.${extension}`
       return (
-        <figure>
+        <picture>
           <img src={src} />
           <figcaption>{props.node.caption}</figcaption>
-        </figure>
+        </picture>
       )
     },
     blogBodyImage: (props: any) => {
       const [, id, measures, extension] = props.node.asset._ref.split('-')
       const src = `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}-${measures}.${extension}`
       return (
-        <figure>
+        <picture>
           <img src={src} alt={props.node.alt} />
           <figcaption>
             <DefaultBlockContent blocks={props.node.caption || []} />
           </figcaption>
-        </figure>
+        </picture>
       )
     },
     youtube: (props: any) => {

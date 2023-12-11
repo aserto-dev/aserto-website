@@ -44,11 +44,13 @@ const ValueProp = ({
           </div>
         )}
         {image?.asset?.url && (
-          <img
-            className="object-scale-down mx-auto"
-            src={image?.asset?.url ?? '/404'}
-            alt={image?.alt ?? 'value prop image'}
-          />
+          <picture>
+            <img
+              className="object-scale-down mx-auto"
+              src={image?.asset?.url ?? '/404'}
+              alt={image?.alt ?? 'value prop image'}
+            />
+          </picture>
         )}
       </div>
     </div>

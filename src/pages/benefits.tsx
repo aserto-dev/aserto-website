@@ -33,18 +33,22 @@ const BenefitsPage = ({
         <Video
           embed={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'}
         />
-        <img
-          className="object-cover h-[250px] -bottom-28 absolute
+        <picture>
+          <img
+            className="object-cover h-[250px] -bottom-28 absolute
         sm:object-fill sm:h-auto sm:-bottom-12 sm:left-1/2 sm:transform sm:-translate-x-1/2"
-          src="images/homepage/seafloor.svg"
-          alt="Sea Floor"
-        />
-        <img
-          className="w-[350px] absolute -bottom-40 right-1/2 transform translate-x-1/2
+            src="images/homepage/seafloor.svg"
+            alt="Sea Floor"
+          />
+        </picture>
+        <picture>
+          <img
+            className="w-[350px] absolute -bottom-40 right-1/2 transform translate-x-1/2
         sm:w-[600px] sm:-bottom-80"
-          src="images/homepage/Lottie.svg"
-          alt="Lottie"
-        />
+            src="images/homepage/Lottie.svg"
+            alt="Lottie"
+          />
+        </picture>
       </div>
       <Benefits benefits={benefits} />
 

@@ -39,11 +39,13 @@ const LatestInfo = ({ title, latestBlogPost, latestEvent }: Props) => {
             key={i}
             className="h-full rounded-[6px] border-[2px] border-aserto-grey-30 bg-aserto-grey-5"
           >
-            <img
-              className="w-full h-[200px] object-cover mx-auto"
-              src={info.itemImage?.asset?.url ?? '/404'}
-              alt={info.itemImage?.alt ?? ''}
-            />
+            <picture>
+              <img
+                className="w-full h-[200px] object-cover mx-auto"
+                src={info.itemImage?.asset?.url ?? '/404'}
+                alt={info.itemImage?.alt ?? ''}
+              />
+            </picture>
             <div className="px-[40px] leading-[28px]">
               <h4 className="my-[20px] font-bold text-[22px]">
                 {info.itemTitle}

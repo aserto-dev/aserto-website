@@ -12,11 +12,13 @@ const GoodbyePage = () => {
     >
       <div className={`pt-20 bg-goodbye`}>
         <Container>
-          <img
-            className="w-[400px] h-[254px] mx-auto "
-            src="images/rain-lottie.png"
-            alt="Lottie"
-          />
+          <picture>
+            <img
+              className="w-[400px] h-[254px] mx-auto "
+              src="images/rain-lottie.png"
+              alt="Lottie"
+            />
+          </picture>
           <br></br>
           <h1 className="text-3xl leading-none font-semibold text-aserto-grey-90 text-center">
             Lottie and our team are sorry to see you go.

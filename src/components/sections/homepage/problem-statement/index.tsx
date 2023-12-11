@@ -11,11 +11,13 @@ const Problem = ({ title, problems }: Props) => {
   return title && problems ? (
     <Container className="py-[100px] bg-aserto-grey-10 text-aserto-grey-90">
       <h2 className="text-[36px] font-medium text-center">{title}</h2>
-      <img
-        className="w-[512px] my-[45px] mx-auto"
-        src="images/homepage/wheel-man.svg"
-        alt="Reinventing the wheel"
-      />
+      <picture>
+        <img
+          className="w-[512px] my-[45px] mx-auto"
+          src="images/homepage/wheel-man.svg"
+          alt="Reinventing the wheel"
+        />
+      </picture>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
         {problems.map((p, i) => (
           <ProblemItem

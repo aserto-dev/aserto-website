@@ -45,11 +45,13 @@ const FeatureBlockItem = ({
         )
       case 'Image/gif':
         return (
-          <img
-            className="object-scale-down mx-auto"
-            src={image?.asset?.url ?? '/404'}
-            alt={image?.alt ?? 'value prop image'}
-          />
+          <picture>
+            <img
+              className="object-scale-down mx-auto"
+              src={image?.asset?.url ?? '/404'}
+              alt={image?.alt ?? 'value prop image'}
+            />
+          </picture>
         )
       case 'Carousel':
         return (
@@ -70,12 +72,14 @@ const FeatureBlockItem = ({
                 >
                   {carouselImages?.map((c, i) => {
                     return (
-                      <img
-                        key={i}
-                        className="object-scale-down mx-auto rounded-[4px]"
-                        src={c?.asset?.url ?? '/404'}
-                        alt={c?.alt ?? 'value prop image'}
-                      />
+                      <picture key={i}>
+                        <img
+                          key={i}
+                          className="object-scale-down mx-auto rounded-[4px]"
+                          src={c?.asset?.url ?? '/404'}
+                          alt={c?.alt ?? 'value prop image'}
+                        />
+                      </picture>
                     )
                   })}
                 </Slider>
@@ -103,7 +107,9 @@ const FeatureBlockItem = ({
     const { className, onClick } = props
     return (
       <button className={className} onClick={onClick}>
-        <img src="images/carousel-arrow-left.svg" />
+        <picture>
+          <img src="images/carousel-arrow-left.svg" />
+        </picture>
       </button>
     )
   }
@@ -116,7 +122,9 @@ const FeatureBlockItem = ({
     const { className, onClick } = props
     return (
       <button className={className} onClick={onClick}>
-        <img src="images/carousel-arrow-right.svg" />
+        <picture>
+          <img src="images/carousel-arrow-right.svg" />
+        </picture>
       </button>
     )
   }

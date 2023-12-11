@@ -42,11 +42,13 @@ const SectionBlockItem = ({
           </div>
         )}
         {image?.asset?.url && (
-          <img
-            className="object-scale-down mx-auto mt-8 md:w-[700px] md:mx-4"
-            src={image?.asset?.url ?? '/404'}
-            alt={image?.alt ?? 'value prop image'}
-          />
+          <picture>
+            <img
+              className="object-scale-down mx-auto mt-8 md:w-[700px] md:mx-4"
+              src={image?.asset?.url ?? '/404'}
+              alt={image?.alt ?? 'value prop image'}
+            />
+          </picture>
         )}
       </div>
     </div>

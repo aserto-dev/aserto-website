@@ -22,14 +22,16 @@ const Intro = ({ page }: { page: ResourceFragment }) => {
         </div>
       )}
       {page.introImage?.asset?.url && (
-        <img
-          className="object-scale-down mx-auto mt-8"
-          src={page.introImage?.asset?.url ?? '/404'}
-          alt={
-            page.introImage?.alt ??
-            'Policy Based Access Management KuppingerCole'
-          }
-        />
+        <picture>
+          <img
+            className="object-scale-down mx-auto mt-8"
+            src={page.introImage?.asset?.url ?? '/404'}
+            alt={
+              page.introImage?.alt ??
+              'Policy Based Access Management KuppingerCole'
+            }
+          />
+        </picture>
       )}
       {page.introCaptionRaw && (
         <div className="sm:px-8 lg:px-12 text-left lg:text-center">

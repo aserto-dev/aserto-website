@@ -64,20 +64,24 @@ const EventPage = ({ event }: Props) => {
                 />
               </div>
               <div className="relative">
-                <img
-                  className="h-[530px] object-cover rounded-b-[6px]"
-                  alt={locationImageAlt}
-                  src={locationImageSrc}
-                />
-                <a href={eventBannerHref} target="_blank" rel="noreferrer">
+                <picture>
                   <img
-                    className={clsx(
-                      'absolute bottom-0 w-full bg-white rounded-b-[6px]',
-                      eventBannerOpacity
-                    )}
-                    alt={eventBannerAlt}
-                    src={eventBannerSrc}
+                    className="h-[530px] object-cover rounded-b-[6px]"
+                    alt={locationImageAlt}
+                    src={locationImageSrc}
                   />
+                </picture>
+                <a href={eventBannerHref} target="_blank" rel="noreferrer">
+                  <picture>
+                    <img
+                      className={clsx(
+                        'absolute bottom-0 w-full bg-white rounded-b-[6px]',
+                        eventBannerOpacity
+                      )}
+                      alt={eventBannerAlt}
+                      src={eventBannerSrc}
+                    />
+                  </picture>
                 </a>
               </div>
             </div>

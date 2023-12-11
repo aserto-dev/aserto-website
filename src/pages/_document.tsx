@@ -5,6 +5,7 @@ import Document, {
   Main,
   NextScript
 } from 'next/document'
+import Script from 'next/script'
 
 const gtmCode = process.env.NEXT_PUBLIC_GTM_CODE
 
@@ -63,10 +64,11 @@ class MyDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             />
           </noscript>
-          <script type="text/javascript" src="/ieChecking.js" />
+          <Script type="text/javascript" src="/ieChecking.js" />
           {/* google tag manager */}
           {gtmCode && (
-            <script
+            <Script
+              id="js"
               dangerouslySetInnerHTML={{
                 // eslint-disable-next-line @typescript-eslint/naming-convention
                 __html: `

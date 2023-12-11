@@ -21,15 +21,17 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
           : imgProps.height ?? 1
       return (
         <AspectRatio.Root ratio={width / height}>
-          <img
-            {...imgProps}
-            style={{
-              ...imgProps.style,
-              objectFit,
-              width: '100%',
-              height: '100%'
-            }}
-          />
+          <picture>
+            <img
+              {...imgProps}
+              style={{
+                ...imgProps.style,
+                objectFit,
+                width: '100%',
+                height: '100%'
+              }}
+            />
+          </picture>
         </AspectRatio.Root>
       )
     }
@@ -45,15 +47,17 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
           : imgProps.height ?? 1
       return (
         <AspectRatio.Root ratio={width / height} style={{ maxWidth: width }}>
-          <img
-            {...imgProps}
-            style={{
-              ...imgProps.style,
-              objectFit,
-              width: '100%',
-              height: '100%'
-            }}
-          />
+          <picture>
+            <img
+              {...imgProps}
+              style={{
+                ...imgProps.style,
+                objectFit,
+                width: '100%',
+                height: '100%'
+              }}
+            />
+          </picture>
         </AspectRatio.Root>
       )
     }

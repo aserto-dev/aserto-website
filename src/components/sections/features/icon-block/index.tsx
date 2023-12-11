@@ -19,11 +19,13 @@ const IconBlock = ({ featureIcons, iconBlockTitle }: IconBlockProp) => {
       <div className="grid sm:grid-cols-2 gap-20">
         {featureIcons.map((f, i) => (
           <div key={i}>
-            <img
-              className="h-[70px] my-4 mx-auto"
-              src={f.icon?.asset?.url ?? '/404'}
-              alt={f.icon?.alt ?? 'icon'}
-            />
+            <picture>
+              <img
+                className="h-[70px] my-4 mx-auto"
+                src={f.icon?.asset?.url ?? '/404'}
+                alt={f.icon?.alt ?? 'icon'}
+              />
+            </picture>
             {f.icon?.captionRaw && (
               <BlockContent
                 className="text-center font-semibold w-full lg:w-3/4 mx-auto text-[18px] lg:text-[20px] mb-8"

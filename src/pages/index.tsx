@@ -60,12 +60,14 @@ const HomePage = ({
         />
       </Container>
       <CallToAction {...page.callToAction} />
-      <img
-        className="object-fit h-[200px] absolute left-0 right-0 -bottom-20 md:-bottom-16 sm:-bottom-12
+      <picture>
+        <img
+          className="object-fit h-[200px] absolute left-0 right-0 -bottom-20 md:-bottom-16 sm:-bottom-12
         mx-auto mt-60 sm:mt-52 md:mt-20 lg:mt-56 xl:mt-0"
-        src="images/homepage/seafloor-teal.svg"
-        alt="Sea Floor"
-      />
+          src="images/homepage/seafloor-teal.svg"
+          alt="Sea Floor"
+        />
+      </picture>
     </PageLayout>
   )
 }

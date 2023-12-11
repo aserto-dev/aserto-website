@@ -343,11 +343,13 @@ const Footer = () => {
                   <Link href="https://trust.aserto.com">
                     <span className="sr-only">SOC 2 Type II</span>
                     <div className="flex">
-                      <img
-                        className="h-[50px] md:h-[70px] lg:h-[70px]"
-                        src="/images/soc2.png"
-                        alt="SOC 2 Type II"
-                      />
+                      <picture>
+                        <img
+                          className="h-[50px] md:h-[70px] lg:h-[70px]"
+                          src="/images/soc2.png"
+                          alt="SOC 2 Type II"
+                        />
+                      </picture>
                       <p className="hidden md:flex lg:flex mt-4 ml-3 text-sm text-aserto-grey-70 font-roboto">
                         SOC 2<br />
                         Type II
@@ -367,11 +369,13 @@ const Footer = () => {
                 <Link href="https://trust.aserto.com">
                   <span className="sr-only">SOC 2 Type II</span>
                   <div className="flex">
-                    <img
-                      className="h-[30px]"
-                      src="/images/soc2.png"
-                      alt="SOC 2 Type II"
-                    />
+                    <picture>
+                      <img
+                        className="h-[30px]"
+                        src="/images/soc2.png"
+                        alt="SOC 2 Type II"
+                      />
+                    </picture>
                     <p className="hidden md:flex mt-1 ml-2 text-sm text-aserto-grey-70 font-roboto">
                       SOC 2 Type II Certified
                     </p>

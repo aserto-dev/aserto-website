@@ -18,11 +18,13 @@ const Hero = ({ page }: { page: SolutionFragment }) => {
         />
       </div>
       <div className="flex-col align-middle lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
-        <img
-          className="md:w-[500px] mx-auto p-[20px] w-full"
-          src={page.heroImage?.asset?.url ?? '/404'}
-          alt={page.heroImage?.alt ?? 'ReBAC using Rego'}
-        />
+        <picture>
+          <img
+            className="md:w-[500px] mx-auto p-[20px] w-full"
+            src={page.heroImage?.asset?.url ?? '/404'}
+            alt={page.heroImage?.alt ?? 'ReBAC using Rego'}
+          />
+        </picture>
       </div>
     </Container>
   )

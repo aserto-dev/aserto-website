@@ -6,11 +6,13 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
   const scrollToIds = ['real', 'zero', 'granular']
   return (
     <Container className="sm:px-16 pt-8 font-roboto">
-      <img
-        className="hidden md:block absolute top-96 -left-28"
-        src="images/translucent-aserto.png"
-        alt="Aserto"
-      />
+      <picture>
+        <img
+          className="hidden md:block absolute top-96 -left-28"
+          src="images/translucent-aserto.png"
+          alt="Aserto"
+        />
+      </picture>
       <div className="flex md:flex-row flex-col md:justify-evenly items-center gap-12 md:gap-0">
         {page?.animatedGifs?.length &&
           page.animatedGifs.map((g, i) => (
@@ -31,22 +33,26 @@ const Animations = ({ page }: { page: HomePageFragment }) => {
                   })
                 }}
               >
-                <img
-                  className="absolute w-3/5 translate-x-1/4 translate-y-1/4"
-                  src="images/translucent-aserto.png"
-                  alt="Aserto"
-                />
+                <picture>
+                  <img
+                    className="absolute w-3/5 translate-x-1/4 translate-y-1/4"
+                    src="images/translucent-aserto.png"
+                    alt="Aserto"
+                  />
+                </picture>
                 <h3
                   className="text-xl lg:text-3xl xl:text-4xl font-bold mb-4 lg:mb-8
                   text-transparent bg-clip-text bg-homepageTitle"
                 >
                   {g?.title}
                 </h3>
-                <img
-                  className="h-1/2 relative object-cover my-4"
-                  src={g?.image?.asset?.url || ''}
-                  alt={g?.image?.alt || ''}
-                />
+                <picture>
+                  <img
+                    className="h-1/2 relative object-cover my-4"
+                    src={g?.image?.asset?.url || ''}
+                    alt={g?.image?.alt || ''}
+                  />
+                </picture>
                 <h4
                   className="text-sm lg:text-xl xl:text-2xl font-semibold text-aserto-grey-90
                   mt-8 md:mt-4 xl:mt-12 whitespace-nowrap"

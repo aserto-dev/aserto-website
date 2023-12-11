@@ -18,11 +18,13 @@ const Tab = ({
       }`}
       onClick={onClick}
     >
-      <img
-        className="w-[30px] h-[30px] object-contain sm:m-[10px] mx-auto inline-block"
-        src={imgUrl}
-        alt={language}
-      />
+      <picture>
+        <img
+          className="w-[30px] h-[30px] object-contain sm:m-[10px] mx-auto inline-block"
+          src={imgUrl}
+          alt={language}
+        />
+      </picture>
       <p className="sm:inline-block text-[16px] hidden">{language}</p>
     </div>
   )

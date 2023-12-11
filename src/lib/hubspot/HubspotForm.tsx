@@ -22,7 +22,7 @@ const HubspotForm = ({ formId }: { formId: string }) => {
 
   return (
     <>
-      <link rel="stylesheet" href="/css/contactform.css"></link>
+      <link rel="stylesheet" href="/static/contactform.css"></link>
       <div id="hubspotForm"></div>
     </>
   )

@@ -30,11 +30,13 @@ const CallToAction = (ctaBlock: CtaBlock) => {
         </div>
         <div className="grid sm:grid-rows-2 sm:grid-flow-col xl:gap-x-80 gap-12 py-[45px] px-[50px]">
           <div className="w-full">
-            <img
-              className="w-[80px] mb-[30px] mx-auto"
-              src="/images/slack-logo.svg"
-              alt="Lottie"
-            />
+            <picture>
+              <img
+                className="w-[80px] mb-[30px] mx-auto"
+                src="/images/slack-logo.svg"
+                alt="Lottie"
+              />
+            </picture>
             <h4 className="text-[22px] font-semibold">Join our slack</h4>
             <p className="text-[18px]">
               Discuss authorization patterns, get answers, and engage with our
@@ -54,11 +56,13 @@ const CallToAction = (ctaBlock: CtaBlock) => {
             </Button>
           </div>
           <div className="w-full">
-            <img
-              className="w-[80px] mb-[30px] mx-auto"
-              src="/images/aserto-logo.png"
-              alt="Aserto Logo"
-            />
+            <picture>
+              <img
+                className="w-[80px] mb-[30px] mx-auto"
+                src="/images/aserto-logo.png"
+                alt="Aserto Logo"
+              />
+            </picture>
             <h4 className="text-[22px] font-semibold">
               Sign up for our newsletter
             </h4>

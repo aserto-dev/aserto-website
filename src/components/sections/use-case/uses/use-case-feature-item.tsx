@@ -8,11 +8,13 @@ const UseCaseFeatureItem = ({
 }: UseCaseFeatureFragment) => {
   return (
     <div className="flex flex-row my-20 md:mx-20">
-      <img
-        className="inline-flex mb-auto self-center w-[74px]"
-        src={icon?.asset?.url ?? '/images/homepage/bubble.svg'}
-        alt={icon?.alt ?? 'Bubble'}
-      />
+      <picture>
+        <img
+          className="inline-flex mb-auto self-center w-[74px]"
+          src={icon?.asset?.url ?? '/images/homepage/bubble.svg'}
+          alt={icon?.alt ?? 'Bubble'}
+        />
+      </picture>
       <div className="inline-flex flex-col gap-4 px-4 md:px-8">
         <BlockContent
           className="text-aserto-grey-90 text-[24px] lg:text-[30px] leading-8 lg:leading-10"

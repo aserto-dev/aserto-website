@@ -31,11 +31,13 @@ const Contact = () => {
             <h4 className="text-[18px] font-semibold my-4">
               Send us a message
             </h4>
-            <img
-              src="images/message-icon.svg"
-              alt="Message"
-              className="mx-auto my-8 w-[60px]"
-            />
+            <picture>
+              <img
+                src="images/message-icon.svg"
+                alt="Message"
+                className="mx-auto my-8 w-[60px]"
+              />
+            </picture>
             <HubspotForm formId={NameToFormId.contactus} />
           </div>
           <div
@@ -45,11 +47,13 @@ const Contact = () => {
             <h4 className="text-[18px] font-semibold my-4">
               Speak with an engineer
             </h4>
-            <img
-              src="images/schedule-icon.svg"
-              alt="Schedule"
-              className="mx-auto my-8 w-[55px]"
-            />
+            <picture>
+              <img
+                src="images/schedule-icon.svg"
+                alt="Schedule"
+                className="mx-auto my-8 w-[55px]"
+              />
+            </picture>
             <p>Schedule a 1-on-1 meeting with an Aserto engineer.</p>
             <Link
               href="/contact-engineer"
@@ -65,11 +69,13 @@ const Contact = () => {
             border border-[#717171] rounded-[11px] shadow-contact"
           >
             <h4 className="text-[18px] font-semibold my-4">Join our Slack</h4>
-            <img
-              src="images/slack-logo.svg"
-              alt="Slack"
-              className="mx-auto my-8 w-[55px]"
-            />
+            <picture>
+              <img
+                src="images/slack-logo.svg"
+                alt="Slack"
+                className="mx-auto my-8 w-[55px]"
+              />
+            </picture>
             <p>
               Discuss authorization patterns, get answers, and interact with our
               growing community.

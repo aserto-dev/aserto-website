@@ -15,28 +15,34 @@ const StayInformed = () => {
               element?.scrollIntoView({ behavior: 'smooth', block: 'end' })
             }}
           >
-            <img
-              src="/images/about/envelope.svg"
-              className="cursor-pointer inline mr-2 mb-0.5"
-            />
+            <picture>
+              <img
+                src="/images/about/envelope.svg"
+                className="cursor-pointer inline mr-2 mb-0.5"
+              />
+            </picture>
             Subscribe
           </Button>
 
           <Button className=" w-full" size="sm">
-            <img
-              src="/images/about/slack.svg"
-              className="cursor-pointer inline mr-2"
-            />
+            <picture>
+              <img
+                src="/images/about/slack.svg"
+                className="cursor-pointer inline mr-2"
+              />
+            </picture>
             <Link href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg">
               Join the discussion
             </Link>
           </Button>
 
           <Button className=" w-full" size="sm">
-            <img
-              src="/images/about/call.svg"
-              className="cursor-pointer inline mr-2"
-            />
+            <picture>
+              <img
+                src="/images/about/call.svg"
+                className="cursor-pointer inline mr-2"
+              />
+            </picture>
             <Link href="/contact-engineer">Talk to an engineer</Link>
           </Button>
         </div>
