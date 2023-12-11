@@ -7,6 +7,9 @@
     X-Content-Type-Options = "nosniff"
     Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [context.production]
   publish = "out"
   command = "yarn build"
