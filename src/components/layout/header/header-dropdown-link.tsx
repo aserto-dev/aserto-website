@@ -41,7 +41,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
       return <HeaderDropdownMenu link={link} />
     } else if (link.href) {
       return (
-        <a
+        <p
           className={clsx(
             'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
@@ -54,7 +54,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           )}
         >
           {link.label}
-        </a>
+        </p>
       )
     } else {
       return (
