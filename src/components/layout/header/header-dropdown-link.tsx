@@ -109,7 +109,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
       onOpenChange={toggle}
     >
       {link.href ? (
-        <Link href={link.href} passHref legacyBehavior>
+        <Link href={link.href} passHref>
           {trigger}
         </Link>
       ) : (
