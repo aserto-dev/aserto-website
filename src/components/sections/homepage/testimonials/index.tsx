@@ -27,7 +27,6 @@ const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
 
   return (
     <>
-      <link rel="stylesheet" href="/css/carousel.css"></link>
       <section className="mx-auto mt-10 lg:mt-0 md:mt-10 lg:pt-12 pb-20 lg:pb-28">
         <div>
           <Slider {...settings}>

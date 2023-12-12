@@ -54,14 +54,12 @@ const regoPolicies = [
 const PolicyBrowser = () => {
   return (
     <>
-      <link rel="stylesheet" href="/css/carousel.css"></link>
-      <link rel="stylesheet" href="/css/code-carousel.css"></link>
       <div className="relative px-0 my-24 border-2 border-aserto-lochivar-100 rounded-[4px]">
         <div className="rego w-full md:w-[600px]">
           <Slider {...settings}>
             {regoPolicies?.map((r, i) => {
               return (
-                <div key={i} className="flex flex-col h-285px]">
+                <div key={i} className="flex flex-col h-[285px]">
                   <CodeViewer
                     language="rego"
                     snippet={r.code}
