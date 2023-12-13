@@ -51,6 +51,7 @@
     "react-youtube": "^10.0.0",
     "rss": "^1.2.2",
     "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.1.0",
     "tailwind-scrollbar-hide": "^1.1.7",
     "webpack": "^5.64.4"
   },

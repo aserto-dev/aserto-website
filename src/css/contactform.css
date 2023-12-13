@@ -40,7 +40,8 @@
 .hs-form .hs-form-field textarea.hs-input {
   min-height: 200px;
 }
-.hs-form .hs-form-field, .hs_error_rollup {
+.hs-form .hs-form-field,
+.hs_error_rollup {
   padding: 0 10px;
   margin-bottom: 15px;
   -moz-box-sizing: border-box;
@@ -115,12 +116,11 @@ input[type='number']:focus,
 .hs-form input[type='text']:focus,
 .hs-form .input textarea:focus,
 .hs-form .hs-input textarea:focus,
-.hs-form textarea:focus
-.hs-form .input select:focus,
+.hs-form textarea:focus .hs-form .input select:focus,
 .hs-form .hs-input select:focus,
 .hs-form select:focus {
   border: 1px solid #36b1b5 !important;
-  box-shadow: 0px 0px 0px 2px rgba(39,127,130,0.6) !important;
+  box-shadow: 0px 0px 0px 2px rgba(39, 127, 130, 0.6) !important;
 }
 .hs-form input::-webkit-input-placeholder,
 .hs-form select::-webkit-input-placeholder,
@@ -230,7 +230,7 @@ input[type='number']:focus,
   --tw-ring-shadow: none;
 }
 .hs-form a {
-  color: #67CBCF;
+  color: #67cbcf;
   text-decoration: underline;
 }
 .fn-date-picker .pika-button {
@@ -246,9 +246,9 @@ fieldset .input {
 }
 
 .hs-form input:-webkit-autofill,
-.hs-form input:-webkit-autofill:hover, 
+.hs-form input:-webkit-autofill:hover,
 .hs-form input:-webkit-autofill:focus {
   box-shadow: 0 0 0px 1000px #121212 inset !important;
-  color: #E7E7E7 !important;
-  -webkit-text-fill-color: #E7E7E7 !important;
+  color: #e7e7e7 !important;
+  -webkit-text-fill-color: #e7e7e7 !important;
 }

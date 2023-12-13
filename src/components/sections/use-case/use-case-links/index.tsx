@@ -13,11 +13,13 @@ const UseCaseLinks = ({
   return (
     <Container className="bg-aserto-grey-10 py-32 px-8">
       <div className="flex flex-wrap justify-center items-center text-center gap-32">
-        <img
-          className="inline-flex align-top self-center"
-          src={image?.asset?.url ?? '/404'}
-          alt={image?.alt ?? 'Useful Lottie'}
-        />
+        <picture>
+          <img
+            className="inline-flex align-top self-center"
+            src={image?.asset?.url ?? '/404'}
+            alt={image?.alt ?? 'Useful Lottie'}
+          />
+        </picture>
         <div className="inline-flex flex-col align-top text-left gap-8">
           <BlockContent
             className="text-aserto-grey-90 text-[24px] lg:text-[30px] leading-8 lg:leading-10"

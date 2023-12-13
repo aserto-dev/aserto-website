@@ -25,13 +25,11 @@ const Lottie = ({ caption, ...ctaButtons }: CtaOptions) => {
   return (
     <Container className="py-[180px] text-aserto-grey-90 text-center">
       <div>
-        <picture>
-          <img
-            className="w-[480px] h-[350px] object-cover mx-auto"
-            src="/images/lottie.png"
-            alt="Lottie"
-          />
-        </picture>
+        <img
+          className="w-[480px] h-[350px] object-cover mx-auto"
+          src="/images/lottie.png"
+          alt="Lottie"
+        />
         <h2 className="text-[36px] font-medium">{caption}</h2>
       </div>
       <CtaButtons {...ctaButtons} />

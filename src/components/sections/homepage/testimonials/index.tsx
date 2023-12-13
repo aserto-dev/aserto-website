@@ -3,6 +3,9 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import TestimonialItem from './testimonial-item'
 import { Testimonial } from 'lib/sanity/generated'
+import s from './carousel.module.css'
+import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
   const settings = {
@@ -24,7 +27,7 @@ const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
       }
     ]
   }
-
+  console.log(clsx(s.slider))
   return (
     <>
       <section className="mx-auto mt-10 lg:mt-0 md:mt-10 lg:pt-12 pb-20 lg:pb-28">

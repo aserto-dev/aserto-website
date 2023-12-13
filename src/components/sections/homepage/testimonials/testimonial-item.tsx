@@ -1,6 +1,5 @@
 import { BlockContent } from 'components/primitives/block-content'
 import Image from 'components/primitives/image'
-
 type Props = {
   companyInfo: string
   companyImageSrc: string
@@ -24,7 +23,7 @@ const TestimonialItem = ({
       <div className="relative w-full pb-[50%]">
         <div className="absolute w-full">
           <Image
-            className="w-1/2 inline-block object-cover"
+            className="w-1/2 innline-block object-cover"
             layout="native"
             src={profileImageSrc ?? ''}
           />

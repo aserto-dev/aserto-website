@@ -131,7 +131,6 @@ const FeatureBlockItem = ({
 
   return (
     <>
-      <link rel="stylesheet" href="/css/carousel.css"></link>
       <div
         className={`relative flex flex-col ${
           direction && 'xl:flex-row'

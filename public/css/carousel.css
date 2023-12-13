@@ -1,0 +1,29 @@
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+  margin: 0 0.5rem;
+}
+
+.slick-slide > div {
+  height: 100% !important;
+}
+
+.slick-slide img {
+  display: inline-block;
+}
+
+.slick-slider .slick-dots {
+  bottom: -35px;
+}
+
+.slick-slider .slick-dots li button:before {
+  color: white !important;
+  font-size: 12px;
+}
+
+.custom-arrows .slick-arrow::before {
+  display: none;
+}

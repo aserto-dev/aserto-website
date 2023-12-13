@@ -8,8 +8,9 @@ import { pageview } from 'lib/ga'
 import { PlaygroundBannerContextProvider } from 'components/sections/common/banners/playground/PlaygroundBannerContext'
 import { useTrackingCode } from 'react-hubspot-tracking-code-hook'
 import { useReportHubspotFormEventsToGoogleAnalytics } from 'lib/hubspot/Hubspot2Ga'
-import 'css/carousel.css'
-import 'css/code-carousel.css'
+import '../css/carousel.css'
+import '../css/code-carousel.css'
+import '../css/contactform.css'
 
 initGsap()
 const App = ({ Component, pageProps, router }: AppProps) => {
