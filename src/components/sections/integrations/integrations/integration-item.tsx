@@ -9,7 +9,7 @@ type Props = {
 const IntegrationItem = ({ data }: Props) => {
   return (
     <Link href={`/integrations/${data.slug?.current}`}>
-      <div className="flex flex-col overflow-hidden border rounded border-aserto-grey-10 cursor-pointer">
+      <div className="flex flex-col overflow-hidden border h-full rounded border-aserto-grey-10 cursor-pointer">
         <div className="bg-aserto-grey-5 px-5 rounded">
           <Image
             src={data.logo?.asset?.url || '/404'}
