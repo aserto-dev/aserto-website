@@ -159,9 +159,9 @@ const Header = () => {
           <Link href="/">
             <Logo />
           </Link>
-          <NoSSR>
-            <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
-            {headerLinks.map((each, idx) => (
+          <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
+          {headerLinks.map((each, idx) => (
+            <NoSSR key={idx}>
               <HeaderDropdownLink
                 key={idx}
                 id={idx}
@@ -175,8 +175,8 @@ const Header = () => {
                   }))
                 }}
               />
-            ))}
-          </NoSSR>
+            </NoSSR>
+          ))}
         </nav>
         <div className="hidden lg:block whitespace-nowrap items-center">
           <Link
