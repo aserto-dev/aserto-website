@@ -27,6 +27,7 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
       return (
         <AspectRatio.Root ratio={width / height}>
           <picture>
+            <p className="text-aserto-grey-90"> test</p>
             <img
               {...imgProps}
               style={{
