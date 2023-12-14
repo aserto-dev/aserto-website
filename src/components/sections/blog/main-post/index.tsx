@@ -12,7 +12,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Styles
 import s from './main-post.module.css'
-import NoSSR from 'components/sections/common/NoSSR'
+// import NoSSR from 'components/sections/common/NoSSR'
 
 const MainPost = ({ post }: { post: PostMetaFragment }) => {
   const [ref] = useFadeInBottom()
@@ -27,36 +27,34 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
       className={clsx('relative mx-auto mb-32 text-white', s.background)}
       ref={ref}
     >
-      <NoSSR>
-        <Link href={`/blog/${post.slug?.current}`}>
-          <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
-            <div>
-              <Image
-                src={post.mainImage?.asset?.url ?? '/404'}
-                width={mobile ? '375' : '1216'}
-                height={mobile ? '265' : '500'}
-                objectFit="cover"
-                layout="responsive"
-                style={{
-                  objectPosition: 'top'
-                }}
-              />
-            </div>
-            <div className="p-9">
-              <h3 className="text-2xl leading-none font-roboto mb-7">
-                {post.title}
-              </h3>
-              <BlockContent
-                className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-70"
-                blocks={post.excerptRaw}
-              />
-              <time className="text-base tracking-wide">
-                {formatPostDate(post.publishedAt)}
-              </time>
-            </div>
+      <Link href={`/blog/${post.slug?.current}`}>
+        <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
+          <div>
+            <Image
+              src={post.mainImage?.asset?.url ?? '/404'}
+              width={mobile ? '375' : '1216'}
+              height={mobile ? '265' : '500'}
+              objectFit="cover"
+              layout="responsive"
+              style={{
+                objectPosition: 'top'
+              }}
+            />
           </div>
-        </Link>
-      </NoSSR>
+          <div className="p-9">
+            <h3 className="text-2xl leading-none font-roboto mb-7">
+              {post.title}
+            </h3>
+            <BlockContent
+              className="max-w-2xl mb-8 text-base leading-snug tracking-wide text-aserto-grey-70"
+              blocks={post.excerptRaw}
+            />
+            <time className="text-base tracking-wide">
+              {formatPostDate(post.publishedAt)}
+            </time>
+          </div>
+        </div>
+      </Link>
     </section>
   )
 }
