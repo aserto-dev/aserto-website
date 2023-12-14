@@ -9,7 +9,12 @@ export type ImageProps = JSX.IntrinsicElements['img'] & {
 const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
   switch (layout) {
     case 'native':
-      return <img {...imgProps} style={{ ...imgProps.style, objectFit }} />
+      return (
+        <picture>
+          <p className="text-aserto-grey-70">here</p>
+          <img {...imgProps} style={{ ...imgProps.style, objectFit }} />
+        </picture>
+      )
     case 'responsive': {
       const width =
         typeof imgProps.width === 'string'
