@@ -9,12 +9,7 @@ export type ImageProps = JSX.IntrinsicElements['img'] & {
 const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
   switch (layout) {
     case 'native':
-      return (
-        <picture>
-          <p className="text-aserto-grey-70">here</p>
-          <img {...imgProps} style={{ ...imgProps.style, objectFit }} />
-        </picture>
-      )
+      return <img {...imgProps} style={{ ...imgProps.style, objectFit }} />
     case 'responsive': {
       const width =
         typeof imgProps.width === 'string'
@@ -26,18 +21,15 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
           : imgProps.height ?? 1
       return (
         <AspectRatio.Root ratio={width / height}>
-          <picture>
-            <p className="text-aserto-grey-90"> test</p>
-            <img
-              {...imgProps}
-              style={{
-                ...imgProps.style,
-                objectFit,
-                width: '100%',
-                height: '100%'
-              }}
-            />
-          </picture>
+          <img
+            {...imgProps}
+            style={{
+              ...imgProps.style,
+              objectFit,
+              width: '100%',
+              height: '100%'
+            }}
+          />
         </AspectRatio.Root>
       )
     }
