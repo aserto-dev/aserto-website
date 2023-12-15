@@ -22,6 +22,8 @@
 [context.int]
   publish = ".next"
   command = "yarn build"
+  [context.int.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.int.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
@@ -34,6 +36,8 @@
 [context.preproduction]
   publish = ".next"
   command = "yarn build"
+  [context.preproduction.plugins]
+    package = "@netlify/plugin-nextjs"  
   [context.preproduction.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
@@ -46,6 +50,8 @@
 [context.eng]
   publish = ".next"
   command = "yarn build"
+  [context.eng.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.eng.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://eng--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
@@ -58,6 +64,8 @@
 [context.main]
   publish = ".next"
   command = "yarn build"
+  [context.main.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.main.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
