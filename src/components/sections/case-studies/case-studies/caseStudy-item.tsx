@@ -30,7 +30,7 @@ const CaseStudyItem = ({ data }: Props) => {
           </div>
 
           <div className="text-aserto-lochivar-accent-40 mt-10 text-xl">
-            <a className="hover:underline">View case study</a>
+            <p className="hover:underline">View case study</p>
           </div>
         </div>
       </div>

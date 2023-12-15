@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { useFadeInBottom } from 'hooks/use-gsap'
+import { twMerge } from 'tailwind-merge'
 
 interface Props {
   children?: React.ReactNode
@@ -9,7 +10,7 @@ interface Props {
 const Container = ({ children, className }: Props) => {
   const [ref] = useFadeInBottom()
   return (
-    <section className={clsx('relative px-8', className)}>
+    <section className={twMerge(clsx('relative px-8', className))}>
       <div className="max-w-screen-xl mx-auto" ref={ref}>
         {children}
       </div>

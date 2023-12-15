@@ -27,7 +27,6 @@ const CodeBrowser = ({
       overflow-scroll border border-aserto-grey-70 rounded-[6px] p-[10px] scrollbar-hide ${className}`}
     >
       <CodeBlock
-        codeblock
         language={languageSetting[language] ?? defaultLanguage}
         showLineNumbers={false}
         text={snippet}

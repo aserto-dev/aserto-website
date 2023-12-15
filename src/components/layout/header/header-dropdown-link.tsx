@@ -41,7 +41,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
       return <HeaderDropdownMenu link={link} />
     } else if (link.href) {
       return (
-        <a
+        <p
           className={clsx(
             'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
@@ -54,7 +54,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
           )}
         >
           {link.label}
-        </a>
+        </p>
       )
     } else {
       return (
@@ -181,13 +181,12 @@ export const HeaderDropdownLinkMobile = ({
           {link?.items?.map((l, i) => {
             return (
               <div key={i}>
-                <Link href={l.href}>
-                  <a
-                    onClick={onSelect}
-                    className="inline-flex items-center text-xl transition-colors text-aserto-grey-90 xs:text-2xl"
-                  >
-                    {l.label}
-                  </a>
+                <Link
+                  href={l.href}
+                  onClick={onSelect}
+                  className="inline-flex items-center text-xl transition-colors text-aserto-grey-90 xs:text-2xl"
+                >
+                  {l.label}
                 </Link>
               </div>
             )

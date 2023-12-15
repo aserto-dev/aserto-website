@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '^20.0.0'
       - run: yarn install --frozen-lockfile
       - name: ESLint & Prettier
         run: yarn lint
@@ -25,10 +25,10 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
+          node-version: '^20.0.0'
       - run: yarn install --frozen-lockfile
       - name: TypeScript
         run: yarn type-check

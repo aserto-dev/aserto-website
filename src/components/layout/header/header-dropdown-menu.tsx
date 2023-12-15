@@ -37,19 +37,19 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         aria-expanded={showMenu}
       >
         {link.items?.map((item, i) => (
-          <Link href={item.href} key={i}>
-            <a
-              onClick={() => setShowMenu(false)}
-              role="menuitem"
-              className={
-                'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-70 hover:text-aserto-grey-90'
-              }
-              {...(item.isExternal
-                ? { rel: 'noopener noreferrer', target: '_blank' }
-                : undefined)}
-            >
-              {item.label}
-            </a>
+          <Link
+            href={item.href}
+            key={i}
+            onClick={() => setShowMenu(false)}
+            role="menuitem"
+            className={
+              'pb-6 bg-aserto-grey-5 transition-all duration-150 text-aserto-grey-70 hover:text-aserto-grey-90'
+            }
+            {...(item.isExternal
+              ? { rel: 'noopener noreferrer', target: '_blank' }
+              : undefined)}
+          >
+            {item.label}
           </Link>
         ))}
       </div>

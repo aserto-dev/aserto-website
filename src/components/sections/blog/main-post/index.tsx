@@ -12,6 +12,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 
 // Styles
 import s from './main-post.module.css'
+import NoSSR from 'components/sections/common/NoSSR'
 
 const MainPost = ({ post }: { post: PostMetaFragment }) => {
   const [ref] = useFadeInBottom()
@@ -26,8 +27,8 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
       className={clsx('relative mx-auto mb-32 text-white', s.background)}
       ref={ref}
     >
-      <Link href={`/blog/${post.slug?.current}`}>
-        <a>
+      <NoSSR>
+        <Link href={`/blog/${post.slug?.current}`}>
           <div className="relative z-10 overflow-hidden border rounded bg-aserto-black border-aserto-grey-10">
             <div>
               <Image
@@ -54,8 +55,8 @@ const MainPost = ({ post }: { post: PostMetaFragment }) => {
               </time>
             </div>
           </div>
-        </a>
-      </Link>
+        </Link>
+      </NoSSR>
     </section>
   )
 }

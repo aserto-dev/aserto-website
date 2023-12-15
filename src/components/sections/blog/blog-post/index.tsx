@@ -15,7 +15,6 @@ type Props = {
 
 const PostComponent = ({ post }: Props) => {
   const authors = post.authors || []
-
   return (
     <>
       <div className="flex pt-12 relative mx-auto  maxsm:flex-col">
@@ -70,8 +69,9 @@ const PostComponent = ({ post }: Props) => {
               </figcaption>
             )}
           </figure>
+
           <BlockContent
-            blocks={post.bodyRaw}
+            blocks={post.bodyRaw || {}}
             className={clsx('w-full mt-8', s.body)}
           />
         </div>

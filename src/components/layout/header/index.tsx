@@ -22,6 +22,7 @@ import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
 import Button from 'components/primitives/button'
+import NoSSR from 'components/sections/common/NoSSR'
 
 const { solutions } = props as unknown as {
   resources: ResourceFragment[]
@@ -160,19 +161,21 @@ const Header = () => {
           </Link>
           <div className="bg-aserto-grey-20 w-[1px] h-9 mx-4" />
           {headerLinks.map((each, idx) => (
-            <HeaderDropdownLink
-              key={idx}
-              id={idx}
-              link={{
-                label: each.label,
-                href: each.href ?? undefined,
-                items: each.items.map((item) => ({
-                  href: item.href ?? undefined,
-                  label: item.label,
-                  isExternal: item.isExternal
-                }))
-              }}
-            />
+            <NoSSR key={idx}>
+              <HeaderDropdownLink
+                key={idx}
+                id={idx}
+                link={{
+                  label: each.label,
+                  href: each.href ?? undefined,
+                  items: each.items.map((item) => ({
+                    href: item.href ?? undefined,
+                    label: item.label,
+                    isExternal: item.isExternal
+                  }))
+                }}
+              />
+            </NoSSR>
           ))}
         </nav>
         <div className="hidden lg:block whitespace-nowrap items-center">
@@ -190,22 +193,26 @@ const Header = () => {
             <span className="sr-only">Slack</span>
             <IconSlack />
           </Link>
-          <Button
-            variant="primary"
-            size="sm"
-            as="a"
-            href={asertoConsoleRootUrl + '/#signup'}
-            className="ml-8 font-medium inline-flex items-center cursor-pointer"
-          >
-            Sign up
-          </Button>
-          <Link
-            className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
-            href={asertoConsoleRootUrl}
-            isExternal={false}
-          >
-            Sign in
-          </Link>
+          <NoSSR>
+            <Button
+              variant="primary"
+              size="sm"
+              as="a"
+              href={asertoConsoleRootUrl + '/#signup'}
+              className="ml-8 font-medium inline-flex items-center cursor-pointer"
+            >
+              Sign up
+            </Button>
+          </NoSSR>
+          <NoSSR>
+            <Link
+              className="pl-6 ml-8 text-base font-medium border-l font-roboto text-aserto-grey-70 border-aserto-grey-20"
+              href={asertoConsoleRootUrl}
+              isExternal={false}
+            >
+              Sign in
+            </Link>
+          </NoSSR>
         </div>
       </div>
       <Menu

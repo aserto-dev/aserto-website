@@ -20,8 +20,10 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-5QFZQHB'
 
 [context.int]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
+  [context.int.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.int.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://int--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
@@ -32,8 +34,10 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.preproduction]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
+  [context.preproduction.plugins]
+    package = "@netlify/plugin-nextjs"  
   [context.preproduction.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://aserto-playground.netlify.com"
@@ -44,8 +48,10 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.eng]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
+  [context.eng.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.eng.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://eng--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"
@@ -56,8 +62,10 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.main]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
+  [context.main.plugins]
+    package = "@netlify/plugin-nextjs"
   [context.main.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
     NEXT_PUBLIC_ASERTO_PLAYGROUND_ROOT_URL = "https://main--aserto-playground.netlify.com"

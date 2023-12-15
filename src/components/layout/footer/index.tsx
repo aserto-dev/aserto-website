@@ -21,6 +21,7 @@ import IconLinkedin from 'icons/linkedin.svg'
 import Logo from 'icons/logo-footer.svg'
 import IconSlack from 'icons/slack.svg'
 import IconTwitter from 'icons/twitter.svg'
+import NoSSR from 'components/sections/common/NoSSR'
 
 const Footer = () => {
   const [ref] = useFadeInBottom()
@@ -143,12 +144,15 @@ const Footer = () => {
             </p>
             <ul className="mt-4 space-y-4">
               <li>
-                <Link
-                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
-                  href="https://docs.aserto.com/docs"
-                >
-                  Documentation
-                </Link>
+                <NoSSR>
+                  <Link
+                    suppressHydrationWarning
+                    className="text-sm leading-normal text-aserto-grey-70 font-roboto"
+                    href="https://docs.aserto.com/docs"
+                  >
+                    Documentation
+                  </Link>
+                </NoSSR>
               </li>
               <li>
                 <Link

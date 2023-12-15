@@ -3,6 +3,7 @@ import clsx from 'clsx'
 // Styles
 import { headerLinks } from '..'
 import { HeaderDropdownLinkMobile } from '../header-dropdown-link'
+import NoSSR from 'components/sections/common/NoSSR'
 
 type MenuProps = {
   show: boolean
@@ -24,11 +25,13 @@ const Menu = ({ show = false, closeMenu, signupRedirect }: MenuProps) => {
           {headerLinks.map((l, i) => {
             return (
               <li key={i} className="relative">
-                <HeaderDropdownLinkMobile
-                  link={l}
-                  id={`mobile-${i}`}
-                  onSelect={closeMenu}
-                />
+                <NoSSR>
+                  <HeaderDropdownLinkMobile
+                    link={l}
+                    id={`mobile-${i}`}
+                    onSelect={closeMenu}
+                  />
+                </NoSSR>
               </li>
             )
           })}

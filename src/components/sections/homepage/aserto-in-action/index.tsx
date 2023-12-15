@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { isMobile, isSafari } from 'react-device-detect'
+import NoSSR from '../../common/NoSSR'
 
 // Hooks
 import { useFadeInBottom } from 'hooks/use-gsap'
@@ -7,6 +8,7 @@ import { useFadeInBottom } from 'hooks/use-gsap'
 // Components
 import Animation from './animation'
 import Link from 'components/primitives/link'
+import React from 'react'
 
 const AsertoInAction = () => {
   const [ref] = useFadeInBottom()
@@ -31,7 +33,7 @@ const AsertoInAction = () => {
   return (
     <section className="relative mx-auto my-4">
       <div className="text-center" ref={ref}>
-        <div>
+        <NoSSR>
           {supportedBrowser ? (
             <Animation />
           ) : (
@@ -44,7 +46,7 @@ const AsertoInAction = () => {
               src="/images/homepage/animation-safari.mp4"
             />
           )}
-        </div>
+        </NoSSR>
       </div>
     </section>
   )

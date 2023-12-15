@@ -65,7 +65,7 @@ const PolicyBrowser = () => {
                   <CodeViewer
                     language="rego"
                     snippet={r.code}
-                    className="w-full flex-auto md:w-[600px] h-[215px] border-0 rounded-none my-0"
+                    className="w-full flex-auto md:w-[600px] !h-[215px] border-0 rounded-none my-0"
                   />
                   <div className="w-full flex-1 md:w-[600px] h-full text-center my-auto items-center bg-aserto-grey-10 p-4">
                     <span>{r.caption}</span>

@@ -29,7 +29,7 @@ const serializers = {
         <figure>
           <img src={src} alt={props.node.alt} />
           <figcaption>
-            <DefaultBlockContent blocks={props.node.caption} />
+            <DefaultBlockContent blocks={props.node.caption || []} />
           </figcaption>
         </figure>
       )
@@ -69,7 +69,7 @@ export const BlockContent = ({
         { [s.spaced_paragraph]: spacedParagraph }
       )}
     >
-      <DefaultBlockContent blocks={blocks} serializers={serializers} />
+      <DefaultBlockContent blocks={blocks || []} serializers={serializers} />
     </div>
   )
 }
