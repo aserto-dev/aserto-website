@@ -32,7 +32,7 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.preproduction]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
   [context.preproduction.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://preproduction--aserto-console.netlify.app"
@@ -44,7 +44,7 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.eng]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
   [context.eng.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://eng--aserto-console.netlify.app"
@@ -56,7 +56,7 @@
     NEXT_PUBLIC_GTM_CODE = 'GTM-P5MMSZF'
 
 [context.main]
-  publish = "out"
+  publish = ".next"
   command = "yarn build"
   [context.main.environment]
     NEXT_PUBLIC_ASERTO_CONSOLE_ROOT_URL = "https://main--aserto-console.netlify.app"
