@@ -1,6 +1,6 @@
 import cms from 'lib/sanity'
 import { InferGetStaticPropsType } from 'next'
-import Script from 'next/script'
+import HubspotSchedulingEmbed from 'lib/hubspot/HubspotSchedulingEmbed'
 
 import PageLayout from 'components/layout/page'
 import SignupButton from 'components/sections/common/cta-buttons/signup-button'
@@ -45,21 +45,15 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           </h1>
           <p>{page.hubSpotSubtitle}</p>
         </div>
-        {/* <!-- Start of Meetings Embed Script --> */}
+
         <div className="w-full">
-          <div
-            className="meetings-iframe-container"
-            data-src={
+          <HubspotSchedulingEmbed
+            hubSpotDataSrc={
               page.hubSpotDataSrc ??
               'https://meetings.hubspot.com/omri-gazitt/speak-with-an-engineer?embed=true'
             }
-          ></div>
-          <Script
-            type="text/javascript"
-            src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-          ></Script>
+          ></HubspotSchedulingEmbed>
         </div>
-        {/* <!-- End of Meetings Embed Script --> */}
       </section>
     </PageLayout>
   )

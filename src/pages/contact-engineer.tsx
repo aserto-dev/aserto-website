@@ -1,6 +1,6 @@
 // Layout
 import PageLayout from 'components/layout/page'
-import Script from 'next/script'
+import HubspotSchedulingEmbed from 'lib/hubspot/HubspotSchedulingEmbed'
 
 const ContactEngineer = () => {
   const page = {
@@ -28,16 +28,9 @@ const ContactEngineer = () => {
           <h2 className="text-3xl mb-16 leading-normal sm:w-8/12 sm:mx-auto">
             {page.subtitle}
           </h2>
-          {/* <!-- Start of Meetings Embed Script --> */}
-          <div
-            className="meetings-iframe-container"
-            data-src={page.hubSpotDataSrc}
-          ></div>
-          <Script
-            type="text/javascript"
-            src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-          ></Script>
-          {/* <!-- End of Meetings Embed Script --> */}
+          <HubspotSchedulingEmbed
+            hubSpotDataSrc={page.hubSpotDataSrc}
+          ></HubspotSchedulingEmbed>
         </div>
       </div>
     </PageLayout>
