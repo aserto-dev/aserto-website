@@ -52,7 +52,7 @@ const BlogPost = ({
                 className="grid gap-8 mx-auto mt-20 maxlg:mt-0 lg:grid-cols-3"
                 ref={section}
               ></div>
-              <div className="lg:hidden ">
+              <div className="lg:hidden">
                 <StayInformed />
               </div>
             </>
