@@ -21,24 +21,27 @@ const StayInformed = () => {
             />
             Subscribe
           </Button>
-
-          <Button className=" w-full" size="sm">
-            <img
-              src="/images/about/slack.svg"
-              className="cursor-pointer inline mr-2"
-            />
-            <Link href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg">
+          <Link
+            className="w-full"
+            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+          >
+            <Button size="sm" className="w-full">
+              <img
+                src="/images/about/slack.svg"
+                className="cursor-pointer inline mr-2"
+              />
               Join the discussion
-            </Link>
-          </Button>
-
-          <Button className=" w-full" size="sm">
-            <img
-              src="/images/about/call.svg"
-              className="cursor-pointer inline mr-2"
-            />
-            <Link href="/contact-engineer">Talk to an engineer</Link>
-          </Button>
+            </Button>
+          </Link>
+          <Link className="w-full" href="/contact-engineer">
+            <Button className="w-full" size="sm">
+              <img
+                src="/images/about/call.svg"
+                className="cursor-pointer inline mr-2"
+              />
+              Talk to an engineer
+            </Button>
+          </Link>
         </div>
       </div>
     </>
