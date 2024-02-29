@@ -21,23 +21,31 @@ const regoPolicies = [
   {
     caption: 'Use any user-centric attributes in your policies',
     code: `allowed {
-  input.user.department == "Sales"
+  input.user.properties.dept == "Sales"
 }`
   },
   {
     caption: 'Make access decisions based on org-chart relationships',
     code: `allowed {
-  dir.is_manager_of(input.user.id, input.resource.id)
+  ds.check({
+    "subject_type": "user",
+    "subject_id": input.user.id,
+    "relation": "manager",
+    "object_type": "user",
+    "object_id": input.resource.id
+  })
 }`
   },
   {
     caption:
       'Model your resource hierarchy and enforce fine-grained authorization',
     code: `allowed {
-  ds.check_permission({
-    "subject": { "id": input.user.id },
-    "permission": { "name": "read" },
-    "object": { "id": input.resource.id }
+  ds.check({
+    "subject_type": "user",
+    "subject_id": input.user.id,
+    "relation": "can_read",
+    "object_type": "document",
+    "object_id": input.resource.id
   })
 }`
   },
