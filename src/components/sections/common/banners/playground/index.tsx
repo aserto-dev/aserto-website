@@ -13,10 +13,10 @@ const PlaygroundBanner = () => {
       <span className="align-middle">
         <Link
           className="font-bold underline"
-          href="/resources/fine-grained-authorization-ebook"
+          href="/resources/architecture-authorization-applications-webinar"
           onClick={hideBanner}
         >
-          Get your copy of the fine-grained authorization eBook!{' '}
+          The Architecture of Scalable, Granular Permissions Webinar - Watch it Now!{' '}
         </Link>
       </span>
     </div>
