@@ -3,7 +3,12 @@ import { HomePageFragment } from 'lib/sanity/generated'
 import Container from '../container'
 import CtaButtons from 'components/sections/common/cta-buttons'
 import { BlockContent } from 'components/primitives/block-content'
-import { Player } from '@lottiefiles/react-lottie-player'
+import dynamic from 'next/dynamic'
+
+// disable SSR for the LottieFiles player
+const Player = dynamic(() => import('./player'), {
+  ssr: false,
+})
 
 const Hero = ({ page }: { page: HomePageFragment }) => {
   return (
@@ -27,14 +32,7 @@ const Hero = ({ page }: { page: HomePageFragment }) => {
           </div>
         </div>
         <div className="md:w-1/2 mt-12 md:mt-0 aspect-square">
-          <Player
-            autoplay
-            background="transparent"
-            speed={1}
-            loop
-            src="/homepage-animation.json"
-            // style={{ height: '300px', width: '300px' }}
-          />
+          <Player />
         </div>
         <div className="block md:hidden">
           <CtaButtons signup seeDemo leftAlign />
