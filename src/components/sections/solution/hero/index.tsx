@@ -1,4 +1,5 @@
 import { BlockContent } from 'components/primitives/block-content'
+import Button from 'components/primitives/button'
 import Container from 'components/sections/homepage/container'
 import { SolutionFragment } from 'lib/sanity/generated'
 
@@ -16,6 +17,17 @@ const Hero = ({ page }: { page: SolutionFragment }) => {
           className="resource w-full mx-auto mt-12 text-aserto-grey-90 text-[22px] leading-8"
           blocks={page.subtitleRaw}
         />
+        {!!page.formId && (
+          <Button
+            variant="primary"
+            size="sm"
+            as="a"
+            className="mt-20 inline-flex items-center justify-center self-center cursor-pointer"
+            href="#resource"
+          >
+            {page.formTitle}
+          </Button>
+        )}
       </div>
       <div className="flex-col align-middle lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
         <img

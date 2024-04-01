@@ -523,6 +523,31 @@ export type CodeSorting = {
   code?: Maybe<SortOrder>;
 };
 
+export type CrossDatasetReference = {
+  __typename?: 'CrossDatasetReference';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  _ref?: Maybe<Scalars['String']>;
+  _weak?: Maybe<Scalars['Boolean']>;
+  _dataset?: Maybe<Scalars['String']>;
+};
+
+export type CrossDatasetReferenceFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  _ref?: Maybe<StringFilter>;
+  _weak?: Maybe<BooleanFilter>;
+  _dataset?: Maybe<StringFilter>;
+};
+
+export type CrossDatasetReferenceSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  _ref?: Maybe<SortOrder>;
+  _weak?: Maybe<SortOrder>;
+  _dataset?: Maybe<SortOrder>;
+};
+
 export type CtaBlock = {
   __typename?: 'CtaBlock';
   _key?: Maybe<Scalars['String']>;
@@ -2946,6 +2971,10 @@ export type SolutionPage = Document & {
   benefit?: Maybe<Array<Maybe<SectionBlock>>>;
   iconBlockTitleRaw?: Maybe<Scalars['JSON']>;
   featureItems?: Maybe<Array<Maybe<FeatureItem>>>;
+  hubspotAssetTitle?: Maybe<Scalars['String']>;
+  hubspotAssetSubtitleRaw?: Maybe<Scalars['JSON']>;
+  formId?: Maybe<Scalars['String']>;
+  formTitle?: Maybe<Scalars['String']>;
   callToAction?: Maybe<CtaBlock>;
 };
 
@@ -2965,6 +2994,9 @@ export type SolutionPageFilter = {
   shortHeaderTitle?: Maybe<StringFilter>;
   shortFooterTitle?: Maybe<StringFilter>;
   heroImage?: Maybe<MainImageFilter>;
+  hubspotAssetTitle?: Maybe<StringFilter>;
+  formId?: Maybe<StringFilter>;
+  formTitle?: Maybe<StringFilter>;
   callToAction?: Maybe<CtaBlockFilter>;
 };
 
@@ -2982,6 +3014,9 @@ export type SolutionPageSorting = {
   shortHeaderTitle?: Maybe<SortOrder>;
   shortFooterTitle?: Maybe<SortOrder>;
   heroImage?: Maybe<MainImageSorting>;
+  hubspotAssetTitle?: Maybe<SortOrder>;
+  formId?: Maybe<SortOrder>;
+  formTitle?: Maybe<SortOrder>;
   callToAction?: Maybe<CtaBlockSorting>;
 };
 
@@ -3645,7 +3680,7 @@ export type SectionBlockFragment = (
 
 export type SolutionFragment = (
   { __typename?: 'SolutionPage' }
-  & Pick<SolutionPage, '_id' | '_createdAt' | 'index' | 'title' | 'subtitleRaw' | 'shortHeaderTitle' | 'shortFooterTitle' | 'iconBlockTitleRaw'>
+  & Pick<SolutionPage, '_id' | '_createdAt' | 'index' | 'title' | 'subtitleRaw' | 'shortHeaderTitle' | 'shortFooterTitle' | 'iconBlockTitleRaw' | 'hubspotAssetTitle' | 'hubspotAssetSubtitleRaw' | 'formId' | 'formTitle'>
   & { metadata?: Maybe<(
     { __typename?: 'PageMetadata' }
     & Pick<PageMetadata, 'title' | 'description'>
@@ -4923,6 +4958,10 @@ export const SolutionFragmentDoc = gql`
   featureItems {
     ...FeatureItem
   }
+  hubspotAssetTitle
+  hubspotAssetSubtitleRaw
+  formId
+  formTitle
   callToAction {
     caption
     signup
