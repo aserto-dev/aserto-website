@@ -5,7 +5,7 @@ import { SolutionFragment } from 'lib/sanity/generated'
 
 const Resource = ({ page }: { page: SolutionFragment }) => {
   return page.formId ? (
-    <div id="resource" className="pt-12 bg-aserto-lochivar-100">
+    <div id="resource" className="pt-10 bg-aserto-lochivar-accent-5">
       <Container className="bg-resourceHero pt-16 lg:pt-[100px] flex flex-wrap gap-8">
         <div className="flex-col align-top lg:w-1/2 lg:inline-flex pb-20 sm:px-8 lg:px-12">
           <h1
