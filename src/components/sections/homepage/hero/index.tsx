@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 
 // disable SSR for the LottieFiles player
 const Player = dynamic(() => import('./player'), {
-  ssr: false,
+  ssr: false
 })
 
 const Hero = ({ page }: { page: HomePageFragment }) => {

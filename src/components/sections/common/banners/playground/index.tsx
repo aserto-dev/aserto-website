@@ -16,7 +16,8 @@ const PlaygroundBanner = () => {
           href="/resources/architecture-authorization-applications-webinar"
           onClick={hideBanner}
         >
-          The Architecture of Scalable, Granular Permissions Webinar - Watch it Now!{' '}
+          The Architecture of Scalable, Granular Permissions Webinar - Watch it
+          Now!{' '}
         </Link>
       </span>
     </div>

@@ -15,6 +15,7 @@ import Lottie, { ctaOptions } from 'components/sections/common/lottie/Lottie'
 import IconBlock from 'components/sections/features/icon-block'
 import Benefits from 'components/sections/solution/benefits'
 import Hero from 'components/sections/solution/hero'
+import Resource from 'components/sections/solution/resource'
 
 const SolutionPage = ({ solution }: { solution: SolutionFragment }) => {
   if (!solution) return <Error statusCode={404} />
@@ -42,6 +43,7 @@ const SolutionPage = ({ solution }: { solution: SolutionFragment }) => {
         featureIcons={featureItems}
         iconBlockTitle={solution.iconBlockTitleRaw}
       />
+      <Resource page={solution} />
       <div className="bg-featureCta">
         <Lottie {...ctaOptions({ ...solution.callToAction })} />
       </div>

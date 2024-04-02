@@ -23,6 +23,10 @@ fragment Solution on SolutionPage {
   featureItems {
     ...FeatureItem
   }
+  hubspotAssetTitle
+  hubspotAssetSubtitleRaw
+  formId
+  formTitle
   callToAction {
     caption
     signup

@@ -1,6 +1,6 @@
 import { Player } from '@lottiefiles/react-lottie-player'
 
-const LottiePlayer = () =>
+const LottiePlayer = () => (
   <Player
     autoplay
     background="transparent"
@@ -9,6 +9,6 @@ const LottiePlayer = () =>
     src="/homepage-animation.json"
     // style={{ height: '300px', width: '300px' }}
   />
+)
 
-  export default LottiePlayer
-  
+export default LottiePlayer
