@@ -23,7 +23,13 @@ const Hero = ({ page }: { page: SolutionFragment }) => {
             size="sm"
             as="a"
             className="mt-20 inline-flex items-center justify-center self-center cursor-pointer"
-            href="#resource"
+            onClick={() => {
+              const element = document.getElementById('resource')
+              element?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              })
+            }}
           >
             {page.formTitle}
           </Button>

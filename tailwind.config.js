@@ -28,6 +28,7 @@ module.exports = {
             80: '#23696C',
             90: '#257477',
             100: '#277F82',
+            'accent-5': '#2F9195',
             'accent-10': '#2F989C',
             'accent-20': '#36B1B5',
             'accent-30': '#3ECACF',
