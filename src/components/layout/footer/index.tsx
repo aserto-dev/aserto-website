@@ -157,7 +157,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-70 font-roboto"
-                  href="/quickstarts"
+                  href="https://docs.aserto.com/docs/quickstarts/overview"
                 >
                   Quickstarts
                 </Link>
@@ -168,6 +168,14 @@ const Footer = () => {
                   href="https://openpolicycontainers.com/"
                 >
                   Open Policy Containers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-sm leading-normal text-aserto-grey-70 font-roboto"
+                  href="/lp/authzen"
+                >
+                  OpenID AuthZEN
                 </Link>
               </li>
               <li>
