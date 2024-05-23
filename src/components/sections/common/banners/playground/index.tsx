@@ -3,7 +3,9 @@ import React, { useContext } from 'react'
 import PlaygroundBannerContext from './PlaygroundBannerContext'
 
 const PlaygroundBanner = () => {
-  const { isVisible, hideBanner } = useContext(PlaygroundBannerContext)
+  const { isVisible, bannerText, bannerLink, hideBanner } = useContext(
+    PlaygroundBannerContext
+  )
 
   return isVisible ? (
     <div
@@ -13,11 +15,10 @@ const PlaygroundBanner = () => {
       <span className="align-middle">
         <Link
           className="font-bold underline"
-          href="/resources/architecture-authorization-applications-webinar"
+          href={bannerLink}
           onClick={hideBanner}
         >
-          The Architecture of Scalable, Granular Permissions Webinar - Watch it
-          Now!{' '}
+          {bannerText + ' '}
         </Link>
       </span>
     </div>
