@@ -12,9 +12,9 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'aserto-eic-2024-banner-seen': {
-    bannerLink: '/events/eic-conference-2024',
-    bannerText: 'Meet our Team at EIC 2024!'
+  'aserto-appsec-pnw-2024-banner-seen': {
+    bannerLink: '/events/appsec-pnw-2024',
+    bannerText: 'Meet Omri at OWASP AppSec Days PNW 2024!'
   },
   'aserto-topaz-032-banner-seen': {
     bannerLink: '/blog/announcing-topaz-0-32',
