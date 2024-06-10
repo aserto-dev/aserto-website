@@ -21,8 +21,9 @@ html .video::-webkit-media-controls-panel {
   -webkit-appearance: none;
 }
 
-.video::--webkit-media-controls-play-button {
+.video::state(webkit-media-controls-play-button) {
   display: none !important;
+  appearance: none;
   -webkit-appearance: none;
 }
 
