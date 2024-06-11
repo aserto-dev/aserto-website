@@ -17,6 +17,7 @@ import Logo from 'icons/logo-header.svg'
 import CloseIcon from 'icons/menu-close.svg'
 import MenuIcon from 'icons/menu.svg'
 import IconSlack from 'icons/slack.svg'
+import IconGithub from 'icons/github.svg'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
@@ -186,7 +187,14 @@ const Header = () => {
             <IconSlack />
           </Link>
           <Link
-            className="ml-8 inline-flex align-middle"
+            className="hidden lg:inline-flex xl:hidden ml-8 align-middle"
+            href="https://github.com/aserto-dev/topaz"
+          >
+            <span className="sr-only">GitHub</span>
+            <IconGithub />
+          </Link>
+          <Link
+            className="hidden xl:inline-flex ml-8 align-middle"
             href="https://github.com/aserto-dev/topaz"
           >
             <span className="sr-only">GitHub</span>
