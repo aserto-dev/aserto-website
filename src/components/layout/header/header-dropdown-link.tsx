@@ -43,7 +43,7 @@ export const HeaderDropdownLink = ({ link, id }: HeaderDropdownLinkProps) => {
       return (
         <p
           className={clsx(
-            'text-base font-roboto pb-6 pt-8 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
+            'text-base font-roboto pb-7 pt-7 border-b border-solid transition-all duration-150 hover:text-aserto-grey-90',
             {
               'border-aserto-lochivar-accent-30 text-aserto-grey-90':
                 pathname.includes(`${link.href}`),

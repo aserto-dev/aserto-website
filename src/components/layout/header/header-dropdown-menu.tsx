@@ -14,7 +14,6 @@ const HeaderDropdownMenu: React.FC<HeaderDropdownMenuProps> = ({ link }) => {
         role="menu"
         aria-haspopup="menu"
         aria-controls="submenu"
-        style={{ paddingTop: '7px' }}
         className="text-base font-roboto transition-all duration-150 text-aserto-grey-70 hover:text-aserto-grey-90 cursor-pointer h-20 flex items-center"
         onMouseEnter={() => setShowMenu(true)}
         onSelect={() => setShowMenu(false)}

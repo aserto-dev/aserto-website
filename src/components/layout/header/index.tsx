@@ -180,6 +180,13 @@ const Header = () => {
         <div className="hidden lg:block whitespace-nowrap items-center">
           <Link
             className="ml-8 inline-flex align-middle"
+            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+          >
+            <span className="sr-only">Slack</span>
+            <IconSlack />
+          </Link>
+          <Link
+            className="ml-8 inline-flex align-middle"
             href="https://github.com/aserto-dev/topaz"
           >
             <span className="sr-only">GitHub</span>
@@ -188,13 +195,6 @@ const Header = () => {
               src="https://img.shields.io/github/stars/aserto-dev/topaz?style=for-the-badge&logo=github&logoColor=%23e7e7e7&logoSize=auto&label=Topaz&labelColor=rgb(30%2C30%2C30)&color=rgb(100%2C100%2C100)&link=https%3A%2F%2Fgithub.com%2Faserto-dev%2Ftopaz"
               alt="github"
             />
-          </Link>
-          <Link
-            className="ml-8 inline-flex align-middle"
-            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
-          >
-            <span className="sr-only">Slack</span>
-            <IconSlack />
           </Link>
           <NoSSR>
             <Button
