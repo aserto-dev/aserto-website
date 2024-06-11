@@ -12,7 +12,6 @@ import Link from 'components/primitives/link'
 
 // SVGs
 import PlaygroundBanner from 'components/sections/common/banners/playground'
-import IconGithub from 'icons/github.svg'
 import LogoMobile from 'icons/logo-header-mobile.svg'
 import Logo from 'icons/logo-header.svg'
 import CloseIcon from 'icons/menu-close.svg'
@@ -184,7 +183,11 @@ const Header = () => {
             href="https://github.com/aserto-dev/topaz"
           >
             <span className="sr-only">GitHub</span>
-            <IconGithub />
+            <img
+              width="150px"
+              src="https://img.shields.io/github/stars/aserto-dev/topaz?style=for-the-badge&logo=github&logoColor=%23e7e7e7&logoSize=auto&label=Topaz&labelColor=rgb(30%2C30%2C30)&color=rgb(100%2C100%2C100)&link=https%3A%2F%2Fgithub.com%2Faserto-dev%2Ftopaz"
+              alt="github"
+            />
           </Link>
           <Link
             className="ml-8 inline-flex align-middle"
