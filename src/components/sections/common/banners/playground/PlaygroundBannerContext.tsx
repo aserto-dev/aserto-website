@@ -12,6 +12,10 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
+  'aserto-api-authorization-seen': {
+    bannerLink: '/solutions/api-authorization',
+    bannerText: 'API Authorization on Autopilot - Now Available from Aserto!'
+  },
   'aserto-build-vs-buy-banner-seen': {
     bannerLink: '/solutions/multitenant-application-authorization',
     bannerText: 'Deciding on Building or Buying Authorization? Get the Whitepaper!'
