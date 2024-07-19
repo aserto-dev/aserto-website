@@ -6,6 +6,9 @@ query DemoPage {
     }
     title
     youtubeUrl
+    videos {
+      ...VideoEmbedItem
+    }
     hubSpotTitle
     hubSpotSubtitle
     hubSpotDataSrc

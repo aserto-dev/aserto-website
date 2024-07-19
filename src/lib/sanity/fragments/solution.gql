@@ -16,6 +16,9 @@ fragment Solution on SolutionPage {
   heroImage {
     ...Image
   }
+  videoItem {
+    ...VideoEmbedItem
+  }
   benefit {
     ...SectionBlock
   }

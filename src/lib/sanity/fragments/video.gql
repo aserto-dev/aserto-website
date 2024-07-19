@@ -1,0 +1,5 @@
+fragment VideoEmbedItem on VideoEmbedBlock {
+  title
+  embedTitle
+  embedUrl
+}

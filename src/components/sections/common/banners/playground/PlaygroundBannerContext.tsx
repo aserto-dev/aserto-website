@@ -18,7 +18,8 @@ const banners: Record<string, Banner> = {
   },
   'aserto-build-vs-buy-banner-seen': {
     bannerLink: '/solutions/multitenant-application-authorization',
-    bannerText: 'Deciding on Building or Buying Authorization? Get the Whitepaper!'
+    bannerText:
+      'Deciding on Building or Buying Authorization? Get the Whitepaper!'
   },
   'aserto-authzen-banner-seen': {
     bannerLink: '/lp/authzen',
