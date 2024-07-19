@@ -24,12 +24,12 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         mb-32 gap-20 items-center text-center text-aserto-grey-90"
       >
         {page.videos?.length && page.videos?.length > 0 ? (
-          page.videos.map((v) => (
+          page.videos.map((v, i) => (
             <>
-              <h2 className="text-2xl text-aserto-grey-90 text-center">
+              <h2 key={`video-title-${i}`} className="text-2xl lg:text-3xl text-aserto-grey-90 text-center">
                 {v?.title || 'Aserto Demo Video'}
               </h2>
-              <div>
+              <div key={`video-${i}`}>
                 <iframe
                   className="w-full h-full overflow-hidden md:w-[810px] md:h-[457px]"
                   width="810"
@@ -50,7 +50,7 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           ))
         ) : (
           <>
-            <h2 className="text-2xl text-aserto-grey-90 text-center">
+            <h2 className="text-2xl lg:text-3xl text-aserto-grey-90 text-center">
               {page.title}
             </h2>
             <div>
@@ -71,7 +71,7 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         )}
         <SignupButton />
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl text-aserto-grey-90 text-center">
+          <h1 className="text-2xl lg:text-3xl text-aserto-grey-90 text-center">
             {page.hubSpotTitle}
           </h1>
           <p>{page.hubSpotSubtitle}</p>
