@@ -23,21 +23,52 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         className="py-20 relative flex flex-col h-full w-full mt-12
         mb-32 gap-20 items-center text-center text-aserto-grey-90"
       >
-        <h2 className="text-2xl text-aserto-grey-90 text-center">
-          {page.title}
-        </h2>
-        <div>
-          <iframe
-            className="w-full h-full overflow-hidden md:w-[810px] md:h-[457px]"
-            width="810"
-            height="457"
-            src={page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'}
-            title="Welcome to Modern Authorization | Aserto Overview"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+        {page.videos?.length && page.videos?.length > 0 ? (
+          page.videos.map((v) => (
+            <>
+              <h2 className="text-2xl text-aserto-grey-90 text-center">
+                {v?.title || 'Aserto Demo Video'}
+              </h2>
+              <div>
+                <iframe
+                  className="w-full h-full overflow-hidden md:w-[810px] md:h-[457px]"
+                  width="810"
+                  height="457"
+                  src={
+                    v?.embedUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'
+                  }
+                  title={
+                    v?.embedTitle ??
+                    'Welcome to Modern Authorization | Aserto Overview'
+                  }
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </>
+          ))
+        ) : (
+          <>
+            <h2 className="text-2xl text-aserto-grey-90 text-center">
+              {page.title}
+            </h2>
+            <div>
+              <iframe
+                className="w-full h-full overflow-hidden md:w-[810px] md:h-[457px]"
+                width="810"
+                height="457"
+                src={
+                  page.youtubeUrl ?? 'https://www.youtube.com/embed/RJkgmdjJn_w'
+                }
+                title="Welcome to Modern Authorization | Aserto Overview"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </>
+        )}
         <SignupButton />
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl text-aserto-grey-90 text-center">

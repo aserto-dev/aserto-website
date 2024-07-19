@@ -628,6 +628,7 @@ export type Demo = Document & {
   /** Demo Page/ Youtube Demo title */
   title?: Maybe<Scalars['String']>;
   youtubeUrl?: Maybe<Scalars['String']>;
+  videos?: Maybe<Array<Maybe<VideoEmbedBlock>>>;
   hubSpotTitle?: Maybe<Scalars['String']>;
   hubSpotSubtitle?: Maybe<Scalars['String']>;
   /** To schedule a 1:1 demo with an engineer. */
@@ -2968,6 +2969,7 @@ export type SolutionPage = Document & {
   shortHeaderTitle?: Maybe<Scalars['String']>;
   shortFooterTitle?: Maybe<Scalars['String']>;
   heroImage?: Maybe<MainImage>;
+  videoItem?: Maybe<VideoEmbedBlock>;
   benefit?: Maybe<Array<Maybe<SectionBlock>>>;
   iconBlockTitleRaw?: Maybe<Scalars['JSON']>;
   featureItems?: Maybe<Array<Maybe<FeatureItem>>>;
@@ -2994,6 +2996,7 @@ export type SolutionPageFilter = {
   shortHeaderTitle?: Maybe<StringFilter>;
   shortFooterTitle?: Maybe<StringFilter>;
   heroImage?: Maybe<MainImageFilter>;
+  videoItem?: Maybe<VideoEmbedBlockFilter>;
   hubspotAssetTitle?: Maybe<StringFilter>;
   formId?: Maybe<StringFilter>;
   formTitle?: Maybe<StringFilter>;
@@ -3014,6 +3017,7 @@ export type SolutionPageSorting = {
   shortHeaderTitle?: Maybe<SortOrder>;
   shortFooterTitle?: Maybe<SortOrder>;
   heroImage?: Maybe<MainImageSorting>;
+  videoItem?: Maybe<VideoEmbedBlockSorting>;
   hubspotAssetTitle?: Maybe<SortOrder>;
   formId?: Maybe<SortOrder>;
   formTitle?: Maybe<SortOrder>;
@@ -3325,6 +3329,31 @@ export type VideoBlockSorting = {
   embedUrl?: Maybe<SortOrder>;
   defaultPreview?: Maybe<MainImageSorting>;
   description?: Maybe<SortOrder>;
+};
+
+export type VideoEmbedBlock = {
+  __typename?: 'VideoEmbedBlock';
+  _key?: Maybe<Scalars['String']>;
+  _type?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  embedTitle?: Maybe<Scalars['String']>;
+  embedUrl?: Maybe<Scalars['String']>;
+};
+
+export type VideoEmbedBlockFilter = {
+  _key?: Maybe<StringFilter>;
+  _type?: Maybe<StringFilter>;
+  title?: Maybe<StringFilter>;
+  embedTitle?: Maybe<StringFilter>;
+  embedUrl?: Maybe<StringFilter>;
+};
+
+export type VideoEmbedBlockSorting = {
+  _key?: Maybe<SortOrder>;
+  _type?: Maybe<SortOrder>;
+  title?: Maybe<SortOrder>;
+  embedTitle?: Maybe<SortOrder>;
+  embedUrl?: Maybe<SortOrder>;
 };
 
 export type VideoSectionBlock = {
@@ -3690,6 +3719,9 @@ export type SolutionFragment = (
   )>, heroImage?: Maybe<(
     { __typename?: 'MainImage' }
     & ImageFragment
+  )>, videoItem?: Maybe<(
+    { __typename?: 'VideoEmbedBlock' }
+    & VideoEmbedItemFragment
   )>, benefit?: Maybe<Array<Maybe<(
     { __typename?: 'SectionBlock' }
     & SectionBlockFragment
@@ -3754,6 +3786,11 @@ export type ValuePropFragment = (
     { __typename?: 'MainImage' }
     & ImageFragment
   )> }
+);
+
+export type VideoEmbedItemFragment = (
+  { __typename?: 'VideoEmbedBlock' }
+  & Pick<VideoEmbedBlock, 'title' | 'embedTitle' | 'embedUrl'>
 );
 
 export type FounderFragment = (
@@ -4037,7 +4074,10 @@ export type DemoPageQuery = (
     & { metadata?: Maybe<(
       { __typename?: 'PageMetadata' }
       & Pick<PageMetadata, 'title' | 'description'>
-    )> }
+    )>, videos?: Maybe<Array<Maybe<(
+      { __typename?: 'VideoEmbedBlock' }
+      & VideoEmbedItemFragment
+    )>>> }
   )> }
 );
 
@@ -4924,6 +4964,13 @@ export const ResourceFragmentDoc = gql`
 }
     ${ImageFragmentDoc}
 ${SectionBlockFragmentDoc}`;
+export const VideoEmbedItemFragmentDoc = gql`
+    fragment VideoEmbedItem on VideoEmbedBlock {
+  title
+  embedTitle
+  embedUrl
+}
+    `;
 export const FeatureItemFragmentDoc = gql`
     fragment FeatureItem on FeatureItem {
   icon {
@@ -4951,6 +4998,9 @@ export const SolutionFragmentDoc = gql`
   heroImage {
     ...Image
   }
+  videoItem {
+    ...VideoEmbedItem
+  }
   benefit {
     ...SectionBlock
   }
@@ -4971,6 +5021,7 @@ export const SolutionFragmentDoc = gql`
   }
 }
     ${ImageFragmentDoc}
+${VideoEmbedItemFragmentDoc}
 ${SectionBlockFragmentDoc}
 ${FeatureItemFragmentDoc}`;
 export const TestimonialFragmentDoc = gql`
@@ -5510,12 +5561,15 @@ export const DemoPageDocument = gql`
     }
     title
     youtubeUrl
+    videos {
+      ...VideoEmbedItem
+    }
     hubSpotTitle
     hubSpotSubtitle
     hubSpotDataSrc
   }
 }
-    `;
+    ${VideoEmbedItemFragmentDoc}`;
 export const EventsPageDocument = gql`
     query EventsPage {
   allEventsPage(sort: {_createdAt: DESC}, limit: 1) {

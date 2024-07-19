@@ -2,6 +2,7 @@ import { BlockContent } from 'components/primitives/block-content'
 import Button from 'components/primitives/button'
 import Container from 'components/sections/homepage/container'
 import { SolutionFragment } from 'lib/sanity/generated'
+import Video from '../video'
 
 const Hero = ({ page }: { page: SolutionFragment }) => {
   return (
@@ -42,6 +43,7 @@ const Hero = ({ page }: { page: SolutionFragment }) => {
           alt={page.heroImage?.alt ?? 'ReBAC using Rego'}
         />
       </div>
+      {page.videoItem?.embedUrl && <Video page={page} />}
     </Container>
   )
 }
