@@ -12,10 +12,6 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'aserto-pinecone-webinar-seen': {
-    bannerLink: 'https://pinecone-io.zoom.us/webinar/register/WN_1K4x2mIdRtqkNBOnp2_4ow#/registration',
-    bannerText: 'Register for the August 13 "Access Control in RAG Applications" webinar, co-hosted with Pinecone!'
-  },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
     bannerText: 'API Authorization on Autopilot - Now Available from Aserto!'
