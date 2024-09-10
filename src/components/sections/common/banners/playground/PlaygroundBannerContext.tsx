@@ -12,10 +12,6 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'ioh-webinar-seen': {
-    bannerLink: 'https://www.linkedin.com/events/multi-layerauthz-yesplease7227047959689904128/comments/',
-    bannerText: 'Attend the Identerati Office Hours webinar on multi-layer authorization'
-  },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
     bannerText: 'API Authorization on Autopilot - Now Available from Aserto!'
