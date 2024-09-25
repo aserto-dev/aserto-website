@@ -75,7 +75,7 @@ const Contact = () => {
               growing community.
             </p>
             <Link
-              href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+              href="https://www.aserto.com/slack"
               className="w-full p-[10px] mt-[30px] bg-aserto-lochivar-100 border-2 inline-block
                 border-aserto-lochivar-100 rounded-[4px] text-[14px] font-semibold
                 hover:bg-aserto-lochivar-accent-10 hover:border-aserto-lochivar-accent-10 hover:text-white"
