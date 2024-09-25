@@ -12,6 +12,10 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
+  'aserto-authenticate-2024-seen': {
+    bannerLink: '/events/authenticate-2024',
+    bannerText: 'Meet Aserto at Authenticate 2024!'
+  },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
     bannerText: 'API Authorization on Autopilot - Now Available from Aserto!'
