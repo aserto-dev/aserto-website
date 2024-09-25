@@ -48,7 +48,7 @@ const CallToAction = (ctaBlock: CtaBlock) => {
               as="a"
               className="w-[200px] h-[36px] text-[16px] m-[20px] justify-center
                     inline-flex items-center cursor-pointer"
-              href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+              href="https://www.aserto.com/slack"
             >
               Join now
             </Button>

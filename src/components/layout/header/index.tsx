@@ -181,7 +181,7 @@ const Header = () => {
         <div className="hidden lg:block whitespace-nowrap items-center">
           <Link
             className="ml-8 inline-flex align-middle"
-            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+            href="https://www.aserto.com/slack"
           >
             <span className="sr-only">Slack</span>
             <IconSlack />

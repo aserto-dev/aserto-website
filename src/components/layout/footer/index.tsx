@@ -181,7 +181,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="text-sm leading-normal text-aserto-grey-70 font-roboto"
-                  href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+                  href="https://www.aserto.com/slack"
                 >
                   Community Slack
                 </Link>
@@ -327,7 +327,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg">
+                <Link href="https://www.aserto.com/slack">
                   <span className="sr-only">Slack</span>
                   <IconSlack />
                 </Link>

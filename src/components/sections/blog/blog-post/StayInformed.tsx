@@ -23,7 +23,7 @@ const StayInformed = () => {
           </Button>
           <Link
             className="w-full"
-            href="https://join.slack.com/t/asertocommunity/shared_invite/zt-yjvq8kwy-M_wtwFO35I9ToJiHg1Tutg"
+            href="https://www.aserto.com/slack"
           >
             <Button size="sm" className="w-full">
               <img
