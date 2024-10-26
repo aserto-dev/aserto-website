@@ -12,9 +12,13 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'aserto-authenticate-2024-seen': {
-    bannerLink: '/events/authenticate-2024',
-    bannerText: 'Meet Aserto at Authenticate 2024!'
+  'aserto-authzen-banner-seen': {
+    bannerLink: '/lp/authzen',
+    bannerText: 'Learn more about OpenID AuthZEN!'
+  },
+  'aserto-kubecon-2024-seen': {
+    bannerLink: '/events/kubecon-na-2024',
+    bannerText: 'Meet Aserto at KubeCon NA 2024!'
   },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
@@ -24,10 +28,6 @@ const banners: Record<string, Banner> = {
     bannerLink: '/solutions/multitenant-application-authorization',
     bannerText:
       'Deciding on Building or Buying Authorization? Get the Whitepaper!'
-  },
-  'aserto-authzen-banner-seen': {
-    bannerLink: '/lp/authzen',
-    bannerText: 'Learn more about OpenID AuthZEN!'
   },
   'aserto-topaz-032-banner-seen': {
     bannerLink: '/blog/announcing-topaz-0-32',
