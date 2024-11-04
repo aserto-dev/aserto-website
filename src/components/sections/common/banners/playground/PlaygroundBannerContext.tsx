@@ -12,13 +12,13 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'aserto-authzen-banner-seen': {
-    bannerLink: '/lp/authzen',
-    bannerText: 'Learn more about OpenID AuthZEN!'
-  },
   'aserto-kubecon-2024-seen': {
     bannerLink: '/events/kubecon-na-2024',
     bannerText: 'Meet Aserto at KubeCon NA 2024!'
+  },
+  'aserto-authzen-banner-seen': {
+    bannerLink: '/lp/authzen',
+    bannerText: 'Learn more about OpenID AuthZEN!'
   },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
