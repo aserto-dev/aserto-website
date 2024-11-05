@@ -27,7 +27,7 @@
     "@types/react-slick": "^0.23.8",
     "clsx": "^1.1.1",
     "date-fns": "^2.22.1",
-    "eslint-config-next": "13.4.9",
+    "eslint-config-next": "13.5.7",
     "framer-motion": "^6.1.5",
     "get-youtube-id": "^1.0.1",
     "graphql": "^15.5.0",
@@ -35,7 +35,7 @@
     "gsap": "./src/lib/gsap/gsap-bonus.tgz",
     "jquery": "3.7.1",
     "keen-slider": "^5.5.0",
-    "next": "13.4.9",
+    "next": "13.5.7",
     "next-compose-plugins": "^2.2.1",
     "next-plugin-svgr": "^1.1.10",
     "next-sanity": "^0.2.0",
@@ -117,7 +117,8 @@
     "ignorePatterns": [
       "/.next",
       "/out",
-      "/src/lib/sanity/generated.ts"
+      "/src/lib/sanity/generated.ts",
+      "tailwind.config.js"
     ],
     "parser": "@typescript-eslint/parser",
     "plugins": [
@@ -125,6 +126,10 @@
       "@typescript-eslint"
     ],
     "rules": {
+      "@next/next/no-img-element": "off",
+      "@next/next/no-css-tags": "off",
+      "@next/next/no-sync-scripts": "off",
+      "@next/next/next-script-for-ga": "off",
       "curly": [
         "error",
         "multi-line"
