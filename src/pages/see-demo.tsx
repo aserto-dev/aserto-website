@@ -26,7 +26,10 @@ const Demo = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         {page.videos?.length && page.videos?.length > 0 ? (
           page.videos.map((v, i) => (
             <>
-              <h2 key={`video-title-${i}`} className="text-2xl lg:text-3xl text-aserto-grey-90 text-center">
+              <h2
+                key={`video-title-${i}`}
+                className="text-2xl lg:text-3xl text-aserto-grey-90 text-center"
+              >
                 {v?.title || 'Aserto Demo Video'}
               </h2>
               <div key={`video-${i}`}>

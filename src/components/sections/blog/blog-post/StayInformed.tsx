@@ -21,10 +21,7 @@ const StayInformed = () => {
             />
             Subscribe
           </Button>
-          <Link
-            className="w-full"
-            href="https://www.aserto.com/slack"
-          >
+          <Link className="w-full" href="https://www.aserto.com/slack">
             <Button size="sm" className="w-full">
               <img
                 src="/images/about/slack.svg"
