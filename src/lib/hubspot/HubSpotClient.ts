@@ -55,7 +55,7 @@ export const hubspotSignup = async (
     })
 
     responseBody = await response.json()
-  } catch (e) {
+  } catch {
     return {
       status: 500
     }

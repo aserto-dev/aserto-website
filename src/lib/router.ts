@@ -50,7 +50,7 @@ const checkIfExternal = (url: string) => {
     const uri = new URL('/', url)
     if (uri.origin === originUri.origin) return false
     return true
-  } catch (error) {
+  } catch {
     return false
   }
 }

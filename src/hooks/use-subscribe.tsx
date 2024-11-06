@@ -17,7 +17,7 @@ const useSubscribe = (id: string) => {
           const { error } = await res.json()
           throw error
         }
-      } catch (error) {
+      } catch {
         setStatus('failure')
       }
     },
