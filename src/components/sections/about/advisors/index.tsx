@@ -26,7 +26,7 @@ const Advisors = ({ page }: { page: AboutPageFragment }) => {
               position={angel?.position ?? ''}
               imageSrc={
                 page.angelsWithImage
-                  ? (angel?.avatar?.asset?.url ?? undefined)
+                  ? angel?.avatar?.asset?.url ?? undefined
                   : undefined
               }
               key={i}

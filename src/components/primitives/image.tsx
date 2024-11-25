@@ -14,11 +14,11 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
       const width =
         typeof imgProps.width === 'string'
           ? parseFloat(imgProps.width)
-          : (imgProps.width ?? 1)
+          : imgProps.width ?? 1
       const height =
         typeof imgProps.height === 'string'
           ? parseFloat(imgProps.height)
-          : (imgProps.height ?? 1)
+          : imgProps.height ?? 1
       return (
         <AspectRatio.Root ratio={width / height}>
           <img
@@ -38,11 +38,11 @@ const Image = ({ layout, objectFit, ...imgProps }: ImageProps) => {
       const width =
         typeof imgProps.width === 'string'
           ? parseFloat(imgProps.width)
-          : (imgProps.width ?? 1)
+          : imgProps.width ?? 1
       const height =
         typeof imgProps.height === 'string'
           ? parseFloat(imgProps.height)
-          : (imgProps.height ?? 1)
+          : imgProps.height ?? 1
       return (
         <AspectRatio.Root ratio={width / height} style={{ maxWidth: width }}>
           <img
