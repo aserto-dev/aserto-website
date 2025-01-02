@@ -12,9 +12,15 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
+  /*
   'aserto-gartner-iam-2024-seen': {
     bannerLink: '/events/gartner-iam-2024',
     bannerText: 'Meet Aserto at Gartner IAM Summit 2024!'
+  },
+  */
+  'aserto-gen-ai-banner-seen': {
+    bannerLink: '/solutions/generative-ai',
+    bannerText: 'Learn more about Access Control for GenAI!'
   },
   'aserto-authzen-banner-seen': {
     bannerLink: '/lp/authzen',
