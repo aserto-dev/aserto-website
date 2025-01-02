@@ -8,6 +8,7 @@ type IconBlockProp = {
 }
 
 const IconBlock = ({ featureIcons, iconBlockTitle }: IconBlockProp) => {
+  if (!featureIcons || featureIcons.length === 0) return null
   return (
     <Container className="bg-aserto-grey-10 text-aserto-grey-90 py-20 px-8">
       {!!iconBlockTitle && (
