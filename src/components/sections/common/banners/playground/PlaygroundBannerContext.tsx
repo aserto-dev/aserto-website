@@ -18,6 +18,10 @@ const banners: Record<string, Banner> = {
     bannerText: 'Meet Aserto at Gartner IAM Summit 2024!'
   },
   */
+  'aserto-developerweek-2025-seen': {
+    bannerLink: '/events/developerweek-2025',
+    bannerText: 'Meet Aserto at DeveloperWeek 2025!'
+  },
   'aserto-gen-ai-banner-seen': {
     bannerLink: '/solutions/generative-ai',
     bannerText: 'Learn more about Access Control for GenAI!'
