@@ -17,11 +17,11 @@ const banners: Record<string, Banner> = {
     bannerLink: '/events/gartner-iam-2025',
     bannerText: 'Meet Aserto at Gartner IAM Summit 2025!'
   },
+  */
   'aserto-case-for-centralizing-authz-banner-seen': {
     bannerLink: '/resources/case-for-centralizing-authorization',
     bannerText: 'Get Your Copy of The Case for Centralizing Authorization whitepaper!'
   },
-  */
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
     bannerText: 'API Authorization on Autopilot - Now Available from Aserto!'
