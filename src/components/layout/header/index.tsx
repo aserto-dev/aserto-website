@@ -205,6 +205,7 @@ const Header = () => {
             />
           </Link>
           <NoSSR>
+            {/*
             <Button
               variant="primary"
               size="sm"
@@ -214,6 +215,7 @@ const Header = () => {
             >
               Sign up
             </Button>
+            */}
           </NoSSR>
           <NoSSR>
             <Link
