@@ -21,7 +21,7 @@ import IconGithub from 'icons/github.svg'
 import { asertoConsoleRootUrl } from 'lib/constants'
 import { HeaderDropdownLink } from './header-dropdown-link'
 import Menu from './menu'
-import Button from 'components/primitives/button'
+// import Button from 'components/primitives/button'
 import NoSSR from 'components/sections/common/NoSSR'
 
 const { solutions } = props as unknown as {
@@ -205,6 +205,7 @@ const Header = () => {
             />
           </Link>
           <NoSSR>
+            {/*
             <Button
               variant="primary"
               size="sm"
@@ -214,6 +215,7 @@ const Header = () => {
             >
               Sign up
             </Button>
+            */}
           </NoSSR>
           <NoSSR>
             <Link

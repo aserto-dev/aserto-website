@@ -12,6 +12,26 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
+  'aserto-final-banner-seen': {
+    bannerLink: '/blog/the-final-chapter-for-aserto',
+    bannerText:
+      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+  },
+  'aserto-final-banner-seen-1': {
+    bannerLink: '/blog/the-final-chapter-for-aserto',
+    bannerText:
+      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+  },
+  'aserto-final-banner-seen-2': {
+    bannerLink: '/blog/the-final-chapter-for-aserto',
+    bannerText:
+      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+  },
+  'aserto-final-banner-seen-3': {
+    bannerLink: '/blog/the-final-chapter-for-aserto',
+    bannerText:
+      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+  },
   /*
   'aserto-gartner-iam-2025-london-seen': {
     bannerLink: '/events/gartner-iam-2025',
@@ -20,7 +40,8 @@ const banners: Record<string, Banner> = {
   */
   'aserto-case-for-centralizing-authz-banner-seen': {
     bannerLink: '/resources/case-for-centralizing-authorization',
-    bannerText: 'Get Your Copy of The Case for Centralizing Authorization whitepaper!'
+    bannerText:
+      'Get Your Copy of The Case for Centralizing Authorization whitepaper!'
   },
   'aserto-api-authorization-seen': {
     bannerLink: '/solutions/api-authorization',
