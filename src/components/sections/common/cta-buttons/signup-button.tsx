@@ -1,10 +1,11 @@
 // Primitives
-import Button from 'components/primitives/button'
-import { asertoConsoleRootUrl } from 'lib/constants'
+//import Button from 'components/primitives/button'
+//import { asertoConsoleRootUrl } from 'lib/constants'
 
 const SignupButton = () => {
   return (
     <>
+      {/*}
       <Button
         suppressHydrationWarning
         variant="primary"
@@ -15,6 +16,7 @@ const SignupButton = () => {
       >
         Get started free
       </Button>
+      */}
     </>
   )
 }

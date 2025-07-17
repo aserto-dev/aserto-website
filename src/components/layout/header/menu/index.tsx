@@ -35,6 +35,7 @@ const Menu = ({ show = false, closeMenu, signupRedirect }: MenuProps) => {
               </li>
             )
           })}
+          {/*
           <li
             className="flex relative bg-aserto-lochivar-100 w-full px-6 items-center h-16
             border-t border-aserto-grey-20 text-aserto-grey-90 text-xl font-semibold"
@@ -48,6 +49,7 @@ const Menu = ({ show = false, closeMenu, signupRedirect }: MenuProps) => {
               Try it FREE
             </span>
           </li>
+          */}
         </ul>
       </nav>
     </section>
