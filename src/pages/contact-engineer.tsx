@@ -1,6 +1,6 @@
 // Layout
 import PageLayout from 'components/layout/page'
-import HubspotSchedulingEmbed from 'lib/hubspot/HubspotSchedulingEmbed'
+//import HubspotSchedulingEmbed from 'lib/hubspot/HubspotSchedulingEmbed'
 
 const ContactEngineer = () => {
   const page = {
@@ -13,7 +13,7 @@ const ContactEngineer = () => {
   return (
     <PageLayout
       headProps={{
-        title: 'Speak with an Engineer - Aserto',
+        title: 'Speak with an Engineer',
         description:
           "Schedule a 1-on-1 meeting with an Aserto engineer to discuss your specific authorization needs and Aserto's authorization as a service",
         image: 'images/og.png'
@@ -26,11 +26,20 @@ const ContactEngineer = () => {
         <div>
           <h1 className="text-5xl my-8 leading-none">{page.title}</h1>
           <h2 className="text-3xl mb-16 leading-normal sm:w-8/12 sm:mx-auto">
+            Aserto has ceased operations. To obtain support for{' '}
+            <a className="underline" href="https://www.topaz.sh">
+              Topaz
+            </a>
+            , please visit that page or email maintainers@topaz.sh.
+          </h2>
+          {/*
+          <h2 className="text-3xl mb-16 leading-normal sm:w-8/12 sm:mx-auto">
             {page.subtitle}
           </h2>
           <HubspotSchedulingEmbed
             hubSpotDataSrc={page.hubSpotDataSrc}
           ></HubspotSchedulingEmbed>
+          */}
         </div>
       </div>
     </PageLayout>

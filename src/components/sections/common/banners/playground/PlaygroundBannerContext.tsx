@@ -12,25 +12,25 @@ type Banner = {
 }
 
 const banners: Record<string, Banner> = {
-  'aserto-final-banner-seen': {
+  'aserto-term-banner-seen': {
     bannerLink: '/blog/the-final-chapter-for-aserto',
     bannerText:
-      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+      'Aserto ceased operations on May 31, 2025. Read our blog post for more.'
   },
-  'aserto-final-banner-seen-1': {
+  'aserto-term-banner-seen-1': {
     bannerLink: '/blog/the-final-chapter-for-aserto',
     bannerText:
-      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+      'Aserto ceased operations on May 31, 2025. Read our blog post for more.'
   },
-  'aserto-final-banner-seen-2': {
+  'aserto-term-banner-seen-2': {
     bannerLink: '/blog/the-final-chapter-for-aserto',
     bannerText:
-      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+      'Aserto ceased operations on May 31, 2025. Read our blog post for more.'
   },
-  'aserto-final-banner-seen-3': {
+  'aserto-term-banner-seen-3': {
     bannerLink: '/blog/the-final-chapter-for-aserto',
     bannerText:
-      'Aserto will be ceasing operations on May 31, 2025. Read our blog post for more.'
+      'Aserto ceased operations on May 31, 2025. Read our blog post for more.'
   },
   /*
   'aserto-gartner-iam-2025-london-seen': {

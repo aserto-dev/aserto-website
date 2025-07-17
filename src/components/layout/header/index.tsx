@@ -204,8 +204,8 @@ const Header = () => {
               alt="github"
             />
           </Link>
+          {/*
           <NoSSR>
-            {/*
             <Button
               variant="primary"
               size="sm"
@@ -215,7 +215,6 @@ const Header = () => {
             >
               Sign up
             </Button>
-            */}
           </NoSSR>
           <NoSSR>
             <Link
@@ -226,6 +225,7 @@ const Header = () => {
               Sign in
             </Link>
           </NoSSR>
+          */}
         </div>
       </div>
       <Menu
