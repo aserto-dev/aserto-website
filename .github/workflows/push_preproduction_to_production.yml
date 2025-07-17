@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  VAULT_ADDR: https://vault.eng.aserto.com/
+  VAULT_ADDR: https://vault.aserto.com/
 
 jobs:
   push_branch:
