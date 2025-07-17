@@ -11,7 +11,7 @@ type MenuProps = {
   signupRedirect: () => void
 }
 
-const Menu = ({ show = false, closeMenu, signupRedirect }: MenuProps) => {
+const Menu = ({ show = false, closeMenu /*, signupRedirect */ }: MenuProps) => {
   return (
     <section
       className={clsx(
